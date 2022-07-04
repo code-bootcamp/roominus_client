@@ -7,7 +7,6 @@ import { breakPoints } from "../../../commons/styles/media";
 
 // const HIDDEN_HEADER = ["/"];
 // const HIDDEN_FOOTER = ["/"];
-
 const Wrapper = styled.section`
   width: 100%;
   height: 100%;
@@ -19,9 +18,7 @@ const Wrapper = styled.section`
 
 const Body = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 70%;
 `;
 interface ILayoutProps {
   children: ReactNode;
