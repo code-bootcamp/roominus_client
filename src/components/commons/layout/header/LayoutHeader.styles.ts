@@ -8,7 +8,7 @@ export const Container = styled.nav`
   width: 100%;
   height: 5.75rem;
   border-bottom: 1px solid #e5e5e5;
-  /* position: fixed; */
+  position: fixed;
   z-index: 1;
 
   @media ${breakPoints.mobile} {
