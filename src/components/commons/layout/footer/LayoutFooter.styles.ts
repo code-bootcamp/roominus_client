@@ -3,7 +3,7 @@ import { GithubOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.div`
   width: 100%;
-  background-color: beige;
+  height: 20%;
 `;
 
 export const Wrapper = styled.div`
@@ -95,4 +95,4 @@ export const ContactIcon = styled(GithubOutlined)`
   }
 `;
 
-// 반응형 Info 수정필요
+// 반응형 Info 수정해야함
