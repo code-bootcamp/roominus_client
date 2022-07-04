@@ -3,10 +3,9 @@ import { breakPoints } from "./media";
 
 export const globalStyles = css`
   * {
-    margin: 0px;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     font-family: "myFont";
   }
 
@@ -18,6 +17,7 @@ export const globalStyles = css`
 
     @media ${breakPoints.mobile} {
       font-size: 12px;
+      margin: 0;
     }
   }
 
