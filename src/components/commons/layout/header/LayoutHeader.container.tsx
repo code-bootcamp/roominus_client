@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import LayoutHeaderUI from "./LayoutHeader.presenter";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 
 export default function LayoutHeader() {
   const router = useRouter();
@@ -22,7 +22,7 @@ export default function LayoutHeader() {
     router.push("/myPages");
   };
 
-  const onClickMenu = (event: any) => {
+  const onClickMenu = (event: MouseEvent<HTMLUListElement>) => {
     if (event.target instanceof Element) {
       router.push(event.target.id);
 

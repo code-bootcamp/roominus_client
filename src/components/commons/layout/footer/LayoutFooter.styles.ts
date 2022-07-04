@@ -3,13 +3,13 @@ import { GithubOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.div`
   width: 100%;
-  background-color: beige;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-top: 1px solid gray;
   @media ${breakPoints.mobile} {
     display: flex;
     flex-direction: column;
@@ -20,6 +20,7 @@ export const MenuInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 10px;
 `;
 
 export const MenuWrapper = styled.ul`
@@ -32,10 +33,11 @@ export const MenuWrapper = styled.ul`
 `;
 
 export const Menu = styled.li`
-  margin-right: 1em;
+  margin-left: 2em;
   border-right: 1px solid black;
-  padding-right: 1em;
+  padding-right: 1.5em;
   cursor: pointer;
+
   &:last-of-type {
     border: none;
   }
@@ -63,36 +65,20 @@ export const ContactWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   font-weight: 600;
-`;
-
-export const ContactWrapperMobile = styled.div`
-  display: none;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  & > div {
-    margin: 0;
-    padding-right: 10px;
+  @media ${breakPoints.mobile} {
+    display: none;
   }
 `;
 
 export const Contact = styled.div`
   text-align: center;
-  @media ${breakPoints.mobile} {
-    font-size: 0.1em;
-  }
+  padding: 10px;
 `;
 
 export const ContactIcon = styled(GithubOutlined)`
-  margin-top: 0.5em;
   font-size: 2.5em;
   color: black;
   :hover {
     cursor: pointer;
   }
-  @media ${breakPoints.mobile} {
-    font-size: 0.8em;
-  }
 `;
-
-// 반응형 Info 수정필요

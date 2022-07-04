@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import * as S from "./LayoutHeader.styles";
+import { ILayoutHeaderUIProps } from "./LayoutHeader.types";
 
 const NAVIGATION_MENUS = [
   { name: "매장", page: "/store" },
@@ -8,7 +9,7 @@ const NAVIGATION_MENUS = [
   { name: "예약", page: "/reservation" },
   { name: "커뮤니티", page: "/community" },
 ];
-export default function LayoutHeaderUI(props: any) {
+export default function LayoutHeaderUI(props: ILayoutHeaderUIProps) {
   return (
     <>
       <S.Container>
@@ -42,6 +43,7 @@ export default function LayoutHeaderUI(props: any) {
               ))}
             </S.MenuWrapper>
           </S.LoginJoinMenuWrapper>
+          <S.Menu />
         </S.Wrapper>
       </S.Container>
     </>
