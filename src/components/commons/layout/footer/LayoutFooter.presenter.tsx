@@ -24,7 +24,6 @@ export default function LayoutFooterUI(props: any) {
               사업장 주소: 서울시 구로구 패스트파이브 13층 코드캠프 (우) 12345 |
               사업자등록번호: 000-00-00000
             </S.Info>
-            <S.Info></S.Info>
             <S.Info>
               통신판매업신고 중구 제00000호 | 개인정보보호책임자:손은채
             </S.Info>
