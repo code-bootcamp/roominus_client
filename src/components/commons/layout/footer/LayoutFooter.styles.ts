@@ -126,4 +126,4 @@ export const ContactIcon = styled(GithubOutlined)`
   }
 `;
 
-// 반응형 Info 수정해야함
+// 반응형 Info 수정필요
