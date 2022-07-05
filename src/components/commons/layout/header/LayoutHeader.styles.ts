@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
-import { MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 export const Container = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 5.75rem;
+  height: 5.5rem;
   border-bottom: 1px solid #e5e5e5;
+  /* position: fixed; */
   z-index: 1;
 
   @media ${breakPoints.mobile} {
@@ -32,8 +33,8 @@ export const Logo = styled.img`
   height: 2rem;
 
   @media ${breakPoints.mobile} {
-    height: 1.8rem;
     margin: 1rem;
+    height: 2rem;
   }
 `;
 export const MenuWrapper = styled.ul`
@@ -41,7 +42,6 @@ export const MenuWrapper = styled.ul`
   justify-content: space-between;
 
   @media ${breakPoints.mobile} {
-    padding-left: calc(5%);
     width: 70%;
     margin-left: 3rem;
   }
@@ -89,5 +89,39 @@ export const Menu = styled(MenuOutlined)`
   @media ${breakPoints.mobile} {
     display: block;
     font-size: 2rem;
+  }
+`;
+
+export const Close = styled(CloseOutlined)`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    font-size: 2rem;
+  }
+`;
+export const Toggle = styled.div``;
+export const ToggleMenuWrapper = styled.ul`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+
+    width: 100%;
+    background-color: beige;
+    padding: 20px;
+  }
+`;
+
+export const ToggleMenu = styled.li`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
   }
 `;

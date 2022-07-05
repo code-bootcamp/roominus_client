@@ -5,6 +5,7 @@ import { MouseEvent, useState } from "react";
 export default function LayoutHeader() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState("");
+  const [isToggled, setIsToggled] = useState(false);
 
   const onClickLogo = () => {
     router.push("/");
@@ -31,6 +32,10 @@ export default function LayoutHeader() {
     }
   };
 
+  const onClickToggled = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
     <LayoutHeaderUI
       onClickMenu={onClickMenu}
@@ -39,6 +44,8 @@ export default function LayoutHeader() {
       onClickMoveToLogin={onClickMoveToLogin}
       onClickMoveToJoin={onClickMoveToJoin}
       onClickMoveToMyPages={onClickMoveToMyPages}
+      onClickToggled={onClickToggled}
+      isToggled={isToggled}
     />
   );
 }

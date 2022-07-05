@@ -27,12 +27,12 @@ export default function LayoutFooterUI(props: any) {
             <S.Info>
               통신판매업신고 중구 제00000호 | 개인정보보호책임자:손은채
             </S.Info>
+            <S.Info>Contact Us</S.Info>
+            <S.Info>
+              <S.GitIcon />
+            </S.Info>
           </S.InfoWrapper>
         </S.MenuInfoWrapper>
-        <S.ContactWrapper>
-          <S.Contact>Contact Us</S.Contact>
-          <S.ContactIcon />
-        </S.ContactWrapper>
       </S.Wrapper>
     </S.Container>
   );

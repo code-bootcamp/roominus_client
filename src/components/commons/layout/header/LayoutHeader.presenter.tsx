@@ -43,9 +43,33 @@ export default function LayoutHeaderUI(props: ILayoutHeaderUIProps) {
               ))}
             </S.MenuWrapper>
           </S.LoginJoinMenuWrapper>
-          <S.Menu />
+          {props.isToggled ? (
+            <S.Close onClick={props.onClickToggled} />
+          ) : (
+            <S.Menu onClick={props.onClickToggled} />
+          )}
         </S.Wrapper>
       </S.Container>
+      {props.isToggled ? (
+        <S.Toggle>
+          <S.ToggleMenuWrapper>
+            <S.ToggleMenu>로그인</S.ToggleMenu>
+            <S.ToggleMenu>회원가입</S.ToggleMenu>
+            {NAVIGATION_MENUS.map((el) => (
+              <Fragment key={el.page}>
+                <Link href={el.page}>
+                  <S.ToggleMenu id={el.page} onClick={props.onClickMenu}>
+                    <a>{el.name}</a>
+                  </S.ToggleMenu>
+                </Link>
+              </Fragment>
+            ))}
+            <S.ToggleMenu>마이페이지</S.ToggleMenu>
+          </S.ToggleMenuWrapper>
+        </S.Toggle>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
