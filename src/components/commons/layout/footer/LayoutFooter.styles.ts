@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
   }
+  border-top: 1px solid gray;
 `;
 
 export const MenuInfoWrapper = styled.div`
