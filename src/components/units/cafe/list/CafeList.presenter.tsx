@@ -15,26 +15,108 @@ export default function CafeListUIPage() {
               <S.DetailContents placeholder="매장을 입력해주세요." />
             </S.DetailBox>
           </S.SearchDetailBox>
-          <div>
-            <button>초기화</button>
-            <button>검색하기</button>
-          </div>
+          <S.ButtonBox>
+            <S.Button>초기화</S.Button>
+            <S.Button>검색하기</S.Button>
+          </S.ButtonBox>
         </S.SearchBox>
       </S.SearchWrapper>
       <S.ListWrapper>
-        <div>
-          <div>베스트? 제휴업체?</div>
-          <div>
-            <div>
-              <div>1</div>
-              <div>
-                <div>사진</div>
-                <div>매장명</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <S.BestListBox>
+          <S.BestTitle>지금 가장 HOT한 매장 BEST3</S.BestTitle>
+          <S.BestBoxs>
+            <S.BestBox>
+              <S.BestCafe>
+                <S.Rank>1</S.Rank>
+                <S.BestCafeDetail>
+                  <S.BestCafePicture src="./img/thecode.webp" />
+                  <S.BestCafeName>THE CODE</S.BestCafeName>
+                </S.BestCafeDetail>
+              </S.BestCafe>
+            </S.BestBox>
+            <S.BestBox>
+              <S.BestCafe>
+                <S.Rank>1</S.Rank>
+                <S.BestCafeDetail>
+                  <S.BestCafePicture src="./img/thecode.webp" />
+                  <S.BestCafeName>THE CODE</S.BestCafeName>
+                </S.BestCafeDetail>
+              </S.BestCafe>
+            </S.BestBox>
+            <S.BestBox>
+              <S.BestCafe>
+                <S.Rank>1</S.Rank>
+                <S.BestCafeDetail>
+                  <S.BestCafePicture src="./img/thecode.webp" />
+                  <S.BestCafeName>THE CODE</S.BestCafeName>
+                </S.BestCafeDetail>
+              </S.BestCafe>
+            </S.BestBox>
+          </S.BestBoxs>
+        </S.BestListBox>
         <S.Line></S.Line>
+        <S.BestBoxs>
+          <S.BestBox>
+            <S.BestCafe>
+              <S.Location>홍대</S.Location>
+              <S.BestCafeDetail>
+                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafeName>THE CODE</S.BestCafeName>
+              </S.BestCafeDetail>
+            </S.BestCafe>
+          </S.BestBox>
+          <S.BestBox>
+            <S.BestCafe>
+              <S.Location>홍대</S.Location>
+              <S.BestCafeDetail>
+                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafeName>THE CODE</S.BestCafeName>
+              </S.BestCafeDetail>
+            </S.BestCafe>
+          </S.BestBox>
+          <S.BestBox>
+            <S.BestCafe>
+              <S.Location>홍대</S.Location>
+              <S.BestCafeDetail>
+                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafeName>THE CODE</S.BestCafeName>
+              </S.BestCafeDetail>
+            </S.BestCafe>
+          </S.BestBox>
+        </S.BestBoxs>
+        <S.BestBoxs>
+          <S.BestBox>
+            <S.BestCafe>
+              <S.Location>홍대</S.Location>
+              <S.BestCafeDetail>
+                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafeName>THE CODE</S.BestCafeName>
+              </S.BestCafeDetail>
+            </S.BestCafe>
+          </S.BestBox>
+          <S.BestBox>
+            <S.BestCafe>
+              <S.Location>홍대</S.Location>
+              <S.BestCafeDetail>
+                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafeName>THE CODE</S.BestCafeName>
+              </S.BestCafeDetail>
+            </S.BestCafe>
+          </S.BestBox>
+          <S.BestBox>
+            <S.BestCafe>
+              <S.Location>홍대</S.Location>
+              <S.BestCafeDetail>
+                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafeName>THE CODE</S.BestCafeName>
+              </S.BestCafeDetail>
+            </S.BestCafe>
+          </S.BestBox>
+        </S.BestBoxs>
+
+        <S.MoreButtonBox>
+          <S.MoreButton>▽ 더보기</S.MoreButton>
+        </S.MoreButtonBox>
       </S.ListWrapper>
     </S.Container>
   );

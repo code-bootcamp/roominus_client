@@ -16,7 +16,7 @@ const TopBtn = styled(CaretUpOutlined)`
   transform: translate(-20%, -20%);
   width: 4rem;
   height: 4rem;
-  background: linear-gradient(90deg, #4a00e0 0%, #7c21e1 100%);
+  background: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
   border-radius: 50%;
   border: none;
   color: #ffffff;
