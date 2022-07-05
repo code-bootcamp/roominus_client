@@ -1,11 +1,9 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Deck from "./animation";
 import * as S from "./Main.styles";
 
 export default function MainUI() {
   return (
     <S.Container>
-      <Deck />
       <S.Page1>{/* <S.Carousel></S.Carousel> */}</S.Page1>
       <S.Page2>
         {/* <img src="/img/ink.png" />
