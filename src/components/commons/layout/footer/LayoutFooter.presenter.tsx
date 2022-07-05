@@ -8,12 +8,12 @@ export default function LayoutFooterUI(props: any) {
         <TopButton />
         <S.MenuInfoWrapper>
           <S.MenuWrapper>
-            <S.Menu>회사소개</S.Menu>
             <S.Menu>이용약관</S.Menu>
             <S.Menu>개인정보처리 방침</S.Menu>
             <S.Menu>청소년 보호 정책</S.Menu>
             <S.Menu>법적고지</S.Menu>
             <S.Menu>고객센터</S.Menu>
+            <S.Menu>Contact US</S.Menu>
           </S.MenuWrapper>
           <S.InfoWrapper>
             <S.Info>
@@ -28,15 +28,7 @@ export default function LayoutFooterUI(props: any) {
               통신판매업신고 중구 제00000호 | 개인정보보호책임자:손은채
             </S.Info>
           </S.InfoWrapper>
-          <S.ContactWrapperMobile>
-            <S.Contact>Contact Us</S.Contact>
-            <S.ContactIcon />
-          </S.ContactWrapperMobile>
         </S.MenuInfoWrapper>
-        <S.ContactWrapper>
-          <S.Contact>Contact Us</S.Contact>
-          <S.ContactIcon />
-        </S.ContactWrapper>
       </S.Wrapper>
     </S.Container>
   );
