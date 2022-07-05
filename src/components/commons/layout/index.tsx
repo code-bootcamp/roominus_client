@@ -19,6 +19,10 @@ const Body = styled.div`
   width: 100%;
   height: 70%;
   padding: 0em 5em 0em 5em;
+
+  @media ${breakPoints.mobile} {
+    padding: 0.5em;
+  }
 `;
 interface ILayoutProps {
   children: ReactNode;

@@ -11,6 +11,7 @@ export const Container = styled.nav`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    padding: 0.5em;
   }
 `;
 
@@ -33,8 +34,7 @@ export const Logo = styled.img`
   height: 2rem;
 
   @media ${breakPoints.mobile} {
-    margin: 1rem;
-    height: 2rem;
+    height: 5em;
   }
 `;
 export const MenuWrapper = styled.ul`
@@ -101,7 +101,7 @@ export const Menu = styled(MenuOutlined)`
 
   @media ${breakPoints.mobile} {
     display: block;
-    font-size: 2rem;
+    font-size: 5em;
   }
 `;
 
@@ -110,7 +110,7 @@ export const Close = styled(CloseOutlined)`
 
   @media ${breakPoints.mobile} {
     display: block;
-    font-size: 2rem;
+    font-size: 5em;
   }
 `;
 export const Toggle = styled.div``;

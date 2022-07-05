@@ -1,10 +1,13 @@
 import styled from "@emotion/styled";
-import { GithubOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.div`
   width: 100%;
   height: 20%;
   padding: 0em 5em 0em 5em;
+
+  @media ${breakPoints.mobile} {
+    padding: 0.5em;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -12,12 +15,6 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 95%;
-  max-width: 1440px;
-
-  @media ${breakPoints.mobile} {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 export const MenuInfoWrapper = styled.div`
@@ -29,6 +26,10 @@ export const MenuWrapper = styled.ul`
   display: flex;
   justify-content: space-between;
   padding-left: 0.3em;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.8em;
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 0.1em;
