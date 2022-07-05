@@ -5,22 +5,7 @@ import { useState } from "react";
 export default function LayoutHeader() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState("");
-
-  const onClickLogo = () => {
-    router.push("/");
-  };
-
-  const onClickMoveToLogin = () => {
-    router.push("/login");
-  };
-
-  const onClickMoveToJoin = () => {
-    router.push("/join");
-  };
-
-  const onClickMoveToMyPages = () => {
-    router.push("/myPages");
-  };
+  const [isToggled, setIsToggled] = useState(false);
 
   const onClickMenu = (event: any) => {
     if (event.target instanceof Element) {
@@ -31,14 +16,16 @@ export default function LayoutHeader() {
     }
   };
 
+  const onClickToggled = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
     <LayoutHeaderUI
       onClickMenu={onClickMenu}
       activedMenu={activedMenu}
-      onClickLogo={onClickLogo}
-      onClickMoveToLogin={onClickMoveToLogin}
-      onClickMoveToJoin={onClickMoveToJoin}
-      onClickMoveToMyPages={onClickMoveToMyPages}
+      isToggled={isToggled}
+      onClickToggled={onClickToggled}
     />
   );
 }

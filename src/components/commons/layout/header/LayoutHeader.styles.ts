@@ -1,17 +1,23 @@
 import styled from "@emotion/styled";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.nav`
   width: 100%;
   height: 10%;
+  padding: 0em 5em 0em 5em;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid gray;
 
   @media ${breakPoints.mobile} {
     font-size: 0.3em;
@@ -23,19 +29,22 @@ export const LogoWrapper = styled.div`
 `;
 
 export const Logo = styled.img`
-  :hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
   height: 2rem;
+
   @media ${breakPoints.mobile} {
-    height: 4em;
+    margin: 1rem;
+    height: 2rem;
   }
 `;
 export const MenuWrapper = styled.ul`
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+
+  @media ${breakPoints.mobile} {
+    width: 70%;
+    margin-left: 3rem;
+  }
 `;
 
 export const MenuItem = styled.li`
@@ -45,6 +54,14 @@ export const MenuItem = styled.li`
 
   font-size: 1.25em;
   padding-left: 1.8em;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.5em;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const LoginJoinMenuWrapper = styled.div`
@@ -55,8 +72,8 @@ export const LoginJoinMenuWrapper = styled.div`
 `;
 export const LoginJoinWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  width: 95%;
   margin-bottom: 0.3em;
 `;
 
@@ -66,4 +83,57 @@ export const Contents = styled.span`
   }
 
   margin-left: 0.6em;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.5em;
+  }
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+`;
+
+export const Menu = styled(MenuOutlined)`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    font-size: 2rem;
+  }
+`;
+
+export const Close = styled(CloseOutlined)`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    font-size: 2rem;
+  }
+`;
+export const Toggle = styled.div``;
+export const ToggleMenuWrapper = styled.ul`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+
+    width: 100%;
+    padding: 15px;
+  }
+`;
+
+export const ToggleMenu = styled.li`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
 `;
