@@ -14,8 +14,8 @@ const TopBtn = styled(CaretUpOutlined)`
   right: 0;
   bottom: 0;
   transform: translate(-20%, -20%);
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   background: linear-gradient(90deg, #4a00e0 0%, #7c21e1 100%);
   border-radius: 50%;
   border: none;
@@ -26,11 +26,12 @@ const TopBtn = styled(CaretUpOutlined)`
   cursor: pointer;
 
   @media ${breakPoints.tablet} {
+    width: 1.5em;
+    height: 1.5em;
   }
   @media ${breakPoints.mobile} {
-    display: none;
-    width: 0;
-    height: 0;
+    width: 1.5em;
+    height: 1.5em;
   }
 `;
 
