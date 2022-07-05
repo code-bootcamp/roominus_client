@@ -10,6 +10,9 @@ import { breakPoints } from "../../../commons/styles/media";
 const Wrapper = styled.section`
   width: 100%;
   height: 100%;
+  /* padding: 0em 20em 0em 20em; */
+  padding: 0em 15em 0em 15em;
+
   @media ${breakPoints.mobile} {
     padding: 0em 0em 0em 0em;
     width: 100%;
@@ -23,7 +26,9 @@ const Wrapper = styled.section`
 const Body = styled.div`
   width: 100%;
   height: 70%;
-  padding: 0em 5em 0em 5em;
+  padding: 0em 1em 0em 1em;
+  background-color: beige;
+
   @media ${breakPoints.mobile} {
     padding: 0em 0em 0em 0em;
   }

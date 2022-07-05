@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import { GithubOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.div`
   width: 100%;
   height: 20%;
-  padding: 0em 5em 0em 5em;
+  border-top: 1px solid #b2b2b2;
+
   @media ${breakPoints.mobile} {
     padding: 1em 1em 1em 1em;
   }
