@@ -6,6 +6,7 @@ export const globalStyles = css`
     box-sizing: border-box;
     margin: 0.3em 0em;
     font-family: "myFont";
+    margin: 0.3em 0em;
   }
 
   html,

@@ -1,22 +1,5 @@
-export default function CafeListPage() {
-  return (
-    <>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
+import CafeListPage from "../../src/components/units/cafe/list/CafeList.container";
 
-      <div>gdgdgdgd</div>
-
-      <div>gdgdgdgd</div>
-
-      <div>gdgdgdgd</div>
-
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-    </>
-  );
+export default function CafePage() {
+  return <CafeListPage />;
 }
