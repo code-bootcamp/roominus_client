@@ -1,5 +1,5 @@
-import LoginUI from "./Login.presenter";
+import ReservationUI from "../reservation/Reservation.presenter";
 
-export default function Login() {
-  return <LoginUI />;
+export default function ReservationPage() {
+  return <ReservationUI />;
 }
