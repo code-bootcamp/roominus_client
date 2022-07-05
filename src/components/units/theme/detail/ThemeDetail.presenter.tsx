@@ -1,4 +1,4 @@
-import * as S from "./ThemesDetail.styles";
+import * as S from "./ThemeDetail.styles";
 
 export default function ThemeDetailUI() {
   return (
@@ -21,10 +21,25 @@ export default function ThemeDetailUI() {
             집메 몰래 들어가 사건 전날 밤 밀머난 밀믈 밝며내고 그녀를 잡믈 수
             밌는 단서를 찾마내먀 한다.
           </S.ThemeContents>
+          <S.RankTimeBox>
+            <S.ThemeRank>
+              난이도 <img src="/img/theme/rankstar.webp" />
+              <img src="/img/theme/rankstar.webp" />
+              <img src="/img/theme/rankstar.webp" />
+              <img src="/img/theme/rankstar.webp" />
+              <img src="/img/theme/rankstar.webp" />
+            </S.ThemeRank>
+            <S.ThemeTime>이용시간 110분</S.ThemeTime>
+          </S.RankTimeBox>
+          <S.ChargeBox>
+            이용요금
+            <S.ThemeCharge>
+              2인 : 44,000원 / 3인 : 60,000원 / 4인 : 72,000원 / 5인 : 85,000원
+            </S.ThemeCharge>
+          </S.ChargeBox>
+          <S.ReservationButton>예약하기</S.ReservationButton>
         </S.ThemeRightBox>
       </S.ThemeInfoWrapper>
-      <S.ReservationWrapper></S.ReservationWrapper>
-      <S.CommentWrapper></S.CommentWrapper>
     </S.Container>
   );
 }

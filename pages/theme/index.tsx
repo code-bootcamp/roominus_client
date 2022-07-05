@@ -1,5 +1,5 @@
-import Themes from "../../src/components/units/theme/Themes.contatiner";
+import ThemeList from "../../src/components/units/theme/list/ThemeList.contatiner";
 
-export default function ThemesPage() {
-  return <Themes />;
+export default function ThemeListPage() {
+  return <ThemeList />;
 }
