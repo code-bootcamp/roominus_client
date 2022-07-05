@@ -11,7 +11,7 @@ export const Container = styled.nav`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 0.5em;
+    padding: 1em 1em 1em 1em;
   }
 `;
 
@@ -31,10 +31,11 @@ export const LogoWrapper = styled.div`
 
 export const Logo = styled.img`
   cursor: pointer;
-  height: 2rem;
+  height: 2em;
 
   @media ${breakPoints.mobile} {
-    height: 5em;
+    margin: 1em;
+    height: 3em;
   }
 `;
 export const MenuWrapper = styled.ul`
@@ -43,7 +44,7 @@ export const MenuWrapper = styled.ul`
 
   @media ${breakPoints.mobile} {
     width: 70%;
-    margin-left: 3rem;
+    margin-left: 3em;
   }
 `;
 
@@ -101,7 +102,7 @@ export const Menu = styled(MenuOutlined)`
 
   @media ${breakPoints.mobile} {
     display: block;
-    font-size: 5em;
+    font-size: 4em;
   }
 `;
 
@@ -110,7 +111,7 @@ export const Close = styled(CloseOutlined)`
 
   @media ${breakPoints.mobile} {
     display: block;
-    font-size: 5em;
+    font-size: 3em;
   }
 `;
 export const Toggle = styled.div``;
@@ -121,8 +122,7 @@ export const ToggleMenuWrapper = styled.ul`
     display: block;
     flex-direction: column;
     text-align: center;
-    font-size: 1.5rem;
-
+    font-size: 2em;
     width: 100%;
     padding: 15px;
   }

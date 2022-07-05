@@ -29,7 +29,7 @@ export default function CafeListUIPage() {
               <S.BestCafe>
                 <S.Rank>1</S.Rank>
                 <S.BestCafeDetail>
-                  <S.BestCafePicture src="./img/thecode.webp" />
+                  <S.BestCafePicture src="/img/cafe/thecode.webp" />
                   <S.BestCafeName>THE CODE</S.BestCafeName>
                 </S.BestCafeDetail>
               </S.BestCafe>
@@ -38,7 +38,7 @@ export default function CafeListUIPage() {
               <S.BestCafe>
                 <S.Rank>1</S.Rank>
                 <S.BestCafeDetail>
-                  <S.BestCafePicture src="./img/thecode.webp" />
+                  <S.BestCafePicture src="./img/cafe/thecode.webp" />
                   <S.BestCafeName>THE CODE</S.BestCafeName>
                 </S.BestCafeDetail>
               </S.BestCafe>
@@ -47,7 +47,7 @@ export default function CafeListUIPage() {
               <S.BestCafe>
                 <S.Rank>1</S.Rank>
                 <S.BestCafeDetail>
-                  <S.BestCafePicture src="./img/thecode.webp" />
+                  <S.BestCafePicture src="./img/cafe/thecode.webp" />
                   <S.BestCafeName>THE CODE</S.BestCafeName>
                 </S.BestCafeDetail>
               </S.BestCafe>
@@ -60,7 +60,7 @@ export default function CafeListUIPage() {
             <S.BestCafe>
               <S.Location>홍대</S.Location>
               <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafePicture src="./img/cafe/thecode.webp" />
                 <S.BestCafeName>THE CODE</S.BestCafeName>
               </S.BestCafeDetail>
             </S.BestCafe>
@@ -69,7 +69,7 @@ export default function CafeListUIPage() {
             <S.BestCafe>
               <S.Location>홍대</S.Location>
               <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafePicture src="./img/cafe/thecode.webp" />
                 <S.BestCafeName>THE CODE</S.BestCafeName>
               </S.BestCafeDetail>
             </S.BestCafe>
@@ -78,7 +78,7 @@ export default function CafeListUIPage() {
             <S.BestCafe>
               <S.Location>홍대</S.Location>
               <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafePicture src="./img/cafe/thecode.webp" />
                 <S.BestCafeName>THE CODE</S.BestCafeName>
               </S.BestCafeDetail>
             </S.BestCafe>
@@ -89,7 +89,7 @@ export default function CafeListUIPage() {
             <S.BestCafe>
               <S.Location>홍대</S.Location>
               <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafePicture src="./img/cafe/thecode.webp" />
                 <S.BestCafeName>THE CODE</S.BestCafeName>
               </S.BestCafeDetail>
             </S.BestCafe>
@@ -98,7 +98,7 @@ export default function CafeListUIPage() {
             <S.BestCafe>
               <S.Location>홍대</S.Location>
               <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafePicture src="./img/cafe/thecode.webp" />
                 <S.BestCafeName>THE CODE</S.BestCafeName>
               </S.BestCafeDetail>
             </S.BestCafe>
@@ -107,7 +107,7 @@ export default function CafeListUIPage() {
             <S.BestCafe>
               <S.Location>홍대</S.Location>
               <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/thecode.webp" />
+                <S.BestCafePicture src="./img/cafe/thecode.webp" />
                 <S.BestCafeName>THE CODE</S.BestCafeName>
               </S.BestCafeDetail>
             </S.BestCafe>

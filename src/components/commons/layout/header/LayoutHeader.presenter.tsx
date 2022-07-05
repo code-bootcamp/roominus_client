@@ -3,8 +3,8 @@ import { Fragment } from "react";
 import * as S from "./LayoutHeader.styles";
 
 const NAVIGATION_MENUS = [
-  { name: "매장", page: "/store" },
-  { name: "테마", page: "/thema" },
+  { name: "매장", page: "/cafe" },
+  { name: "테마", page: "/theme" },
   { name: "예약", page: "/reservation" },
   { name: "커뮤니티", page: "/community" },
 ];
@@ -15,7 +15,7 @@ export default function LayoutHeaderUI(props: any) {
         <S.Wrapper>
           <S.LogoWrapper>
             <Link href={"/"}>
-              <S.Logo src="/Layout/logo.png" />
+              <S.Logo src="/img/layout/logo.png" />
             </Link>
           </S.LogoWrapper>
           <S.LoginJoinMenuWrapper>
