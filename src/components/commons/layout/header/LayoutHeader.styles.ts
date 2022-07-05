@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid gray;
+
   @media ${breakPoints.mobile} {
     font-size: 0.3em;
   }
