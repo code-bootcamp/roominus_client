@@ -22,14 +22,19 @@ export default function CafeListUIPage() {
         </S.SearchBox>
       </S.SearchWrapper>
       <S.ListWrapper>
-        <div>sdfsd</div>
-        <div>sdfsd</div>
-        <div>sdfsd</div>
-        <div>sdfsd</div>
-        <div>sdfsd</div>v<div>sdfsd</div>
-        <div>sdfsd</div>
-        <div>sdfsd</div>
-        <div>sdfsd</div>
+        <div>
+          <div>베스트? 제휴업체?</div>
+          <div>
+            <div>
+              <div>1</div>
+              <div>
+                <div>사진</div>
+                <div>매장명</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <S.Line></S.Line>
       </S.ListWrapper>
     </S.Container>
   );

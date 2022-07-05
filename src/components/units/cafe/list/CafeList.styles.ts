@@ -15,41 +15,44 @@ export const SearchWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative; //SearchWrapper만 화면 양옆까지 늘리기
+  position: relative; //SearchWrapper만 화면 끝까지 늘리기
   left: calc(-50vw + 50%);
 `;
 
 export const SearchBox = styled.div`
-  width: 65%;
-  margin: auto;
-  height: 226px;
+  width: 70vw;
+  height: 70%;
   border-radius: 15px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin: auto;
 `;
 
 export const SearchDetailBox = styled.div`
+  width: 100%; //70vw
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 0px 20px;
+  justify-content: space-evenly;
 `;
 
 export const DetailBox = styled.div`
+  width: 50%; //35vw
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
-export const DetailTitle = styled.h3``;
-
-export const DetailContents = styled.input``;
-
-export const ListWrapper = styled.section`
-  /* z-index: 1; */
-  height: 400px;
-  /* position: absolute; */
-  /* top: 380px; */
+export const DetailTitle = styled.h3`
+  width: 10%; //3.5vw
 `;
+
+export const DetailContents = styled.input`
+  width: 70%;
+`;
+
+export const ListWrapper = styled.section``;
+
+export const Line = styled.div``;
