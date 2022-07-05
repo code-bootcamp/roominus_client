@@ -1,6 +1,7 @@
 import { Global } from "@emotion/react";
 import type { AppProps } from "next/app";
 import { globalStyles } from "../src/commons/styles/globalStyles";
+import "antd/dist/antd.css";
 import Layout from "../src/components/commons/layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
