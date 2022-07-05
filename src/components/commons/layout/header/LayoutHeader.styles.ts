@@ -5,7 +5,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.nav`
   width: 100%;
   height: 10%;
-  padding: 0em 5em 0em 5em;
+  border-bottom: 1px solid #b2b2b2;
 
   @media ${breakPoints.mobile} {
     flex-direction: column;
@@ -31,7 +31,7 @@ export const LogoWrapper = styled.div`
 
 export const Logo = styled.img`
   cursor: pointer;
-  height: 2em;
+  height: 2.5em;
 
   @media ${breakPoints.mobile} {
     margin: 1em;

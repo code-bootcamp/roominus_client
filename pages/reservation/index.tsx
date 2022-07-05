@@ -1,4 +1,4 @@
-import Reservation from "../../src/components/units/reservation/reservation.container";
+import Reservation from "../../src/components/units/reservation/Reservation.container";
 
 export default function ReservationPage() {
   return <Reservation />;

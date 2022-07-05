@@ -24,7 +24,7 @@ export default function LayoutHeaderUI(props: any) {
                 <S.Contents>로그인</S.Contents>
               </Link>
               <S.Contents>|</S.Contents>
-              <Link href={"/register"}>
+              <Link href={"/signup"}>
                 <S.Contents>회원가입</S.Contents>
               </Link>
             </S.LoginJoinWrapper>
