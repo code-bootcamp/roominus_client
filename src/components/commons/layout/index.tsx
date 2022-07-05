@@ -12,6 +12,11 @@ const Wrapper = styled.section`
   height: 100%;
   @media ${breakPoints.mobile} {
     padding: 0em 0em 0em 0em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 `;
 
@@ -19,6 +24,9 @@ const Body = styled.div`
   width: 100%;
   height: 70%;
   padding: 0em 5em 0em 5em;
+  @media ${breakPoints.mobile} {
+    padding: 0em 0em 0em 0em;
+  }
 `;
 interface ILayoutProps {
   children: ReactNode;
