@@ -1,11 +1,9 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Deck from "./animation";
 import * as S from "./Main.styles";
 
 export default function MainUI() {
   return (
     <S.Container>
-      <Deck />
       <S.Page1>{/* <S.Carousel></S.Carousel> */}</S.Page1>
       <S.Page2>
         {/* <img src="/img/ink.png" />
@@ -24,10 +22,10 @@ export default function MainUI() {
         />
         <ParallaxLayer offset={1} speed={-0.2} style={{ opacity: 1 }}>
           <S.RuminousTitle>
-            <img src="/img/roomin.png" />
+            <img src="/img/main/roomin.png" />
           </S.RuminousTitle>
           <S.RuminousTitleUs>
-            <img src="/img/us.png" />
+            <img src="/img/main/us.png" />
           </S.RuminousTitleUs>
           <img
             alt="cloud"
@@ -41,7 +39,7 @@ export default function MainUI() {
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
             style={{ display: "block", width: "50%", marginLeft: "55%" }}
           />
-          <S.Image src="/img/ink.png" />
+          <S.Image src="/img/main/ink.png" />
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"

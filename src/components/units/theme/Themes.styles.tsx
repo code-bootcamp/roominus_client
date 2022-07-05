@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-
+import { breakPoints } from "../../../commons/styles/media";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 interface IGenreProps {
   isPicked?: Boolean;
   src?: string;
@@ -17,11 +18,22 @@ export const Container = styled.main`
   overflow-y: auto;
   /* background-color: #26282c; */
   background: url("/img/inkback.jpeg") center/cover;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 0.5em;
+  }
 `;
 
 export const Wrapper = styled.section``;
 
-export const GenreList = styled.div``;
+export const GenreList = styled.div`
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 export const Genre = styled.button`
   font-size: 18px;
@@ -38,6 +50,10 @@ export const Genre = styled.button`
 export const ThemeList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Theme = styled.li`
@@ -89,4 +105,44 @@ export const ShowMoreButton = styled.button`
   font-size: 18px;
   color: white;
   background-color: #26282c;
+`;
+export const Toggle = styled.div``;
+export const ToggleMenuWrapper = styled.ul`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    padding: 15px;
+  }
+`;
+
+export const ToggleMenu = styled.li`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+`;
+export const Menu = styled(MenuOutlined)`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    font-size: 4em;
+  }
+`;
+
+export const Close = styled(CloseOutlined)`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    font-size: 3em;
+  }
 `;

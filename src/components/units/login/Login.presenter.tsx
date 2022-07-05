@@ -28,21 +28,18 @@ export default function LoginUI() {
       <S.SocialLoginBtns>
         <S.SocialLoginBtn>
           <S.SocialLoginLogo
-            src="/socialLoginLogo/naverlogo.png"
+            src="/img/login/naverlogo.png"
             alt="naverSocialLogo"
           />
         </S.SocialLoginBtn>
         <S.SocialLoginBtn>
           <S.SocialLoginLogo
-            src="/socialLoginLogo/kakaoLogo.png"
+            src="/img/login/kakaoLogo.png"
             alt="kakakoSocialLogo"
           />
         </S.SocialLoginBtn>
         <S.SocialLoginBtn>
-          <S.SocialLoginLogo
-            src="/socialLoginLogo/googlelogo.png"
-            alt="googleLogo"
-          />
+          <S.SocialLoginLogo src="/img/login/googlelogo.png" alt="googleLogo" />
         </S.SocialLoginBtn>
       </S.SocialLoginBtns>
     </S.Wrapper>

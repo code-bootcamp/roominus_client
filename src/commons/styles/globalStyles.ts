@@ -6,7 +6,6 @@ export const globalStyles = css`
     box-sizing: border-box;
     margin: 0.3em 0em;
     font-family: "myFont";
-    margin: 0.3em 0em;
   }
 
   html,
@@ -25,6 +24,12 @@ export const globalStyles = css`
 
   li {
     list-style: none;
+  }
+  a {
+    color: black;
+    :hover {
+      color: black;
+    }
   }
 
   /* @font-face {

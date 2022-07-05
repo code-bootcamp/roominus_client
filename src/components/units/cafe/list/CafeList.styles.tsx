@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 100%;
@@ -6,6 +7,11 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 0.5em;
+  }
 `;
 
 export const SearchWrapper = styled.section`

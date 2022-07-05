@@ -12,7 +12,7 @@ export const Container = styled.main`
   flex-direction: column;
   overflow-y: auto;
   /* background-color: #26282c; */
-  background: url("/img/inkback.jpeg") center/cover;
+  background: url("/img/main/inkback.jpeg") center/cover;
 `;
 
 export const Page1 = styled.section``;
@@ -27,7 +27,7 @@ export const Page2 = styled.section`
 export const Carousel = styled.div`
   width: 100vw;
   height: 50em;
-  background-image: url("/img/mainImage.png");
+  background-image: url("/img/main/mainImage.png");
   background-size: cover;
   /* position: relative;
   left: calc(-50vw + 50%); */
