@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
+export const Container = styled.main``;
 export const Wrapper = styled.section`
-  margin-top: 4em;
   width: 100%;
+  margin-top: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,8 +24,11 @@ export const Form = styled.form`
 
 export const SelectBox = styled.div`
   width: 100%;
+  height: 70px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
 `;
 
 export const InputBox = styled.div``;
@@ -54,7 +58,7 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const CancelBtn = styled.button`
-  width: 100%;
+  width: 50%;
   height: 4em;
   border-radius: 10px;
   font-size: 1em;
@@ -64,7 +68,7 @@ export const CancelBtn = styled.button`
   cursor: pointer;
 `;
 export const SubmitBtn = styled.button`
-  width: 100%;
+  width: 50%;
   height: 4em;
   border-radius: 10px;
   font-size: 1em;

@@ -5,13 +5,25 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.nav`
   width: 100%;
   height: 10%;
-  border-bottom: 1px solid #b2b2b2;
+  padding: 1%;
+  background-color: #b2b2b2;
+
+  @media ${breakPoints.tablet} {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1em 1em 1em 1em;
+
+    background-color: wheat;
+  }
 
   @media ${breakPoints.mobile} {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
     padding: 1em 1em 1em 1em;
+
+    background-color: #b2b2b2;
   }
 `;
 
@@ -20,8 +32,11 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media ${breakPoints.tablet} {
+    font-size: 0.5em;
+  }
   @media ${breakPoints.mobile} {
-    font-size: 0.3em;
+    font-size: 0.5em;
   }
 `;
 
@@ -31,20 +46,26 @@ export const LogoWrapper = styled.div`
 
 export const Logo = styled.img`
   cursor: pointer;
-  height: 2.5em;
+  height: 2em;
+
+  @media ${breakPoints.tablet} {
+    height: 2em;
+  }
 
   @media ${breakPoints.mobile} {
-    margin: 1em;
-    height: 3em;
+    height: 2em;
   }
 `;
 export const MenuWrapper = styled.ul`
   display: flex;
   justify-content: space-between;
 
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+
   @media ${breakPoints.mobile} {
-    width: 70%;
-    margin-left: 3em;
+    display: none;
   }
 `;
 
@@ -55,14 +76,6 @@ export const MenuItem = styled.li`
 
   font-size: 1.25em;
   padding-left: 1.8em;
-
-  @media ${breakPoints.tablet} {
-    font-size: 0.5em;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
 `;
 
 export const LoginJoinMenuWrapper = styled.div`
@@ -76,6 +89,13 @@ export const LoginJoinWrapper = styled.div`
   justify-content: flex-end;
   width: 95%;
   margin-bottom: 0.3em;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Contents = styled.span`
@@ -84,30 +104,29 @@ export const Contents = styled.span`
   }
 
   margin-left: 0.6em;
-
-  @media ${breakPoints.tablet} {
-    font-size: 0.5em;
-  }
-
-  @media ${breakPoints.mobile} {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    display: none;
-  }
 `;
 
 export const Menu = styled(MenuOutlined)`
   display: none;
 
+  @media ${breakPoints.tablet} {
+    display: block;
+    font-size: 3em;
+  }
+
   @media ${breakPoints.mobile} {
     display: block;
-    font-size: 4em;
+    font-size: 3em;
   }
 `;
 
 export const Close = styled(CloseOutlined)`
   display: none;
+
+  @media ${breakPoints.tablet} {
+    display: block;
+    font-size: 3em;
+  }
 
   @media ${breakPoints.mobile} {
     display: block;
@@ -117,6 +136,15 @@ export const Close = styled(CloseOutlined)`
 export const Toggle = styled.div``;
 export const ToggleMenuWrapper = styled.ul`
   display: none;
+
+  @media ${breakPoints.tablet} {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    padding: 15px;
+  }
 
   @media ${breakPoints.mobile} {
     display: block;
@@ -130,6 +158,12 @@ export const ToggleMenuWrapper = styled.ul`
 
 export const ToggleMenu = styled.li`
   display: none;
+
+  @media ${breakPoints.tablet} {
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
 
   @media ${breakPoints.mobile} {
     display: block;
