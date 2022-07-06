@@ -2,12 +2,14 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Container = styled.main``;
+
 export const Wrapper = styled.section`
   width: 100%;
-  margin-top: 4em;
+  margin-top: 1em;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
@@ -15,6 +17,11 @@ export const Wrapper = styled.section`
   }
 `;
 
+export const ImageBox = styled.div``;
+
+export const Image = styled.img`
+  width: 80%;
+`;
 export const Form = styled.form`
   width: 50%;
   display: flex;
@@ -31,26 +38,48 @@ export const SelectBox = styled.div`
   border-radius: 12px;
 `;
 
-export const InputBox = styled.div``;
-export const InputLabel = styled.label``;
-export const Input = styled.input`
-  width: 100%;
-  height: 2em;
-  border: none;
-  border-bottom: 1px solid lightgray;
-  outline: none;
-  font-size: 1.3em;
+export const InputBox = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 `;
 
-export const Error = styled.div`
-  font-size: 1.2em;
-  color: red;
-  margin-bottom: 2em;
+export const InputLabel = styled.label`
+  padding-right: 10px;
 `;
-export const PasswordBox = styled.div`
-  width: 100%;
+
+export const Input = styled.input`
+  width: 40%;
+  height: 3em;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1.3em;
+  padding: 10px;
+  margin-bottom: 0.5em;
+`;
+
+export const TimeWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
+export const RadioBox = styled.div`
+  border: 1px solid gray;
+  width: 100px;
+  margin-right: 10px;
+  background-color: aliceblue;
+`;
+
+export const RadioInput = styled.input`
+  color: white;
+
+  text-align: center;
+
+  background: linear-gradient(90deg, #8e2de2 3.31%, #4a00e0 100%);
+
+  visibility: hidden;
 `;
 
 export const ButtonWrapper = styled.div`
