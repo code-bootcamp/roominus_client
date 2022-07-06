@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
   width: 80%;
   display: flex;
   flex-direction: column;
-  background-color: #dfd0ff;
+  background-color: #dcccff;
   padding: 5em;
   margin: auto;
 `;
