@@ -7,14 +7,14 @@ export default function CommunityListUI() {
       <S.Title>탈출인증게시판</S.Title>
       <S.ItemBox>
         <S.ItemBackground>
-          <S.Picture src="/community/board.png" />
+          <S.Picture src="/img/community/board.png" />
           <S.NamePickBox>
             <S.BoardName>제목입니다</S.BoardName>
             <S.Pick>♥</S.Pick>
           </S.NamePickBox>
         </S.ItemBackground>
         <S.ItemBackground>
-          <S.Picture src="/community/board.png" />
+          <S.Picture src="/img/community/board.png" />
           <S.NamePickBox>
             <S.BoardName>제목입니다</S.BoardName>
             <S.Pick>♥</S.Pick>
@@ -23,14 +23,14 @@ export default function CommunityListUI() {
       </S.ItemBox>
       <S.ItemBox>
         <S.ItemBackground>
-          <S.Picture src="/community/board.png" />
+          <S.Picture src="/img/community/board.png" />
           <S.NamePickBox>
             <S.BoardName>제목입니다</S.BoardName>
             <S.Pick>♥</S.Pick>
           </S.NamePickBox>
         </S.ItemBackground>
         <S.ItemBackground>
-          <S.Picture src="/community/board.png" />
+          <S.Picture src="/img/community/board.png" />
           <S.NamePickBox>
             <S.BoardName>제목입니다</S.BoardName>
             <S.Pick>♥</S.Pick>
