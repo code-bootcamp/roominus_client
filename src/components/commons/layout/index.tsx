@@ -5,7 +5,7 @@ import LayoutHeader from "./header/LayoutHeader.container";
 import LayoutFooter from "./footer/LayoutFooter.container";
 import { breakPoints } from "../../../commons/styles/media";
 
-const HIDDEN_HEADER = ["/"];
+// const HIDDEN_HEADER = ["/"];
 const HIDDEN_FOOTER = ["/"];
 
 const Wrapper = styled.section`
@@ -58,12 +58,13 @@ interface ILayoutProps {
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
 
-  const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
+  // const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
 
   return (
     <Wrapper>
-      {!isHiddenHeader && <LayoutHeader />}
+      {/* {!isHiddenHeader && <LayoutHeader />} */}
+      <LayoutHeader />
       <Body>{props.children}</Body>
       {!isHiddenFooter && <LayoutFooter />}
     </Wrapper>
