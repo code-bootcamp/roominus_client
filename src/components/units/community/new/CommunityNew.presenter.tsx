@@ -1,6 +1,6 @@
 import * as S from "./CommunityNew.styles";
 
-export default function CommunityNewUI() {
+export default function CommunityNewUI(props) {
   return (
     <S.Wrapper>
       <S.Title>인증 게시물 등록</S.Title>
@@ -20,7 +20,7 @@ export default function CommunityNewUI() {
           </S.WebEditor>
         </S.InfoBox>
         <S.ButtonBox>
-          <S.Button>목 록</S.Button>
+          <S.Button onClick={props.onClickList}>목 록</S.Button>
           <S.Button>등 록</S.Button>
         </S.ButtonBox>
       </S.InfoBackground>
