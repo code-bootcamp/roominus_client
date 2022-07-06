@@ -17,7 +17,7 @@ export default function LayoutFooterUI(props: any) {
 
           <S.InfoWrapper>
             <S.Info>
-              (주) Ruminus | 대표: 5조 일동 | 고객센터 1234-5678 (평일
+              (주) Ruminus | 대표: 오쪼라고 | 고객센터 1234-5678 (평일
               09:00~18:00 / 점심시간 13:00~14:00 / 주말 및 공휴일 휴무)
             </S.Info>
             <S.Info>
