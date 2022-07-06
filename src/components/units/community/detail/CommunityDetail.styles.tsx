@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+export const Container = styled.main`
+  width: 100%;
+`;
+
 export const Wrapper = styled.section`
   width: 80%;
   display: flex;
@@ -34,7 +38,26 @@ export const PickCount = styled.span`
 export const BoardTitle = styled.h1``;
 
 export const Comment = styled.div`
-  width: 100%;
+  width: 80%;
   height: 5em;
+  margin: auto;
   background-color: pink;
+`;
+
+export const ButtonBox = styled.div`
+  height: 8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Button = styled.button`
+  width: 8em;
+  height: 3em;
+  border-radius: 15px;
+  color: white;
+  background-color: #26282c;
+  font-weight: 700;
+  margin-right: 1em;
 `;
