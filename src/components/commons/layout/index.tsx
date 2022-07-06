@@ -13,7 +13,6 @@ const Wrapper = styled.section`
   height: 100%;
   /* padding : 0em 10em 0em 10em; */
   // %로 주니까 창 줄어들때 양 옆 빈 공간 좁아짐
-  padding: 0px 10% 0px 10%;
 
   @media ${breakPoints.tablet} {
     padding: 0em 1em 0em 1em;

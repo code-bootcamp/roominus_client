@@ -13,11 +13,13 @@ export const globalStyles = css`
 
   html,
   body {
+    max-width: 1440px;
+    padding: 0px 20px;
+    margin: auto;
     width: 100vw;
     height: 100vh;
     font-size: 16px;
     font-family: "GowunDodum-Regular";
-
     @media ${breakPoints.tablet} {
       margin: 0;
     }
