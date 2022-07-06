@@ -9,7 +9,33 @@ export default function MainUI() {
         <img src="/img/ink.png" />
         <S.Image src="/img/ink.png" />
       </S.Page2> */}
-      <Parallax pages={3}>
+
+      <S.Image />
+      {/* <S.Contents>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula
+        orci, rhoncus eu molestie id, bibendum non lorem. Nam eget commodo eros.
+        Praesent ac mi maximus, pulvinar nibh eget, sollicitudin lorem. Praesent
+        enim mi, mattis a gravida vitae, condimentum eget sem. Nam venenatis
+        rutrum justo. Ut lobortis elementum bibendum. Praesent tempus metus nec
+        purus mollis ornare. Proin et turpis in odio aliquet hendrerit.
+        Curabitur nec leo vitae elit pretium vestibulum. Fusce vestibulum
+        vehicula lectus, et efficitur eros. Pellentesque aliquam elit sit amet
+        nibh laoreet commodo a ac mauris.
+      </S.Contents> */}
+      <S.Image2 />
+      {/* <S.Contents>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula
+        orci, rhoncus eu molestie id, bibendum non lorem. Nam eget commodo eros.
+        Praesent ac mi maximus, pulvinar nibh eget, sollicitudin lorem. Praesent
+        enim mi, mattis a gravida vitae, condimentum eget sem. Nam venenatis
+        rutrum justo. Ut lobortis elementum bibendum. Praesent tempus metus nec
+        purus mollis ornare. Proin et turpis in odio aliquet hendrerit.
+        Curabitur nec leo vitae elit pretium vestibulum. Fusce vestibulum
+        vehicula lectus, et efficitur eros. Pellentesque aliquam elit sit amet
+        nibh laoreet commodo a ac mauris.
+      </S.Contents> */}
+
+      {/* <Parallax pages={3}>
         <ParallaxLayer
           offset={1}
           speed={1}
@@ -63,7 +89,7 @@ export default function MainUI() {
             style={{ display: "block", width: "30%", marginRight: "55%" }}
           />
         </ParallaxLayer>
-      </Parallax>
+      </Parallax> */}
     </S.Container>
   );
 }

@@ -33,10 +33,30 @@ export const Carousel = styled.div`
   left: calc(-50vw + 50%); */
 `;
 
-export const Image = styled.img`
-  /* position: absolute;
-  top: 30em; */
-  transition-duration: 2s;
+export const Image = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/img/main/main01.webp");
+`;
+
+export const Image2 = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/img/main/main02.jpeg");
+`;
+export const Contents = styled.div`
+  font-size: 10px;
+  padding: 10px;
+  text-align: left;
+  height: 500px;
 `;
 
 export const RuminousTitle = styled.span`
