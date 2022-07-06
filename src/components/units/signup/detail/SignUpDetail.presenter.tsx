@@ -17,8 +17,8 @@ export default function SignUpDetailUI() {
         <S.PasswordBoxes>
           <S.PasswordBox>
             <S.PasswordTitle>비밀번호💥</S.PasswordTitle>
-            <div>
-              <input type="text" />
+            <S.PasswordInputBox>
+              <S.PasswordInput type="password" />
               <FontAwesomeIcon
                 icon={faEye}
                 style={{
@@ -27,21 +27,31 @@ export default function SignUpDetailUI() {
                   cursor: "pointer",
                 }}
               />
-            </div>
+            </S.PasswordInputBox>
             <S.Error>비밀번호를 다시 입력하세요.</S.Error>
-            <div>
-              <div>*8~14자의 영문,숫자 혼합만 사용가능</div>
-              <div>*숫자만으로 이루어진 비밀번호는 사용 할 수 없음</div>
-              <div>*아이디가 포함된 문자는 사용 할 수 없음</div>
-              <div>*같은 문자를 4번 이상 사용 할 수 없음</div>
-            </div>
+            <S.WarningBox>
+              <S.WarningMessage>
+                *8~14자의 영문,숫자 혼합만 사용가능
+              </S.WarningMessage>
+              <S.WarningMessage>
+                *숫자만으로 이루어진 비밀번호는 사용 할 수 없음
+              </S.WarningMessage>
+              <S.WarningMessage>
+                *아이디가 포함된 문자는 사용 할 수 없음
+              </S.WarningMessage>
+              <S.WarningMessage>
+                *같은 문자를 4번 이상 사용 할 수 없음
+              </S.WarningMessage>
+            </S.WarningBox>
           </S.PasswordBox>
         </S.PasswordBoxes>
-        <div>
-          <div>
-            <span>비밀번호 확인💥</span>
-            <div>
-              <input type="text" />
+        <S.PasswordVerificationBoxes>
+          <S.PasswordVerificationBox>
+            <S.PasswordVerificationTitle>
+              비밀번호 확인💥
+            </S.PasswordVerificationTitle>
+            <S.PasswordVerificationInputBox>
+              <S.PasswordVerificationInput type="password" />
               <FontAwesomeIcon
                 icon={faEye}
                 style={{
@@ -50,15 +60,15 @@ export default function SignUpDetailUI() {
                   cursor: "pointer",
                 }}
               />
-            </div>
+            </S.PasswordVerificationInputBox>
             <S.Error>비밀번호가 일치하지않습니다.</S.Error>
-          </div>
-        </div>
-        <div>
-          <div>
-            <span>이름💥</span>
-            <div>
-              <input type="text" />
+          </S.PasswordVerificationBox>
+        </S.PasswordVerificationBoxes>
+        <S.NameBoxes>
+          <S.NameBox>
+            <S.NameTitle>이름💥</S.NameTitle>
+            <S.NameInputBox>
+              <S.NameInput type="text" />
               <FontAwesomeIcon
                 icon={faEye}
                 style={{
@@ -67,26 +77,32 @@ export default function SignUpDetailUI() {
                   cursor: "pointer",
                 }}
               />
-            </div>
+            </S.NameInputBox>
             <S.Error>이름을 입력해주세요.</S.Error>
-          </div>
-        </div>
+          </S.NameBox>
+        </S.NameBoxes>
       </S.FormFirst>
-      <div>
-        <span>휴대폰번호✷</span>
-        <div>
-          <input type="text" placeholder="010-1234-5678" />
-          <button>인증</button>
-        </div>
-        <div>
-          <input type="text" placeholder="인증번호를 입력하세요." />
-          <span>3:00</span>
-          <button>확인</button>
-        </div>
-      </div>
-      <form>
-        <button>가입하기</button>
-      </form>
+      <S.PhoneNoBox>
+        <S.PhoneNoTitle>휴대폰번호✷</S.PhoneNoTitle>
+        <S.PhoneNoInputBox>
+          <S.PhoneNoInput type="text" placeholder="010-1234-5678" />
+          <S.AuthenticationBtn>인증</S.AuthenticationBtn>
+        </S.PhoneNoInputBox>
+        <S.VerificationInputBox>
+          <S.VerificationNoBox>
+            <S.VerificationNoInput
+              type="text"
+              placeholder="인증번호를 입력하세요."
+            />
+            <S.TimeOut>3:00</S.TimeOut>
+          </S.VerificationNoBox>
+
+          <S.VerificationBtn>확인</S.VerificationBtn>
+        </S.VerificationInputBox>
+      </S.PhoneNoBox>
+      <S.FormSecond>
+        <S.SignUpBtn>가입하기</S.SignUpBtn>
+      </S.FormSecond>
     </S.Wrapper>
   );
 }

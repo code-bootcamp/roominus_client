@@ -10,7 +10,7 @@ export default function SignUpUI() {
         </S.Warning>
         <S.CheckBox>
           <S.Check type="checkbox" />
-          <span>전체동의</span>
+          <S.CheckLabel>전체동의</S.CheckLabel>
         </S.CheckBox>
       </S.WarningBox>
       <S.NecessityInfoBox>
