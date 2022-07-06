@@ -1,4 +1,4 @@
-import ThemeDetailUI from "./ThemesDetail.presenter";
+import ThemeDetailUI from "./ThemeDetail.presenter";
 
 export default function ThemeDetail() {
   return <ThemeDetailUI />;
