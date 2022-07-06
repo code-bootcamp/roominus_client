@@ -49,7 +49,8 @@ export const Genre = styled.button`
 
 export const ThemeList = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
   @media ${breakPoints.mobile} {
     display: flex;
     flex-direction: column;

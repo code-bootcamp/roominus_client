@@ -23,8 +23,10 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  width: 100%;
   display: flex;
-  text-align: center;
+  text-align: left;
+  justify-content: center;
 
   @media ${breakPoints.mobile} {
     font-size: 0.1em;
@@ -70,8 +72,36 @@ export const Menu = styled.li`
 `;
 
 export const InfoWrapper = styled.div`
+  width: 1400px;
+  display: flex;
+  flex-direction: row;
+  @media ${breakPoints.tablet} {
+    font-size: 0.1em;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.1em;
+  }
+`;
+
+export const InfoLeftBox = styled.div`
+  width: 130%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+`;
+
+export const InfoTitle = styled.h3`
+  font-weight: 700;
+  color: #a3a8b7;
+`;
+
+export const Info = styled.div`
+  margin-top: 0.5em;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #a3a8b7;
 
   @media ${breakPoints.tablet} {
     font-size: 0.1em;
@@ -82,17 +112,25 @@ export const InfoWrapper = styled.div`
   }
 `;
 
-export const Info = styled.div`
-  margin-top: 0.5em;
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: #d3d3d3;
+export const DividedLine = styled.div`
+  height: 100%;
+  border-right: 1px solid #d3d3d3;
+  align-self: center;
+  margin: 0px 10px;
+`;
 
-  @media ${breakPoints.tablet} {
-    font-size: 0.1em;
-  }
+export const InfoRightBox = styled.div`
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  float: right;
+`;
 
-  @media ${breakPoints.mobile} {
-    font-size: 0.1em;
-  }
+export const InfoGithub = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 `;
