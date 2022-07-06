@@ -13,6 +13,7 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.h1`
+  margin-top: 1em;
   font-size: 3em;
 `;
 
@@ -20,6 +21,7 @@ export const WarningBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-bottom: 1em;
 `;
 export const Warning = styled.pre`
   font-size: 1em;
@@ -39,6 +41,9 @@ export const CheckBox = styled.div`
 export const Check = styled.input`
   margin-right: 0.5em;
 `;
+export const CheckLabel = styled.span`
+  font-size: 1em;
+`;
 export const NecessityInfoBox = styled.div`
   width: 50%;
   display: flex;
@@ -46,6 +51,7 @@ export const NecessityInfoBox = styled.div`
   background-color: #d9d9d998;
   padding: 1em 1em 1em 1em;
   border-radius: 10px;
+  margin-bottom: 1em;
 `;
 export const NecessityTitleBox = styled.div`
   display: flex;
