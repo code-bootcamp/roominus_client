@@ -1,6 +1,7 @@
+import CommunityList from "../comment/CommunityComment.container";
 import * as S from "./CommunityDetail.styles";
 
-export default function CommunityDetailUI() {
+export default function CommunityDetailUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
@@ -18,9 +19,10 @@ export default function CommunityDetailUI() {
           내용입니다. 보드판 인증게시판 내용입니다.
         </div>
       </S.Wrapper>
-      <S.Comment>댓글컴포넌트 들어갈 부분!!</S.Comment>
+      <CommunityList />
+      {/* <S.Comment>댓글컴포넌트 들어갈 부분!!</S.Comment> */}
       <S.ButtonBox>
-        <S.Button>목 록</S.Button>
+        <S.Button onClick={props.onClickList}>목 록</S.Button>
         <S.Button>수 정</S.Button>
       </S.ButtonBox>
     </S.Container>

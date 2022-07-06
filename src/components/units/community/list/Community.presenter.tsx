@@ -1,6 +1,6 @@
 import * as S from "./Community.styles";
 
-export default function CommunityListUI() {
+export default function CommunityListUI(props) {
   return (
     // <S.Container>
     <S.Wrapper>
@@ -38,7 +38,7 @@ export default function CommunityListUI() {
         </S.ItemBackground>
       </S.ItemBox>
 
-      <S.Button>작성하기</S.Button>
+      <S.Button onClick={props.onClickWrite}>작성하기</S.Button>
       <S.Pagination>◁ 1 2 3 4 5 6 7 8 9 10 ▷</S.Pagination>
     </S.Wrapper>
     // </S.Container    >

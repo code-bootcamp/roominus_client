@@ -37,12 +37,12 @@ export const PickCount = styled.span`
 
 export const BoardTitle = styled.h1``;
 
-export const Comment = styled.div`
-  width: 80%;
-  height: 5em;
-  margin: auto;
-  background-color: pink;
-`;
+// export const Comment = styled.div`
+//   width: 80%;
+//   height: 5em;
+//   margin: auto;
+//   background-color: pink;
+// `;
 
 export const ButtonBox = styled.div`
   height: 8em;
