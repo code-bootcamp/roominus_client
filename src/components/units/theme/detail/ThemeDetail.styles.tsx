@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.main`
+  padding: 30px 0px;
+
   display: flex;
   flex-direction: column;
 `;
@@ -18,9 +20,11 @@ export const ThemeImg = styled.img`
   height: 560px;
 `;
 export const ThemeRightBox = styled.div`
+  min-width: 500px;
   max-width: 650px;
-
+  max-height: 560px;
   padding: 5px 20px;
+  float: right;
 `;
 
 export const GenreTag = styled.div`
@@ -53,12 +57,14 @@ export const RankTimeBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 25px;
 `;
 
 export const ThemeRank = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 2px;
 `;
 export const ThemeTime = styled.div``;
 export const ChargeBox = styled.div``;
