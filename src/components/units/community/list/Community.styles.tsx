@@ -58,6 +58,7 @@ export const Button = styled.button`
   background-color: #4a00e0;
   align-self: flex-end;
   color: white;
+  cursor: pointer;
 `;
 
 export const BoardName = styled.h4``;
