@@ -4,8 +4,11 @@ import { breakPoints } from "./media";
 export const globalStyles = css`
   * {
     box-sizing: border-box;
-    margin: 0.3em 0em;
+    margin: 0px;
+    padding: 0px;
     font-family: "myFont";
+    /* margin: 0.3em 0em; */
+    // 메인 상단에 빈 공간이 생깁니다
   }
 
   html,
@@ -13,6 +16,11 @@ export const globalStyles = css`
     width: 100vw;
     height: 100vh;
     font-size: 16px;
+
+    @media ${breakPoints.tablet} {
+      margin: 0;
+    }
+
     @media ${breakPoints.mobile} {
       margin: 0;
     }
@@ -25,6 +33,7 @@ export const globalStyles = css`
   li {
     list-style: none;
   }
+
   a {
     color: black;
     :hover {

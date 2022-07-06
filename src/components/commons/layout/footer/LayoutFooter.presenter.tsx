@@ -6,15 +6,15 @@ export default function LayoutFooterUI(props: any) {
     <S.Container>
       <S.Wrapper>
         <TopButton />
+
         <S.MenuInfoWrapper>
           <S.MenuWrapper>
             <S.Menu>이용약관</S.Menu>
-            <S.Menu>개인정보처리 방침</S.Menu>
+            <S.Menu>개인정보 처리방침</S.Menu>
             <S.Menu>청소년 보호 정책</S.Menu>
-            <S.Menu>법적고지</S.Menu>
             <S.Menu>고객센터</S.Menu>
-            <S.Menu>Contact US</S.Menu>
           </S.MenuWrapper>
+
           <S.InfoWrapper>
             <S.Info>
               (주) Ruminus | 대표: 5조 일동 | 고객센터 1234-5678 (평일

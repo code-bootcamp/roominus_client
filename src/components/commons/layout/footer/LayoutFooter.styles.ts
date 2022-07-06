@@ -1,25 +1,33 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+
 export const Container = styled.div`
   width: 100%;
   height: 20%;
+
+  display: flex;
+  justify-content: center;
+
   border-top: 1px solid #b2b2b2;
+  padding-top: 1.5em;
+
+  @media ${breakPoints.tablet} {
+    display: flex;
+    justify-content: center;
+  }
 
   @media ${breakPoints.mobile} {
-    padding: 1em 1em 1em 1em;
+    display: flex;
+    justify-content: center;
   }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 95%;
-  max-width: 1440px;
+  text-align: center;
 
   @media ${breakPoints.mobile} {
-    display: flex;
-    flex-direction: column;
+    font-size: 0.1em;
   }
 `;
 
@@ -30,30 +38,48 @@ export const MenuInfoWrapper = styled.div`
 
 export const MenuWrapper = styled.ul`
   display: flex;
-  justify-content: space-between;
-  padding-left: 0.3em;
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.1em;
-  }
+  justify-content: center;
+  margin-bottom: 10px;
 `;
 
 export const Menu = styled.li`
-  border-right: 1px solid black;
-  padding-right: 1em;
-
+  margin-right: 20px;
+  border-right: 1px solid white;
+  padding-right: 20px;
+  cursor: pointer;
   &:last-of-type {
     border: none;
   }
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.1rem;
 
-  cursor: pointer;
+  @media ${breakPoints.tablet} {
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border: none;
+    font-size: 1.1rem;
+  }
+  @media ${breakPoints.mobile} {
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 0.5rem;
+    border: none;
+  }
 `;
 
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.1em;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.1em;
+  }
 `;
 
 export const Info = styled.div`
@@ -61,6 +87,10 @@ export const Info = styled.div`
   font-weight: 400;
   font-size: 0.9rem;
   color: #d3d3d3;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.1em;
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 0.1em;
