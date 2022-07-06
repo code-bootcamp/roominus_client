@@ -227,11 +227,25 @@ export const VerificationBtn = styled.button`
 `;
 export const FormSecond = styled.form`
   width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 export const SignUpBtn = styled.button`
-  width: 100%;
+  width: 40%;
   height: 3.5em;
   background-color: #4a00e0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 1em;
+`;
+
+export const CancelBtn = styled.button`
+  width: 40%;
+  height: 3.5em;
+  background-color: black;
   color: white;
   border: none;
   border-radius: 10px;
