@@ -5,7 +5,6 @@ import LayoutHeader from "./header/LayoutHeader.container";
 import LayoutFooter from "./footer/LayoutFooter.container";
 import { breakPoints } from "../../../commons/styles/media";
 import LayoutNavigation from "./navigation/LayoutNavigation.container";
-import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
 
 // const HIDDEN_HEADER = ["/"];
 const VISIBLE_NAV = [

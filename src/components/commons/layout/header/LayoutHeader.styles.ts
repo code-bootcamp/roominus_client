@@ -75,26 +75,6 @@ export const MenuItem = styled.li`
   padding-left: 1.8em;
 `;
 
-export const LoginJoinMenuWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-`;
-export const LoginJoinWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 95%;
-  margin-bottom: 0.3em;
-  @media ${breakPoints.tablet} {
-    display: none;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
-`;
-
 export const Contents = styled.span`
   :hover {
     cursor: pointer;

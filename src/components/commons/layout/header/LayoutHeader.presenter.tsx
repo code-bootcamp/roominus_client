@@ -18,32 +18,23 @@ export default function LayoutHeaderUI(props: any) {
               <S.Logo src="/img/layout/logo.png" />
             </Link>
           </S.LogoWrapper>
-          <S.LoginJoinMenuWrapper>
-            <S.LoginJoinWrapper>
-              <Link href={"/login"}>
-                <S.Contents>로그인</S.Contents>
-              </Link>
-              <S.Contents>|</S.Contents>
-              <Link href={"/signup"}>
-                <S.Contents>회원가입</S.Contents>
-              </Link>
-            </S.LoginJoinWrapper>
-            <S.MenuWrapper>
-              {NAVIGATION_MENUS.map((el) => (
-                <Fragment key={el.page}>
-                  <Link href={el.page}>
-                    <S.MenuItem
-                      id={el.page}
-                      onClick={props.onClickMenu}
-                      isActive={el.page === props.activedMenu}
-                    >
-                      <a>{el.name}</a>
-                    </S.MenuItem>
-                  </Link>
-                </Fragment>
-              ))}
-            </S.MenuWrapper>
-          </S.LoginJoinMenuWrapper>
+
+          <S.MenuWrapper>
+            {NAVIGATION_MENUS.map((el) => (
+              <Fragment key={el.page}>
+                <Link href={el.page}>
+                  <S.MenuItem
+                    id={el.page}
+                    onClick={props.onClickMenu}
+                    isActive={el.page === props.activedMenu}
+                  >
+                    <a>{el.name}</a>
+                  </S.MenuItem>
+                </Link>
+              </Fragment>
+            ))}
+          </S.MenuWrapper>
+
           {props.isToggled ? (
             <S.Close onClick={props.onClickToggled} />
           ) : (

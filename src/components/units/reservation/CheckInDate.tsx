@@ -1,15 +1,10 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import palette from "../../../commons/styles/palette";
 import DatePicker from "../../commons/datepicker/DatePicker";
 
 const Container = styled.div`
-  position: relative;
+  border: 1px solid black;
   width: 30%;
-  height: 39%;
-  border: 2px solid transparent;
-  border-radius: 15px;
-  border-color: ${palette.gray_dd};
 
   .search-room-bar-date-label {
     font-size: 10px;

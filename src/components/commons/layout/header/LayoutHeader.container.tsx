@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import LayoutHeaderUI from "./LayoutHeader.presenter";
 import { useState } from "react";
+import LayoutTopHeader from "../topheader/LayoutTopHeader.container";
 
 export default function LayoutHeader() {
   const router = useRouter();
@@ -21,11 +22,14 @@ export default function LayoutHeader() {
   };
 
   return (
-    <LayoutHeaderUI
-      onClickMenu={onClickMenu}
-      activedMenu={activedMenu}
-      isToggled={isToggled}
-      onClickToggled={onClickToggled}
-    />
+    <>
+      <LayoutTopHeader />
+      <LayoutHeaderUI
+        onClickMenu={onClickMenu}
+        activedMenu={activedMenu}
+        isToggled={isToggled}
+        onClickToggled={onClickToggled}
+      />
+    </>
   );
 }
