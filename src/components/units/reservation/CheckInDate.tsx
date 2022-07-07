@@ -1,15 +1,11 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import palette from "../../../commons/styles/palette";
 import DatePicker from "../../commons/datepicker/DatePicker";
 
 const Container = styled.div`
   position: relative;
-  width: 30%;
-  height: 39%;
-  border: 2px solid transparent;
-  border-radius: 15px;
-  border-color: ${palette.gray_dd};
+  width: 50%;
+  border: 1px solid black;
 
   .search-room-bar-date-label {
     font-size: 10px;
@@ -77,6 +73,8 @@ export default function SearchRoomCheckInDate() {
         onChange={(date) => setStartDate(date)}
         monthsShown={2}
         isClearable
+        selectsStart
+        minDate={new Date()}
         placeholderText="날짜를 선택해주세요"
       />
     </Container>

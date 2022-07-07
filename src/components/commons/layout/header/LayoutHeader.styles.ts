@@ -4,7 +4,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.nav`
   width: 100%;
-  height: 10%;
+  height: 8%;
   padding: 0.5em;
 
   border-bottom: 1px solid #b2b2b2;
@@ -39,11 +39,12 @@ export const Wrapper = styled.div`
 
 export const LogoWrapper = styled.div`
   text-align: center;
+  padding-bottom: 1em;
 `;
 
 export const Logo = styled.img`
   cursor: pointer;
-  height: 2em;
+  height: 1.8em;
 
   @media ${breakPoints.tablet} {
     height: 2em;
@@ -73,26 +74,6 @@ export const MenuItem = styled.li`
 
   font-size: 1.5em;
   padding-left: 1.8em;
-`;
-
-export const LoginJoinMenuWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-`;
-export const LoginJoinWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 95%;
-  margin-bottom: 0.3em;
-  @media ${breakPoints.tablet} {
-    display: none;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
 `;
 
 export const Contents = styled.span`

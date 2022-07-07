@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
+  font-size: 1.3em;
   color: white;
 
   @media ${breakPoints.tablet} {

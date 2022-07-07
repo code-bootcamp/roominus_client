@@ -13,6 +13,9 @@ export default function LayoutTopHeaderUI(props: any) {
           <Link href={"/signup"}>
             <S.Contents>회원가입</S.Contents>
           </Link>
+          <Link href={"/mypage"}>
+            <S.Contents>마이페이지</S.Contents>
+          </Link>
         </S.LoginJoinWrapper>
       </S.LoginJoinMenuWrapper>
     </S.Container>

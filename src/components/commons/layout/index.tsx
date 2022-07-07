@@ -70,6 +70,7 @@ export default function Layout(props: ILayoutProps) {
   return (
     <Wrapper>
       {/* {!isHiddenHeader && <LayoutHeader />} */}
+      <LayoutTopHeader />
       <LayoutHeader />
       {isVisibleNav && <LayoutNavigation />}
       <Body>{props.children}</Body>
