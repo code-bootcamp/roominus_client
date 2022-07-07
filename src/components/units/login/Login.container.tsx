@@ -22,8 +22,9 @@ export default function LoginPage() {
         // ...
         router.push({
           pathname: `/signup/detail`,
-          query: { email: user.email },
+          query: { email: user.email, emailVerified: user.emailVerified },
         });
+        console.log(user);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -49,7 +50,10 @@ export default function LoginPage() {
             console.log(response);
             router.push({
               pathname: `/signup/detail`,
-              query: { email2: response.kakao_account.email },
+              query: {
+                email2: response.kakao_account.email,
+                has_email: response.kakao_account.has_email,
+              },
             });
           },
           fail: function (error) {

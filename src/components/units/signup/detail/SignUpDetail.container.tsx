@@ -14,12 +14,13 @@ export default function SignUpDetail() {
   const router = useRouter();
   const email = router.query.email;
   const email2 = router.query.email2;
-  console.log(email);
-
+  const emailVerified = router.query.emailVerified;
+  const kakaoid = router.query.has_email;
   const onClickSocialIDLogout = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
+        router.push("/login");
       })
       .catch((error) => {
         // An error happened.
@@ -32,7 +33,7 @@ export default function SignUpDetail() {
   //     }
   //   });
   // }, [auth]);
-  console.log(email2);
+
   const onClickLogoutkakao = () => {
     // window.Kakao.Auth.logout();
 
@@ -71,6 +72,8 @@ export default function SignUpDetail() {
       <SignUpDetailUI
         email={email}
         email2={email2}
+        emailVerified={emailVerified}
+        kakaoid={kakaoid}
         onClickSocialIDLogout={onClickSocialIDLogout}
         onClickLogoutkakao={onClickLogoutkakao}
       />

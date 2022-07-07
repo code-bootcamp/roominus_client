@@ -15,7 +15,11 @@ const Input = styled.input`
 export default function MobilePurpleBorderHighlightInput(props) {
   return (
     <Input
-      type={props.type}
+      type={props?.type}
+      {...props?.register}
+      onChange={props?.onChange}
+      value={props?.value}
+      defaultValue={props?.defaultValue}
       placeholder={
         props.placeholder ? props.placeholder : "인풋플레이스홀더 부탁해요~"
       }
