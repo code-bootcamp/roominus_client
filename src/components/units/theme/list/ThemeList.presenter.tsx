@@ -17,6 +17,23 @@ const NAVIGATION_MENUS = [
 export default function ThemeListUI(props) {
   const [isPicked, setIsPicked] = useState(false);
   const router = useRouter();
+  let themes = [
+    "/img/theme/ex/1.png",
+    "/img/theme/ex/2.png",
+    "/img/theme/ex/3.jpeg",
+    "/img/theme/ex/4.jpeg",
+    "/img/theme/ex/5.png",
+    "/img/theme/ex/6.jpeg",
+    "/img/theme/ex/7.jpeg",
+    "/img/theme/ex/8.jpeg",
+    "/img/theme/ex/9.png",
+    "/img/theme/ex/10.jpeg",
+    "/img/theme/ex/11.png",
+    "/img/theme/ex/12.png",
+    "/img/theme/ex/13.jpeg",
+    "/img/theme/ex/14.jpeg",
+    "/img/theme/ex/15.jpeg",
+  ];
 
   const onClickTheme = () => {
     router.push(`/theme/월야애담`);
@@ -60,13 +77,12 @@ export default function ThemeListUI(props) {
       )}
       <div></div>
       <S.ThemeList>
-        {new Array(15).fill(1).map((el, i) => (
+        {themes.map((el, i) => (
           <div key={i} onClick={onClickTheme}>
             <S.Flip>
               <S.Card>
-                <S.Theme src="/img/theme/월야애담.jpeg">
+                <S.Theme src={el}>
                   <S.ImgGradient />
-                  <S.GenreTag>#미스테리</S.GenreTag>
                   <S.Rank>
                     난이도
                     <img width={20} src="/img/theme/rankstar.png" />
@@ -75,8 +91,21 @@ export default function ThemeListUI(props) {
                     <img width={20} src="/img/theme/rankstar.png" />
                     <img width={20} src="/img/theme/rankstar.png" />
                   </S.Rank>
+                  <S.GenreTag>#미스테리</S.GenreTag>
                 </S.Theme>
-                <S.ThemeImg src="/img/theme/card-back.png" />
+                <S.ThemeBack src="/img/theme/card-back.png">
+                  <S.ThemeTitle>
+                    그래도 피망은
+                    <br /> 먹기 싫단 말이에욧
+                  </S.ThemeTitle>
+                  <S.ThemeInfo>
+                    정원 1~2인
+                    <br />
+                    시간 65분
+                    <br />
+                    요금 20,000원
+                  </S.ThemeInfo>
+                </S.ThemeBack>
               </S.Card>
             </S.Flip>
           </div>
