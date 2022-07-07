@@ -12,8 +12,8 @@ const Button = styled.button`
 
 export default function MobileBlackButton(props) {
   return (
-    <Button type={props.type}>
-      {props.name ? props.title : "버튼에 이름이 없네요^^"}
+    <Button type={props?.type} onClick={props?.onClick}>
+      {props.title ? props.title : "버튼에 이름이 없네요^^"}
     </Button>
   );
 }

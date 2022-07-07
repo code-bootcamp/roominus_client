@@ -120,8 +120,8 @@ export default function SignUpDetailUI(props) {
         <S.CancelBtn
           type="button"
           onClick={
-            (props.email && props.onClickSocialIDLogout) ||
-            (props.email2 && props.onClickLogoutkakao)
+            (props.emailVerified && props.onClickSocialIDLogout) ||
+            (props.kakaoid && props.onClickLogoutkakao)
           }
         >
           취소하기
