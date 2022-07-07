@@ -146,7 +146,7 @@ export const BestTitle = styled.h1`
 
 export const Line = styled.div`
   margin: 2em 0em;
-  border-bottom: 0.2em solid #b8b8b8;
+  border-bottom: 0.2em solid #bdbdbd;
 `;
 
 export const MoreButtonBox = styled.div`
