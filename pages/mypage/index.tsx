@@ -1,22 +1,9 @@
-export default function MyPage() {
+import MyPageInfo from "../../src/components/units/mypage/info/MyPageInfo.container";
+
+export default function MyPageInfoPage() {
   return (
     <>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-
-      <div>gdgdgdgd</div>
-
-      <div>gdgdgdgd</div>
-
-      <div>gdgdgdgd</div>
-
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
-      <div>gdgdgdgd</div>
+      <MyPageInfo />
     </>
   );
 }

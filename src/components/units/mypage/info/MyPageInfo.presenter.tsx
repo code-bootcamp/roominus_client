@@ -1,49 +1,49 @@
-import { Modal } from "antd";
+import Link from "next/link";
 import * as S from "./MyPageInfo.styles";
 
 export default function MyPageInfoUI(props: any) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.Title>개인정보 </S.Title>
+        <S.Title>마이페이지</S.Title>
         <S.Label>이름 : 홍길동</S.Label>
         <S.Label>이메일 : abcd1234@gmail.com</S.Label>
-        <S.Label>휴대폰 번호 : 010 - 1234 - 5678</S.Label>
-        <button>인증</button>
-        <input type="text" placeholder="번호를 입력하세요"></input>
-        <span>03:00</span>
-        <S.Button onClick={props.showModal}>변경하기</S.Button>
-      </S.Wrapper>
+        <S.PhoneBox>
+          <S.Label>휴대폰 번호 : 010 - 1234 - 5678</S.Label>
+          <S.resetButton>변경하기</S.resetButton>
+        </S.PhoneBox>
 
-      <Modal
-        visible={props.isModalVisible}
-        onOk={props.onClickPasswordReset}
-        onCancel={props.handleCancel}
-      >
-        <S.ModalWrapper>
-          <S.ModalTitle>비밀번호 변경</S.ModalTitle>
-          <form>
-            <S.InputWrapper>
-              <S.InputLabel>현재비밀번호</S.InputLabel>
-              <input type="password" placeholder={"비밀번호를 입력해주세요"} />
-              <S.Error> </S.Error>
-            </S.InputWrapper>
-            <S.InputWrapper>
-              <S.InputLabel>새 비밀번호</S.InputLabel>
-              <input type="password" placeholder={"비밀번호를 입력해주세요"} />
-              <S.Error></S.Error>
-            </S.InputWrapper>
-            <S.InputWrapper>
-              <S.InputLabel>새 비밀번호 확인</S.InputLabel>
-              <input type="password" placeholder={"비밀번호를 입력해주세요"} />
-              <S.Error></S.Error>
-            </S.InputWrapper>
-            <S.ButtonWrapper>
-              <button></button>
-            </S.ButtonWrapper>
-          </form>
-        </S.ModalWrapper>
-      </Modal>
+        <div>
+          <S.Label>최근 본 테마</S.Label>
+        </div>
+
+        <div>
+          <S.Label>결제 내역</S.Label>
+          <S.addButton>
+            <Link href={"/mypage/history"}>
+              <S.Contents>더보기</S.Contents>
+            </Link>
+          </S.addButton>
+        </div>
+
+        <div>
+          <S.Label>적립 내역</S.Label>
+          <S.addButton>
+            <Link href={"/mypage/reward"}>
+              <S.Contents>더보기</S.Contents>
+            </Link>
+          </S.addButton>
+        </div>
+
+        <div>
+          <S.Label>찜 내역</S.Label>
+          <S.addButton>
+            <Link href={"/mypage/mypick"}>
+              <S.Contents>더보기</S.Contents>
+            </Link>
+          </S.addButton>
+        </div>
+      </S.Wrapper>
     </S.Container>
   );
 }

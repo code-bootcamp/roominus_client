@@ -12,7 +12,8 @@ export const Wrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* background-color: yellow; */
+  padding-top: 2em;
+  padding-bottom: 2em;
 `;
 
 export const Title = styled.h1``;

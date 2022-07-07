@@ -5,16 +5,15 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.nav`
   width: 100%;
   height: 10%;
-  padding: 1%;
-  background-color: #b2b2b2;
+  padding: 0.5em;
+
+  border-bottom: 1px solid #b2b2b2;
 
   @media ${breakPoints.tablet} {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
     padding: 1em 1em 1em 1em;
-
-    background-color: wheat;
   }
 
   @media ${breakPoints.mobile} {
@@ -22,8 +21,6 @@ export const Container = styled.nav`
     align-items: flex-start;
     width: 100%;
     padding: 1em 1em 1em 1em;
-
-    background-color: #b2b2b2;
   }
 `;
 
@@ -74,7 +71,7 @@ export const MenuItem = styled.li`
   font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
 
-  font-size: 1.25em;
+  font-size: 1.5em;
   padding-left: 1.8em;
 `;
 
