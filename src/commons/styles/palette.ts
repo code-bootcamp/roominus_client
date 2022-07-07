@@ -24,4 +24,6 @@ export default {
   gray_f7: "#f7f7f7",
   dark_cyan: "#008489",
   green: "#008A05",
+  button: "#4A00E0e7",
+  buttonhover: "linear-gradient(90deg, #7C21E1 0%, #4A00E0 100%)", // background
 };

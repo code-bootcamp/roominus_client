@@ -1,6 +1,7 @@
 import { useState, Fragment } from "react";
 import * as S from "./ThemeList.styles";
 import { v4 } from "uuid";
+import { useRouter } from "next/router";
 const NAVIGATION_MENUS = [
   { name: "전체" },
   { name: "추리" },
@@ -15,6 +16,11 @@ const NAVIGATION_MENUS = [
 ];
 export default function ThemeListUI(props) {
   const [isPicked, setIsPicked] = useState(false);
+  const router = useRouter();
+
+  const onClickTheme = () => {
+    router.push(`/theme/월야애담`);
+  };
   return (
     <S.Wrapper>
       <S.GenreList>
@@ -26,7 +32,9 @@ export default function ThemeListUI(props) {
         <S.Genre isPicked={false}>범죄</S.Genre>
         <S.Genre isPicked={false}>코미디</S.Genre>
         <S.Genre isPicked={false}>모험</S.Genre>
+        <S.Genre isPicked={false}>일상</S.Genre>
         <S.Genre isPicked={false}>감성</S.Genre>
+        <S.Genre isPicked={false}>동물</S.Genre>
         <S.Genre isPicked={false}>기타</S.Genre>
       </S.GenreList>
       {props.isToggled ? (
@@ -52,46 +60,27 @@ export default function ThemeListUI(props) {
       )}
       <div></div>
       <S.ThemeList>
-        <S.Theme src="/img/theme/월야애담.jpeg">
-          <S.GenreTag>#감성</S.GenreTag>
-          <S.Rank>
-            난이도
-            <img width={20} src="/img/theme/rankstar.png" />
-            <img width={20} src="/img/theme/rankstar.png" />
-            <img width={20} src="/img/theme/rankstar.png" />
-            <img width={20} src="/img/theme/rankstar.png" />
-            <img width={20} src="/img/theme/rankstar.png" />
-          </S.Rank>
-          {/* rank수만큼 별이 나오게 하기 */}
-        </S.Theme>
-        <S.Theme src="/img/theme/월야애담.jpeg">
-          <S.GenreTag>#로맨스</S.GenreTag>
-          <S.Rank>
-            난이도
-            <img width={20} src="/img/theme/rankstar.png" />
-            <img width={20} src="/img/theme/rankstar.png" />
-            <img width={20} src="/img/theme/rankstar.png" />
-            <img width={20} src="/img/theme/rankstar.png" />
-            <img width={20} src="/img/theme/rankstar.png" />
-          </S.Rank>
-          {/* rank수만큼 별이 나오게 하기 */}
-        </S.Theme>
-        <S.Theme src="/img/theme/월야애담.jpeg">
-          <S.GenreTag>#미스테리</S.GenreTag>
-          <S.Rank>
-            난이도
-            <img width={20} src="/img/theme/rankstar.png" />
-          </S.Rank>
-          {/* rank수만큼 별이 나오게 하기 */}
-        </S.Theme>
-        <S.Theme src="/img/theme/월야애담.jpeg">
-          <S.GenreTag>#스릴러</S.GenreTag>
-          <S.Rank>
-            난이도
-            <img width={20} src="/img/theme/rankstar.png" />
-          </S.Rank>
-          {/* rank수만큼 별이 나오게 하기 */}
-        </S.Theme>
+        {new Array(15).fill(1).map((el, i) => (
+          <div key={i} onClick={onClickTheme}>
+            <S.Flip>
+              <S.Card>
+                <S.Theme src="/img/theme/월야애담.jpeg">
+                  <S.ImgGradient />
+                  <S.GenreTag>#미스테리</S.GenreTag>
+                  <S.Rank>
+                    난이도
+                    <img width={20} src="/img/theme/rankstar.png" />
+                    <img width={20} src="/img/theme/rankstar.png" />
+                    <img width={20} src="/img/theme/rankstar.png" />
+                    <img width={20} src="/img/theme/rankstar.png" />
+                    <img width={20} src="/img/theme/rankstar.png" />
+                  </S.Rank>
+                </S.Theme>
+                <S.ThemeImg src="/img/theme/card-back.png" />
+              </S.Card>
+            </S.Flip>
+          </div>
+        ))}
       </S.ThemeList>
       <S.ButtonBox>
         <S.ShowMoreButton>더보기</S.ShowMoreButton>
