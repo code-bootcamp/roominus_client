@@ -6,7 +6,7 @@ import {
   getRedirectResult,
 } from "firebase/auth";
 import { useRouter } from "next/router";
-import { userInfo } from "os";
+
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 export default function LoginPage() {
@@ -37,5 +37,36 @@ export default function LoginPage() {
       });
   };
 
-  return <LoginUI onClickGoogleLogin={onClickGoogleLogin} />;
+  const onClickLoginKakao = () => {
+    Kakao.Auth.login({
+      success: () => {
+        window.Kakao.API.request({
+          url: "/v2/user/me",
+          data: {
+            property_keys: ["kakao_account.email", "kakao_account.gender"],
+          },
+          success: function (response) {
+            console.log(response);
+            router.push({
+              pathname: `/signup/detail`,
+              query: { email2: response.kakao_account.email },
+            });
+          },
+          fail: function (error) {
+            console.log(error);
+          },
+        });
+      },
+      fail: function (error) {
+        console.log(error);
+      },
+    });
+  };
+
+  return (
+    <LoginUI
+      onClickGoogleLogin={onClickGoogleLogin}
+      onClickLoginKakao={onClickLoginKakao}
+    />
+  );
 }

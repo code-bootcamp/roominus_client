@@ -1,15 +1,30 @@
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as S from "./SignUpDetail.styles";
+import Head from "next/head";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 export default function SignUpDetailUI(props) {
+  const router = useRouter();
+  useEffect(() => {
+    const script = document.createElement("script"); // <script></script>
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      window.Kakao.init("d5cc36e815debd3853b9a59ec62d144b");
+      window.Kakao.isInitialized();
+    };
+  }, []);
   return (
     <S.Wrapper>
+      <Head></Head>
       <S.Title>기본정보</S.Title>
       <S.FormFirst>
         <S.EmailBox>
           <S.EmailTitle>이메일 아이디💥</S.EmailTitle>
           <S.EmailInputBox>
-            <S.EmailInput type="text" value={props.email} />
+            <S.EmailInput type="text" value={props.email2 || props.email} />
             <S.NextBtn>다음</S.NextBtn>
           </S.EmailInputBox>
           <S.Error>아이디를 입력해주세요.</S.Error>
@@ -102,7 +117,13 @@ export default function SignUpDetailUI(props) {
       </S.PhoneNoBox>
       <S.FormSecond>
         <S.SignUpBtn>가입하기</S.SignUpBtn>
-        <S.CancelBtn type="button" onClick={props.onClickSocialIDLogout}>
+        <S.CancelBtn
+          type="button"
+          onClick={
+            (props.email && props.onClickSocialIDLogout) ||
+            (props.email2 && props.onClickLogoutkakao)
+          }
+        >
           취소하기
         </S.CancelBtn>
       </S.FormSecond>

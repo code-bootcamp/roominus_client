@@ -32,7 +32,7 @@ export default function LoginUI(props) {
             alt="naverSocialLogo"
           />
         </S.SocialLoginBtn>
-        <S.SocialLoginBtn>
+        <S.SocialLoginBtn onClick={props.onClickLoginKakao}>
           <S.SocialLoginLogo
             src="/img/login/kakaoLogo.png"
             alt="kakakoSocialLogo"
