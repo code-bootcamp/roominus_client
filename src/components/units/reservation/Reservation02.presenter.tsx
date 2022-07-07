@@ -97,7 +97,7 @@ export default function Reservation02UI(props: any) {
         </S.UserInfoBox>
         <S.buttonWrapper>
           <Button01 name="돌아가기" />
-          <button onClick={onClickToMove}>결제하기</button>
+          <button onClick={onClickToMove}>결제 하기</button>
         </S.buttonWrapper>
       </S.Wrapper>
     </S.Container>
