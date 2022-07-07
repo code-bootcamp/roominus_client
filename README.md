@@ -1,34 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![header](https://capsule-render.vercel.app/api?type=waving&height=200&text=Roominus&animation=fadeIn&fontSize=100&fontAlign=50&fontAlignY=40&color=gradient)
+<div align=center>
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+<aside>
+💡 *방탈출 카페를 영화처럼 쉽게 예약하고 볼 순 없을까?* 
+예약의 과정을 최대한 간소화하고 방탈출 카페를 즐기는 것에 집중할 수 있도록 만들기 위해서 Ruminus가 탄생했습니다.
+
+방탈출 카페는 쉽게 말해서 방탈출 게임의 오프라인 버전입니다. 
+추리/스릴러 위주였던 기존 방탈출 게임에 비해 방탈출 카페에선 누구나 즐길 수 있는 다양한 테마들을 선보이고 있습니다. 
+이용자 또한 마치 또 다른 세상 속에 들어가 ‘주인공이 된 나’로서 방탈출 카페를 즐기고 있습니다. 하지만 주인공이 되는 방법은 쉽지 않습니다. 
+원하는 테마를 정하고, 그 테마가 있는 홈페이지에 들어가서, 테마 예약이 열리는 시간을 확인 후, 예약할 때마다 정보를 입력해야 합니다. 
+방탈출 카페입장에서도 단순히 이름과 번호만을 받는 예약방식으로 노쇼(No-Show)에 취약합니다. 
+
+ 🌟  이용자들에겐 매장과 테마별로 쉽게 정보를 파악할 수 있고, 그 정보를 바탕으로 쉽게 예약할 수 있는 **통합 예약 페이지**를 제공합니다.  
+
+ ⛄️  방탈출 카페 운영자들에겐 좀 더 확실한 **예약 서비스**를 제공합니다. 
+
+</aside>
