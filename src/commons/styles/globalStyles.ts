@@ -6,26 +6,23 @@ export const globalStyles = css`
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    /* font-family: "GowunDodum-Regular"; */
-    /* margin: 0.3em 0em; */
-    // 메인 상단에 빈 공간이 생깁니다
+    font-family: "Noto Sans KR", sans-serif;
   }
 
   html,
   body {
     max-width: 1440px;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     margin: auto;
     width: 100vw;
     height: 100vh;
     font-size: 16px;
-    font-family: "GowunDodum-Regular";
+
     @media ${breakPoints.tablet} {
-      margin: 0;
     }
 
     @media ${breakPoints.mobile} {
-      margin: 0;
+      padding: 0px;
     }
   }
 
@@ -44,8 +41,7 @@ export const globalStyles = css`
     }
   }
 
-  // 폰트 예시
-
+  // 커뮤니티 페이지 폰트
   @font-face {
     font-family: "GowunDodum-Regular";
     src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
@@ -54,19 +50,11 @@ export const globalStyles = css`
     font-style: normal;
   }
 
-  @font-face {
-    font-family: "NanumSquareRound";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+  // 기본 폰트
 
-  @font-face {
-    font-family: "GangwonEdu_OTFLightA";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
+  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+  .notosanskr * {
+    font-family: "Noto Sans KR", sans-serif;
   }
 `;
