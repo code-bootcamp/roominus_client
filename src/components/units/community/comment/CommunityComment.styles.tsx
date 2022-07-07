@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.section`
-  width: 80%;
+  width: 70%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ export const CommentWriteBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #dcccff;
+  background-color: #f2ebf5;
 `;
 
 export const Name = styled.h4`
@@ -34,12 +34,12 @@ export const CommentInput = styled.input`
   padding-left: 1em;
 `;
 
-export const Button = styled.button`
-  width: 5em;
-  height: 2.5em;
-  border-radius: 5px;
-  background-color: #4a00e0;
-`;
+// export const Button = styled.button`
+//   width: 5em;
+//   height: 2.5em;
+//   border-radius: 5px;
+//   background-color: #4a00e0;
+// `;
 
 export const CommentListBox = styled.div`
   width: 100%;
@@ -113,7 +113,7 @@ export const ReCommentListBox = styled.div`
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
-  background-color: #dfd0ff;
+  background-color: #f2ebf5;
   border-bottom: 1px solid #bdbdbd;
 `;
 

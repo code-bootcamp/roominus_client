@@ -1,3 +1,4 @@
+import WebSmallPurpleButton from "../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import * as S from "./CommunityComment.styles";
 
 export default function CommunityCommentUI() {
@@ -6,7 +7,7 @@ export default function CommunityCommentUI() {
       <S.CommentWriteBox>
         <S.Name>이영* 님</S.Name>
         <S.CommentInput placeholder="댓글을 입력하세요" />
-        <S.Button>등록</S.Button>
+        <WebSmallPurpleButton title="등 록"></WebSmallPurpleButton>
       </S.CommentWriteBox>
       <S.CommentListBox>
         <S.NameIcon></S.NameIcon>
@@ -60,7 +61,7 @@ export default function CommunityCommentUI() {
           </S.InfoTitleBox>
           <S.ReCommentWriteBox>
             <S.CommentInput placeholder="대댓글을 입력하세요" />
-            <S.Button>등록</S.Button>
+            <WebSmallPurpleButton title="등 록"></WebSmallPurpleButton>
           </S.ReCommentWriteBox>
         </S.ListInfoBox>
       </S.ReCommentListBox>

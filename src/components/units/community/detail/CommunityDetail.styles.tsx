@@ -2,19 +2,21 @@ import styled from "@emotion/styled";
 
 export const Container = styled.main`
   width: 100%;
+  padding: 2em 0em;
 `;
 
 export const Wrapper = styled.section`
-  width: 80%;
+  width: 70%;
   display: flex;
   flex-direction: column;
-  background-color: #dcccff;
-  padding: 5em;
+  background-color: #f2ebf5;
+  padding: 4em;
   margin: auto;
 `;
 
 export const Picture = styled.img`
   width: 95%;
+  height: 550px;
   margin: auto;
 `;
 
@@ -35,7 +37,13 @@ export const PickCount = styled.span`
   font-weight: 700;
 `;
 
-export const BoardTitle = styled.h1``;
+export const BoardTitle = styled.h1`
+  font-size: 1.5em;
+`;
+
+export const BoardContents = styled.div`
+  font-size: 1.1em;
+`;
 
 // export const Comment = styled.div`
 //   width: 80%;
@@ -45,19 +53,10 @@ export const BoardTitle = styled.h1``;
 // `;
 
 export const ButtonBox = styled.div`
-  height: 8em;
+  padding: 2em 0em 0em 0em;
+  gap: 2em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-`;
-
-export const Button = styled.button`
-  width: 8em;
-  height: 3em;
-  border-radius: 15px;
-  color: white;
-  background-color: #26282c;
-  font-weight: 700;
-  margin-right: 1em;
 `;
