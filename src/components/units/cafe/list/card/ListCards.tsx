@@ -38,7 +38,11 @@ const ListCards = () => (
     <Card
       style={{ width: "100%", borderColor: "#c2c2c2", position: "relative" }}
       cover={
-        <img alt="example" src="/img/cafe/cafe.jpeg" style={{ height: 200 }} />
+        <img
+          alt="example"
+          src="/img/cafe/room.webp"
+          style={{ height: 200, cursor: "pointer" }}
+        />
       }
       // 관리자 권한일 때 사용하기
       // actions={[

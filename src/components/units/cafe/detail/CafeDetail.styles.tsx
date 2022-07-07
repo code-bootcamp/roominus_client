@@ -21,12 +21,11 @@ export const CafePicture = styled.img`
 
 export const InfoBox = styled.div`
   width: 38em;
-  /* height: 44em; */
   padding: 3em;
-  gap: 2em;
+  /* gap: 2em; */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   border: 1px solid #bdbdbd;
   /* background-color: #bdbdbd; */
 `;
@@ -35,6 +34,7 @@ export const NamePhoneBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 1.5em;
 `;
 
 export const CafeName = styled.h1`
@@ -49,17 +49,16 @@ export const MenuBox = styled.div`
   flex-direction: row;
 `;
 
-export const Button = styled.button`
-  width: 8em;
-  height: 2.5em;
-  border: none;
-  margin-right: 1em;
+export const InfoLocationBox = styled.div`
+  /* background-color: yellow;
+  gap: 2em; */
 `;
 
 export const InfoContentsBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 1em 0em 2em 0em;
 `;
 
 export const ContentsTitle = styled.h3``;
@@ -77,4 +76,16 @@ export const Location = styled.div``;
 
 export const LocationDetail = styled.div`
   /* background-color: yellow; */
+`;
+
+export const Theme = styled.div`
+  width: 100%;
+  margin: 1em 0em;
+`;
+
+export const ThemeList = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2.5em;
 `;
