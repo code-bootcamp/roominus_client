@@ -7,6 +7,7 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* background-color: lightcoral; */
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
@@ -17,7 +18,11 @@ export const Container = styled.main`
 export const SearchWrapper = styled.section`
   width: 100vw;
   height: 300px;
-  background-color: purple;
+  background: linear-gradient(
+    90deg,
+    rgba(142, 45, 226, 1) 30%,
+    rgba(74, 0, 224, 1) 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,8 +37,7 @@ export const SearchBox = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   margin: auto;
 `;
 
@@ -41,7 +45,7 @@ export const SearchDetailBox = styled.div`
   width: 100%; //70vw
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
 
 export const DetailBox = styled.div`
@@ -49,21 +53,37 @@ export const DetailBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 `;
 
 export const DetailTitle = styled.h3`
   width: 10%; //3.5vw
 `;
 
+export const LocationButton = styled.button`
+  width: 15%;
+  height: 40px;
+  margin-right: 1em;
+  border: none;
+  background-color: #a3a8b7;
+  color: white;
+  font-weight: 500;
+  /* gap: 10px; */
+`;
+
 export const DetailContents = styled.input`
   width: 70%;
+  height: 40px;
   border: none;
+  outline: none;
   border-bottom: 1px solid #bdbdbd;
+  padding-left: 0.5em;
 `;
 
 export const ButtonBox = styled.div`
   width: 100%;
   height: 50px;
+  gap: 2em;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -79,16 +99,18 @@ export const Button = styled.button`
 
 export const ListWrapper = styled.section`
   width: 100%;
+  /* background-color: lightcoral; */
 `;
 
 export const BestListBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  /* background-color: lightblue; */
 `;
 
 export const BestTitle = styled.h1`
-  height: 4em;
+  height: 100px;
   font-size: 25px;
   font-weight: 700;
   display: flex;
@@ -96,61 +118,30 @@ export const BestTitle = styled.h1`
   justify-content: center;
 `;
 
-// export const BestBox = styled.div`
-//   width: 18em;
-//   height: 17.5em;
-//   border-radius: 15px;
-//   background-color: #bdbdbd;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-evenly;
-// `;
-
-// export const BestItem = styled.div``;
-
-// export const BestCafe = styled.div``;
-
-// export const Rank = styled.div`
-//   width: 3em;
-//   height: 3em;
-//   position: absolute;
-//   z-index: 1;
-//   background-color: pink;
-// `;
-
-// export const Location = styled.div`
-//   width: 5em;
-//   height: 3em;
-//   position: absolute;
-//   z-index: 1;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: yellow;
-// `;
-
-// export const BestCafeDetail = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   /* justify-content: space-evenly; */
-// `;
-
-// export const BestCafePicture = styled.img`
-//   width: 15.8em;
-//   height: 12em;
-// `;
-
-// export const BestCafeName = styled.h3``;
-
 export const Line = styled.div`
   margin: 2em 0em;
-  border-bottom: 0.2em solid #c2c2c2;
+  border-bottom: 0.1em solid #c2c2c2;
+`;
+
+export const Flex = styled.div`
+  margin-bottom: 2em;
+`;
+
+export const Etc = styled.div`
+  width: 100%;
+  /* background-color: lightgreen; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px; */
+  /* margin-bottom: 2em; */
 `;
 
 export const MoreButtonBox = styled.div`
-  height: 6em;
+  height: 8em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,19 +151,8 @@ export const MoreButtonBox = styled.div`
 export const MoreButton = styled.button`
   width: 25em;
   height: 4em;
-  border-radius: 15px;
+  border-radius: 10px;
   color: white;
   background-color: #26282c;
   font-weight: 700;
-`;
-
-export const Flex = styled.div`
-  margin-bottom: 2em;
-`;
-
-export const Etc = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  /* justify-content: space-between; */
 `;

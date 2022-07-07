@@ -1,5 +1,8 @@
+import Button03 from "../../../commons/buttons/buttonDesktop/button1";
+import Button04 from "../../../commons/buttons/buttonDesktop/button2";
 import * as S from "./CafeList.styles";
-import ActionAreaCard from "./card/Card";
+import BestCards from "./card/BestCards";
+import ListCards from "./card/ListCards";
 
 export default function CafeListUIPage() {
   return (
@@ -9,7 +12,10 @@ export default function CafeListUIPage() {
           <S.SearchDetailBox>
             <S.DetailBox>
               <S.DetailTitle>장소</S.DetailTitle>
-              <S.DetailContents placeholder="강남, 홍대, 건대" />
+              <S.LocationButton>전체</S.LocationButton>
+              <S.LocationButton>강남</S.LocationButton>
+              <S.LocationButton>홍대</S.LocationButton>
+              <S.LocationButton>건대</S.LocationButton>
             </S.DetailBox>
             <S.DetailBox>
               <S.DetailTitle>매장명</S.DetailTitle>
@@ -17,8 +23,8 @@ export default function CafeListUIPage() {
             </S.DetailBox>
           </S.SearchDetailBox>
           <S.ButtonBox>
-            <S.Button>초기화</S.Button>
-            <S.Button>검색하기</S.Button>
+            <Button03 name="초기화" />
+            <Button04 name="검색하기" />
           </S.ButtonBox>
         </S.SearchBox>
       </S.SearchWrapper>
@@ -26,34 +32,28 @@ export default function CafeListUIPage() {
         <S.BestListBox>
           <S.BestTitle>지금 가장 HOT한 매장 BEST5</S.BestTitle>
           <S.Etc>
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
+            {new Array(5).fill(1).map((el) => (
+              <span key={el}>
+                <BestCards />
+              </span>
+            ))}
           </S.Etc>
         </S.BestListBox>
 
-        <S.Line></S.Line>
+        {/* <S.Line></S.Line> */}
 
         <S.Flex>
+          <S.BestTitle>전체 매장</S.BestTitle>
           <S.Etc>
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
-          </S.Etc>
-          <S.Etc>
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
-            <ActionAreaCard />
+            {new Array(10).fill(1).map((el) => (
+              <span key={el}>
+                <ListCards />
+              </span>
+            ))}
           </S.Etc>
         </S.Flex>
         <S.MoreButtonBox>
-          <S.MoreButton>▽ 더보기</S.MoreButton>
+          <S.MoreButton>더보기</S.MoreButton>
         </S.MoreButtonBox>
       </S.ListWrapper>
     </S.Container>
