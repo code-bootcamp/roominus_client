@@ -1,10 +1,10 @@
-import Button03 from "../../../commons/buttons/buttonDesktop/button1";
-import Button04 from "../../../commons/buttons/buttonDesktop/button2";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./CafeList.styles";
-import BestCards from "./card/BestCards";
+// import BestCards from "./card/BestCards";
 import ListCards from "./card/ListCards";
 
-export default function CafeListUIPage() {
+export default function CafeListUIPage(props) {
   return (
     <S.Container>
       <S.SearchWrapper>
@@ -23,13 +23,13 @@ export default function CafeListUIPage() {
             </S.DetailBox>
           </S.SearchDetailBox>
           <S.ButtonBox>
-            <Button03 name="초기화" />
-            <Button04 name="검색하기" />
+            <WebBlackButton title="초기화" />
+            <WebPurpleButton title="검색하기" />
           </S.ButtonBox>
         </S.SearchBox>
       </S.SearchWrapper>
       <S.ListWrapper>
-        <S.BestListBox>
+        {/* <S.BestListBox>
           <S.BestTitle>지금 가장 HOT한 매장 BEST5</S.BestTitle>
           <S.Etc>
             {new Array(5).fill(1).map((el) => (
@@ -38,7 +38,7 @@ export default function CafeListUIPage() {
               </span>
             ))}
           </S.Etc>
-        </S.BestListBox>
+        </S.BestListBox> */}
 
         {/* <S.Line></S.Line> */}
 
@@ -46,7 +46,7 @@ export default function CafeListUIPage() {
           <S.BestTitle>전체 매장</S.BestTitle>
           <S.Etc>
             {new Array(10).fill(1).map((el) => (
-              <span key={el}>
+              <span key={el} onClick={props.onClickCard}>
                 <ListCards />
               </span>
             ))}
