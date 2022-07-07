@@ -78,7 +78,6 @@ export default function HistoryUI() {
           </S.Row>
         ))}
         <S.TableBottom />
-        <S.Footer></S.Footer>
       </S.Wrapper>
     </S.Container>
   );

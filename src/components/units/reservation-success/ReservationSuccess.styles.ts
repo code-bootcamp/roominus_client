@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import { Card } from "antd";
 
 export const Container = styled.main`
   display: flex;
@@ -15,12 +16,11 @@ export const ContainerTitle = styled.span`
 export const Wrapper = styled.section`
   width: 40%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-top: 1em;
 
   justify-content: center;
   align-items: center;
-  border: 1px solid #b2b2b2;
   border-radius: 10px;
 
   @media ${breakPoints.mobile} {
@@ -30,20 +30,17 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const ImageBox = styled.div``;
-
-export const Image = styled.img`
-  border-radius: 15px;
-  margin-bottom: 1em;
-`;
+export const PickedCard = styled(Card)``;
 
 export const DataBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
 
-  font-size: 1.5em;
-  padding: 0.5em;
+  font-size: 1em;
+  padding: 1em;
+  border: 1px solid gainsboro;
+  text-align: center;
 `;
 
 export const NotionWrapper = styled.div`
@@ -54,7 +51,7 @@ export const NotionWrapper = styled.div`
   justify-content: center;
   text-align: center;
 
-  padding: 1em 0em 1em 0em;
+  padding: 5em 0em 3em 0em;
 `;
 
 export const NoticeTitle = styled.span`

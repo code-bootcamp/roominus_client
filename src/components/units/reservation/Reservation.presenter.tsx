@@ -1,27 +1,28 @@
-import styled from "@emotion/styled";
-import Link from "next/link";
 import SearchRoomCheckInDate from "./CheckInDate";
 import * as S from "./Reservation.styles";
 
-const onClick = (event) => {
-  console.log(event.target.id);
-};
-
-export default function ReservationUI() {
+export default function ReservationUI(props: any) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.ImageBox>
-          <S.Image src="/img/theme/네모네모.webp" />
-        </S.ImageBox>
-        <S.Form>
-          <S.InputBox>
-            <S.InputLabel>날짜</S.InputLabel>
+        <S.StepBar>
+          <S.StepNow>01.날짜/매장/테마 선택</S.StepNow>
+          <S.Step>02.예약정보 입력</S.Step>
+          <S.Step>03.결제하기</S.Step>
+          <S.Step>04.예약완료</S.Step>
+        </S.StepBar>
+
+        <div>
+          <S.SearchBarBox>
             <SearchRoomCheckInDate />
-          </S.InputBox>
-          <S.InputBox>
-            <S.InputLabel>매장</S.InputLabel>
-            <select style={{ textAlign: "center", padding: "10px" }}>
+
+            <select
+              style={{
+                textAlign: "center",
+                padding: "1em",
+                width: "30%",
+              }}
+            >
               <option disabled selected>
                 매장을 선택해주세요
               </option>
@@ -30,10 +31,10 @@ export default function ReservationUI() {
               <option value={"홍대 1호점"}>홍대 1호점</option>
               <option value={"강남 1호점"}>강남 1호점</option>
             </select>
-          </S.InputBox>
-          <S.InputBox>
-            <S.InputLabel>테마</S.InputLabel>
-            <select style={{ textAlign: "center", padding: "10px" }}>
+
+            <select
+              style={{ textAlign: "center", padding: "1em", width: "30%" }}
+            >
               <option disabled selected>
                 테마를 선택해주세요
               </option>
@@ -46,68 +47,48 @@ export default function ReservationUI() {
               <option value={"월야애담"}>월야애담</option>
               <option value={"월야애담"}>월야애담</option>
             </select>
-          </S.InputBox>
-          <S.InputBox>
-            <S.InputLabel>인원</S.InputLabel>
-            <select style={{ textAlign: "center", padding: "10px" }}>
-              <option disabled selected>
-                인원을 선택해주세요
-              </option>
-              <option value={"1명"}>1명</option>
-              <option value={"2명"}>2명</option>
-              <option value={"3명"}>3명</option>
-              <option value={"4명"}>4명</option>
-            </select>
-          </S.InputBox>
-          <S.TimeWrapper>
-            <S.InputLabel>시간 선택</S.InputLabel>
-            <S.RadioBox onClick={onClick}>
-              <S.RadioInput type="radio" className="btn" id="id_btn_01" />
-              <label htmlFor="id_btn_01"> 11:00</label>
-            </S.RadioBox>
-            <S.RadioBox onClick={onClick}>
-              <S.RadioInput type="radio" className="btn" id="id_btn_02" />
-              <label htmlFor="id_btn_02"> 13:00</label>
-            </S.RadioBox>
-            <S.RadioBox onClick={onClick}>
-              <S.RadioInput type="radio" className="btn" id="id_btn_03" />
-              <label htmlFor="id_btn_03"> 15:00</label>
-            </S.RadioBox>
-            <S.RadioBox onClick={onClick}>
-              <S.RadioInput type="radio" className="btn" id="id_btn_04" />
-              <label htmlFor="id_btn_04"> 17:00</label>
-            </S.RadioBox>
-            <S.RadioBox onClick={onClick}>
-              <S.RadioInput type="radio" className="btn" id="id_btn_05" />
-              <label htmlFor="id_btn_05"> 19:00</label>
-            </S.RadioBox>
-            <S.RadioBox onClick={onClick}>
-              <S.RadioInput type="radio" className="btn" id="id_btn_06" />
-              <label htmlFor="id_btn_06"> 21:00</label>
-            </S.RadioBox>
-          </S.TimeWrapper>
-          <S.InputBox>
-            <S.InputLabel>예약자명</S.InputLabel>
-            <S.Input type="text" placeholder="예약자 명을 입력해주세요." />
-          </S.InputBox>
-          <S.InputBox>
-            <S.InputLabel>연락처</S.InputLabel>
-            <S.Input type="text" placeholder="연락처를 입력해주세요." />
-          </S.InputBox>
+          </S.SearchBarBox>
+          <S.ImageTimeBox>
+            <S.ImageBox>
+              <S.Image src="/img/theme/네모네모.webp" />
+            </S.ImageBox>
 
-          <S.ButtonWrapper>
-            <S.CancelBtn>
-              <Link href={"/theme"}>
-                <a> 돌아가기 </a>
-              </Link>
-            </S.CancelBtn>
-            <S.SubmitBtn>
-              <Link href={"/reservation/_id"}>
-                <a> 결제하기 </a>
-              </Link>
-            </S.SubmitBtn>
-          </S.ButtonWrapper>
-        </S.Form>
+            <S.TimeWrapper>
+              <S.TwoTimeBox>
+                <S.TimeButton onClick={props.onClickMoveToInfo}>
+                  11시 30분
+                </S.TimeButton>
+                <S.TimeButton onClick={props.onClickMoveToInfo}>
+                  12시 30분
+                </S.TimeButton>
+              </S.TwoTimeBox>
+              <S.TwoTimeBox>
+                <S.TimeButton onClick={props.onClickMoveToInfo}>
+                  11시 30분
+                </S.TimeButton>
+                <S.TimeButton onClick={props.onClickMoveToInfo}>
+                  12시 30분
+                </S.TimeButton>
+              </S.TwoTimeBox>
+              <S.TwoTimeBox>
+                <S.TimeButton onClick={props.onClickMoveToInfo}>
+                  11시 30분
+                </S.TimeButton>
+                <S.TimeButton onClick={props.onClickMoveToInfo}>
+                  12시 30분
+                </S.TimeButton>
+              </S.TwoTimeBox>
+              <S.TwoTimeBox>
+                <S.TimeButton onClick={props.onClickMoveToInfo}>
+                  11시 30분
+                </S.TimeButton>
+                <S.TimeButton onClick={props.onClickMoveToInfo}>
+                  12시 30분
+                </S.TimeButton>
+              </S.TwoTimeBox>
+            </S.TimeWrapper>
+          </S.ImageTimeBox>
+        </div>
       </S.Wrapper>
     </S.Container>
   );

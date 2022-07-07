@@ -1,20 +1,33 @@
 import Link from "next/link";
+import { Card } from "antd";
 import * as S from "./ReservationSuccess.styles";
 export default function ReservationSuccessUI() {
+  const { Meta } = Card;
+
   return (
     <S.Container>
       <S.ContainerTitle>예약이 완료되었습니다</S.ContainerTitle>
       <S.Wrapper>
-        <S.ImageBox>
-          <S.Image src="/img/theme/네모네모.webp" />
-        </S.ImageBox>
+        <S.PickedCard
+          hoverable
+          style={{ width: "20em" }}
+          cover={<img alt="example" src="/img/theme/월야애담.webp" />}
+        >
+          <Meta
+            title="월야애담"
+            description="일시 : 2022. 07. 29 (금) 17: 30"
+          />
+        </S.PickedCard>
 
         <S.DataBox>
-          <span> 테마 : 네모네모 마믈는 무슨밀미 밌멌믈까?</span>
-          <span> 매장 : 건대 1호점 </span>
-          <span> 일시 : 2022. 07. 29 (금) 17: 10 </span>
-          <span> 인원 : 3명 </span>
-          <span> 결제 금액 : 44000원 </span>
+          <span>예약 번호 : 1239493en320</span>
+          <span>예약자명 : 홍길동</span>
+          <span>연락처 : 010-1234-5678</span>
+          <span>테마 : 월야애담</span>
+          <span>일시: 2022.07.29.금 17:30</span>
+          <span>매장 : 홍대1호점</span>
+          <span>인원 : 3인</span>
+          <span>결제금액 : 50000원</span>
         </S.DataBox>
       </S.Wrapper>
 
