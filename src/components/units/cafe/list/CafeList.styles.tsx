@@ -59,6 +59,10 @@ export const DetailContents = styled.input`
   width: 70%;
   border: none;
   border-bottom: 1px solid #bdbdbd;
+  outline: none;
+  :focus {
+    border-bottom: 3px solid red;
+  }
 `;
 
 export const ButtonBox = styled.div`

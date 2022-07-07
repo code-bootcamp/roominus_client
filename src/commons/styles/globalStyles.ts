@@ -16,7 +16,7 @@ export const globalStyles = css`
     width: 100vw;
     height: 100vh;
     font-size: 16px;
-    font-family: "GowunDodum-Regular";
+    font-family: "Noto Sans KR";
 
     @media ${breakPoints.tablet} {
       margin: 0;
@@ -44,27 +44,9 @@ export const globalStyles = css`
 
   // 폰트 예시
 
-  @font-face {
-    font-family: "GowunDodum-Regular";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-  @font-face {
-    font-family: "NanumSquareRound";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "GangwonEdu_OTFLightA";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
+  .notosanskr * {
+    font-family: "Noto Sans KR", sans-serif;
   }
 `;

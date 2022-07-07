@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import Link from "next/link";
 import SearchRoomCheckInDate from "./CheckInDate";
 import * as S from "./Reservation.styles";
