@@ -23,8 +23,8 @@ export default function CafeListUIPage(props) {
             </S.DetailBox>
           </S.SearchDetailBox>
           <S.ButtonBox>
-            {/* <Button03 name="초기화" /> */}
-            {/* <Button04 name="검색하기" /> */}
+            {/* <Button03 name="초기화" />
+            <Button04 name="검색하기" /> */}
           </S.ButtonBox>
         </S.SearchBox>
       </S.SearchWrapper>
