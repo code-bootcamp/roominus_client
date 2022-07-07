@@ -1,7 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&height=200&text=Roominus&animation=fadeIn&fontSize=100&fontAlign=50&fontAlignY=40&color=gradient)
 <div align=center>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
 <aside>
