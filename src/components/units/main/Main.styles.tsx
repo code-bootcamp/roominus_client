@@ -1,18 +1,21 @@
-import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 export const Container = styled.main`
   width: 100vw;
-  height: 1000px;
+  height: 100vh;
   position: relative;
 
   left: calc(-50vw + 50%);
-
+  background: url("/img/main/inkback.jpeg") center/cover;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  /* background-color: #26282c; */
-  background: url("/img/main/inkback.jpeg") center/cover;
+  overflow: hidden;
+  -ms-overflow-style: none !important;
+  ::-webkit-scrollbar {
+    display: none;
+    width: none !important;
+  }
 `;
 
 export const Page1 = styled.section``;
@@ -59,52 +62,204 @@ export const Contents = styled.div`
   height: 500px;
 `;
 
-export const RuminousTitle = styled.span`
-  color: white;
-  animation: animation 3s ease-in-out;
+export const Title = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
+export const RuminousTitle = styled.div`
+  /* opacity: 0; */
+  color: white;
+  animation: animation 2s ease-in-out running;
   @keyframes animation {
     0% {
       opacity: 0;
-      transform: translateY(-100px) skewX(10deg) skewY(10deg) rotateZ(0deg);
       filter: blur(10px);
     }
     25% {
       opacity: 0.5;
-      transform: translateY(-40px) skewX(5deg) skewY(5deg) rotateZ(0deg);
+      filter: blur(1px);
+    }
+    75% {
+      opacity: 0.75;
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+`;
+
+export const RuminousTitleUs = styled(RuminousTitle)`
+  text-shadow: 0 0 10px #fffbcb, 0 0 20px #fffbcb, 0 0 30px #fffbcb;
+
+  @keyframes animation {
+    0% {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    25% {
+      opacity: 0.5;
       filter: blur(0px);
     }
     75% {
-      opacity: 1;
-      transform: translateY(0px) skewX(0deg) skewY(0deg) rotateZ(0deg);
+      opacity: 0.75;
       filter: blur(1px);
     }
     100% {
       opacity: 1;
-      transform: translateY(0px) skewX(0deg) skewY(0deg) rotateZ(0deg);
       filter: blur(10px);
     }
   }
 `;
 
-export const RuminousTitleUs = styled.span`
+export const ScrollDownBox = styled.div`
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  align-items: center;
+`;
+export const ScrollDownLine = styled.div`
+  height: 4em;
+  border-left: 1px solid white;
+`;
+export const ScrollDown = styled.div`
   color: white;
-  animation: animation 3s ease-in-out;
-  animation-delay: 1s;
-  @keyframes animation {
-    0% {
-      opacity: 0;
-      transform: translateY(-100px) skewX(10deg) skewY(10deg) rotateZ(0deg);
-      filter: blur(10px);
-    }
-    100% {
-      opacity: 0.5;
-      transform: translateY(-40px) skewX(5deg) skewY(5deg) rotateZ(0deg);
-      filter: blur(0px);
-    }
-  }
+  font-family: serif;
 `;
 
 export const Word = styled.h1`
   color: white;
+`;
+
+export const Typing = styled.div`
+  font-size: 3em;
+  color: white;
+  width: 17ch;
+  animation: typing 3s steps(17), blink 0.5s step-end infinite alternate;
+  animation-delay: 2s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  border-color: transparent;
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-right: 3px solid;
+    }
+  }
+`;
+
+export const Neon = styled(Typing)`
+  font-family: "GowunBatang-Regular";
+  font-size: 7em;
+  color: #fffbcb;
+  animation: neon 2s ease-out alternate infinite forwards;
+  @keyframes neon {
+    0%,
+    100% {
+      text-shadow: 0 0 0.1vw #fffbcb, 0 0 3vw #fffbcb, 0 0 10vw #fffbcb,
+        0 0 0.4vw #fed128;
+    }
+    50% {
+      text-shadow: 0 0 0.5vw #fffbcb, 0 0 1.5vw #fffbcb, 0 0 5vw #fffbcb,
+        0 0 5vw #fffbcb, 0 0 0.2vw #fffbcb;
+    }
+  }
+
+  @font-face {
+    font-family: "GowunBatang-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+`;
+
+export const FlashText = styled.div`
+  font-size: 7em;
+  font-family: "GowunBatang-Regular";
+  color: white;
+  opacity: 0;
+  animation: flashText 1s ease-out alternate infinite;
+
+  @keyframes flashText {
+    to {
+      opacity: 0.25;
+    }
+  }
+`;
+
+export const MyParallax = styled(Parallax)`
+  -ms-overflow-style: none !important;
+  ::-webkit-scrollbar {
+    display: none;
+    width: none !important;
+  }
+  overflow-x: hidden;
+`;
+
+export const Layer1 = styled(ParallaxLayer)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const DoorWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const DoorBox = styled.div`
+  opacity: 30%;
+  width: 10em;
+  height: 15em;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 300px;
+  border: 1px solid white;
+  position: relative;
+  transform-style: preserve-3d;
+  /* transform: perspective(1500px); */
+  :hover {
+    transform: rotateY(180deg);
+  }
+`;
+
+export const Door = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transition: all 3s;
+  /* transform: rotateY(180deg); */
+  ::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  :hover {
+    transform: rotateY(180deg);
+  }
 `;
