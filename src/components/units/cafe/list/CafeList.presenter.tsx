@@ -1,5 +1,5 @@
-import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
+// import Button03 from "../../../commons/buttons/buttonDesktop/button1";
+// import Button04 from "../../../commons/buttons/buttonDesktop/button2";
 import * as S from "./CafeList.styles";
 // import BestCards from "./card/BestCards";
 import ListCards from "./card/ListCards";
@@ -23,8 +23,8 @@ export default function CafeListUIPage(props) {
             </S.DetailBox>
           </S.SearchDetailBox>
           <S.ButtonBox>
-            <WebBlackButton title="초기화" />
-            <WebPurpleButton title="검색하기" />
+            {/* <Button03 name="초기화" /> */}
+            {/* <Button04 name="검색하기" /> */}
           </S.ButtonBox>
         </S.SearchBox>
       </S.SearchWrapper>
