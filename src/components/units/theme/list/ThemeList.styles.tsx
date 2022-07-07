@@ -148,29 +148,44 @@ export const Theme = styled(defaultDiv)`
   height: 420px; */
   padding: 10px 15px;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  flex-direction: row;
+  align-items: flex-end;
   background-blend-mode: multiply;
   background: linear-gradient(
       180deg,
       rgba(38, 40, 44, 0) 0%,
-      rgba(38, 40, 44, 0.14) 56.77%,
+      rgba(38, 40, 44, 0.14) 75%,
       #26282c 100%
     ),
     url(${(props: IGenreProps) => props.src});
+  background-size: 290px 420px;
 `;
 
-export const ThemeImg = styled(defaultDiv)`
+export const ThemeBack = styled(defaultDiv)`
   position: absolute;
   width: 100%;
   height: 100%;
-  /* width: 290px;
-  height: 420px; */
-
   background: url(${(props: IGenreProps) => props.src});
+  background-size: 290px 420px;
   transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
+export const ThemeTitle = styled.div`
+  color: white;
+  text-align: center;
+  font-size: 1.8em;
+  text-shadow: 0 0 10px #fffbcb, 0 0 20px #fffbcb, 0 0 30px #fffbcb;
+  word-break: break-all;
+`;
+
+export const ThemeInfo = styled.div`
+  color: white;
+  text-align: left;
+`;
 export const ImgGradient = styled.div`
   /* width: 290px;
   height: 420px;
@@ -184,11 +199,11 @@ export const ImgGradient = styled.div`
 `;
 
 export const GenreTag = styled.div`
-  width: 130px;
-  height: 40px;
+  width: 80px;
+  height: 30px;
   border-radius: 8px;
-  background-color: #492396b0;
-  font-size: 24px;
+  background-color: #220d4daf;
+  font-size: 1em;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -196,7 +211,7 @@ export const GenreTag = styled.div`
   color: white;
 `;
 
-export const Rank = styled.h4`
+export const Rank = styled.div`
   padding: 5px;
   color: white;
   display: flex;
@@ -217,8 +232,10 @@ export const ShowMoreButton = styled.button`
   border-radius: 8px;
   font-size: 18px;
   color: white;
+  border: transparent;
   background-color: #26282c;
 `;
+
 export const Toggle = styled.div``;
 export const ToggleMenuWrapper = styled.ul`
   display: none;
