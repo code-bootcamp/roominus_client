@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import * as S from "./Login.styles";
-export default function LoginUI() {
+export default function LoginUI(props) {
   return (
     <S.Wrapper>
       <S.Title>로그인</S.Title>
@@ -39,7 +39,11 @@ export default function LoginUI() {
           />
         </S.SocialLoginBtn>
         <S.SocialLoginBtn>
-          <S.SocialLoginLogo src="/img/login/googlelogo.png" alt="googleLogo" />
+          <S.SocialLoginLogo
+            src="/img/login/googlelogo.png"
+            alt="googleLogo"
+            onClick={props.onClickGoogleLogin}
+          />
         </S.SocialLoginBtn>
       </S.SocialLoginBtns>
     </S.Wrapper>

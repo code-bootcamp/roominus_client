@@ -1,7 +1,7 @@
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as S from "./SignUpDetail.styles";
-export default function SignUpDetailUI() {
+export default function SignUpDetailUI(props) {
   return (
     <S.Wrapper>
       <S.Title>기본정보</S.Title>
@@ -9,7 +9,7 @@ export default function SignUpDetailUI() {
         <S.EmailBox>
           <S.EmailTitle>이메일 아이디💥</S.EmailTitle>
           <S.EmailInputBox>
-            <S.EmailInput type="text" />
+            <S.EmailInput type="text" value={props.email} />
             <S.NextBtn>다음</S.NextBtn>
           </S.EmailInputBox>
           <S.Error>아이디를 입력해주세요.</S.Error>
@@ -102,6 +102,9 @@ export default function SignUpDetailUI() {
       </S.PhoneNoBox>
       <S.FormSecond>
         <S.SignUpBtn>가입하기</S.SignUpBtn>
+        <S.CancelBtn type="button" onClick={props.onClickSocialIDLogout}>
+          취소하기
+        </S.CancelBtn>
       </S.FormSecond>
     </S.Wrapper>
   );
