@@ -1,4 +1,5 @@
 import * as S from "./CafeList.styles";
+import ActionAreaCard from "./card/Card";
 
 export default function CafeListUIPage() {
   return (
@@ -23,97 +24,34 @@ export default function CafeListUIPage() {
       </S.SearchWrapper>
       <S.ListWrapper>
         <S.BestListBox>
-          <S.BestTitle>지금 가장 HOT한 매장 BEST3</S.BestTitle>
-          <S.BestBoxs>
-            <S.BestBox>
-              <S.BestCafe>
-                <S.Rank>1</S.Rank>
-                <S.BestCafeDetail>
-                  <S.BestCafePicture src="/img/cafe/thecode.webp" />
-                  <S.BestCafeName>THE CODE</S.BestCafeName>
-                </S.BestCafeDetail>
-              </S.BestCafe>
-            </S.BestBox>
-            <S.BestBox>
-              <S.BestCafe>
-                <S.Rank>1</S.Rank>
-                <S.BestCafeDetail>
-                  <S.BestCafePicture src="./img/cafe/thecode.webp" />
-                  <S.BestCafeName>THE CODE</S.BestCafeName>
-                </S.BestCafeDetail>
-              </S.BestCafe>
-            </S.BestBox>
-            <S.BestBox>
-              <S.BestCafe>
-                <S.Rank>1</S.Rank>
-                <S.BestCafeDetail>
-                  <S.BestCafePicture src="./img/cafe/thecode.webp" />
-                  <S.BestCafeName>THE CODE</S.BestCafeName>
-                </S.BestCafeDetail>
-              </S.BestCafe>
-            </S.BestBox>
-          </S.BestBoxs>
+          <S.BestTitle>지금 가장 HOT한 매장 BEST5</S.BestTitle>
+          <S.Etc>
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+          </S.Etc>
         </S.BestListBox>
-        <S.Line></S.Line>
-        <S.BestBoxs>
-          <S.BestBox>
-            <S.BestCafe>
-              <S.Location>홍대</S.Location>
-              <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/cafe/thecode.webp" />
-                <S.BestCafeName>THE CODE</S.BestCafeName>
-              </S.BestCafeDetail>
-            </S.BestCafe>
-          </S.BestBox>
-          <S.BestBox>
-            <S.BestCafe>
-              <S.Location>홍대</S.Location>
-              <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/cafe/thecode.webp" />
-                <S.BestCafeName>THE CODE</S.BestCafeName>
-              </S.BestCafeDetail>
-            </S.BestCafe>
-          </S.BestBox>
-          <S.BestBox>
-            <S.BestCafe>
-              <S.Location>홍대</S.Location>
-              <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/cafe/thecode.webp" />
-                <S.BestCafeName>THE CODE</S.BestCafeName>
-              </S.BestCafeDetail>
-            </S.BestCafe>
-          </S.BestBox>
-        </S.BestBoxs>
-        <S.BestBoxs>
-          <S.BestBox>
-            <S.BestCafe>
-              <S.Location>홍대</S.Location>
-              <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/cafe/thecode.webp" />
-                <S.BestCafeName>THE CODE</S.BestCafeName>
-              </S.BestCafeDetail>
-            </S.BestCafe>
-          </S.BestBox>
-          <S.BestBox>
-            <S.BestCafe>
-              <S.Location>홍대</S.Location>
-              <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/cafe/thecode.webp" />
-                <S.BestCafeName>THE CODE</S.BestCafeName>
-              </S.BestCafeDetail>
-            </S.BestCafe>
-          </S.BestBox>
-          <S.BestBox>
-            <S.BestCafe>
-              <S.Location>홍대</S.Location>
-              <S.BestCafeDetail>
-                <S.BestCafePicture src="./img/cafe/thecode.webp" />
-                <S.BestCafeName>THE CODE</S.BestCafeName>
-              </S.BestCafeDetail>
-            </S.BestCafe>
-          </S.BestBox>
-        </S.BestBoxs>
 
+        <S.Line></S.Line>
+
+        <S.Flex>
+          <S.Etc>
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+          </S.Etc>
+          <S.Etc>
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+            <ActionAreaCard />
+          </S.Etc>
+        </S.Flex>
         <S.MoreButtonBox>
           <S.MoreButton>▽ 더보기</S.MoreButton>
         </S.MoreButtonBox>
