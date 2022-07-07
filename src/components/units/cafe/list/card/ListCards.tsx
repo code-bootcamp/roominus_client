@@ -36,7 +36,7 @@ const LocationIcon = styled.img`
 const ListCards = () => (
   <>
     <Card
-      style={{ width: "100%", borderColor: "#bdbdbd", position: "relative" }}
+      style={{ width: "100%", borderColor: "#c2c2c2", position: "relative" }}
       cover={
         <img alt="example" src="/img/cafe/cafe.jpeg" style={{ height: 200 }} />
       }
