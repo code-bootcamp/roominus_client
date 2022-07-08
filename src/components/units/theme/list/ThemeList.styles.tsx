@@ -29,6 +29,57 @@ export const Wrapper = styled.section`
   padding: 10%;
 `;
 
+export const SearchBox = styled.div`
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const SearchInputWrapper = styled.div`
+  border-radius: 2px;
+  box-shadow: 0px 2px 1px 0px #ddd;
+`;
+
+export const SearchInput = styled.input`
+  width: 100%;
+  position: relative;
+  /* background-color: #d9d6e0; */
+  background: transparent;
+  border: transparent;
+
+  border-style: none;
+  border-collapse: collapse;
+  caret-color: #4a00e0;
+  color: #4a00e0;
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const SearchInputUnderline = styled.span`
+  display: inline-block;
+  height: 2px;
+  background-color: dodgerblue;
+`;
+
+export const SearchButton = styled.button`
+  width: 4em;
+  height: 2.5em;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  :hover {
+    background: linear-gradient(
+      90deg,
+      rgba(142, 45, 226, 1) 30%,
+      rgba(74, 0, 224, 1) 100%
+    );
+  }
+  transition: all 250ms ease-in-out;
+  background-color: #4a00e0;
+  color: #ffffff;
+`;
 export const GenreList = styled.div`
   @media ${breakPoints.mobile} {
     display: grid;
@@ -113,7 +164,6 @@ export const Flip = styled.div`
   width: 290px;
   height: 420px;
   position: relative;
-  perspective: 1100px;
 
   :hover {
     /* transform: rotateY(180deg); */
@@ -124,7 +174,7 @@ export const Card = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  transition: 0.4s;
+  transition: 1s;
   transform-style: preserve-3d;
 
   :hover {
