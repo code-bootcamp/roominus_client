@@ -5,6 +5,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.nav`
   width: 100%;
   height: 2%;
+  padding: 0.3em 0.5em 0em 0em;
 
   @media ${breakPoints.tablet} {
     display: none;

@@ -10,6 +10,7 @@ import palette from "../../../commons/styles/palette";
 const Container = styled.div`
   width: 100%;
   height: 100%;
+
   .react-datepicker {
     padding: 16px 32px;
     background-color: white;
@@ -21,7 +22,7 @@ const Container = styled.div`
     border-bottom-color: white !important;
   }
   .react-datepicker__month-container {
-    padding: 0 27px;
+    padding: 0 2em;
   }
   .react-datepicker__header {
     padding-top: 22px;
@@ -34,21 +35,17 @@ const Container = styled.div`
     top: 40px;
     left: 56px;
     border: 0;
-    background-image: url("/svg/common/datePicker/datepicker_left_arrow.svg");
-    background-repeat: no-repeat;
   }
   .react-datepicker__navigation--next {
     top: 40px;
     right: 56px;
     border: 0;
-    background-image: url("/svg/common/datePicker/datepciker_right_arrow.svg");
-    background-repeat: no-repeat;
   }
   .react-datepicker__current-month {
     font-size: 16px;
     font-weight: 600;
-    font-family: Airbnb Cereal, sans-serif;
   }
+
   .react-datepicker__day-names {
     padding-top: 16px;
   }
@@ -58,7 +55,7 @@ const Container = styled.div`
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
-    color: ${palette.gray_71};
+    color: darkgray;
   }
   .react-datepicker__month {
     margin: 0;
@@ -72,7 +69,6 @@ const Container = styled.div`
     margin: 0;
     font-size: 14px;
     font-weight: 600;
-    font-family: -apple-system, sans-serif;
     color: ${palette.black};
     outline: none;
     &:hover {
@@ -90,12 +86,11 @@ const Container = styled.div`
     background-color: ${palette.gray_f7};
   }
   .react-datepicker__day--selected {
-    background-color: ${palette.black};
+    background-color: #4a00e0;
     color: white;
     border-radius: 50%;
     &:hover {
-      background-color: ${palette.black};
-
+      background-color: #4a00e0;
       color: white;
     }
   }

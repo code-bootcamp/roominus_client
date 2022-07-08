@@ -1,7 +1,5 @@
 import Link from "next/link";
 import * as S from "./MyPageInfo.styles";
-import WebHighlightUndelineInput from "../../../commons/inputs/inputDesktop/WebHighlightUndelineInput";
-import { Modal } from "antd";
 
 export default function MyPageInfoUI(props) {
   const data = [
@@ -27,45 +25,6 @@ export default function MyPageInfoUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.UserInfoBox>
-          <S.Label>
-            <S.UserData>홍길동님</S.UserData> 안녕하세요!
-          </S.Label>
-          <S.Label>
-            오늘까지 탈출
-            <S.UserData>3회</S.UserData>
-          </S.Label>
-          <S.Label>
-            오늘까지 모은 적립금 <S.UserData>5000원</S.UserData>
-          </S.Label>
-          <S.UserData>abcd1234@naver.com</S.UserData>
-          <S.PhoneBox>
-            <S.UserData>010-1234-5678</S.UserData>
-            <S.resetButton onClick={props.onClickReset} />
-          </S.PhoneBox>
-          <Link href={"/mypage/pwedit"}>
-            <S.Label>비밀번호 변경하기 </S.Label>
-          </Link>
-        </S.UserInfoBox>
-
-        <Modal
-          visible={props.isModalVisible}
-          onOk={props.handleOk}
-          onCancel={props.handleCancel}
-          width={800}
-        >
-          <form>
-            <S.Label>휴대폰 번호 변경</S.Label>
-            <S.NumberBox>
-              <WebHighlightUndelineInput
-                type="tel"
-                name="userPhoneNumber"
-                placeholder="변경할 번호를 입력해주세요"
-              />
-            </S.NumberBox>
-          </form>
-        </Modal>
-
         <S.RightBox>
           <S.ThemeBoxs>
             <Link href={"/mypage/mypick"}>

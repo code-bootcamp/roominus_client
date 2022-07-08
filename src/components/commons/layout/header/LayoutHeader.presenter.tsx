@@ -7,6 +7,7 @@ const NAVIGATION_MENUS = [
   { name: "테마", page: "/theme" },
   { name: "예약", page: "/reservation" },
   { name: "커뮤니티", page: "/community" },
+  { name: "마이페이지", page: "/mypage" },
 ];
 export default function LayoutHeaderUI(props: any) {
   return (

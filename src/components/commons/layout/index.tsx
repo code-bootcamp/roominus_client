@@ -6,10 +6,12 @@ import LayoutFooter from "./footer/LayoutFooter.container";
 import { breakPoints } from "../../../commons/styles/media";
 import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
 import LayoutBanner from "./banner/LayoutBanner";
+import LayoutSideBar from "./sidebar/LayoutSidebar.presenter";
 
 const HIDDEN_HEADER = ["/"];
 const HIDDEN_BANNER = ["/", "/home", "/cafe", "/login", "/signup"];
 const HIDDEN_TOP_HEADER = ["/"];
+const VISIBLE_SIDE_BAR = ["/mypage"];
 const HIDDEN_FOOTER = ["/"];
 
 const Wrapper = styled.section`
@@ -40,7 +42,6 @@ const Wrapper = styled.section`
 const Body = styled.div`
   width: 100%;
   height: 70%;
-
   padding: 0px 20px;
 
   @media ${breakPoints.tablet} {
@@ -61,6 +62,7 @@ export default function Layout(props: ILayoutProps) {
   const isHiddenTopHeader = HIDDEN_TOP_HEADER.includes(router.asPath);
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
+  const isVISBLESIDEBAR = VISIBLE_SIDE_BAR.includes(router.asPath);
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
 
   return (
@@ -68,7 +70,11 @@ export default function Layout(props: ILayoutProps) {
       {!isHiddenTopHeader && <LayoutTopHeader />}
       {!isHiddenHeader && <LayoutHeader />}
       {!isHiddenBanner && <LayoutBanner />}
-      <Body>{props.children}</Body>
+      <div style={{ display: "flex" }}>
+        {isVISBLESIDEBAR && <LayoutSideBar />}
+        <Body>{props.children}</Body>
+      </div>
+
       {!isHiddenFooter && <LayoutFooter />}
     </Wrapper>
   );
