@@ -44,10 +44,6 @@ export const StepNow = styled.div`
   background-color: #4a00e0;
 `;
 
-export const UL = styled.div`
-  padding-top: 2em;
-`;
-
 export const Row = styled.li`
   display: flex;
   flex-direction: row;
@@ -56,11 +52,26 @@ export const Row = styled.li`
   border-bottom: 1px solid gray;
 `;
 
-export const Info = styled.div``;
+export const InfoForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const info = styled.label`
   width: 30em;
   padding-left: 10em;
+  padding-bottom: 3em;
+`;
+
+export const Input = styled.input`
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 export const Data = styled.span``;

@@ -72,7 +72,6 @@ export default function SearchRoomCheckInDate() {
         selected={startDate}
         onChange={(date) => setStartDate(date)}
         monthsShown={2}
-        isClearable
         selectsStart
         minDate={new Date()}
         placeholderText="날짜를 선택해주세요"

@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
-export const Container = styled.main``;
+export const Container = styled.main`
+  padding-bottom: 2em;
+`;
 
 export const Wrapper = styled.section`
   width: 100%;

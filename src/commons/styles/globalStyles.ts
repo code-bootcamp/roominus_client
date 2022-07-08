@@ -17,7 +17,6 @@ export const globalStyles = css`
     width: 100vw;
     height: 100vh;
     font-size: 16px;
-
     @media ${breakPoints.tablet} {
     }
 

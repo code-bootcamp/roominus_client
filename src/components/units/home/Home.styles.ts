@@ -13,8 +13,8 @@ export const Wrapper = styled.section`
 `;
 
 export const BackGroundImg = styled.div`
-  width: 100%;
-  height: 40em;
+  width: 100vw;
+  height: 38em;
   background: url("/img/home/home.png") center/cover;
   margin-bottom: 4em;
 `;

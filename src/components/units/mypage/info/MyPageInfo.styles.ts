@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { EditOutlined } from "@ant-design/icons";
 
 export const Container = styled.main`
   display: flex;
@@ -7,7 +6,8 @@ export const Container = styled.main`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  width: 140%;
+  padding: 2em 0em 2em 0em;
 `;
 
 export const Wrapper = styled.div`
@@ -19,43 +19,11 @@ export const Wrapper = styled.div`
   gap: 2em;
 `;
 
-export const UserInfoBox = styled.div`
+export const RightBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 400px;
+  width: 70%;
   height: 800px;
-  background-size: 372px 800px;
-  background-image: url("/img/mypage/ticket.png");
-
-  padding-top: 22em;
-`;
-
-export const Label = styled.label`
-  font-size: 1em;
-`;
-
-export const UserData = styled.span`
-  font-size: 1.3em;
-  cursor: pointer;
-`;
-
-export const PhoneBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
-`;
-
-export const NumberBox = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const resetButton = styled(EditOutlined)`
-  font-size: 1.3em;
-  padding: 0.2em;
-  color: #4a00e0;
-  cursor: pointer;
 `;
 
 export const InfoBox = styled.div`
@@ -67,7 +35,7 @@ export const InfoBox = styled.div`
 export const ThemeBoxs = styled.div`
   display: flex;
   justify-content: center;
-  height: 8em;
+  height: 10em;
   gap: 5%;
 `;
 export const ThemeBox = styled.div`
@@ -82,18 +50,18 @@ export const ThemeBox = styled.div`
 `;
 
 export const ThemeTitle = styled.label`
-  font-size: 0.8emem;
+  font-size: 1.2em;
 `;
 
 export const ThemeSubTitle = styled.span`
   color: darkgray;
-  font-size: 0.6em;
+  font-size: 0.7em;
   padding-bottom: 0.5em;
 `;
 
 export const ThemeIcon = styled.img`
-  width: 4em;
-  height: 3em;
+  width: 5em;
+  height: 4em;
 
   :hover {
     transform: scale(1.2);
@@ -107,12 +75,17 @@ export const InfoTitleBox = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 export const TableWrapper = styled.div``;
 
 export const addButton = styled.button`
   border: none;
   background-color: white;
   width: 4em;
+`;
+
+export const Label = styled.label`
+  font-size: 1em;
 `;
 
 export const Contents = styled.span`
@@ -123,7 +96,7 @@ export const Contents = styled.span`
 
 export const TableTop = styled.div`
   border-top: 2px solid gray;
-  margin-top: 20px;
+  margin-top: 1em;
 `;
 
 export const TableBottom = styled.div`
@@ -160,10 +133,4 @@ export const ColumnTitle = styled.div`
 export const CardBox = styled.div`
   display: flex;
   gap: 2em;
-`;
-
-export const RightBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 70%;
 `;
