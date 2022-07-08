@@ -4,54 +4,69 @@ export default function HistoryUI() {
   const data = [
     {
       _id: "1234",
+      status: "방문 완료",
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
+      status: "방문 완료",
+
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
+      status: "방문 완료",
+
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
+      status: "방문 완료",
+
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
+      status: "환불 완료",
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
+      status: "환불 완료",
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
+      status: "방문대기",
+
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
+      status: "방문대기",
+
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
+      status: "방문대기",
+
       title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
@@ -64,6 +79,7 @@ export default function HistoryUI() {
         <S.Row>
           <S.ColumnHeaderBasic>번호</S.ColumnHeaderBasic>
           <S.ColumnHeaderTitle>예약 번호</S.ColumnHeaderTitle>
+          <S.ColumnHeaderBasic>예약 상태</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>테마</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>날짜</S.ColumnHeaderBasic>
         </S.Row>
@@ -73,6 +89,7 @@ export default function HistoryUI() {
               {String(el._id).slice(-4).toUpperCase()}
             </S.ColumnBasic>
             <S.ColumnTitle id={el._id}>{el.title}</S.ColumnTitle>
+            <S.ColumnBasic>{el.status}</S.ColumnBasic>
             <S.ColumnBasic>{el.writer}</S.ColumnBasic>
             <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
           </S.Row>

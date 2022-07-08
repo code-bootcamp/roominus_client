@@ -4,19 +4,12 @@ import styled from "@emotion/styled";
 import LayoutHeader from "./header/LayoutHeader.container";
 import LayoutFooter from "./footer/LayoutFooter.container";
 import { breakPoints } from "../../../commons/styles/media";
-import LayoutNavigation from "./navigation/LayoutNavigation.container";
 import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
+import LayoutBanner from "./banner/LayoutBanner";
 
 const HIDDEN_HEADER = ["/"];
+const HIDDEN_BANNER = ["/", "/home", "/cafe", "/login", "/signup"];
 const HIDDEN_TOP_HEADER = ["/"];
-
-const VISIBLE_NAV = [
-  "/mypage",
-  "/mypage/history",
-  "/mypage/reward",
-  "/mypage/mypick",
-  "/mypage/pwedit",
-];
 const HIDDEN_FOOTER = ["/"];
 
 const Wrapper = styled.section`
@@ -67,14 +60,14 @@ export default function Layout(props: ILayoutProps) {
 
   const isHiddenTopHeader = HIDDEN_TOP_HEADER.includes(router.asPath);
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
-  const isVisibleNav = VISIBLE_NAV.includes(router.asPath);
+  const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
 
   return (
     <Wrapper>
       {!isHiddenTopHeader && <LayoutTopHeader />}
       {!isHiddenHeader && <LayoutHeader />}
-      {isVisibleNav && <LayoutNavigation />}
+      {!isHiddenBanner && <LayoutBanner />}
       <Body>{props.children}</Body>
       {!isHiddenFooter && <LayoutFooter />}
     </Wrapper>
