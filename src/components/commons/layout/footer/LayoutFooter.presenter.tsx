@@ -1,6 +1,7 @@
 import TopButton from "../../buttons/topbutton";
 import * as S from "./LayoutFooter.styles";
 import { GithubOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 export default function LayoutFooterUI(props: any) {
   return (
@@ -10,10 +11,14 @@ export default function LayoutFooterUI(props: any) {
 
         <S.MenuInfoWrapper>
           <S.MenuWrapper>
-            <S.Menu>이용약관</S.Menu>
+            <Link href={"https://www.nipa.kr/main/contents.do?key=228"}>
+              <S.Menu>이용약관</S.Menu>
+            </Link>
             <S.Menu>개인정보 처리방침</S.Menu>
             <S.Menu>청소년 보호 정책</S.Menu>
-            <S.Menu>고객센터</S.Menu>
+            <Link href={"https://github.com/code-bootcamp/f7b3_team05_client"}>
+              <S.Menu>고객센터</S.Menu>
+            </Link>
           </S.MenuWrapper>
 
           <S.InfoWrapper>

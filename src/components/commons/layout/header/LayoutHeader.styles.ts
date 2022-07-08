@@ -65,15 +65,15 @@ export const MenuWrapper = styled.ul`
   @media ${breakPoints.mobile} {
     display: none;
   }
+
+  gap: 2em;
 `;
 
 export const MenuItem = styled.li`
-  color: ${(props) => (props.isActive ? "purple" : "black")};
   font-weight: ${(props) => (props.isActive ? "700" : "400")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
 
   font-size: 1.5em;
-  padding-left: 1.8em;
 `;
 
 export const Contents = styled.span`

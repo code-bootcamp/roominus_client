@@ -1,11 +1,9 @@
 import Link from "next/link";
 import * as S from "./MyPageInfo.styles";
 import WebHighlightUndelineInput from "../../../commons/inputs/inputDesktop/WebHighlightUndelineInput";
-import { Card, Modal } from "antd";
+import { Modal } from "antd";
 
 export default function MyPageInfoUI(props) {
-  const { Meta } = Card;
-
   const data = [
     {
       _id: "1234",

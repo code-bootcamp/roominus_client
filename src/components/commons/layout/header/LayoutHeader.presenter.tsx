@@ -28,7 +28,7 @@ export default function LayoutHeaderUI(props: any) {
                     onClick={props.onClickMenu}
                     isActive={el.page === props.activedMenu}
                   >
-                    <a>{el.name}</a>
+                    {el.name}
                   </S.MenuItem>
                 </Link>
               </Fragment>
