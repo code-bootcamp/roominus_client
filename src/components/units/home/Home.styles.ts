@@ -16,12 +16,14 @@ export const BackGroundImg = styled.div`
   width: 100%;
   height: 40em;
   background: url("/img/home/home.png") center/cover;
+  margin-bottom: 4em;
 `;
 
 export const StoreBox = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4em;
 `;
 export const StoreTitleBox = styled.div`
   width: 100%;
@@ -96,6 +98,7 @@ export const ThemeBoxes = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4em;
 `;
 export const ThemeTitleBox = styled.div`
   width: 100%;
@@ -165,18 +168,24 @@ export const GenreTag = styled.div`
   align-items: center;
   color: white;
 `;
-export const OpenBtnArrow = styled(CaretDownOutlined)``;
-export const CloseBtnArrow = styled(CaretRightOutlined)``;
+export const OpenBtnArrow = styled(CaretDownOutlined)`
+  z-index: 5;
+`;
+export const CloseBtnArrow = styled(CaretRightOutlined)`
+  z-index: 5;
+`;
 export const AlarmCarouselBoxes = styled.div`
   width: 50%;
-  height: 20em;
+  height: 15em;
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4em;
 `;
 export const AlarmCarouselBox = styled.div`
-  width: 500px;
-  height: 500px;
+  width: 100%;
+
+  background-color: red;
 `;
 export const AlarmTitle = styled.div`
   font-size: 1.3em;
@@ -190,20 +199,30 @@ export const FaQBoxes = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4em;
 `;
 export const FaQTitle = styled.div`
   font-size: 1em;
   font-weight: 700;
 `;
 export const FaQSmallBoxes = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #bdbdbd;
+  border-radius: 10px;
+  padding: 1em 1em 1em 1em;
 `;
 
 export const FaQBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+`;
+
+export const FaQTitleBox = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 export const QestionTitle = styled.div`
   font-size: 1em;
@@ -213,4 +232,7 @@ export const QestionTitle = styled.div`
 export const FaQs = styled.pre`
   white-space: pre-wrap;
   font-size: 0.8em;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  padding: 1em 1em 1em 1em;
 `;
