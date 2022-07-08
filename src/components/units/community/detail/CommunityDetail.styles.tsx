@@ -9,8 +9,8 @@ export const Wrapper = styled.section`
   width: 70%;
   display: flex;
   flex-direction: column;
-  background-color: #f2ebf5;
-  padding: 4em;
+  /* background-color: #f2ebf5; */
+  padding: 2em 4em;
   margin: auto;
 `;
 
@@ -18,6 +18,7 @@ export const Picture = styled.img`
   width: 95%;
   height: 550px;
   margin: auto;
+  border-radius: 10px;
 `;
 
 export const PickBox = styled.div`
