@@ -6,7 +6,6 @@ export const Container = styled.main`
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  padding: 5em;
 `;
 
 export const PickedCard = styled(Card)`

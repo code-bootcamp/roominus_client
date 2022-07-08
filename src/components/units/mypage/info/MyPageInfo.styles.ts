@@ -1,40 +1,49 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../commons/styles/media";
+import { EditOutlined } from "@ant-design/icons";
 
 export const Container = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   width: 100%;
-  padding: 6.25em 15em;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
 
   width: 100%;
+  gap: 2em;
 `;
 
 export const UserInfoBox = styled.div`
-  border: 1px solid gray;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 800px;
+  background-size: 372px 800px;
+  background-image: url("/img/mypage/ticket.png");
 
-  width: 80%;
+  padding-top: 22em;
 `;
 
 export const Label = styled.label`
-  font-size: 1.25em;
-  width: 100%;
+  font-size: 1em;
+`;
+
+export const UserData = styled.span`
+  font-size: 1.3em;
+  cursor: pointer;
 `;
 
 export const PhoneBox = styled.div`
   display: flex;
-  width: 80%;
+  flex-direction: row;
+  gap: 0.5em;
 `;
 
 export const NumberBox = styled.div`
@@ -42,27 +51,56 @@ export const NumberBox = styled.div`
   flex-direction: column;
 `;
 
-export const resetButton = styled.button`
-  width: 15%;
-  font-weight: 500;
-  font-size: 1em;
-  margin-bottom: 0.5em;
-
-  color: white;
-  background-color: #9691ed;
-  border-radius: 8px;
-  border: none;
+export const resetButton = styled(EditOutlined)`
+  font-size: 1.3em;
+  padding: 0.2em;
+  color: #4a00e0;
   cursor: pointer;
-
-  display: flex;
-  justify-content: center;
 `;
 
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 3em 0em 3em 0em;
+  padding-top: 2em;
+`;
+
+export const ThemeBoxs = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 8em;
+  gap: 5%;
+`;
+export const ThemeBox = styled.div`
+  width: 30%;
+  border: 1px solid #d9d6d0;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1em;
+`;
+
+export const ThemeTitle = styled.label`
+  font-size: 0.8emem;
+`;
+
+export const ThemeSubTitle = styled.span`
+  color: darkgray;
+  font-size: 0.6em;
+  padding-bottom: 0.5em;
+`;
+
+export const ThemeIcon = styled.img`
+  width: 4em;
+  height: 3em;
+
+  :hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  transition: all 250ms ease-in-out;
 `;
 
 export const InfoTitleBox = styled.div`
@@ -122,4 +160,10 @@ export const ColumnTitle = styled.div`
 export const CardBox = styled.div`
   display: flex;
   gap: 2em;
+`;
+
+export const RightBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 `;

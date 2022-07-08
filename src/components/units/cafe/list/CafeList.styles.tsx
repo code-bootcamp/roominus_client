@@ -17,7 +17,7 @@ export const Container = styled.main`
 
 export const SearchWrapper = styled.section`
   width: 100vw;
-  height: 300px;
+  height: 230px;
   background: linear-gradient(
     90deg,
     rgba(142, 45, 226, 1) 30%,
