@@ -11,7 +11,7 @@ export const globalStyles = css`
 
   html,
   body {
-    max-width: 1440px;
+    max-width: 1200px;
     /* padding: 0px 20px; */
     margin: auto;
     width: 100vw;
