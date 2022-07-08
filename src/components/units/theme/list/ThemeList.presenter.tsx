@@ -2,6 +2,7 @@ import { useState, Fragment } from "react";
 import * as S from "./ThemeList.styles";
 import { v4 } from "uuid";
 import { useRouter } from "next/router";
+
 const NAVIGATION_MENUS = [
   { name: "전체" },
   { name: "추리" },
@@ -40,6 +41,13 @@ export default function ThemeListUI(props) {
   };
   return (
     <S.Wrapper>
+      <S.SearchBox>
+        <S.SearchInputWrapper>
+          <S.SearchInput placeholder="키워드를 입력하세요." />
+          <S.SearchInputUnderline />
+        </S.SearchInputWrapper>
+        <S.SearchButton>검색</S.SearchButton>
+      </S.SearchBox>
       <S.GenreList>
         <S.Genre isPicked={true}>전체</S.Genre>
         <S.Genre isPicked={false}>추리</S.Genre>

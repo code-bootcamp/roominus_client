@@ -131,6 +131,15 @@ export const ScrollDown = styled.div`
   font-family: serif;
 `;
 
+export const PressEnter = styled.div`
+  opacity: 50%;
+  color: white;
+  font-family: serif;
+  position: absolute;
+  right: 1%;
+  bottom: 0;
+`;
+
 export const Word = styled.h1`
   color: white;
 `;

@@ -42,6 +42,7 @@ export default function MainUI() {
             <S.ScrollDownLine />
             <S.ScrollDown>Scroll</S.ScrollDown>
           </S.ScrollDownBox>
+          <S.PressEnter>Skip : Enter</S.PressEnter>
         </S.Layer1>
 
         {/* <ParallaxLayer
