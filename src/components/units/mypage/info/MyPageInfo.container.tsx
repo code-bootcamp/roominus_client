@@ -1,12 +1,19 @@
+import React, { useState } from "react";
 import MyPageInfoUI from "./MyPageInfo.presenter";
-import { useState } from "react";
 
 export default function MyPageInfo() {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const onClickReset = () => {
+    showModal();
+  };
+
   const showModal = () => {
     setIsModalVisible(true);
-    console.log(isModalVisible);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
   };
 
   const handleCancel = () => {
@@ -15,8 +22,9 @@ export default function MyPageInfo() {
 
   return (
     <MyPageInfoUI
-      showModal={showModal}
+      onClickReset={onClickReset}
       isModalVisible={isModalVisible}
+      handleOk={handleOk}
       handleCancel={handleCancel}
     />
   );

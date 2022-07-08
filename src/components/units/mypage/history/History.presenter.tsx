@@ -4,55 +4,55 @@ export default function HistoryUI() {
   const data = [
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
     {
       _id: "1234",
-      title: "dfdfa",
+      title: "dfdfa234sadfadsf",
       writer: "34134",
       createdAt: "234324",
     },
@@ -62,9 +62,9 @@ export default function HistoryUI() {
       <S.Wrapper>
         <S.TableTop />
         <S.Row>
-          <S.ColumnHeaderBasic>ID</S.ColumnHeaderBasic>
-          <S.ColumnHeaderTitle>제목</S.ColumnHeaderTitle>
-          <S.ColumnHeaderBasic>작성자</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>번호</S.ColumnHeaderBasic>
+          <S.ColumnHeaderTitle>예약 번호</S.ColumnHeaderTitle>
+          <S.ColumnHeaderBasic>테마</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>날짜</S.ColumnHeaderBasic>
         </S.Row>
         {data.map((el) => (

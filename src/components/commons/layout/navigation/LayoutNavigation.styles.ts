@@ -24,4 +24,8 @@ export const MenuItem = styled.div`
   margin: 0px 60px;
   cursor: pointer;
   font-size: 0.8em;
+
+  color: ${(props) => (props.isActive ? "yellow" : "white")};
+  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
+  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
 `;

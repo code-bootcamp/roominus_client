@@ -28,33 +28,31 @@ export const Row = styled.li`
   height: 52px;
   line-height: 52px;
   border-bottom: 1px solid gray;
-
-  :hover {
-    color: blue;
-  }
 `;
 
 export const ColumnHeaderBasic = styled.div`
-  width: 10%;
+  width: 30%;
   text-align: center;
 `;
 
 export const ColumnHeaderTitle = styled.div`
-  width: 70%;
+  width: 40%;
   text-align: center;
 `;
 
 export const ColumnBasic = styled.div`
-  width: 10%;
+  width: 30%;
   text-align: center;
 `;
 
 export const ColumnTitle = styled.div`
-  width: 70%;
+  width: 40%;
   text-align: center;
+
   cursor: pointer;
 
   :hover {
-    color: blue;
+    color: #4a00e0;
+    font-weight: 600;
   }
 `;
