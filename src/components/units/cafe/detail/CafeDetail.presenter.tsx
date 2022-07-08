@@ -2,6 +2,7 @@ import * as S from "./CafeDetail.styles";
 import ListTheme from "./card/ListTheme";
 import MenuTabs from "./tabs/Tabs";
 import { v4 as uuidv4 } from "uuid";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 
 export default function CafeDetailUI(props) {
   return (
@@ -52,6 +53,9 @@ export default function CafeDetailUI(props) {
               </S.ThemeList>
             </S.Theme>
           )}
+          <S.ButtonBox>
+            <WebBlackButton title="목록으로" onClick={props.onClickList} />
+          </S.ButtonBox>
         </S.InfoBox>
       </S.SearchWrapper>
     </S.Container>

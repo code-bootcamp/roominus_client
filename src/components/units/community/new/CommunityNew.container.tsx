@@ -8,5 +8,11 @@ export default function CommunityNew() {
     router.push("/community");
   };
 
-  return <CommunityNewUI onClickList={onClickList} />;
+  const onClickSubmit = () => {
+    router.push("/community/_id");
+  };
+
+  return (
+    <CommunityNewUI onClickList={onClickList} onClickSubmit={onClickSubmit} />
+  );
 }

@@ -89,3 +89,9 @@ export const ThemeList = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 2.5em;
 `;
+
+export const ButtonBox = styled.div`
+  margin-top: 2em;
+  display: flex;
+  align-self: center;
+`;
