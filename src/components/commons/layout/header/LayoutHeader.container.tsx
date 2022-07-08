@@ -7,7 +7,7 @@ export default function LayoutHeader() {
   const [activedMenu, setActivedMenu] = useState("");
   const [isToggled, setIsToggled] = useState(false);
 
-  const onClickMenu = (event: any) => {
+  const onClickMenu = (event) => {
     if (event.target instanceof Element) {
       router.push(event.target.id);
 
@@ -17,7 +17,6 @@ export default function LayoutHeader() {
       setIsToggled(!isToggled);
     }
   };
-
   const onClickToggled = () => {
     setIsToggled(!isToggled);
   };
