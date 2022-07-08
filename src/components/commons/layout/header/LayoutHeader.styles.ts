@@ -69,7 +69,7 @@ export const MenuWrapper = styled.ul`
 
 export const MenuItem = styled.li`
   color: ${(props) => (props.isActive ? "purple" : "black")};
-  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
+  font-weight: ${(props) => (props.isActive ? "700" : "400")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
 
   font-size: 1.5em;

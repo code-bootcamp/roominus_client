@@ -1,4 +1,5 @@
 import * as S from "./Home.styles";
+import Link from "next/link";
 
 export default function HomeUI() {
   return (
@@ -6,7 +7,9 @@ export default function HomeUI() {
       <S.BackGroundImg></S.BackGroundImg>
       <S.StoreBox>
         <S.StoreTitleBox>
-          <span>더 보기 〉</span>
+          <Link href={"/cafe"}>
+            <span>더보기</span>
+          </Link>
         </S.StoreTitleBox>
         <S.StoreImgbox>
           <div>
@@ -38,7 +41,9 @@ export default function HomeUI() {
       <div>
         <div>
           <span>지금 가장 HOT한 테마는?</span>
-          <span>더 보기 〉</span>
+          <Link href={"/theme"}>
+            <span>더보기</span>
+          </Link>
         </div>
         <div>
           <img src="/img/theme/월야애담.webp" alt="bestTheme1" />

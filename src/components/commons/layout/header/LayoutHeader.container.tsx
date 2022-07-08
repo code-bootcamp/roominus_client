@@ -13,6 +13,8 @@ export default function LayoutHeader() {
 
       const activedMenu = event.target.id;
       setActivedMenu(activedMenu);
+
+      setIsToggled(!isToggled);
     }
   };
 

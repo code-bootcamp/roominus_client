@@ -14,7 +14,7 @@ export default function LayoutHeaderUI(props: any) {
       <S.Container>
         <S.Wrapper>
           <S.LogoWrapper>
-            <Link href={"/"}>
+            <Link href={"/home"}>
               <S.Logo src="/img/layout/logo.png" />
             </Link>
           </S.LogoWrapper>
@@ -45,8 +45,13 @@ export default function LayoutHeaderUI(props: any) {
       {props.isToggled ? (
         <S.Toggle>
           <S.ToggleMenuWrapper>
-            <S.ToggleMenu>로그인</S.ToggleMenu>
-            <S.ToggleMenu>회원가입</S.ToggleMenu>
+            <Link href={"/login"}>
+              <S.ToggleMenu>로그인</S.ToggleMenu>
+            </Link>
+            <Link href={"/signup"}>
+              <S.ToggleMenu>회원가입</S.ToggleMenu>
+            </Link>
+
             {NAVIGATION_MENUS.map((el) => (
               <Fragment key={el.page}>
                 <Link href={el.page}>
@@ -56,7 +61,9 @@ export default function LayoutHeaderUI(props: any) {
                 </Link>
               </Fragment>
             ))}
-            <S.ToggleMenu>마이페이지</S.ToggleMenu>
+            <Link href={"/mypage"}>
+              <S.ToggleMenu>마이페이지</S.ToggleMenu>
+            </Link>
           </S.ToggleMenuWrapper>
         </S.Toggle>
       ) : (

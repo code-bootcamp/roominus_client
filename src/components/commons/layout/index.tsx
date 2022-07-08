@@ -7,7 +7,9 @@ import { breakPoints } from "../../../commons/styles/media";
 import LayoutNavigation from "./navigation/LayoutNavigation.container";
 import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
 
-// const HIDDEN_HEADER = ["/"];
+const HIDDEN_HEADER = ["/"];
+const HIDDEN_TOP_HEADER = ["/"];
+
 const VISIBLE_NAV = [
   "/mypage",
   "/mypage/history",
@@ -63,15 +65,15 @@ interface ILayoutProps {
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
 
-  // const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
+  const isHiddenTopHeader = HIDDEN_TOP_HEADER.includes(router.asPath);
+  const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isVisibleNav = VISIBLE_NAV.includes(router.asPath);
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
 
   return (
     <Wrapper>
-      {/* {!isHiddenHeader && <LayoutHeader />} */}
-      <LayoutTopHeader />
-      <LayoutHeader />
+      {!isHiddenTopHeader && <LayoutTopHeader />}
+      {!isHiddenHeader && <LayoutHeader />}
       {isVisibleNav && <LayoutNavigation />}
       <Body>{props.children}</Body>
       {!isHiddenFooter && <LayoutFooter />}

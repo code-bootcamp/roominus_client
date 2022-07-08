@@ -62,9 +62,9 @@ export default function RewardUI() {
       <S.Wrapper>
         <S.TableTop />
         <S.Row>
-          <S.ColumnHeaderBasic>ID</S.ColumnHeaderBasic>
-          <S.ColumnHeaderTitle>제목</S.ColumnHeaderTitle>
-          <S.ColumnHeaderBasic>작성자</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>번호</S.ColumnHeaderBasic>
+          <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
+          <S.ColumnHeaderBasic>전체 적립금</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>날짜</S.ColumnHeaderBasic>
         </S.Row>
         {data.map((el) => (
@@ -78,7 +78,6 @@ export default function RewardUI() {
           </S.Row>
         ))}
         <S.TableBottom />
-        <S.Footer></S.Footer>
       </S.Wrapper>
     </S.Container>
   );

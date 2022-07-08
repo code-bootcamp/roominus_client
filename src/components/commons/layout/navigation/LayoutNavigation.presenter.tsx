@@ -14,7 +14,11 @@ export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
     <Wrapper>
       {NAVIGATION_MENUS.map((el) => (
         <Fragment key={el.page}>
-          <MenuItem id={el.page} onClick={props.onClickMenu}>
+          <MenuItem
+            id={el.page}
+            onClick={props.onClickMenu}
+            isActive={el.page === props.activedMenu}
+          >
             {el.name}
           </MenuItem>
         </Fragment>
