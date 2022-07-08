@@ -7,6 +7,8 @@ import Slider from "react-slick";
 
 export default function HomeUI(props) {
   const settings = {
+    dots: false,
+    arrows: false,
     className: "center",
     centerMode: true,
     centerPadding: "100px",
@@ -124,58 +126,63 @@ export default function HomeUI(props) {
         <S.FaQTitle>자주 묻는 질문</S.FaQTitle>
         <S.FaQSmallBoxes>
           <S.FaQBox>
-            <S.OpenBtnArrow
-              onClick={props.onClickOpenQuestion}
-              ref={props.OpenArrowRef}
-            />
-
-            <S.CloseBtnArrow
-              onClick={props.onClickCloseQuestion}
-              ref={props.CloseArrowRef}
-            />
-            <S.QestionTitle>룸인어스 란?</S.QestionTitle>
-            <S.FaQs>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              fuga ratione velit voluptatibus debitis iure cupiditate
-              consequuntur quasi, ducimus sunt, quia amet, dolor placeat
-              voluptate blanditiis laudantium veritatis repellendus at.
-            </S.FaQs>
+            <S.FaQTitleBox>
+              {props.isOpened1 && (
+                <S.OpenBtnArrow onClick={props.onClickOpenQuestion1} />
+              )}
+              {!props.isOpened1 && (
+                <S.CloseBtnArrow onClick={props.onClickCloseQuestion1} />
+              )}
+              <S.QestionTitle>룸인어스 란?</S.QestionTitle>
+            </S.FaQTitleBox>
+            {props.isOpened1 && (
+              <S.FaQs>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+                fuga ratione velit voluptatibus debitis iure cupiditate
+                consequuntur quasi, ducimus sunt, quia amet, dolor placeat
+                voluptate blanditiis laudantium veritatis repellendus at.
+              </S.FaQs>
+            )}
           </S.FaQBox>
           <S.FaQBox>
-            <S.OpenBtnArrow
-              onClick={props.onClickOpenQuestion}
-              ref={props.OpenArrowRef}
-            />
+            <S.FaQTitleBox>
+              {props.isOpened2 && (
+                <S.OpenBtnArrow onClick={props.onClickOpenQuestion2} />
+              )}
+              {!props.isOpened2 && (
+                <S.CloseBtnArrow onClick={props.onClickCloseQuestion2} />
+              )}
 
-            <S.CloseBtnArrow
-              onClick={props.onClickCloseQuestion}
-              ref={props.CloseArrowRef}
-            />
-            <S.QestionTitle>환불 가능 한가요?</S.QestionTitle>
-            <S.FaQs>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              fuga ratione velit voluptatibus debitis iure cupiditate
-              consequuntur quasi, ducimus sunt, quia amet, dolor placeat
-              voluptate blanditiis laudantium veritatis repellendus at.
-            </S.FaQs>
+              <S.QestionTitle>환불 가능 한가요?</S.QestionTitle>
+            </S.FaQTitleBox>
+            {props.isOpened2 && (
+              <S.FaQs>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+                fuga ratione velit voluptatibus debitis iure cupiditate
+                consequuntur quasi, ducimus sunt, quia amet, dolor placeat
+                voluptate blanditiis laudantium veritatis repellendus at.
+              </S.FaQs>
+            )}
           </S.FaQBox>
           <S.FaQBox>
-            <S.OpenBtnArrow
-              onClick={props.onClickOpenQuestion}
-              ref={props.OpenArrowRef}
-            />
+            <S.FaQTitleBox>
+              {props.isOpened3 && (
+                <S.OpenBtnArrow onClick={props.onClickOpenQuestion3} />
+              )}
+              {!props.isOpened3 && (
+                <S.CloseBtnArrow onClick={props.onClickCloseQuestion3} />
+              )}
+              <S.QestionTitle>서울지역만 가능한가요?</S.QestionTitle>
+            </S.FaQTitleBox>
 
-            <S.CloseBtnArrow
-              onClick={props.onClickCloseQuestion}
-              ref={props.CloseArrowRef}
-            />
-            <S.QestionTitle>서울지역만 가능한가요?</S.QestionTitle>
-            <S.FaQs>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              fuga ratione velit voluptatibus debitis iure cupiditate
-              consequuntur quasi, ducimus sunt, quia amet, dolor placeat
-              voluptate blanditiis laudantium veritatis repellendus at.
-            </S.FaQs>
+            {props.isOpened3 && (
+              <S.FaQs>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+                fuga ratione velit voluptatibus debitis iure cupiditate
+                consequuntur quasi, ducimus sunt, quia amet, dolor placeat
+                voluptate blanditiis laudantium veritatis repellendus at.
+              </S.FaQs>
+            )}
           </S.FaQBox>
         </S.FaQSmallBoxes>
       </S.FaQBoxes>
