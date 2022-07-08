@@ -6,14 +6,29 @@ export default function CommunityNewUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.Title>탈출인증 게시물 등록</S.Title>
+        {/* <S.Title>탈출인증 게시물 등록</S.Title> */}
         <S.InfoBackground>
-          <S.InfoBox>
-            <S.InfoTitle>
-              제목 <S.Essential>*</S.Essential>
-            </S.InfoTitle>
-            <S.InfoInput placeholder="제목을 입력해주세요" />
-          </S.InfoBox>
+          <S.HalfBox>
+            <S.Picture src="/img/community/board.png" />
+            <S.HalfRightBox>
+              <S.InfoBox>
+                <S.InfoTitle>
+                  제목 <S.Essential>*</S.Essential>
+                </S.InfoTitle>
+                <S.InfoInput placeholder="제목을 입력해주세요" />
+              </S.InfoBox>
+              <S.InfoBox>
+                <S.InfoTitle>태그</S.InfoTitle>
+                <S.InfoInput placeholder="태그를 입력해주세요" />
+              </S.InfoBox>
+              <S.InfoBox>
+                <S.InfoTitle>
+                  썸네일 첨부 <S.Essential>*</S.Essential>
+                </S.InfoTitle>
+                <S.DropBox>DropZone</S.DropBox>
+              </S.InfoBox>
+            </S.HalfRightBox>
+          </S.HalfBox>
           <S.InfoBox>
             <S.InfoTitle>
               내용 <S.Essential>*</S.Essential>

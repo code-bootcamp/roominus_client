@@ -19,8 +19,8 @@ export const Etc = styled.div`
   width: 100%;
   /* background-color: lightgreen; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0.1em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
   /* display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,56 +33,98 @@ export const Title = styled.h1`
   align-self: center;
 `;
 
-export const ItemBox = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  /* background-color: red; */
-  padding: 2em;
-  /* width: 100%; */
-  /* height: 58em; */
-`;
+// export const ItemBox = styled.div`
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+//   background-color: red;
+//   padding: 2em;
+//   width: 100%;
+//   height: 58em;
+// `;
 
 export const ItemBackground = styled.div`
   /* width: 28em; */
   width: 100%;
-  height: 380px;
-  background-color: #f2ebf5;
-  /* background-color: #ffffff; */
+  height: 320px;
+  background-color: #ffffff;
+  border: 1px solid #a3a8b7;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  :hover {
+    transform: scale(1.02);
+    /* cursor: pointer; */
+  }
+  transition: all 250ms ease-in-out;
+  /* justify-content: space-evenly; */
 `;
 
 export const Picture = styled.img`
-  width: 85%;
-  height: 270px;
+  width: 100%;
+  height: 220px;
+  border-radius: 10px 10px 0px 0px;
   cursor: pointer;
 `;
 
-export const NamePickBox = styled.div`
+export const InfoBox = styled.div`
   width: 85%;
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: green; */
+`;
+
+export const DatePickBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* align-items: center; */
+  /* background-color: yellow; */
+`;
+
+export const Date = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #a3a8b7;
+  /* background-color: green; */
 `;
 
 export const BoardName = styled.h3`
+  font-size: 1.3em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* background-color: gray; */
+`;
+
+export const PickBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: pink; */
+`;
+
+export const Pick = styled.span`
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-right: 0.3em;
+`;
+
+export const PickCount = styled.h3`
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
-export const Pick = styled.span`
-  font-size: 1.8em;
-  cursor: pointer;
-`;
-
 export const ButtonBox = styled.div`
-  margin: 1em 2em;
+  margin: 1em 0em;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

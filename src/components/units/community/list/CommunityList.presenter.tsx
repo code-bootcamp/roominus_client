@@ -6,24 +6,30 @@ export default function CommunityListUI(props) {
   return (
     // <S.Container>
     <S.Wrapper>
-      <S.Title>탈출인증게시판</S.Title>
+      {/* <S.Title>탈출인증게시판</S.Title> */}
       <S.Etc>
-        {new Array(6).fill(1).map((el) => (
+        {new Array(8).fill(1).map((el) => (
           <span key={el}>
-            <S.ItemBox>
-              <S.ItemBackground>
-                <S.Picture
-                  src="/img/community/board.png"
-                  onClick={props.onClickCard}
-                />
-                <S.NamePickBox>
-                  <S.BoardName>유토피아 탈출 성공 보드!</S.BoardName>
-                  <Tooltip placement="left" title="52">
+            {/* <S.ItemBox> */}
+            <S.ItemBackground>
+              <S.Picture
+                src="/img/community/board.png"
+                onClick={props.onClickCard}
+              />
+              <S.InfoBox>
+                <S.BoardName>유토피아 양도해요</S.BoardName>
+                <S.DatePickBox>
+                  <S.Date>2일전</S.Date>
+                  {/* <Tooltip placement="topRight" title="52"> */}
+                  <S.PickBox>
                     <S.Pick>❤️</S.Pick>
-                  </Tooltip>
-                </S.NamePickBox>
-              </S.ItemBackground>
-            </S.ItemBox>
+                    <S.PickCount>52</S.PickCount>
+                  </S.PickBox>
+                  {/* </Tooltip> */}
+                </S.DatePickBox>
+              </S.InfoBox>
+            </S.ItemBackground>
+            {/* </S.ItemBox> */}
           </span>
         ))}
       </S.Etc>
