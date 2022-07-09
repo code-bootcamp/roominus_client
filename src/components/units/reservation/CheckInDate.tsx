@@ -1,11 +1,22 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
+import { breakPoints } from "../../../commons/styles/media";
 import DatePicker from "../../commons/datepicker/DatePicker";
 
 const Container = styled.div`
   position: relative;
-  width: 50%;
-  border: 1px solid black;
+  width: 20em;
+  height: 2em;
+
+  @media ${breakPoints.tablet} {
+    width: 25em;
+    height: 4em;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 17.5em;
+    height: 2em;
+  }
 
   .search-room-bar-date-label {
     font-size: 10px;
@@ -20,12 +31,21 @@ const Container = styled.div`
   input {
     width: 100%;
     height: 100%;
-    border: 0;
-    border-radius: 12px;
+    border: 1px solid darkgray;
     font-weight: 600;
     text-align: center;
     outline: none;
     cursor: pointer;
+
+    @media ${breakPoints.tablet} {
+      width: 25em;
+      height: 4em;
+    }
+
+    @media ${breakPoints.mobile} {
+      width: 17.5em;
+      height: 2em;
+    }
   }
   > div {
     width: 100%;
@@ -71,7 +91,7 @@ export default function SearchRoomCheckInDate() {
       <DatePicker
         selected={startDate}
         onChange={(date) => setStartDate(date)}
-        monthsShown={2}
+        monthsShown={1}
         selectsStart
         minDate={new Date()}
         placeholderText="날짜를 선택해주세요"

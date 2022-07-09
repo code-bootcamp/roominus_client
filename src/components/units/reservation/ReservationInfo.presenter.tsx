@@ -3,6 +3,7 @@ import { useState } from "react";
 import WebSmallPurpleButton from "../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import WebSmallBlackButton from "../../commons/buttons/buttonDesktop/WebSmallBlackButton";
 import * as S from "./ReservationInfo.styles";
+import RoomSelectBox from "./Reservation.select";
 
 export default function ReservationInfoUI(props: any) {
   const router = useRouter();
@@ -60,7 +61,15 @@ export default function ReservationInfoUI(props: any) {
           </S.Row>
           <S.Row>
             <label>연락처</label>
-            <input type="text" style={{ border: "1px solid gray" }} />
+            <input
+              style={{ border: "1px solid gray" }}
+              type="tel"
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+              }}
+            />
           </S.Row>
           <S.Row>
             <label>인원</label>
