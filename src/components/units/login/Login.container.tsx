@@ -23,10 +23,10 @@ const schema = yup.object({
   password: yup
     .string()
     .matches(
-      /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/,
-      "영문+숫자 조합 8~16자리의 비밀번호를 입력해주세요."
+      /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,14}$/,
+      "영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."
     )
-    .required("영문+숫자 조합 8~16자리의 비밀번호를 입력해주세요."),
+    .required("영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."),
 });
 
 export default function LoginPage() {

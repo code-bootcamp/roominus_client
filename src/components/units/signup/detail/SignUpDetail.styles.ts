@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.section`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +21,16 @@ export const EmailBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1.6em;
+`;
+export const TitleBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  line-height: 1em;
+`;
+export const ImportantInfos = styled.span`
+  margin-left: 0.3em;
+  font-size: 1.4em;
+  color: red;
 `;
 export const EmailTitle = styled.span`
   font-size: 1.3em;
