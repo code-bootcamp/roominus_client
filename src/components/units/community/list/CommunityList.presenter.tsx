@@ -4,7 +4,6 @@ import * as S from "./CommunityList.styles";
 
 export default function CommunityListUI(props) {
   return (
-    // <S.Container>
     <S.Wrapper>
       {/* <S.Title>탈출인증게시판</S.Title> */}
       <S.Etc>
@@ -22,7 +21,7 @@ export default function CommunityListUI(props) {
                   <S.Date>2일전</S.Date>
                   {/* <Tooltip placement="topRight" title="52"> */}
                   <S.PickBox>
-                    <S.Pick>❤️</S.Pick>
+                    <S.Pick src="/img/community/redheart.png" />
                     <S.PickCount>52</S.PickCount>
                   </S.PickBox>
                   {/* </Tooltip> */}
@@ -39,6 +38,5 @@ export default function CommunityListUI(props) {
       </S.ButtonBox>
       <S.Pagination>◀️ 1 2 3 4 5 6 7 8 9 10 ▶️</S.Pagination>
     </S.Wrapper>
-    // </S.Container    >
   );
 }

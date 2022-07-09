@@ -1,18 +1,19 @@
 import styled from "@emotion/styled";
-
-// export const Container = styled.main`
-//   width: 100%;
-//   background-color: gray;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// `;
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 2em 0em;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Etc = styled.div`
@@ -26,22 +27,23 @@ export const Etc = styled.div`
   justify-content: space-between;
   gap: 20px; */
   /* margin-bottom: 2em; */
+
+  @media ${breakPoints.tablet} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Title = styled.h1`
   font-size: 2em;
   align-self: center;
 `;
-
-// export const ItemBox = styled.div`
-//   width: 100%;
-//   display: flex;
-//   flex-direction: row;
-//   background-color: red;
-//   padding: 2em;
-//   width: 100%;
-//   height: 58em;
-// `;
 
 export const ItemBackground = styled.div`
   /* width: 28em; */
@@ -104,16 +106,22 @@ export const BoardName = styled.h3`
 `;
 
 export const PickBox = styled.div`
+  height: 2em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   /* background-color: pink; */
 `;
 
-export const Pick = styled.span`
-  font-size: 1.5em;
+export const Pick = styled.img`
+  width: 2em;
+  height: 100%;
   cursor: pointer;
   margin-right: 0.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: green; */
 `;
 
 export const PickCount = styled.h3`
@@ -121,6 +129,7 @@ export const PickCount = styled.h3`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* background-color: orange; */
 `;
 
 export const ButtonBox = styled.div`
@@ -128,6 +137,11 @@ export const ButtonBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media ${breakPoints.mobile} {
+    width: 70%;
+    /* background-color: red; */
+  }
 `;
 
 export const Pagination = styled.div`
