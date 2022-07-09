@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
-import { Card } from "antd";
 
 export const Container = styled.main`
   padding: 2em 0em 2em 0em;
@@ -8,11 +7,23 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
-export const ContainerTitle = styled.span`
+export const ContainerTitle = styled.h1`
   padding: 1em;
   font-size: 2em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
 
 export const Wrapper = styled.section`
@@ -28,20 +39,22 @@ export const Wrapper = styled.section`
     width: 100%;
     height: 100%;
     font-size: 0.5em;
+
+    display: flex;
+    flex-direction: column;
   }
 `;
-
-export const PickedCard = styled(Card)``;
 
 export const DataBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
 
   font-size: 1em;
   padding: 1em;
-  border: 1px solid gainsboro;
-  text-align: center;
+
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+  }
 `;
 
 export const NotionWrapper = styled.div`
@@ -59,10 +72,22 @@ export const NoticeTitle = styled.span`
   border-top: 2px solid #b2b2b2;
   font-size: 2.5em;
   margin-bottom: 10px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+  }
 `;
 
 export const NoticeImg = styled.img`
-  height: 250px;
+  height: 15.63em;
+
+  @media ${breakPoints.tablet} {
+    height: 12em;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 8em;
+  }
 `;
 export const ButtonWrapper = styled.div`
   display: flex;

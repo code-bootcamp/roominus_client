@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import WebSmallPurpleButton from "../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
+import WebSmallBlackButton from "../../commons/buttons/buttonDesktop/WebSmallBlackButton";
 import * as S from "./ReservationInfo.styles";
 
 export default function ReservationInfoUI(props: any) {
@@ -131,12 +133,18 @@ export default function ReservationInfoUI(props: any) {
             </S.Data>
           </S.UserInfoBox>
           <S.buttonWrapper>
-            <button type="reset" onClick={onClickToMoveMain}>
+            <WebSmallBlackButton
+              title="돌아가기"
+              type="reset"
+              onClick={onClickToMoveMain}
+            >
               돌아가기
-            </button>
-            <button type="submit" onClick={onClickToMoveSuccess}>
-              결제하기
-            </button>
+            </WebSmallBlackButton>
+            <WebSmallPurpleButton
+              type="submit"
+              title="결제하기"
+              onClick={onClickToMoveSuccess}
+            ></WebSmallPurpleButton>
           </S.buttonWrapper>
         </S.InfoForm>
       </S.Wrapper>
