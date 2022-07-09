@@ -25,7 +25,6 @@ export default function LoginUI(props) {
           />
           {props.openEye && (
             <FontAwesomeIcon
-              onClick={props.onClickShowPassword}
               icon={faEye}
               style={{ color: "purple", fontSize: "1.5em", cursor: "pointer" }}
             />

@@ -6,16 +6,92 @@ import {
   signInWithRedirect,
   GoogleAuthProvider,
 } from "firebase/auth";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const schema = yup.object({
+  email: yup
+    .string()
+    .matches(
+      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i,
+      "이메일 아이디를 @까지 정확하게 입력해주세요."
+    )
+    .required("이메일 아이디를 @까지 정확하게 입력해주세요."),
+  password: yup
+    .string()
+    .matches(
+      /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,14}$/,
+      "영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."
+    )
+    .required("영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."),
+  password2: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "비밀번호가 일치하지 않습니다.")
+    .required("영문+숫자 조합 8~16자리의 비밀번호를 입력해주세요."),
+  name: yup.string().required("필수 입력 사항입니다."),
+});
 const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
+
 export default function SignUpDetail() {
   const router = useRouter();
-  const email = router.query.email;
-  const email2 = router.query.email2;
-  const emailVerified = router.query.emailVerified;
-  const kakaoid = router.query.has_email;
+  const googleEmail = router.query.email;
+  const kakaoEmail = router.query.email2;
+  const googleLoggedIn = router.query.emailVerified;
+  const kakaologgedIn = router.query.has_email;
+
+  const passwordInputRef = useRef();
+  const password2InputRef = useRef();
+  const [openEye1, setOpenEye1] = useState(false);
+  const [openEye2, setOpenEye2] = useState(false);
+  const [phone, setPhone] = useState("");
+  const { register, handleSubmit, setValue, formState } = useForm({
+    resolver: yupResolver(schema),
+    mode: "onChange",
+  });
+  useEffect(() => {
+    register("email", { required: true });
+    register("password", { required: true });
+    register("password2", { required: true });
+    register("name", { required: true });
+  }, []);
+
+  const onClickMoveToPasswordRef = () => {
+    passwordInputRef.current.focus();
+  };
+  const onChangeGetPhoneNo = (event) => {
+    setPhone(event?.target.value);
+  };
+  const onClickVerifyMySelfByNo = () => {};
+
+  const onSubmitSignup = (data) => {
+    console.log(data);
+  };
+
+  const onClickMoveToLogin = () => {
+    router.push("/login");
+  };
+
+  const onClickShowPassword = () => {
+    passwordInputRef.current.type = "text";
+    setOpenEye1(true);
+    setTimeout(() => {
+      passwordInputRef.current.type = "password";
+      setOpenEye1(false);
+    }, 1000);
+  };
+  const onClickShowPassword2 = () => {
+    password2InputRef.current.type = "text";
+    setOpenEye2(true);
+    setTimeout(() => {
+      password2InputRef.current.type = "password";
+      setOpenEye2(false);
+    }, 1000);
+  };
+
   const onClickSocialIDLogout = () => {
     signOut(auth)
       .then(() => {
@@ -70,12 +146,26 @@ export default function SignUpDetail() {
     <>
       <Head></Head>
       <SignUpDetailUI
-        email={email}
-        email2={email2}
-        emailVerified={emailVerified}
-        kakaoid={kakaoid}
+        googleEmail={googleEmail}
+        kakaoEmail={kakaoEmail}
+        googleLoggedIn={googleLoggedIn}
+        kakaologgedIn={kakaologgedIn}
         onClickSocialIDLogout={onClickSocialIDLogout}
         onClickLogoutkakao={onClickLogoutkakao}
+        handleSubmit={handleSubmit}
+        setValue={setValue}
+        formState={formState}
+        onClickShowPassword={onClickShowPassword}
+        onClickShowPassword2={onClickShowPassword2}
+        passwordInputRef={passwordInputRef}
+        password2InputRef={password2InputRef}
+        openEye1={openEye1}
+        openEye2={openEye2}
+        onClickMoveToLogin={onClickMoveToLogin}
+        onSubmitSignup={onSubmitSignup}
+        onClickVerifyMySelfByNo={onClickVerifyMySelfByNo}
+        onChangeGetPhoneNo={onChangeGetPhoneNo}
+        onClickMoveToPasswordRef={onClickMoveToPasswordRef}
       />
     </>
   );
