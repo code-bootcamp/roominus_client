@@ -62,9 +62,6 @@ export default function LayoutHeaderUI(props: any) {
                 </Link>
               </Fragment>
             ))}
-            <Link href={"/mypage"}>
-              <S.ToggleMenu>마이페이지</S.ToggleMenu>
-            </Link>
           </S.ToggleMenuWrapper>
         </S.Toggle>
       ) : (

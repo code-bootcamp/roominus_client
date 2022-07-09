@@ -21,7 +21,7 @@ const TopBtn = styled(CaretUpOutlined)`
   border: none;
   color: #ffffff;
   font-weight: 600;
-  font-size: 35px;
+  font-size: 30px;
   letter-spacing: 0.1em;
   cursor: pointer;
 

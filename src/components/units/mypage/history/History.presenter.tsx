@@ -1,6 +1,9 @@
+import { Modal } from "antd";
+import { useState } from "react";
 import * as S from "./History.styles";
 
 export default function HistoryUI() {
+  const [modal2Visible, setModal2Visible] = useState(false);
   const data = [
     {
       _id: "1234",
@@ -75,6 +78,7 @@ export default function HistoryUI() {
   return (
     <S.Container>
       <S.Wrapper>
+        <S.Title>나의 예약내역</S.Title>
         <S.TableTop />
         <S.Row>
           <S.ColumnHeaderBasic>번호</S.ColumnHeaderBasic>
@@ -88,7 +92,9 @@ export default function HistoryUI() {
             <S.ColumnBasic>
               {String(el._id).slice(-4).toUpperCase()}
             </S.ColumnBasic>
-            <S.ColumnTitle id={el._id}>{el.title}</S.ColumnTitle>
+            <S.ColumnTitle id={el._id} onClick={() => setModal2Visible(true)}>
+              {el.title}
+            </S.ColumnTitle>
             <S.ColumnBasic>{el.status}</S.ColumnBasic>
             <S.ColumnBasic>{el.writer}</S.ColumnBasic>
             <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
@@ -96,6 +102,18 @@ export default function HistoryUI() {
         ))}
         <S.TableBottom />
       </S.Wrapper>
+
+      <Modal
+        title="Vertically centered modal dialog"
+        centered
+        visible={modal2Visible}
+        onOk={() => setModal2Visible(false)}
+        onCancel={() => setModal2Visible(false)}
+      >
+        <p>some contents...</p>
+        <p>some contents...</p>
+        <p>some contents...</p>
+      </Modal>
     </S.Container>
   );
 }

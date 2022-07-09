@@ -5,13 +5,13 @@ export const Container = styled.main`
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  padding: 5em;
+  padding: 2em 0em 2em 0em;
 `;
 
 export const Wrapper = styled.div`
-  width: 1200px;
-  margin: 100px;
+  width: 100%;
 `;
+export const Title = styled.h1``;
 
 export const TableTop = styled.div`
   border-top: 2px solid gray;

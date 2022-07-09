@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
 import { useRouter } from "next/router";
+import { breakPoints } from "../../../commons/styles/media";
+
 import styled from "@emotion/styled";
 import LayoutHeader from "./header/LayoutHeader.container";
 import LayoutFooter from "./footer/LayoutFooter.container";
-import { breakPoints } from "../../../commons/styles/media";
 import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
 import LayoutBanner from "./banner/LayoutBanner";
 import LayoutSideBar from "./sidebar/LayoutSidebar.presenter";
@@ -11,7 +12,13 @@ import LayoutSideBar from "./sidebar/LayoutSidebar.presenter";
 const HIDDEN_HEADER = ["/"];
 const HIDDEN_BANNER = ["/", "/home", "/cafe", "/login", "/signup"];
 const HIDDEN_TOP_HEADER = ["/"];
-const VISIBLE_SIDE_BAR = ["/mypage"];
+const VISIBLE_SIDE_BAR = [
+  "/mypage",
+  "/mypage/history",
+  "/mypage/reward",
+  "/mypage/mypick",
+  "/mypage/pwedit",
+];
 const HIDDEN_FOOTER = ["/"];
 
 const Wrapper = styled.section`
@@ -74,7 +81,6 @@ export default function Layout(props: ILayoutProps) {
         {isVISBLESIDEBAR && <LayoutSideBar />}
         <Body>{props.children}</Body>
       </div>
-
       {!isHiddenFooter && <LayoutFooter />}
     </Wrapper>
   );

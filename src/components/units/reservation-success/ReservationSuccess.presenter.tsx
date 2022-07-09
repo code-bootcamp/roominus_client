@@ -38,12 +38,12 @@ export default function ReservationSuccessUI() {
       <S.ButtonWrapper>
         <S.CancelBtn>
           <Link href={"/"}>
-            <S.ButtonTitle> 메인으로 </S.ButtonTitle>
+            <S.ButtonTitle> 취소하기 </S.ButtonTitle>
           </Link>
         </S.CancelBtn>
         <S.SubmitBtn>
           <Link href={"/mypage"}>
-            <S.ButtonTitle> 마이페이지 </S.ButtonTitle>
+            <S.ButtonTitle> 목록으로 </S.ButtonTitle>
           </Link>
         </S.SubmitBtn>
       </S.ButtonWrapper>

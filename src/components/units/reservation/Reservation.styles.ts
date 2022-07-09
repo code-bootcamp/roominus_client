@@ -2,12 +2,11 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Container = styled.main`
-  padding-bottom: 2em;
+  padding: 2em 0em 2em 0em;
 `;
 
 export const Wrapper = styled.section`
   width: 100%;
-  margin-top: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +23,6 @@ export const StepBar = styled.div`
   width: 100%;
   height: 3.5em;
   display: flex;
-  margin: 0.5em;
 `;
 
 export const Step = styled.div`

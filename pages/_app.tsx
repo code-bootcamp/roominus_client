@@ -5,7 +5,11 @@ import "antd/dist/antd.css";
 import Layout from "../src/components/commons/layout";
 import { initializeApp } from "firebase/app";
 import { useEffect } from "react";
-import Head from "next/head";
+
+declare const window: typeof globalThis & {
+  Kakao: any;
+};
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -34,7 +38,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      <Head></Head>
       <Global styles={globalStyles} />
       <Layout>
         <Component {...pageProps} />

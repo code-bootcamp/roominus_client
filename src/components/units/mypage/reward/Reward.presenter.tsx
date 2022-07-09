@@ -60,6 +60,7 @@ export default function RewardUI() {
   return (
     <S.Container>
       <S.Wrapper>
+        <S.Title>나의 적립내역</S.Title>
         <S.TableTop />
         <S.Row>
           <S.ColumnHeaderBasic>번호</S.ColumnHeaderBasic>

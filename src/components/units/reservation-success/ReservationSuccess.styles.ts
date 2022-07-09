@@ -3,6 +3,8 @@ import { breakPoints } from "../../../commons/styles/media";
 import { Card } from "antd";
 
 export const Container = styled.main`
+  padding: 2em 0em 2em 0em;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +19,6 @@ export const Wrapper = styled.section`
   width: 40%;
   display: flex;
   flex-direction: row;
-  padding-top: 1em;
 
   justify-content: center;
   align-items: center;

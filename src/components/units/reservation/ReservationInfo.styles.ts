@@ -1,16 +1,18 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
-export const Container = styled.main``;
+export const Container = styled.main`
+  padding: 2em 0em 2em 0em;
+`;
 
 export const Wrapper = styled.section`
   width: 100%;
-  margin-top: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media ${breakPoints.mobile} {
+
+  @media ${breakPoints.tablet} {
     width: 100%;
     height: 100%;
     font-size: 0.5em;
@@ -21,7 +23,6 @@ export const StepBar = styled.div`
   width: 100%;
   height: 3.5em;
   display: flex;
-  margin: 0.5em;
 `;
 
 export const Step = styled.div`
@@ -48,7 +49,7 @@ export const Row = styled.li`
   display: flex;
   flex-direction: row;
   line-height: 3em;
-  width: 80em;
+  width: 70em;
   border-bottom: 1px solid gray;
 `;
 

@@ -6,42 +6,17 @@ export default function MyPickUI(props) {
 
   return (
     <S.Container>
-      <S.PickedCard
-        onClick={props.onClickMoveToDetail}
-        hoverable
-        style={{ width: "400px" }}
-        cover={<img alt="example" src="/img/theme/월야애담.webp" />}
-      >
-        <Meta title="월야애담" description="찜한 날짜" />
-      </S.PickedCard>{" "}
-      <S.PickedCard
-        hoverable
-        style={{ width: "400px" }}
-        cover={<img alt="example" src="/img/theme/월야애담.webp" />}
-      >
-        <Meta title="월야애담" description="찜한 날짜" />
-      </S.PickedCard>{" "}
-      <S.PickedCard
-        hoverable
-        style={{ width: "400px" }}
-        cover={<img alt="example" src="/img/theme/월야애담.webp" />}
-      >
-        <Meta title="월야애담" description="찜한 날짜" />
-      </S.PickedCard>{" "}
-      <S.PickedCard
-        hoverable
-        style={{ width: "400px" }}
-        cover={<img alt="example" src="/img/theme/월야애담.webp" />}
-      >
-        <Meta title="월야애담" description="찜한 날짜" />
-      </S.PickedCard>{" "}
-      <S.PickedCard
-        hoverable
-        style={{ width: "400px" }}
-        cover={<img alt="example" src="/img/theme/월야애담.webp" />}
-      >
-        <Meta title="월야애담" description="찜한 날짜" />
-      </S.PickedCard>{" "}
+      <S.Wrapper>
+        <S.Title>테마 찜목록</S.Title>
+        <S.PickedCard
+          onClick={props.onClickMoveToDetail}
+          hoverable
+          style={{ width: "200px" }}
+          cover={<img alt="example" src="/img/theme/월야애담.webp" />}
+        >
+          <Meta title="월야애담" description="찜한 날짜" />
+        </S.PickedCard>{" "}
+      </S.Wrapper>
     </S.Container>
   );
 }
