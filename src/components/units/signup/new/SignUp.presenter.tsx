@@ -1,6 +1,6 @@
 import * as S from "./SignUp.styles";
 
-export default function SignUpUI() {
+export default function SignUpUI(props) {
   return (
     <S.Wrapper>
       <S.Title>회원가입</S.Title>
@@ -9,7 +9,12 @@ export default function SignUpUI() {
           이용약관에 동의하지않는 경우 서비스 이용에 제한이 있을 수 있습니다.
         </S.Warning>
         <S.CheckBox>
-          <S.Check type="checkbox" />
+          <S.Check
+            type="checkbox"
+            ref={props.totalCheckRef}
+            onChange={props.onChangeBothCheckbox}
+            checked={props.necessity && props.optional}
+          />
           <S.CheckLabel>전체동의</S.CheckLabel>
         </S.CheckBox>
       </S.WarningBox>
@@ -20,7 +25,11 @@ export default function SignUpUI() {
             <S.NecessitySubTitle>이용약관</S.NecessitySubTitle>
           </S.NecessityTitles>
           <S.NecessityCheckBoxes>
-            <S.NecessityCheckBox type="checkbox" />
+            <S.NecessityCheckBox
+              type="checkbox"
+              ref={props.necessityCheckRef}
+              onChange={props.onChangeNecessityCheck}
+            />
             <S.NecessityCheckBoxTitle>동의합니다</S.NecessityCheckBoxTitle>
           </S.NecessityCheckBoxes>
         </S.NecessityTitleBox>
@@ -41,7 +50,11 @@ export default function SignUpUI() {
             <S.OptionalSubTitle>이용약관</S.OptionalSubTitle>
           </S.OptionalTitles>
           <S.OptionalCheckBoxes>
-            <S.OptionalCheckBox type="checkbox" />
+            <S.OptionalCheckBox
+              type="checkbox"
+              ref={props.optionalCheckRef}
+              onChange={props.onChangeOptionalCheck}
+            />
             <S.OptionalCheckBoxTitle>동의합니다</S.OptionalCheckBoxTitle>
           </S.OptionalCheckBoxes>
         </S.OptionalTitleBox>
@@ -56,8 +69,16 @@ export default function SignUpUI() {
         </S.OptionalInfo>
       </S.OptionalInfoBox>
       <S.ButtonBox>
-        <S.PrevButton>이전</S.PrevButton>
-        <S.NextButton>다음</S.NextButton>
+        <S.PrevButton onClick={props.onClickMoveToLogin}>이전</S.PrevButton>
+        <S.NextButton
+          onClick={
+            props.necessity === true
+              ? props.onClickMoveToSignupDetail
+              : props.onOpenErrorModal
+          }
+        >
+          다음
+        </S.NextButton>
       </S.ButtonBox>
     </S.Wrapper>
   );
