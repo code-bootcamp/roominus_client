@@ -1,24 +1,51 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 100%;
   padding: 2em 0em;
+  display: flex;
+  flex-direction: row;
+
+  @media ${breakPoints.tablet} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Wrapper = styled.section`
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  /* background-color: #f2ebf5; */
-  padding: 2em 4em;
-  margin: auto;
+  background-color: #f2ebf5;
+  padding: 2em;
+  margin-right: 2em;
+
+  @media ${breakPoints.tablet} {
+    margin-right: 0;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-right: 0;
+  }
 `;
 
 export const Picture = styled.img`
-  width: 95%;
-  height: 550px;
+  width: 100%;
+  height: 31em;
   margin: auto;
   border-radius: 10px;
+
+  @media ${breakPoints.mobile} {
+    height: 20em;
+  }
 `;
 
 export const PickBox = styled.div`
@@ -40,6 +67,10 @@ export const PickCount = styled.span`
 
 export const BoardTitle = styled.h1`
   font-size: 1.5em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2em;
+  }
 `;
 
 export const BoardContents = styled.div`
@@ -54,7 +85,7 @@ export const BoardContents = styled.div`
 // `;
 
 export const ButtonBox = styled.div`
-  padding: 2em 0em 0em 0em;
+  padding: 4em 0em 0em 0em;
   gap: 2em;
   display: flex;
   flex-direction: row;

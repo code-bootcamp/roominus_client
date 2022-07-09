@@ -1,45 +1,89 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 70%;
-  margin: auto;
+  /* margin: auto; */
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #bdbdbd;
+
+  @media ${breakPoints.tablet} {
+    margin-top: 2em;
+    width: 90%;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-top: 2em;
+    width: 90%;
+    font-size: 0.9em;
+  }
+`;
+
+export const CommentTitleBox = styled.div`
+  height: 1.5em;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  /* background-color: pink; */
+`;
+
+export const CommentIcon = styled.img`
+  width: 1.5em;
+  height: 100%;
+  margin-right: 0.5em;
+  /* background-color: green; */
+`;
+
+export const CommentTitle = styled.h1`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: yellow; */
 `;
 
 export const CommentWriteBox = styled.div`
   width: 100%;
-  height: 100px;
-  padding: 2em 3em;
+  height: 7em;
+  padding: 2em 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #bdbdbd;
   background-color: #f2ebf5;
+
+  @media ${breakPoints.mobile} {
+    height: 100px;
+  }
 `;
 
 export const Name = styled.h4`
+  width: 15%;
   height: 2.5em;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  /* background-color: pink; */
+
+  @media ${breakPoints.mobile} {
+    width: 17%;
+  }
 `;
 
 export const Date = styled.div``;
 
 export const CommentInput = styled.input`
-  width: 80%;
+  width: 60%;
   height: 2.5em;
   border: none;
   padding-left: 1em;
-`;
 
-// export const Button = styled.button`
-//   width: 5em;
-//   height: 2.5em;
-//   border-radius: 5px;
-//   background-color: #4a00e0;
-// `;
+  @media ${breakPoints.mobile} {
+    width: 60%;
+  }
+`;
 
 export const CommentListBox = styled.div`
   width: 100%;
@@ -62,6 +106,7 @@ export const NameIcon = styled.div`
 
 export const ListInfoBox = styled.div`
   width: 100%;
+  padding: 0em 0.5em 0em 1em;
   display: flex;
   flex-direction: column;
 `;
@@ -77,7 +122,6 @@ export const InfoTitleBox = styled.div`
 `;
 
 export const InfoTitle = styled.div`
-  width: 10em;
   /* background-color: yellow; */
   display: flex;
   flex-direction: row;
@@ -102,9 +146,10 @@ export const Delete = styled.div``;
 export const Contents = styled.div``;
 
 export const Arrow = styled.img`
-  width: 2em;
-  height: 2em;
-  margin-right: 1.8em;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 1.2em;
+  /* margin-right: 1.8em; */
 `;
 export const ReCommentListBox = styled.div`
   width: 100%;
@@ -118,7 +163,19 @@ export const ReCommentListBox = styled.div`
 `;
 
 export const ReCommentWriteBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const ReCommentInput = styled.input`
+  width: 75%;
+  height: 2.5em;
+  border: none;
+  padding-left: 1em;
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+  }
 `;
