@@ -24,6 +24,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
+  max-width: 1200px;
   display: flex;
   text-align: left;
   justify-content: center;
@@ -72,7 +73,6 @@ export const Menu = styled.li`
 `;
 
 export const InfoWrapper = styled.div`
-  width: 1400px;
   display: flex;
   flex-direction: row;
   @media ${breakPoints.tablet} {
