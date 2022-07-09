@@ -17,6 +17,7 @@ export const Wrapper = styled.section`
 export const Title = styled.h1`
   font-size: 2.8em;
   margin-bottom: 1em;
+  cursor: default;
 `;
 export const Form = styled.form`
   width: 50%;
@@ -68,6 +69,7 @@ export const SignUpBox = styled.div`
 export const SignupLabel = styled.span`
   font-size: 1.2em;
   margin-right: 1em;
+  cursor: default;
 `;
 export const SignUpbtn = styled.button`
   border: none;
