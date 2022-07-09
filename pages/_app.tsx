@@ -5,7 +5,14 @@ import "antd/dist/antd.css";
 import Layout from "../src/components/commons/layout";
 import { initializeApp } from "firebase/app";
 import { useEffect } from "react";
+import { RecoilRoot } from "recoil";
+import ApolloSetting from "../src/components/commons/apollo";
 import Head from "next/head";
+
+declare const window: typeof globalThis & {
+  Kakao: any;
+};
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -33,13 +40,26 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, []);
   return (
-    <>
-      <Head></Head>
-      <Global styles={globalStyles} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+    <RecoilRoot>
+      <ApolloSetting>
+        <Head>
+          <title>Roominus</title>
+          <meta
+            property="og:Roominus"
+            content="안녕하세요, 방탈출 예약 플랫폼 룸인어스입니다."
+          ></meta>
+          <meta
+            property="og:description"
+            content="안녕하세요, 방탈출 예약 플랫폼 룸인어스입니다."
+          ></meta>
+          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        </Head>
+        <Global styles={globalStyles} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ApolloSetting>
+    </RecoilRoot>
   );
 }
 

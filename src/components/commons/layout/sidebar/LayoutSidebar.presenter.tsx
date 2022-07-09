@@ -16,14 +16,21 @@ export default function LayoutSideBarUI(props) {
     <S.Container>
       <S.UserInfoBox>
         <S.Label>
-          <S.UserData>홍길동님</S.UserData>
+          <Link href={"/mypage"}>
+            <S.UserData>홍길동님</S.UserData>
+          </Link>
         </S.Label>
         <S.Label>
           오늘까지 탈출
-          <S.UserData>3회</S.UserData>
+          <Link href={"/mypage/history"}>
+            <S.UserData>3회</S.UserData>
+          </Link>
         </S.Label>
         <S.Label>
-          오늘까지 모은 적립금 <S.UserData>5000원</S.UserData>
+          오늘까지 모은 적립금
+          <Link href={"/mypage/reward"}>
+            <S.UserData>5000원</S.UserData>
+          </Link>
         </S.Label>
         <S.UserData>abcd1234@naver.com</S.UserData>
         <S.PhoneBox onClick={props.onClickReset}>

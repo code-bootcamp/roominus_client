@@ -6,24 +6,12 @@ export const Container = styled.main`
   justify-content: center;
   align-items: center;
 
-  width: 140%;
+  width: 100%;
   padding: 2em 0em 2em 0em;
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  text-align: center;
-
   width: 100%;
-  gap: 2em;
-`;
-
-export const RightBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  height: 800px;
 `;
 
 export const InfoBox = styled.div`

@@ -1,4 +1,5 @@
 import SearchRoomCheckInDate from "./CheckInDate";
+import ReservationSelectBox from "./Reservation.select";
 import * as S from "./Reservation.styles";
 
 export default function ReservationUI(props: any) {
@@ -16,37 +17,7 @@ export default function ReservationUI(props: any) {
           <S.SearchBarBox>
             <SearchRoomCheckInDate />
 
-            <select
-              style={{
-                textAlign: "center",
-                padding: "1em",
-                width: "30%",
-              }}
-            >
-              <option disabled selected>
-                매장을 선택해주세요
-              </option>
-              <option value={"건대 1호점"}>건대 1호점</option>
-              <option value={"건대 2호점"}>건대 2호점</option>
-              <option value={"홍대 1호점"}>홍대 1호점</option>
-              <option value={"강남 1호점"}>강남 1호점</option>
-            </select>
-
-            <select
-              style={{ textAlign: "center", padding: "1em", width: "30%" }}
-            >
-              <option disabled selected>
-                테마를 선택해주세요
-              </option>
-              <option value={"네모네모마을에는 무슨일이 있었을까?"}>
-                네모네모마을에는 무슨일이 있었을까?
-              </option>
-              <option value={"네모네모마을에는 무슨일이 있었을까?"}>
-                네모네모마을에는 무슨일이 있었을까?
-              </option>
-              <option value={"월야애담"}>월야애담</option>
-              <option value={"월야애담"}>월야애담</option>
-            </select>
+            <ReservationSelectBox />
           </S.SearchBarBox>
           <S.ImageTimeBox>
             <S.ImageBox>
