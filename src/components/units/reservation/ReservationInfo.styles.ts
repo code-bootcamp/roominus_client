@@ -33,6 +33,14 @@ export const Step = styled.div`
   font-size: 1.3em;
   padding: 13px;
   background-color: darkgray;
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const StepNow = styled.div`
@@ -43,6 +51,18 @@ export const StepNow = styled.div`
   font-size: 1.3em;
   padding: 13px;
   background-color: #4a00e0;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
+
+export const InfoForm = styled.form`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Row = styled.li`
@@ -51,11 +71,13 @@ export const Row = styled.li`
   line-height: 3em;
   width: 70em;
   border-bottom: 1px solid gray;
-`;
 
-export const InfoForm = styled.form`
-  display: flex;
-  flex-direction: column;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const info = styled.label`
@@ -75,28 +97,63 @@ export const Input = styled.input`
   }
 `;
 
-export const Data = styled.span``;
-
 export const NotionBox = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 1.5em;
+  padding-top: 1em;
 
-  margin-bottom: 1em;
-  padding: 4em;
+  @media ${breakPoints.tablet} {
+    width: auto;
+    padding: 0.5em;
+  }
+  @media ${breakPoints.mobile} {
+    width: auto;
+
+    padding: 0.5em;
+  }
+`;
+
+export const Data = styled.span`
+  font-size: 0.6em;
 `;
 
 export const UserInfoBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0em 3em 1em 4em;
+  font-size: 1.5em;
+  padding-top: 1em;
+
+  @media ${breakPoints.tablet} {
+    width: auto;
+    padding: 0.5em;
+  }
+  @media ${breakPoints.mobile} {
+    width: auto;
+    padding: 0.5em;
+  }
 `;
 
 export const CheckBox = styled.div`
   display: flex;
   justify-content: center;
+
+  @media ${breakPoints.tablet} {
+    width: auto;
+    padding-bottom: 0.5em;
+  }
+  @media ${breakPoints.mobile} {
+    width: auto;
+    padding-bottom: 0.5em;
+  }
 `;
 
 export const buttonWrapper = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding-top: 1em;
 `;

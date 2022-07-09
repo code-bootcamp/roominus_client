@@ -7,8 +7,6 @@ export const Container = styled.nav`
   height: 8%;
   padding: 0.5em;
 
-  border-bottom: 1px solid #b2b2b2;
-
   @media ${breakPoints.tablet} {
     flex-direction: column;
     align-items: flex-start;

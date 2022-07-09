@@ -66,17 +66,43 @@ export const SearchBarBox = styled.div`
   justify-content: center;
   gap: 5%;
   padding: 1em 0em 1em 0em;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
 `;
 
 export const ImageTimeBox = styled.div`
   display: flex;
   flex-direction: row;
   padding-top: 1em;
+  gap: 2em;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const ImageBox = styled.div``;
 
 export const Image = styled.img`
-  width: 80%;
+  width: 21.88em;
+  height: 31.25em;
+
+  @media ${breakPoints.tablet} {
+    width: 21.88em;
+    height: 31.25em;
+  }
+  @media ${breakPoints.mobile} {
+    width: 15em;
+    height: 10em;
+  }
 `;
 
 export const TimeWrapper = styled.div`
@@ -107,6 +133,15 @@ export const TimeButton = styled.button`
     transition: 0.3s;
     border: 2px solid #4a00e0;
     color: #4a00e0;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 5em;
+    height: 2.5em;
+  }
+  @media ${breakPoints.mobile} {
+    width: 5em;
+    height: 2.5em;
   }
 `;
 
