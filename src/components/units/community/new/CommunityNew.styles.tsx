@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 100%;
@@ -9,57 +10,75 @@ export const Container = styled.main`
 `;
 
 export const Wrapper = styled.section`
-  width: 85%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   padding: 2em 0em;
-  /* background-color: yellow; */
+  /* background-color: red; */
 `;
 
-export const Title = styled.h1`
-  /* height: 5em; */
-  font-size: 2em;
-  align-self: center;
-`;
-
-export const InfoBackground = styled.div`
-  width: 100%;
-  /* padding: 0em 2em; */
-  /* background-color: #f2ebf5; */
-`;
+// export const Title = styled.h1`
+//   font-size: 2em;
+//   align-self: center;
+// `;
 
 export const HalfBox = styled.div`
+  width: 100%;
+  height: 25em;
   margin-bottom: 2em;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  /* background-color: green; */
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
 `;
 
 export const Picture = styled.img`
-  width: 50em;
-  height: 30em;
+  width: 80%;
+  /* width: 50em;
+  height: 30em; */
   margin-right: 2em;
   border-radius: 10px;
-  background-color: gray;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const HalfRightBox = styled.div`
-  /* background-color: yellow; */
   width: 100%;
+  height: 25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: yellow; */
+
+  @media ${breakPoints.mobile} {
+    margin-top: 2em;
+  }
 `;
 
 export const InfoBox = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 2em;
+  height: 6em;
+  /* margin-bottom: 2em; */
+  /* background-color: pink; */
 `;
 
 export const InfoTitle = styled.h3``;
 
+export const DropZoneInfoBox = styled.div``;
+
 export const DropBox = styled.div`
   width: 100%;
-  height: 12.5em;
+  height: 10em;
   border: 1px solid #a3a8b7;
   border-radius: 10px;
   display: flex;
@@ -73,6 +92,7 @@ export const Essential = styled.span`
 `;
 
 export const InfoInput = styled.input`
+  width: 100%;
   height: 3em;
   border: none;
   padding: 0.5em;
@@ -82,6 +102,15 @@ export const InfoInput = styled.input`
   box-shadow: 0px 4px rgba(217, 214, 224, 0.25);
 `;
 
+export const ContentsInfoBox = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  /* background-color: pink; */
+`;
+
 export const WebEditor = styled.div`
   width: 100%;
   height: 20em;
@@ -89,12 +118,15 @@ export const WebEditor = styled.div`
   border: 1px solid #a3a8b7;
   background-color: white;
 `;
+
 export const ButtonBox = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 2em;
+  /* background-color: orange; */
 `;
 
 export const Button = styled.button`
