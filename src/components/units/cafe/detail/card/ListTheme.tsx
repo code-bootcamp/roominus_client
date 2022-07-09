@@ -6,8 +6,17 @@
 import { Avatar, Card } from "antd";
 import React from "react";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 const { Meta } = Card;
+
+const Wrapper = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 90%;
+    /* height: 300px; */
+    /* background-color: pink; */
+  }
+`;
 
 const TitleBox = styled.div`
   /* background-color: yellow; */
@@ -17,7 +26,7 @@ const TitleBox = styled.div`
 `;
 
 const ListTheme = () => (
-  <>
+  <Wrapper>
     <Card
       style={{ width: "100%", borderColor: "#c2c2c2", position: "relative" }}
       cover={
@@ -42,7 +51,7 @@ const ListTheme = () => (
         />
       </TitleBox>
     </Card>
-  </>
+  </Wrapper>
 );
 
 export default ListTheme;
