@@ -1,8 +1,8 @@
-import { Button, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input } from "antd";
 import React from "react";
 import * as S from "../pwedit/PasswordEdit.styles";
 
-export default function PhoneNumberEdit() {
+export default function PWeditUI() {
   const onFinish = (values: any) => {
     console.log("Success:", values);
   };
@@ -13,19 +13,27 @@ export default function PhoneNumberEdit() {
 
   return (
     <S.Container>
-      <S.Title>비밀번호 변경</S.Title>
+      <S.Title>비밀번호 수정</S.Title>
       <S.Wrapper>
         <Form
           name="basic"
-          labelCol={{ span: 10 }}
-          wrapperCol={{ span: 20 }}
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 16 }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
           <Form.Item
-            label="현재 비밀번호"
+            label="Username"
+            name="username"
+            rules={[{ required: true, message: "Please input your username!" }]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="Password"
             name="password"
             rules={[{ required: true, message: "Please input your password!" }]}
           >
@@ -33,23 +41,17 @@ export default function PhoneNumberEdit() {
           </Form.Item>
 
           <Form.Item
-            label="새 비밀번호"
-            name="newPassword"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            name="remember"
+            valuePropName="checked"
+            wrapperCol={{ offset: 8, span: 16 }}
           >
-            <Input.Password />
+            <Checkbox>Remember me</Checkbox>
           </Form.Item>
 
-          <Form.Item
-            label="새 비밀번호 확인"
-            name="newPasswordCheck"
-            rules={[{ required: true, message: "Please input your password!" }]}
-          >
-            <Input.Password />
-          </Form.Item>
-
-          <Form.Item wrapperCol={{ offset: 15, span: 20 }}>
-            <Button htmlType="submit"> 변경하기 </Button>
+          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
           </Form.Item>
         </Form>
       </S.Wrapper>

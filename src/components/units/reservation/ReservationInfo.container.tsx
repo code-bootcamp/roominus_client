@@ -3,7 +3,7 @@ import ReservationInfoUI from "./ReservationInfo.presenter";
 
 export default function ReservationInfo() {
   const router = useRouter();
-  const onClickMoveToSuccess = (event) => {
+  const onClickMoveToSuccess = () => {
     router.push("/reservation/_id");
   };
 

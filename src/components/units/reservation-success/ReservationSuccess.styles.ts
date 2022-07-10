@@ -76,7 +76,7 @@ export const TicketTitleBox = styled.div`
 `;
 
 export const Title = styled.span`
-  font-size: 2em;
+  font-size: 1.8em;
   font-family: "PressStart2P";
 `;
 
@@ -86,6 +86,12 @@ export const IamgeDataBox = styled.div`
   align-items: center;
   gap: 2em;
   width: 100%;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
 `;
 
 export const Image = styled.img`
@@ -96,7 +102,7 @@ export const Image = styled.img`
     width: 15em;
   }
   @media ${breakPoints.mobile} {
-    width: 11.25em;
+    width: 11em;
   }
 `;
 export const DataBox = styled.div`
@@ -122,8 +128,8 @@ export const DataBox = styled.div`
 export const Barcode = styled.div`
   background: url("/img/reservation/barcode.png") center/cover;
 
-  width: 450px;
-  height: 100px;
+  width: 28.13em;
+  height: 6.25em;
   transform: rotate(90deg);
 
   @media ${breakPoints.tablet} {
@@ -131,10 +137,12 @@ export const Barcode = styled.div`
   }
   @media ${breakPoints.mobile} {
     transform: rotate(0deg);
+    width: 250px;
+    height: 35px;
   }
 `;
 
-export const NotionWrapper = styled.div`
+export const NotionArea = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -142,29 +150,91 @@ export const NotionWrapper = styled.div`
   justify-content: center;
   text-align: center;
 
-  padding: 5em 0em 3em 0em;
+  padding: 3em 0em 3em 0em;
 `;
 
 export const NoticeTitle = styled.span`
   border-top: 2px solid #b2b2b2;
   font-size: 2.5em;
-  margin-bottom: 10px;
 
   @media ${breakPoints.mobile} {
     font-size: 2em;
   }
 `;
 
-export const NoticeImg = styled.img`
-  height: 15.63em;
+export const NoticeBoxs = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5em;
+  gap: 5em;
 
   @media ${breakPoints.tablet} {
-    height: 12em;
+    flex-wrap: wrap;
+    gap: 1em;
   }
 
   @media ${breakPoints.mobile} {
-    height: 6em;
+    flex-wrap: wrap;
+    gap: 1em;
   }
+`;
+
+export const NoticeBox = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media ${breakPoints.tablet} {
+    width: 40%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: auto;
+  }
+`;
+
+export const NoticeImg = styled.img`
+  width: 150px;
+  height: 150px;
+  padding-bottom: 1em;
+
+  @media ${breakPoints.tablet} {
+    width: 8em;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 5em;
+    height: 6.25em;
+  }
+`;
+
+export const Notice = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const NoticeSubject = styled.h2`
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.25em;
+
+  width: 8em;
+  margin-bottom: 1em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
+`;
+
+export const NoticeDescription = styled.p`
+  color: darkgray;
+  font-size: 0.88em;
 `;
 export const ButtonWrapper = styled.div`
   display: flex;

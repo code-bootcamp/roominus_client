@@ -1,7 +1,5 @@
-import { Modal } from "antd";
 import Link from "next/link";
 import { Fragment } from "react";
-import PhoneNumberEdit from "../../../units/mypage/phonenumberedit";
 import * as S from "./LayoutSidebar.styleds";
 
 const NAVIGATION_MENUS = [
@@ -10,14 +8,13 @@ const NAVIGATION_MENUS = [
   { name: "최근 적립내역", page: "/mypage/reward" },
   // { name: "내가 쓴 후기", page: "/mypage" },
   // { name: "내가 쓴 게시물", page: "/mypage" },
-  { name: "회원정보 수정", page: "/mypage/useredit" },
-  { name: "비밀번호 변경", page: "/mypage/pwedit" },
+  { name: "회원정보 수정", page: "/mypage/phoneedit" },
 ];
 
 export default function LayoutSideBarUI(props) {
   return (
     <S.Container>
-      <S.UserInfoBox>
+      <S.Wrapper>
         <S.UserNameBox>
           <S.UserData>홍길동님</S.UserData>
           <span>안녕하세요!</span>
@@ -42,7 +39,7 @@ export default function LayoutSideBarUI(props) {
             <S.Logout onClick={props.onClickReset}>로그아웃</S.Logout>
           </S.LogoutBox>
         </S.MenuBox>
-      </S.UserInfoBox>
+      </S.Wrapper>
     </S.Container>
   );
 }

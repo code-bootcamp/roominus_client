@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { LogoutOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
+import palette from "../../../../commons/styles/palette";
 
 export const Container = styled.main`
   display: flex;
@@ -8,6 +9,9 @@ export const Container = styled.main`
   align-items: center;
 
   width: 30%;
+  height: 100vh;
+
+  border-right: 1px solid darkgray;
 
   @media ${breakPoints.tablet} {
     display: none;
@@ -18,21 +22,19 @@ export const Container = styled.main`
   }
 `;
 
-export const UserInfoBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 370px;
-  height: 800px;
-  background-size: 372px 800px;
-  background-image: url("/img/mypage/ticket.png");
-  padding-top: 6em;
+export const Wrapper = styled.section`
+  padding-top: 2em;
 `;
 
 export const UserNameBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  background-color: beige;
 `;
 
 export const UserData = styled.span`
@@ -40,7 +42,7 @@ export const UserData = styled.span`
 `;
 
 export const MenuBox = styled.div`
-  padding-top: 10em;
+  padding-top: 5em;
 `;
 
 export const MenuItem = styled.li`
