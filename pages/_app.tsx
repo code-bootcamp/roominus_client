@@ -39,7 +39,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      {" "}
       <Head>
         <title>Roominus</title>
         <meta

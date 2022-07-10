@@ -150,7 +150,7 @@ export default function ReservationInfoUI(props: any) {
               돌아가기
             </WebSmallBlackButton>
             <WebSmallPurpleButton
-              type="submit"
+              type="button"
               title="결제하기"
               onClick={onClickToMoveSuccess}
             ></WebSmallPurpleButton>
