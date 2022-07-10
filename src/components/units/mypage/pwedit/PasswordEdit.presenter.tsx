@@ -1,60 +1,101 @@
-import { Button, Checkbox, Form, Input } from "antd";
-import React from "react";
 import * as S from "../pwedit/PasswordEdit.styles";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 
-export default function PWeditUI() {
-  const onFinish = (values: any) => {
-    console.log("Success:", values);
-  };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
-  };
-
+export default function PWeditUI(props) {
   return (
     <S.Container>
       <S.Title>비밀번호 수정</S.Title>
-      <S.Wrapper>
-        <Form
-          name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-        >
-          <Form.Item
-            label="Username"
-            name="username"
-            rules={[{ required: true, message: "Please input your username!" }]}
-          >
-            <Input />
-          </Form.Item>
-
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
-          >
-            <Input.Password />
-          </Form.Item>
-
-          <Form.Item
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{ offset: 8, span: 16 }}
-          >
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </S.Wrapper>
+      <S.Form onSubmit={props.handleSubmit(props.onSubmitChangePassword)}>
+        <S.PasswordBoxes>
+          <S.PasswordBox>
+            <S.TitleBox>
+              <S.PasswordTitle>비밀번호</S.PasswordTitle>
+              <S.ImportantInfos>*</S.ImportantInfos>
+            </S.TitleBox>
+            <S.PasswordInputBox>
+              <S.PasswordInput
+                onChange={(e) => props.setValue("password", e.target.value)}
+                name="password"
+                ref={props.passwordInputRef}
+                type="password"
+              />
+              {props.openEye1 && (
+                <FontAwesomeIcon
+                  icon={faEye}
+                  style={{
+                    color: "purple",
+                    fontSize: "1.5em",
+                    cursor: "pointer",
+                  }}
+                />
+              )}
+              {!props.openEye1 && (
+                <FontAwesomeIcon
+                  onClick={props.onClickShowPassword}
+                  icon={faEyeSlash}
+                  style={{
+                    color: "purple",
+                    fontSize: "1.5em",
+                    cursor: "pointer",
+                  }}
+                />
+              )}
+            </S.PasswordInputBox>
+            <S.Error>{props.formState.errors.password?.message}</S.Error>
+            <S.WarningBox>
+              <S.WarningMessage>
+                *8~14자의 영문,숫자 혼합만 사용가능
+              </S.WarningMessage>
+              <S.WarningMessage>
+                *숫자만으로 이루어진 비밀번호는 사용 할 수 없음
+              </S.WarningMessage>
+            </S.WarningBox>
+          </S.PasswordBox>
+        </S.PasswordBoxes>
+        <S.PasswordVerificationBoxes>
+          <S.PasswordVerificationBox>
+            <S.TitleBox>
+              <S.PasswordVerificationTitle>
+                비밀번호 확인
+              </S.PasswordVerificationTitle>
+              <S.ImportantInfos>*</S.ImportantInfos>
+            </S.TitleBox>
+            <S.PasswordVerificationInputBox>
+              <S.PasswordVerificationInput
+                onChange={(e) => props.setValue("password2", e.target.value)}
+                name="password2"
+                ref={props.password2InputRef}
+                type="password"
+              />
+              {props.openEye2 && (
+                <FontAwesomeIcon
+                  icon={faEye}
+                  style={{
+                    color: "purple",
+                    fontSize: "1.5em",
+                    cursor: "pointer",
+                  }}
+                />
+              )}
+              {!props.openEye2 && (
+                <FontAwesomeIcon
+                  onClick={props.onClickShowPassword2}
+                  icon={faEyeSlash}
+                  style={{
+                    color: "purple",
+                    fontSize: "1.5em",
+                    cursor: "pointer",
+                  }}
+                />
+              )}
+            </S.PasswordVerificationInputBox>
+            <S.Error>{props.formState.errors.password2?.message}</S.Error>
+          </S.PasswordVerificationBox>
+        </S.PasswordVerificationBoxes>
+        <WebPurpleButton type="submit" title="수정하기" />
+      </S.Form>
     </S.Container>
   );
 }
