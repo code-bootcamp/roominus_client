@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./ThemeCommentWrite.styles";
 
 export default function ThemeCommentWriteUI() {
@@ -10,9 +11,9 @@ export default function ThemeCommentWriteUI() {
         <img src="/img/theme/별.png" />
         <img src="/img/theme/별.png" />
         <img src="/img/theme/별.png" />
-        <FontAwesomeIcon icon="fa-solid fa-star" />
-        <FontAwesomeIcon icon="fa-solid fa-star" />
-        <FontAwesomeIcon icon="fa-solid fa-star" />
+        {/* <FontAwesomeIcon icon={faStar} />
+        <FontAwesomeIcon icon={faStar} />
+        <FontAwesomeIcon icon={faStar} /> */}
       </S.StarBox>
       <S.EscapeRankBox>
         <S.IsEscapeBox>

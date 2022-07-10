@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.div``;
 
 export const Comment = styled.section`
+  width: 100%;
   padding: 10px;
   background-color: white;
   display: flex;
@@ -14,6 +16,9 @@ export const Comment = styled.section`
 
 export const CommentLeftBox = styled.div`
   padding: 10px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 export const WriterImage = styled.div`
   width: 54px;
@@ -68,5 +73,5 @@ export const RankButton = styled.button`
 `;
 
 export const Contents = styled.div`
-  width: 788px;
+  max-width: 788px;
 `;

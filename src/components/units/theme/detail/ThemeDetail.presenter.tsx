@@ -37,7 +37,9 @@ export default function ThemeDetailUI() {
               2인 : 44,000원 / 3인 : 60,000원 / 4인 : 72,000원 / 5인 : 85,000원
             </S.ThemeCharge>
           </S.ChargeBox>
-          <S.ReservationButton>예약하기</S.ReservationButton>
+          <S.ButtonWrapper>
+            <S.ReservationButton>예약하기</S.ReservationButton>
+          </S.ButtonWrapper>
         </S.ThemeRightBox>
       </S.ThemeInfoWrapper>
     </S.Container>
