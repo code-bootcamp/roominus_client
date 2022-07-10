@@ -1,8 +1,17 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 100%;
   padding: 2em 0em;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+  }
 `;
 
 export const SearchWrapper = styled.section`
@@ -11,12 +20,21 @@ export const SearchWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    /* width: 50em; */
+  }
 `;
 
 export const CafePicture = styled.img`
   width: 38em;
   height: 25em;
   background-color: pink;
+
+  @media ${breakPoints.mobile} {
+    width: 25em;
+    height: 20em;
+  }
 `;
 
 export const InfoBox = styled.div`
@@ -28,6 +46,11 @@ export const InfoBox = styled.div`
   /* justify-content: space-around; */
   border: 1px solid #bdbdbd;
   /* background-color: #bdbdbd; */
+
+  @media ${breakPoints.mobile} {
+    width: 25em;
+    padding: 1.1em;
+  }
 `;
 
 export const NamePhoneBox = styled.div`
@@ -81,6 +104,12 @@ export const LocationDetail = styled.div`
 export const Theme = styled.div`
   width: 100%;
   margin: 1em 0em;
+
+  /* @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } */
 `;
 
 export const ThemeList = styled.div`
@@ -88,6 +117,13 @@ export const ThemeList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2.5em;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
 `;
 
 export const ButtonBox = styled.div`
