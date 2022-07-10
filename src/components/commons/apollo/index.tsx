@@ -42,17 +42,18 @@ export default function ApolloSetting(props) {
   });
 
   const uploadLink = createUploadLink({
-    uri: "",
+    uri: "https://wawoong.shop/graphql",
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
-    credentials: "include",
   });
+  // credentials: "include",
 
   const client = new ApolloClient({
-    link: ApolloLink.from([errorLink, uploadLink as unknown as ApolloLink]),
+    link: ApolloLink.from([uploadLink as unknown as ApolloLink]),
     cache: new InMemoryCache(),
     connectToDevTools: true,
   });
+  // errorLink
   return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
 }

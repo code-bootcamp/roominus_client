@@ -11,6 +11,9 @@ import Head from "next/head";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { CREATE_USER } from "./SignUpDetail.query";
+import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 
 const schema = yup.object({
   email: yup
@@ -52,6 +55,8 @@ export default function SignUpDetail() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+  const [createUsergql] = useMutation(CREATE_USER);
+
   useEffect(() => {
     register("email", { required: true });
     register("password", { required: true });
@@ -67,8 +72,21 @@ export default function SignUpDetail() {
   };
   const onClickVerifyMySelfByNo = () => {};
 
-  const onSubmitSignup = (data) => {
+  const onSubmitSignup = async (data) => {
     console.log(data);
+    try {
+      const result = await createUsergql({
+        variables: {
+          email: data.email,
+          password: data.password,
+          name: data.name,
+          phone: "01012345678",
+        },
+      });
+      Modal.success({ content: `${result.data.createUser.name}` });
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const onClickMoveToLogin = () => {
