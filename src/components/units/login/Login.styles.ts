@@ -20,9 +20,10 @@ export const Title = styled.h1`
   cursor: default;
 `;
 export const Form = styled.form`
-  width: 50%;
+  width: 52%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 2em;
 `;
 export const Input = styled.input`

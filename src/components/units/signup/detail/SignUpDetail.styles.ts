@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -6,6 +7,11 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 0.5em;
+  }
 `;
 
 export const Title = styled.h1`
@@ -50,15 +56,6 @@ export const EmailInput = styled.input`
   outline: none;
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;
-`;
-export const NextBtn = styled.button`
-  width: 9.3em;
-  height: 3.5em;
-  background-color: #4a00e0;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
 `;
 export const Error = styled.div`
   color: red;
@@ -192,15 +189,7 @@ export const PhoneNoInput = styled.input`
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;
 `;
-export const AuthenticationBtn = styled.button`
-  width: 20%;
-  height: 3.5em;
-  background-color: #4a00e0;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-`;
+
 export const VerificationInputBox = styled.div`
   width: 100%;
   display: flex;
@@ -209,10 +198,13 @@ export const VerificationInputBox = styled.div`
   align-items: center;
 `;
 export const VerificationNoBox = styled.div`
-  width: 80%;
+  width: 85%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    margin-right: 1em;
+  }
 `;
 export const VerificationNoInput = styled.input`
   width: 90%;
@@ -228,39 +220,11 @@ export const TimeOut = styled.span`
   width: 10%;
 `;
 
-export const VerificationBtn = styled.button`
-  width: 19%;
-  height: 3.5em;
-  background-color: #4a00e0;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-`;
 export const FormSecond = styled.form`
   width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-`;
-export const SignUpBtn = styled.button`
-  width: 40%;
-  height: 3.5em;
-  background-color: #4a00e0;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-bottom: 1em;
-`;
-
-export const CancelBtn = styled.button`
-  width: 40%;
-  height: 3.5em;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-bottom: 1em;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 1.4em;
 `;

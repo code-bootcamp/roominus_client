@@ -5,7 +5,9 @@ import "antd/dist/antd.css";
 import Layout from "../src/components/commons/layout";
 import { initializeApp } from "firebase/app";
 import { useEffect } from "react";
+import { RecoilRoot } from "recoil";
 import Head from "next/head";
+import ApolloSetting from "../src/components/commons/apollo";
 
 declare const window: typeof globalThis & {
   Kakao: any;
@@ -51,10 +53,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="안녕하세요, 방탈출 예약 플랫폼 룸인어스입니다."
         ></meta>
       </Head>
-      <Global styles={globalStyles} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <RecoilRoot>
+        <ApolloSetting>
+          <Global styles={globalStyles} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ApolloSetting>
+      </RecoilRoot>
     </>
   );
 }

@@ -1,60 +1,21 @@
-import LoginUI from "./Login.presenter";
+import { useRouter } from "next/router";
+import SignupChoiceUI from "./SignupChoice.presenter";
 import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
   getRedirectResult,
 } from "firebase/auth";
-import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useEffect, useRef, useState } from "react";
+
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
-const schema = yup.object({
-  email: yup
-    .string()
-    .matches(
-      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i,
-      "이메일 아이디를 @까지 정확하게 입력해주세요."
-    )
-    .required("이메일 아이디를 @까지 정확하게 입력해주세요."),
-  password: yup
-    .string()
-    .matches(
-      /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,14}$/,
-      "영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."
-    )
-    .required("영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."),
-});
 
-export default function LoginPage() {
-  const { register, handleSubmit, setValue, formState } = useForm({
-    resolver: yupResolver(schema),
-    mode: "onChange",
-  });
+export default function SignupChoice() {
   const router = useRouter();
-  const passwordInputRef = useRef();
-  const [openEye, setOpenEye] = useState(false);
-  useEffect(() => {
-    register("email", { required: true });
-    register("password");
-  }, []);
-  const onSubmitLogin = (data) => {
-    console.log(data);
-  };
   const onClickMoveToSignUp = () => {
-    router.push("/login/choice");
+    router.push("/signup");
   };
-  const onClickShowPassword = () => {
-    passwordInputRef.current.type = "text";
-    setOpenEye(true);
-    setTimeout(() => {
-      passwordInputRef.current.type = "password";
-      setOpenEye(false);
-    }, 1000);
-  };
+
   const onClickGoogleLogin = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -112,17 +73,10 @@ export default function LoginPage() {
   };
 
   return (
-    <LoginUI
+    <SignupChoiceUI
+      onClickMoveToSignUp={onClickMoveToSignUp}
       onClickGoogleLogin={onClickGoogleLogin}
       onClickLoginKakao={onClickLoginKakao}
-      handleSubmit={handleSubmit}
-      onSubmitLogin={onSubmitLogin}
-      setValue={setValue}
-      formState={formState}
-      openEye={openEye}
-      onClickMoveToSignUp={onClickMoveToSignUp}
-      passwordInputRef={passwordInputRef}
-      onClickShowPassword={onClickShowPassword}
     />
   );
 }
