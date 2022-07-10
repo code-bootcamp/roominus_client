@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   background-color: #f2ebf5;
@@ -21,6 +22,19 @@ export const EscapeRankBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media ${breakPoints.tablet} {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
 `;
 
 export const IsEscapeBox = styled.div`
@@ -71,15 +85,22 @@ export const RankButton = styled.button`
 `;
 
 export const CommentBox = styled.div`
-  width: 850px;
+  padding: 1em;
+  gap: 0.9em;
+  max-width: 850px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 `;
-export const CommentWriter = styled.h3``;
+export const CommentWriter = styled.h3`
+  font-size: 1.1em;
+  white-space: nowrap;
+`;
 export const CommentInput = styled.input`
-  width: 636px;
+  max-width: 636px;
+  width: 100%;
   height: 56px;
   padding: 10px;
   border: transparent;
