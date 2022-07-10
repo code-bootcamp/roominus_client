@@ -35,33 +35,34 @@ export default function HomeUI(props) {
     };
   }, [windowSize]);
 
+  
   const settings = {
-    // dots: false,
-    // arrows: false,
-    // className: "center",
-    // centerMode: true,
-    // centerPadding: "100px",
-    // infinite: true,
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
-    // autoplay: true,
-    // speed: 4000,
-    // autoplaySpeed: 4000,
-    // pauseOnHover: true,
-    // cssEase: "linear",
+    dots: false,
+    arrows: false,
     className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
-    autoplaySpeed: 3000,
-    dots: true,
-    autoplay: true,
+    // centerMode: true,
+    centerPadding: "100px",
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000, //슬라이드가 지나가는 초
+    autoplaySpeed: 2000, //한페이지에서 멈추는 초
+    pauseOnHover: true,
+    cssEase: "linear",
+    // className: "center",
+    // centerMode: false,
+    // infinite: true,
+    // centerPadding: "60px",
+    // speed: 500,
+    // autoplaySpeed: 3000,
+    // dots: true,
+    // autoplay: true,
+    // infinite: true,
+    // slidesToShow: 1,
   };
+  
+  
   return (
     <S.Wrapper>
       <S.BackGroundImg></S.BackGroundImg>
@@ -160,17 +161,17 @@ export default function HomeUI(props) {
       </S.ThemeBoxes>
       <S.AlarmCarouselBoxes>
       <S.Title>룸인어스 공지사항</S.Title>
-        <Slider {...settings}>
+        <S.StyledSlider {...settings}>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/svg/layout/1.svg" alt="alarm1" />
+            <S.AlarmImgs src="/img/home/alarm1.png" alt="alarm1" />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/svg/layout/4.svg" alt="alarm4" />
+            <S.AlarmImgs src="/img/home/alarm2.png" alt="alarm2" />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/svg/layout/5.svg" alt="alarm5" />
+            <S.AlarmImgs src="/img/home/alarm3.png" alt="alarm3" />
           </S.AlarmCarouselBox>
-        </Slider>
+        </S.StyledSlider>
       </S.AlarmCarouselBoxes>
       <S.FaQBoxes>
         <S.Title>자주 묻는 질문(FAQ)</S.Title>

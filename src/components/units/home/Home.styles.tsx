@@ -5,6 +5,7 @@ import {
   CaretRightOutlined,
 } from "@ant-design/icons";
 import { breakPoints } from "../../../commons/styles/media";
+import Slider from "react-slick";
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -19,8 +20,12 @@ export const BackGroundImg = styled.div`
   background: url("/img/home/home.png") center/cover;
   margin-bottom: 2em;
 
+  @media ${breakPoints.tablet} {
+    height: 26em;
+  }
+
   @media ${breakPoints.mobile} {
-    height: 15em;
+    height: 16em;
   }
 `;
 
@@ -161,6 +166,7 @@ export const ThemeListButton = styled.span`
   }
   transition: all 250ms ease-in-out;
 `;
+
 export const ThemeImgboxes = styled.div`
   width: 100%;
   display: grid;
@@ -201,6 +207,7 @@ export const ThemeImgbox = styled.div`
   }
   transition: all 250ms ease-in-out;
 `;
+
 export const ThemeImgs = styled.img`
   position: absolute;
   top: 0em;
@@ -209,10 +216,12 @@ export const ThemeImgs = styled.img`
   height: 20em;
   /* border-radius: 10px; */
 `;
+
 export const ThemeTitle = styled.div`
   font-size: 1em;
   font-weight: 700;
 `;
+
 export const GenreTag = styled.div`
   position: absolute;
   bottom: 3em;
@@ -268,23 +277,36 @@ export const AlarmCarouselBoxes = styled.div`
     width: 75%;
   }
 `;
+
+export const StyledSlider = styled(Slider)`
+  .slick-dots {
+    bottom: 2em;
+  }
+`;
+
 export const AlarmCarouselBox = styled.div`
   width: 100%;
   /* height: 53em;
   background-color: red; */
-
-  /* @media ${breakPoints.mobile} {
-    height: 20em;
-  } */
 `;
 export const AlarmTitle = styled.div`
   font-size: 1.3em;
   font-weight: 700;
 `;
+
 export const AlarmImgs = styled.img`
   width: 100%;
-  height: 55%;
+  height: 35em;
+
+  @media ${breakPoints.tablet} {
+    height: 23em;
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 15em;
+  }
 `;
+
 export const FaQBoxes = styled.div`
   width: 100%;
   display: flex;
@@ -295,10 +317,12 @@ export const FaQBoxes = styled.div`
     width: 75%;
   }
 `;
+
 export const FaQTitle = styled.div`
   font-size: 1em;
   font-weight: 700;
 `;
+
 export const FaQSmallBoxes = styled.div`
   width: 100%;
   display: flex;
