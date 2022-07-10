@@ -4,6 +4,8 @@ import * as S from "./SignUpDetail.styles";
 import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 export default function SignUpDetailUI(props) {
   const router = useRouter();
   useEffect(() => {
@@ -33,9 +35,11 @@ export default function SignUpDetailUI(props) {
               onChange={(e) => props.setValue("email", e.target.value)}
               name="email"
             />
-            <S.NextBtn type="button" onClick={props.onClickMoveToPasswordRef}>
-              다음
-            </S.NextBtn>
+            <WebPurpleButton
+              type="button"
+              title="다음"
+              onClick={props.onClickMoveToPasswordRef}
+            />
           </S.EmailInputBox>
           <S.Error>{props.formState.errors.email?.message}</S.Error>
         </S.EmailBox>
@@ -150,9 +154,11 @@ export default function SignUpDetailUI(props) {
             placeholder="010-1234-5678"
             onChange={props.onChangeGetPhoneNo}
           />
-          <S.AuthenticationBtn onClick={props.onClickVerifyMySelfByNo}>
-            인증
-          </S.AuthenticationBtn>
+          <WebPurpleButton
+            onClick={props.onClickVerifyMySelfByNo}
+            type="button"
+            title="인증"
+          />
         </S.PhoneNoInputBox>
         <S.VerificationInputBox>
           <S.VerificationNoBox>
@@ -162,22 +168,20 @@ export default function SignUpDetailUI(props) {
             />
             <S.TimeOut>3:00</S.TimeOut>
           </S.VerificationNoBox>
-
-          <S.VerificationBtn>확인</S.VerificationBtn>
+          <WebPurpleButton type="button" title="확인" />
         </S.VerificationInputBox>
       </S.PhoneNoBox>
       <S.FormSecond onSubmit={props.handleSubmit(props.onSubmitSignup)}>
-        <S.SignUpBtn>가입하기</S.SignUpBtn>
-        <S.CancelBtn
+        <WebBlackButton
           type="button"
           onClick={
             (props.googleLoggedIn && props.onClickSocialIDLogout) ||
             (props.kakaologgedIn && props.onClickLogoutkakao) ||
             props.onClickMoveToLogin
           }
-        >
-          취소하기
-        </S.CancelBtn>
+          title="취소하기"
+        />
+        <WebPurpleButton title="가입하기" />
       </S.FormSecond>
     </S.Wrapper>
   );
