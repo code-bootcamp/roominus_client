@@ -46,13 +46,6 @@ export default function LayoutHeaderUI(props: any) {
       {props.isToggled ? (
         <S.Toggle>
           <S.ToggleMenuWrapper>
-            <Link href={"/login"}>
-              <S.ToggleMenu>로그인</S.ToggleMenu>
-            </Link>
-            <Link href={"/signup"}>
-              <S.ToggleMenu>회원가입</S.ToggleMenu>
-            </Link>
-
             {NAVIGATION_MENUS.map((el) => (
               <Fragment key={el.page}>
                 <Link href={el.page}>

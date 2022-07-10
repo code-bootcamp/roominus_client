@@ -1,12 +1,21 @@
 import styled from "@emotion/styled";
-import { EditOutlined, LogoutOutlined } from "@ant-design/icons";
+import { LogoutOutlined } from "@ant-design/icons";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 40%;
+  width: 30%;
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const UserInfoBox = styled.div`
@@ -17,46 +26,21 @@ export const UserInfoBox = styled.div`
   height: 800px;
   background-size: 372px 800px;
   background-image: url("/img/mypage/ticket.png");
-
-  padding-top: 3.5em;
+  padding-top: 6em;
 `;
 
-export const Label = styled.label`
-  font-size: 1em;
-`;
-
-export const PasswordLabel = styled.label`
-  :hover {
-    color: #4a00e0;
-    cursor: pointer;
-    font-weight: 500;
-  }
-`;
-export const UserData = styled.span`
-  font-size: 1.3em;
-  cursor: pointer;
-`;
-
-export const PhoneBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
-`;
-
-export const NumberBox = styled.div`
+export const UserNameBox = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
-export const resetButton = styled(EditOutlined)`
-  font-size: 1.3em;
-  padding: 0.2em;
-  color: #4a00e0;
-  cursor: pointer;
+export const UserData = styled.span`
+  font-size: 1.5em;
 `;
 
 export const MenuBox = styled.div`
-  padding-top: 7em;
+  padding-top: 10em;
 `;
 
 export const MenuItem = styled.li`
