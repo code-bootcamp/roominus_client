@@ -71,7 +71,7 @@ export const NecessityInfoBox = styled.div`
   border-radius: 10px;
   margin-bottom: 1em;
   @media ${breakPoints.mobile} {
-    width: 75%;
+    width: 90%;
     font-size: 0.5em;
     padding: 4em 4em 4em 4em;
   }
@@ -124,7 +124,7 @@ export const OptionalInfoBox = styled.div`
   border-radius: 10px;
   margin-bottom: 1em;
   @media ${breakPoints.mobile} {
-    width: 75%;
+    width: 90%;
     font-size: 0.5em;
     padding: 4em 4em 4em 4em;
   }
