@@ -21,6 +21,10 @@ export const FormFirst = styled.form`
   width: 50%;
   display: flex;
   flex-direction: column;
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    font-size: 1em;
+  }
 `;
 
 export const EmailBox = styled.div`
@@ -166,6 +170,10 @@ export const PhoneNoBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1.6em;
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    font-size: 1em;
+  }
 `;
 export const PhoneNoTitle = styled.span`
   font-size: 1.3em;
