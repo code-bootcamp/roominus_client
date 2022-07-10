@@ -8,14 +8,6 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media ${breakPoints.tablet} {
-  }
-
-  @media ${breakPoints.mobile} {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 export const TitleBox = styled.div`
@@ -30,6 +22,7 @@ export const From = styled(FormOutlined)`
   font-size: 2em;
   padding-bottom: 0.5em;
 `;
+
 export const ContainerTitle = styled.h1`
   font-size: 2em;
 
@@ -44,32 +37,47 @@ export const Wrapper = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-family: "GowunDodum-Regular";
 
   border: 1px solid darkgray;
   border-radius: 10px;
   gap: 1em;
   padding: 1em;
 
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 100%;
+    gap: 2em;
+
+    display: flex;
+    flex-direction: column;
+  }
+
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
-    font-size: 0.5em;
 
     display: flex;
     flex-direction: column;
   }
 `;
 
-export const Title = styled.div`
-  font-size: 3em;
+export const TicketTitleBox = styled.div`
+  display: flex;
+  align-items: center;
   transform: rotate(270deg);
 
   @media ${breakPoints.tablet} {
-    font-size: 2em;
+    transform: rotate(0deg);
   }
   @media ${breakPoints.mobile} {
     transform: rotate(0deg);
   }
+`;
+
+export const Title = styled.span`
+  font-size: 2em;
+  font-family: "PressStart2P";
 `;
 
 export const IamgeDataBox = styled.div`
@@ -78,6 +86,11 @@ export const IamgeDataBox = styled.div`
   align-items: center;
   gap: 2em;
   width: 100%;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Image = styled.img`
@@ -88,7 +101,7 @@ export const Image = styled.img`
     width: 15em;
   }
   @media ${breakPoints.mobile} {
-    width: 13.8em;
+    width: 10em;
   }
 `;
 export const DataBox = styled.div`
@@ -107,7 +120,7 @@ export const DataBox = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    padding: 0.5em;
+    width: auto;
   }
 `;
 
@@ -116,12 +129,10 @@ export const Barcode = styled.img`
   transform: rotate(90deg);
 
   @media ${breakPoints.tablet} {
-    width: 7em;
+    transform: rotate(0deg);
   }
   @media ${breakPoints.mobile} {
     transform: rotate(0deg);
-    width: 90%;
-    height: 50px;
   }
 `;
 

@@ -10,7 +10,9 @@ export default function ReservationSuccessUI() {
       </S.TitleBox>
 
       <S.Wrapper>
-        <S.Title>TICKET</S.Title>
+        <S.TicketTitleBox>
+          <S.Title>TICKET</S.Title>
+        </S.TicketTitleBox>
         <S.IamgeDataBox>
           <>
             <S.Image src="/img/theme/월야애담.jpeg" />
