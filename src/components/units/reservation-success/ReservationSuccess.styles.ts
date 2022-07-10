@@ -86,11 +86,6 @@ export const IamgeDataBox = styled.div`
   align-items: center;
   gap: 2em;
   width: 100%;
-
-  @media ${breakPoints.mobile} {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 export const Image = styled.img`
@@ -101,7 +96,7 @@ export const Image = styled.img`
     width: 15em;
   }
   @media ${breakPoints.mobile} {
-    width: 10em;
+    width: 11.25em;
   }
 `;
 export const DataBox = styled.div`
@@ -124,8 +119,11 @@ export const DataBox = styled.div`
   }
 `;
 
-export const Barcode = styled.img`
-  width: 10em;
+export const Barcode = styled.div`
+  background: url("/img/reservation/barcode.png") center/cover;
+
+  width: 450px;
+  height: 100px;
   transform: rotate(90deg);
 
   @media ${breakPoints.tablet} {

@@ -43,7 +43,7 @@ export default function LayoutHeaderUI(props: any) {
           )}
         </S.Wrapper>
       </S.Container>
-      {props.isToggled ? (
+      {props.isToggled && (
         <S.Toggle>
           <S.ToggleMenuWrapper>
             {NAVIGATION_MENUS.map((el) => (
@@ -57,8 +57,6 @@ export default function LayoutHeaderUI(props: any) {
             ))}
           </S.ToggleMenuWrapper>
         </S.Toggle>
-      ) : (
-        <></>
       )}
     </>
   );
