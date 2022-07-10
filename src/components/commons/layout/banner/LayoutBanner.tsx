@@ -6,7 +6,7 @@ export default function LayoutBanner() {
     height: 14.38em;
     position: relative;
     left: calc(-50vw + 50%);
-    background-image: url("/img/layout/banner.png");
+    background: url("/img/layout/banner.png") center/cover;
   `;
   return (
     <>
