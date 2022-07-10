@@ -3,12 +3,12 @@ import { useState } from "react";
 import LayoutSideBarUI from "./LayoutSidebar.presenter";
 
 export default function LayoutSidebar() {
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const router = useRouter();
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [activedMenu, setActivedMenu] = useState("");
 
-  const onClickReset = () => {
-    showModal();
+  const onClick = () => {
     console.log("ㅎㅇ");
   };
 
@@ -35,7 +35,7 @@ export default function LayoutSidebar() {
 
   return (
     <LayoutSideBarUI
-      onClickReset={onClickReset}
+      onClick={onClick}
       isModalVisible={isModalVisible}
       handleOk={handleOk}
       handleCancel={handleCancel}

@@ -1,5 +1,6 @@
 import { Modal } from "antd";
 import { useState } from "react";
+import LayoutNavigation from "../../../commons/layout/navigation/LayoutNavigation.container";
 import * as S from "./History.styles";
 
 export default function HistoryUI() {

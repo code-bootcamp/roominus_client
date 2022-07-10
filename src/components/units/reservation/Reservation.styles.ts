@@ -74,6 +74,10 @@ export const SearchBarBox = styled.div`
   justify-content: space-between;
   padding: 1em 0em 1em 0em;
 
+  @media ${breakPoints.tablet} {
+    gap: 1em;
+  }
+
   @media ${breakPoints.mobile} {
     display: flex;
     flex-direction: column;
@@ -150,10 +154,11 @@ export const ThemeInfo = styled.h2`
 
 export const TimeWrapper = styled.div`
   display: flex;
+  justify-content: center;
+  text-align: center;
   flex-wrap: wrap;
   gap: 2em;
-
-  text-align: center;
+  padding-top: 1em;
 `;
 
 export const TimeButton = styled.button`

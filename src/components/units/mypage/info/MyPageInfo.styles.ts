@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   display: flex;
@@ -45,6 +46,16 @@ export const ThemeSubTitle = styled.span`
   color: darkgray;
   font-size: 0.7em;
   padding-bottom: 0.5em;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.8em;
+    text-align: center;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.05em;
+    text-align: center;
+  }
 `;
 
 export const ThemeIcon = styled.img`
@@ -57,6 +68,18 @@ export const ThemeIcon = styled.img`
   }
 
   transition: all 250ms ease-in-out;
+
+  @media ${breakPoints.tablet} {
+    margin-top: 0.8em;
+    width: 4em;
+    height: 3em;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-top: 0.8em;
+    width: 4em;
+    height: 3em;
+  }
 `;
 
 export const InfoTitleBox = styled.div`
@@ -70,6 +93,10 @@ export const addButton = styled.button`
   border: none;
   background-color: white;
   width: 4em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8em;
+  }
 `;
 
 export const Label = styled.label`
@@ -116,9 +143,4 @@ export const ColumnBasic = styled.div`
 export const ColumnTitle = styled.div`
   width: 40%;
   text-align: center;
-`;
-
-export const CardBox = styled.div`
-  display: flex;
-  gap: 2em;
 `;

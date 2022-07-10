@@ -10,14 +10,6 @@ export const Wrapper = styled.div`
   align-items: center;
   font-size: 1.3em;
   color: white;
-
-  @media ${breakPoints.tablet} {
-    display: none;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
 `;
 
 export const MenuItem = styled.div`

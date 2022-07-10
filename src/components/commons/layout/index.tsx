@@ -18,6 +18,7 @@ const VISIBLE_SIDE_BAR = [
   "/mypage/reward",
   "/mypage/mypick",
   "/mypage/pwedit",
+  "/mypage/useredit",
 ];
 const HIDDEN_FOOTER = ["/"];
 

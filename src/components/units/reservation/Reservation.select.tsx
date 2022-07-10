@@ -27,8 +27,7 @@ export default function RoomSelectBox() {
         <Select
           defaultValue={provinceData[0]}
           style={{
-            width: 280,
-            borderRadius: 25,
+            width: 250,
           }}
           onChange={handleProvinceChange}
         >
@@ -42,7 +41,7 @@ export default function RoomSelectBox() {
         <span>테마 선택</span>
         <Select
           style={{
-            width: 280,
+            width: 250,
           }}
           value={secondCity}
           onChange={onSecondCityChange}

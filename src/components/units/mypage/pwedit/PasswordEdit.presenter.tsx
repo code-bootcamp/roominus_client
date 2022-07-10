@@ -34,7 +34,7 @@ export default function PhoneNumberEdit() {
 
           <Form.Item
             label="새 비밀번호"
-            name="password"
+            name="newPassword"
             rules={[{ required: true, message: "Please input your password!" }]}
           >
             <Input.Password />
@@ -42,7 +42,7 @@ export default function PhoneNumberEdit() {
 
           <Form.Item
             label="새 비밀번호 확인"
-            name="password"
+            name="newPasswordCheck"
             rules={[{ required: true, message: "Please input your password!" }]}
           >
             <Input.Password />

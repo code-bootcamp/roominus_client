@@ -6,8 +6,11 @@ import * as S from "./LayoutSidebar.styleds";
 
 const NAVIGATION_MENUS = [
   { name: "테마 찜목록", page: "/mypage/mypick" },
-  { name: "최근 결제내역", page: "/mypage/history" },
+  { name: "최근 예약내역", page: "/mypage/history" },
   { name: "최근 적립내역", page: "/mypage/reward" },
+  // { name: "내가 쓴 후기", page: "/mypage" },
+  // { name: "내가 쓴 게시물", page: "/mypage" },
+  { name: "회원정보 수정", page: "/mypage/useredit" },
   { name: "비밀번호 변경", page: "/mypage/pwedit" },
 ];
 
@@ -15,28 +18,10 @@ export default function LayoutSideBarUI(props) {
   return (
     <S.Container>
       <S.UserInfoBox>
-        <S.Label>
-          <Link href={"/mypage"}>
-            <S.UserData>홍길동님</S.UserData>
-          </Link>
-        </S.Label>
-        <S.Label>
-          오늘까지 탈출
-          <Link href={"/mypage/history"}>
-            <S.UserData>3회</S.UserData>
-          </Link>
-        </S.Label>
-        <S.Label>
-          오늘까지 모은 적립금
-          <Link href={"/mypage/reward"}>
-            <S.UserData>5000원</S.UserData>
-          </Link>
-        </S.Label>
-        <S.UserData>abcd1234@naver.com</S.UserData>
-        <S.PhoneBox onClick={props.onClickReset}>
-          <S.UserData>010-1234-5678</S.UserData>
-          <S.resetButton />
-        </S.PhoneBox>
+        <S.UserNameBox>
+          <S.UserData>홍길동님</S.UserData>
+          <span>안녕하세요!</span>
+        </S.UserNameBox>
 
         <S.MenuBox>
           {NAVIGATION_MENUS.map((el) => (
@@ -54,19 +39,10 @@ export default function LayoutSideBarUI(props) {
           ))}
           <S.LogoutBox>
             <S.LogoutIcon />
-            <S.Logout>로그아웃</S.Logout>
+            <S.Logout onClick={props.onClickReset}>로그아웃</S.Logout>
           </S.LogoutBox>
         </S.MenuBox>
       </S.UserInfoBox>
-
-      <Modal
-        visible={props.isModalVisible}
-        onOk={props.handleOk}
-        onCancel={props.handleCancel}
-        width={800}
-      >
-        <PhoneNumberEdit />
-      </Modal>
     </S.Container>
   );
 }

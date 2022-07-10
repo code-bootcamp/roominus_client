@@ -117,18 +117,15 @@ export const ToggleMenuWrapper = styled.ul`
     display: block;
     flex-direction: column;
     text-align: center;
-    font-size: 2em;
-    width: 100%;
-    padding: 15px;
+
+    font-size: 1em;
   }
 
   @media ${breakPoints.mobile} {
     display: block;
     flex-direction: column;
     text-align: center;
-    font-size: 2em;
-    width: 100%;
-    padding: 15px;
+    font-size: 1em;
   }
 `;
 
@@ -137,13 +134,13 @@ export const ToggleMenu = styled.li`
 
   @media ${breakPoints.tablet} {
     display: block;
-    margin-bottom: 20px;
     cursor: pointer;
+    padding-bottom: 0.5em;
   }
 
   @media ${breakPoints.mobile} {
     display: block;
-    margin-bottom: 20px;
     cursor: pointer;
+    padding-bottom: 0.5em;
   }
 `;
