@@ -4,6 +4,7 @@ import {
   CaretDownOutlined,
   CaretRightOutlined,
 } from "@ant-design/icons";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -16,20 +17,41 @@ export const BackGroundImg = styled.div`
   width: 100vw;
   height: 38em;
   background: url("/img/home/home.png") center/cover;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
+
+  @media ${breakPoints.mobile} {
+    height: 15em;
+  }
 `;
 
 export const StoreBox = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4em;
+  margin-bottom: 3em;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
-export const StoreTitleBox = styled.div`
+export const TitleBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: lightgreen; */
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+  }
+`;
+
+export const Title = styled.h1`
+  font-size: 1.5em;
+  font-weight: 600;
 `;
 
 export const StoreListButton = styled.span`
@@ -43,9 +65,26 @@ export const StoreListButton = styled.span`
 `;
 export const StoreImgboxes = styled.div`
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2em;
+
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; */
+  /* background-color: lightcoral; */
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const StoreImgbox = styled.div`
@@ -59,7 +98,7 @@ export const StoreImgbox = styled.div`
   padding-top: 1.5em;
   border-radius: 10px;
   background-color: white;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
 
   :hover {
     transform: translateY(-0.3em);
@@ -95,17 +134,23 @@ export const Location = styled(EnvironmentOutlined)`
 `;
 
 export const ThemeBoxes = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 4em;
-`;
-export const ThemeTitleBox = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: column;
+  margin-bottom: 3em;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
+// export const ThemeTitleBox = styled.div`
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-end;
+// `;
 
 export const ThemeListButton = styled.span`
   font-size: 1em;
@@ -118,23 +163,38 @@ export const ThemeListButton = styled.span`
 `;
 export const ThemeImgboxes = styled.div`
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2em;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; */
+  /* background-color: lightblue; */
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ThemeImgbox = styled.div`
   position: relative;
-  width: 30%;
-  height: 14.6em;
+  width: 100%;
+  height: 20em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1.5em;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* padding-top: 1.5em; */
+  /* border-radius: 20px; */
+  /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
 
   :hover {
     transform: translateY(-0.3em);
@@ -146,8 +206,8 @@ export const ThemeImgs = styled.img`
   top: 0em;
   left: 0em;
   width: 100%;
-  height: 14.6em;
-  border-radius: 10px;
+  height: 20em;
+  /* border-radius: 10px; */
 `;
 export const ThemeTitle = styled.div`
   font-size: 1em;
@@ -156,11 +216,11 @@ export const ThemeTitle = styled.div`
 export const GenreTag = styled.div`
   position: absolute;
   bottom: 3em;
-  left: 0.2em;
+  left: 1em;
   width: 5em;
   height: 1.8em;
   border-radius: 8px;
-  background-color: #8b54c1;
+  background-color: #220d4daf;
   font-size: 1em;
   display: flex;
   flex-direction: row;
@@ -168,6 +228,24 @@ export const GenreTag = styled.div`
   align-items: center;
   color: white;
 `;
+
+// export const RateBox = styled.div`
+//   position: absolute;
+//   bottom: 1em;
+//   left: 1em;
+//   display: flex;
+//   flex-direction: row;
+//   background-color: red;
+// `;
+
+export const RateTitle = styled.span`
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  /* color: white; */
+  font-weight: 500;
+`;
+
 export const OpenBtnArrow = styled(CaretDownOutlined)`
   z-index: 5;
 `;
@@ -175,17 +253,29 @@ export const CloseBtnArrow = styled(CaretRightOutlined)`
   z-index: 5;
 `;
 export const AlarmCarouselBoxes = styled.div`
-  width: 50%;
-  height: 15em;
+  width: 100%;
+  /* height: 10em; */
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4em;
+  margin-bottom: 3em;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+  }
 `;
 export const AlarmCarouselBox = styled.div`
   width: 100%;
+  /* height: 53em;
+  background-color: red; */
 
-  background-color: red;
+  /* @media ${breakPoints.mobile} {
+    height: 20em;
+  } */
 `;
 export const AlarmTitle = styled.div`
   font-size: 1.3em;
@@ -196,10 +286,14 @@ export const AlarmImgs = styled.img`
   height: 55%;
 `;
 export const FaQBoxes = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+  }
 `;
 export const FaQTitle = styled.div`
   font-size: 1em;

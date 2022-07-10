@@ -9,6 +9,13 @@ import styled from "@emotion/styled";
 
 const { Meta } = Card;
 
+const Wrapper = styled.div`
+  :hover {
+    transform: translateY(-0.3em);
+  }
+  transition: all 250ms ease-in-out;
+`;
+
 const LocationBox = styled.div`
   width: 4.5em;
   height: 2.2em;
@@ -33,8 +40,8 @@ const LocationIcon = styled.img`
   height: 1em;
 `;
 
-const ListCards = () => (
-  <>
+const CafeCard = () => (
+  <Wrapper>
     <Card
       style={{ width: "100%", borderColor: "#c2c2c2", position: "relative" }}
       cover={
@@ -61,7 +68,7 @@ const ListCards = () => (
         description="02-1234-5678"
       />
     </Card>
-  </>
+  </Wrapper>
 );
 
-export default ListCards;
+export default CafeCard;

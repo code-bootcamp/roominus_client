@@ -4,112 +4,162 @@ import { Rate } from "antd";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import ListCards from "../cafe/list/card/ListCards";
+import CafeCard from "./cafecard/CafeCard";
+import FAQ from "./faq/Faq";
+import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
+import { useEffect, useState } from "react";
+
+
 
 export default function HomeUI(props) {
+  const [windowSize, setWindowSize] = useState(false);
+
+
+  const handleResize = () => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    } else {
+      setWindowSize(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowSize]);
+
   const settings = {
-    dots: false,
-    arrows: false,
+    // dots: false,
+    // arrows: false,
+    // className: "center",
+    // centerMode: true,
+    // centerPadding: "100px",
+    // infinite: true,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // autoplay: true,
+    // speed: 4000,
+    // autoplaySpeed: 4000,
+    // pauseOnHover: true,
+    // cssEase: "linear",
     className: "center",
     centerMode: true,
-    centerPadding: "100px",
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    speed: 500,
+    autoplaySpeed: 3000,
+    dots: true,
+    autoplay: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-    cssEase: "linear",
   };
   return (
     <S.Wrapper>
       <S.BackGroundImg></S.BackGroundImg>
       <S.StoreBox>
-        <S.StoreTitleBox>
+        <S.TitleBox>
+          <S.Title>매장</S.Title>
           <Link href={"/cafe"}>
-            <S.StoreListButton>더보기</S.StoreListButton>
+            <S.StoreListButton>더보기 ></S.StoreListButton>
           </Link>
-        </S.StoreTitleBox>
+        </S.TitleBox>
+        {!windowSize && (
         <S.StoreImgboxes>
-          <S.StoreImgbox>
+          {/* <S.StoreImgbox>
             <S.StoreImgs src="/img/cafe/cafe.jpeg" alt="bestStore1" />
             <S.StoreName>SOLVER - 홍대점</S.StoreName>
             <S.LocationBox>
               <S.Location />
               홍대
             </S.LocationBox>
-          </S.StoreImgbox>
-          <S.StoreImgbox>
-            <S.StoreImgs src="/img/cafe/cafe.jpeg" alt="bestStore1" />
-            <S.StoreName>SOLVER - 홍대점</S.StoreName>
-            <S.LocationBox>
-              <S.Location />
-              강남
-            </S.LocationBox>
-          </S.StoreImgbox>
-          <S.StoreImgbox>
-            <S.StoreImgs src="/img/cafe/cafe.jpeg" alt="bestStore1" />
-            <S.StoreName>SOLVER - 홍대점</S.StoreName>
-            <S.LocationBox>
-              <S.Location />
-              건대
-            </S.LocationBox>
-          </S.StoreImgbox>
+          </S.StoreImgbox> */}
+          {new Array(4).fill(1).map((el) => (
+            <span key={el}>
+              <CafeCard />
+            </span>
+          ))}
         </S.StoreImgboxes>
+        )}
+         {windowSize && (
+        <S.StoreImgboxes>
+          {new Array(2).fill(1).map((el) => (
+            <span key={el}>
+              <CafeCard />
+            </span>
+          ))}
+        </S.StoreImgboxes>
+        )}
       </S.StoreBox>
       <S.ThemeBoxes>
-        <S.ThemeTitleBox>
+        <S.TitleBox>
+        <S.Title>테마</S.Title>
           <Link href={"/theme"}>
-            <S.ThemeListButton>더보기</S.ThemeListButton>
+            <S.ThemeListButton>더보기 ></S.ThemeListButton>
           </Link>
-        </S.ThemeTitleBox>
+        </S.TitleBox>
+        {!windowSize && (
+
         <S.ThemeImgboxes>
+        {new Array(4).fill(1).map((el) => (
+          <span key={el}>
           <S.ThemeImgbox>
             <S.ThemeImgs src="/img/theme/월야애담.webp" alt="bestTheme1" />
             <S.GenreTag>#미스테리</S.GenreTag>
-            <Rate
-              onChange={props.setValue}
-              value={props.value}
-              style={{
-                color: "#8B54C1",
-                position: "absolute",
-                bottom: "1em",
-                left: "0.2em",
-              }}
-            />
+            {/* <S.RateBox> */}
+              <S.RateTitle>난이도</S.RateTitle>
+              <Rate
+                onChange={props.setValue}
+                value={props.value}
+                style={{
+                  color: "#8B54C1",
+                  position: "absolute",
+                  bottom: "0.75em",
+                  left: "3.2em",
+                }}
+              />
+            {/* </S.RateBox> */}
           </S.ThemeImgbox>
-          <S.ThemeImgbox>
-            <S.ThemeImgs src="/img/theme/월야애담.webp" alt="bestTheme2" />
-            <S.GenreTag>#모험</S.GenreTag>
-            <Rate
-              onChange={props.setValue}
-              value={props.value}
-              style={{
-                color: "#8B54C1",
-                position: "absolute",
-                bottom: "1em",
-                left: "0.2em",
-              }}
-            />
-          </S.ThemeImgbox>
-          <S.ThemeImgbox>
-            <S.ThemeImgs src="/img/theme/월야애담.webp" alt="bestTheme3" />
-            <S.GenreTag>#청춘</S.GenreTag>
-            <Rate
-              onChange={props.setValue}
-              value={props.value}
-              style={{
-                color: "#8B54C1",
-                position: "absolute",
-                bottom: "1em",
-                left: "0.2em",
-              }}
-            />
-          </S.ThemeImgbox>
+          </span>
+        ))}
         </S.ThemeImgboxes>
+        )}
+         {windowSize && (
+          <S.ThemeImgboxes>
+          {new Array(2).fill(1).map((el) => (
+            <span key={el}>
+            <S.ThemeImgbox>
+              <S.ThemeImgs src="/img/theme/월야애담.webp" alt="bestTheme1" />
+              <S.GenreTag>#미스테리</S.GenreTag>
+              {/* <S.RateBox> */}
+                <S.RateTitle>난이도</S.RateTitle>
+                <Rate
+                  onChange={props.setValue}
+                  value={props.value}
+                  style={{
+                    color: "#8B54C1",
+                    position: "absolute",
+                    bottom: "0.75em",
+                    left: "3.2em",
+                  }}
+                />
+              {/* </S.RateBox> */}
+            </S.ThemeImgbox>
+            </span>
+          ))}
+          </S.ThemeImgboxes>
+          )}
       </S.ThemeBoxes>
       <S.AlarmCarouselBoxes>
-        <S.AlarmTitle>룸인어스 공지사항</S.AlarmTitle>
+      <S.Title>룸인어스 공지사항</S.Title>
         <Slider {...settings}>
           <S.AlarmCarouselBox>
             <S.AlarmImgs src="/svg/layout/1.svg" alt="alarm1" />
@@ -123,9 +173,10 @@ export default function HomeUI(props) {
         </Slider>
       </S.AlarmCarouselBoxes>
       <S.FaQBoxes>
-        <S.FaQTitle>자주 묻는 질문</S.FaQTitle>
-        <S.FaQSmallBoxes>
-          <S.FaQBox>
+        <S.Title>자주 묻는 질문(FAQ)</S.Title>
+        {/* <S.FaQSmallBoxes> */}
+          <FAQ />
+          {/* <S.FaQBox>
             <S.FaQTitleBox>
               {props.isOpened1 && (
                 <S.OpenBtnArrow onClick={props.onClickOpenQuestion1} />
@@ -183,8 +234,8 @@ export default function HomeUI(props) {
                 voluptate blanditiis laudantium veritatis repellendus at.
               </S.FaQs>
             )}
-          </S.FaQBox>
-        </S.FaQSmallBoxes>
+          </S.FaQBox> */}
+        {/* </S.FaQSmallBoxes> */}
       </S.FaQBoxes>
     </S.Wrapper>
   );
