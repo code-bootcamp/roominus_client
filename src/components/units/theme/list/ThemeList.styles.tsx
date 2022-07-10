@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 interface IGenreProps {
   isPicked?: Boolean;
   src?: string;
@@ -26,29 +28,28 @@ export const Container = styled.main`
 
 export const Wrapper = styled.section`
   width: 100%;
-  padding: 10%;
+  padding: 2em 0px;
 `;
 
 export const SearchBox = styled.div`
   width: 100%;
-  height: 35px;
+  height: 60px;
+  padding: 25px;
   display: flex;
   flex-direction: row;
-`;
-
-export const SearchInputWrapper = styled.div`
-  border-radius: 2px;
-  box-shadow: 0px 2px 1px 0px #ddd;
+  align-items: center;
+  border: 1px solid #dad6e1;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px #dad6e1;
 `;
 
 export const SearchInput = styled.input`
-  width: 100%;
-  position: relative;
-  /* background-color: #d9d6e0; */
   background: transparent;
   border: transparent;
-
+  padding: 10px 15px;
   border-style: none;
+  font-size: 1.1em;
+  color: #d9d6e0;
   border-collapse: collapse;
   caret-color: #4a00e0;
   color: #4a00e0;
@@ -81,6 +82,7 @@ export const SearchButton = styled.button`
   color: #ffffff;
 `;
 export const GenreList = styled.div`
+  padding: 20px 0px;
   @media ${breakPoints.mobile} {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(110px, auto));

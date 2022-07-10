@@ -2,6 +2,8 @@ import { useState, Fragment } from "react";
 import * as S from "./ThemeList.styles";
 import { v4 } from "uuid";
 import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const NAVIGATION_MENUS = [
   { name: "전체" },
@@ -42,11 +44,12 @@ export default function ThemeListUI(props) {
   return (
     <S.Wrapper>
       <S.SearchBox>
-        <S.SearchInputWrapper>
-          <S.SearchInput placeholder="키워드를 입력하세요." />
-          <S.SearchInputUnderline />
-        </S.SearchInputWrapper>
-        <S.SearchButton>검색</S.SearchButton>
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          style={{ fontSize: "30px", color: "#DAD6E1" }}
+        />
+        <S.SearchInput placeholder="테마명을 입력하세요." />
+        {/* <S.SearchInputUnderline /> */}
       </S.SearchBox>
       <S.GenreList>
         <S.Genre isPicked={true}>전체</S.Genre>
