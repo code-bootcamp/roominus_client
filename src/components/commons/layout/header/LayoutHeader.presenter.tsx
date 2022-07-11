@@ -11,7 +11,6 @@ const NAVIGATION_MENUS = [
 ];
 
 export default function LayoutHeaderUI(props: any) {
-  console.log(props.activedMenu);
   return (
     <>
       <S.Container>
