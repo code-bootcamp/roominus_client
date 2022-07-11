@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
@@ -50,8 +51,9 @@ export const ItemBackground = styled.div`
   width: 100%;
   height: 320px;
   background-color: #ffffff;
-  border: 1px solid #a3a8b7;
-  border-radius: 10px;
+  border: 1px solid #d9d6e0;
+  box-shadow: 0px 4px 4px rgba(217, 214, 224, 0.25);
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,6 +126,7 @@ export const PickBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
   /* background-color: pink; */
 `;
 
@@ -163,3 +166,11 @@ export const Pagination = styled.div`
   align-self: center;
   /* height: 5em; */
 `;
+
+export const RedHeart = styled(FontAwesomeIcon)`
+  padding: 2px;
+  font-size: 15px;
+  color: #e35d5b;
+`;
+
+// -------------------------- 0711 hani

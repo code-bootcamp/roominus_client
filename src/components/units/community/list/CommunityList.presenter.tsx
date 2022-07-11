@@ -1,6 +1,7 @@
 import { Tooltip } from "antd";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./CommunityList.styles";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function CommunityListUI(props) {
   return (
@@ -24,7 +25,8 @@ export default function CommunityListUI(props) {
                   {/* <S.Date>2일전</S.Date> */}
                   {/* <Tooltip placement="topRight" title="52"> */}
                   <S.PickBox>
-                    <S.Pick src="/img/community/redheart.png" />
+                    <S.RedHeart icon={faHeart} />
+                    {/* <S.Pick src="/img/community/redheart.png" /> */}
                     <S.PickCount>52</S.PickCount>
                   </S.PickBox>
                   {/* </Tooltip> */}

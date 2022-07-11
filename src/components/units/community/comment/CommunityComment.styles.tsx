@@ -78,6 +78,7 @@ export const CommentInput = styled.input`
   width: 60%;
   height: 2.5em;
   border: none;
+  border-radius: 8px;
   padding-left: 1em;
 
   @media ${breakPoints.mobile} {
@@ -173,6 +174,7 @@ export const ReCommentInput = styled.input`
   width: 75%;
   height: 2.5em;
   border: none;
+  border-radius: 8px;
   padding-left: 1em;
 
   @media ${breakPoints.mobile} {

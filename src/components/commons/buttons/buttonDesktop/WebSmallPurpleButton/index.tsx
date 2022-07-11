@@ -13,7 +13,7 @@ const Button = styled.button`
       rgba(74, 0, 224, 1) 100%
     );
   }
-  transition: all 250ms ease-in-out;
+  /* transition: all 250ms ease-in-out; */
   background-color: #4a00e0e7;
   color: #ffffff;
 `;
