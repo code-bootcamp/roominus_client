@@ -33,7 +33,7 @@ const LocationIcon = styled.img`
   height: 1em;
 `;
 
-const ListCards = () => (
+const ListCards = (props) => (
   <>
     <Card
       style={{ width: "100%", borderColor: "#c2c2c2", position: "relative" }}
@@ -58,7 +58,7 @@ const ListCards = () => (
       <Meta
         // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
         title="엑스케이프"
-        description="02-1234-5678"
+        description={props.data?.fetchCafes.phone}
       />
     </Card>
   </>
