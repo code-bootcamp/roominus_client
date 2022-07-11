@@ -6,6 +6,7 @@ export const FETCH_CAFES = gql`
       id
       name
       phone
+      address
     }
   }
 `;

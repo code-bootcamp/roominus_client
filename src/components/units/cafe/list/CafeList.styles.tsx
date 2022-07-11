@@ -185,7 +185,7 @@ export const Etc = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   /* display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   gap: 20px; */
   /* margin-bottom: 2em; */
