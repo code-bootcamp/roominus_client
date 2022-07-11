@@ -34,6 +34,8 @@ export default function ThemeCreateUI(props) {
         />
         <button>테마 등록</button>
       </form>
+      <input type="file" onChange={props.onChangeFile} />
+      <img src={props.imgurl} alt="picture" />
     </section>
   );
 }
