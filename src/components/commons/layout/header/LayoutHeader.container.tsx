@@ -26,8 +26,6 @@ export default function LayoutHeader() {
   };
 
   useEffect(() => {
-    console.log("useEffect");
-    console.log(activedMenu);
     if (!router.asPath.includes(activedMenu) || activedMenu === "") {
       setActivedMenu(router.asPath);
     }
