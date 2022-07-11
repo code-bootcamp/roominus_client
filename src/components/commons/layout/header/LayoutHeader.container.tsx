@@ -1,11 +1,13 @@
 import { useRouter } from "next/router";
 import LayoutHeaderUI from "./LayoutHeader.presenter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LayoutHeader() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState("");
   const [isToggled, setIsToggled] = useState(false);
+
+  const [path, setPath] = useState("");
 
   const onClickMenu = (event) => {
     if (event.target instanceof Element) {
@@ -16,10 +18,20 @@ export default function LayoutHeader() {
 
       setIsToggled(!isToggled);
     }
+    console.log(event.target, router);
   };
+
   const onClickToggled = () => {
     setIsToggled(!isToggled);
   };
+
+  useEffect(() => {
+    console.log("useEffect");
+    console.log(activedMenu);
+    if (!router.asPath.includes(activedMenu) || activedMenu === "") {
+      setActivedMenu(router.asPath);
+    }
+  }, [router.asPath]);
 
   return (
     <LayoutHeaderUI

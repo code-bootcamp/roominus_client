@@ -46,10 +46,10 @@ export const MenuWrapper = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  color: ${(props) => (props.isActive ? "purple" : "black")};
-  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
+  /* color: ${(props) => (props.isActive ? "purple" : "black")}; */
+  font-weight: ${(props) => (props.isActive ? "500" : "400")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
-
+  color: ${(props) => (props.isActive ? "#BF9EEB" : "#A3A8B7")};
   font-size: 1.25em;
   padding-left: 1.8em;
 `;
@@ -75,9 +75,12 @@ export const LoginJoinWrapper = styled.div`
 `;
 
 export const Contents = styled.span`
-  :hover {
+  /* :hover {
     cursor: pointer;
-  }
+  } */
+  font-weight: ${(props) => (props.isActive ? "500" : "400")};
+  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
+  color: ${(props) => (props.isActive ? "#7457E8" : "#A3A8B7")};
 
   margin-left: 0.6em;
 `;

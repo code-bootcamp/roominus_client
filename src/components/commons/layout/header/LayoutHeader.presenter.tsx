@@ -94,7 +94,7 @@ export default function LayoutHeaderUI(props: any) {
                   <S.MenuItem
                     id={el.page}
                     onClick={props.onClickMenu}
-                    isActive={el.page === props.activedMenu}
+                    isActive={props.activedMenu.includes(el.page)}
                   >
                     {el.name}
                   </S.MenuItem>
