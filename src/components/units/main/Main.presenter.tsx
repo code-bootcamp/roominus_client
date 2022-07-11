@@ -13,9 +13,13 @@ export default function MainUI() {
         router.push("/home");
       }
     };
+
     window.addEventListener("keydown", handleKey);
   }, []);
 
+  const onClickDoor = () => {
+    router.push("/home");
+  };
   return (
     <S.Container>
       {/* <S.Page1><S.Carousel></S.Carousel></S.Page1>
@@ -80,12 +84,14 @@ export default function MainUI() {
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={0.2} style={{ opacity: 1 }}>
           <S.DoorWrapper>
-            <S.DoorBox>
-              roominus
+            <S.DoorBox onClick={onClickDoor}>
+              들어가기
               <S.Door></S.Door>
             </S.DoorBox>
           </S.DoorWrapper>
-          <S.Neon>상상이 현실이 되는 방</S.Neon>
+          <S.NeonWrapper>
+            <S.NeonBottom>상상이 현실이 되는 방</S.NeonBottom>
+          </S.NeonWrapper>
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
