@@ -5,6 +5,9 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { IThemeListProps } from "./ThemeList.types";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const NAVIGATION_MENUS = [
   { name: "전체" },
@@ -42,6 +45,20 @@ export default function ThemeListUI(props: IThemeListProps) {
   const onClickTheme = () => {
     router.push(`/theme/월야애담`);
   };
+
+  const settings = {
+    className: "center",
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 5,
+    swipeToSlide: true,
+    afterChange: function (index) {
+      console.log(
+        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+      );
+    },
+  };
+
   return (
     <S.Wrapper>
       <S.SearchBox>
@@ -66,7 +83,7 @@ export default function ThemeListUI(props: IThemeListProps) {
         <S.Genre isPicked={false}>동물</S.Genre>
         <S.Genre isPicked={false}>기타</S.Genre>
       </S.GenreList>
-      {props.isToggled ? (
+      {/* {props.isToggled ? (
         <S.Close onClick={props.onClickToggled} />
       ) : (
         <S.Menu onClick={props.onClickToggled} />
@@ -86,8 +103,20 @@ export default function ThemeListUI(props: IThemeListProps) {
         </S.Toggle>
       ) : (
         <></>
-      )}
-      <div></div>
+      )} */}
+      {/* <div>
+        <Slider {...settings}>
+          <div>
+            <img src="/img/theme/ex/1.png" />
+          </div>
+          <div>
+            <img src="/img/theme/ex/1.png" />
+          </div>
+          <div>
+            <h3>3</h3>
+          </div>
+        </Slider>
+      </div> */}
       <S.ThemeList>
         {props.data?.fetchThemes.map((el) => (
           <div key={el.id} onClick={onClickTheme}>

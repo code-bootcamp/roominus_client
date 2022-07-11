@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IGenreProps {
   isPicked?: Boolean;
@@ -77,7 +76,6 @@ export const SearchButton = styled.button`
       rgba(74, 0, 224, 1) 100%
     );
   }
-  transition: all 250ms ease-in-out;
   background-color: #4a00e0;
   color: #ffffff;
 `;

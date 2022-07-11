@@ -42,7 +42,8 @@ export const LogoWrapper = styled.div`
 
 export const Logo = styled.img`
   cursor: pointer;
-  height: 2.5em;
+  width: 13em;
+  /* height: 2.5em; */
   @media ${breakPoints.tablet} {
     height: 2.8em;
   }
@@ -70,7 +71,7 @@ export const MenuItem = styled.li`
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
 
   font-size: 1.5em;
-  color: ${(props) => (props.isActive ? "#BF9EEB" : "#A3A8B7")};
+  color: ${(props) => (props.isActive ? "#BF9EEB" : "#7A7D88")};
 `;
 
 export const Contents = styled.span`
