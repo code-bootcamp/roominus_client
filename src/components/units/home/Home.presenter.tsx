@@ -162,13 +162,13 @@ export default function HomeUI(props) {
       <S.Title>룸인어스 공지사항</S.Title>
         <Slider {...settings}>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/svg/layout/1.svg" alt="alarm1" />
+            <S.AlarmImgs src="/img/home/alarm1.png" alt="alarm1" />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/svg/layout/4.svg" alt="alarm4" />
+            <S.AlarmImgs src="img/home/alarm2.png" alt="alarm2" />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/svg/layout/5.svg" alt="alarm5" />
+            <S.AlarmImgs src="/img/home/alarm3.png" alt="alarm3" />
           </S.AlarmCarouselBox>
         </Slider>
       </S.AlarmCarouselBoxes>

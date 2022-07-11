@@ -48,6 +48,10 @@ export const Picture = styled.img`
   }
 `;
 
+export const PickAndShareBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 export const PickBox = styled.div`
   height: 3em;
   display: flex;
