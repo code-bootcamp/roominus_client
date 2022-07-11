@@ -1,5 +1,5 @@
-import Reservation from "../../src/components/units/reservation/Reservation.container";
+import ReservationTest from "../../src/components/units/reservationTest/reservation.container";
 
 export default function ReservationPage() {
-  return <Reservation />;
+  return <ReservationTest />;
 }
