@@ -53,12 +53,12 @@ const ListCards = (props) => (
     >
       <LocationBox>
         <LocationIcon src="/img/cafe/locationIcon.png" />
-        <Location>홍대</Location>
+        <Location>{props.el.address}</Location>
       </LocationBox>
       <Meta
         // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title="엑스케이프"
-        description={props.data?.fetchCafes.phone}
+        title={props.el.name}
+        description={props.el.phone}
       />
     </Card>
   </>

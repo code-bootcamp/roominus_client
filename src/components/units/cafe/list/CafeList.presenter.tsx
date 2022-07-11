@@ -48,8 +48,8 @@ export default function CafeListUIPage(props) {
           <S.BestTitle>전체 매장</S.BestTitle>
           <S.Etc>
             {props.data?.fetchCafes.map((el) => (
-              <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
-                <ListCards data={props.data} />
+              <span key={el.name} id={el.name} onClick={props.onClickCard(el)}>
+                <ListCards el={el} />
               </span>
             ))}
             {/* {new Array(10).fill(1).map((el) => (
