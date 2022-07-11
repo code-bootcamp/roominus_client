@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
-  padding: 30px 0px;
+  padding: 2em 0px;
 
   display: flex;
   flex-direction: column;
@@ -10,7 +10,6 @@ export const Container = styled.main`
   @media ${breakPoints.tablet} {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   @media ${breakPoints.mobile} {
@@ -27,9 +26,6 @@ export const ThemeInfoWrapper = styled.section`
   justify-content: center;
 
   @media ${breakPoints.tablet} {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
   }
 
   @media ${breakPoints.mobile} {
@@ -42,8 +38,15 @@ export const ThemeInfoWrapper = styled.section`
 export const ThemeLeftBox = styled.div``;
 
 export const ThemeImg = styled.img`
-  width: 370px;
+  max-width: 370px;
   height: 560px;
+
+  @media ${breakPoints.tablet} {
+    max-width: 300px;
+  }
+
+  @media ${breakPoints.mobile} {
+  }
 `;
 export const ThemeRightBox = styled.div`
   min-width: 600px;
@@ -51,6 +54,14 @@ export const ThemeRightBox = styled.div`
   max-height: 560px;
   padding: 5px 20px;
   float: right;
+
+  @media ${breakPoints.tablet} {
+    min-width: 450px;
+    max-width: 650px;
+    max-height: 560px;
+    padding: 5px 20px;
+    float: right;
+  }
   @media ${breakPoints.mobile} {
     min-width: fit-content;
     max-height: fit-content;
@@ -76,15 +87,18 @@ export const GenreTag = styled.div`
 
 export const ThemeTitle = styled.h2`
   color: #26282c;
-  font-size: 28px;
+  font-size: 1.5em;
 `;
 
 export const ThemeContents = styled.h5`
   padding: 10px;
   border-top: 1px solid #c8c8c8;
   border-bottom: 1px solid #c8c8c8;
-  font-size: 22px;
-  /* white-space: pre-wrap; */
+  font-size: 1.3em;
+  @media ${breakPoints.tablet} {
+    letter-spacing: 0.6px;
+    line-height: 1.1;
+  }
 `;
 
 export const RankTimeBox = styled.div`
@@ -115,20 +129,28 @@ export const ThemeRank = styled.div`
 export const ThemeTime = styled.div``;
 export const ChargeBox = styled.div``;
 export const ThemeCharge = styled.div`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   @media ${breakPoints.mobile} {
     padding: 10px 0px;
+    font-size: 0.8em;
   }
 `;
 
 export const ButtonWrapper = styled.div`
-  padding: 15px;
+  padding: 1em;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media ${breakPoints.tablet} {
+    justify-content: left;
+  }
 `;
 
 export const ReservationButton = styled.button`
-  width: 370px;
+  width: 45vw;
+  min-width: 20em;
   height: 56px;
   border-radius: 8px;
   font-weight: 700;

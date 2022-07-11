@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
@@ -14,6 +15,19 @@ export const Wrapper = styled.section`
 export const StarBox = styled.div`
   display: flex;
   flex-direction: row;
+`;
+
+export const Star = styled(FontAwesomeIcon)`
+  color: #c6c8de;
+  font-size: 3em;
+
+  @media ${breakPoints.tablet} {
+    font-size: 3em;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 8vw;
+  }
 `;
 
 export const EscapeRankBox = styled.div`
@@ -61,11 +75,20 @@ export const EscapeButton = styled.button`
 `;
 
 export const RankBox = styled.div`
-  width: 350px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media ${breakPoints.tablet} {
+    max-width: 300px;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, auto)); */
+    /* grid-template-rows: repeat(auto-fill, minmax(0px, auto)); */
+  }
 `;
 
 export const RankButton = styled.button`
@@ -82,6 +105,7 @@ export const RankButton = styled.button`
   background-color: #26282c;
   color: white;
   margin: 2px;
+  white-space: nowrap;
 `;
 
 export const CommentBox = styled.div`

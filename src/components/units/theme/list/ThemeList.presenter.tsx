@@ -4,6 +4,7 @@ import { v4 } from "uuid";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { IThemeListProps } from "./ThemeList.types";
 
 const NAVIGATION_MENUS = [
   { name: "전체" },
@@ -17,10 +18,10 @@ const NAVIGATION_MENUS = [
   { name: "감성" },
   { name: "기타" },
 ];
-export default function ThemeListUI(props) {
+export default function ThemeListUI(props: IThemeListProps) {
   const [isPicked, setIsPicked] = useState(false);
   const router = useRouter();
-  let themes = [
+  const themes = [
     "/img/theme/ex/1.png",
     "/img/theme/ex/2.png",
     "/img/theme/ex/3.jpeg",
@@ -70,7 +71,7 @@ export default function ThemeListUI(props) {
       ) : (
         <S.Menu onClick={props.onClickToggled} />
       )}
-      {true ? (
+      {props.isToggled ? (
         <S.Toggle>
           <S.ToggleMenuWrapper>
             {NAVIGATION_MENUS.map((el) => (
@@ -88,6 +89,36 @@ export default function ThemeListUI(props) {
       )}
       <div></div>
       <S.ThemeList>
+        {props.data?.fetchThemes.map((el) => (
+          <div key={el.id} onClick={onClickTheme}>
+            <S.Flip>
+              <S.Card>
+                <S.Theme src={el}>
+                  <S.ImgGradient />
+                  <S.Rank>
+                    난이도
+                    <img width={20} src="/img/theme/rankstar.png" />
+                    <img width={20} src="/img/theme/rankstar.png" />
+                    <img width={20} src="/img/theme/rankstar.png" />
+                    <img width={20} src="/img/theme/rankstar.png" />
+                    <img width={20} src="/img/theme/rankstar.png" />
+                  </S.Rank>
+                  <S.GenreTag>#미스테리</S.GenreTag>
+                </S.Theme>
+                <S.ThemeBack src="/img/theme/card-back.png">
+                  <S.ThemeTitle>{el.title}</S.ThemeTitle>
+                  <S.ThemeInfo>
+                    정원 1~2인
+                    <br />
+                    나이제한 {el.agelimit}
+                    <br />
+                    요금 20,000원
+                  </S.ThemeInfo>
+                </S.ThemeBack>
+              </S.Card>
+            </S.Flip>
+          </div>
+        ))}
         {themes.map((el, i) => (
           <div key={i} onClick={onClickTheme}>
             <S.Flip>

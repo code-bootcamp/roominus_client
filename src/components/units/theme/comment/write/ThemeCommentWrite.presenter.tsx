@@ -6,14 +6,16 @@ export default function ThemeCommentWriteUI() {
   return (
     <S.Wrapper>
       <S.StarBox>
+        {/* <img src="/img/theme/별.png" />
         <img src="/img/theme/별.png" />
         <img src="/img/theme/별.png" />
         <img src="/img/theme/별.png" />
-        <img src="/img/theme/별.png" />
-        <img src="/img/theme/별.png" />
-        {/* <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} /> */}
+        <img src="/img/theme/별.png" /> */}
+        <S.Star icon={faStar} />
+        <S.Star icon={faStar} />
+        <S.Star icon={faStar} />
+        <S.Star icon={faStar} />
+        <S.Star icon={faStar} />
       </S.StarBox>
       <S.EscapeRankBox>
         <S.IsEscapeBox>
@@ -21,7 +23,6 @@ export default function ThemeCommentWriteUI() {
           <S.EscapeButton>미탈출</S.EscapeButton>
         </S.IsEscapeBox>
         <S.RankBox>
-          난이도
           <S.RankButton>쉬움</S.RankButton>
           <S.RankButton>보통</S.RankButton>
           <S.RankButton>어려움</S.RankButton>
