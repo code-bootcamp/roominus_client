@@ -28,7 +28,6 @@ export default function CafeDetailUI(props) {
                 <S.ContentsTitle>위치</S.ContentsTitle>
                 <S.Map src="/img/cafe/cafemap.png" />
                 {/* <S.LocationBox> */}
-                {/* <S.Location>홍대</S.Location> */}
                 <S.LocationDetail>
                   {props.data?.fetchCafe.address_detail}
                 </S.LocationDetail>
