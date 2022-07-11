@@ -9,7 +9,6 @@ const NAVIGATION_MENUS = [
   { name: "커뮤니티", page: "/community" },
   { name: "마이페이지", page: "/mypage" },
 ];
-
 const styles = {
   bmBurgerButton: {
     position: "absolute",
