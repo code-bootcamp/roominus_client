@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useRef, useState } from "react";
 import * as S from "./LayoutHeader.styles";
+import { slide as Menu } from "react-burger-menu";
 
 const NAVIGATION_MENUS = [
   { name: "매장", page: "/cafe" },
@@ -9,7 +10,73 @@ const NAVIGATION_MENUS = [
   { name: "커뮤니티", page: "/community" },
   { name: "마이페이지", page: "/mypage" },
 ];
+const styles = {
+  bmBurgerButton: {
+    position: "absolute",
+    width: "1.5em",
+    height: "1.5em",
+    right: "2.5em",
+    top: "2.3em",
+  },
+  bmBurgerBars: {
+    background: "#373a47",
+  },
+  bmBurgerBarsHover: {
+    background: "#a90000",
+  },
+  bmCrossButton: {
+    height: "24px",
+    width: "24px",
+  },
+  bmCross: {
+    background: "#bdc3c7",
+  },
+  bmMenuWrap: {
+    position: "fixed",
+    right: "0px",
+    top: "0px",
+    height: "100%",
+  },
+  bmMenu: {
+    background: "#6c5281",
+    padding: "2.5em 1.5em 0",
+    fontSize: "1.15em",
+  },
+
+  bmItemList: {
+    color: "#60046f",
+    padding: "0.8em",
+  },
+  bmItem: {
+    display: "block",
+    color: "#d1d1d1",
+  },
+  bmOverlay: {
+    background: "rgba(116, 87, 151, 0.3)",
+    position: "fixed", //SearchWrapper만 화면 끝까지 늘리기
+    top: "0",
+    left: "calc(-100vw + 100%)",
+  },
+};
+
 export default function LayoutHeaderUI(props: any) {
+  const [open, setOpen] = useState(false);
+
+  const showSettings = (event) => {
+    event.preventDefault();
+  };
+  const scrollPrevent = (event) => {
+    if (open) {
+      event.preventDefault();
+    }
+  };
+  const handleOnOpen = () => {
+    setOpen((prev) => !prev);
+  };
+  const handleOnClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <S.Container>
@@ -35,29 +102,27 @@ export default function LayoutHeaderUI(props: any) {
               </Fragment>
             ))}
           </S.MenuWrapper>
-
-          {props.isToggled ? (
-            <S.Close onClick={props.onClickToggled} />
-          ) : (
-            <S.Menu onClick={props.onClickToggled} />
-          )}
         </S.Wrapper>
+        <S.Hamburger>
+          <Menu width={"20%"} right styles={styles} disableOverlayClick>
+            <a id="home" className="menu-item" href="/cafe">
+              매장
+            </a>
+            <a id="about" className="menu-item" href="/theme">
+              테마
+            </a>
+            <a id="contact" className="menu-item" href="/reservation">
+              예약
+            </a>
+            <a className="menu-item" href="/community">
+              커뮤니티
+            </a>
+            <a id="contact" className="menu-item" href="/mypage">
+              마이페이지
+            </a>
+          </Menu>
+        </S.Hamburger>
       </S.Container>
-      {props.isToggled && (
-        <S.Toggle>
-          <S.ToggleMenuWrapper>
-            {NAVIGATION_MENUS.map((el) => (
-              <Fragment key={el.page}>
-                <Link href={el.page}>
-                  <S.ToggleMenu id={el.page} onClick={props.onClickMenu}>
-                    <a>{el.name}</a>
-                  </S.ToggleMenu>
-                </Link>
-              </Fragment>
-            ))}
-          </S.ToggleMenuWrapper>
-        </S.Toggle>
-      )}
     </>
   );
 }

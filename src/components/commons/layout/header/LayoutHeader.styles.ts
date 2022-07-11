@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.nav`
@@ -82,65 +82,21 @@ export const Contents = styled.span`
 `;
 
 export const Toggle = styled.div``;
-
-export const Menu = styled(MenuOutlined)`
+export const Hamburger = styled.div`
   display: none;
 
   @media ${breakPoints.tablet} {
     display: block;
-    font-size: 3em;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: block;
-    font-size: 3em;
-  }
-`;
-
-export const Close = styled(CloseOutlined)`
-  display: none;
-
-  @media ${breakPoints.tablet} {
-    display: block;
-    font-size: 3em;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: block;
-    font-size: 3em;
-  }
-`;
-export const ToggleMenuWrapper = styled.ul`
-  display: none;
-
-  @media ${breakPoints.tablet} {
-    display: block;
-    flex-direction: column;
-    text-align: center;
-
+    position: absolute;
+    top: -1.4em;
+    right: 1em;
     font-size: 1em;
+    width: 100px;
+    height: 100px;
   }
 
   @media ${breakPoints.mobile} {
     display: block;
-    flex-direction: column;
-    text-align: center;
-    font-size: 1em;
-  }
-`;
-
-export const ToggleMenu = styled.li`
-  display: none;
-
-  @media ${breakPoints.tablet} {
-    display: block;
-    cursor: pointer;
-    padding-bottom: 0.5em;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: block;
-    cursor: pointer;
-    padding-bottom: 0.5em;
+    font-size: 0.5em;
   }
 `;
