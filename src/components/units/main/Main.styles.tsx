@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 100vw;
@@ -65,10 +66,15 @@ export const Contents = styled.div`
 export const Title = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const RuminousTitle = styled.div`
-  /* opacity: 0; */
   color: white;
   animation: animation 2s ease-in-out running;
   @keyframes animation {
@@ -88,6 +94,8 @@ export const RuminousTitle = styled.div`
       opacity: 1;
       filter: blur(0px);
     }
+  }
+  @media ${breakPoints.mobile} {
   }
 `;
 
@@ -169,7 +177,8 @@ export const Typing = styled.div`
 
 export const Neon = styled(Typing)`
   font-family: "GowunBatang-Regular";
-  font-size: 7em;
+  max-width: 767;
+  font-size: 7vw;
   color: #fffbcb;
   animation: neon 2s ease-out alternate infinite forwards;
   @keyframes neon {
@@ -191,10 +200,13 @@ export const Neon = styled(Typing)`
     font-weight: normal;
     font-style: normal;
   }
+
+  @media ${breakPoints.mobile} {
+  }
 `;
 
 export const FlashText = styled.div`
-  font-size: 7em;
+  font-size: 7vw;
   font-family: "GowunBatang-Regular";
   color: white;
   opacity: 0;
@@ -230,9 +242,10 @@ export const DoorWrapper = styled.div`
 `;
 
 export const DoorBox = styled.div`
-  opacity: 30%;
-  width: 10em;
-  height: 15em;
+  color: white;
+  opacity: 70%;
+  width: 30vw;
+  height: 40vw;
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
@@ -271,4 +284,14 @@ export const Door = styled.div`
   :hover {
     transform: rotateY(180deg);
   }
+`;
+
+export const NeonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+export const NeonBottom = styled(Neon)`
+  text-align: right;
 `;
