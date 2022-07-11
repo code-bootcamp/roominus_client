@@ -21,9 +21,9 @@ export default function CommunityCommentUI() {
               <S.Date>2022.07.06</S.Date>
             </S.InfoTitle>
             <S.InfoTitle>
-              <S.Comment>댓글</S.Comment>
-              <S.Edit>수정</S.Edit>
-              <S.Delete>삭제</S.Delete>
+              <S.Comment src="/img/community/comment/recomment.png" />
+              <S.Edit src="/img/community/comment/commentedit.png" />
+              <S.Delete src="/img/community/comment/commentdelete.png" />
             </S.InfoTitle>
           </S.InfoTitleBox>
           <S.Contents>댓글내용이에요 우와 대단해~</S.Contents>
@@ -38,9 +38,9 @@ export default function CommunityCommentUI() {
               <S.Date>2022.07.06</S.Date>
             </S.InfoTitle>
             <S.InfoTitle>
-              <S.Comment>댓글 </S.Comment>
-              <S.Edit>수정</S.Edit>
-              <S.Delete>삭제</S.Delete>
+              <S.Comment src="/img/community/comment/recomment.png" />
+              <S.Edit src="/img/community/comment/commentedit.png" />
+              <S.Delete src="/img/community/comment/commentdelete.png" />
             </S.InfoTitle>
           </S.InfoTitleBox>
           <S.Contents>이건 대댓글내용이에요 언제만들죠ㅠ</S.Contents>

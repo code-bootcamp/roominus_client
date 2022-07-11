@@ -1,6 +1,5 @@
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
-import ShareButton from "../../../commons/buttons/sharebutton";
 import CommunityList from "../comment/CommunityComment.container";
 import * as S from "./CommunityDetail.styles";
 
@@ -8,10 +7,14 @@ export default function CommunityDetailUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
+        <S.NameDateBox>
+          <S.WriterName>나는작성자</S.WriterName>
+          <S.Date>3일전</S.Date>
+        </S.NameDateBox>
         <S.Picture src="/img/community/board.png" />
         <S.PickAndShareBox>
           <S.PickBox>
-            <S.PickIcon>❤️</S.PickIcon>
+            <S.PickIcon src="/img/community/redheart.png" />
             <S.PickCount>52</S.PickCount>
           </S.PickBox>
           {/* <ShareButton /> */}

@@ -33,8 +33,39 @@ export const Wrapper = styled.section`
   }
 
   @media ${breakPoints.mobile} {
+    width: 100%;
     margin-right: 0;
   }
+`;
+
+export const NameDateBox = styled.div`
+  height: 2em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+`;
+
+export const WriterName = styled.h1`
+  height: 100%;
+  font-size: 1.5em;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: yellow; */
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.4em;
+  }
+`;
+
+export const Date = styled.span`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* background-color: green; */
+  color: #a3a8b7;
 `;
 
 export const Picture = styled.img`
@@ -61,7 +92,8 @@ export const PickBox = styled.div`
   font-size: 20px;
 `;
 
-export const PickIcon = styled.span`
+export const PickIcon = styled.img`
+  width: 1.6em;
   margin-right: 0.5em;
 `;
 

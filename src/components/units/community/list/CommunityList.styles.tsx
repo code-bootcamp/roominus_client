@@ -79,6 +79,11 @@ export const InfoBox = styled.div`
   /* background-color: green; */
 `;
 
+export const NameDateBox = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const DatePickBox = styled.div`
   width: 100%;
   display: flex;
@@ -87,14 +92,23 @@ export const DatePickBox = styled.div`
   /* background-color: yellow; */
 `;
 
-export const Date = styled.div`
+export const WriteName = styled.h3`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  color: #a3a8b7;
+  justify-content: flex-start;
+  /* color: #a3a8b7; */
   /* background-color: green; */
 `;
+
+// export const Date = styled.div`
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   color: #a3a8b7;
+//   background-color: green;
+// `;
 
 export const BoardName = styled.h3`
   font-size: 1.3em;
@@ -114,7 +128,7 @@ export const PickBox = styled.div`
 `;
 
 export const Pick = styled.img`
-  width: 2em;
+  width: 1.8em;
   height: 100%;
   cursor: pointer;
   margin-right: 0.3em;

@@ -37,7 +37,7 @@ export default function HomeUI(props) {
 
   
   const settings = {
-    dots: false,
+    // dots: true,
     arrows: false,
     className: "center",
     // centerMode: true,
@@ -170,6 +170,9 @@ export default function HomeUI(props) {
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
             <S.AlarmImgs src="/img/home/alarm3.png" alt="alarm3" />
+          </S.AlarmCarouselBox>
+          <S.AlarmCarouselBox>
+            <S.AlarmImgs src="/img/home/alarm4.png" alt="alarm3" />
           </S.AlarmCarouselBox>
         </S.StyledSlider>
       </S.AlarmCarouselBoxes>

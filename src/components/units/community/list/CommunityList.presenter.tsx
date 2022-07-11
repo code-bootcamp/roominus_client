@@ -16,9 +16,12 @@ export default function CommunityListUI(props) {
                 onClick={props.onClickCard}
               />
               <S.InfoBox>
-                <S.BoardName>유토피아 양도해요</S.BoardName>
+                <S.NameDateBox>
+                  <S.BoardName>유토피아 양도해요</S.BoardName>
+                </S.NameDateBox>
                 <S.DatePickBox>
-                  <S.Date>2일전</S.Date>
+                  <S.WriteName>짱구</S.WriteName>
+                  {/* <S.Date>2일전</S.Date> */}
                   {/* <Tooltip placement="topRight" title="52"> */}
                   <S.PickBox>
                     <S.Pick src="/img/community/redheart.png" />
