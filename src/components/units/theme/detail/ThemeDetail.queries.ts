@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_THEME = gql`
-  query fetchTheme($title: String!) {
-    fetchTheme(title: $title) {
+  query fetchTheme($themeId: String!) {
+    fetchTheme(themeId: $themeId) {
       id
       title
       rank
@@ -10,6 +10,15 @@ export const FETCH_THEME = gql`
       intro_content
       agelimit
       like
+      mainImg
+      cafe {
+        id
+        name
+      }
+      genre {
+        id
+        name
+      }
     }
   }
 `;

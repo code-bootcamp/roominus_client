@@ -27,15 +27,6 @@ export const CREATE_THEME = gql`
         address
         address_detail
         coordinate
-        users {
-          id
-          isserviceprovider
-          name
-          phone
-          email
-          point
-          cafes
-        }
       }
       genre {
         id

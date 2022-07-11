@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 export default function ThemeCreate() {
   const [createThemegql] = useMutation(CREATE_THEME);
   const router = useRouter();
+  const [imgurl, setImgurl] = useState("");
   const { register, handleSubmit } = useForm();
   const [value, setValue] = useState(0);
   const onSubmitCreateTheme = async (data) => {
@@ -21,8 +22,8 @@ export default function ThemeCreate() {
             rank: value,
             intro_title: data.intro_title,
             intro_content: data.intro_content,
-            mainImg: "",
-            subImgs: [""],
+            mainImg: imgurl,
+            subImgs: [imgurl],
             agelimit: Number(data.agelimit),
           },
         },
@@ -33,6 +34,26 @@ export default function ThemeCreate() {
       Modal.error({ content: error.message });
     }
   };
+  const upload = (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "hs9vtrg6");
+
+    const result = fetch(
+      "https://api.cloudinary.com/v1_1/dgctmlcg6/image/upload",
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).then((response) => {
+      return response.json();
+    });
+    return result;
+  };
+  const onChangeFile = async (event) => {
+    const file = event.target.files?.[0];
+    upload(file).then((result) => setImgurl(result.url));
+  };
 
   return (
     <ThemeCreateUI
@@ -41,6 +62,8 @@ export default function ThemeCreate() {
       handleSubmit={handleSubmit}
       setValue={setValue}
       value={value}
+      onChangeFile={onChangeFile}
+      imgurl={imgurl}
     />
   );
 }
