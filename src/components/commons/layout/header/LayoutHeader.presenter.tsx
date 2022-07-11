@@ -16,7 +16,7 @@ const styles = {
     width: "1.5em",
     height: "1.5em",
     right: "2.5em",
-    top: "2.3em",
+    top: "1.4em",
   },
   bmBurgerBars: {
     background: "#373a47",
@@ -48,8 +48,11 @@ const styles = {
     padding: "0.8em",
   },
   bmItem: {
-    display: "block",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     color: "#d1d1d1",
+    marginBottom: "1em",
   },
   bmOverlay: {
     background: "rgba(116, 87, 151, 0.3)",
@@ -62,20 +65,20 @@ const styles = {
 export default function LayoutHeaderUI(props: any) {
   const [open, setOpen] = useState(false);
 
-  const showSettings = (event) => {
-    event.preventDefault();
-  };
-  const scrollPrevent = (event) => {
-    if (open) {
-      event.preventDefault();
-    }
-  };
-  const handleOnOpen = () => {
-    setOpen((prev) => !prev);
-  };
-  const handleOnClose = () => {
-    setOpen(false);
-  };
+  // const showSettings = (event) => {
+  //   event.preventDefault();
+  // };
+  // const scrollPrevent = (event) => {
+  //   if (open) {
+  //     event.preventDefault();
+  //   }
+  // };
+  // const handleOnOpen = () => {
+  //   setOpen((prev) => !prev);
+  // };
+  // const handleOnClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <>
@@ -104,7 +107,7 @@ export default function LayoutHeaderUI(props: any) {
           </S.MenuWrapper>
         </S.Wrapper>
         <S.Hamburger>
-          <Menu width={"20%"} right styles={styles} disableOverlayClick>
+          <Menu width={"40%"} right styles={styles} disableOverlayClick>
             <a id="home" className="menu-item" href="/cafe">
               매장
             </a>

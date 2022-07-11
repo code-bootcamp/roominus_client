@@ -88,7 +88,7 @@ export const Hamburger = styled.div`
   @media ${breakPoints.tablet} {
     display: block;
     position: absolute;
-    top: -1.4em;
+    top: -0.5em;
     right: 1em;
     font-size: 1em;
     width: 100px;
@@ -97,6 +97,6 @@ export const Hamburger = styled.div`
 
   @media ${breakPoints.mobile} {
     display: block;
-    font-size: 0.5em;
+    font-size: 0.8em;
   }
 `;

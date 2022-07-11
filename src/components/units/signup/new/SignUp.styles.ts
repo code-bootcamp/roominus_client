@@ -20,17 +20,20 @@ export const Title = styled.h1`
 `;
 
 export const WarningBox = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 1em;
 `;
 export const Warning = styled.pre`
+  text-align: center;
+  margin: auto;
   font-size: 1em;
+  margin-bottom: 1.4em;
 `;
 export const CheckBox = styled.div`
-  margin-left: 50%;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -63,7 +66,7 @@ export const CheckLabel = styled.span`
   font-size: 1em;
 `;
 export const NecessityInfoBox = styled.div`
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #d9d9d998;
@@ -116,7 +119,7 @@ export const NecessityInfo = styled.pre`
   white-space: pre-wrap;
 `;
 export const OptionalInfoBox = styled.div`
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #d9d9d998;
