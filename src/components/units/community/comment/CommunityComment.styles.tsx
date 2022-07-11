@@ -14,7 +14,7 @@ export const Wrapper = styled.section`
 
   @media ${breakPoints.mobile} {
     margin-top: 2em;
-    width: 90%;
+    width: 100%;
     font-size: 0.9em;
   }
 `;
@@ -106,7 +106,7 @@ export const NameIcon = styled.div`
 
 export const ListInfoBox = styled.div`
   width: 100%;
-  padding: 0em 0.5em 0em 1em;
+  padding: 0em 0em 0em 1em;
   display: flex;
   flex-direction: column;
 `;
@@ -133,15 +133,15 @@ export const InfoName = styled.div`
   margin-right: 1em;
 `;
 
-export const Comment = styled.div`
-  margin-right: 1em;
+export const Comment = styled.img`
+  margin-right: 0.5em;
 `;
 
-export const Edit = styled.div`
-  margin-right: 1em;
+export const Edit = styled.img`
+  margin-right: 0.5em;
 `;
 
-export const Delete = styled.div``;
+export const Delete = styled.img``;
 
 export const Contents = styled.div``;
 
