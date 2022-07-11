@@ -9,7 +9,9 @@ const NAVIGATION_MENUS = [
   { name: "커뮤니티", page: "/community" },
   { name: "마이페이지", page: "/mypage" },
 ];
+
 export default function LayoutHeaderUI(props: any) {
+  console.log(props.activedMenu);
   return (
     <>
       <S.Container>
@@ -27,7 +29,7 @@ export default function LayoutHeaderUI(props: any) {
                   <S.MenuItem
                     id={el.page}
                     onClick={props.onClickMenu}
-                    isActive={el.page === props.activedMenu}
+                    isActive={props.activedMenu.includes(el.page)}
                   >
                     {el.name}
                   </S.MenuItem>

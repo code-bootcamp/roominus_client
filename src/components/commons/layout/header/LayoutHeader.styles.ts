@@ -42,14 +42,13 @@ export const LogoWrapper = styled.div`
 
 export const Logo = styled.img`
   cursor: pointer;
-  height: 1.8em;
-
+  height: 2.5em;
   @media ${breakPoints.tablet} {
-    height: 2em;
+    height: 2.8em;
   }
 
   @media ${breakPoints.mobile} {
-    height: 2em;
+    height: 2.8em;
   }
 `;
 export const MenuWrapper = styled.ul`
@@ -67,10 +66,11 @@ export const MenuWrapper = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  font-weight: ${(props) => (props.isActive ? "700" : "400")};
+  font-weight: ${(props) => (props.isActive ? "500" : "400")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
 
   font-size: 1.5em;
+  color: ${(props) => (props.isActive ? "#BF9EEB" : "#A3A8B7")};
 `;
 
 export const Contents = styled.span`
