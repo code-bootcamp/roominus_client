@@ -47,11 +47,16 @@ export default function CafeListUIPage(props) {
         <S.Flex>
           <S.BestTitle>전체 매장</S.BestTitle>
           <S.Etc>
-            {new Array(10).fill(1).map((el) => (
+            {props.data?.fetchCafes.map((el) => (
+              <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
+                <ListCards data={props.data} />
+              </span>
+            ))}
+            {/* {new Array(10).fill(1).map((el) => (
               <span key={el} onClick={props.onClickCard}>
                 <ListCards />
               </span>
-            ))}
+            ))} */}
           </S.Etc>
         </S.Flex>
         <S.MoreButtonBox>
