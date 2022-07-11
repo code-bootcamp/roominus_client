@@ -85,6 +85,7 @@ export const DropBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 4px 4px rgba(217, 214, 224, 0.25);
 `;
 
 export const Essential = styled.span`
@@ -116,7 +117,9 @@ export const WebEditor = styled.div`
   height: 20em;
   padding: 1em;
   border: 1px solid #a3a8b7;
+  border-radius: 8px;
   background-color: white;
+  box-shadow: 0px 4px 4px rgba(217, 214, 224, 0.25);
 `;
 
 export const ButtonBox = styled.div`

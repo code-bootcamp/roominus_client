@@ -1,6 +1,7 @@
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import CommunityList from "../comment/CommunityComment.container";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./CommunityDetail.styles";
 
 export default function CommunityDetailUI(props) {
@@ -14,7 +15,8 @@ export default function CommunityDetailUI(props) {
         <S.Picture src="/img/community/board.png" />
         <S.PickAndShareBox>
           <S.PickBox>
-            <S.PickIcon src="/img/community/redheart.png" />
+            <S.RedHeart icon={faHeart} />
+            {/* <S.PickIcon src="/img/community/redheart.png" /> */}
             <S.PickCount>52</S.PickCount>
           </S.PickBox>
           {/* <ShareButton /> */}

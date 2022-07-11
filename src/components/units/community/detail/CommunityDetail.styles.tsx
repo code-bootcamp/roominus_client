@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
@@ -24,7 +25,10 @@ export const Wrapper = styled.section`
   width: 90%;
   display: flex;
   flex-direction: column;
-  background-color: #f2ebf5;
+  background-color: #ffffff;
+  border: 1px solid #d9d6e0;
+  box-shadow: 0px 4px 4px rgba(217, 214, 224, 0.25);
+  border-radius: 8px;
   padding: 2em;
   margin-right: 2em;
 
@@ -127,4 +131,12 @@ export const ButtonBox = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+`;
+
+//--------------------0711 hani
+
+export const RedHeart = styled(FontAwesomeIcon)`
+  padding: 2px;
+  font-size: 25px;
+  color: #e35d5b;
 `;
