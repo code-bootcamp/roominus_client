@@ -12,7 +12,6 @@ export const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
 `;
 
 export const Title = styled.div`
@@ -23,7 +22,7 @@ export const Title = styled.div`
 `;
 
 export const InputsTitle = styled.span`
-  margin-top: 2.5em;
+  margin-top: 1.5em;
   font-size: 1.3em;
 `;
 

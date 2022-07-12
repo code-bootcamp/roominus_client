@@ -15,3 +15,17 @@ export const CREATE_CAFE = gql`
     }
   }
 `;
+
+export const UPDATE_CAFE = gql`
+  mutation updateCafe($cafeId: String!, $updateCafeInput: UpdateCafeInput!) {
+    updateCafe(cafeId: $cafeId, updateCafeInput: $updateCafeInput) {
+      id
+      name
+      phone
+      intro_content
+      address
+      address_detail
+      mainImg
+    }
+  }
+`;

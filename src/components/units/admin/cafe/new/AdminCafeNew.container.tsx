@@ -1,8 +1,8 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { CREATE_CAFE } from "./AdminCafeNew.query";
+import { CREATE_CAFE, UPDATE_CAFE } from "./AdminCafeNew.query";
 import AdminCafeNewUI from "./AdminCafeNew.presenter";
 
 export default function AdminCafeNew(props) {
@@ -10,6 +10,7 @@ export default function AdminCafeNew(props) {
   const imgRef = useRef();
 
   const [createCafe] = useMutation(CREATE_CAFE);
+  const [updateCafe] = useMutation(UPDATE_CAFE);
 
   const { register, handleSubmit } = useForm();
 
@@ -66,9 +67,53 @@ export default function AdminCafeNew(props) {
     }
   };
 
-  const onClickUpdate = () => {};
-
   console.log(props.editData);
+
+  interface IUpdateBoardInput {
+    name?: string;
+    phone?: string;
+    intro_content?: string;
+    address?: string;
+    address_detail?: string;
+  }
+
+  const onClickUpdate = async (data) => {
+    const updateCafeInput: IUpdateBoardInput = {};
+    if (data.name) updateCafeInput.name = data.name;
+    if (data.phone) updateCafeInput.phone = data.phone;
+    if (data.intro_content) updateCafeInput.intro_content = data.intro_content;
+    if (data.address) updateCafeInput.address = data.address;
+    if (data.address_detail)
+      updateCafeInput.address_detail = data.address_detail;
+
+    try {
+      const result = await updateCafe({
+        variables: {
+          cafeId: router.query.id,
+          updateCafeInput,
+          // : {
+          //   name: data.name,
+          //   phone: data.phone,
+          //   intro_content: data.intro_content,
+          //   address: data.address,
+          //   address_detail: data.address_detail,
+          //   mainImg: imgurl,
+          // },
+        },
+      });
+      alert("수정이 완료되었습니다!");
+      router.push(`/admin/cafe/${result.data?.updateCafe.id}`);
+      console.log(result);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  useEffect(() => {
+    if (props.editData?.fetchCafe.mainImg) {
+      setImgurl(props.editData?.fetchCafe.mainImg);
+    }
+  }, [props.editData]);
 
   return (
     <AdminCafeNewUI

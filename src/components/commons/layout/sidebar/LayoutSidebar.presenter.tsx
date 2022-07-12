@@ -1,6 +1,6 @@
 import Link from "next/link";
 import * as S from "./LayoutSidebar.styleds";
-import { FiSettings, FiLogOut } from "react-icons/Fi";
+// import { FiSettings, FiLogOut } from "react-icons/Fi"
 import { Fragment } from "react";
 
 const NAVIGATION_MENUS = [
@@ -38,14 +38,14 @@ export default function LayoutSideBarUI(props) {
         <S.MenuFooterBox>
           <S.FooterBox>
             {" "}
-            <FiSettings style={{ marginTop: "0.2em" }} />
+            {/* <FiSettings style={{ marginTop: "0.2em" }} /> */}
             <Link href="/mypage/phoneedit">
               <span>회원정보 수정</span>
             </Link>
           </S.FooterBox>
 
           <S.FooterBox>
-            <FiLogOut style={{ marginTop: "0.2em" }} />
+            {/* <FiLogOut style={{ marginTop: "0.2em" }} /> */}
             <Link href="/mypage/pwedit">
               <span>로그아웃</span>
             </Link>

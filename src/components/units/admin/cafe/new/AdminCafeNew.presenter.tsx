@@ -55,13 +55,7 @@ export default function AdminCafeNewUI(props) {
         <S.ImgBox onClick={props.onClickRealInput}>
           <S.ImgAddBtn />
         </S.ImgBox>
-        {props.imgurl && (
-          <S.PreviewImg
-            src={props.imgurl}
-            alt="picture"
-            defaultValue={props.editData?.fetchCafe.imgurl}
-          />
-        )}
+        {props.imgurl && <S.PreviewImg src={props.imgurl} alt="picture" />}
         {/* <S.PreviewEmpty></S.PreviewEmpty> */}
       </S.PreviewBox>
       <S.Form2
