@@ -2,11 +2,13 @@ import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { CREATE_CAFE } from "./AdminCafeNewQuery";
-import AdminCafeNewUI from "./AdminCafeNewUI";
-export default function AdminCafeNew() {
+import { CREATE_CAFE } from "./AdminCafeNew.query";
+import AdminCafeNewUI from "./AdminCafeNew.presenter";
+
+export default function AdminCafeNew(props) {
   const router = useRouter();
   const imgRef = useRef();
+
   const [createCafe] = useMutation(CREATE_CAFE);
 
   const { register, handleSubmit } = useForm();
@@ -64,15 +66,22 @@ export default function AdminCafeNew() {
     }
   };
 
+  const onClickUpdate = () => {};
+
+  console.log(props.editData);
+
   return (
     <AdminCafeNewUI
       register={register}
       imgurl={imgurl}
       handleSubmit={handleSubmit}
       onClickButton={onClickButton}
+      onClickUpdate={onClickUpdate}
       onChangeFile={onChangeFile}
       imgRef={imgRef}
       onClickRealInput={onClickRealInput}
+      isEdit={props.isEdit}
+      editData={props.editData}
     />
   );
 }

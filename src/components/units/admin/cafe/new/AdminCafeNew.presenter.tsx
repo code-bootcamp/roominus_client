@@ -1,41 +1,48 @@
 import WebPurpleLoginButton from "../../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
-import WebLongestHighlightUnderlineInput from "../../../../commons/inputs/inputDesktop/WebLongestHighlightUnderlineInput";
-import * as S from "./AdminCafeNewStyle";
+import * as S from "./AdminCafeNew.styles";
 
 export default function AdminCafeNewUI(props) {
   return (
     <S.Wrapper>
       <S.Form onSubmit={props.handleSubmit(props.onClickButton)}>
-        <S.Title>cafe 등록페이지</S.Title>
+        <S.Title>
+          {props.isEdit ? "cafe 수정페이지" : "cafe 등록페이지"}
+        </S.Title>
         <S.InputsTitle>매장 이름</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        {console.log(props.editData)}
+        <S.Input
           type="text"
-          register={props.register("name")}
+          {...props.register("name")}
           placeholder="매장명을 입력하세요"
+          defaultValue={props.editData?.fetchCafe.name}
         />
         <S.InputsTitle>매장 전화번호</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.Input
           type="text"
-          register={props.register("phone")}
+          {...props.register("phone")}
           placeholder="매장 전화번호를 입력하세요"
+          defaultValue={props.editData?.fetchCafe.phone}
         />
         <S.InputsTitle>매장 소개</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.Input
           type="text"
-          register={props.register("intro_content")}
+          {...props.register("intro_content")}
           placeholder="매장소개 입력하세요"
+          defaultValue={props.editData?.fetchCafe.intro_content}
         />
         <S.InputsTitle>매장 지역</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.Input
           type="text"
-          register={props.register("address")}
+          {...props.register("address")}
           placeholder="매장 지역을 입력하세요"
+          defaultValue={props.editData?.fetchCafe.address}
         />
         <S.InputsTitle>매장 상세주소</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.Input
           type="text"
-          register={props.register("address_detail")}
+          {...props.register("address_detail")}
           placeholder="매장 상세주소를 입력하세요"
+          defaultValue={props.editData?.fetchCafe.address_detail}
         />
       </S.Form>
       <S.InputsTitle>이미지</S.InputsTitle>
@@ -48,11 +55,24 @@ export default function AdminCafeNewUI(props) {
         <S.ImgBox onClick={props.onClickRealInput}>
           <S.ImgAddBtn />
         </S.ImgBox>
-        {props.imgurl && <S.PreviewImg src={props.imgurl} alt="picture" />}
-        <S.PreviewEmpty></S.PreviewEmpty>
+        {props.imgurl && (
+          <S.PreviewImg
+            src={props.imgurl}
+            alt="picture"
+            defaultValue={props.editData?.fetchCafe.imgurl}
+          />
+        )}
+        {/* <S.PreviewEmpty></S.PreviewEmpty> */}
       </S.PreviewBox>
-      <S.Form2 onSubmit={props.handleSubmit(props.onClickButton)}>
-        <WebPurpleLoginButton type="submit" title="등록하기" />
+      <S.Form2
+        onSubmit={props.handleSubmit(
+          props.isEdit ? props.onClickUpdate : props.onClickButton
+        )}
+      >
+        <WebPurpleLoginButton
+          type="submit"
+          title={props.isEdit ? "수정하기" : "등록하기"}
+        />
       </S.Form2>
     </S.Wrapper>
   );
