@@ -5,9 +5,6 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { IThemeListProps } from "./ThemeList.types";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const NAVIGATION_MENUS = [
   { name: "전체" },
@@ -47,16 +44,13 @@ export default function ThemeListUI(props: IThemeListProps) {
   };
 
   const settings = {
-    className: "center",
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 5,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     swipeToSlide: true,
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      );
-    },
+    speed: 300,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
 
   return (
@@ -104,19 +98,28 @@ export default function ThemeListUI(props: IThemeListProps) {
       ) : (
         <></>
       )} */}
-      {/* <div>
-        <Slider {...settings}>
+      <div>
+        <S.MySlider {...settings}>
           <div>
-            <img src="/img/theme/ex/1.png" />
+            <S.SliderImg src="/img/theme/ex/1.png" />
           </div>
           <div>
-            <img src="/img/theme/ex/1.png" />
+            <S.SliderImg src="/img/theme/ex/2.png" />
           </div>
           <div>
-            <h3>3</h3>
+            <S.SliderImg src="/img/theme/ex/3.jpeg" />
           </div>
-        </Slider>
-      </div> */}
+          <div>
+            <S.SliderImg src="/img/theme/ex/4.jpeg" />
+          </div>
+          <div>
+            <S.SliderImg src="/img/theme/ex/5.png" />
+          </div>
+          <div>
+            <S.SliderImg src="/img/theme/ex/6.jpeg" />
+          </div>
+        </S.MySlider>
+      </div>
       <S.ThemeList>
         {props.data?.fetchThemes.map((el) => (
           <div key={el.id} onClick={onClickTheme}>

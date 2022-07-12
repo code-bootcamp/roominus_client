@@ -1,4 +1,7 @@
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { breakPoints } from "../../../../commons/styles/media";
 
 const BannerImage = styled.div`
   width: 100vw;
@@ -9,6 +12,13 @@ const BannerImage = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    height: 6em;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -24,21 +34,58 @@ const Line = styled.div`
   margin-bottom: 10px;
 `;
 const EngMenu = styled.div`
-  font-size: 28px;
+  font-size: 1.8em;
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8em;
+  }
 `;
 
 const KorMenu = styled.div`
-  font-size: 52px;
+  font-size: 3.2em;
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.3em;
+  }
 `;
 
 export default function LayoutBanner() {
+  const router = useRouter();
+  const [activedMenu, setActivedMenu] = useState("");
+  const NAVIGATION_MENUS = [
+    { kor: "매장", eng: "Cafe", page: "/cafe" },
+    { kor: "테마", eng: "Theme", page: "/theme" },
+    { kor: "예약", eng: "Reservation", page: "/reservation" },
+    { kor: "커뮤니티", eng: "Community", page: "/community" },
+    { kor: "마이페이지", eng: "Mypage", page: "/mypage" },
+  ];
+
+  useEffect(() => {
+    if (!router.asPath.includes(activedMenu) || activedMenu === "") {
+      setActivedMenu(router.asPath);
+    }
+  }, [router.asPath]);
   return (
     <>
       <BannerImage>
         <Wrapper>
           <Line />
-          <EngMenu>Community</EngMenu>
-          <KorMenu>커뮤니티</KorMenu>
+          <EngMenu>
+            {NAVIGATION_MENUS.map((el) => {
+              if (activedMenu.includes(el.page)) return el.eng;
+              else return "";
+            })}
+          </EngMenu>
+          <KorMenu>
+            {NAVIGATION_MENUS.map((el) => {
+              if (activedMenu.includes(el.page)) return el.kor;
+              else return "";
+            })}
+          </KorMenu>
         </Wrapper>
       </BannerImage>
     </>
