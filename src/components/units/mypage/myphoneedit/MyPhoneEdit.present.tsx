@@ -1,6 +1,7 @@
 import Link from "next/link";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import WebSmallBlackButton from "../../../commons/buttons/buttonDesktop/WebSmallBlackButton";
-import WebSmallPurpleButton from "../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import * as S from "./MyPhoneEdit.styles";
 
 export default function MyPhoneEditUI(props) {
@@ -58,17 +59,17 @@ export default function MyPhoneEditUI(props) {
         )}
 
         <S.ButtonWrapper>
-          <WebSmallBlackButton
+          <WebBlackButton
             title="취소하기"
             type="button"
             onClick={props.onClickMoveToMain}
-          ></WebSmallBlackButton>
-          <WebSmallPurpleButton title="변경하기"> </WebSmallPurpleButton>
+          ></WebBlackButton>
+          <WebPurpleButton title="변경하기"> </WebPurpleButton>
         </S.ButtonWrapper>
       </S.Wrapper>
-      {/* <S.DeleteBox>
-        <span>탈퇴하기</span>
-      </S.DeleteBox> */}
+      <S.DeleteBox>
+        <span onClick={props.onClickResign}>탈퇴하기</span>
+      </S.DeleteBox>
     </S.Container>
   );
 }

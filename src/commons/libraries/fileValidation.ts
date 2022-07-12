@@ -1,9 +1,10 @@
+import { useModal } from "../../components/commons/hooks/useModal";
+
 export const checkFileValidation = (file?: File) => {
-  // 파일이 없을 수도 있기 때문에 ?표기
-  // 타입스크립트 유형 File
+  const { WarningModal } = useModal();
 
   if (!file?.size) {
-    alert("파일이 없습니다!");
+    WarningModal("사진 등록 실패", "파일이 없습니다!");
     return false;
     // return;
     // 이 return은 이 함수가 종료되는 것

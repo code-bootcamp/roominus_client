@@ -3,6 +3,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 30%;
+  height: 800px;
 
   border-right: 1px solid darkgray;
 
@@ -39,7 +40,7 @@ export const UserNameBox = styled.div`
     #b6a2ea 81%,
     #bf9eeb 100%
   );
-  margin: 2em 0em 2em 0em;
+  margin: 2em 0em 1.7em 0em;
   color: white;
 `;
 
@@ -65,9 +66,14 @@ export const MenuItem = styled.li`
   font-weight: ${(props) => (props.isActive ? "500" : "normal")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
   color: ${(props) => (props.isActive ? "#BF9EEB" : "#26282C")};
-  font-size: 1.5em;
+  font-size: 1.4em;
 `;
 
+export const FooterBox = styled.div`
+  display: flex;
+  gap: 0.3em;
+  cursor: pointer;
+`;
 export const MenuFooterBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -76,10 +82,5 @@ export const MenuFooterBox = styled.div`
   font-size: 1.2em;
   gap: 0.5em;
   margin-top: 10em;
-`;
-
-export const FooterBox = styled.div`
-  display: flex;
-  gap: 0.3em;
-  cursor: pointer;
+  padding-bottom: 2em;
 `;
