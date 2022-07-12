@@ -1,5 +1,5 @@
 import ThemeCreateUI from "./ThemeCreate.presenter";
-import { CREATE_THEME } from "./ThemeCreate.query";
+import { CREATE_THEME } from "./ThemeCreate.queries";
 import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { Modal } from "antd";

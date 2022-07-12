@@ -1,10 +1,11 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import * as S from "./ThemeList.styles";
 import { v4 } from "uuid";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { IThemeListProps } from "./ThemeList.types";
+import MobileCarousel from "./MobileCarousel";
 
 const NAVIGATION_MENUS = [
   { name: "전체" },
@@ -40,18 +41,28 @@ export default function ThemeListUI(props: IThemeListProps) {
   ];
 
   const onClickTheme = () => {
-    router.push(`/theme/월야애담`);
+    router.push(`/theme/${el.id}`);
   };
 
-  const settings = {
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    speed: 300,
-    autoplay: true,
-    autoplaySpeed: 3000,
+  const [windowSize, setWindowSize] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    } else {
+      setWindowSize(false);
+    }
   };
+
+  useEffect(() => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowSize]);
 
   return (
     <S.Wrapper>
@@ -98,96 +109,85 @@ export default function ThemeListUI(props: IThemeListProps) {
       ) : (
         <></>
       )} */}
-      <div>
-        <S.MySlider {...settings}>
-          <div>
-            <S.SliderImg src="/img/theme/ex/1.png" />
-          </div>
-          <div>
-            <S.SliderImg src="/img/theme/ex/2.png" />
-          </div>
-          <div>
-            <S.SliderImg src="/img/theme/ex/3.jpeg" />
-          </div>
-          <div>
-            <S.SliderImg src="/img/theme/ex/4.jpeg" />
-          </div>
-          <div>
-            <S.SliderImg src="/img/theme/ex/5.png" />
-          </div>
-          <div>
-            <S.SliderImg src="/img/theme/ex/6.jpeg" />
-          </div>
-        </S.MySlider>
-      </div>
-      <S.ThemeList>
-        {props.data?.fetchThemes.map((el) => (
-          <div key={el.id} onClick={onClickTheme}>
-            <S.Flip>
-              <S.Card>
-                <S.Theme src={el}>
-                  <S.ImgGradient />
-                  <S.Rank>
-                    난이도
-                    <img width={20} src="/img/theme/rankstar.png" />
-                    <img width={20} src="/img/theme/rankstar.png" />
-                    <img width={20} src="/img/theme/rankstar.png" />
-                    <img width={20} src="/img/theme/rankstar.png" />
-                    <img width={20} src="/img/theme/rankstar.png" />
-                  </S.Rank>
-                  <S.GenreTag>#미스테리</S.GenreTag>
-                </S.Theme>
-                <S.ThemeBack src="/img/theme/card-back.png">
-                  <S.ThemeTitle>{el.title}</S.ThemeTitle>
-                  <S.ThemeInfo>
-                    정원 1~2인
-                    <br />
-                    나이제한 {el.agelimit}
-                    <br />
-                    요금 20,000원
-                  </S.ThemeInfo>
-                </S.ThemeBack>
-              </S.Card>
-            </S.Flip>
-          </div>
-        ))}
-        {themes.map((el, i) => (
-          <div key={i} onClick={onClickTheme}>
-            <S.Flip>
-              <S.Card>
-                <S.Theme src={el}>
-                  <S.ImgGradient />
-                  <S.Rank>
-                    난이도
-                    <img width={20} src="/img/theme/rankstar.png" />
-                    <img width={20} src="/img/theme/rankstar.png" />
-                    <img width={20} src="/img/theme/rankstar.png" />
-                    <img width={20} src="/img/theme/rankstar.png" />
-                    <img width={20} src="/img/theme/rankstar.png" />
-                  </S.Rank>
-                  <S.GenreTag>#미스테리</S.GenreTag>
-                </S.Theme>
-                <S.ThemeBack src="/img/theme/card-back.png">
-                  <S.ThemeTitle>
-                    그래도 피망은
-                    <br /> 먹기 싫단 말이에욧
-                  </S.ThemeTitle>
-                  <S.ThemeInfo>
-                    정원 1~2인
-                    <br />
-                    시간 65분
-                    <br />
-                    요금 20,000원
-                  </S.ThemeInfo>
-                </S.ThemeBack>
-              </S.Card>
-            </S.Flip>
-          </div>
-        ))}
-      </S.ThemeList>
-      <S.ButtonBox>
-        <S.ShowMoreButton>더보기</S.ShowMoreButton>
-      </S.ButtonBox>
+      {windowSize && (
+        <div>
+          <MobileCarousel data={props.data} />
+          <MobileCarousel data={props.data} />
+        </div>
+      )}
+
+      {!windowSize && (
+        <div>
+          <S.ThemeList>
+            {props.data?.fetchThemes.map((el) => (
+              <div key={el.id} onClick={onClickTheme}>
+                <S.Flip>
+                  <S.Card>
+                    <S.Theme src={el}>
+                      <S.ImgGradient />
+                      <S.Rank>
+                        난이도
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
+                      </S.Rank>
+                      <S.GenreTag>#미스테리</S.GenreTag>
+                    </S.Theme>
+                    <S.ThemeBack src="/img/theme/card-back.png">
+                      <S.ThemeTitle>{el.title}</S.ThemeTitle>
+                      <S.ThemeInfo>
+                        정원 1~2인
+                        <br />
+                        나이제한 {el.agelimit}
+                        <br />
+                        요금 20,000원
+                      </S.ThemeInfo>
+                    </S.ThemeBack>
+                  </S.Card>
+                </S.Flip>
+              </div>
+            ))}
+            {themes.map((el, i) => (
+              <div key={i} onClick={onClickTheme}>
+                <S.Flip>
+                  <S.Card>
+                    <S.Theme src={el}>
+                      <S.ImgGradient />
+                      <S.Rank>
+                        난이도
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
+                      </S.Rank>
+                      <S.GenreTag>#미스테리</S.GenreTag>
+                    </S.Theme>
+                    <S.ThemeBack src="/img/theme/card-back.png">
+                      <S.ThemeTitle>
+                        그래도 피망은
+                        <br /> 먹기 싫단 말이에욧
+                      </S.ThemeTitle>
+                      <S.ThemeInfo>
+                        정원 1~2인
+                        <br />
+                        시간 65분
+                        <br />
+                        요금 20,000원
+                      </S.ThemeInfo>
+                    </S.ThemeBack>
+                  </S.Card>
+                </S.Flip>
+              </div>
+            ))}
+          </S.ThemeList>
+          <S.ButtonBox>
+            <S.ShowMoreButton>더보기</S.ShowMoreButton>
+          </S.ButtonBox>
+        </div>
+      )}
     </S.Wrapper>
   );
 }
