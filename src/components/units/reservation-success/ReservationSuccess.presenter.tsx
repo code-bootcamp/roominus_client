@@ -1,6 +1,5 @@
 import Link from "next/link";
 import * as S from "./ReservationSuccess.styles";
-import { GiTicket } from "react-icons/Gi";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 
@@ -13,9 +12,9 @@ export default function ReservationSuccessUI() {
 
       <S.Wrapper>
         <S.TicketTitleBox>
-          <GiTicket size={40} />
+          <S.Ticket src="/img/reservation/ticket.png" />
           <S.Title>TICKET</S.Title>
-          <GiTicket size={40} />
+          <S.Ticket src="/img/reservation/ticket.png" />
         </S.TicketTitleBox>
         <S.IamgeDataBox>
           <>
@@ -32,9 +31,9 @@ export default function ReservationSuccessUI() {
           </S.DataBox>
         </S.IamgeDataBox>
 
-        <>
+        <S.BarcodeBox>
           <S.Barcode></S.Barcode>
-        </>
+        </S.BarcodeBox>
       </S.Wrapper>
 
       <S.NotionArea>

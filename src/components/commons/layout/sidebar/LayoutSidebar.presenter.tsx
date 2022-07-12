@@ -1,6 +1,5 @@
 import Link from "next/link";
 import * as S from "../sidebar/LayoutSidebar.styles";
-import { AiFillSetting, AiOutlineLogout } from "react-icons/Ai";
 import { Fragment } from "react";
 
 const NAVIGATION_MENUS = [
@@ -37,15 +36,14 @@ export default function LayoutSideBarUI(props) {
 
         <S.MenuFooterBox>
           <S.FooterBox>
-            {" "}
-            <AiFillSetting style={{ marginTop: "0.2em" }} />
+            <S.Setting />
             <Link href="/mypage/phoneedit">
               <span>회원정보 수정</span>
             </Link>
           </S.FooterBox>
 
           <S.FooterBox>
-            <AiOutlineLogout style={{ marginTop: "0.2em" }} />
+            <S.Logout />
             <Link href="/home">
               <span>로그아웃</span>
             </Link>

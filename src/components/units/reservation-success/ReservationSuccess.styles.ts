@@ -66,6 +66,7 @@ export const TicketTitleBox = styled.div`
   display: flex;
   align-items: center;
   transform: rotate(270deg);
+  gap: 0.5em;
 
   @media ${breakPoints.tablet} {
     transform: rotate(0deg);
@@ -73,6 +74,10 @@ export const TicketTitleBox = styled.div`
   @media ${breakPoints.mobile} {
     transform: rotate(0deg);
   }
+`;
+
+export const Ticket = styled.img`
+  width: 2em;
 `;
 
 export const Title = styled.span`
@@ -125,11 +130,13 @@ export const DataBox = styled.div`
   }
 `;
 
-export const Barcode = styled.div`
-  background: url("/img/reservation/barcode.png") center/cover;
+export const BarcodeBox = styled.div``;
 
-  width: 28.13em;
-  height: 6.25em;
+export const Barcode = styled.div`
+  background: url("/img/reservation/qr-code.png") center/cover;
+
+  width: 10em;
+  height: 10em;
   transform: rotate(90deg);
 
   @media ${breakPoints.tablet} {
