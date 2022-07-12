@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface IGenreProps {
   isPicked?: Boolean;
@@ -144,6 +147,16 @@ export const BackDiv = styled(FrontBackDiv)`
   transform: rotateY(180deg);
 `;
 // -------------------------------
+
+export const MySlider = styled(Slider)`
+  width: 100%;
+`;
+
+export const SliderImg = styled.img`
+  width: 290;
+  height: 420px;
+  padding: 10px;
+`;
 
 export const ThemeList = styled.div`
   padding: 20px 0px;
