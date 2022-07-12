@@ -11,9 +11,9 @@ export default function CafeDetailUI(props) {
         <S.CafePicture src="/img/cafe/room.webp" />
         <S.InfoBox>
           <S.NamePhoneBox>
-            <S.CafeName>엑스케이프</S.CafeName>
-            <S.Location>🌏 홍대</S.Location>
-            <S.CafePhone>📞 02-123-4567</S.CafePhone>
+            <S.CafeName>{props.data?.fetchCafe.name}</S.CafeName>
+            <S.Location>🌏 {props.data?.fetchCafe.address}</S.Location>
+            <S.CafePhone>📞 {props.data?.fetchCafe.phone}</S.CafePhone>
           </S.NamePhoneBox>
           <S.MenuBox>
             <MenuTabs onChangeKey={props.onChangeKey} />
@@ -22,20 +22,14 @@ export default function CafeDetailUI(props) {
             <S.InfoLocationBox>
               <S.InfoContentsBox>
                 <S.ContentsTitle>소개</S.ContentsTitle>
-                <S.Contents>
-                  엑스케이프 입니다. 오픈기념 특가! 인당 단돈 5,000원!
-                  엑스케이프 입니다. 오픈기념 특가! 인당 단돈 5,000원!
-                  엑스케이프 입니다. 오픈기념 특가! 인당 단돈 5,000원!
-                  엑스케이프 입니다. 오픈기념 특가! 인당 단돈 5,000원!
-                </S.Contents>
+                <S.Contents>{props.data?.fetchCafe.intro_content}</S.Contents>
               </S.InfoContentsBox>
               <div>
                 <S.ContentsTitle>위치</S.ContentsTitle>
                 <S.Map src="/img/cafe/cafemap.png" />
                 {/* <S.LocationBox> */}
-                {/* <S.Location>홍대</S.Location> */}
                 <S.LocationDetail>
-                  서울특별시 홍대구 홍대동 홍대건물 1층
+                  {props.data?.fetchCafe.address_detail}
                 </S.LocationDetail>
                 {/* </S.LocationBox> */}
               </div>
