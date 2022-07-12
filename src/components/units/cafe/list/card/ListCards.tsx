@@ -39,8 +39,8 @@ const ListCards = (props) => (
       style={{ width: "100%", borderColor: "#c2c2c2", position: "relative" }}
       cover={
         <img
-          alt="example"
-          src="/img/cafe/room.webp"
+          alt="No Image"
+          src={props.el.mainImg}
           style={{ height: 200, cursor: "pointer" }}
         />
       }

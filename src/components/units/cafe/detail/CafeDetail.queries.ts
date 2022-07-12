@@ -9,6 +9,7 @@ export const FETCH_CAFE = gql`
       intro_content
       address
       address_detail
+      mainImg
     }
   }
 `;

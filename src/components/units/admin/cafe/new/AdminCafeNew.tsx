@@ -1,6 +1,7 @@
 import { gql, useMutation } from "@apollo/client";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Wrapper = styled.div`
@@ -17,7 +18,7 @@ const CREATE_CAFE = gql`
       intro_content
       address
       address_detail
-      # mainImg
+      mainImg
       # subImgs
       # users
     }
@@ -31,6 +32,31 @@ export default function AdminCafeNew() {
 
   const { register, handleSubmit } = useForm();
 
+  const [imgurl, setImgurl] = useState("");
+
+  const upload = (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "tyx7y8ot");
+
+    const result = fetch(
+      "https://api.cloudinary.com/v1_1/dop5piuwp/image/upload",
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).then((response) => {
+      return response.json();
+    });
+    return result;
+  };
+
+  const onChangeFile = async (event) => {
+    const file = event.target.files?.[0];
+    upload(file).then((result) => setImgurl(result.url));
+    // upload(file).then((result) => console.log(typeof result.url));
+  };
+
   const onClickButton = async (data) => {
     try {
       const result = await createCafe({
@@ -41,8 +67,8 @@ export default function AdminCafeNew() {
             intro_content: data.intro_content,
             address: data.address,
             address_detail: data.address_detail,
-            mainImg: "",
-            subImgs: [""],
+            mainImg: imgurl,
+            // subImgs: [imgurl],
             users: ["오세웅"],
             coordinate: 2,
           },
@@ -72,7 +98,9 @@ export default function AdminCafeNew() {
         <button>등록하기</button>
       </form>
       <br />
-      이미지?
+      이미지
+      <input type="file" onChange={onChangeFile} />
+      <img src={imgurl} alt="picture" />
       <br />
       매장테마?
     </Wrapper>
