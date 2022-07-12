@@ -10,6 +10,13 @@ export const FETCH_THEME = gql`
       intro_content
       agelimit
       like
+      mainImg
     }
+  }
+`;
+
+export const DELETE_THEME = gql`
+  mutation deleteTheme($themeId: String!) {
+    deleteTheme(themeId: $themeId)
   }
 `;

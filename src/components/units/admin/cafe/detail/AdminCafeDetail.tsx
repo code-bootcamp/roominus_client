@@ -1,6 +1,8 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
+import WebSmallBlackButton from "../../../../commons/buttons/buttonDesktop/WebSmallBlackButton";
+import WebSmallPurpleButton from "../../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 
 const Wrapper = styled.div`
   margin: 2em 0em;
@@ -8,7 +10,36 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  color: #ea8e16;
+  color: #bf9eeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+`;
+
+const InfoBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2em 0em;
+`;
+
+const Img = styled.img`
+  width: 15em;
+  height: 15em;
+  margin-right: 1em;
+  background-color: gray;
+`;
+
+const Info = styled.div`
+  font-size: 1em;
+`;
+
+const ButtonBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
 `;
 
 const DELETE_CAFE = gql`
@@ -17,23 +48,16 @@ const DELETE_CAFE = gql`
   }
 `;
 
-// const FETCH_CAFES = gql`
-//   query fetchCafes {
-//     fetchCafes {
-//       id
-//       name
-//       phone
-//       address
-//     }
-//   }
-// `;
-
 const FETCH_CAFE = gql`
   query fetchCafe($cafeId: String!) {
     fetchCafe(cafeId: $cafeId) {
       id
       name
       phone
+      intro_content
+      address
+      address_detail
+      mainImg
     }
   }
 `;
@@ -54,6 +78,8 @@ export default function AdminCafeDetail() {
     router.push("/admin/cafe");
   };
 
+  const onClickEdit = () => {};
+
   const onClickDelete = async () => {
     try {
       await deleteCafe({
@@ -69,11 +95,22 @@ export default function AdminCafeDetail() {
 
   return (
     <Wrapper>
-      <Title>매장 디테일(관리자)</Title>
-      <div>매장 이름: {data?.fetchCafe.name}</div>
-      <div>매장 전화번호: {data?.fetchCafe.phone}</div>
-      <button onClick={onClickList}>목록으로</button>
-      <button onClick={onClickDelete}>삭제하기</button>
+      <Title>매장 상세페이지(관리자)</Title>
+      <InfoBox>
+        <Img src={data?.fetchCafe.mainImg} />
+        <Info>
+          <div>이름: {data?.fetchCafe.name}</div>
+          <div>지역: {data?.fetchCafe.address}</div>
+          <div>전화번호: {data?.fetchCafe.phone}</div>
+          <div>소개: {data?.fetchCafe.intro_content}</div>
+          <div>주소: {data?.fetchCafe.address_detail}</div>
+        </Info>
+      </InfoBox>
+      <ButtonBox>
+        <WebSmallBlackButton onClick={onClickList} title="목록으로" />
+        <WebSmallPurpleButton onClick={onClickEdit} title="수정하기" />
+        <WebSmallPurpleButton onClick={onClickDelete} title="삭제하기" />
+      </ButtonBox>
     </Wrapper>
   );
 }
