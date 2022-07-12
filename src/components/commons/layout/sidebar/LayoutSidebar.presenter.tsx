@@ -1,46 +1,56 @@
 import Link from "next/link";
-import { Fragment } from "react";
 import * as S from "./LayoutSidebar.styleds";
+import { FiSettings, FiLogOut } from "react-icons/Fi";
+import { Fragment } from "react";
 
 const NAVIGATION_MENUS = [
-  { name: "테마 찜목록", page: "/mypage/mypick" },
-  { name: "최근 예약내역", page: "/mypage/history" },
-  { name: "최근 적립내역", page: "/mypage/reward" },
-  // { name: "내가 쓴 후기", page: "/mypage" },
-  // { name: "내가 쓴 게시물", page: "/mypage" },
-  { name: "회원정보 수정", page: "/mypage/phoneedit" },
+  { name: "내 찜목록", page: "/mypage/mypick" },
+  { name: "최근 예약 내역", page: "/mypage/history" },
+  { name: "최근 적립 내역", page: "/mypage/reward" },
 ];
 
 export default function LayoutSideBarUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.UserNameBox>
-          <Link href="/mypage">
-            <S.UserData>홍길동님</S.UserData>
-          </Link>
-          <span>안녕하세요!</span>
-        </S.UserNameBox>
+        <div>
+          <S.UserNameBox>
+            <S.UserData onClick={props.onClickMyPage}>홍길동님</S.UserData>
 
-        <S.MenuBox>
+            <span>안녕하세요!</span>
+          </S.UserNameBox>
+          <S.line></S.line>
+        </div>
+        <S.MenuBoxs>
           {NAVIGATION_MENUS.map((el) => (
             <Fragment key={el.page}>
-              <Link href={el.page}>
-                <S.MenuItem
-                  id={el.page}
-                  onClick={props.onClickMenu}
-                  isActive={el.page === props.activedMenu}
-                >
-                  {el.name}
-                </S.MenuItem>
-              </Link>
+              <S.MenuItem
+                id={el.page}
+                onClick={props.onClickMenu}
+                isActive={props.activedMenu?.includes(el.page)}
+              >
+                {el.name}
+              </S.MenuItem>
             </Fragment>
           ))}
-          <S.LogoutBox>
-            <S.LogoutIcon />
-            <S.Logout onClick={props.onClickReset}>로그아웃</S.Logout>
-          </S.LogoutBox>
-        </S.MenuBox>
+        </S.MenuBoxs>
+
+        <S.MenuFooterBox>
+          <S.FooterBox>
+            {" "}
+            <FiSettings style={{ marginTop: "0.2em" }} />
+            <Link href="/mypage/phoneedit">
+              <span>회원정보 수정</span>
+            </Link>
+          </S.FooterBox>
+
+          <S.FooterBox>
+            <FiLogOut style={{ marginTop: "0.2em" }} />
+            <Link href="/mypage/pwedit">
+              <span>로그아웃</span>
+            </Link>
+          </S.FooterBox>
+        </S.MenuFooterBox>
       </S.Wrapper>
     </S.Container>
   );

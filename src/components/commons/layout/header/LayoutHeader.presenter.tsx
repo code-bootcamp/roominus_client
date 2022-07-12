@@ -85,15 +85,13 @@ export default function LayoutHeaderUI(props: any) {
           <S.MenuWrapper>
             {NAVIGATION_MENUS.map((el) => (
               <Fragment key={el.page}>
-                <Link href={el.page}>
-                  <S.MenuItem
-                    id={el.page}
-                    onClick={props.onClickMenu}
-                    isActive={props.activedMenu.includes(el.page)}
-                  >
-                    {el.name}
-                  </S.MenuItem>
-                </Link>
+                <S.MenuItem
+                  id={el.page}
+                  onClick={props.onClickMenu}
+                  isActive={props.activedMenu.includes(el.page)}
+                >
+                  {el.name}
+                </S.MenuItem>
               </Fragment>
             ))}
           </S.MenuWrapper>

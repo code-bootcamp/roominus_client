@@ -6,9 +6,9 @@ const NAVIGATION_MENUS = [
   { name: "매장리스트", page: "/admin/cafe" },
   { name: "매장등록", page: "/admin/cafe/new" },
   { name: "매장상세", page: "/admin/cafe/id" },
-  // { name: "테마리스트", page: "/admin/theme/list" },
+  { name: "테마리스트", page: "/admin/theme/list" },
   { name: "테마등록", page: "/admin/theme/new" },
-  { name: "테마상세", page: "/admin/theme/detail/title" },
+  { name: "테마상세", page: "/admin/theme/id" },
 ];
 
 export default function LayoutSideBarAdminUI(props) {

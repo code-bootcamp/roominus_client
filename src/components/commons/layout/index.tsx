@@ -7,7 +7,7 @@ import LayoutHeader from "./header/LayoutHeader.container";
 import LayoutFooter from "./footer/LayoutFooter.container";
 import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
 import LayoutBanner from "./banner/LayoutBanner";
-import LayoutSideBar from "./sidebar/LayoutSidebar.presenter";
+import LayoutSideBar from "./sidebar/LayoutSidebar.container";
 import LayoutSidebarAdmin from "./sidebarAdmin/LayoutSidebar.container";
 
 const HIDDEN_HEADER = ["/"];

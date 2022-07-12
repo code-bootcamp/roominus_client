@@ -68,11 +68,10 @@ export const MenuWrapper = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  font-weight: ${(props) => (props.isActive ? "500" : "400")};
+  font-weight: ${(props) => (props.isActive ? "500" : "normal")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
-
+  color: ${(props) => (props.isActive ? "#BF9EEB" : "#26282C")};
   font-size: 1.5em;
-  color: ${(props) => (props.isActive ? "#BF9EEB" : "#7A7D88")};
 `;
 
 export const Contents = styled.span`

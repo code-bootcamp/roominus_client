@@ -4,19 +4,19 @@ import * as S from "./MyPageInfo.styles";
 export default function MyPageInfoUI(props) {
   const data = [
     {
-      _id: "1234",
+      _id: "0",
       title: "dfdfa",
       writer: "34134",
       createdAt: "234324",
     },
     {
-      _id: "1234",
+      _id: "1",
       title: "dfdfa",
       writer: "34134",
       createdAt: "234324",
     },
     {
-      _id: "1234",
+      _id: "2",
       title: "dfdfa",
       writer: "34134",
       createdAt: "234324",

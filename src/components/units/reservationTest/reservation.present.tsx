@@ -9,6 +9,7 @@ import MomentUtils from "@date-io/moment";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import { GiNightSleep } from "react-icons/Gi";
 import Link from "next/link";
+import ReservationNotice from "./reservationNotice/reservationNotice.container";
 
 export default function ReservationUI(props: any) {
   const data = [
@@ -62,7 +63,7 @@ export default function ReservationUI(props: any) {
   return (
     <S.Container>
       <S.Wrapper>
-        {props.theme && (
+        {props.theme ? (
           <>
             <S.ImageInfoBox>
               <S.ImageBox>
@@ -75,6 +76,10 @@ export default function ReservationUI(props: any) {
                 <span>테마명</span>
               </S.InfoBox>
             </S.ImageInfoBox>
+          </>
+        ) : (
+          <>
+            <ReservationNotice />
           </>
         )}
 

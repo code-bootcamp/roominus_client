@@ -14,8 +14,22 @@ export default function LayoutFooterUI(props: any) {
             <Link href={"https://www.nipa.kr/main/contents.do?key=228"}>
               <S.Menu>이용약관</S.Menu>
             </Link>
-            <S.Menu>개인정보 처리방침</S.Menu>
-            <S.Menu>청소년 보호 정책</S.Menu>
+            <Link
+              href={
+                "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%B2%95"
+              }
+            >
+              <S.Menu>개인정보 처리방침</S.Menu>
+            </Link>
+
+            <Link
+              href={
+                "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%B2%AD%EC%86%8C%EB%85%84%EB%B3%B4%ED%98%B8%EB%B2%95"
+              }
+            >
+              <S.Menu>청소년 보호 정책</S.Menu>
+            </Link>
+
             <Link href={"https://github.com/code-bootcamp/f7b3_team05_client"}>
               <S.Menu>고객센터</S.Menu>
             </Link>
