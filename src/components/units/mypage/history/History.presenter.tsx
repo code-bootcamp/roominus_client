@@ -1,5 +1,7 @@
 import { Modal } from "antd";
+import Link from "next/link";
 import { useState } from "react";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import LayoutNavigation from "../../../commons/layout/navigation/LayoutNavigation.container";
 import * as S from "./History.styles";
 
@@ -102,6 +104,11 @@ export default function HistoryUI() {
           </S.Row>
         ))}
         <S.TableBottom />
+        <S.ButtonBox>
+          <Link href={"/mypage"}>
+            <WebBlackButton type="button" title="목록으로" />
+          </Link>
+        </S.ButtonBox>
       </S.Wrapper>
 
       <Modal

@@ -35,17 +35,7 @@ export const Title = styled.h1``;
 export const PickedCard = styled(Card)``;
 
 export const ButtonBox = styled.div`
-  display: none;
-
-  @media ${breakPoints.tablet} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
 `;

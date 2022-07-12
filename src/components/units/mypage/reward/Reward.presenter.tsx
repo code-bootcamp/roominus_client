@@ -1,3 +1,5 @@
+import Link from "next/link";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "./Reward.styles";
 
 export default function RewardUI() {
@@ -79,6 +81,11 @@ export default function RewardUI() {
           </S.Row>
         ))}
         <S.TableBottom />
+        <S.ButtonBox>
+          <Link href={"/mypage"}>
+            <WebBlackButton type="button" title="목록으로" />
+          </Link>
+        </S.ButtonBox>
       </S.Wrapper>
     </S.Container>
   );

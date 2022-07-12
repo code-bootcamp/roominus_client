@@ -2,6 +2,7 @@ import * as S from "../pwedit/PasswordEdit.styles";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 
 export default function PWeditUI(props) {
   return (
@@ -11,7 +12,42 @@ export default function PWeditUI(props) {
         <S.PasswordBoxes>
           <S.PasswordBox>
             <S.TitleBox>
-              <S.PasswordTitle>비밀번호</S.PasswordTitle>
+              <S.PasswordTitle>현재 비밀번호</S.PasswordTitle>
+              <S.ImportantInfos>*</S.ImportantInfos>
+            </S.TitleBox>
+            <S.PasswordInputBox>
+              <S.PasswordInput
+                onChange={(e) => props.setValue("password", e.target.value)}
+                name="password"
+                ref={props.passwordInputRef}
+                type="password"
+              />
+              {props.openEye1 && (
+                <FontAwesomeIcon
+                  icon={faEye}
+                  style={{
+                    color: "purple",
+                    fontSize: "1.5em",
+                    cursor: "pointer",
+                  }}
+                />
+              )}
+              {!props.openEye1 && (
+                <FontAwesomeIcon
+                  onClick={props.onClickShowPassword}
+                  icon={faEyeSlash}
+                  style={{
+                    color: "purple",
+                    fontSize: "1.5em",
+                    cursor: "pointer",
+                  }}
+                />
+              )}
+            </S.PasswordInputBox>
+          </S.PasswordBox>
+          <S.PasswordBox>
+            <S.TitleBox>
+              <S.PasswordTitle>새 비밀번호</S.PasswordTitle>
               <S.ImportantInfos>*</S.ImportantInfos>
             </S.TitleBox>
             <S.PasswordInputBox>
@@ -94,7 +130,10 @@ export default function PWeditUI(props) {
             <S.Error>{props.formState.errors.password2?.message}</S.Error>
           </S.PasswordVerificationBox>
         </S.PasswordVerificationBoxes>
-        <WebPurpleButton type="submit" title="수정하기" />
+        <S.ButtonBox>
+          <WebBlackButton type="reset" title="초기화" />
+          <WebPurpleButton type="submit" title="수정하기" />
+        </S.ButtonBox>
       </S.Form>
     </S.Container>
   );

@@ -5,6 +5,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const Container = styled.main`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   width: 30%;
@@ -21,11 +22,7 @@ export const Container = styled.main`
   }
 `;
 
-export const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+export const Wrapper = styled.section``;
 
 export const UserNameBox = styled.div`
   display: flex;
@@ -34,15 +31,11 @@ export const UserNameBox = styled.div`
   justify-content: center;
   border-radius: 50%;
   width: 130px;
-  height: 130px;
-  background-color: #7c21e1;
-  margin-top: 3em;
-  color: white;
+  background-color: beige;
 `;
 
 export const UserData = styled.span`
   font-size: 1.5em;
-  cursor: pointer;
 `;
 
 export const MenuBox = styled.div`

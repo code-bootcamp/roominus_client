@@ -48,3 +48,9 @@ export const ColumnTitle = styled.div`
   width: 40%;
   text-align: center;
 `;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+`;

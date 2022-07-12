@@ -1,5 +1,6 @@
 import { Card } from "antd";
-import LayoutNavigation from "../../../commons/layout/navigation/LayoutNavigation.container";
+import Link from "next/link";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "./MyPick.styles";
 
 export default function MyPickUI(props) {
@@ -18,7 +19,9 @@ export default function MyPickUI(props) {
           <Meta title="월야애담" description="찜한 날짜" />
         </S.PickedCard>{" "}
         <S.ButtonBox>
-          <button>목록으로</button>
+          <Link href={"/mypage"}>
+            <WebBlackButton type="button" title="목록으로" />
+          </Link>
         </S.ButtonBox>
       </S.Wrapper>
     </S.Container>

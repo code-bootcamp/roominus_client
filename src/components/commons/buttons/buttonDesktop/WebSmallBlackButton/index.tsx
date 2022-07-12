@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 const Button = styled.button`
   width: 4.7em;
   height: 2.5em;
-  border-radius: 10px;
+  border-radius: 15px;
   border: none;
   cursor: pointer;
   background-color: #26282c;
