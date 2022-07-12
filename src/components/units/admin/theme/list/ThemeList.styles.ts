@@ -5,6 +5,7 @@ export const Wrapper = styled.section`
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 `;
 export const Title = styled.h1`
   width: 100%;

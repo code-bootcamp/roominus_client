@@ -19,7 +19,11 @@ export default function ThemeDetailUI(props) {
       </S.InfoBox>
       <S.ButtonBox>
         <WebSmallBlackButton onClick={props.onClickList} title="목록으로" />
-        <WebSmallPurpleButton onClick={props.onClickEdit} title="수정하기" />
+        <WebSmallPurpleButton
+          type="button"
+          onClick={props.onClickEdit(props.ThemeDetail?.fetchTheme.id)}
+          title="수정하기"
+        />
         <WebSmallPurpleButton onClick={props.onClickDelete} title="삭제하기" />
       </S.ButtonBox>
     </S.Wrapper>
