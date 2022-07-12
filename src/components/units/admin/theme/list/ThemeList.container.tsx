@@ -5,8 +5,8 @@ import { useRouter } from "next/router";
 export default function ThemeList() {
   const router = useRouter();
   const { data } = useQuery(FETCH_THEMES);
-  const onClickMoveToThemeDetail = (themeTitle) => () => {
-    router.push(`/admin/theme/detail/${themeTitle}`);
+  const onClickMoveToThemeDetail = (themeId) => () => {
+    router.push(`/admin/theme/detail/${themeId}`);
   };
 
   return (

@@ -35,3 +35,46 @@ export const CREATE_THEME = gql`
     }
   }
 `;
+export const UPDATE_THEME = gql`
+  mutation updateTheme(
+    $themeId: String!
+    $updateThemeInput: UpdateThemeInput!
+  ) {
+    updateTheme(themeId: $themeId, updateThemeInput: $updateThemeInput) {
+      id
+      title
+      rank
+      intro_title
+      intro_content
+      agelimit
+      like
+      mainImg
+      cafe {
+        name
+      }
+      genre {
+        name
+      }
+    }
+  }
+`;
+export const FETCH_THEME = gql`
+  query fetchTheme($themeId: String!) {
+    fetchTheme(themeId: $themeId) {
+      id
+      title
+      rank
+      intro_title
+      intro_content
+      agelimit
+      like
+      mainImg
+      cafe {
+        name
+      }
+      genre {
+        name
+      }
+    }
+  }
+`;
