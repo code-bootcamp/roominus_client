@@ -1,53 +1,53 @@
 import Swal from "sweetalert2";
 
 export function useModal() {
-  const Success = (title: string, text: string) => {
+  const SuccessModal = (title: string, text: string) => {
     Swal.fire({
       title,
       text,
       icon: "success",
-      confirmButtonColor: "#4a00e0e7",
+      confirmButtonColor: "#BF9EEB",
       showConfirmButton: false,
       timer: 1700,
     });
   };
 
-  const Warning = (title: string, text: string) => {
+  const WarningModal = (title: string, text: string) => {
     Swal.fire({
       title,
       text,
       icon: "warning",
-      confirmButtonColor: "#4a00e0e7",
+      confirmButtonColor: "#BF9EEB",
       showConfirmButton: false,
       timer: 1700,
     });
   };
 
-  const Error = (title: string, text: string) => {
+  const ErrorModal = (title: string, text: string) => {
     Swal.fire({
       title,
       text,
       icon: "error",
-      confirmButtonColor: "#4a00e0e7",
+      confirmButtonColor: "#BF9EEB",
       showConfirmButton: false,
       timer: 1700,
     });
   };
 
-  const Info = (title: string, text: string) => {
+  const InfoModal = (title: string, text: string) => {
     Swal.fire({
       title,
       text,
       icon: "info",
-      confirmButtonColor: "#4a00e0e7",
+      confirmButtonColor: "#BF9EEB",
       showConfirmButton: true,
     });
   };
 
   return {
-    Success,
-    Warning,
-    Error,
-    Info,
+    SuccessModal,
+    WarningModal,
+    ErrorModal,
+    InfoModal,
   };
 }

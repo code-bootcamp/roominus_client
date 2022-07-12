@@ -18,11 +18,7 @@ export const Container = styled.main`
 export const SearchWrapper = styled.section`
   width: 100vw;
   height: 230px;
-  background: linear-gradient(
-    90deg,
-    rgba(142, 45, 226, 1) 30%,
-    rgba(74, 0, 224, 1) 100%
-  );
+  background: url("/img/layout/banner.png") center/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
