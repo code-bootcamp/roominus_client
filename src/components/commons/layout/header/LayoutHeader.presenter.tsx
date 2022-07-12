@@ -52,7 +52,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "flex-start",
     color: "#d1d1d1",
-    marginBottom: "1.5em",
+    marginBottom: "1em",
   },
   bmOverlay: {
     background: "rgba(116, 87, 151, 0.3)",
@@ -66,11 +66,14 @@ export default function LayoutHeaderUI(props: any) {
   const [openMypageOp, setOpenMypageOp] = useState(false);
 
   const onClickOpenMypageOp = () => {
-    setOpenMypageOp((prev) => !prev);
+    setOpenMypageOp(true);
   };
-  const showSettings = (event) => {
-    event.preventDefault();
+  const onClickCloseMypageOp = () => {
+    setOpenMypageOp(false);
   };
+  // const showSettings = (event) => {
+  //   event.preventDefault();
+  // };
 
   return (
     <>
@@ -116,15 +119,29 @@ export default function LayoutHeaderUI(props: any) {
             <a id="community" className="menu-item" href="/community">
               커뮤니티
             </a>
-            <a id="mypage" className="menu-item" onClick={onClickOpenMypageOp}>
-              마이페이지
-            </a>
-            <button>▶️</button>
-            <button>◀️</button>
+            {!openMypageOp && (
+              <a
+                id="mypage"
+                className="menu-item"
+                onClick={onClickOpenMypageOp}
+              >
+                마이페이지 ▶️
+              </a>
+            )}
+            {openMypageOp && (
+              <a
+                id="mypage"
+                className="menu-item"
+                onClick={onClickCloseMypageOp}
+              >
+                마이페이지 ◀️
+              </a>
+            )}
+
             {openMypageOp && (
               <S.MyMenubox>
                 <S.MyMenues id="mypage" className="menu-item" href="/mypage">
-                  마이페이지
+                  내 정보
                 </S.MyMenues>
                 <S.MyMenues
                   id="mypick"
