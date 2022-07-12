@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
 
 export const Container = styled.main`
   width: 30%;
@@ -83,4 +84,12 @@ export const MenuFooterBox = styled.div`
   gap: 0.5em;
   margin-top: 10em;
   padding-bottom: 2em;
+`;
+
+export const Setting = styled(SettingOutlined)`
+  margin-top: 0.2em;
+`;
+
+export const Logout = styled(LogoutOutlined)`
+  margin-top: 0.2em;
 `;
