@@ -3,22 +3,25 @@ import { useState } from "react";
 import ReservationUI from "./reservation.present";
 
 export default function ReservationTest() {
+  const [theme, setTheme] = useState("");
   const [cafe, setCafe] = useState("");
-  const [selectedDate, setSelectedDate] = useState(moment());
-  const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
+  const [selectedDate, setSelectedDate] = useState();
+  // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
   const [time, setTime] = useState("");
+  const [headCount, setHeadCount] = useState("");
+
+  const onChangeTheme = (event) => {
+    setTheme(event.target.value);
+  };
 
   const onChangeCafe = (event: any) => {
-    console.log("this is target", event.target);
     setCafe(event.target.value);
     console.log(cafe);
   };
 
   const onChangeDate = (date: String, value: String) => {
     setSelectedDate(date);
-    setInputValue(value);
-    console.log("date", date);
-    console.log("value", value);
+    // setInputValue(value);
   };
 
   const dateFormatter = (str: any) => {
@@ -26,23 +29,27 @@ export default function ReservationTest() {
   };
 
   const onChangeTime = (event: any) => {
-    console.log("this is target", event.target);
     setTime(event.target.value);
-    console.log(time);
   };
 
-  console.log(selectedDate);
+  const onChangeHeadCount = (event) => {
+    setHeadCount(event.target.value);
+  };
 
   return (
     <ReservationUI
+      onChangeTheme={onChangeTheme}
+      theme={theme}
       onChangeCafe={onChangeCafe}
       cafe={cafe}
       onChangeDate={onChangeDate}
       selectedDate={selectedDate}
-      inputValue={inputValue}
+      // inputValue={inputValue}
       dateFormatter={dateFormatter}
       onChangeTime={onChangeTime}
       time={time}
+      haedCount={headCount}
+      onChangeHeadCount={onChangeHeadCount}
     />
   );
 }
