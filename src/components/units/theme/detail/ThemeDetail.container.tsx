@@ -1,11 +1,13 @@
 import ThemeDetailUI from "./ThemeDetail.presenter";
 import { useQuery } from "@apollo/client";
 import { FETCH_THEME } from "./ThemeDetail.queries";
+import { useRouter } from "next/router";
 
 export default function ThemeDetail() {
+  const router = useRouter();
   const { data } = useQuery(FETCH_THEME, {
     variables: {
-      themeId: "748b7dda-5b1e-49f7-ab87-f34c6c9697da",
+      themeId: router.query.id,
     },
   });
 

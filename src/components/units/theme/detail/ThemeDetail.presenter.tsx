@@ -1,7 +1,6 @@
 import * as S from "./ThemeDetail.styles";
 
 export default function ThemeDetailUI(props) {
-  console.log(props.data);
   return (
     <S.Container>
       <S.ThemeInfoWrapper>
