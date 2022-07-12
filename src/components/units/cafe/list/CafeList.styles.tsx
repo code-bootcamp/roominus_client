@@ -35,6 +35,7 @@ export const SearchWrapper = styled.section`
 
   @media ${breakPoints.mobile} {
     font-size: 1.5em;
+    height: 150px;
   }
 `;
 
@@ -46,10 +47,11 @@ export const SearchBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  /* align-items: center; */
   margin: auto;
 
   @media ${breakPoints.mobile} {
-    height: 80%;
+    height: 75%;
   }
 `;
 
@@ -58,34 +60,47 @@ export const SearchDetailBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  /* background-color: pink; */
 
   @media ${breakPoints.mobile} {
-    height: 80px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* background-color: green; */
+    /* background-color: pink; */
   }
 `;
 
 export const DetailBox = styled.div`
-  width: 50%; //35vw
+  width: 38%; //35vw
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  /* background-color: green; */
 
   @media ${breakPoints.mobile} {
-    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
   }
 `;
 
 export const DetailTitle = styled.h3`
-  width: 15%; //3.5vw
+  /* width: 15%; //3.5vw */
+  /* height: 100%; */
+  height: 40px;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: yellow; */
 
   @media ${breakPoints.mobile} {
-    width: 30%;
+    /* width: 3em; */
+    /* margin-right: 0.5em; */
     /* background-color: yellow; */
   }
 `;
@@ -101,8 +116,32 @@ export const LocationButton = styled.button`
   /* gap: 10px; */
 
   @media ${breakPoints.mobile} {
+    display: none;
     width: 35%;
     height: 30px;
+  }
+`;
+
+export const LocationSelect = styled.select`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    border: none;
+    outline: none;
+    background-color: white;
+    width: 16em;
+    height: 40px;
+  }
+`;
+
+export const LocationOption = styled.option`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 20px;
   }
 `;
 
@@ -115,8 +154,8 @@ export const DetailContents = styled.input`
   padding-left: 0.5em;
 
   @media ${breakPoints.mobile} {
-    width: 155%;
-    margin-right: 1em;
+    width: 16em;
+    /* height: 20px; */
   }
 `;
 
@@ -127,6 +166,10 @@ export const ButtonBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Button = styled.button`
@@ -159,6 +202,7 @@ export const BestTitle = styled.h1`
   /* background-color: yellow; */
 
   @media ${breakPoints.mobile} {
+    display: none;
     height: 70px;
   }
 `;
@@ -197,6 +241,7 @@ export const Etc = styled.div`
   }
 
   @media ${breakPoints.mobile} {
+    margin-top: 2em;
     width: 75%;
     display: grid;
     grid-template-columns: 1fr;

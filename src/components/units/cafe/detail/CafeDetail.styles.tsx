@@ -22,7 +22,7 @@ export const SearchWrapper = styled.section`
   align-items: center;
 
   @media ${breakPoints.mobile} {
-    /* width: 50em; */
+    /* width: 50%; */
   }
 `;
 
@@ -30,9 +30,10 @@ export const CafePicture = styled.img`
   width: 38em;
   height: 25em;
   background-color: pink;
+  object-fit: cover;
 
   @media ${breakPoints.mobile} {
-    width: 25em;
+    width: 23em;
     height: 20em;
   }
 `;
@@ -48,7 +49,7 @@ export const InfoBox = styled.div`
   /* background-color: #bdbdbd; */
 
   @media ${breakPoints.mobile} {
-    width: 25em;
+    width: 23em;
     padding: 1.1em;
   }
 `;
@@ -105,11 +106,11 @@ export const Theme = styled.div`
   width: 100%;
   margin: 1em 0em;
 
-  /* @media ${breakPoints.mobile} {
-    display: flex;
+  @media ${breakPoints.mobile} {
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
-  } */
+    align-items: center; */
+  }
 `;
 
 export const ThemeList = styled.div`
@@ -119,10 +120,10 @@ export const ThemeList = styled.div`
   grid-gap: 2.5em;
 
   @media ${breakPoints.mobile} {
-    width: 100%;
+    /* width: 80%; */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
+    grid-gap: 0em;
   }
 `;
 
@@ -130,4 +131,8 @@ export const ButtonBox = styled.div`
   margin-top: 2em;
   display: flex;
   align-self: center;
+
+  @media ${breakPoints.mobile} {
+    margin-top: 0;
+  }
 `;
