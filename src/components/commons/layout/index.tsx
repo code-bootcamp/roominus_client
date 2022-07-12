@@ -8,18 +8,19 @@ import LayoutFooter from "./footer/LayoutFooter.container";
 import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
 import LayoutBanner from "./banner/LayoutBanner";
 import LayoutSideBar from "./sidebar/LayoutSidebar.presenter";
+import LayoutSidebarAdmin from "./sidebarAdmin/LayoutSidebar.container";
 
 const HIDDEN_HEADER = ["/"];
 const HIDDEN_BANNER = ["/", "/home", "/cafe", "/login", "/signup"];
 const HIDDEN_TOP_HEADER = ["/"];
-const VISIBLE_SIDE_BAR = [
-  "/mypage",
-  "/mypage/history",
-  "/mypage/reward",
-  "/mypage/mypick",
-  "/mypage/pwedit",
-  "/mypage/phoneedit",
-];
+// const VISIBLE_SIDE_BAR = [
+//   "/mypage",
+// "/mypage/history",
+// "/mypage/reward",
+// "/mypage/mypick",
+// "/mypage/pwedit",
+// "/mypage/phoneedit",
+// ];
 const HIDDEN_FOOTER = ["/"];
 
 const Wrapper = styled.section`
@@ -70,7 +71,10 @@ export default function Layout(props: ILayoutProps) {
   const isHiddenTopHeader = HIDDEN_TOP_HEADER.includes(router.asPath);
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
-  const isVISBLESIDEBAR = VISIBLE_SIDE_BAR.includes(router.asPath);
+  // const isVISBLESIDEBAR = VISIBLE_SIDE_BAR.includes(router.asPath);
+  const isVISBLESIDEBAR = router.asPath.includes("/mypage");
+  const isVISBLEADMINSIDEBAR = router.asPath.includes("/admin");
+
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
 
   return (
@@ -80,6 +84,7 @@ export default function Layout(props: ILayoutProps) {
       {!isHiddenBanner && <LayoutBanner />}
       <div style={{ display: "flex" }}>
         {isVISBLESIDEBAR && <LayoutSideBar />}
+        {isVISBLEADMINSIDEBAR && <LayoutSidebarAdmin />}
         <Body>{props.children}</Body>
       </div>
       {!isHiddenFooter && <LayoutFooter />}

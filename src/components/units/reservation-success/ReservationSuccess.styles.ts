@@ -238,35 +238,5 @@ export const NoticeDescription = styled.p`
 `;
 export const ButtonWrapper = styled.div`
   display: flex;
-  padding: 1em 0em 1em 0em;
-`;
-
-export const CancelBtn = styled.button`
-  width: 100px;
-  height: 4em;
-  border-radius: 10px;
-  font-size: 1em;
-  border: none;
-  color: white;
-  background-color: #b2b2b2;
-  cursor: pointer;
-
-  margin-right: 0.5em;
-`;
-
-export const SubmitBtn = styled.button`
-  width: 100px;
-  height: 4em;
-  border-radius: 10px;
-  font-size: 1em;
-  border: none;
-  color: white;
-  background-color: #4a00e0;
-  cursor: pointer;
-
-  margin-left: 0.5em;
-`;
-
-export const ButtonTitle = styled.a`
-  color: white;
+  gap: 2em;
 `;

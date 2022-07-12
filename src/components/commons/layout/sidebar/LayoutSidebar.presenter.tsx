@@ -16,7 +16,9 @@ export default function LayoutSideBarUI(props) {
     <S.Container>
       <S.Wrapper>
         <S.UserNameBox>
-          <S.UserData>홍길동님</S.UserData>
+          <Link href="/mypage">
+            <S.UserData>홍길동님</S.UserData>
+          </Link>
           <span>안녕하세요!</span>
         </S.UserNameBox>
 

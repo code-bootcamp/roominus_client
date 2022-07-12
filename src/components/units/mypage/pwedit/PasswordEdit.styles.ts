@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   display: flex;
@@ -15,6 +16,7 @@ export const Form = styled.form`
   width: 80%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: auto;
 `;
 export const Error = styled.div`
@@ -39,6 +41,7 @@ export const PasswordBoxes = styled.div`
 export const PasswordBox = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 5em;
 `;
 
 export const PasswordTitle = styled.span`
@@ -74,7 +77,7 @@ export const WarningMessage = styled.div`
 export const PasswordVerificationBoxes = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.6em;
+  margin-bottom: 5em;
 `;
 export const PasswordVerificationBox = styled.div`
   display: flex;
@@ -99,4 +102,10 @@ export const PasswordVerificationInput = styled.input`
   outline: none;
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;
+`;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
 `;

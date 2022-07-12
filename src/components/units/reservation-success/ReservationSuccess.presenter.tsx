@@ -1,6 +1,8 @@
 import Link from "next/link";
 import * as S from "./ReservationSuccess.styles";
 import { GiTicket } from "react-icons/Gi";
+import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
+import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 
 export default function ReservationSuccessUI() {
   return (
@@ -101,16 +103,13 @@ export default function ReservationSuccessUI() {
         </S.NoticeBoxs>
       </S.NotionArea>
       <S.ButtonWrapper>
-        <S.CancelBtn>
-          <Link href={"/"}>
-            <S.ButtonTitle> 취소하기 </S.ButtonTitle>
-          </Link>
-        </S.CancelBtn>
-        <S.SubmitBtn>
-          <Link href={"/mypage"}>
-            <S.ButtonTitle> 목록으로 </S.ButtonTitle>
-          </Link>
-        </S.SubmitBtn>
+        <Link href={"/"}>
+          <WebBlackButton type="button" title="취소하기" />
+        </Link>
+
+        <Link href={"/mypage"}>
+          <WebPurpleButton type="button" title="목록으로" />
+        </Link>
       </S.ButtonWrapper>
     </S.Container>
   );

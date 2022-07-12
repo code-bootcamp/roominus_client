@@ -57,3 +57,9 @@ export const ColumnTitle = styled.div`
     font-weight: 600;
   }
 `;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+`;
