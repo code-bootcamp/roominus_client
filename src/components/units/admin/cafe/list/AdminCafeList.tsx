@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
+import WebSmallPurpleButton from "../../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import ListCards from "../../../cafe/list/card/ListCards";
 
 export const FETCH_CAFES = gql`
@@ -21,7 +22,19 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  color: #ea8e16;
+  color: #bf9eeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+`;
+
+const ButtonBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 1em 0em;
+  /* background-color: yellow; */
 `;
 
 const Etc = styled.div`
@@ -49,7 +62,9 @@ export default function AdminCafeList() {
   return (
     <Wrapper>
       <Title>매장리스트(관리자)</Title>
-      <button onClick={onClickNew}>매장등록하기</button>
+      <ButtonBox>
+        <WebSmallPurpleButton onClick={onClickNew} title="매장등록" />
+      </ButtonBox>
       <Etc>
         {data?.fetchCafes.map((el) => (
           <span key={el.id} id={el.id} onClick={onClickCard(el)}>
