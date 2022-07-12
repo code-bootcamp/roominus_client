@@ -10,6 +10,7 @@ export const FETCH_CAFES = gql`
       name
       phone
       address
+      mainImg
     }
   }
 `;
@@ -35,6 +36,11 @@ export default function AdminCafeList() {
   const router = useRouter();
 
   const { data } = useQuery(FETCH_CAFES);
+  console.log(data);
+
+  const onClickNew = () => {
+    router.push("/admin/cafe/new");
+  };
 
   const onClickCard = (el) => (event) => {
     router.push(`/admin/cafe/${event?.currentTarget.id}`);
@@ -43,6 +49,7 @@ export default function AdminCafeList() {
   return (
     <Wrapper>
       <Title>매장리스트(관리자)</Title>
+      <button onClick={onClickNew}>매장등록하기</button>
       <Etc>
         {data?.fetchCafes.map((el) => (
           <span key={el.id} id={el.id} onClick={onClickCard(el)}>

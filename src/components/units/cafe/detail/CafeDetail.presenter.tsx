@@ -8,7 +8,7 @@ export default function CafeDetailUI(props) {
   return (
     <S.Container>
       <S.SearchWrapper>
-        <S.CafePicture src="/img/cafe/room.webp" />
+        <S.CafePicture src={props.data?.fetchCafe.mainImg} />
         <S.InfoBox>
           <S.NamePhoneBox>
             <S.CafeName>{props.data?.fetchCafe.name}</S.CafeName>

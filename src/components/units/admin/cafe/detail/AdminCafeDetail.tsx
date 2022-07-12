@@ -50,6 +50,10 @@ export default function AdminCafeDetail() {
   });
   console.log(data);
 
+  const onClickList = () => {
+    router.push("/admin/cafe");
+  };
+
   const onClickDelete = async () => {
     try {
       await deleteCafe({
@@ -68,6 +72,7 @@ export default function AdminCafeDetail() {
       <Title>매장 디테일(관리자)</Title>
       <div>매장 이름: {data?.fetchCafe.name}</div>
       <div>매장 전화번호: {data?.fetchCafe.phone}</div>
+      <button onClick={onClickList}>목록으로</button>
       <button onClick={onClickDelete}>삭제하기</button>
     </Wrapper>
   );

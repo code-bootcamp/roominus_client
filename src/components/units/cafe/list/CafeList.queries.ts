@@ -7,6 +7,7 @@ export const FETCH_CAFES = gql`
       name
       phone
       address
+      mainImg
     }
   }
 `;
