@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useState } from "react";
 import * as S from "./LayoutHeader.styles";
 import { slide as Menu } from "react-burger-menu";
 
@@ -40,7 +40,7 @@ const styles = {
   bmMenu: {
     background: "#6c5281",
     padding: "2.5em 1.5em 0",
-    fontSize: "1.15em",
+    fontSize: "1.4em",
   },
 
   bmItemList: {
@@ -50,9 +50,9 @@ const styles = {
   bmItem: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "flex-start",
     color: "#d1d1d1",
-    marginBottom: "1em",
+    marginBottom: "1.5em",
   },
   bmOverlay: {
     background: "rgba(116, 87, 151, 0.3)",
@@ -63,22 +63,14 @@ const styles = {
 };
 
 export default function LayoutHeaderUI(props: any) {
-  const [open, setOpen] = useState(false);
+  const [openMypageOp, setOpenMypageOp] = useState(false);
 
-  // const showSettings = (event) => {
-  //   event.preventDefault();
-  // };
-  // const scrollPrevent = (event) => {
-  //   if (open) {
-  //     event.preventDefault();
-  //   }
-  // };
-  // const handleOnOpen = () => {
-  //   setOpen((prev) => !prev);
-  // };
-  // const handleOnClose = () => {
-  //   setOpen(false);
-  // };
+  const onClickOpenMypageOp = () => {
+    setOpenMypageOp((prev) => !prev);
+  };
+  const showSettings = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <>
@@ -107,21 +99,65 @@ export default function LayoutHeaderUI(props: any) {
           </S.MenuWrapper>
         </S.Wrapper>
         <S.Hamburger>
-          <Menu width={"40%"} right styles={styles} disableOverlayClick>
+          <Menu width={"80%"} right styles={styles} disableOverlayClick>
+            <S.MenuMainItem id="home" className="menu-item" href="/home">
+              메인
+            </S.MenuMainItem>
+
             <a id="home" className="menu-item" href="/cafe">
               매장
             </a>
-            <a id="about" className="menu-item" href="/theme">
+            <a id="theme" className="menu-item" href="/theme">
               테마
             </a>
-            <a id="contact" className="menu-item" href="/reservation">
+            <a id="reservation" className="menu-item" href="/reservation">
               예약
             </a>
-            <a className="menu-item" href="/community">
+            <a id="community" className="menu-item" href="/community">
               커뮤니티
             </a>
-            <a id="contact" className="menu-item" href="/mypage">
+            <a id="mypage" className="menu-item" onClick={onClickOpenMypageOp}>
               마이페이지
+            </a>
+            <button>▶️</button>
+            <button>◀️</button>
+            {openMypageOp && (
+              <S.MyMenubox>
+                <S.MyMenues id="mypage" className="menu-item" href="/mypage">
+                  마이페이지
+                </S.MyMenues>
+                <S.MyMenues
+                  id="mypick"
+                  className="menu-item"
+                  href="/mypage/mypick"
+                >
+                  테마 찜목록
+                </S.MyMenues>
+                <S.MyMenues
+                  id="history"
+                  className="menu-item"
+                  href="/mypage/history"
+                >
+                  최근 예약내역
+                </S.MyMenues>
+                <S.MyMenues
+                  id="reward"
+                  className="menu-item"
+                  href="/mypage/reward"
+                >
+                  최근 적립내역
+                </S.MyMenues>
+                <S.MyMenues
+                  id="myinfoedit"
+                  className="menu-item"
+                  href="/mypage/phoneedit"
+                >
+                  회원정보 수정
+                </S.MyMenues>
+              </S.MyMenubox>
+            )}
+            <a id="contact" className="menu-item" href="/mypage">
+              로그아웃
             </a>
           </Menu>
         </S.Hamburger>

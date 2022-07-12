@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { style } from "@mui/material/node_modules/@mui/system";
 
 import { breakPoints } from "../../../../commons/styles/media";
 
@@ -98,6 +99,22 @@ export const Hamburger = styled.div`
 
   @media ${breakPoints.mobile} {
     display: block;
-    font-size: 0.8em;
+    font-size: 1em;
+  }
+`;
+
+export const MenuMainItem = styled.a`
+  font-size: 2em;
+`;
+export const MyMenubox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+export const MyMenues = styled.a`
+  color: #d1d1d1;
+  margin-bottom: 1.5em;
+  :hover {
+    color: #d1d1d1;
   }
 `;
