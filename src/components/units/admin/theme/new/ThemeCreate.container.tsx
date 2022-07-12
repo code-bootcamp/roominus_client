@@ -3,14 +3,20 @@ import { CREATE_THEME } from "./ThemeCreate.queries";
 import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { Modal } from "antd";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 export default function ThemeCreate() {
   const [createThemegql] = useMutation(CREATE_THEME);
   const router = useRouter();
+  const imgRef = useRef();
   const [imgurl, setImgurl] = useState("");
   const { register, handleSubmit } = useForm();
   const [value, setValue] = useState(0);
+
+  const onClickRealInput = () => {
+    imgRef.current.click();
+  };
+
   const onSubmitCreateTheme = async (data) => {
     try {
       const result = await createThemegql({
@@ -29,7 +35,7 @@ export default function ThemeCreate() {
         },
       });
       Modal.success({ content: "테마등록 성공" });
-      // router.push(`/admin/theme/detail/${result.data.createTheme.title}`);
+      router.push(`/admin/theme/detail/${result.data.createTheme.id}`);
     } catch (error) {
       Modal.error({ content: error.message });
     }
@@ -37,10 +43,10 @@ export default function ThemeCreate() {
   const upload = (file) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "hs9vtrg6");
+    formData.append("upload_preset", "tyx7y8ot");
 
     const result = fetch(
-      "https://api.cloudinary.com/v1_1/dgctmlcg6/image/upload",
+      "https://api.cloudinary.com/v1_1/dop5piuwp/image/upload",
       {
         method: "POST",
         body: formData,
@@ -50,9 +56,11 @@ export default function ThemeCreate() {
     });
     return result;
   };
+
   const onChangeFile = async (event) => {
     const file = event.target.files?.[0];
     upload(file).then((result) => setImgurl(result.url));
+    // upload(file).then((result) => console.log(typeof result.url));
   };
 
   return (
@@ -64,6 +72,8 @@ export default function ThemeCreate() {
       value={value}
       onChangeFile={onChangeFile}
       imgurl={imgurl}
+      imgRef={imgRef}
+      onClickRealInput={onClickRealInput}
     />
   );
 }

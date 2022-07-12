@@ -16,7 +16,6 @@ export const Form = styled.form`
 `;
 
 export const Title = styled.div`
-  width: 100%;
   font-size: 2em;
   font-weight: 500;
   color: #bf9eeb;

@@ -1,41 +1,68 @@
 import { Rate } from "antd";
-
+import WebPurpleLoginButton from "../../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
+import WebLongestHighlightUnderlineInput from "../../../../commons/inputs/inputDesktop/WebLongestHighlightUnderlineInput";
+import * as S from "./ThemeCreate.styles";
 export default function ThemeCreateUI(props) {
   return (
-    <section>
-      <h1>테마등록</h1>
+    <S.Wrapper>
+      <S.Title>테마등록</S.Title>
+      <S.InputsTitle>어려움 정도</S.InputsTitle>
       <Rate onChange={props.setValue} value={props.value} />
-      <form onSubmit={props.handleSubmit(props.onSubmitCreateTheme)}>
-        <input
+      <S.Form onSubmit={props.handleSubmit(props.onSubmitCreateTheme)}>
+        <S.InputsTitle>매장명</S.InputsTitle>
+        <WebLongestHighlightUnderlineInput
           type="text"
           placeholder="cafeName"
-          {...props.register("cafeName")}
+          register={props.register("cafeName")}
         />
-        <input
+        <S.InputsTitle>장르</S.InputsTitle>
+        <WebLongestHighlightUnderlineInput
           type="text"
           placeholder="genreName"
-          {...props.register("genreName")}
+          register={props.register("genreName")}
         />
-        <input type="text" placeholder="title" {...props.register("title")} />
-        <input
+        <S.InputsTitle>제목</S.InputsTitle>
+        <WebLongestHighlightUnderlineInput
+          type="text"
+          placeholder="title"
+          register={props.register("title")}
+        />
+        <S.InputsTitle>부 제목</S.InputsTitle>
+        <WebLongestHighlightUnderlineInput
           type="text"
           placeholder="intro_title"
-          {...props.register("intro_title")}
+          register={props.register("intro_title")}
         />
-        <input
+        <S.InputsTitle>테마 상세 설명</S.InputsTitle>
+        <WebLongestHighlightUnderlineInput
           type="text"
           placeholder="intro_content"
-          {...props.register("intro_content")}
+          register={props.register("intro_content")}
         />
-        <input
+        <S.InputsTitle>나이 제한</S.InputsTitle>
+        <WebLongestHighlightUnderlineInput
           type="number"
           placeholder="agelimit"
-          {...props.register("agelimit")}
+          register={props.register("agelimit")}
         />
-        <button>테마 등록</button>
-      </form>
-      <input type="file" onChange={props.onChangeFile} />
-      <img src={props.imgurl} alt="picture" />
-    </section>
+      </S.Form>
+      <S.InputsTitle>이미지</S.InputsTitle>
+      <S.RealImgInput
+        type="file"
+        onChange={props.onChangeFile}
+        ref={props.imgRef}
+      />
+      <S.PreviewBox>
+        <S.ImgBox onClick={props.onClickRealInput}>
+          <S.ImgAddBtn />
+        </S.ImgBox>
+        {props.imgurl && <S.PreviewImg src={props.imgurl} alt="picture" />}
+        <S.PreviewEmpty></S.PreviewEmpty>
+      </S.PreviewBox>
+
+      <S.Form2 onSubmit={props.handleSubmit(props.onSubmitCreateTheme)}>
+        <WebPurpleLoginButton type="submit" title="테마 등록" />
+      </S.Form2>
+    </S.Wrapper>
   );
 }
