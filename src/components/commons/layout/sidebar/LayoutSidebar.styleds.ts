@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 import { LogoutOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
-import palette from "../../../../commons/styles/palette";
 
 export const Container = styled.main`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   width: 30%;
@@ -22,9 +22,7 @@ export const Container = styled.main`
   }
 `;
 
-export const Wrapper = styled.section`
-  padding-top: 2em;
-`;
+export const Wrapper = styled.section``;
 
 export const UserNameBox = styled.div`
   display: flex;
@@ -33,7 +31,6 @@ export const UserNameBox = styled.div`
   justify-content: center;
   border-radius: 50%;
   width: 130px;
-  height: 130px;
   background-color: beige;
 `;
 
@@ -42,7 +39,7 @@ export const UserData = styled.span`
 `;
 
 export const MenuBox = styled.div`
-  padding-top: 5em;
+  padding-top: 10em;
 `;
 
 export const MenuItem = styled.li`

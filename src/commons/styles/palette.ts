@@ -1,11 +1,4 @@
 export default {
-  cardinal: "#a41850",
-  davidson_orange: "#c13515",
-  tawny: "#d93900",
-  amaranth: "#E51E53",
-  orange: "#fc642d",
-  main_pink: "#FF385C",
-  bittersweet: "#ff5a5f",
   black: "#222222",
   charcoal: "#484848",
   snow: "#FFF8F6",
@@ -22,8 +15,6 @@ export default {
   gray_eb: "#ebebeb",
   gray_e5: "#e5e5e5",
   gray_f7: "#f7f7f7",
-  dark_cyan: "#008489",
-  green: "#008A05",
   button: "#4A00E0e7",
   buttonhover: "linear-gradient(90deg, #7C21E1 0%, #4A00E0 100%)", // background
 };
