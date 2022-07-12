@@ -10,12 +10,13 @@ import styled from "@emotion/styled";
 const { Meta } = Card;
 
 const LocationBox = styled.div`
-  width: 4.5em;
-  height: 2.2em;
+  width: 4.7em;
+  height: 2.5em;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  /* align-items: center; */
   position: absolute;
   z-index: 1;
   top: 1.5em;
@@ -25,12 +26,22 @@ const LocationBox = styled.div`
 `;
 
 const Location = styled.h4`
+  /* background-color: green; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-end; */
+  padding-top: 0.4em;
+  height: 2.5em;
   color: white;
 `;
 
 const LocationIcon = styled.img`
-  width: 0.8em;
+  width: 1.1em;
   height: 1em;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  /* background-color: pink; */
 `;
 
 const ListCards = (props) => (
