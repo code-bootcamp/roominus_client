@@ -49,6 +49,7 @@
     "recoil": "^0.7.4",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
+    "typewriter-effect": "^2.19.0",
     "uuid": "^8.3.2",
     "yup": "^0.32.11"
   },
