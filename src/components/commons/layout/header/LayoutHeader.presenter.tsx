@@ -123,7 +123,7 @@ export default function LayoutHeaderUI(props: any) {
                 className="menu-item"
                 onClick={onClickOpenMypageOp}
               >
-                마이페이지 ▶️
+                마이페이지
               </a>
             )}
             {openMypageOp && (
@@ -132,7 +132,7 @@ export default function LayoutHeaderUI(props: any) {
                 className="menu-item"
                 onClick={onClickCloseMypageOp}
               >
-                마이페이지 ◀️
+                마이페이지 ▽
               </a>
             )}
 

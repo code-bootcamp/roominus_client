@@ -7,70 +7,16 @@ import {
 // import moment from "moment";
 import MomentUtils from "@date-io/moment";
 import ReservationNotice from "./reservationNotice/reservationNotice.container";
+import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
+import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 import NoReservation from "./Noreservation";
+// import NoReservation from "./Noreservation";
 
 export default function ReservationUI(props: any) {
-  const data = [
-    {
-      theme: { title: "월야애담", id: "erqrer" },
-      cafe: "홍대1호점",
-      people_number: 6,
-      price: 12000,
-      timezone: ["10시 30분", "11시 30분", "12시 30분"],
-      headCount: 6,
-    },
-  ];
-
-  const time = [
-    {
-      label: "1",
-      value: "10시 30분",
-    },
-    {
-      label: "2",
-      value: "12시 30분",
-    },
-    {
-      label: "3",
-      value: "14시 30분",
-    },
-    {
-      label: "4",
-      value: "14시",
-    },
-    {
-      label: "5",
-      value: "17시 30분",
-    },
-  ];
-
-  const people = [
-    {
-      label: "2",
-      value: "24000",
-    },
-    {
-      label: "3",
-      value: "40000",
-    },
-    {
-      label: "4",
-      value: "55000",
-    },
-    {
-      label: "5",
-      value: "70000",
-    },
-    {
-      label: "6",
-      value: "80000",
-    },
-  ];
-
   const date = new Date();
   const MaxDate = date.setMonth(date.getMonth() + 3);
 
-  if (!data.length) return <NoReservation />;
+  // if (!props.theme?.length) return <NoReservation />;
 
   return (
     <S.Container>
@@ -79,13 +25,22 @@ export default function ReservationUI(props: any) {
           <>
             <S.ImageInfoBox>
               <S.ImageBox>
-                <S.Image src="/img/theme/네모네모.webp" />
+                <S.Image src={props.data?.fetchThemeMenus[0]?.theme?.mainImg} />
               </S.ImageBox>
               <S.InfoBox>
-                <S.ThemeTitle>테마명</S.ThemeTitle>
-                <span>소개</span>
-                <span>테마명</span>
-                <span>테마명</span>
+                <S.ThemeTitle>
+                  {props.data?.fetchThemeMenus[0]?.theme?.title}
+                </S.ThemeTitle>
+                <span>
+                  {props.data?.fetchThemeMenus[0]?.theme?.intro_title}
+                </span>
+                <span>
+                  {props.data?.fetchThemeMenus[0]?.theme?.intro_content}
+                </span>
+                <span>
+                  {props.data?.fetchThemeMenus[0]?.theme?.agelimit}세 이상
+                  이용가능
+                </span>
               </S.InfoBox>
             </S.ImageInfoBox>
           </>
@@ -106,13 +61,16 @@ export default function ReservationUI(props: any) {
               onChange={props.onChangeTheme}
               value={props?.theme}
             >
-              {data.map((el) => (
-                <MenuItem key={el.theme.id} value={el.theme.id}>
-                  {el.theme.title}
+              {props?.themesList?.fetchThemes?.map((el) => (
+                <MenuItem key={el.id} value={el.id}>
+                  {el.title}
                 </MenuItem>
               ))}
             </TextField>
           </Grid>
+        </Grid>
+
+        <Grid container spacing={2}>
           {props.theme && (
             <Grid item xs>
               <TextField
@@ -123,9 +81,9 @@ export default function ReservationUI(props: any) {
                 onChange={props.onChangeCafe}
                 value={props.cafe}
               >
-                {data.map((el) => (
-                  <MenuItem key={el.cafe} value={el.cafe}>
-                    {el.cafe}
+                {props?.data?.fetchThemeMenus?.map((el, i) => (
+                  <MenuItem key={i} value={el.cafe.id}>
+                    {el.cafe.name}
                   </MenuItem>
                 ))}
               </TextField>
@@ -171,9 +129,9 @@ export default function ReservationUI(props: any) {
                 variant="outlined"
                 onChange={props.onChangeTime}
               >
-                {time.map((el) => (
-                  <MenuItem key={el.label} value={el.value}>
-                    {el.value}
+                {props?.data?.fetchThemeMenus?.map((el, i) => (
+                  <MenuItem key={i} value={el.reservation_time}>
+                    {el.reservation_time}
                   </MenuItem>
                 ))}
               </TextField>
@@ -185,23 +143,23 @@ export default function ReservationUI(props: any) {
               <TextField
                 fullWidth
                 select
-                value={props.headCount}
                 label="인원을 선택해주세요"
                 variant="outlined"
                 onChange={props.onChangeHeadCount}
+                value={props.headCount}
               >
-                {people.map((el) => (
-                  <MenuItem key={el.label} value={el.label}>
-                    {el.label}
-                  </MenuItem>
-                ))}
+                <MenuItem value={40000}>2인</MenuItem>
+                <MenuItem value={55000}>3인</MenuItem>
+                <MenuItem value={68000}>4인</MenuItem>
+                <MenuItem value={87000}>5인</MenuItem>
+                <MenuItem value={99000}>6인</MenuItem>
               </TextField>
             </Grid>
           )}
           {props.selectedDate && (
             <Grid item xs>
               <TextField
-                label="사용할 적립금을 입력해주세요"
+                label="사용할 적립금을 입력해주세요 유저 적립금이 디폴트로 들어갈 것"
                 multiline
                 fullWidth
                 type="number"
@@ -221,7 +179,7 @@ export default function ReservationUI(props: any) {
                 variant="outlined"
                 id="outlined-required"
                 label="이름을 입력해주세요"
-                defaultValue="유저 이름 "
+                defaultValue="유저 이름 디폴트로 불러올것"
               />
             </Grid>
 
@@ -235,7 +193,7 @@ export default function ReservationUI(props: any) {
                 InputLabelProps={{
                   shrink: true,
                 }}
-                defaultValue="유저핸드폰"
+                defaultValue="유저핸드폰 디폴트로 불러올것"
                 variant="outlined"
               />
             </Grid>
@@ -251,11 +209,47 @@ export default function ReservationUI(props: any) {
             </Grid>
           </Grid>
         )}
-        <Grid container spacing={2}></Grid>
-        <div>
-          <span>최종 결제 금액</span>
-          <span>{props.totalPrice}</span>
-        </div>
+        {props.totalPrice && (
+          <>
+            <S.Total>
+              <span>최종 결제 금액</span>
+              <span>{(props.totalPrice - props.point).toLocaleString()}원</span>
+            </S.Total>
+
+            <S.InformationUse>
+              <span>이용안내</span>
+
+              <div>
+                <input
+                  type="checkbox"
+                  ref={props.optionalCheckRef}
+                  onChange={props.onChangeOptionalCheck}
+                />
+                <span>개인정보 수집에 동의합니다</span>
+              </div>
+              <p>
+                o 입장 전 설명을 위해 플레이타임 시작 10분 전까지 매장에
+                도착해주세요. 정시 입장이 어려운 경우, 다음 예약자에게 피해가
+                가지않도록 시간이 차감될 수 있습니다. o 매장 근처 주차가 어려울
+                수있으니 도보 이용 바랍니다. o 예약취소는 마이페이지에서
+                가능합니다. o 입장 후에는 어떠한 경우에도 환불이 불가능합니다.
+                단, 중대한 사유로 플레이가 중지될 경우 책임 정도에 따라 일부
+                환불이 가능합니다. 반드시 매장에 문의해 주세요.
+              </p>
+
+              <span>
+                ■ 수집하는 개인정보 항목 : 룸인어스는 상담, 서비스 신청 등등을
+                위해 아래와 같은 개인정보를 수집하고 있습니다. ο 수집항목 :
+                이름, 휴대전화번호 ο 개인정보 수집방법 : 홈페이지(예약)
+              </span>
+            </S.InformationUse>
+          </>
+        )}
+
+        <S.ButtonBox>
+          <WebBlackButton type="button" title="돌아가기" />
+          <WebPurpleButton type="button" title="결제하기" />
+        </S.ButtonBox>
       </S.Wrapper>
     </S.Container>
   );

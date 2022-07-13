@@ -39,22 +39,12 @@ export const Wrapper = styled.section`
 
 export const ImageInfoBox = styled.div`
   display: flex;
-  background-color: rebeccapurple;
 `;
 
-export const ImageBox = styled.div`
-  background-color: rebeccapurple;
-`;
+export const ImageBox = styled.div``;
 
 export const Image = styled.img`
-  width: 80%;
-
-  @media ${breakPoints.tablet} {
-    width: 70%;
-  }
-  @media ${breakPoints.mobile} {
-    width: 70%;
-  }
+  width: 25em;
 `;
 
 export const InfoBox = styled.div`
@@ -64,8 +54,9 @@ export const InfoBox = styled.div`
   align-items: center;
   text-align: center;
 
-  background-color: pink;
-  width: 100%;
+  width: 45em;
+
+  border: 1px solid gray;
 
   @media ${breakPoints.mobile} {
     width: auto;
@@ -81,6 +72,7 @@ export const InfoBox = styled.div`
 
 export const ThemeTitle = styled.h1`
   font-size: 2em;
+  font-family: "GowunDodum-Regular";
 
   @media ${breakPoints.tablet} {
     font-size: 3em;
@@ -88,4 +80,24 @@ export const ThemeTitle = styled.h1`
   @media ${breakPoints.mobile} {
     font-size: 1.5em;
   }
+`;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  gap: 2em;
+`;
+
+export const Total = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  width: 100%;
+  font-size: 2em;
+`;
+
+export const InformationUse = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

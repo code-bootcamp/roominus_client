@@ -62,6 +62,7 @@ export default function LayoutBanner() {
     { kor: "예약", eng: "Reservation", page: "/reservation" },
     { kor: "커뮤니티", eng: "Community", page: "/community" },
     { kor: "마이페이지", eng: "Mypage", page: "/mypage" },
+    { kor: "관리자", eng: "Admin", page: "/admin" },
   ];
 
   useEffect(() => {

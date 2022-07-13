@@ -31,8 +31,9 @@ export default function ReservationNoticeUI() {
           <S.StepBox>
             <S.Step>
               <S.StepNumber>STEP3</S.StepNumber>
-              <S.Guide>예약 정보 입력</S.Guide>
-              <S.Guide>예약자 명과 번호</S.Guide>
+              <S.Guide>
+                결제 금액 확인 및 <br></br>적립금 사용
+              </S.Guide>
             </S.Step>
           </S.StepBox>
         </S.StepBoxs>
@@ -41,9 +42,9 @@ export default function ReservationNoticeUI() {
           <S.StepBox>
             <S.Step>
               <S.StepNumber>STEP4</S.StepNumber>
-              <S.Guide>
-                결제 금액 확인 및 <br></br>적립금 사용
-              </S.Guide>
+
+              <S.Guide>예약 정보 입력</S.Guide>
+              <S.Guide>예약자 명과 번호</S.Guide>
             </S.Step>
             <S.Arrow src="/img/reservation/arrow.png" />
           </S.StepBox>
@@ -76,7 +77,7 @@ export default function ReservationNoticeUI() {
           <S.TypingBox>
             <Typewriter
               options={{
-                strings: ["민준님", "로그인", "힘내세요"],
+                strings: ["힘내세요"],
                 autoStart: true,
                 loop: true,
               }}
