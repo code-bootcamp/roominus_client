@@ -10,7 +10,6 @@ import ReservationNotice from "./reservationNotice/reservationNotice.container";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 import NoReservation from "./Noreservation";
-// import NoReservation from "./Noreservation";
 
 export default function ReservationUI(props: any) {
   const date = new Date();
