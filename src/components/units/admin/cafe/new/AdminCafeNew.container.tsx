@@ -12,7 +12,7 @@ export default function AdminCafeNew(props) {
   const [createCafe] = useMutation(CREATE_CAFE);
   const [updateCafe] = useMutation(UPDATE_CAFE);
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const [imgurl, setImgurl] = useState("");
 
@@ -75,6 +75,7 @@ export default function AdminCafeNew(props) {
     intro_content?: string;
     address?: string;
     address_detail?: string;
+    mainImg?: string;
   }
 
   const onClickUpdate = async (data) => {
@@ -85,20 +86,13 @@ export default function AdminCafeNew(props) {
     if (data.address) updateCafeInput.address = data.address;
     if (data.address_detail)
       updateCafeInput.address_detail = data.address_detail;
+    if (imgurl) updateCafeInput.mainImg = imgurl;
 
     try {
       const result = await updateCafe({
         variables: {
           cafeId: router.query.id,
           updateCafeInput,
-          // : {
-          //   name: data.name,
-          //   phone: data.phone,
-          //   intro_content: data.intro_content,
-          //   address: data.address,
-          //   address_detail: data.address_detail,
-          //   mainImg: imgurl,
-          // },
         },
       });
       alert("수정이 완료되었습니다!");
@@ -109,6 +103,20 @@ export default function AdminCafeNew(props) {
     }
   };
 
+  console.log(imgurl);
+
+  //사진 수정시
+  useEffect(() => {
+    reset({
+      name: props.editData?.fetchCafe.name,
+      phone: props.editData?.fetchCafe.phone,
+      intro_title: props.editData?.fetchCafe.intro_title,
+      address: props.editData?.fetchCafe.address,
+      address_detail: props.editData?.fetchCafe.address_detail,
+    });
+  }, [props.editData]);
+
+  //이미지 디폴트밸류
   useEffect(() => {
     if (props.editData?.fetchCafe.mainImg) {
       setImgurl(props.editData?.fetchCafe.mainImg);

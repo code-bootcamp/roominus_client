@@ -36,6 +36,8 @@ export default function AdminCafeDetail() {
     }
   };
 
+  console.log(data?.fetchCafe);
+
   return (
     <AdminCafeListUI
       onClickList={onClickList}

@@ -24,7 +24,7 @@ export default function AdminCafeNewUI(props) {
           defaultValue={props.editData?.fetchCafe.phone}
         />
         <S.InputsTitle>매장 소개</S.InputsTitle>
-        <S.Input
+        <S.Textarea
           type="text"
           {...props.register("intro_content")}
           placeholder="매장소개 입력하세요"
