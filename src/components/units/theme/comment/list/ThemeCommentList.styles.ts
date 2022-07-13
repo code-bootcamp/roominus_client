@@ -9,7 +9,6 @@ export const Comment = styled.section`
   background-color: white;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   /* height: 250px; */
   border-bottom: 1px solid #a3a8b7;
 `;
@@ -74,4 +73,10 @@ export const RankButton = styled.button`
 
 export const Contents = styled.div`
   max-width: 788px;
+`;
+
+export const CommentList = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
 `;
