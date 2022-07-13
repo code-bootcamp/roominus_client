@@ -12,7 +12,6 @@ export const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
 `;
 
 export const Title = styled.div`
@@ -23,12 +22,21 @@ export const Title = styled.div`
 `;
 
 export const InputsTitle = styled.span`
-  margin-top: 2em;
+  margin-top: 1.5em;
   font-size: 1.3em;
 `;
+
+export const Input = styled.input`
+  height: 3em;
+  border: none;
+  border-bottom: 1px solid #a3a8b7;
+  outline: none;
+`;
+
 export const ImgAddBtn = styled(PlusCircleOutlined)`
   font-size: 2em;
 `;
+
 export const ImgBox = styled.div`
   width: 10em;
   height: 10em;
