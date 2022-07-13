@@ -28,8 +28,6 @@ export default function ReservationTest() {
     setTheme(event.target.value);
   };
 
-  // const onClickSearch = async () => {};
-
   const onChangeCafe = (event: any) => {
     setCafe(event.target.value);
     console.log("cafe:", cafe);
