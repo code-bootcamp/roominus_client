@@ -10,40 +10,9 @@ export const Wrapper = styled.section`
   margin: auto;
 `;
 export const Title = styled.h1`
+  margin-top: 1em;
   font-size: 2.5em;
 `;
-export const Error = styled.div`
-  color: red;
-  font-size: 1em;
-`;
-export const TabBtns = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 2em;
-`;
-export const TabFirst = styled.button`
-  width: 45%;
-  height: 3.5em;
-  color: white;
-  background-color: ${(props) =>
-    props.isClickedfirst ? "#4a00e0e7" : "#6D737D99"};
-  border-radius: 10px 10px 0px 0px;
-  border: none;
-  cursor: pointer;
-`;
-export const TabSecond = styled.button`
-  width: 45%;
-  height: 3.5em;
-  color: white;
-  background-color: ${(props) =>
-    props.isClickedsecond ? "#4a00e0e7" : "#6D737D99"};
-  border-radius: 10px 10px 0px 0px;
-  border: none;
-  cursor: pointer;
-`;
-
 export const Form = styled.form`
   width: 60%;
   display: flex;
@@ -69,16 +38,16 @@ export const NameInput = styled.input`
   font-size: 1.3em;
 `;
 
-export const EmailBox = styled.div`
+export const PhoneNoBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
 `;
-export const Email = styled.div`
+export const PhoneNo = styled.div`
   font-size: 1.2em;
 `;
-export const EmailInput = styled.input`
+export const PhoneNoInput = styled.input`
   width: 100%;
   height: 2.5em;
   border: none;
@@ -87,6 +56,45 @@ export const EmailInput = styled.input`
   font-size: 1.3em;
 `;
 
+export const PasswordVerificationBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+`;
+export const PasswordVerification = styled.div`
+  font-size: 1.2em;
+`;
+export const PasswordVerificationInput = styled.input`
+  width: 100%;
+  height: 2.5em;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  font-size: 1.3em;
+`;
+export const PassWordBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+`;
+export const PassWord = styled.div`
+  font-size: 1.2em;
+`;
+export const PassWordInput = styled.input`
+  width: 100%;
+  height: 2.5em;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  font-size: 1.3em;
+`;
+export const InputBoxes = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
 export const TitleBox = styled.div`
   display: flex;
   flex-direction: row;
@@ -96,4 +104,8 @@ export const ImportantInfos = styled.span`
   margin-left: 0.3em;
   font-size: 1.4em;
   color: red;
+`;
+export const Error = styled.div`
+  color: red;
+  font-size: 1em;
 `;

@@ -40,9 +40,9 @@ export default function ThemeListUI(props: IThemeListProps) {
     "/img/theme/ex/15.jpeg",
   ];
 
-  // const onClickTheme = () => {
-  //   router.push(`/theme/${el.id}`);
-  // };
+  const onClickTheme = () => {
+    router.push(`/theme/${el.id}`);
+  };
 
   const [windowSize, setWindowSize] = useState(false);
 
@@ -119,22 +119,21 @@ export default function ThemeListUI(props: IThemeListProps) {
       {!windowSize && (
         <div>
           <S.ThemeList>
-            {props.data?.fetchThemes.map((el: any) => (
-              <div key={el.id} onClick={props.onClickTheme(el)}>
+            {props.data?.fetchThemes.map((el) => (
+              <div key={el.id} onClick={onClickTheme}>
                 <S.Flip>
                   <S.Card>
-                    <S.Theme src={el.mainImg}>
+                    <S.Theme src={el}>
                       <S.ImgGradient />
                       <S.Rank>
                         난이도
-                        <S.Star disabled defaultValue={el.rank} />
-                        {/* <img width={20} src="/img/theme/rankstar.png" />
                         <img width={20} src="/img/theme/rankstar.png" />
                         <img width={20} src="/img/theme/rankstar.png" />
                         <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" /> */}
+                        <img width={20} src="/img/theme/rankstar.png" />
+                        <img width={20} src="/img/theme/rankstar.png" />
                       </S.Rank>
-                      <S.GenreTag>#{el?.genre.name}</S.GenreTag>
+                      <S.GenreTag>#미스테리</S.GenreTag>
                     </S.Theme>
                     <S.ThemeBack src="/img/theme/card-back.png">
                       <S.ThemeTitle>{el.title}</S.ThemeTitle>
@@ -150,7 +149,7 @@ export default function ThemeListUI(props: IThemeListProps) {
                 </S.Flip>
               </div>
             ))}
-            {/* {themes.map((el, i) => (
+            {themes.map((el, i) => (
               <div key={i} onClick={onClickTheme}>
                 <S.Flip>
                   <S.Card>
@@ -182,7 +181,7 @@ export default function ThemeListUI(props: IThemeListProps) {
                   </S.Card>
                 </S.Flip>
               </div>
-            ))} */}
+            ))}
           </S.ThemeList>
           <S.ButtonBox>
             <S.ShowMoreButton>더보기</S.ShowMoreButton>

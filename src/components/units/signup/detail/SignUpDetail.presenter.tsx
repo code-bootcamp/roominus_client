@@ -145,44 +145,55 @@ export default function SignUpDetailUI(props) {
             <S.Error>{props.formState.errors.name?.message}</S.Error>
           </S.NameBox>
         </S.NameBoxes>
-      </S.FormFirst>
-      <S.PhoneNoBox>
-        <S.PhoneNoTitle>휴대폰번호✷</S.PhoneNoTitle>
-        <S.PhoneNoInputBox>
-          <S.PhoneNoInput
-            type="text"
-            placeholder="010-1234-5678"
-            onChange={props.onChangeGetPhoneNo}
-          />
-          <WebPurpleButton
-            onClick={props.onClickVerifyMySelfByNo}
-            type="button"
-            title="인증"
-          />
-        </S.PhoneNoInputBox>
-        <S.VerificationInputBox>
-          <S.VerificationNoBox>
-            <S.VerificationNoInput
+        <S.PhoneNoBox>
+          <S.TitleBox>
+            <S.PhoneNoTitle>휴대폰번호</S.PhoneNoTitle>
+            <S.ImportantInfos>*</S.ImportantInfos>
+          </S.TitleBox>
+          <S.PhoneNoInputBox>
+            <S.PhoneNoInput
               type="text"
-              placeholder="인증번호를 입력하세요."
+              name="phoneNumber"
+              placeholder="010-1234-5678"
+              onChange={(e) => props.setValue("phoneNumber", e.target.value)}
             />
-            <S.TimeOut>3:00</S.TimeOut>
-          </S.VerificationNoBox>
-          <WebPurpleButton type="button" title="확인" />
-        </S.VerificationInputBox>
-      </S.PhoneNoBox>
-      <S.FormSecond onSubmit={props.handleSubmit(props.onSubmitSignup)}>
-        <WebBlackButton
-          type="button"
-          onClick={
-            (props.googleLoggedIn && props.onClickSocialIDLogout) ||
-            (props.kakaologgedIn && props.onClickLogoutkakao) ||
-            props.onClickMoveToLogin
-          }
-          title="취소하기"
-        />
-        <WebPurpleButton title="가입하기" />
-      </S.FormSecond>
+            <WebPurpleButton
+              onClick={props.onClickVerifyMySelfByNo}
+              type="button"
+              title="인증"
+            />
+          </S.PhoneNoInputBox>
+          <S.Error>{props.formState.errors.phoneNumber?.message}</S.Error>
+          <S.VerificationInputBox>
+            <S.VerificationNoBox>
+              <S.VerificationNoInput
+                type="text"
+                placeholder="인증번호를 입력하세요."
+              />
+              <S.TimeOut>{props.showCount}</S.TimeOut>
+            </S.VerificationNoBox>
+            <S.ConfirmBtn
+              type="button"
+              ref={props.verificationBtn}
+              onClick={props.onClickCheckVerificationNo}
+            >
+              확인
+            </S.ConfirmBtn>
+          </S.VerificationInputBox>
+        </S.PhoneNoBox>
+        <S.SignUpBtns>
+          <WebBlackButton
+            type="button"
+            onClick={
+              (props.googleLoggedIn && props.onClickSocialIDLogout) ||
+              (props.kakaologgedIn && props.onClickLogoutkakao) ||
+              props.onClickMoveToLogin
+            }
+            title="취소하기"
+          />
+          <WebPurpleButton title="가입하기" />
+        </S.SignUpBtns>
+      </S.FormFirst>
     </S.Wrapper>
   );
 }

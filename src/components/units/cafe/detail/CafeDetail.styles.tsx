@@ -28,14 +28,13 @@ export const SearchWrapper = styled.section`
 
 export const CafePicture = styled.img`
   width: 38em;
-  height: 36em;
+  height: 25em;
   background-color: pink;
   object-fit: cover;
-  /* border: 1px solid #bdbdbd; */
 
   @media ${breakPoints.mobile} {
     width: 23em;
-    height: 22em;
+    height: 20em;
   }
 `;
 

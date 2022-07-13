@@ -20,8 +20,8 @@ export const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
 
-  gap: 3em;
   @media ${breakPoints.tablet} {
     width: 100%;
     height: 100%;

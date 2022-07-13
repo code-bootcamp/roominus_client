@@ -70,7 +70,7 @@ export const MenuWrapper = styled.ul`
 export const MenuItem = styled.li`
   font-weight: ${(props) => (props.isActive ? "500" : "normal")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
-  color: ${(props) => (props.isActive ? "#BF9EEB" : "#5F6269")};
+  color: ${(props) => (props.isActive ? "#BF9EEB" : "#262ƒ82C")};
   font-size: 1.5em;
 `;
 

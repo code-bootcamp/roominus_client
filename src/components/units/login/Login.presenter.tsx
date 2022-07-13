@@ -42,8 +42,15 @@ export default function LoginUI(props) {
         <WebPurpleLoginButton type="submit" title="로그인하기" />
       </S.Form>
       <S.SignUpBox>
-        <S.SignupLabel>아직 계정이 없으신가요?</S.SignupLabel>
-        <S.SignUpbtn onClick={props.onClickMoveToSignUp}>회원가입</S.SignUpbtn>
+        <S.SignUpdetailBox>
+          <S.SignupLabel>아직 계정이 없으신가요?</S.SignupLabel>
+          <S.SignUpbtn onClick={props.onClickMoveToSignUp}>
+            회원가입
+          </S.SignUpbtn>
+        </S.SignUpdetailBox>
+        <S.FindIdPasswordBtn onClick={props.onClickMoveToFindIdPassword}>
+          아이디 찾기 / 비밀번호 재설정
+        </S.FindIdPasswordBtn>
       </S.SignUpBox>
       <S.Divider></S.Divider>
       <S.SocialLoginBtns>
