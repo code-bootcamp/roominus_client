@@ -9,6 +9,10 @@ import styled from "@emotion/styled";
 
 const { Meta } = Card;
 
+const Wrapper = styled.div`
+  border: 1px solid #c2c2c2;
+`;
+
 const LocationBox = styled.div`
   width: 4.7em;
   height: 2.5em;
@@ -45,9 +49,12 @@ const LocationIcon = styled.img`
 `;
 
 const ListCards = (props) => (
-  <>
+  <Wrapper>
     <Card
-      style={{ width: "100%", borderColor: "#c2c2c2", position: "relative" }}
+      style={{
+        width: "100%",
+        position: "relative",
+      }}
       cover={
         <img
           alt="No Image"
@@ -72,7 +79,7 @@ const ListCards = (props) => (
         description={props.el.phone}
       />
     </Card>
-  </>
+  </Wrapper>
 );
 
 export default ListCards;

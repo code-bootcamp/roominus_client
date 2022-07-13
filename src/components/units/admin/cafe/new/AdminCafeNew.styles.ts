@@ -33,6 +33,8 @@ export const Input = styled.input`
   outline: none;
 `;
 
+export const Textarea = styled.textarea``;
+
 export const ImgAddBtn = styled(PlusCircleOutlined)`
   font-size: 2em;
 `;

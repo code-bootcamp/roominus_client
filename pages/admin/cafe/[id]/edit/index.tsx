@@ -19,9 +19,9 @@ const FETCH_CAFE = gql`
 export default function AdminCafeEditPage() {
   const router = useRouter();
 
-  const { data } = useQuery(FETCH_CAFE, {
+  const { data, loading } = useQuery(FETCH_CAFE, {
     variables: { cafeId: router.query.id },
   });
 
-  return <AdminCafeNew isEdit={true} editData={data} />;
+  return loading ? <></> : <AdminCafeNew isEdit={true} editData={data} />;
 }
