@@ -31,7 +31,7 @@ export const Star = styled(FontAwesomeIcon)`
 `;
 
 export const EscapeRankBox = styled.div`
-  width: 530px;
+  max-width: 30em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -52,26 +52,42 @@ export const EscapeRankBox = styled.div`
 `;
 
 export const IsEscapeBox = styled.div`
-  width: 140px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
+  width: 100%;
 `;
 
-export const EscapeButton = styled.button`
+export const EscapeLabel = styled.label`
   display: flex;
   flex-direction: row;
+`;
+export const EscapeInput = styled.input`
+  display: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+`;
+
+export const EscapeButton = styled.div`
+  cursor: pointer;
+  width: 5em;
+  display: absolute;
+  flex-direction: row;
   justify-content: center;
+  text-align: center;
   align-items: center;
   padding: 0px 15px;
   font-weight: 700;
   height: 35px;
   border: transparent;
   border-radius: 8px;
-  background-color: #26282c;
   color: white;
   margin: 2px;
+  background-color: ${(props) => (props.checked ? "blue" : "white")};
 `;
 
 export const RankBox = styled.div`
@@ -91,7 +107,7 @@ export const RankBox = styled.div`
   }
 `;
 
-export const RankButton = styled.button`
+export const RankButton = styled.input`
   display: flex;
   flex-direction: row;
   justify-content: center;
