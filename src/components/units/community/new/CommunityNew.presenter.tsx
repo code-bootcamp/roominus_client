@@ -16,8 +16,11 @@ export default function CommunityNewUI(props) {
         {/* <S.Title>자유게시물 등록</S.Title> */}
         <form onSubmit={"return false"}>
           <S.HalfBox>
-            <S.Picture src={props.imageUrl} />
-            {/* <S.Picture>썸네일 미리보기</S.Picture> */}
+            <S.Picture
+              src={
+                props?.imageUrl ? props?.imageUrl : "/img/community/preview.png"
+              }
+            />
             <S.HalfRightBox>
               <div>
                 <S.InfoBox>

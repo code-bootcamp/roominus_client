@@ -40,19 +40,24 @@ export default function CommunityNew() {
   };
 
   const onClickSubmit = async (data) => {
-    console.log(tagList);
-    const result = await createBoard({
-      variables: {
-        createBoardInput: {
-          title: data.title,
-          content: data.content,
-          boardTags: tagList,
-          mainImg: fileUrl,
+    if (!fileUrl) {
+      alert("이미지를 등록해주세요");
+    } else if (fileUrl) {
+      console.log(tagList);
+      const result = await createBoard({
+        variables: {
+          createBoardInput: {
+            title: data.title,
+            content: data.content,
+            boardTags: tagList,
+            mainImg: fileUrl,
+          },
         },
-      },
-    });
-    console.log(result);
-    // router.push("/community/_id");
+      });
+      console.log(result);
+      alert("등록이 완료되었습니다!");
+      // router.push("/community/_id");
+    }
   };
 
   return (

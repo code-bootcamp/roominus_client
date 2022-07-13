@@ -40,11 +40,11 @@ export default function Tag(props: any) {
     <TagBox>
       {/* 등록시 map */}
       {props.tagList?.map((tagItem: any, index: number) => {
-        const hashedtag = tagItem.replace(tagItem, `#${tagItem}`);
+        // const hashedtag = tagItem.replace(tagItem, `#${tagItem}`);
         return (
           <TagItem key={index}>
             {/* <span>#</span> */}
-            <Text>{hashedtag}</Text>
+            <Text>{tagItem}</Text>
             <Button type="button" onClick={deleteTagItem}>
               X
             </Button>

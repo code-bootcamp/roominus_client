@@ -42,8 +42,8 @@ export const HalfBox = styled.div`
 `;
 
 export const Picture = styled.img`
-  width: 60%;
-  /* height: 25em; */
+  width: 25em;
+  height: 25em;
   margin-right: 2em;
   border-radius: 10px;
   /* background-color: #c2c2c2; */
@@ -96,6 +96,7 @@ export const DropBox = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(217, 214, 224, 0.25);
+  cursor: pointer;
 `;
 
 export const Essential = styled.span`
