@@ -52,7 +52,7 @@ export default function MyPhoneEditUI(props) {
                   }
                   type="number"
                 />
-                <span>03:00</span>
+                <span>{props.showCount}</span>
               </S.UserCertificationBox>
             </S.UserCertification>
           </S.UserInfoBox>

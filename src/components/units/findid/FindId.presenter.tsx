@@ -1,3 +1,4 @@
+import WebPurpleLoginButton from "../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 import FindPassword from "../findpassword/FindPassword.container";
 import * as S from "./FindId.styles";
 
@@ -21,30 +22,36 @@ export default function FindIdUI(props) {
               비밀번호 재설정
             </S.TabSecond>
           </S.TabBtns>
-          {!props.isOpenedID && (
-            <S.Form onSubmit={props.onSubmitFindId}>
-              <S.NameBox>
-                <S.Name>이름💥</S.Name>
-                <S.NameInput type="text" placeholder="홍길동" />
-              </S.NameBox>
-              <S.EmailBox>
-                <S.Email>이메일💥</S.Email>
-                <S.EmailInput type="text" placeholder="bubu123@gmail.com" />
-              </S.EmailBox>
-              <S.ConfirmBtn>확인</S.ConfirmBtn>
-            </S.Form>
-          )}
-          {props.isClickedfirst && props.isOpenedID && (
-            <S.IDinfoBox>
-              <S.IDTitle>조회하신 아이디는</S.IDTitle>
-              <S.SearchingID>BUBUBU123 입니다.</S.SearchingID>
-              <S.IDdetailInfo>가입되지 않은 정보입니다.</S.IDdetailInfo>
-              <S.LoginBox>
-                <S.Retrybtn>다시찾기</S.Retrybtn>
-                <S.LoginBtn>로그인</S.LoginBtn>
-              </S.LoginBox>
-            </S.IDinfoBox>
-          )}
+          <S.Form onSubmit={props.handleSubmit(props.onSubmitFindId)}>
+            <S.NameBox>
+              <S.TitleBox>
+                <S.Name>이름</S.Name>
+                <S.ImportantInfos>*</S.ImportantInfos>
+              </S.TitleBox>
+              <S.NameInput
+                type="text"
+                name="name"
+                placeholder="홍길동"
+                ref={props.IdFindinputRef}
+                onChange={(e) => props.setValue("name", e.target.value)}
+              />
+            </S.NameBox>
+            <S.Error>{props.formState.errors.name?.message}</S.Error>
+            <S.EmailBox>
+              <S.TitleBox>
+                <S.Email>이메일</S.Email>
+                <S.ImportantInfos>*</S.ImportantInfos>
+              </S.TitleBox>
+              <S.EmailInput
+                type="text"
+                name="email"
+                placeholder="bubu123@gmail.com"
+                onChange={(e) => props.setValue("email", e.target.value)}
+              />
+            </S.EmailBox>
+            <S.Error>{props.formState.errors.email?.message}</S.Error>
+            <WebPurpleLoginButton type="submit" title="확인" />
+          </S.Form>
         </S.Wrapper>
       )}
 
@@ -55,7 +62,7 @@ export default function FindIdUI(props) {
           isClickedsecond={props.isClickedsecond}
           isClickedfirst={props.isClickedfirst}
           onSubmitVerificationEmail={props.onSubmitVerificationEmail}
-          isOpenedPassword={props.isOpenedPassword}
+          PasswordFindinputRef={props.PasswordFindinputRef}
         />
       )}
     </>

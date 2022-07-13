@@ -166,9 +166,10 @@ export const NameInput = styled.input`
   padding: 0em 0.8em 0em 0.8em;
 `;
 export const PhoneNoBox = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 1.6em;
   @media ${breakPoints.mobile} {
     width: 80%;
@@ -215,7 +216,7 @@ export const VerificationNoBox = styled.div`
   }
 `;
 export const VerificationNoInput = styled.input`
-  width: 90%;
+  width: 70%;
   height: 2.5em;
   border-radius: 10px;
   border: 1px solid #c9c9c9;
@@ -224,15 +225,36 @@ export const VerificationNoInput = styled.input`
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;
 `;
+
+export const ConfirmBtn = styled.button`
+  width: 9.4em;
+  height: 3.5em;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  :hover {
+    background: linear-gradient(
+      90deg,
+      rgba(142, 45, 226, 1) 30%,
+      rgba(74, 0, 224, 1) 100%
+    );
+  }
+
+  background-color: #4a00e0e7;
+  color: #ffffff;
+`;
 export const TimeOut = styled.span`
   width: 10%;
+  font-size: 1em;
+  margin: auto;
 `;
 
-export const FormSecond = styled.form`
+export const SignUpBtns = styled.div`
   width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: auto;
   gap: 2em;
   margin-bottom: 1.4em;
 `;

@@ -51,7 +51,7 @@ export default function ThemeCreate(props) {
     if (data.intro_content) updateThemeInput.intro_content = data.intro_content;
     if (data.agelimit) updateThemeInput.agelimit = Number(data.agelimit);
     if (imgurl) updateThemeInput.mainImg = imgurl;
-    if (imgurl) updateThemeInput.subImgs = [imgurl];
+    if (imgurl) updateThemeInput.subImg = [imgurl];
     try {
       const result = await updateThemegql({
         variables: {

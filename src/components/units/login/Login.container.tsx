@@ -47,6 +47,10 @@ export default function LoginPage() {
   const onClickMoveToSignUp = () => {
     router.push("/login/choice");
   };
+  const onClickMoveToFindIdPassword = () => {
+    router.push("/findidpassword");
+  };
+
   const onClickShowPassword = () => {
     passwordInputRef.current.type = "text";
     setOpenEye(true);
@@ -123,6 +127,7 @@ export default function LoginPage() {
       onClickMoveToSignUp={onClickMoveToSignUp}
       passwordInputRef={passwordInputRef}
       onClickShowPassword={onClickShowPassword}
+      onClickMoveToFindIdPassword={onClickMoveToFindIdPassword}
     />
   );
 }

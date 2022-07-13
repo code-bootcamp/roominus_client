@@ -4,7 +4,6 @@ import { breakPoints } from "../../../../commons/styles/media";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Rate } from "antd";
 
 interface IGenreProps {
   isPicked?: Boolean;
@@ -273,12 +272,6 @@ export const GenreTag = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
-`;
-
-export const Star = styled(Rate)`
-  color: #7556ee;
-  font-size: 15px;
-  padding: 0px;
 `;
 
 export const Rank = styled.div`
