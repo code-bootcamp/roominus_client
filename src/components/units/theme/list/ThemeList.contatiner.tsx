@@ -12,9 +12,9 @@ export default function ThemeList() {
     setIsToggled(!isToggled);
   };
 
-  const onClickTheme = (el) => {
+  const onClickTheme = (el) => () => {
     console.log(el);
-    // router.push(`/theme/${el.id}`);
+    router.push(`/theme/${el.id}`);
   };
 
   return (
