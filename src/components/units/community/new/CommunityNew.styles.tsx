@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
   flex-direction: column;
   /* justify-content: space-between; */
   padding: 2em 0em;
-  /* background-color: red; */
+  /* background-color: #e93838; */
 `;
 
 export const Title = styled.h1`
