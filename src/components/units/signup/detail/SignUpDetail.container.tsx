@@ -14,6 +14,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { CREATE_USER } from "./SignUpDetail.query";
 import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
+import { to } from "react-spring";
 
 const schema = yup.object({
   email: yup
@@ -35,6 +36,7 @@ const schema = yup.object({
     .oneOf([yup.ref("password"), null], "비밀번호가 일치하지 않습니다.")
     .required("영문+숫자 조합 8~16자리의 비밀번호를 입력해주세요."),
   name: yup.string().required("필수 입력 사항입니다."),
+  phoneNumber: yup.string().required("필수 입력 사항입니다."),
 });
 const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
@@ -48,29 +50,57 @@ export default function SignUpDetail() {
 
   const passwordInputRef = useRef();
   const password2InputRef = useRef();
+  const verificationBtn = useRef();
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);
-  const [phone, setPhone] = useState("");
+
   const { register, handleSubmit, setValue, formState } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
   const [createUsergql] = useMutation(CREATE_USER);
-
+  const [count, setCount] = useState(10);
+  const [showCount, setShowCount] = useState("03:00");
   useEffect(() => {
     register("email", { required: true });
     register("password", { required: true });
     register("password2", { required: true });
     register("name", { required: true });
+    register("phoneNumber", { required: true });
   }, []);
 
   const onClickMoveToPasswordRef = () => {
     passwordInputRef.current.focus();
   };
-  const onChangeGetPhoneNo = (event) => {
-    setPhone(event?.target.value);
+
+  const onClickVerifyMySelfByNo = () => {
+    let counts = count;
+
+    const timer = setInterval(() => {
+      counts = counts - 1;
+      setCount(counts);
+      console.log(counts);
+      if (counts <= 0) {
+        clearInterval(timer);
+        setCount(10);
+        verificationBtn.current.disabled = true;
+        Modal.error({ content: "인증번호 입력시간 초과" });
+      }
+      ShowCounts(counts);
+    }, 1000);
   };
-  const onClickVerifyMySelfByNo = () => {};
+  const ShowCounts = (data) => {
+    let min = Math.floor(data / 60);
+    let sec = data % 60;
+    let Showcount = `${String(min).padStart(2, "0")}:${String(sec).padStart(
+      2,
+      "0"
+    )}`;
+    setShowCount(Showcount);
+  };
+  const onClickCheckVerificationNo = () => {
+    console.log("ddd");
+  };
 
   const onSubmitSignup = async (data) => {
     console.log(data);
@@ -182,8 +212,10 @@ export default function SignUpDetail() {
         onClickMoveToLogin={onClickMoveToLogin}
         onSubmitSignup={onSubmitSignup}
         onClickVerifyMySelfByNo={onClickVerifyMySelfByNo}
-        onChangeGetPhoneNo={onChangeGetPhoneNo}
         onClickMoveToPasswordRef={onClickMoveToPasswordRef}
+        showCount={showCount}
+        verificationBtn={verificationBtn}
+        onClickCheckVerificationNo={onClickCheckVerificationNo}
       />
     </>
   );

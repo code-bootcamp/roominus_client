@@ -1,6 +1,8 @@
 import * as S from "./ThemeDetail.styles";
+import { IThemeDetailProps } from "./ThemeDetail.types";
+import { Rate } from "antd";
 
-export default function ThemeDetailUI(props) {
+export default function ThemeDetailUI(props: IThemeDetailProps) {
   return (
     <S.Container>
       <S.ThemeInfoWrapper>
@@ -8,27 +10,30 @@ export default function ThemeDetailUI(props) {
           <S.ThemeImg src={props.data?.fetchTheme?.mainImg} />
         </S.ThemeLeftBox>
         <S.ThemeRightBox>
-          <S.GenreTag>#로맨스</S.GenreTag>
           <S.ThemeTitle>{props.data?.fetchTheme.title}</S.ThemeTitle>
+          <S.ThemeSubTitle>
+            {props.data?.fetchTheme.intro_title}
+          </S.ThemeSubTitle>
           <S.ThemeContents>
             {props.data?.fetchTheme.intro_content}
           </S.ThemeContents>
-          <S.RankTimeBox>
-            <S.ThemeRank>
-              난이도 <img src="/img/theme/rankstar.webp" />
-              <img src="/img/theme/rankstar.webp" />
-              <img src="/img/theme/rankstar.webp" />
-              <img src="/img/theme/rankstar.webp" />
-              <img src="/img/theme/rankstar.webp" />
-            </S.ThemeRank>
-            <S.ThemeTime>이용시간 110분</S.ThemeTime>
-          </S.RankTimeBox>
-          <S.ChargeBox>
-            이용요금
-            <S.ThemeCharge>
-              2인 : 44,000원 / 3인 : 60,000원 / 4인 : 72,000원 / 5인 : 85,000원
-            </S.ThemeCharge>
-          </S.ChargeBox>
+          <S.ThemeInfo>
+            <S.RankTimeBox>
+              장르 : {props.data?.fetchTheme.genre?.name}
+              <S.ThemeRank>
+                난이도 :{/* <img src="/img/theme/rankstar.webp" /> */}
+                <Rate disabled defaultValue={props.data?.fetchTheme.rank} />
+              </S.ThemeRank>
+            </S.RankTimeBox>
+            <S.LimitBox>
+              <S.ThemeTime>
+                나이 제한 : {props.data?.fetchTheme.agelimit}세
+              </S.ThemeTime>
+              <S.ChargeBox>
+                <S.ThemeCharge>이용시간 : 120분</S.ThemeCharge>
+              </S.ChargeBox>
+            </S.LimitBox>
+          </S.ThemeInfo>
           <S.ButtonWrapper>
             <S.ReservationButton>예약하기</S.ReservationButton>
           </S.ButtonWrapper>

@@ -63,16 +63,30 @@ export const LoginBtn = styled.button`
 `;
 export const SignUpBox = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+`;
+export const SignUpdetailBox = styled.div`
+  display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 2em;
 `;
+
 export const SignupLabel = styled.span`
   font-size: 1.2em;
   margin-right: 1em;
   cursor: default;
 `;
 export const SignUpbtn = styled.button`
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 1.2em;
+  cursor: pointer;
+`;
+export const FindIdPasswordBtn = styled.button`
   border: none;
   background-color: transparent;
   color: black;

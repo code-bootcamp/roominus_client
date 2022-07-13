@@ -17,7 +17,7 @@ export default function ReservationNoticeUI() {
                 테마 & 매장 & <br></br> 날짜 선택
               </S.Guide>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
@@ -26,7 +26,7 @@ export default function ReservationNoticeUI() {
                 방문 시간과 <br></br> 인원 선택
               </S.Guide>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
@@ -45,7 +45,7 @@ export default function ReservationNoticeUI() {
                 결제 금액 확인 및 <br></br>적립금 사용
               </S.Guide>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
@@ -55,7 +55,7 @@ export default function ReservationNoticeUI() {
                 카드 결제
               </S.Guide>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
