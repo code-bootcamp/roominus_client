@@ -1,20 +1,25 @@
 import styled from "@emotion/styled";
+import { style } from "@mui/material/node_modules/@mui/system";
+
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.nav`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  height: 5.75rem;
-  border-bottom: 1px solid #e5e5e5;
-  /* position: fixed; */
-  z-index: 1;
+  height: 8%;
+  padding: 0.5em;
+
+  @media ${breakPoints.tablet} {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1em 1em 1em 1em;
+  }
 
   @media ${breakPoints.mobile} {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    padding: 1em 1em 1em 1em;
   }
 `;
 
@@ -22,51 +27,51 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
-  max-width: 1440px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.5em;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 0.5em;
+  }
 `;
 
-export const LogoWrapper = styled.div``;
+export const LogoWrapper = styled.div`
+  text-align: center;
+  padding-bottom: 1em;
+`;
 
 export const Logo = styled.img`
-  :hover {
-    cursor: pointer;
+  cursor: pointer;
+  width: 13em;
+  /* height: 2.5em; */
+  @media ${breakPoints.tablet} {
+    height: 2.8em;
   }
-  height: 2rem;
+
+  @media ${breakPoints.mobile} {
+    height: 2.8em;
+  }
 `;
 export const MenuWrapper = styled.ul`
   display: flex;
   justify-content: space-between;
-  padding-left: 5rem;
-  @media ${breakPoints.mobile} {
-    padding-left: calc(5%);
-    width: 70%;
-    margin-left: 3rem;
+  gap: 2em;
+
+  @media ${breakPoints.tablet} {
+    display: none;
   }
-`;
-
-export const MenuItem = styled.li`
-  color: ${(props) => (props.isActive ? "purple" : "black")};
-  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
-  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
-
-  font-size: 20px;
-  padding-right: 30px;
 
   @media ${breakPoints.mobile} {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
     display: none;
   }
 `;
 
-export const LoginJoinMenuWrapper = styled.div``;
-export const LoginJoinWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 95%;
-  margin-bottom: 5px;
+export const MenuItem = styled.li`
+  font-weight: ${(props) => (props.isActive ? "500" : "normal")};
+  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
+  color: ${(props) => (props.isActive ? "#BF9EEB" : "#5F6269")};
+  font-size: 1.5em;
 `;
 
 export const Contents = styled.span`
@@ -74,12 +79,42 @@ export const Contents = styled.span`
     cursor: pointer;
   }
 
-  margin-right: 10px;
+  margin-left: 0.6em;
+`;
+
+export const Toggle = styled.div``;
+export const Hamburger = styled.div`
+  display: none;
+
+  @media ${breakPoints.tablet} {
+    display: block;
+    position: absolute;
+    top: -0.5em;
+    right: 1em;
+    font-size: 1em;
+    width: 100px;
+    height: 100px;
+  }
 
   @media ${breakPoints.mobile} {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    display: none;
+    display: block;
+    font-size: 1em;
+  }
+`;
+
+export const MenuMainItem = styled.a`
+  font-size: 2em;
+`;
+export const MyMenubox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+export const MyMenues = styled.a`
+  color: #d1d1d1;
+  margin-bottom: 1.5em;
+  margin-left: 1.5em;
+  :hover {
+    color: #d1d1d1;
   }
 `;

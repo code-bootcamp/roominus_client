@@ -1,7 +1,9 @@
-export default function Home() {
+import Main from "../src/components/units/main/Main.container";
+
+export default function MainPage() {
   return (
-    <div style={{ height: "1080px", backgroundColor: "skyblue" }}>
-      확인 박스
-    </div>
+    <>
+      <Main />
+    </>
   );
 }
