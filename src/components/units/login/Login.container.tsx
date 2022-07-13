@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
+import { LOGIN } from "./Login.query";
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 const schema = yup.object({

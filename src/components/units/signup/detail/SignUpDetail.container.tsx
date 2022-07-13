@@ -14,7 +14,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { CREATE_USER } from "./SignUpDetail.query";
 import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
-import { to } from "react-spring";
 
 const schema = yup.object({
   email: yup
