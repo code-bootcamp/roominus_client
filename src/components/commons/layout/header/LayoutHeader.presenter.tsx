@@ -39,7 +39,7 @@ const styles = {
   },
   bmMenu: {
     background: "#6c5281",
-    padding: "2.5em 1.5em 0",
+    padding: "1.3em 1.5em 0",
     fontSize: "1.4em",
   },
 

@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 import { Box } from "@material-ui/core";
-import Link from "next/link";
-import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 
 const NoBox = styled.div`
   padding-bottom: 2em;
@@ -13,7 +11,7 @@ const NoBox = styled.div`
 
 const Notice = styled.p`
   font-size: 1.5em;
-  padding: 2em;
+  padding-top: 1em;
 `;
 
 const Sorry = styled.img`
@@ -23,23 +21,21 @@ export default function NoReservation() {
   return (
     <Box
       width={1}
-      height={650}
+      height={300}
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
       textAlign="center"
+      paddingTop={10}
     >
       <NoBox>
         <Sorry src="/img/reservation/sorry.png" />
 
         <Notice>
-          앗! <br></br>현재 이 테마를 운영중인 매장이 없습니다! <br></br>다른
-          테마를 선택해주세요!
+          앗! <br></br>현재 이 테마는 예약이 불가능합니다! <br></br>다른 테마를
+          선택해주세요!
         </Notice>
-        <Link href="/theme">
-          <WebBlackButton title="돌아가기"></WebBlackButton>
-        </Link>
       </NoBox>
     </Box>
   );
