@@ -11,6 +11,9 @@ export const FETCH_THEME = gql`
       agelimit
       like
       mainImg
+      genre {
+        name
+      }
     }
   }
 `;

@@ -111,8 +111,8 @@ export default function ThemeListUI(props: IThemeListProps) {
       )} */}
       {windowSize && (
         <div>
-          <MobileCarousel data={props.data} />
-          <MobileCarousel data={props.data} />
+          <MobileCarousel data={props.data} onClickTheme={props.onClickTheme} />
+          <MobileCarousel data={props.data} onClickTheme={props.onClickTheme} />
         </div>
       )}
 
