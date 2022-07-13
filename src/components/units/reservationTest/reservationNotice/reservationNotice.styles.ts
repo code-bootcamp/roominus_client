@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { FiArrowRight } from "react-icons/Fi";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.div`
@@ -79,7 +78,7 @@ export const Guide = styled.span`
   }
 `;
 
-export const Arrow = styled(FiArrowRight)`
+export const Arrow = styled.img`
   font-size: 3.8em;
   margin: 0em 0.2em 0em 0.2em;
 

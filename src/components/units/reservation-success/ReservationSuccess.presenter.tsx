@@ -2,8 +2,9 @@ import Link from "next/link";
 import * as S from "./ReservationSuccess.styles";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
+import QRCodeComponent from "../qrcode";
 
-export default function ReservationSuccessUI() {
+export default function ReservationSuccessUI(props) {
   return (
     <S.Container>
       <S.TitleBox>
@@ -35,7 +36,6 @@ export default function ReservationSuccessUI() {
           <S.Barcode></S.Barcode>
         </S.BarcodeBox>
       </S.Wrapper>
-
       <S.NotionArea>
         <S.NoticeTitle> NOTICE </S.NoticeTitle>
         <S.NoticeBoxs>
