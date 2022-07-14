@@ -7,7 +7,7 @@ export default function ThemeCreateUI(props) {
   return (
     <S.Wrapper>
       <S.Title>{props.isEdit ? "테마수정" : "테마등록"}</S.Title>
-      <S.InputsTitle>어려움 정도</S.InputsTitle>
+      <S.InputsTitle>난이도</S.InputsTitle>
       <Rate
         onChange={props.setValue}
         value={props.value || props.ThemeUpdateData?.fetchTheme.rank}
@@ -20,53 +20,53 @@ export default function ThemeCreateUI(props) {
         }
       >
         <S.InputsTitle>매장명</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.MyInput
           type="text"
           placeholder="cafeName"
-          register={props.register("cafeName")}
+          {...props.register("cafeName")}
           defaultValue={props.ThemeUpdateData?.fetchTheme.cafe?.name}
         />
         <S.InputsTitle>장르</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.MyInput
           type="text"
           placeholder="genreName"
-          register={props.register("genreName")}
+          {...props.register("genreName")}
           defaultValue={props.ThemeUpdateData?.fetchTheme.genre?.name}
         />
         <S.InputsTitle>제목</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.MyInput
           type="text"
           placeholder="title"
-          register={props.register("title")}
+          {...props.register("title")}
           defaultValue={props.ThemeUpdateData?.fetchTheme.title}
         />
         <S.InputsTitle>부 제목</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.MyInput
           type="text"
           placeholder="intro_title"
-          register={props.register("intro_title")}
+          {...props.register("intro_title")}
           defaultValue={props.ThemeUpdateData?.fetchTheme.intro_title}
         />
         <S.InputsTitle>테마 상세 설명</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.MyInput
           type="text"
           placeholder="intro_content"
-          register={props.register("intro_content")}
+          {...props.register("intro_content")}
           defaultValue={props.ThemeUpdateData?.fetchTheme.intro_content}
         />
 
         <S.InputsTitle>나이 제한</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.MyInput
           type="number"
           placeholder="agelimit"
-          register={props.register("agelimit")}
+          {...props.register("agelimit")}
           defaultValue={props.ThemeUpdateData?.fetchTheme.agelimit}
         />
         <S.InputsTitle>인원 제한</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
+        <S.MyInput
           type="number"
           placeholder="peoplelimit"
-          register={props.register("peoplelimit")}
+          {...props.register("peoplelimit")}
           defaultValue={props.ThemeUpdateData?.fetchTheme.peoplelimit}
         />
       </S.Form>
