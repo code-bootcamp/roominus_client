@@ -11,6 +11,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
 import { LOGIN } from "./Login.query";
+import Head from "next/head";
+
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 const schema = yup.object({
@@ -42,6 +44,7 @@ export default function LoginPage() {
     register("email", { required: true });
     register("password");
   }, []);
+
   const onSubmitLogin = (data) => {
     console.log(data);
   };
@@ -60,6 +63,20 @@ export default function LoginPage() {
       setOpenEye(false);
     }, 1000);
   };
+
+  const NaverLogin = () => {
+    const naverIdLogin = new naver_id_login(
+      "1wXq1o0g2z9j6TSlaVB0",
+      "http://localhost:3000/signup/detail"
+    );
+    const state = naverIdLogin.getUniqState();
+    naverIdLogin.setButton("white", 0, 80);
+    naverIdLogin.setDomain("http://localhost:3000/");
+    naverIdLogin.setState(state);
+
+    naverIdLogin.init_naver_id_login();
+  };
+
   const onClickGoogleLogin = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -117,18 +134,31 @@ export default function LoginPage() {
   };
 
   return (
-    <LoginUI
-      onClickGoogleLogin={onClickGoogleLogin}
-      onClickLoginKakao={onClickLoginKakao}
-      handleSubmit={handleSubmit}
-      onSubmitLogin={onSubmitLogin}
-      setValue={setValue}
-      formState={formState}
-      openEye={openEye}
-      onClickMoveToSignUp={onClickMoveToSignUp}
-      passwordInputRef={passwordInputRef}
-      onClickShowPassword={onClickShowPassword}
-      onClickMoveToFindIdPassword={onClickMoveToFindIdPassword}
-    />
+    <>
+      <Head>
+        <script
+          type="text/javascript"
+          src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="http://code.jquery.com/jquery-1.11.3.min.js"
+        ></script>
+      </Head>
+      <LoginUI
+        onClickGoogleLogin={onClickGoogleLogin}
+        onClickLoginKakao={onClickLoginKakao}
+        handleSubmit={handleSubmit}
+        onSubmitLogin={onSubmitLogin}
+        setValue={setValue}
+        formState={formState}
+        openEye={openEye}
+        onClickMoveToSignUp={onClickMoveToSignUp}
+        passwordInputRef={passwordInputRef}
+        onClickShowPassword={onClickShowPassword}
+        onClickMoveToFindIdPassword={onClickMoveToFindIdPassword}
+        NaverLogin={NaverLogin}
+      />
+    </>
   );
 }

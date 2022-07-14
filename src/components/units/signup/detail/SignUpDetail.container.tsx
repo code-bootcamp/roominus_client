@@ -188,10 +188,21 @@ export default function SignUpDetail() {
       window.Kakao.init("d5cc36e815debd3853b9a59ec62d144b");
       window.Kakao.isInitialized();
     };
+
+    new naver_id_login(
+      "1wXq1o0g2z9j6TSlaVB0",
+      "http://localhost:3000/signup/detail"
+    );
   }, []);
   return (
     <>
-      <Head></Head>
+      <Head>
+        <script
+          type="text/javascript"
+          src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+          charset="utf-8"
+        ></script>
+      </Head>
       <SignUpDetailUI
         googleEmail={googleEmail}
         kakaoEmail={kakaoEmail}
