@@ -11,11 +11,8 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 import { useEffect, useState } from "react";
 
-
-
 export default function HomeUI(props) {
   const [windowSize, setWindowSize] = useState(false);
-
 
   const handleResize = () => {
     if (window.innerWidth <= 767) {
@@ -35,7 +32,6 @@ export default function HomeUI(props) {
     };
   }, [windowSize]);
 
-  
   const settings = {
     // dots: true,
     arrows: false,
@@ -61,8 +57,7 @@ export default function HomeUI(props) {
     // infinite: true,
     // slidesToShow: 1,
   };
-  
-  
+
   return (
     <S.Wrapper>
       <S.BackGroundImg></S.BackGroundImg>
@@ -70,97 +65,96 @@ export default function HomeUI(props) {
         <S.TitleBox>
           <S.Title>매장</S.Title>
           <Link href={"/cafe"}>
-            <S.StoreListButton>더보기 ></S.StoreListButton>
+            <S.StoreListButton onClick={props.onClickMore}>
+              더보기 {`>`}
+            </S.StoreListButton>
           </Link>
         </S.TitleBox>
         {!windowSize && (
-        <S.StoreImgboxes>
-          {/* <S.StoreImgbox>
-            <S.StoreImgs src="/img/cafe/cafe.jpeg" alt="bestStore1" />
-            <S.StoreName>SOLVER - 홍대점</S.StoreName>
-            <S.LocationBox>
-              <S.Location />
-              홍대
-            </S.LocationBox>
-          </S.StoreImgbox> */}
-          {new Array(4).fill(1).map((el) => (
-            <span key={el}>
-              <CafeCard />
-            </span>
-          ))}
-        </S.StoreImgboxes>
+          <S.StoreImgboxes>
+            {props.data?.fetchCafes.slice(-4).map((el: any) => (
+              <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
+                <CafeCard el={el} />
+              </span>
+            ))}
+          </S.StoreImgboxes>
         )}
-         {windowSize && (
-        <S.StoreImgboxes>
-          {new Array(2).fill(1).map((el) => (
-            <span key={el}>
-              <CafeCard />
-            </span>
-          ))}
-        </S.StoreImgboxes>
+        {windowSize && (
+          <S.StoreImgboxes>
+            {new Array(2).fill(1).map((el) => (
+              <span key={el}>
+                <CafeCard />
+              </span>
+            ))}
+          </S.StoreImgboxes>
         )}
       </S.StoreBox>
       <S.ThemeBoxes>
         <S.TitleBox>
-        <S.Title>테마</S.Title>
+          <S.Title>테마</S.Title>
           <Link href={"/theme"}>
-            <S.ThemeListButton>더보기 ></S.ThemeListButton>
+            <S.ThemeListButton>더보기 {`>`}</S.ThemeListButton>
           </Link>
         </S.TitleBox>
         {!windowSize && (
-
-        <S.ThemeImgboxes>
-        {new Array(4).fill(1).map((el) => (
-          <span key={el}>
-          <S.ThemeImgbox>
-            <S.ThemeImgs src="/img/theme/월야애담.webp" alt="bestTheme1" />
-            <S.GenreTag>#미스테리</S.GenreTag>
-            {/* <S.RateBox> */}
-              <S.RateTitle>난이도</S.RateTitle>
-              <Rate
-                onChange={props.setValue}
-                value={props.value}
-                style={{
-                  color: "#8B54C1",
-                  position: "absolute",
-                  bottom: "0.75em",
-                  left: "3.2em",
-                }}
-              />
-            {/* </S.RateBox> */}
-          </S.ThemeImgbox>
-          </span>
-        ))}
-        </S.ThemeImgboxes>
-        )}
-         {windowSize && (
           <S.ThemeImgboxes>
-          {new Array(2).fill(1).map((el) => (
-            <span key={el}>
-            <S.ThemeImgbox>
-              <S.ThemeImgs src="/img/theme/월야애담.webp" alt="bestTheme1" />
-              <S.GenreTag>#미스테리</S.GenreTag>
-              {/* <S.RateBox> */}
-                <S.RateTitle>난이도</S.RateTitle>
-                <Rate
-                  onChange={props.setValue}
-                  value={props.value}
-                  style={{
-                    color: "#8B54C1",
-                    position: "absolute",
-                    bottom: "0.75em",
-                    left: "3.2em",
-                  }}
-                />
-              {/* </S.RateBox> */}
-            </S.ThemeImgbox>
-            </span>
-          ))}
+            {new Array(4).fill(1).map((el) => (
+              <span key={el}>
+                <S.ThemeImgbox>
+                  <S.ThemeImgs
+                    src="/img/theme/월야애담.webp"
+                    alt="bestTheme1"
+                  />
+                  <S.GenreTag>#미스테리</S.GenreTag>
+                  {/* <S.RateBox> */}
+                  <S.RateTitle>난이도</S.RateTitle>
+                  <Rate
+                    onChange={props.setValue}
+                    value={props.value}
+                    style={{
+                      color: "#8B54C1",
+                      position: "absolute",
+                      bottom: "0.75em",
+                      left: "3.2em",
+                    }}
+                  />
+                  {/* </S.RateBox> */}
+                </S.ThemeImgbox>
+              </span>
+            ))}
           </S.ThemeImgboxes>
-          )}
+        )}
+        {windowSize && (
+          <S.ThemeImgboxes>
+            {new Array(2).fill(1).map((el) => (
+              <span key={el}>
+                <S.ThemeImgbox>
+                  <S.ThemeImgs
+                    src="/img/theme/월야애담.webp"
+                    alt="bestTheme1"
+                  />
+                  <S.GenreTag>#미스테리</S.GenreTag>
+                  {/* <S.RateBox> */}
+                  <S.RateTitle>난이도</S.RateTitle>
+                  <Rate
+                    onChange={props.setValue}
+                    value={props.value}
+                    style={{
+                      color: "#8B54C1",
+                      position: "absolute",
+                      bottom: "0.75em",
+                      left: "3.2em",
+                    }}
+                  />
+                  {/* </S.RateBox> */}
+                </S.ThemeImgbox>
+              </span>
+            ))}
+          </S.ThemeImgboxes>
+        )}
       </S.ThemeBoxes>
       <S.AlarmCarouselBoxes>
-      <S.Title>룸인어스 공지사항</S.Title>
+        <S.Title>룸인어스 공지사항</S.Title>
         <S.StyledSlider {...settings}>
           <S.AlarmCarouselBox>
             <S.AlarmImgs src="/img/home/alarm1.png" alt="alarm1" />
@@ -179,8 +173,8 @@ export default function HomeUI(props) {
       <S.FaQBoxes>
         <S.Title>자주 묻는 질문(FAQ)</S.Title>
         {/* <S.FaQSmallBoxes> */}
-          <FAQ />
-          {/* <S.FaQBox>
+        <FAQ />
+        {/* <S.FaQBox>
             <S.FaQTitleBox>
               {props.isOpened1 && (
                 <S.OpenBtnArrow onClick={props.onClickOpenQuestion1} />
