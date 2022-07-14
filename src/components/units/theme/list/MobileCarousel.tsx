@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import Slider from "react-slick";
-import * as S from "./ThemeList.styles";
 
 const Wrapper = styled.div`
   width: 300px;
@@ -72,7 +71,7 @@ const Rank = styled.div`
   align-items: center;
 `;
 
-export default function MobileCarousel(props: any) {
+export default function MobileCarousel(props) {
   const settings = {
     infinite: true,
     slidesToShow: 1,
@@ -86,14 +85,17 @@ export default function MobileCarousel(props: any) {
   return (
     <Wrapper>
       <MySlider {...settings}>
-        {props.data?.fetchThemes.map((el: any, i: number) => (
-          <Theme key={i} src={el.mainImg} onClick={props.onClickTheme(el)}>
+        {props.data?.fetchThemes.map((el, i) => (
+          <Theme key={i} src="/img/theme/ex/1.png">
             <Rank>
               난이도
-              <S.Star disabled defaultValue={el.rank} />
+              <img width={20} src="/img/theme/rankstar.png" />
+              <img width={20} src="/img/theme/rankstar.png" />
+              <img width={20} src="/img/theme/rankstar.png" />
+              <img width={20} src="/img/theme/rankstar.png" />
+              <img width={20} src="/img/theme/rankstar.png" />
             </Rank>
-
-            <GenreTag>#{el?.genre.name}</GenreTag>
+            <GenreTag>#미스테리</GenreTag>
           </Theme>
         ))}
       </MySlider>
