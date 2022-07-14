@@ -34,6 +34,7 @@ export default function FindPasswordUI(props) {
               onChange={(e) => props.setValue("name", e.target.value)}
             />
           </S.NameBox>
+          <S.Error>{props.formState.errors.name?.message}</S.Error>
           <S.PhoneNoBox>
             <S.TitleBox>
               <S.PhoneNo>핸드폰 번호</S.PhoneNo>
@@ -46,6 +47,7 @@ export default function FindPasswordUI(props) {
               onChange={(e) => props.setValue("phoneNumber", e.target.value)}
             />
           </S.PhoneNoBox>
+          <S.Error>{props.formState.errors.phoneNumber?.message}</S.Error>
           <WebPurpleLoginButton type="submit" title="확인" />
         </S.Form>
       </S.Wrapper>

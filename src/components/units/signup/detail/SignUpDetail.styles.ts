@@ -7,10 +7,11 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1em;
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
 `;
 
@@ -172,7 +173,7 @@ export const PhoneNoBox = styled.div`
   align-items: flex-start;
   margin-bottom: 1.6em;
   @media ${breakPoints.mobile} {
-    width: 80%;
+    width: 100%;
     font-size: 1em;
   }
 `;
@@ -213,6 +214,7 @@ export const VerificationNoBox = styled.div`
   align-items: center;
   @media ${breakPoints.mobile} {
     margin-right: 1em;
+    font-size: 0.8em;
   }
 `;
 export const VerificationNoInput = styled.input`
@@ -257,4 +259,8 @@ export const SignUpBtns = styled.div`
   margin: auto;
   gap: 2em;
   margin-bottom: 1.4em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 1.2em;
+  }
 `;
