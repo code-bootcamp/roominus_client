@@ -13,6 +13,7 @@ export const Notice = styled.p`
 `;
 export const Container = styled.main`
   padding: 2em 0em 2em 0em;
+  width: 100%;
 
   @media ${breakPoints.mobile} {
     padding: 0.5em;

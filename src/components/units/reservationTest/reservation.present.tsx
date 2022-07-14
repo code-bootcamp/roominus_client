@@ -17,14 +17,6 @@ export default function ReservationUI(props: any) {
   const date = new Date();
   const MaxDate = date.setMonth(date.getMonth() + 3);
 
-  const people_pay = [
-    { people: 2, pay: 40000 },
-    { people: 3, pay: 55000 },
-    { people: 4, pay: 68000 },
-    { people: 5, pay: 87000 },
-    { people: 6, pay: 99000 },
-  ];
-
   return (
     <S.Container>
       <S.Wrapper>
@@ -80,9 +72,14 @@ export default function ReservationUI(props: any) {
                 </S.ImageInfoBox>
               </div>
             ) : (
-              <div>
+              <S.Container>
+                <S.BackBox onClick={props.onClickReset}>
+                  <S.Left />
+                  <span>처음으로 </span>
+                </S.BackBox>
+
                 <NoReservation />
-              </div>
+              </S.Container>
             )}
           </>
         ) : (
@@ -195,7 +192,7 @@ export default function ReservationUI(props: any) {
                   {props?.data?.fetchThemeMenus?.map((el: any) => (
                     <MenuItem
                       key={uuidv4()}
-                      value={el.people_number * 18000 - 10000}
+                      value={el.people_number * el.price}
                     >
                       {el.people_number}
                     </MenuItem>
@@ -210,7 +207,7 @@ export default function ReservationUI(props: any) {
                   label="적립금을 입력해주세요"
                   type="number"
                   fullWidth
-                  InputProps={{ inputProps: { min: 0, max: 5000 } }}
+                  InputProps={{ inputProps: { min: 0, max: 100 } }}
                   onChange={props.onChangePoint}
                   variant="outlined"
                 />
