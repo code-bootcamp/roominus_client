@@ -3,15 +3,19 @@ import styled from "@emotion/styled";
 
 export default function Tag(props: any) {
   const onKeyPress = (e) => {
+    const hashedtag = e.target.value.replace(
+      e.target.value,
+      `#${e.target.value}`
+    );
     if (e.key === "Enter") {
       console.log(props.tagList);
       //처음에 입력한 값
       if (props.tagList === undefined) {
-        props.setTagList([e.target.value]);
+        props.setTagList([hashedtag]);
         props.setTagItem("");
       } else {
         //추가로 입력한 값
-        props.setTagList((prev) => [...prev, e.target.value]);
+        props.setTagList((prev) => [...prev, hashedtag]);
         // addList.filter((tagList: any) => tagList !== e.target.value);
         props.setTagItem("");
       }
@@ -19,7 +23,8 @@ export default function Tag(props: any) {
   };
 
   const deleteTagItem = (e: any) => {
-    const deleteTagItem = e.target.parentElement.firstChild.innerText;
+    console.log(e);
+    const deleteTagItem = e.target.parentElement.firstChild.innerHTML;
     const filteredTagList = props.tagList.filter(
       (tagItem: any) => tagItem !== deleteTagItem
     );
