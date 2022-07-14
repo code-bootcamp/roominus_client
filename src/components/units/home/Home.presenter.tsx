@@ -81,9 +81,9 @@ export default function HomeUI(props) {
         )}
         {windowSize && (
           <S.StoreImgboxes>
-            {new Array(2).fill(1).map((el) => (
-              <span key={el}>
-                <CafeCard />
+            {props.data?.fetchCafes.slice(-2).map((el: any) => (
+              <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
+                <CafeCard el={el} />
               </span>
             ))}
           </S.StoreImgboxes>

@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import AdminCafeListUI from "./AdminCafeDetail.presenter";
 import { DELETE_CAFE, FETCH_CAFE } from "./AdminCafeDetail.query";
 
 export default function AdminCafeDetail() {
