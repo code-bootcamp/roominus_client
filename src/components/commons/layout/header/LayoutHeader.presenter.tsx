@@ -19,7 +19,7 @@ const styles = {
     top: "1.5em",
   },
   bmBurgerBars: {
-    background: "#373a47",
+    background: "#7c6db5",
   },
   bmBurgerBarsHover: {
     background: "#a90000",
@@ -100,7 +100,7 @@ export default function LayoutHeaderUI(props: any) {
           </S.MenuWrapper>
         </S.Wrapper>
         <S.Hamburger>
-          <Menu width={"80%"} right styles={styles} disableOverlayClick>
+          <Menu width={"50%"} right styles={styles} disableOverlayClick>
             <S.MenuMainItem id="home" className="menu-item" href="/home">
               메인
             </S.MenuMainItem>

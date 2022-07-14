@@ -14,6 +14,7 @@ const BannerImage = styled.div`
   justify-content: center;
 
   @media ${breakPoints.tablet} {
+    height: 10em;
   }
 
   @media ${breakPoints.mobile} {
