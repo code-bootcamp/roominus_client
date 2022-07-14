@@ -23,6 +23,7 @@ export const FETCH_THEME_MENUS = gql`
       price
       cafe {
         name
+        phone
         id
       }
       theme {
@@ -31,10 +32,38 @@ export const FETCH_THEME_MENUS = gql`
         intro_title
         intro_content
         agelimit
-        # genre {
-        #   name
-        # }
+        rank
+        like
       }
+      cafe {
+        name
+        phone
+        address
+        address_detail
+      }
+    }
+  }
+`;
+
+export const CREATE_RESERVATION = gql`
+  mutation createReservation(
+    $cafeId: String!
+    $userId: String!
+    $themeMenuId: String!
+    $createReservationInput: CreateReservationInput!
+    $createPaymentInput: CreatePaymentInput!
+  ) {
+    createReservation(
+      cafeId: $cafeId
+      userId: $userId
+      themeMenuId: $themeMenuId
+      createReservationInput: $createReservationInput
+      createPaymentInput: $createPaymentInput
+    ) {
+      _id
+      reservation_date
+      memo
+      status
     }
   }
 `;

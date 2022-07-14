@@ -7,12 +7,12 @@ import { FETCH_THEMES, FETCH_THEME_MENUS } from "./reservation.queries";
 export default function ReservationTest() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
 
-  const [theme, setTheme] = useState("");
-  const [cafe, setCafe] = useState("");
+  const [theme, setTheme] = useState();
+  const [cafe, setCafe] = useState();
   const [selectedDate, setSelectedDate] = useState();
-  const [time, setTime] = useState("");
-  const [headCount, setHeadCount] = useState("");
-  const [point, setPoint] = useState(500);
+  const [time, setTime] = useState();
+  const [headCount, setHeadCount] = useState();
+  const [point, setPoint] = useState(0);
   const [totalPrice, setTotalPrice] = useState();
 
   const { data: themesList } = useQuery(FETCH_THEMES);
@@ -20,23 +20,34 @@ export default function ReservationTest() {
     variables: { themeId: theme },
   });
 
+  const CafeResult = data?.fetchThemeMenus.map((el: any) => el.cafe.name);
+  const set1 = new Set(CafeResult);
+  const uniqeCafe = [...set1];
+
+  console.log("fetchThemeMenus:", data?.fetchThemeMenus);
+
+  const PeopleResult = data?.fetchThemeMenus.map((el: any) => el.people_number);
+  const set2 = new Set(PeopleResult);
+  const uniqePeople = [...set2];
+
   const dateFormatter = (str: any) => {
     return str;
   };
 
-  const onChangeTheme = (event) => {
+  const onClickReset = () => {
+    setTheme("");
+  };
+  const onChangeTheme = (event: any) => {
     setTheme(event.target.value);
   };
 
   const onChangeCafe = (event: any) => {
     setCafe(event.target.value);
-    console.log("cafe:", cafe);
   };
 
   const onChangeDate = (date: String, value: String) => {
     setSelectedDate(date);
     // setInputValue(value);
-
     // String 포맷으로 저장할 때 dayjs 사용할 것
   };
 
@@ -44,13 +55,17 @@ export default function ReservationTest() {
     setTime(event.target.value);
   };
 
-  const onChangeHeadCount = (event) => {
+  const onChangeHeadCount = (event: any) => {
     setHeadCount(event.target.value);
     setTotalPrice(event.target.value);
   };
 
-  const onChangePoint = (event) => {
+  const onChangePoint = (event: any) => {
     setPoint(event.target.value);
+  };
+
+  const onClickSubmit = () => {
+    console.log(theme, cafe, selectedDate, time, headCount, point);
   };
 
   return (
@@ -72,6 +87,10 @@ export default function ReservationTest() {
       data={data}
       themesList={themesList}
       theme={theme}
+      uniqeCafe={uniqeCafe}
+      uniqePeople={uniqePeople}
+      onClickSubmit={onClickSubmit}
+      onClickReset={onClickReset}
     />
   );
 }
