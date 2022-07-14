@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
-import { FormOutlined } from "@ant-design/icons";
 
 export const Container = styled.main`
   padding: 2em 0em 2em 0em;
@@ -16,11 +15,6 @@ export const TitleBox = styled.div`
   align-items: center;
   gap: 0.5em;
   padding-bottom: 1em;
-`;
-
-export const From = styled(FormOutlined)`
-  font-size: 2em;
-  padding-bottom: 0.5em;
 `;
 
 export const ContainerTitle = styled.h1`
@@ -54,9 +48,6 @@ export const Wrapper = styled.section`
   }
 
   @media ${breakPoints.mobile} {
-    width: 100%;
-    height: 100%;
-
     display: flex;
     flex-direction: column;
   }
@@ -144,8 +135,8 @@ export const Barcode = styled.div`
   }
   @media ${breakPoints.mobile} {
     transform: rotate(0deg);
-    width: 250px;
-    height: 35px;
+    width: 10em;
+    height: 10em;
   }
 `;
 

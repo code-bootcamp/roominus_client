@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { style } from "@mui/material/node_modules/@mui/system";
 
 import { breakPoints } from "../../../../commons/styles/media";
 

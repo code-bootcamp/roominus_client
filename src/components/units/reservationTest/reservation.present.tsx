@@ -10,13 +10,21 @@ import ReservationNotice from "./reservationNotice/reservationNotice.container";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 import NoReservation from "./Noreservation";
-// import NoReservation from "./Noreservation";
+import { v4 as uuidv4 } from "uuid";
+import { Rate } from "antd";
 
 export default function ReservationUI(props: any) {
   const date = new Date();
   const MaxDate = date.setMonth(date.getMonth() + 3);
 
-  console.log("length", props?.data?.fetchThemeMenus?.length);
+  const people_pay = [
+    { people: 2, pay: 40000 },
+    { people: 3, pay: 55000 },
+    { people: 4, pay: 68000 },
+    { people: 5, pay: 87000 },
+    { people: 6, pay: 99000 },
+  ];
+
   return (
     <S.Container>
       <S.Wrapper>
@@ -24,7 +32,10 @@ export default function ReservationUI(props: any) {
           <>
             {props?.data?.fetchThemeMenus?.length ? (
               <div>
-                {" "}
+                <S.BackBox onClick={props.onClickReset}>
+                  <S.Left />
+                  <span>처음으로 </span>
+                </S.BackBox>
                 <S.ImageInfoBox>
                   <S.ImageBox>
                     <S.Image
@@ -32,19 +43,39 @@ export default function ReservationUI(props: any) {
                     />
                   </S.ImageBox>
                   <S.InfoBox>
-                    <S.ThemeTitle>
-                      {props.data?.fetchThemeMenus[0]?.theme?.title}
-                    </S.ThemeTitle>
-                    <span>
+                    <S.ThemeTitleBox>
+                      <S.ThemeTitle>
+                        {props.data?.fetchThemeMenus[0]?.theme?.title}
+                      </S.ThemeTitle>
+                      <span>|</span>
+                      <S.ThemeCafe>
+                        {props.data?.fetchThemeMenus[0]?.cafe.address}{" "}
+                        {props.data?.fetchThemeMenus[0]?.cafe.name}
+                      </S.ThemeCafe>
+                    </S.ThemeTitleBox>
+
+                    <S.ThemeSub>
                       {props.data?.fetchThemeMenus[0]?.theme?.intro_title}
-                    </span>
-                    <span>
+                    </S.ThemeSub>
+                    <S.ThemeSub>
                       {props.data?.fetchThemeMenus[0]?.theme?.intro_content}
-                    </span>
-                    <span>
-                      {props.data?.fetchThemeMenus[0]?.theme?.agelimit}세 이상
-                      이용가능
-                    </span>
+                    </S.ThemeSub>
+                    <S.RateBox>
+                      <span>난이도 :</span>
+                      <Rate
+                        disabled
+                        defaultValue={
+                          props.data?.fetchThemeMenus[0]?.theme?.rank
+                        }
+                      />
+                    </S.RateBox>
+                    <S.ageBox>
+                      <span>
+                        {props.data?.fetchThemeMenus[0]?.theme?.agelimit}세 이상
+                        이용가능
+                      </span>
+                    </S.ageBox>
+                    <div></div>
                   </S.InfoBox>
                 </S.ImageInfoBox>
               </div>
@@ -61,52 +92,53 @@ export default function ReservationUI(props: any) {
         )}
 
         <>
-          {" "}
           <Grid container spacing={2}>
             <Grid item xs>
               <TextField
                 fullWidth
-                focused
+                required
                 select
-                label="테마를 선택해주세요"
+                label="테마 선택"
                 variant="outlined"
                 onChange={props.onChangeTheme}
                 value={props?.theme}
               >
-                {props?.themesList?.fetchThemes?.map((el) => (
-                  <MenuItem key={el.id} value={el.id}>
+                {props?.themesList?.fetchThemes?.map((el: any) => (
+                  <MenuItem key={uuidv4()} value={el.id}>
                     {el.title}
                   </MenuItem>
                 ))}
               </TextField>
             </Grid>
-          </Grid>
-          <Grid container spacing={2}>
             {props.theme && (
               <Grid item xs>
                 <TextField
                   fullWidth
+                  required
                   select
-                  label="매장을 선택해주세요"
+                  label="매장 선택"
                   variant="outlined"
                   onChange={props.onChangeCafe}
                   value={props.cafe}
                 >
-                  {props?.data?.fetchThemeMenus?.map((el, i) => (
-                    <MenuItem key={i} value={el.cafe.id}>
-                      {el.cafe.name}
+                  {props?.uniqeCafe.map((el: any) => (
+                    <MenuItem key={uuidv4()} value={el}>
+                      {el}
                     </MenuItem>
                   ))}
                 </TextField>
               </Grid>
             )}
-            {props.theme && (
+          </Grid>
+          <Grid container spacing={2}>
+            {props.cafe && (
               <Grid item xs>
                 {/* <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils}> */}
                 <MuiPickersUtilsProvider utils={MomentUtils}>
                   <KeyboardDatePicker
                     fullWidth
-                    placeholder="날짜를 선택해주세요"
+                    required
+                    placeholder="날짜 선택"
                     inputVariant="outlined"
                     margin="none"
                     autoOk={true}
@@ -128,60 +160,65 @@ export default function ReservationUI(props: any) {
                 </MuiPickersUtilsProvider>
               </Grid>
             )}
-          </Grid>
-          <Grid container spacing={2}>
             {props.cafe && (
               <Grid item xs>
                 <TextField
                   fullWidth
+                  required
                   select
                   value={props.time}
-                  label="방문 시간을 선택해주세요"
+                  label="방문 시간 선택"
                   variant="outlined"
                   onChange={props.onChangeTime}
                 >
-                  {props?.data?.fetchThemeMenus?.map((el, i) => (
-                    <MenuItem key={i} value={el.reservation_time}>
+                  {props?.data?.fetchThemeMenus?.map((el: any) => (
+                    <MenuItem key={uuidv4()} value={el.reservation_time}>
                       {el.reservation_time}
                     </MenuItem>
                   ))}
                 </TextField>
               </Grid>
             )}
-
+          </Grid>
+          <Grid container spacing={2}>
             {props.selectedDate && (
               <Grid item xs>
                 <TextField
                   fullWidth
+                  required
                   select
-                  label="인원을 선택해주세요"
+                  label="인원 선택"
                   variant="outlined"
                   onChange={props.onChangeHeadCount}
                   value={props.headCount}
                 >
-                  <MenuItem value={40000}>2인</MenuItem>
-                  <MenuItem value={55000}>3인</MenuItem>
-                  <MenuItem value={68000}>4인</MenuItem>
-                  <MenuItem value={87000}>5인</MenuItem>
-                  <MenuItem value={99000}>6인</MenuItem>
+                  {props?.data?.fetchThemeMenus?.map((el: any) => (
+                    <MenuItem
+                      key={uuidv4()}
+                      value={el.people_number * 18000 - 10000}
+                    >
+                      {el.people_number}
+                    </MenuItem>
+                  ))}
                 </TextField>
               </Grid>
             )}
             {props.selectedDate && (
               <Grid item xs>
                 <TextField
-                  label="사용할 적립금을 입력해주세요"
-                  multiline
-                  fullWidth
+                  id="standard-number"
+                  label="적립금을 입력해주세요"
                   type="number"
-                  variant="outlined"
-                  defaultValue={props.point}
+                  fullWidth
+                  InputProps={{ inputProps: { min: 0, max: 5000 } }}
                   onChange={props.onChangePoint}
+                  variant="outlined"
                 />
               </Grid>
             )}
           </Grid>
-          {props.time && (
+
+          {props.selectedDate && (
             <Grid container spacing={2}>
               <Grid item xs>
                 <TextField
@@ -189,57 +226,63 @@ export default function ReservationUI(props: any) {
                   required
                   variant="outlined"
                   id="outlined-required"
-                  label="이름을 입력해주세요"
-                  defaultValue="유저 이름 디폴트로 불러올것"
+                  label="방문자명"
+                  defaultValue="유저 이름"
                 />
               </Grid>
 
               <Grid item xs>
                 <TextField
                   id="filled-number"
-                  label="휴대폰 번호를 입력해주세요"
+                  label="휴대폰 번호"
                   type="tel"
                   fullWidth
                   required
                   InputLabelProps={{
                     shrink: true,
                   }}
-                  defaultValue="유저핸드폰 디폴트로 불러올것"
-                  variant="outlined"
-                />
-              </Grid>
-
-              <Grid item xs>
-                <TextField
-                  label="매장에 전달할 사항을 입력해주세요"
-                  multiline
-                  fullWidth
-                  rows={1}
+                  defaultValue="유저핸드폰"
                   variant="outlined"
                 />
               </Grid>
             </Grid>
           )}
+
+          {props.selectedDate && (
+            <Grid container spacing={2}>
+              <Grid item xs>
+                <TextField
+                  id="filled-memo"
+                  label="메모"
+                  type="text"
+                  fullWidth
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+            </Grid>
+          )}
+
           {props.totalPrice && (
             <>
               <S.Total>
                 <span>최종 결제 금액</span>
-                <span>
-                  {(props.totalPrice - props.point).toLocaleString()}원
-                </span>
+                <h4>{(props.totalPrice - props.point).toLocaleString()}원</h4>
               </S.Total>
 
               <S.InformationUse>
-                <h3>이용안내</h3>
+                <h2>이용안내</h2>
 
-                <div>
+                <S.CheckBox>
                   <input
                     type="checkbox"
                     ref={props.optionalCheckRef}
                     onChange={props.onChangeOptionalCheck}
                   />
                   <span>개인정보 수집에 동의합니다</span>
-                </div>
+                </S.CheckBox>
                 <p>
                   o 입장 전 설명을 위해 플레이타임 시작 10분 전까지 매장에
                   도착해주세요. 정시 입장이 어려운 경우, 다음 예약자에게 피해가
@@ -251,17 +294,23 @@ export default function ReservationUI(props: any) {
                   반드시 매장에 문의해 주세요.
                 </p>
 
-                <span>
-                  ■ 수집하는 개인정보 항목 : 룸인어스는 상담, 서비스 신청 등등을
-                  위해 아래와 같은 개인정보를 수집하고 있습니다. <br></br>ο
-                  수집항목 : 이름, 휴대전화번호 <br></br>ο 개인정보 수집방법 :
-                  홈페이지(예약)
-                </span>
+                <div>
+                  <p>
+                    ■ 수집하는 개인정보 항목 : 룸인어스는 상담, 서비스 신청
+                    등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.{" "}
+                    <br></br>ο 수집항목 : 이름, 휴대전화번호 <br></br>ο 개인정보
+                    수집방법 : 홈페이지(예약)
+                  </p>
+                </div>
               </S.InformationUse>
 
               <S.ButtonBox>
                 <WebBlackButton type="button" title="돌아가기" />
-                <WebPurpleButton type="button" title="결제하기" />
+                <WebPurpleButton
+                  onClick={props.onClickSubmit}
+                  type="button"
+                  title="결제하기"
+                />
               </S.ButtonBox>
             </>
           )}

@@ -13,10 +13,10 @@ const NAVIGATION_MENUS = [
 const styles = {
   bmBurgerButton: {
     position: "absolute",
-    width: "1.5em",
-    height: "1.5em",
-    right: "2.5em",
-    top: "1.4em",
+    width: "1.3em",
+    height: "1.3em",
+    right: "1em",
+    top: "1.5em",
   },
   bmBurgerBars: {
     background: "#373a47",
