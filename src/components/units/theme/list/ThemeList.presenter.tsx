@@ -128,11 +128,6 @@ export default function ThemeListUI(props: IThemeListProps) {
                       <S.Rank>
                         난이도
                         <S.Star disabled defaultValue={el.rank} />
-                        {/* <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" /> */}
                       </S.Rank>
                       <S.GenreTag>#{el?.genre.name}</S.GenreTag>
                     </S.Theme>
@@ -150,39 +145,6 @@ export default function ThemeListUI(props: IThemeListProps) {
                 </S.Flip>
               </div>
             ))}
-            {/* {themes.map((el, i) => (
-              <div key={i} onClick={onClickTheme}>
-                <S.Flip>
-                  <S.Card>
-                    <S.Theme src={el}>
-                      <S.ImgGradient />
-                      <S.Rank>
-                        난이도
-                        <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" />
-                        <img width={20} src="/img/theme/rankstar.png" />
-                      </S.Rank>
-                      <S.GenreTag>#미스테리</S.GenreTag>
-                    </S.Theme>
-                    <S.ThemeBack src="/img/theme/card-back.png">
-                      <S.ThemeTitle>
-                        그래도 피망은
-                        <br /> 먹기 싫단 말이에욧
-                      </S.ThemeTitle>
-                      <S.ThemeInfo>
-                        정원 1~2인
-                        <br />
-                        시간 65분
-                        <br />
-                        요금 20,000원
-                      </S.ThemeInfo>
-                    </S.ThemeBack>
-                  </S.Card>
-                </S.Flip>
-              </div>
-            ))} */}
           </S.ThemeList>
           <S.ButtonBox>
             <S.ShowMoreButton>더보기</S.ShowMoreButton>

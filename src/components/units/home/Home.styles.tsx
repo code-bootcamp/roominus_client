@@ -138,6 +138,15 @@ export const Location = styled(EnvironmentOutlined)`
   color: white;
 `;
 
+export const ThemeList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, auto));
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 export const ThemeBoxes = styled.div`
   width: 100%;
   display: flex;

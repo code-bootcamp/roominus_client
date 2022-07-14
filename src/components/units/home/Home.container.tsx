@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import HomeUI from "./Home.presenter";
-import { FETCH_CAFES } from "./Home.query";
+import { FETCH_CAFES, FETCH_THEMES } from "./Home.query";
 
 export default function Home() {
   const router = useRouter();
@@ -13,6 +13,9 @@ export default function Home() {
   const [isOpened3, setIsOpened3] = useState(false);
 
   const { data } = useQuery(FETCH_CAFES);
+
+  const { data: fetchThemes } = useQuery(FETCH_THEMES);
+
   console.log(data);
 
   const onClickOpenQuestion1 = () => {
@@ -46,6 +49,7 @@ export default function Home() {
     <HomeUI
       value={value}
       data={data}
+      fetchThemes={fetchThemes}
       setValue={setValue}
       isOpened1={isOpened1}
       isOpened2={isOpened2}

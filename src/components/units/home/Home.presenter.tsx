@@ -10,6 +10,7 @@ import FAQ from "./faq/Faq";
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 import { useEffect, useState } from "react";
+import ThemeCardComponent from "./themecard/ThemeCard";
 
 export default function HomeUI(props) {
   const [windowSize, setWindowSize] = useState(false);
@@ -97,60 +98,22 @@ export default function HomeUI(props) {
           </Link>
         </S.TitleBox>
         {!windowSize && (
-          <S.ThemeImgboxes>
-            {new Array(4).fill(1).map((el) => (
-              <span key={el}>
-                <S.ThemeImgbox>
-                  <S.ThemeImgs
-                    src="/img/theme/월야애담.webp"
-                    alt="bestTheme1"
-                  />
-                  <S.GenreTag>#미스테리</S.GenreTag>
-                  {/* <S.RateBox> */}
-                  <S.RateTitle>난이도</S.RateTitle>
-                  <Rate
-                    onChange={props.setValue}
-                    value={props.value}
-                    style={{
-                      color: "#8B54C1",
-                      position: "absolute",
-                      bottom: "0.75em",
-                      left: "3.2em",
-                    }}
-                  />
-                  {/* </S.RateBox> */}
-                </S.ThemeImgbox>
-              </span>
+          <S.ThemeList>
+            {props.fetchThemes?.fetchThemes.slice(0, 4).map((el) => (
+              <div key={el.id}>
+                <ThemeCardComponent el={el} />
+              </div>
             ))}
-          </S.ThemeImgboxes>
+          </S.ThemeList>
         )}
         {windowSize && (
-          <S.ThemeImgboxes>
-            {new Array(2).fill(1).map((el) => (
-              <span key={el}>
-                <S.ThemeImgbox>
-                  <S.ThemeImgs
-                    src="/img/theme/월야애담.webp"
-                    alt="bestTheme1"
-                  />
-                  <S.GenreTag>#미스테리</S.GenreTag>
-                  {/* <S.RateBox> */}
-                  <S.RateTitle>난이도</S.RateTitle>
-                  <Rate
-                    onChange={props.setValue}
-                    value={props.value}
-                    style={{
-                      color: "#8B54C1",
-                      position: "absolute",
-                      bottom: "0.75em",
-                      left: "3.2em",
-                    }}
-                  />
-                  {/* </S.RateBox> */}
-                </S.ThemeImgbox>
-              </span>
+          <S.ThemeList>
+            {props.fetchThemes?.fetchThemes.slice(0, 2).map((el) => (
+              <div key={el.id}>
+                <ThemeCardComponent el={el} />
+              </div>
             ))}
-          </S.ThemeImgboxes>
+          </S.ThemeList>
         )}
       </S.ThemeBoxes>
       <S.AlarmCarouselBoxes>
