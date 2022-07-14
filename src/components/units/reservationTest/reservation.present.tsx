@@ -10,6 +10,7 @@ import ReservationNotice from "./reservationNotice/reservationNotice.container";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 import NoReservation from "./Noreservation";
+import PaymentPage from "../payment";
 // import NoReservation from "./Noreservation";
 
 export default function ReservationUI(props: any) {
@@ -267,6 +268,7 @@ export default function ReservationUI(props: any) {
           )}
         </>
       </S.Wrapper>
+      <PaymentPage />
     </S.Container>
   );
 }
