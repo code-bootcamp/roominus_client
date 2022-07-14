@@ -13,6 +13,7 @@ export default function ThemeDetail() {
       themeId: router.query.id,
     },
   });
+  const themeId = router.query.id;
   console.log(data);
 
   const onClickList = () => {
@@ -34,13 +35,16 @@ export default function ThemeDetail() {
       alert(error.message);
     }
   };
-
+  const onClickMoveToCreateThemeMenu = () => {
+    router.push(`/admin/themeMenu/new/${themeId}`);
+  };
   return (
     <ThemeDetailUI
       ThemeDetail={data}
       onClickList={onClickList}
       onClickEdit={onClickEdit}
       onClickDelete={onClickDelete}
+      onClickMoveToCreateThemeMenu={onClickMoveToCreateThemeMenu}
     />
   );
 }

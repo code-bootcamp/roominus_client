@@ -20,16 +20,9 @@ export const CREATE_THEME = gql`
       like
       mainImg
       cafe {
-        id
         name
-        phone
-        intro_content
-        address
-        address_detail
-        coordinate
       }
       genre {
-        id
         name
       }
     }
