@@ -2,11 +2,10 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
-  padding: 2em 0px;
+  padding: 3em 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
-
   @media ${breakPoints.tablet} {
     display: flex;
     flex-direction: column;
@@ -41,8 +40,10 @@ export const ThemeInfoWrapper = styled.section`
 export const ThemeLeftBox = styled.div``;
 
 export const ThemeImg = styled.img`
+  border-radius: 8px;
   max-width: 370px;
   height: 560px;
+  box-shadow: 7px 7px 39px rgba(202, 136, 217, 0.25);
 
   @media ${breakPoints.tablet} {
     max-width: 300px;
@@ -57,7 +58,7 @@ export const ThemeRightBox = styled.div`
   width: 100%;
   max-width: 650px;
   max-height: 560px;
-  padding: 5px 20px;
+  padding: 5px 40px;
   float: right;
 
   @media ${breakPoints.tablet} {
@@ -95,14 +96,26 @@ export const GenreTag = styled.div`
 export const ThemeTitle = styled.h2`
   color: #26282c;
   font-size: 2.5em;
+  font-family: "GowunDodum-Regular";
+
+  @media ${breakPoints.tablet} {
+    font-size: 1.5em;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 1.3em;
+    width: auto;
+  }
 `;
 
 export const ThemeSubTitle = styled.h3`
-  padding: 15px 0px;
+  font-style: oblique;
+  padding: px 0px;
   font-size: 1.5em;
 `;
 
 export const ThemeContents = styled.h5`
+  font-style: oblique;
+  font-weight: 400;
   padding: 10px;
   border-top: 1px solid #c8c8c8;
   border-bottom: 1px solid #c8c8c8;
@@ -158,6 +171,9 @@ export const LimitBox = styled.div`
   flex-direction: column;
 `;
 
+export const AgeLimit = styled.div`
+  color: red;
+`;
 export const ThemeTime = styled.div``;
 export const ChargeBox = styled.div``;
 export const ThemeCharge = styled.div`
