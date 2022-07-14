@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { breakPoints } from "../../../../../commons/styles/media";
+import { Radio } from "antd";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import { Rate } from "antd";
 
 export const Wrapper = styled.section`
   background-color: #f2ebf5;
@@ -17,6 +21,10 @@ export const StarBox = styled.div`
   flex-direction: row;
 `;
 
+export const StarScore = styled(Rate)`
+  color: yellowgreen;
+`;
+
 export const Star = styled(FontAwesomeIcon)`
   color: #c6c8de;
   font-size: 3em;
@@ -31,11 +39,13 @@ export const Star = styled(FontAwesomeIcon)`
 `;
 
 export const EscapeRankBox = styled.div`
-  max-width: 30em;
+  /* max-width: 30em; */
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  gap: 1em;
+  /* flex-direction: row;
+  /* justify-content: space-between; */
+  /* align-items: center; */
 
   @media ${breakPoints.tablet} {
     display: flex;
@@ -57,7 +67,6 @@ export const IsEscapeBox = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  width: 100%;
 `;
 
 export const EscapeLabel = styled.label`
@@ -74,7 +83,7 @@ export const EscapeInput = styled.input`
 
 export const EscapeButton = styled.div`
   cursor: pointer;
-  width: 5em;
+  /* width: 5em; */
   display: absolute;
   flex-direction: row;
   justify-content: center;
@@ -87,7 +96,7 @@ export const EscapeButton = styled.div`
   border-radius: 8px;
   color: white;
   margin: 2px;
-  background-color: ${(props) => (props.checked ? "blue" : "white")};
+  background-color: ${(props) => (props.checked ? "#A08BF3" : "")};
 `;
 
 export const RankBox = styled.div`
@@ -96,14 +105,22 @@ export const RankBox = styled.div`
   justify-content: space-between;
   align-items: center;
   @media ${breakPoints.tablet} {
-    max-width: 300px;
   }
 
   @media ${breakPoints.mobile} {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* grid-template-columns: repeat(auto-fit, minmax(150px, auto)); */
-    /* grid-template-rows: repeat(auto-fill, minmax(0px, auto)); */
+  }
+`;
+
+export const RadioGroup = styled(ButtonGroup)``;
+
+export const RadioButton = styled(Button)`
+  border: 1px solid #a08bf3;
+  background-color: ${(props) =>
+    props.selected || props.checked ? "#A08BF3" : ""};
+  /* background-color: yellowgreen; */
+  color: #4a00e0;
+  :focus {
+    background-color: #a08bf3;
   }
 `;
 
