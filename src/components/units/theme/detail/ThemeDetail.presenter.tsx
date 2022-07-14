@@ -27,7 +27,9 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
             </S.RankTimeBox>
             <S.LimitBox>
               <S.ThemeTime>
-                나이 제한 : {props.data?.fetchTheme.agelimit}세
+                <S.AgeLimit>
+                  {props.data?.fetchTheme.agelimit}세 이상 이용 가능
+                </S.AgeLimit>
               </S.ThemeTime>
               <S.ChargeBox>
                 <S.ThemeCharge>이용시간 : 120분</S.ThemeCharge>
