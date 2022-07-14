@@ -11,6 +11,7 @@ export default function ThemeList() {
   const onClickToggled = () => {
     setIsToggled(!isToggled);
   };
+
   const onClickTheme = (el) => () => {
     console.log(el);
     router.push(`/theme/${el.id}`);
