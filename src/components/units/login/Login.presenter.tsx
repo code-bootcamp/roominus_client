@@ -2,9 +2,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import * as S from "./Login.styles";
 import WebPurpleLoginButton from "../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
+import { useEffect } from "react";
+import Head from "next/head";
+
 export default function LoginUI(props) {
+  useEffect(() => {
+    const naverIdLogin = new naver_id_login(
+      "1wXq1o0g2z9j6TSlaVB0",
+      "http://localhost:3000/signup/detail"
+    );
+    const state = naverIdLogin.getUniqState();
+    naverIdLogin.setButton("white", 0, 80);
+    naverIdLogin.setDomain("http://localhost:3000/");
+    naverIdLogin.setState(state);
+
+    naverIdLogin.init_naver_id_login();
+  }, []);
   return (
     <S.Wrapper>
+      <Head>
+        <script
+          type="text/javascript"
+          src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="http://code.jquery.com/jquery-1.11.3.min.js"
+        ></script>
+      </Head>
       <S.Title>로그인</S.Title>
       <S.Form onSubmit={props.handleSubmit(props.onSubmitLogin)}>
         <S.IDdBox>
@@ -54,7 +79,7 @@ export default function LoginUI(props) {
       </S.SignUpBox>
       <S.Divider></S.Divider>
       <S.SocialLoginBtns>
-        <S.SocialLoginBtn>
+        <S.SocialLoginBtn id="naver_id_login" onClick={props.NaverLogin}>
           <S.SocialLoginLogo
             src="/img/login/naverlogo.png"
             alt="naverSocialLogo"

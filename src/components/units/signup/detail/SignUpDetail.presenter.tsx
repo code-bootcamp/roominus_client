@@ -1,26 +1,12 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as S from "./SignUpDetail.styles";
-import Head from "next/head";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 export default function SignUpDetailUI(props) {
-  const router = useRouter();
-  useEffect(() => {
-    const script = document.createElement("script"); // <script></script>
-    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      window.Kakao.init("d5cc36e815debd3853b9a59ec62d144b");
-      window.Kakao.isInitialized();
-    };
-  }, []);
   return (
     <S.Wrapper>
-      <Head></Head>
       <S.Title>기본정보</S.Title>
       <S.FormFirst onSubmit={props.handleSubmit(props.onSubmitSignup)}>
         <S.EmailBox>
