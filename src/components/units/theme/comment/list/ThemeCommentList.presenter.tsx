@@ -17,14 +17,11 @@ export default function ThemeCommentListUI(props) {
       >
         <S.CommentList>
           {props.data?.fetchThemeReviews.map((el: any, index: any) => (
-            <div key={el._id}>
+            <div key={el.id}>
               <ThemeCommentListUIItem setIsEdit={props.setIsEdit} el={el} />
             </div>
           ))}
         </S.CommentList>
-        <ThemeCommentListUIItem />
-        <ThemeCommentListUIItem />
-        <ThemeCommentListUIItem />
       </InfiniteScroll>
     </S.Wrapper>
   );

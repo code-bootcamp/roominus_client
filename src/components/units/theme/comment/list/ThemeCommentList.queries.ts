@@ -8,10 +8,17 @@ export const FETCH_THEME_REVIEWS = gql`
       rank
       content
       createdAt
+      star
       user {
         name
         isserviceprovider
       }
     }
+  }
+`;
+
+export const DELETE_THEME_REVIEW = gql`
+  mutation deleteThemeReview($themeReviewId: String!) {
+    deleteThemeReview(themeReviewId: $themeReviewId)
   }
 `;

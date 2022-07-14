@@ -26,10 +26,24 @@ export const WriterImage = styled.div`
   border-radius: 100%;
 `;
 export const CommentRightBox = styled.div`
+  width: 100%;
   padding: 10px;
 `;
+
+export const NameToolBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
 export const WriterName = styled.div`
   font-weight: 700;
+`;
+
+export const ToolBox = styled.div`
+  color: #5c4a7e;
+  font-size: 1em;
 `;
 export const Star = styled.span``;
 export const CreatedAt = styled.span`
@@ -39,6 +53,7 @@ export const EscapeRankBox = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px 0px;
+  align-items: center;
 `;
 export const EscapeButton = styled.button`
   display: flex;
