@@ -55,8 +55,8 @@ const CafeCard = (props) => (
       cover={
         <img
           alt="example"
-          src={props.el.mainImg}
-          style={{ height: 200, cursor: "pointer" }}
+          src={props.el?.mainImg}
+          style={{ height: 250, cursor: "pointer" }}
         />
       }
       // 관리자 권한일 때 사용하기
@@ -68,12 +68,12 @@ const CafeCard = (props) => (
     >
       <LocationBox>
         <LocationIcon src="/img/cafe/locationIcon.png" />
-        <Location>{props.el.address}</Location>
+        <Location>{props.el?.address}</Location>
       </LocationBox>
       <Meta
         // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title={props.el.name}
-        description={props.el.phone}
+        title={props.el?.name}
+        description={props.el?.phone}
       />
     </Card>
   </Wrapper>
