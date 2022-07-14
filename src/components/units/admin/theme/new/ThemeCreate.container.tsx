@@ -34,6 +34,7 @@ export default function ThemeCreate(props) {
             mainImg: imgurl,
             subImgs: [imgurl],
             agelimit: Number(data.agelimit),
+            peoplelimit: Number(data.peoplelimit),
           },
         },
       });
@@ -50,6 +51,8 @@ export default function ThemeCreate(props) {
     if (data.intro_title) updateThemeInput.intro_title = data.intro_title;
     if (data.intro_content) updateThemeInput.intro_content = data.intro_content;
     if (data.agelimit) updateThemeInput.agelimit = Number(data.agelimit);
+    if (data.peoplelimit)
+      updateThemeInput.peoplelimit = Number(data.peoplelimit);
     if (imgurl) updateThemeInput.mainImg = imgurl;
     if (imgurl) updateThemeInput.subImg = [imgurl];
     try {

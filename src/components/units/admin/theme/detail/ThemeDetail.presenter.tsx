@@ -26,6 +26,9 @@ export default function ThemeDetailUI(props) {
         />
         <WebSmallPurpleButton onClick={props.onClickDelete} title="삭제하기" />
       </S.ButtonBox>
+      <button onClick={props.onClickMoveToCreateThemeMenu}>
+        테마 메뉴 등록하러 가기
+      </button>
     </S.Wrapper>
   );
 }
