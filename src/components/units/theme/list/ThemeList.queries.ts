@@ -10,6 +10,10 @@ export const FETCH_THEMES = gql`
       intro_content
       agelimit
       like
+      mainImg
+      genre {
+        name
+      }
     }
   }
 `;
