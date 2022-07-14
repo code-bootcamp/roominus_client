@@ -46,11 +46,17 @@ export const Logo = styled.img`
   width: 13em;
   /* height: 2.5em; */
   @media ${breakPoints.tablet} {
-    height: 2.8em;
+    height: 3em;
+    position: relative;
+    top: 0.8em;
+    left: 0em;
   }
 
   @media ${breakPoints.mobile} {
-    height: 2.8em;
+    height: 3em;
+    position: relative;
+    top: 0.8em;
+    left: 0em;
   }
 `;
 export const MenuWrapper = styled.ul`
@@ -90,7 +96,7 @@ export const Hamburger = styled.div`
     display: block;
     position: absolute;
     top: -0.5em;
-    right: 1em;
+    right: 0em;
     font-size: 1em;
     width: 100px;
     height: 100px;
