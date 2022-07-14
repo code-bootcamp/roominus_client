@@ -85,6 +85,7 @@ export default function AdminCafeNew(props) {
     if (data.address) updateCafeInput.address = data.address;
     if (data.address_detail)
       updateCafeInput.address_detail = data.address_detail;
+    if (imgurl) updateCafeInput.mainImg = imgurl;
 
     try {
       const result = await updateCafe({
