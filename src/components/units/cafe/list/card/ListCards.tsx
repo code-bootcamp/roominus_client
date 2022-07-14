@@ -52,7 +52,7 @@ const ListCards = (props) => (
         <img
           alt="No Image"
           src={props.el.mainImg}
-          style={{ height: 200, cursor: "pointer" }}
+          style={{ height: 200, cursor: "pointer", borderColor: "#c2c2c2" }}
         />
       }
       // 관리자 권한일 때 사용하기
