@@ -1,4 +1,4 @@
-import ThemeCreate from "../../../../../../src/components/units/admin/theme/new/ThemeCreate.container";
+import ThemeCreate from "../../../../../src/components/units/admin/theme/new/ThemeCreate.container";
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 const FETCH_THEME = gql`
@@ -10,8 +10,15 @@ const FETCH_THEME = gql`
       intro_title
       intro_content
       agelimit
+      peoplelimit
       like
       mainImg
+      cafe {
+        name
+      }
+      genre {
+        name
+      }
     }
   }
 `;
@@ -24,7 +31,7 @@ export default function AdminThemeEditPage() {
     },
   });
 
-  console.log(ThemeUpdateData);
+  console.log("updatedata", ThemeUpdateData);
   return (
     <>
       {loading ? (

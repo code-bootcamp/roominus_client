@@ -20,7 +20,7 @@ export default function ThemeDetail() {
   };
 
   const onClickEdit = (themeId) => () => {
-    router.push(`/admin/theme/detail/${themeId}/edit`);
+    router.push(`/admin/theme/${themeId}/edit`);
   };
 
   const onClickDelete = async () => {

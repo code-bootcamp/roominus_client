@@ -6,7 +6,7 @@ export default function ThemeList() {
   const router = useRouter();
   const { data } = useQuery(FETCH_THEMES);
   const onClickMoveToThemeDetail = (themeId) => () => {
-    router.push(`/admin/theme/detail/${themeId}`);
+    router.push(`/admin/theme/${themeId}`);
   };
 
   return (

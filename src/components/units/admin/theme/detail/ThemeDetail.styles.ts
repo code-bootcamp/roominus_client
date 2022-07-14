@@ -14,7 +14,7 @@ export const Title = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 15em;
+  width: 80%;
   height: 15em;
   margin-right: 1em;
   background-color: gray;
@@ -28,7 +28,8 @@ export const InfoBox = styled.div`
 `;
 
 export const Info = styled.div`
-  font-size: 1em;
+  font-size: 0.9em;
+  width: 100%;
 `;
 
 export const ButtonBox = styled.div`

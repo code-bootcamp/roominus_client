@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Modal } from "antd";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 export default function ThemeCreate(props) {
   const [createThemegql] = useMutation(CREATE_THEME);
@@ -34,24 +35,31 @@ export default function ThemeCreate(props) {
             mainImg: imgurl,
             subImgs: [imgurl],
             agelimit: Number(data.agelimit),
+            peoplelimit: Number(data.peoplelimit),
           },
         },
       });
-      Modal.success({ content: "테마등록 성공" });
-      router.push(`/admin/theme/detail/${result.data.createTheme.id}`);
+      Swal.fire({
+        title: "테마 등록 성공🥹",
+      });
+      router.push(`/admin/theme/${result.data.createTheme.id}`);
     } catch (error) {
-      Modal.error({ content: error.message });
+      Swal.fire({
+        title: "error",
+        text: error.message,
+      });
     }
   };
   const onSubmitUpdateTheme = async (data) => {
     const updateThemeInput = {};
     if (data.title) updateThemeInput.title = data.title;
-    if (data.rank) updateThemeInput.rank = data.rank;
+    if (value) updateThemeInput.rank = value;
     if (data.intro_title) updateThemeInput.intro_title = data.intro_title;
     if (data.intro_content) updateThemeInput.intro_content = data.intro_content;
     if (data.agelimit) updateThemeInput.agelimit = Number(data.agelimit);
+    if (data.peoplelimit)
+      updateThemeInput.peoplelimit = Number(data.peoplelimit);
     if (imgurl) updateThemeInput.mainImg = imgurl;
-    if (imgurl) updateThemeInput.subImg = [imgurl];
     try {
       const result = await updateThemegql({
         variables: {
@@ -67,14 +75,19 @@ export default function ThemeCreate(props) {
           },
         ],
       });
-      Modal.success({ content: "수정 성공❤️" });
-      router.push(`/admin/theme/detail/${result.data.fetchTheme.id}`);
-    } catch (error) {
-      Modal.error({ content: error.message });
+      Swal.fire({
+        title: "수정 성공🥹",
+      });
+      router.push(`/admin/theme/${router.query.id}`);
+    } catch (error: any) {
+      Swal.fire({
+        title: "error",
+        text: error.message,
+      });
     }
   };
 
-  const upload = (file) => {
+  const upload = (file: any) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", "tyx7y8ot");

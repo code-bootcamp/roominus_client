@@ -11,6 +11,12 @@ export const FETCH_THEMES = gql`
       agelimit
       like
       mainImg
+      cafe {
+        name
+      }
+      genre {
+        name
+      }
     }
   }
 `;

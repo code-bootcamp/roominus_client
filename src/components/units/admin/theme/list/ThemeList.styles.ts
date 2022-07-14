@@ -26,7 +26,7 @@ export const ThemeItemWrapper = styled.section`
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  border: 1px solid #d9d6e0;
   margin: 1em;
   border-radius: 20px;
   padding: 2em 2em 2em 2em;
@@ -59,12 +59,14 @@ export const MainTitle = styled.div`
   width: 100%;
   text-align: center;
   font-size: 1.5em;
+  letter-spacing: -3px;
 `;
 export const SubTitle = styled.div`
   height: 25%;
   width: 100%;
   text-align: center;
   font-size: 1.1em;
+  letter-spacing: -2px;
 `;
 export const RestDetailInfo = styled.div`
   width: 100%;
