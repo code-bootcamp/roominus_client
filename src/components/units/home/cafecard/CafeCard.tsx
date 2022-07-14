@@ -14,15 +14,17 @@ const Wrapper = styled.div`
     transform: translateY(-0.3em);
   }
   transition: all 250ms ease-in-out;
+  border: 1px solid #c2c2c2;
 `;
 
 const LocationBox = styled.div`
-  width: 4.5em;
-  height: 2.2em;
+  width: 4.7em;
+  height: 2.5em;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  /* align-items: center; */
   position: absolute;
   z-index: 1;
   top: 1.5em;
@@ -32,22 +34,28 @@ const LocationBox = styled.div`
 `;
 
 const Location = styled.h4`
+  padding-top: 0.4em;
+  height: 2.5em;
   color: white;
 `;
 
 const LocationIcon = styled.img`
-  width: 0.8em;
+  width: 1.1em;
   height: 1em;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  /* background-color: pink; */
 `;
 
-const CafeCard = () => (
+const CafeCard = (props) => (
   <Wrapper>
     <Card
-      style={{ width: "100%", borderColor: "#c2c2c2", position: "relative" }}
+      style={{ width: "100%", position: "relative" }}
       cover={
         <img
           alt="example"
-          src="/img/cafe/room.webp"
+          src={props.el.mainImg}
           style={{ height: 200, cursor: "pointer" }}
         />
       }
@@ -60,12 +68,12 @@ const CafeCard = () => (
     >
       <LocationBox>
         <LocationIcon src="/img/cafe/locationIcon.png" />
-        <Location>홍대</Location>
+        <Location>{props.el.address}</Location>
       </LocationBox>
       <Meta
         // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title="엑스케이프"
-        description="02-1234-5678"
+        title={props.el.name}
+        description={props.el.phone}
       />
     </Card>
   </Wrapper>

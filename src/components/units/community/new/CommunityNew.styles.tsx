@@ -14,13 +14,19 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
-  padding: 2em 0em;
+  padding: 0em 0em 2em 0em;
   /* background-color: red; */
 `;
 
 export const Title = styled.h1`
-  font-size: 2em;
+  /* font-size: 2em; */
   /* align-self: center; */
+  height: 100px;
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const HalfBox = styled.div`

@@ -13,7 +13,7 @@ export default function CommunityNewUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
-        {/* <S.Title>자유게시물 등록</S.Title> */}
+        <S.Title>자유게시글 작성</S.Title>
         <form onSubmit={"return false"}>
           <S.HalfBox>
             <S.Picture

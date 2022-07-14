@@ -6,7 +6,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export default function CommunityListUI(props) {
   return (
     <S.Wrapper>
-      {/* <S.Title>탈출인증게시판</S.Title> */}
+      <S.Title>전체글보기</S.Title>
       <S.Etc>
         {new Array(8).fill(1).map((el) => (
           <span key={el}>

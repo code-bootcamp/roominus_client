@@ -38,7 +38,7 @@ export const SearchWrapper = styled.section`
 export const SearchBox = styled.div`
   width: 70vw;
   height: 70%;
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -104,11 +104,12 @@ export const DetailTitle = styled.h3`
 export const LocationButton = styled.button`
   width: 15%;
   height: 40px;
-  margin-right: 1em;
+  margin-right: 0.5em;
   border: none;
   background-color: #a3a8b7;
   color: white;
   font-weight: 500;
+  border-radius: 5px;
   /* gap: 10px; */
 
   @media ${breakPoints.mobile} {
@@ -126,7 +127,8 @@ export const LocationSelect = styled.select`
     border: none;
     outline: none;
     background-color: white;
-    width: 16em;
+    /* width: 21em; */
+    width: 80%;
     height: 40px;
   }
 `;
@@ -150,7 +152,8 @@ export const DetailContents = styled.input`
   padding-left: 0.5em;
 
   @media ${breakPoints.mobile} {
-    width: 16em;
+    width: 80%;
+    /* width: 21em; */
     /* height: 20px; */
   }
 `;
@@ -222,7 +225,7 @@ export const Etc = styled.div`
   width: 100%;
   /* background-color: lightgreen; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   /* display: flex;
   flex-direction: row-reverse;
@@ -239,6 +242,7 @@ export const Etc = styled.div`
   @media ${breakPoints.mobile} {
     margin-top: 2em;
     width: 75%;
+
     display: grid;
     grid-template-columns: 1fr;
   }

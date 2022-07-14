@@ -28,7 +28,7 @@ export const SearchWrapper = styled.section`
 
 export const CafePicture = styled.img`
   width: 38em;
-  height: 25em;
+  height: 35em;
   background-color: pink;
   object-fit: cover;
 

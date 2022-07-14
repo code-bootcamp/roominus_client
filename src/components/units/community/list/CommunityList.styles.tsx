@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2em 0em;
+  padding: 0em 0em 2em 0em;
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -42,8 +42,14 @@ export const Etc = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 2em;
-  align-self: center;
+  /* font-size: 2em; */
+  /* align-self: center; */
+  height: 100px;
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const ItemBackground = styled.div`
@@ -68,7 +74,7 @@ export const ItemBackground = styled.div`
 export const Picture = styled.img`
   width: 100%;
   height: 220px;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
   cursor: pointer;
 `;
 
