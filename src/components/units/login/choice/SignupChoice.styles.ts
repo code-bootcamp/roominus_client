@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -6,6 +7,12 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 export const PersonalSignupBox = styled.div`
   width: 40%;
@@ -14,6 +21,11 @@ export const PersonalSignupBox = styled.div`
   flex-direction: column;
   padding: 5em 5em 5em 5em;
   margin: auto;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 0.8em;
+  }
 `;
 
 export const PersonalSignupBtn = styled.button`
@@ -55,6 +67,11 @@ export const StoreOwnerSignupBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 5em 5em 5em 5em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 0.8em;
+  }
 `;
 
 export const StoreOwnerSignupBtn = styled.button`

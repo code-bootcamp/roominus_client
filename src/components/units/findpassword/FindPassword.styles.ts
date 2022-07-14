@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 80%;
@@ -6,19 +7,37 @@ export const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid gray;
   margin: auto;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 0.5em;
+  }
 `;
 export const Title = styled.h1`
   font-size: 2.5em;
+  margin-top: 1em;
+  @media ${breakPoints.mobile} {
+    font-size: 3em;
+  }
 `;
 
+export const Error = styled.div`
+  color: red;
+  font-size: 1em;
+  @media ${breakPoints.mobile} {
+    font-size: 1.3em;
+  }
+`;
 export const TabBtns = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    font-size: 1.6em;
+  }
 `;
 export const TabFirst = styled.button`
   width: 45%;
@@ -56,6 +75,9 @@ export const NameBox = styled.div`
 `;
 export const Name = styled.div`
   font-size: 1.2em;
+  @media ${breakPoints.mobile} {
+    font-size: 1.8em;
+  }
 `;
 export const NameInput = styled.input`
   width: 100%;
@@ -64,6 +86,9 @@ export const NameInput = styled.input`
   border-bottom: 1px solid lightgray;
   outline: none;
   font-size: 1.3em;
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
 
 export const PhoneNoBox = styled.div`
@@ -74,6 +99,9 @@ export const PhoneNoBox = styled.div`
 `;
 export const PhoneNo = styled.div`
   font-size: 1.2em;
+  @media ${breakPoints.mobile} {
+    font-size: 1.8em;
+  }
 `;
 export const PhoneNoInput = styled.input`
   width: 100%;
@@ -82,6 +110,9 @@ export const PhoneNoInput = styled.input`
   border-bottom: 1px solid lightgray;
   outline: none;
   font-size: 1.3em;
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
 
 export const TitleBox = styled.div`
@@ -93,4 +124,7 @@ export const ImportantInfos = styled.span`
   margin-left: 0.3em;
   font-size: 1.4em;
   color: red;
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+  }
 `;

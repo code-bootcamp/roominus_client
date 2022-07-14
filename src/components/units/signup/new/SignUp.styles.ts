@@ -11,6 +11,11 @@ export const Wrapper = styled.section`
     width: 100%;
     height: 100%;
     font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    text-align: center;
   }
 `;
 
@@ -25,12 +30,33 @@ export const WarningBox = styled.div`
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 1em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: auto;
+    text-align: center;
+  }
 `;
 export const Warning = styled.pre`
   text-align: center;
   margin: auto;
   font-size: 1em;
   margin-bottom: 1.4em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1.4em;
+  }
 `;
 export const CheckBox = styled.div`
   margin-bottom: 1em;
@@ -73,10 +99,17 @@ export const NecessityInfoBox = styled.div`
   padding: 1em 1em 1em 1em;
   border-radius: 10px;
   margin-bottom: 1em;
+
   @media ${breakPoints.mobile} {
-    width: 90%;
-    font-size: 0.5em;
-    padding: 4em 4em 4em 4em;
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+    padding: 2em 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    margin-bottom: 1.4em;
   }
 `;
 export const NecessityTitleBox = styled.div`
@@ -107,8 +140,8 @@ export const NecessityCheckBox = styled.input`
   width: 1em;
   height: 1em;
   @media ${breakPoints.mobile} {
-    width: 2em;
-    height: 2em;
+    width: 1.3em;
+    height: 1.3em;
   }
 `;
 export const NecessityCheckBoxTitle = styled.span`
@@ -130,6 +163,17 @@ export const OptionalInfoBox = styled.div`
     width: 90%;
     font-size: 0.5em;
     padding: 4em 4em 4em 4em;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+    padding: 2em 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    margin-bottom: 1.4em;
   }
 `;
 export const OptionalTitleBox = styled.div`
@@ -160,8 +204,8 @@ export const OptionalCheckBox = styled.input`
   width: 1em;
   height: 1em;
   @media ${breakPoints.mobile} {
-    width: 2em;
-    height: 2em;
+    width: 1.3em;
+    height: 1.3em;
   }
 `;
 export const OptionalCheckBoxTitle = styled.span`
@@ -177,5 +221,14 @@ export const ButtonBox = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    width: 70%;
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2em;
+  }
 `;

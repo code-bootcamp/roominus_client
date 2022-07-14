@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 80%;
@@ -7,6 +8,11 @@ export const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   margin: auto;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 0.8em;
+  }
 `;
 export const IDinfoBox = styled.div`
   width: 100%;
@@ -28,4 +34,11 @@ export const LoginBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media ${breakPoints.mobile} {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.8em;
+  }
 `;
