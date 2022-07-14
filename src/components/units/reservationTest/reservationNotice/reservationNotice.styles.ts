@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { FiArrowRight } from "react-icons/Fi";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.div`
@@ -48,8 +47,8 @@ export const Step = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 5em;
-    height: 5em;
+    width: 4.5em;
+    height: 4.5em;
   }
 `;
 
@@ -79,16 +78,15 @@ export const Guide = styled.span`
   }
 `;
 
-export const Arrow = styled(FiArrowRight)`
-  font-size: 3.8em;
+export const Arrow = styled.img`
   margin: 0em 0.2em 0em 0.2em;
 
   @media ${breakPoints.tablet} {
-    font-size: 3.5em;
+    width: 5em;
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 2.5em;
+    width: 3em;
   }
 `;
 
@@ -110,11 +108,12 @@ export const SelectGuideBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 1em 0em 1em 0em;
+  padding: 3em 0em 1em 0em;
 `;
 
 export const ThemeGuide = styled.span`
   font-size: 1.5em;
+  font-family: "GowunDodum-Regular";
 `;
 
 export const RecommendationBox = styled.div`
