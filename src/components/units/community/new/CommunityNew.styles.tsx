@@ -13,19 +13,18 @@ export const Wrapper = styled.section`
   width: 90%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   padding: 2em 0em;
-  /* background-color: #e41b1b; */
+  /* background-color: red; */
 `;
 
-export const Title = styled.h1`
-  font-size: 2em;
-  /* align-self: center; */
-`;
+// export const Title = styled.h1`
+//   font-size: 2em;
+//   align-self: center;
+// `;
 
 export const HalfBox = styled.div`
   width: 100%;
-  /* height: 25em; */
+  height: 25em;
   margin-bottom: 2em;
   display: flex;
   flex-direction: row;
@@ -42,11 +41,11 @@ export const HalfBox = styled.div`
 `;
 
 export const Picture = styled.img`
-  width: 25em;
-  height: 25em;
+  width: 80%;
+  /* width: 50em;
+  height: 30em; */
   margin-right: 2em;
   border-radius: 10px;
-  /* background-color: #c2c2c2; */
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -55,7 +54,7 @@ export const Picture = styled.img`
 
 export const HalfRightBox = styled.div`
   width: 100%;
-  /* height: 25em; */
+  height: 25em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,27 +67,18 @@ export const HalfRightBox = styled.div`
 
 export const InfoBox = styled.div`
   width: 100%;
-
-  /* height: 6em; */
+  height: 6em;
   /* margin-bottom: 2em; */
   /* background-color: pink; */
 `;
 
 export const InfoTitle = styled.h3``;
 
-export const Error = styled.div`
-  font-size: 0.8em;
-  margin-bottom: 0.5em;
-  color: red;
-`;
-
-export const DropZoneInfoBox = styled.div`
-  /* height: 100%; */
-`;
+export const DropZoneInfoBox = styled.div``;
 
 export const DropBox = styled.div`
   width: 100%;
-  height: 8em;
+  height: 10em;
   border: 1px solid #a3a8b7;
   border-radius: 10px;
   display: flex;
@@ -96,7 +86,6 @@ export const DropBox = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(217, 214, 224, 0.25);
-  cursor: pointer;
 `;
 
 export const Essential = styled.span`
@@ -112,12 +101,11 @@ export const InfoInput = styled.input`
   border-radius: 5px;
   outline: none;
   box-shadow: 0px 4px rgba(217, 214, 224, 0.25);
-  margin-bottom: 1em;
 `;
 
 export const ContentsInfoBox = styled.div`
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   margin-bottom: 2em;
   display: flex;
   flex-direction: column;
