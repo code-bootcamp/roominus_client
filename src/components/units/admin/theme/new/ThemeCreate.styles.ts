@@ -27,13 +27,26 @@ export const InputsTitle = styled.span`
   margin-top: 2em;
   font-size: 1.3em;
 `;
+
+export const MyInput = styled.input`
+  width: 100%;
+  height: 3em;
+  border: none;
+  padding: 0.5em;
+  border: 1px solid #a3a8b7;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0px 4px rgba(217, 214, 224, 0.25);
+`;
+
 export const ImgAddBtn = styled(PlusCircleOutlined)`
   font-size: 2em;
+  color: #7457e8;
 `;
 export const ImgBox = styled.div`
   width: 10em;
   height: 10em;
-  background-color: #4a00e098;
+  background-color: #d9d6e0;
   display: flex;
   flex-direction: row;
   align-items: center;

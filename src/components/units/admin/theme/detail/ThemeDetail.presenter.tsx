@@ -9,12 +9,15 @@ export default function ThemeDetailUI(props) {
       <S.InfoBox>
         <S.Img src={props.ThemeDetail?.fetchTheme.mainImg} alt="No Image" />
         <S.Info>
-          <div>테마제목: {props.ThemeDetail?.fetchTheme.title}</div>
-          <div>테마서브제목: {props.ThemeDetail?.fetchTheme.intro_title}</div>
+          <div>제목: {props.ThemeDetail?.fetchTheme.title}</div>
+          <div>부제목: {props.ThemeDetail?.fetchTheme.intro_title}</div>
+          <div>내용: {props.ThemeDetail?.fetchTheme.intro_content}</div>
           <div>난이도: {props.ThemeDetail?.fetchTheme.rank}</div>
-          <div>테마내용: {props.ThemeDetail?.fetchTheme.intro_content}</div>
-          <div>연령제한: {props.ThemeDetail?.fetchTheme.agelimit}</div>
+          <div>나이 제한: {props.ThemeDetail?.fetchTheme.agelimit}</div>
+          <div>인원 제한: {props.ThemeDetail?.fetchTheme.peoplelimit}</div>
           <div>좋아요: {props.ThemeDetail?.fetchTheme.like}</div>
+          <div>매장 : {props.ThemeDetail?.fetchTheme.cafe?.name}</div>
+          <div>장르 : {props.ThemeDetail?.fetchTheme.genre?.name}</div>
         </S.Info>
       </S.InfoBox>
       <S.ButtonBox>
