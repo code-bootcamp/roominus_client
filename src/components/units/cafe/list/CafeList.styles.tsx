@@ -101,7 +101,7 @@ export const DetailTitle = styled.h3`
   }
 `;
 
-export const LocationButton = styled.button`
+export const LocationButtonTotal = styled.button`
   width: 15%;
   height: 40px;
   margin-right: 0.5em;
@@ -112,6 +112,67 @@ export const LocationButton = styled.button`
   border-radius: 5px;
   /* gap: 10px; */
   cursor: pointer;
+  background-color: ${(props) => (props.total ? "#4a00e0e7" : "#a3a8b7")};
+
+  @media ${breakPoints.mobile} {
+    display: none;
+    width: 35%;
+    height: 30px;
+  }
+`;
+
+export const LocationButtonGangnam = styled.button`
+  width: 15%;
+  height: 40px;
+  margin-right: 0.5em;
+  border: none;
+  background-color: #a3a8b7;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  /* gap: 10px; */
+  cursor: pointer;
+  background-color: ${(props) => (props.gangnam ? "#4a00e0e7" : "#a3a8b7")};
+
+  @media ${breakPoints.mobile} {
+    display: none;
+    width: 35%;
+    height: 30px;
+  }
+`;
+
+export const LocationButtonHongdae = styled.button`
+  width: 15%;
+  height: 40px;
+  margin-right: 0.5em;
+  border: none;
+  background-color: #a3a8b7;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  /* gap: 10px; */
+  cursor: pointer;
+  background-color: ${(props) => (props.hongdae ? "#4a00e0e7" : "#a3a8b7")};
+
+  @media ${breakPoints.mobile} {
+    display: none;
+    width: 35%;
+    height: 30px;
+  }
+`;
+
+export const LocationButtonKondae = styled.button`
+  width: 15%;
+  height: 40px;
+  margin-right: 0.5em;
+  border: none;
+  background-color: #a3a8b7;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  /* gap: 10px; */
+  cursor: pointer;
+  background-color: ${(props) => (props.kondae ? "#4a00e0e7" : "#a3a8b7")};
 
   @media ${breakPoints.mobile} {
     display: none;
