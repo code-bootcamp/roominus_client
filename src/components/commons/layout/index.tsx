@@ -52,6 +52,7 @@ const Body = styled.div`
   width: 100%;
   height: 70%;
   padding: 0px 20px;
+  min-height: 800px;
 
   @media ${breakPoints.tablet} {
     padding: 0px 20px;
