@@ -6,9 +6,8 @@ export const FETCH_BOARDS = gql`
       id
       title
       mainImg
-      users {
-        name
-      }
+      like
+      # user
     }
   }
 `;

@@ -3,16 +3,18 @@ import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleBut
 import CommunityList from "../comment/CommunityComment.container";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./CommunityDetail.styles";
+import { getDateBefore } from "../../../commons/getDate";
+import Dompurify from "dompurify";
 
 export default function CommunityDetailUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
         <S.NameDateBox>
-          <S.WriterName>나는작성자</S.WriterName>
-          <S.Date>3일전</S.Date>
+          <S.WriterName>작성자</S.WriterName>
+          <S.Date>{getDateBefore(props.data?.fetchBoard.createdAt)}</S.Date>
         </S.NameDateBox>
-        <S.Picture src="/img/community/board.png" />
+        <S.Picture src={props.data?.fetchBoard.mainImg} />
         <S.PickAndShareBox>
           <S.PickBox>
             <S.RedHeart icon={faHeart} />
@@ -22,13 +24,19 @@ export default function CommunityDetailUI(props) {
           {/* <ShareButton /> */}
         </S.PickAndShareBox>
 
-        <S.BoardTitle>유토피아 탈출 성공 보드!</S.BoardTitle>
+        <S.BoardTitle>{props.data?.fetchBoard.title}</S.BoardTitle>
         <S.BoardContents>
-          보드판 인증게시판 내용입니다. 보드판 인증게시판 내용입니다. 보드판
-          인증게시판 내용입니다. 보드판 인증게시판 내용입니다. 보드판 인증게시판
-          내용입니다. 보드판 인증게시판 내용입니다. 보드판 인증게시판
-          내용입니다. 보드판 인증게시판 내용입니다. 보드판 인증게시판
-          내용입니다. 보드판 인증게시판 내용입니다.
+          {/* {props.data?.fetchBoard.content} */}
+          {typeof window !== "undefined" ? (
+            <div
+              style={{}}
+              dangerouslySetInnerHTML={{
+                __html: Dompurify.sanitize(props.data?.fetchBoard.content),
+              }}
+            ></div>
+          ) : (
+            <div style={{}}></div>
+          )}
         </S.BoardContents>
         <S.ButtonBox>
           <WebBlackButton
@@ -36,6 +44,10 @@ export default function CommunityDetailUI(props) {
             title="목 록"
           ></WebBlackButton>
           <WebPurpleButton title="수 정"></WebPurpleButton>
+          <WebPurpleButton
+            onClick={props.onClickDelete}
+            title="삭 제"
+          ></WebPurpleButton>
         </S.ButtonBox>
       </S.Wrapper>
       <CommunityList />
