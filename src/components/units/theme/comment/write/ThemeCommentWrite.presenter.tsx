@@ -1,8 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./ThemeCommentWrite.styles";
-import RadioGroupRating from "./Rate";
-import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import type { RadioChangeEvent } from "antd";
 import { FrownOutlined, MehOutlined, SmileOutlined } from "@ant-design/icons";
@@ -12,15 +8,6 @@ export default function ThemeCommentWriteUI(props) {
 
   const [isEscape, setIsEscape] = useState(false);
   const [rank, setRank] = useState();
-  const { register, handleSubmit, formState, setValue, trigger } = useForm({
-    // defaultValues: {
-    //   writer: props.boardData?.fetchBoard.writer,
-    //   title: props.boardData?.fetchBoard.title,
-    //   contents: props.boardData?.fetchBoard.contents,
-    // },
-    //   resolver: yupResolver(schema),
-    mode: "onSubmit",
-  });
 
   const customIcons: Record<number, React.ReactNode> = {
     1: <FrownOutlined />,
@@ -32,40 +19,38 @@ export default function ThemeCommentWriteUI(props) {
 
   const onClickEscape0 = () => {
     setIsEscape(true);
-    setValue("clear", true);
-    trigger("clear");
+    props.setValue("clear", true);
+    props.trigger("clear");
   };
 
   const onClickEscape1 = () => {
     setIsEscape(false);
-    setValue("clear", false);
-    trigger("clear");
+    props.setValue("clear", false);
+    props.trigger("clear");
   };
 
   const onChange = (e: RadioChangeEvent) => {
-    console.log(`radio checked:${e.target.value}`);
     setRank(e.target.value);
-    setValue("rank", e.target.value);
-    console.log("rank", rank);
+    props.setValue("rank", e.target.value);
   };
 
   const onChangeStar = (event) => {
-    setValue("star", Number(event));
-    trigger("star");
+    props.setValue("star", Number(event));
+    props.trigger("star");
   };
 
   useEffect(() => {
-    setValue("clear", Boolean(props.data?.fetchTheme?.clear));
-    setValue("rank", props.data?.fetchUseditem?.rank);
-    setValue("star", Number(props.data?.fetchUseditem?.star));
+    props.setValue("clear", Boolean(props.data?.fetchTheme?.clear));
+    props.setValue("rank", props.data?.fetchUseditem?.rank);
+    props.setValue("star", Number(props.data?.fetchUseditem?.star));
   }, []);
 
   return (
     <form
       onSubmit={
         props.isEdit
-          ? handleSubmit(props.onClickUpdate)
-          : handleSubmit(props.onClickSubmit)
+          ? props.handleSubmit(props.onClickUpdate)
+          : props.handleSubmit(props.onClickSubmit)
       }
     >
       <S.Wrapper>
@@ -84,7 +69,6 @@ export default function ThemeCommentWriteUI(props) {
               onClick={onClickEscape0}
               checked={isEscape === true}
               id="escape0"
-              // value={true}
             >
               탈출
             </S.RadioButton>
@@ -92,7 +76,6 @@ export default function ThemeCommentWriteUI(props) {
               onClick={onClickEscape1}
               checked={isEscape === false}
               id="escape1"
-              // value={false}
             >
               미탈출
             </S.RadioButton>
@@ -101,13 +84,14 @@ export default function ThemeCommentWriteUI(props) {
             <S.RadioGroup
               color="secondary"
               onChange={onChange}
-              {...register("rank")}
+              {...props.register("rank")}
               defaultValue={props.el?.rank}
             >
               <S.RadioButton
                 onClick={onChange}
                 selected={rank === "쉬움"}
                 value="쉬움"
+                {...props.register("rank")}
               >
                 쉬움
               </S.RadioButton>
@@ -115,6 +99,7 @@ export default function ThemeCommentWriteUI(props) {
                 onClick={onChange}
                 selected={rank === "보통"}
                 value="보통"
+                {...props.register("rank")}
               >
                 보통
               </S.RadioButton>
@@ -122,6 +107,7 @@ export default function ThemeCommentWriteUI(props) {
                 onClick={onChange}
                 selected={rank === "어려움"}
                 value="어려움"
+                {...props.register("rank")}
               >
                 어려움
               </S.RadioButton>
@@ -129,6 +115,7 @@ export default function ThemeCommentWriteUI(props) {
                 onClick={onChange}
                 selected={rank === "매우 어려움"}
                 value="매우 어려움"
+                {...props.register("rank")}
               >
                 매우 어려움
               </S.RadioButton>
@@ -139,7 +126,7 @@ export default function ThemeCommentWriteUI(props) {
           <S.CommentWriter>신만*님</S.CommentWriter>
           <S.CommentInput
             defaultValue={props.el?.content}
-            {...register("content")}
+            {...props.register("content")}
             placeholder="댓글을 입력하세요."
           />
           <S.SubmitButton>{props.isEdit ? "수정" : "등록"}</S.SubmitButton>

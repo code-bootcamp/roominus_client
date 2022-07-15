@@ -81,8 +81,16 @@ export default function ThemeCommentListUIItem(props) {
         <S.NameToolBox>
           <S.WriterName>{props.el?.user.name}</S.WriterName>
           <S.ToolBox>
-            <FontAwesomeIcon icon={faPen} onClick={onClickUpdate} />
-            <FontAwesomeIcon icon={faXmark} onClick={onClickOpenDeleteModal} />
+            <FontAwesomeIcon
+              icon={faPen}
+              onClick={onClickUpdate}
+              style={{ fontSize: "0.9em", margin: "2px" }}
+            />
+            <FontAwesomeIcon
+              icon={faXmark}
+              onClick={onClickOpenDeleteModal}
+              style={{ fontSize: "1.2em", margin: "2px" }}
+            />
           </S.ToolBox>
         </S.NameToolBox>
 
