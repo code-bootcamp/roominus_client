@@ -17,7 +17,7 @@ export default function LoginUI(props) {
         "http://localhost:3000/signup/detail"
       );
       const state = naverIdLogin.getUniqState();
-      naverIdLogin.setButton("white", 0, 80);
+      naverIdLogin.setButton("green", 3, 80);
       naverIdLogin.setDomain("http://localhost:3000/");
       naverIdLogin.setState(state);
 
@@ -86,12 +86,10 @@ export default function LoginUI(props) {
       </S.SignUpBox>
       <S.Divider></S.Divider>
       <S.SocialLoginBtns>
-        <S.SocialLoginBtn id="naver_id_login" onClick={props.NaverLogin}>
-          <S.SocialLoginLogo
-            src="/img/login/naverlogo.png"
-            alt="naverSocialLogo"
-          />
-        </S.SocialLoginBtn>
+        <S.SocialLoginBtn
+          id="naver_id_login"
+          onClick={props.NaverLogin}
+        ></S.SocialLoginBtn>
         <S.SocialLoginBtn onClick={props.onClickLoginKakao}>
           <S.SocialLoginLogo
             src="/img/login/kakaoLogo.png"

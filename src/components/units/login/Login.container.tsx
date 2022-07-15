@@ -10,8 +10,12 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
-import { LOGIN } from "./Login.query";
+import { LOGIN, FETCH_USER_LOGGEDIN } from "./Login.query";
 import Head from "next/head";
+import { useMutation, useApolloClient } from "@apollo/client";
+import { useRecoilState } from "recoil";
+import { accessTokenState, userInfoState } from "../../../commons/store";
+import { Modal } from "antd";
 
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -38,15 +42,48 @@ export default function LoginPage() {
     mode: "onChange",
   });
   const router = useRouter();
+  const client = useApolloClient();
+  const [logingql] = useMutation(LOGIN);
   const passwordInputRef = useRef();
   const [openEye, setOpenEye] = useState(false);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+
   useEffect(() => {
     register("email", { required: true });
     register("password");
   }, []);
 
-  const onSubmitLogin = (data) => {
-    console.log(data);
+  const onSubmitLogin = async (data) => {
+    try {
+      const result = await logingql({
+        variables: {
+          email: data.email,
+          password: data.password,
+        },
+      });
+      console.log(result.data?.Login);
+      const Token = result.data?.Login;
+      console.log("로그인은 됨");
+      const resultUserInfo = await client.query({
+        query: FETCH_USER_LOGGEDIN,
+        context: {
+          headers: {
+            Authorization: `Bearer ${Token}`,
+          },
+        },
+      });
+      console.log("로그드인도 됨");
+      console.log(resultUserInfo.data?.fetchUserLoggedIn);
+      const user = resultUserInfo.data?.fetchUserLoggedIn;
+      setAccessToken(Token);
+      // setUserInfo(user);
+
+      Modal.success({ content: "성공" });
+      router.push("/cafe");
+    } catch (error) {
+      Modal.error({ content: error.message });
+    }
   };
   const onClickMoveToSignUp = () => {
     router.push("/login/choice");

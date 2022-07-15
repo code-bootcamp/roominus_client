@@ -103,7 +103,7 @@ export const Divider = styled.div`
 export const SocialLoginBtns = styled.div`
   width: 50%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 2em;
 `;
