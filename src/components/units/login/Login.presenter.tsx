@@ -6,18 +6,6 @@ import { useEffect } from "react";
 import Head from "next/head";
 
 export default function LoginUI(props) {
-  useEffect(() => {
-    const naverIdLogin = new naver_id_login(
-      "1wXq1o0g2z9j6TSlaVB0",
-      "http://localhost:3000/signup/detail"
-    );
-    const state = naverIdLogin.getUniqState();
-    naverIdLogin.setButton("white", 0, 80);
-    naverIdLogin.setDomain("http://localhost:3000/");
-    naverIdLogin.setState(state);
-
-    naverIdLogin.init_naver_id_login();
-  }, []);
   return (
     <S.Wrapper>
       <Head>
