@@ -111,6 +111,7 @@ export const LocationButton = styled.button`
   font-weight: 500;
   border-radius: 5px;
   /* gap: 10px; */
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     display: none;

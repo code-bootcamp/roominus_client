@@ -14,10 +14,10 @@ export default function CafeListUIPage(props) {
           <S.SearchDetailBox>
             <S.DetailBox>
               <S.DetailTitle>장소</S.DetailTitle>
-              <S.LocationButton>전체</S.LocationButton>
-              <S.LocationButton>강남</S.LocationButton>
-              <S.LocationButton>홍대</S.LocationButton>
-              <S.LocationButton>건대</S.LocationButton>
+              <S.LocationButton id="total">전체</S.LocationButton>
+              <S.LocationButton id="gangnam">강남</S.LocationButton>
+              <S.LocationButton id="hongdae">홍대</S.LocationButton>
+              <S.LocationButton id="kondae">건대</S.LocationButton>
               <S.LocationSelect>
                 <S.LocationOption>전체</S.LocationOption>
                 <S.LocationOption>강남</S.LocationOption>
