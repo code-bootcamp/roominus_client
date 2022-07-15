@@ -1,16 +1,15 @@
+import { useRouter } from "next/router";
 import * as S from "../../theme/list/ThemeList.styles";
 
-// const Wrapper = styled.div`
-//   :hover {
-//     transform: translateY(-0.3em);
-//   }
-//   transition: all 250ms ease-in-out;
-//   border: 1px solid #c2c2c2;
-// `;
-
 export default function ThemeCardComponent(props: any) {
+  const router = useRouter();
+  const onClickTheme = (el) => () => {
+    console.log(el);
+    router.push(`/theme/${el.id}`);
+  };
+
   return (
-    <div>
+    <div onClick={onClickTheme(props.el)}>
       <S.Flip>
         <S.Card>
           <S.Theme src={props.el?.mainImg}>

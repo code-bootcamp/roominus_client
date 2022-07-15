@@ -58,7 +58,6 @@ export default function HomeUI(props) {
     // infinite: true,
     // slidesToShow: 1,
   };
-
   return (
     <S.Wrapper>
       <S.BackGroundImg></S.BackGroundImg>

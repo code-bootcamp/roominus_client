@@ -100,7 +100,7 @@ export default function LayoutHeaderUI(props: any) {
           </S.MenuWrapper>
         </S.Wrapper>
         <S.Hamburger>
-          <Menu width={"50%"} right styles={styles} disableOverlayClick>
+          <Menu width={"70%"} right styles={styles} disableOverlayClick>
             <S.MenuMainItem id="home" className="menu-item" href="/home">
               메인
             </S.MenuMainItem>
