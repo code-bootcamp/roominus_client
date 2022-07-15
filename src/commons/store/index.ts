@@ -4,3 +4,17 @@ import { atom } from "recoil";
 //   key: "accessTokenState",
 //   default: "",
 // });
+
+export const ReservationInfoState = atom({
+  key: "ReservationInfoState",
+  default: {
+    themeId: "",
+    cafeId: "",
+    reservation_date: "",
+    memo: "",
+    people_number: 0,
+    totalPrice: 0,
+    usePoint: 0,
+    themeMenuId: "",
+  },
+});
