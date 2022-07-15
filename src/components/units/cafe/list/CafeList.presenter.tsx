@@ -1,12 +1,10 @@
-// import Button03 from "../../../commons/buttons/buttonDesktop/button1";
-// import Button04 from "../../../commons/buttons/buttonDesktop/button2";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./CafeList.styles";
-// import BestCards from "./card/BestCards";
+import { ICafeListUIProps, IFetchCafesProps } from "./CafeList.types";
 import ListCards from "./card/ListCards";
 
-export default function CafeListUIPage(props) {
+export default function CafeListUIPage(props: ICafeListUIProps) {
   return (
     <S.Container>
       <S.SearchWrapper>
@@ -77,11 +75,13 @@ export default function CafeListUIPage(props) {
         <S.Flex>
           <S.BestTitle>전체 매장</S.BestTitle>
           <S.Etc>
-            {props.data?.fetchCafes.map((el) => (
+            {props.data?.fetchCafes.map((el: IFetchCafesProps) => (
               <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
                 <ListCards el={el} />
+                {console.log(el)}
               </span>
             ))}
+
             {/* {new Array(10).fill(1).map((el) => (
               <span key={el} onClick={props.onClickCard}>
                 <ListCards />

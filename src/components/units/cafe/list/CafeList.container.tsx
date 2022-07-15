@@ -1,8 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import CafeListUIPage from "./CafeList.presenter";
 import { FETCH_CAFES } from "./CafeList.queries";
+import { IFetchCafesProps } from "./CafeList.types";
 
 export default function CafeListPage() {
   const router = useRouter();
@@ -43,9 +44,10 @@ export default function CafeListPage() {
     setKondae(true);
   };
 
-  const onClickCard = (el) => (event) => {
-    router.push(`/cafe/${event?.currentTarget.id}`);
-  };
+  const onClickCard =
+    (el: IFetchCafesProps) => (event: MouseEvent<HTMLDivElement>) => {
+      router.push(`/cafe/${event?.currentTarget.id}`);
+    };
 
   return (
     <CafeListUIPage

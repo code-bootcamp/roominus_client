@@ -3,7 +3,7 @@
 //   EllipsisOutlined,
 //   SettingOutlined,
 // } from "@ant-design/icons";
-import { Avatar, Card } from "antd";
+import { Card } from "antd";
 import React from "react";
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../../commons/styles/media";

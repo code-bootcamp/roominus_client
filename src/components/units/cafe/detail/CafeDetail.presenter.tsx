@@ -3,8 +3,9 @@ import ListTheme from "./card/ListTheme";
 import MenuTabs from "./tabs/Tabs";
 import { v4 as uuidv4 } from "uuid";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import { ICafeDetailUI } from "./CafeDetail.types";
 
-export default function CafeDetailUI(props) {
+export default function CafeDetailUI(props: ICafeDetailUI) {
   return (
     <S.Container>
       <S.SearchWrapper>

@@ -3,7 +3,7 @@
 //   EllipsisOutlined,
 //   SettingOutlined,
 // } from "@ant-design/icons";
-import { Avatar, Card } from "antd";
+import { Card } from "antd";
 import React from "react";
 import styled from "@emotion/styled";
 
@@ -48,7 +48,17 @@ const LocationIcon = styled.img`
   /* background-color: pink; */
 `;
 
-const ListCards = (props) => (
+interface IListCardsProps {
+  el: {
+    address: string;
+    id: string;
+    mainImg: string;
+    name: string;
+    phone: string;
+  };
+}
+
+const ListCards = (props: IListCardsProps) => (
   <Wrapper>
     <Card
       style={{
@@ -73,11 +83,7 @@ const ListCards = (props) => (
         <LocationIcon src="/img/cafe/locationIcon.png" />
         <Location>{props.el.address}</Location>
       </LocationBox>
-      <Meta
-        // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title={props.el.name}
-        description={props.el.phone}
-      />
+      <Meta title={props.el.name} description={props.el.phone} />
     </Card>
   </Wrapper>
 );
