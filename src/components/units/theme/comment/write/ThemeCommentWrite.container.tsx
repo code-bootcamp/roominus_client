@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import ThemeCommentWriteUI from "./ThemeCommentWrite.presenter";
 import {
   CREATE_THEME_REVIEW,
@@ -17,8 +18,18 @@ export default function ThemeCommentWrite(props) {
 
   const [isEscape, setIsEscape] = useState("");
 
+  const { register, handleSubmit, formState, setValue, trigger, reset } =
+    useForm({
+      // defaultValues: {
+      //   writer: props.boardData?.fetchBoard.writer,
+      //   title: props.boardData?.fetchBoard.title,
+      //   contents: props.boardData?.fetchBoard.contents,
+      // },
+      //   resolver: yupResolver(schema),
+      mode: "onChange",
+    });
+
   const onClickSubmit = async (data) => {
-    console.log(data);
     try {
       const result = await createThemeReview({
         variables: {
@@ -35,9 +46,8 @@ export default function ThemeCommentWrite(props) {
           },
         ],
       });
-      console.log(result?.data);
+      reset();
     } catch (error) {
-      console.log(error);
       alert(error.message);
     }
   };
@@ -64,6 +74,7 @@ export default function ThemeCommentWrite(props) {
         ],
       });
       props?.setIsEdit(false);
+      reset();
     } catch (error) {
       alert(error.message);
     }
@@ -71,6 +82,11 @@ export default function ThemeCommentWrite(props) {
 
   return (
     <ThemeCommentWriteUI
+      register={register}
+      handleSubmit={handleSubmit}
+      formState={formState}
+      setValue={setValue}
+      trigger={trigger}
       onClickSubmit={onClickSubmit}
       onClickUpdate={onClickUpdate}
       isEscape={isEscape}

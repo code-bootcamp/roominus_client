@@ -12,6 +12,5 @@ export default function ThemeCommentList() {
     },
   });
 
-  console.log(data);
   return <ThemeCommentListUI data={data} />;
 }
