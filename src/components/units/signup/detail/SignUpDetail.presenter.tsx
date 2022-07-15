@@ -4,6 +4,12 @@ import * as S from "./SignUpDetail.styles";
 
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import dynamic from "next/dynamic";
+
+const PasswordChecklist = dynamic(() => import("react-password-checklist"), {
+  ssr: false,
+});
+
 export default function SignUpDetailUI(props) {
   return (
     <S.Wrapper>
@@ -11,14 +17,17 @@ export default function SignUpDetailUI(props) {
       <S.FormFirst onSubmit={props.handleSubmit(props.onSubmitSignup)}>
         <S.EmailBox>
           <S.TitleBox>
-            <S.EmailTitle>이메일 아이디</S.EmailTitle>
+            <S.EmailTitle>이메일</S.EmailTitle>
             <S.ImportantInfos>*</S.ImportantInfos>
           </S.TitleBox>
           <S.EmailInputBox>
             <S.EmailInput
               type="text"
               value={props.kakaoEmail || props.googleEmail}
-              onChange={(e) => props.setValue("email", e.target.value)}
+              onChange={(e) => {
+                props.setValue("email", e.target.value);
+                props.trigger("email");
+              }}
               name="email"
             />
             <WebPurpleButton
@@ -37,7 +46,11 @@ export default function SignUpDetailUI(props) {
             </S.TitleBox>
             <S.PasswordInputBox>
               <S.PasswordInput
-                onChange={(e) => props.setValue("password", e.target.value)}
+                onChange={(e) => {
+                  props.setValue("password", e.target.value);
+                  props.trigger("password");
+                  props.setPassword(e.target.value);
+                }}
                 name="password"
                 ref={props.passwordInputRef}
                 type="password"
@@ -49,6 +62,9 @@ export default function SignUpDetailUI(props) {
                     color: "purple",
                     fontSize: "1.5em",
                     cursor: "pointer",
+                    position: "absolute",
+                    top: "0.6em",
+                    right: "1.5em",
                   }}
                 />
               )}
@@ -60,19 +76,28 @@ export default function SignUpDetailUI(props) {
                     color: "purple",
                     fontSize: "1.5em",
                     cursor: "pointer",
+                    position: "absolute",
+                    top: "0.6em",
+                    right: "1.5em",
                   }}
                 />
               )}
             </S.PasswordInputBox>
             <S.Error>{props.formState.errors.password?.message}</S.Error>
-            <S.WarningBox>
-              <S.WarningMessage>
-                *8~14자의 영문,숫자 혼합만 사용가능
-              </S.WarningMessage>
-              <S.WarningMessage>
-                *숫자만으로 이루어진 비밀번호는 사용 할 수 없음
-              </S.WarningMessage>
-            </S.WarningBox>
+            <PasswordChecklist
+              rules={["minLength", "number", "capital", "lowercase"]}
+              minLength={8}
+              maxLength={14}
+              value={props.password}
+              iconSize={10}
+              messages={{
+                notEmpty: "비밀번호를 입력해주세요.",
+                minLength: "*8~14자의 영문,숫자 혼합만 사용가능.",
+                number: "숫자도 포함시켜야 합니다.",
+                capital: "대문자도 포함시켜야 합니다.",
+                lowercase: "소문자도 포함시켜야 합니다.",
+              }}
+            />
           </S.PasswordBox>
         </S.PasswordBoxes>
         <S.PasswordVerificationBoxes>
@@ -85,7 +110,10 @@ export default function SignUpDetailUI(props) {
             </S.TitleBox>
             <S.PasswordVerificationInputBox>
               <S.PasswordVerificationInput
-                onChange={(e) => props.setValue("password2", e.target.value)}
+                onChange={(e) => {
+                  props.setValue("password2", e.target.value);
+                  props.trigger("password2");
+                }}
                 name="password2"
                 ref={props.password2InputRef}
                 type="password"
@@ -97,6 +125,9 @@ export default function SignUpDetailUI(props) {
                     color: "purple",
                     fontSize: "1.5em",
                     cursor: "pointer",
+                    position: "absolute",
+                    top: "2.1em",
+                    right: "1.5em",
                   }}
                 />
               )}
@@ -108,6 +139,9 @@ export default function SignUpDetailUI(props) {
                     color: "purple",
                     fontSize: "1.5em",
                     cursor: "pointer",
+                    position: "absolute",
+                    top: "2.1em",
+                    right: "1.5em",
                   }}
                 />
               )}
@@ -124,7 +158,10 @@ export default function SignUpDetailUI(props) {
             <S.NameInputBox>
               <S.NameInput
                 type="text"
-                onChange={(e) => props.setValue("name", e.target.value)}
+                onChange={(e) => {
+                  props.setValue("name", e.target.value);
+                  props.trigger("name");
+                }}
                 name="name"
               />
             </S.NameInputBox>
@@ -141,7 +178,10 @@ export default function SignUpDetailUI(props) {
               type="text"
               name="phoneNumber"
               placeholder="010-1234-5678"
-              onChange={(e) => props.setValue("phoneNumber", e.target.value)}
+              onChange={(e) => {
+                props.setValue("phoneNumber", e.target.value);
+                props.trigger("phoneNumber");
+              }}
             />
             <WebPurpleButton
               onClick={props.onClickVerifyMySelfByNo}

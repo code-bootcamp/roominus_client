@@ -53,10 +53,12 @@ export default function SignUpDetail() {
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);
 
-  const { register, handleSubmit, setValue, formState } = useForm({
+  const { register, handleSubmit, setValue, formState, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+
+  const [password, setPassword] = useState("");
   const [createUsergql] = useMutation(CREATE_USER);
   const [count, setCount] = useState(10);
   const [showCount, setShowCount] = useState("03:00");
@@ -213,6 +215,7 @@ export default function SignUpDetail() {
         handleSubmit={handleSubmit}
         setValue={setValue}
         formState={formState}
+        trigger={trigger}
         onClickShowPassword={onClickShowPassword}
         onClickShowPassword2={onClickShowPassword2}
         passwordInputRef={passwordInputRef}
@@ -226,6 +229,8 @@ export default function SignUpDetail() {
         showCount={showCount}
         verificationBtn={verificationBtn}
         onClickCheckVerificationNo={onClickCheckVerificationNo}
+        password={password}
+        setPassword={setPassword}
       />
     </>
   );
