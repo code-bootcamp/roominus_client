@@ -3,22 +3,29 @@ import { TextField, MenuItem, Grid, Box } from "@material-ui/core";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
+  DatePicker,
 } from "@material-ui/pickers";
 // import moment from "moment";
 import MomentUtils from "@date-io/moment";
 import ReservationNotice from "./reservationNotice/reservationNotice.container";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
-import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 import NoReservation from "./Noreservation";
 import { v4 as uuidv4 } from "uuid";
 import ReservationThemeInfo from "./reservationInfo";
-import { useForm } from "react-hook-form";
 import Payment from "../payment";
+import Swal from "sweetalert2";
 
 export default function ReservationUI(props: any) {
   const date = new Date();
   const MaxDate = date.setMonth(date.getMonth() + 3);
-  const { register, handleSubmit } = useForm();
+
+  if (props.totalPrice - props.usePoint < 0) {
+    Swal.fire({
+      icon: "error",
+      title: "적립금 오류",
+      text: "금액 오류가 발생하였습니다",
+    });
+  }
 
   return (
     <S.Container>
@@ -50,193 +57,172 @@ export default function ReservationUI(props: any) {
           </>
         )}
 
-        <>
-          <S.Form onSubmit={handleSubmit(props.onClickSubmit)}>
-            <Grid container spacing={2}>
-              <Grid item xs>
+        <S.Form
+          onSubmit={props.handleSubmit(props.onClickSubmit)}
+          noValidate
+          autoComplete="off"
+        >
+          <div>
+            <TextField
+              fullWidth
+              variant="outlined"
+              select
+              required
+              label="테마 선택"
+              id="filled-theme"
+              onChange={props.onChangeTheme}
+              value={props?.themeId}
+              helperText="필수 입력 사항입니다."
+              style={{ paddingBottom: "1.3em" }}
+              color="secondary"
+            >
+              {props?.themesList?.fetchThemes?.map((el: any) => (
+                <MenuItem key={uuidv4()} value={el.id}>
+                  {el.title}
+                </MenuItem>
+              ))}
+            </TextField>
+
+            {!!props?.data?.fetchThemeMenus.length && props?.themeId && (
+              <TextField
+                fullWidth
+                required
+                select
+                label="매장 선택"
+                variant="outlined"
+                id="filled-cafe"
+                onChange={props.onChangeCafe}
+                value={props.cafeId}
+                helperText="필수 입력 사항입니다."
+                style={{ paddingBottom: "1.3em" }}
+                color="secondary"
+              >
+                <MenuItem value={props?.data?.fetchThemeMenus[0]?.cafe?.id}>
+                  {props?.data?.fetchThemeMenus[0]?.cafe?.name}
+                </MenuItem>
+              </TextField>
+            )}
+
+            {!!props?.data?.fetchThemeMenus.length && props?.cafeId && (
+              <>
+                <MuiPickersUtilsProvider utils={MomentUtils}>
+                  <KeyboardDatePicker
+                    fullWidth
+                    required
+                    inputVariant="outlined"
+                    margin="none"
+                    autoOk={true}
+                    disablePast={true}
+                    id="filled-date"
+                    // label="방문일을 선택해주세요"
+                    placeholder="방문일을 선택해주세요"
+                    showTodayButton={true}
+                    value={props.reservationDate}
+                    format="YYYY-MM-DD"
+                    mask={"____-__-__"}
+                    maxDate={MaxDate}
+                    maxDateMessage="예약 가능한 일정이 없습니다."
+                    onChange={props.onChangeDate}
+                    rifmFormatter={props.dateFormatter}
+                    KeyboardButtonProps={{
+                      "aria-label": "change date",
+                    }}
+                    helperText="필수 입력 사항입니다."
+                    style={{ paddingBottom: "1.3em" }}
+                    color="secondary"
+                  />
+                </MuiPickersUtilsProvider>
+              </>
+            )}
+
+            {!!props?.data?.fetchThemeMenus.length && props?.reservationDate && (
+              <TextField
+                fullWidth
+                required
+                select
+                value={props.time}
+                label="방문 시간 선택"
+                id="filled-time"
+                variant="outlined"
+                onChange={props.onChangeTime}
+                helperText="필수 입력 사항입니다."
+                style={{ paddingBottom: "1.3em" }}
+                color="secondary"
+              >
+                {props?.uniqeTime?.map((el: any) => (
+                  <MenuItem key={uuidv4()} value={el}>
+                    {el}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+
+            {!!props?.data?.fetchThemeMenus.length &&
+              props?.cafeId &&
+              props?.reservationDate && (
                 <TextField
                   fullWidth
-                  variant="outlined"
-                  select
                   required
-                  label="테마 선택"
-                  id="filled-theme"
-                  autoFocus
-                  onChange={props.onChangeTheme}
-                  value={props?.themeId}
+                  select
+                  label="인원 선택"
+                  id="filled-headCount"
+                  variant="outlined"
+                  onChange={props.onChangeHeadCount}
+                  value={props.peopleNumber}
+                  helperText="필수 입력 사항입니다."
+                  style={{ paddingBottom: "1.3em" }}
+                  color="secondary"
                 >
-                  {props?.themesList?.fetchThemes?.map((el: any) => (
-                    <MenuItem key={uuidv4()} value={el.id}>
-                      {el.title}
+                  {props?.selectTime?.map((el: any) => (
+                    <MenuItem key={uuidv4()} value={el}>
+                      {el}
                     </MenuItem>
                   ))}
                 </TextField>
-              </Grid>
-              {props.themeId && (
-                <Grid item xs>
-                  <TextField
-                    fullWidth
-                    required
-                    select
-                    label="매장 선택"
-                    variant="outlined"
-                    id="filled-cafe"
-                    onChange={props.onChangeCafe}
-                    value={props.cafeId}
-                  >
-                    <MenuItem value={props?.data?.fetchThemeMenus[0]?.cafe?.id}>
-                      {props?.data?.fetchThemeMenus[0]?.cafe?.name}
-                    </MenuItem>
-                  </TextField>
-                </Grid>
               )}
-            </Grid>
 
-            <Grid container spacing={2}>
-              {props.cafeId && (
-                <Grid item xs>
-                  {/* <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils}> */}
-                  <MuiPickersUtilsProvider utils={MomentUtils}>
-                    <KeyboardDatePicker
-                      fullWidth
-                      required
-                      placeholder="날짜 선택"
-                      inputVariant="outlined"
-                      margin="none"
-                      autoOk={true}
-                      disablePast={true}
-                      id="filled-date"
-                      // label="방문일을 선택해주세요"
-                      showTodayButton={true}
-                      value={props.reservationDate}
-                      format="YYYY-MM-DD"
-                      mask={"____-__-__"}
-                      maxDate={MaxDate}
-                      maxDateMessage="예약 가능한 일정이 없습니다."
-                      onChange={props.onChangeDate}
-                      rifmFormatter={props.dateFormatter}
-                      KeyboardButtonProps={{
-                        "aria-label": "change date",
-                      }}
-                    />
-                  </MuiPickersUtilsProvider>
-                </Grid>
+            {!!props?.data?.fetchThemeMenus.length &&
+              props?.themeId &&
+              props?.cafeId &&
+              props.reservationDate && (
+                <TextField
+                  id="filled-point"
+                  label="적립금을 입력해주세요"
+                  type="number"
+                  fullWidth
+                  onChange={props.onChangePoint}
+                  variant="outlined"
+                  InputProps={{ inputProps: { min: 0, max: 5000 } }}
+                  helperText="선택 입력 사항입니다."
+                  style={{ paddingBottom: "1.3em" }}
+                />
               )}
-              {props.cafeId && (
-                <Grid item xs>
-                  <TextField
-                    fullWidth
-                    required
-                    select
-                    value={props.time}
-                    label="방문 시간 선택"
-                    id="filled-time"
-                    variant="outlined"
-                    onChange={props.onChangeTime}
-                  >
-                    {props?.data?.fetchThemeMenus?.map((el: any) => (
-                      <MenuItem key={uuidv4()} value={el.reservation_time}>
-                        {el.reservation_time}
-                      </MenuItem>
-                    ))}
-                  </TextField>
-                </Grid>
+
+            {!!props?.data?.fetchThemeMenus.length &&
+              props?.themeId &&
+              props?.cafeId &&
+              props.reservationDate && (
+                <TextField
+                  id="filled-memo"
+                  label="메모"
+                  type="text"
+                  fullWidth
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  multiline
+                  rows={4}
+                  variant="outlined"
+                  register={props.register("memo")}
+                  style={{ paddingBottom: "1.3em" }}
+                  helperText="선택 입력 사항입니다. 예약자와 방문자가 다를 경우 메모를 방문자의 정보를 작성해주세요."
+                />
               )}
-            </Grid>
-            <Grid container spacing={2}>
-              {props.reservationDate && (
-                <Grid item xs>
-                  <TextField
-                    fullWidth
-                    required
-                    select
-                    label="인원 선택"
-                    id="filled-headCount"
-                    variant="outlined"
-                    onChange={props.onChangeHeadCount}
-                    value={props.peopleNumber}
-                  >
-                    {props?.data?.fetchThemeMenus?.map((el: any) => (
-                      <MenuItem
-                        key={uuidv4()}
-                        value={el.people_number * el.price}
-                      >
-                        {el.people_number}
-                      </MenuItem>
-                    ))}
-                  </TextField>
-                </Grid>
-              )}
-              {props.reservationDate && (
-                <Grid item xs>
-                  <TextField
-                    id="filled-point"
-                    label="적립금을 입력해주세요"
-                    type="number"
-                    fullWidth
-                    onChange={props.onChangePoint}
-                    variant="outlined"
-                    InputProps={{ inputProps: { min: 0, max: 100 } }}
-                  />
-                </Grid>
-              )}
-            </Grid>
+          </div>
 
-            {props.reservationDate && (
-              <Grid container spacing={2}>
-                <Grid item xs>
-                  <TextField
-                    fullWidth
-                    required
-                    variant="outlined"
-                    id="outlined-required"
-                    label="방문자명"
-                    // defaultValue="유저 이름"
-                    autoFocus
-                    // register={props.register("name")}
-                    {...register("name", { required: "필수입력!" })}
-                  />
-                </Grid>
-
-                <Grid item xs>
-                  <TextField
-                    id="filled-number"
-                    label="휴대폰 번호"
-                    type="tel"
-                    fullWidth
-                    required
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                    // defaultValue="유저핸드폰"
-                    variant="outlined"
-                    // register={props.register("phoneNumber")}
-                    {...register("phoneNumber", { required: "필수입력!" })}
-                  />
-                </Grid>
-              </Grid>
-            )}
-
-            {props.reservationDate && (
-              <Grid container spacing={2}>
-                <Grid item xs>
-                  <TextField
-                    id="filled-memo"
-                    label="메모"
-                    type="text"
-                    fullWidth
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                    variant="outlined"
-                    // register={props.register("memo")}
-                    {...register("memo")}
-                  />
-                </Grid>
-              </Grid>
-            )}
-
-            {props.totalPrice && (
+          {!!props?.data?.fetchThemeMenus.length &&
+            props.cafeId &&
+            props.totalPrice && (
               <S.FooterBox>
                 <S.Total>
                   <span>최종 결제 금액</span>
@@ -249,11 +235,7 @@ export default function ReservationUI(props: any) {
                   <h2>이용안내</h2>
 
                   <S.CheckBox>
-                    <input
-                      type="checkbox"
-                      ref={props.optionalCheckRef}
-                      onChange={props.onChangeOptionalCheck}
-                    />
+                    <input type="checkbox" onChange={props.onChangeChecked} />
                     <span>개인정보 수집에 동의합니다</span>
                   </S.CheckBox>
                   <p>
@@ -276,20 +258,27 @@ export default function ReservationUI(props: any) {
                     </p>
                   </div>
                 </S.InformationUse>
-
-                <S.ButtonBox>
-                  <WebBlackButton type="button" title="돌아가기" />
-                  {/* <WebPurpleButton
-                    type="submit"
-                    title="결제하기"
-                    disabled={props.formState.isSubmitting}
-                  /> */}
-                  <Payment totalPrice={props.totalPrice} />
-                </S.ButtonBox>
+                {props?.checked && (
+                  <S.ButtonBox>
+                    <WebBlackButton type="button" title="돌아가기" />
+                    <Payment
+                      title="결제하기"
+                      type="submit"
+                      disabled={props?.formState.isSubmitting}
+                      totalPrice={props?.totalPrice - props?.usePoint}
+                      ThemeMenuId={props?.ThemeMenuId}
+                      cafeId={props?.cafeId}
+                      reservationDate={props?.reservationDate}
+                      memo={props?.memo}
+                      peopleNumber={props?.peopleNumber}
+                      usePoint={props?.usePoint}
+                    />
+                    {/* <button type="submit">ㅎㅇ</button> */}
+                  </S.ButtonBox>
+                )}
               </S.FooterBox>
             )}
-          </S.Form>
-        </>
+        </S.Form>
       </S.Wrapper>
     </S.Container>
   );

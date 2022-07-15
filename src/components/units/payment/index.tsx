@@ -1,12 +1,43 @@
 import Head from "next/head";
 import { Modal } from "antd";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
-import { useMutation } from "@apollo/client";
-import { CREATE_RESERVATION } from "../reservationTest/reservation.queries";
+import { gql, useMutation } from "@apollo/client";
 
 declare const window: typeof globalThis & {
   IMP: any;
 }; // 윈도우와 IMP 타입 지정
+
+const CREATE_RESERVATION = gql`
+  mutation createReservation(
+    $cafeId: String!
+    $themeMenuId: String!
+    $createReservationInput: CreateReservationInput!
+    $createPaymentInput: CreatePaymentInput!
+  ) {
+    createReservation(
+      cafeId: $cafeId
+      themeMenuId: $themeMenuId
+      createReservationInput: $createReservationInput
+      createPaymentInput: $createPaymentInput
+    ) {
+      id
+      reservation_date
+      memo
+      status
+      theme_menu {
+        reservation_time
+        people_number
+        price
+        cafe {
+          name
+        }
+        theme {
+          title
+        }
+      }
+    }
+  }
+`;
 
 export default function Payment(props) {
   // const { data } = useQuery(FETCH_USER_LOGGED_IN);
@@ -36,23 +67,22 @@ export default function Payment(props) {
           try {
             const result = await createReservation({
               variables: {
-                cafeId: "",
-                userId: "",
-                themeMenuId: "",
+                cafeId: props.cafeId,
+                themeMenuId: props.ThemeMenuId,
                 createReservationInput: {
-                  reservation_date: "",
-                  memo: "",
-                  people_number: "",
+                  reservation_date: props.reservationDate,
+                  memo: props.memo,
+                  people_number: props.peopleNumber,
                 },
                 createPaymentInput: {
                   impUid: rsp.imp_uid,
-                  price: "",
-                  usePoint: "",
+                  price: props.totalPrice,
+                  usepoint: Number(props.usePoint),
                 },
               },
             });
-            console.log(result);
             console.log(rsp.imp_uid);
+            console.log(result);
             Modal.success({
               content: "결제에 성공하였습니다.",
             });
@@ -60,11 +90,10 @@ export default function Payment(props) {
             Modal.error({
               content: error.message,
             });
+            console.log(error.message);
           }
-
-          alert("결제가 성공하였습니다.");
         } else {
-          alert("결제가 실패했습니다.");
+          alert("다시 결제해주세요");
         }
       }
     );
@@ -85,7 +114,12 @@ export default function Payment(props) {
         ></script>
       </Head>
 
-      <WebPurpleButton onClick={requestPay} type="button" title="결제하기" />
+      <WebPurpleButton
+        title={props.title}
+        onClick={requestPay}
+        disabled={props.disabled}
+        type={props.type}
+      />
     </div>
   );
 }
