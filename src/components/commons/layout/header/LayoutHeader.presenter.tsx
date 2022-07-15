@@ -39,20 +39,20 @@ const styles = {
   },
   bmMenu: {
     background: "#6c5281",
-    padding: "2.5em 1.5em 0",
-    fontSize: "1.4em",
+    padding: "2em 1.5em 0",
+    fontSize: "1.2em",
   },
 
   bmItemList: {
     color: "#60046f",
-    padding: "0.8em",
+    padding: "0.3em",
   },
   bmItem: {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
     color: "#d1d1d1",
-    marginBottom: "1em",
+    marginBottom: "0.8em",
   },
   bmOverlay: {
     background: "rgba(116, 87, 151, 0.3)",

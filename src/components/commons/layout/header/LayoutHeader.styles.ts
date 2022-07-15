@@ -117,7 +117,7 @@ export const MyMenubox = styled.div`
 `;
 export const MyMenues = styled.a`
   color: #d1d1d1;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
   margin-left: 1.5em;
   :hover {
     color: #d1d1d1;
