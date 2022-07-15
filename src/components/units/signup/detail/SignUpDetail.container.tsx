@@ -108,13 +108,16 @@ export default function SignUpDetail() {
     try {
       const result = await createUsergql({
         variables: {
-          email: data.email,
-          password: data.password,
-          name: data.name,
-          phone: "01012345678",
+          createUserInput: {
+            email: data.email,
+            password: data.password,
+            name: data.name,
+            phone: data.phoneNumber,
+          },
         },
       });
       Modal.success({ content: `${result.data.createUser.name}` });
+      router.push("/login");
     } catch (error) {
       alert(error.message);
     }
@@ -181,13 +184,14 @@ export default function SignUpDetail() {
       router.push("/login");
     });
   };
+
   useEffect(() => {
     const script = document.createElement("script"); // <script></script>
     script.src = "https://developers.kakao.com/sdk/js/kakao.js";
     document.head.appendChild(script);
 
     script.onload = () => {
-      window.Kakao.init("d5cc36e815debd3853b9a59ec62d144b");
+      window.Kakao.init("675cd5356e97bab7c2fafe02e722f558");
       window.Kakao.isInitialized();
     };
 

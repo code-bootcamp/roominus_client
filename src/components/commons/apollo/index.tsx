@@ -8,12 +8,11 @@ import { createUploadLink } from "apollo-upload-client";
 import { onError } from "@apollo/client/link/error";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-// import { accessTokenState } from "../../../commons/store";
 import { getAccessToken } from "../../../commons/libraries/getAccessToken";
+import { accessTokenState } from "../../../commons/store";
 
 export default function ApolloSetting(props) {
-  // const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   useEffect(() => {
     getAccessToken().then((newAccessToken) => {
       // setAccessToken(newAccessToken);
@@ -43,9 +42,9 @@ export default function ApolloSetting(props) {
 
   const uploadLink = createUploadLink({
     uri: "https://wawoong.shop/graphql",
-    // headers: {
-    //   Authorization: `Bearer ${accessToken}`,
-    // },
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
   });
   // credentials: "include",
 
