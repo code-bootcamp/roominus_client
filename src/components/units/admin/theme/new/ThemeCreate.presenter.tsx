@@ -69,6 +69,13 @@ export default function ThemeCreateUI(props) {
           {...props.register("peoplelimit")}
           defaultValue={props.ThemeUpdateData?.fetchTheme.peoplelimit}
         />
+        <S.InputsTitle>이용 시간</S.InputsTitle>
+        <S.MyInput
+          type="number"
+          placeholder="clearTime"
+          {...props.register("clearTime")}
+          defaultValue={props.ThemeUpdateData?.fetchTheme.clearTime}
+        />
       </S.Form>
       <S.InputsTitle>이미지</S.InputsTitle>
       <S.RealImgInput

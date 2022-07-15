@@ -10,6 +10,7 @@ export const FETCH_THEME = gql`
       intro_content
       agelimit
       peoplelimit
+      clearTime
       like
       mainImg
       cafe {
