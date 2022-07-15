@@ -12,7 +12,11 @@ const Wrapper = styled.div`
   /* background-color: yellow; */
 `;
 
-const MenuTabs = (props) => (
+interface IMenuTabsProps {
+  onChangeKey: (key: string) => void;
+}
+
+const MenuTabs = (props: IMenuTabsProps) => (
   <Wrapper>
     <Tabs defaultActiveKey="1" onChange={props.onChangeKey}>
       <TabPane tab="매장 소개" key="1">

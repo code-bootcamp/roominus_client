@@ -87,7 +87,7 @@ export const DetailBox = styled.div`
 export const DetailTitle = styled.h3`
   /* width: 15%; //3.5vw */
   /* height: 100%; */
-  height: 40px;
+  height: 45px;
   margin-right: 1em;
   display: flex;
   flex-direction: column;
@@ -101,18 +101,27 @@ export const DetailTitle = styled.h3`
   }
 `;
 
+interface ILocationButtonProps {
+  total?: boolean;
+  gangnam?: boolean;
+  hongdae?: boolean;
+  kondae?: boolean;
+}
+
 export const LocationButtonTotal = styled.button`
-  width: 15%;
-  height: 40px;
+  width: 16%;
+  height: 45px;
   margin-right: 0.5em;
   border: none;
   background-color: #a3a8b7;
   color: white;
   font-weight: 500;
   border-radius: 5px;
+  /* border-radius: 5px 0px 0px 5px; */
   /* gap: 10px; */
   cursor: pointer;
-  background-color: ${(props) => (props.total ? "#4a00e0e7" : "#a3a8b7")};
+  background-color: ${(props: ILocationButtonProps) =>
+    props.total ? "#4a00e0e7" : "#a3a8b7"};
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -122,8 +131,8 @@ export const LocationButtonTotal = styled.button`
 `;
 
 export const LocationButtonGangnam = styled.button`
-  width: 15%;
-  height: 40px;
+  width: 16%;
+  height: 45px;
   margin-right: 0.5em;
   border: none;
   background-color: #a3a8b7;
@@ -132,7 +141,8 @@ export const LocationButtonGangnam = styled.button`
   border-radius: 5px;
   /* gap: 10px; */
   cursor: pointer;
-  background-color: ${(props) => (props.gangnam ? "#4a00e0e7" : "#a3a8b7")};
+  background-color: ${(props: ILocationButtonProps) =>
+    props.gangnam ? "#4a00e0e7" : "#a3a8b7"};
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -142,8 +152,8 @@ export const LocationButtonGangnam = styled.button`
 `;
 
 export const LocationButtonHongdae = styled.button`
-  width: 15%;
-  height: 40px;
+  width: 16%;
+  height: 45px;
   margin-right: 0.5em;
   border: none;
   background-color: #a3a8b7;
@@ -152,7 +162,8 @@ export const LocationButtonHongdae = styled.button`
   border-radius: 5px;
   /* gap: 10px; */
   cursor: pointer;
-  background-color: ${(props) => (props.hongdae ? "#4a00e0e7" : "#a3a8b7")};
+  background-color: ${(props: ILocationButtonProps) =>
+    props.hongdae ? "#4a00e0e7" : "#a3a8b7"};
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -162,17 +173,19 @@ export const LocationButtonHongdae = styled.button`
 `;
 
 export const LocationButtonKondae = styled.button`
-  width: 15%;
-  height: 40px;
+  width: 16%;
+  height: 45px;
   margin-right: 0.5em;
   border: none;
   background-color: #a3a8b7;
   color: white;
   font-weight: 500;
   border-radius: 5px;
+  /* border-radius: 0px 5px 5px 0px; */
   /* gap: 10px; */
   cursor: pointer;
-  background-color: ${(props) => (props.kondae ? "#4a00e0e7" : "#a3a8b7")};
+  background-color: ${(props: ILocationButtonProps) =>
+    props.kondae ? "#4a00e0e7" : "#a3a8b7"};
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -207,7 +220,7 @@ export const LocationOption = styled.option`
 
 export const DetailContents = styled.input`
   width: 70%;
-  height: 40px;
+  height: 45px;
   border: none;
   outline: none;
   border-bottom: 1px solid #bdbdbd;
