@@ -163,9 +163,12 @@ export const ThemeList = styled.div`
   padding: 20px 0px;
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  grid-template-columns: repeat(auto-fill, minmax(290px, auto));
+  place-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(260px, auto));
   /* grid-template-rows: repeat(auto-fill, minmax(420px, auto)); */
   /* grid-template-rows: repeat(3, minmax(400px, auto)); */
+
+  column-gap: 30px;
   row-gap: 30px;
   @media ${breakPoints.mobile} {
     display: flex;
@@ -175,8 +178,8 @@ export const ThemeList = styled.div`
 `;
 
 export const Flip = styled.div`
-  width: 290px;
-  height: 420px;
+  width: 260px;
+  height: 400px;
   position: relative;
 
   :hover {
@@ -208,6 +211,7 @@ export const Theme = styled(defaultDiv)`
   position: absolute;
   width: 100%;
   height: 100%;
+  font-size: 0.7em;
   /* width: 290px;
   height: 420px; */
   padding: 10px 15px;
@@ -222,7 +226,7 @@ export const Theme = styled(defaultDiv)`
       #26282c 100%
     ),
     url(${(props: IGenreProps) => props.src});
-  background-size: 290px 420px;
+  background-size: 260px 400px;
 `;
 
 export const ThemeBack = styled(defaultDiv)`
@@ -230,7 +234,7 @@ export const ThemeBack = styled(defaultDiv)`
   width: 100%;
   height: 100%;
   background: url(${(props: IGenreProps) => props.src});
-  background-size: 290px 420px;
+  background-size: 260px 400px;
   transform: rotateY(180deg);
   padding: 20px;
   display: flex;
@@ -263,7 +267,7 @@ export const ImgGradient = styled.div`
 `;
 
 export const GenreTag = styled.div`
-  width: 80px;
+  width: 5em;
   height: 30px;
   border-radius: 8px;
   background-color: #220d4daf;
