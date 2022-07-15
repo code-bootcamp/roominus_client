@@ -5,7 +5,7 @@ export default function ReservationNoticeUI() {
   return (
     <S.Container>
       <S.TitleBox>
-        <S.ContainerTitle>예약 절차 안내</S.ContainerTitle>
+        <h1>예약 절차 안내</h1>
       </S.TitleBox>
 
       <S.Wrapper>

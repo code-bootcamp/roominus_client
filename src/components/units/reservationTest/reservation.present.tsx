@@ -79,14 +79,13 @@ export default function ReservationUI(props: any) {
                     required
                     select
                     label="매장 선택"
-                    color="secondary"
                     variant="outlined"
                     id="filled-cafe"
                     onChange={props.onChangeCafe}
                     value={props.cafeId}
                   >
-                    <MenuItem value={props?.data?.fetchThemeMenus[0].cafe?.id}>
-                      {props?.data?.fetchThemeMenus[0].cafe?.name}
+                    <MenuItem value={props?.data?.fetchThemeMenus[0]?.cafe?.id}>
+                      {props?.data?.fetchThemeMenus[0]?.cafe?.name}
                     </MenuItem>
                   </TextField>
                 </Grid>

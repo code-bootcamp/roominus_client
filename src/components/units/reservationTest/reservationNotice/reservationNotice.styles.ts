@@ -5,11 +5,15 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const TitleBox = styled.div``;
+export const TitleBox = styled.div`
+  & h1 {
+    font-size: 1.5em;
+    font-weight: 700;
 
-export const ContainerTitle = styled.h1`
-  font-size: 1.56em;
-  font-weight: 700;
+    @media ${breakPoints.mobile} {
+      font-size: 1.1em;
+    }
+  }
 `;
 
 export const Wrapper = styled.div`
