@@ -132,23 +132,13 @@ export const PickBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
-  /* background-color: pink; */
-`;
-
-export const Pick = styled.img`
-  width: 1.8em;
-  height: 100%;
-  cursor: pointer;
-  margin-right: 0.3em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   /* background-color: green; */
 `;
 
-export const PickCount = styled.h3`
-  height: 100%;
+export const PickCount = styled.div`
+  height: 2em;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,9 +164,11 @@ export const Pagination = styled.div`
 `;
 
 export const RedHeart = styled(FontAwesomeIcon)`
-  padding: 2px;
-  font-size: 15px;
+  /* padding: 2px; */
+  font-size: 17px;
   color: #e35d5b;
+  margin-right: 0.3em;
+  /* background-color: pink; */
 `;
 
 // -------------------------- 0711 hani

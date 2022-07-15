@@ -51,12 +51,13 @@ export default function CommunityNew() {
             content: data.content,
             boardTags: tagList,
             mainImg: fileUrl,
+            user: "469bb4c0-90f4-42d2-8099-69b34a139a79",
           },
         },
       });
       console.log(result);
       alert("등록이 완료되었습니다!");
-      // router.push("/community/_id");
+      router.push(`/community/${result.data?.createBoard.id}`);
     }
   };
 

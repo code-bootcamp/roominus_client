@@ -139,4 +139,5 @@ export const RedHeart = styled(FontAwesomeIcon)`
   padding: 2px;
   font-size: 25px;
   color: #e35d5b;
+  margin-right: 0.3em;
 `;
