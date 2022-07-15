@@ -36,6 +36,7 @@ export default function ThemeCreate(props) {
             subImgs: [imgurl],
             agelimit: Number(data.agelimit),
             peoplelimit: Number(data.peoplelimit),
+            clearTime: data.clearTime,
           },
         },
       });
@@ -59,6 +60,7 @@ export default function ThemeCreate(props) {
     if (data.agelimit) updateThemeInput.agelimit = Number(data.agelimit);
     if (data.peoplelimit)
       updateThemeInput.peoplelimit = Number(data.peoplelimit);
+    if (data.clearTime) updateThemeInput.clearTime = data.clearTime;
     if (imgurl) updateThemeInput.mainImg = imgurl;
     try {
       const result = await updateThemegql({

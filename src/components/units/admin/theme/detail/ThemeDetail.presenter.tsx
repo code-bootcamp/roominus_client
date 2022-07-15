@@ -15,6 +15,7 @@ export default function ThemeDetailUI(props) {
           <div>난이도: {props.ThemeDetail?.fetchTheme.rank}</div>
           <div>나이 제한: {props.ThemeDetail?.fetchTheme.agelimit}</div>
           <div>인원 제한: {props.ThemeDetail?.fetchTheme.peoplelimit}</div>
+          <div>이용 시간: {props.ThemeDetail?.fetchTheme.clearTime}</div>
           <div>좋아요: {props.ThemeDetail?.fetchTheme.like}</div>
           <div>매장 : {props.ThemeDetail?.fetchTheme.cafe?.name}</div>
           <div>장르 : {props.ThemeDetail?.fetchTheme.genre?.name}</div>

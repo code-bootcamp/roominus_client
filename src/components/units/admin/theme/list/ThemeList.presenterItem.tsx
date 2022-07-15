@@ -22,6 +22,7 @@ export default function ThemeListUIItem(props) {
         <div>인원 제한: {props.ThemeData?.peoplelimit}</div>
         <div>매장: {props.ThemeData?.cafe?.name}</div>
         <div>장르: {props.ThemeData?.genre?.name}</div>
+        <div>이용시간: {props.ThemeData?.clearTime}</div>
         <S.Like>좋아요:{props.ThemeData.like}</S.Like>
       </S.RestDetailInfo>
     </S.ThemeItemWrapper>
