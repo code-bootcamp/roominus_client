@@ -20,8 +20,10 @@ export const Title = styled.h1`
 `;
 export const FormFirst = styled.form`
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+
   @media ${breakPoints.mobile} {
     width: 80%;
     font-size: 1em;
@@ -83,34 +85,25 @@ export const PasswordTitle = styled.span`
 `;
 export const PasswordInputBox = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 export const PasswordInput = styled.input`
   width: 100%;
-  height: 2em;
-  border: none;
-  border-bottom: 1px solid #c9c9c9;
-  margin-right: 1em;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
   outline: none;
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;
-`;
-
-export const WarningBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: #a3a8b71f;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-`;
-export const WarningMessage = styled.div`
-  font-size: 0.8em;
 `;
 
 export const PasswordVerificationBoxes = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1.6em;
+  position: relative;
 `;
 export const PasswordVerificationBox = styled.div`
   display: flex;
@@ -123,15 +116,14 @@ export const PasswordVerificationTitle = styled.span`
 `;
 export const PasswordVerificationInputBox = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 `;
 export const PasswordVerificationInput = styled.input`
   width: 100%;
-  height: 2em;
-  border: none;
-  border-bottom: 1px solid #c9c9c9;
-  margin-right: 1em;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
   outline: none;
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;
@@ -158,10 +150,9 @@ export const NameInputBox = styled.div`
 `;
 export const NameInput = styled.input`
   width: 100%;
-  height: 2em;
-  border: none;
-  border-bottom: 1px solid #c9c9c9;
-  margin-right: 1em;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
   outline: none;
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;
