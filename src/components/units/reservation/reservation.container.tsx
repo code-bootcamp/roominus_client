@@ -6,7 +6,7 @@ import { getDate } from "../../commons/getDate";
 import ReservationUI from "./reservation.present";
 import { FETCH_THEMES, FETCH_THEME_MENUS } from "./reservation.queries";
 
-export default function ReservationTest() {
+export default function Reservation() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
 
   const [themeId, setThemeId] = useState("");

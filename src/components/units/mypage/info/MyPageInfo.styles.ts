@@ -24,18 +24,24 @@ export const InfoBox = styled.div`
 export const ThemeBoxs = styled.div`
   display: flex;
   justify-content: center;
-  height: 10em;
-  gap: 5%;
+  width: 100%;
+  height: auto;
+  gap: 1em;
 `;
 export const ThemeBox = styled.div`
-  width: 30%;
-  border: 1px solid #d9d6d0;
+  width: 100%;
+  height: 10em;
+  border: 1px solid #b6a2ea;
   border-radius: 8px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 1em;
+
+  @media ${breakPoints.mobile} {
+    height: 9em;
+  }
 `;
 
 export const ThemeTitle = styled.label`
@@ -44,7 +50,7 @@ export const ThemeTitle = styled.label`
 
 export const ThemeSubTitle = styled.span`
   color: "#5F6269";
-  font-size: 0.7em;
+  font-size: 0.9em;
   padding-bottom: 0.5em;
 
   @media ${breakPoints.tablet} {
@@ -53,8 +59,7 @@ export const ThemeSubTitle = styled.span`
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 0.05em;
-    text-align: center;
+    display: none;
   }
 `;
 
@@ -100,7 +105,7 @@ export const addButton = styled.button`
 `;
 
 export const Label = styled.label`
-  font-size: 1em;
+  font-size: 1.2em;
 `;
 
 export const Contents = styled.span`
@@ -110,19 +115,32 @@ export const Contents = styled.span`
 `;
 
 export const TableTop = styled.div`
-  border-top: 2px solid gray;
+  border-top: 2px solid #b6a2ea;
   margin-top: 1em;
 `;
 
 export const TableBottom = styled.div`
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid #b6a2ea;
 `;
+
+export const TitleRow = styled.li`
+  display: flex;
+  flex-direction: row;
+  height: 52px;
+  line-height: 52px;
+  border-bottom: 2px solid #b6a2ea;
+`;
+
 export const Row = styled.li`
   display: flex;
   flex-direction: row;
   height: 52px;
   line-height: 52px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid darkgray;
+
+  &:last-of-type {
+    border: none;
+  }
 `;
 
 export const ColumnHeaderBasic = styled.div`
@@ -133,6 +151,8 @@ export const ColumnHeaderBasic = styled.div`
 export const ColumnHeaderTitle = styled.div`
   width: 40%;
   text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
 `;
 
 export const ColumnBasic = styled.div`

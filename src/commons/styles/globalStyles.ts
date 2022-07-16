@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-import { breakPoints } from "./media";
 
 export const globalStyles = css`
   * {
@@ -17,8 +16,19 @@ export const globalStyles = css`
     max-width: 1200px;
     width: 100vw;
     height: 100vh;
+    font-family: "Noto Sans KR", sans-serif;
+    overflow-x: hidden; // 가로 스크롤 제거
 
-    overflow-x: hidden;
+    // 세로 스크롤제거 -> 했더니 메인에서 양 옆에 흰색 선이 생겨서 주석처리 먼저 해놓습니다. 스크롤바 없이 스크롤은 잘 됩니다.
+
+    /* -ms-overflow-style: none;  */
+    /* IE and Edge */
+    /* scrollbar-width: none;  */
+    /* Firefox */
+    /* ::-webkit-scrollbar {
+      display: none;
+    }  */
+    /* Chrome, Safari, Opera*/
   }
 
   ul {

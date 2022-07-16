@@ -82,11 +82,13 @@ export const Step = styled.div`
     @media ${breakPoints.mobile} {
       padding: 0;
       margin: 0;
+      font-size: 0.7em;
     }
   }
 
   & h6 {
     display: none;
+
     @media ${breakPoints.tablet} {
       display: none;
     }
@@ -95,19 +97,19 @@ export const Step = styled.div`
       display: inline;
       padding: 0;
       margin: 0;
+      font-size: 0.8em;
     }
   }
 
   @media ${breakPoints.tablet} {
     width: 6.5em;
     height: 6.5em;
-    font-size: 1.1em;
   }
 
   @media ${breakPoints.mobile} {
     gap: 0;
-    width: 6.5em;
-    height: 6.5em;
+    width: 6em;
+    height: 6em;
     font-size: 0.8em;
   }
 `;

@@ -66,18 +66,18 @@ export default function MyPageInfoUI(props) {
 
           <S.TableWrapper>
             <S.TableTop />
-            <S.Row>
-              <S.ColumnHeaderBasic>번호</S.ColumnHeaderBasic>
+            <S.TitleRow>
+              <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
               <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
-              <S.ColumnHeaderBasic>전체 적립금</S.ColumnHeaderBasic>
-              <S.ColumnHeaderBasic>날짜</S.ColumnHeaderBasic>
-            </S.Row>
+              <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
+              <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+            </S.TitleRow>
             {data.map((el) => (
               <S.Row key={el._id}>
                 <S.ColumnBasic>
                   {String(el._id).slice(-4).toUpperCase()}
                 </S.ColumnBasic>
-                <S.ColumnTitle id={el._id}>{el.title}</S.ColumnTitle>
+                <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
                 <S.ColumnBasic>{el.writer}</S.ColumnBasic>
                 <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
               </S.Row>
@@ -96,18 +96,18 @@ export default function MyPageInfoUI(props) {
           </S.InfoTitleBox>
 
           <S.TableTop />
-          <S.Row>
-            <S.ColumnHeaderBasic>번호</S.ColumnHeaderBasic>
+          <S.TitleRow>
+            <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
             <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
-            <S.ColumnHeaderBasic>전체 적립금</S.ColumnHeaderBasic>
-            <S.ColumnHeaderBasic>날짜</S.ColumnHeaderBasic>
-          </S.Row>
+            <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
+            <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+          </S.TitleRow>
           {data.map((el) => (
             <S.Row key={el._id}>
               <S.ColumnBasic>
                 {String(el._id).slice(-4).toUpperCase()}
               </S.ColumnBasic>
-              <S.ColumnTitle id={el._id}>{el.title}</S.ColumnTitle>
+              <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
               <S.ColumnBasic>{el.writer}</S.ColumnBasic>
               <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
             </S.Row>

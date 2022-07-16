@@ -33,19 +33,18 @@ export default function ReservationUI(props: any) {
           <>
             {props?.data?.fetchThemeMenus?.length ? (
               <>
-                <S.BackBox onClick={props.onClickReset}>
-                  <S.Left />
-                  <span>처음으로 </span>
+                <S.BackBox>
+                  <S.Left onClick={props.onClickReset} />
+                  <span onClick={props.onClickReset}>처음으로 </span>
                 </S.BackBox>
                 <ReservationThemeInfo data={props.data} />
               </>
             ) : (
               <S.Container>
-                <S.BackBox onClick={props.onClickReset}>
-                  <S.Left />
-                  <span>처음으로</span>
+                <S.BackBox>
+                  <S.Left onClick={props.onClickReset} />
+                  <span onClick={props.onClickReset}>처음으로</span>
                 </S.BackBox>
-
                 <NoReservation />
               </S.Container>
             )}
@@ -209,7 +208,7 @@ export default function ReservationUI(props: any) {
                   variant="outlined"
                   register={props.register("memo")}
                   style={{ paddingBottom: "1.3em" }}
-                  helperText="예약자와 방문자가 다를 경우 메모를 방문자의 정보를 작성해주세요."
+                  helperText="예약자와 방문자가 다를 경우 방문자의 정보를 작성해주세요."
                 />
               )}
           </div>

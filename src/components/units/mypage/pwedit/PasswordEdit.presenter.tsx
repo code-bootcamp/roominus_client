@@ -3,6 +3,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import Link from "next/link";
 
 export default function PWeditUI(props) {
   return (
@@ -131,7 +132,9 @@ export default function PWeditUI(props) {
           </S.PasswordVerificationBox>
         </S.PasswordVerificationBoxes>
         <S.ButtonBox>
-          <WebBlackButton type="reset" title="초기화" />
+          <Link href={"/mypage/phoneedit"}>
+            <WebBlackButton type="button" title="뒤로가기" />
+          </Link>
           <WebPurpleButton type="submit" title="수정하기" />
         </S.ButtonBox>
       </S.Form>
