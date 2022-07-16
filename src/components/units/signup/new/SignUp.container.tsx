@@ -25,6 +25,7 @@ export default function SignUp() {
     totalCheckRef.current.click();
   };
   const onChangeBothCheckbox = () => {
+    totalCheckRef.current.click();
     if (totalCheckRef.current.checked === true) {
       necessityCheckRef.current.checked = true;
       optionalCheckRef.current.checked = true;
