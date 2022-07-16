@@ -128,7 +128,10 @@ export default function HomeUI(props) {
             <S.AlarmImgs src="/img/home/alarm3.png" alt="alarm3" />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/img/home/alarm4.png" alt="alarm3" />
+            <S.AlarmImgs src="/img/home/alarm4.png" alt="alarm4" />
+          </S.AlarmCarouselBox>
+          <S.AlarmCarouselBox>
+            <S.AlarmImgs src="/img/home/alarm5.png" alt="alarm5" />
           </S.AlarmCarouselBox>
         </S.StyledSlider>
       </S.AlarmCarouselBoxes>

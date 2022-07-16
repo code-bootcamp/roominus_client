@@ -5,7 +5,6 @@ import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
 export const Container = styled.main`
   width: 30%;
   height: 800px;
-
   border-right: 1px solid darkgray;
 
   @media ${breakPoints.tablet} {

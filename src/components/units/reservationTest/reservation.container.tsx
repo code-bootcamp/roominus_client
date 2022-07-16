@@ -92,6 +92,8 @@ export default function ReservationTest() {
     .filter((el: any) => el.reservation_time === time)
     .filter((el: any) => el.people_number === peopleNumber)[0]?.id;
 
+  console.log(ThemeMenuId);
+
   const onClickSubmit = (data) => {
     console.log(data);
   };

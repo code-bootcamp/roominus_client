@@ -77,7 +77,7 @@ export default function ReservationNoticeUI() {
           <S.TypingBox>
             <Typewriter
               options={{
-                strings: ["힘내세요"],
+                strings: ["네모네모", "익명의 여자", "동화나라"],
                 autoStart: true,
                 loop: true,
               }}

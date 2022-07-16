@@ -43,7 +43,7 @@ export const ThemeTitle = styled.label`
 `;
 
 export const ThemeSubTitle = styled.span`
-  color: darkgray;
+  color: "#5F6269";
   font-size: 0.7em;
   padding-bottom: 0.5em;
 
