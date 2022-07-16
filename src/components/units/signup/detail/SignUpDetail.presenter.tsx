@@ -85,17 +85,15 @@ export default function SignUpDetailUI(props) {
             </S.PasswordInputBox>
             <S.Error>{props.formState.errors.password?.message}</S.Error>
             <PasswordChecklist
-              rules={["minLength", "number", "capital", "lowercase"]}
+              rules={["minLength", "number", "lowercase"]}
               minLength={8}
               maxLength={14}
               value={props.password}
               iconSize={10}
               messages={{
-                notEmpty: "비밀번호를 입력해주세요.",
-                minLength: "*8~14자의 영문,숫자 혼합만 사용가능.",
+                minLength: "최소 8자리 이상의 영문,숫자 혼합만 사용가능.",
                 number: "숫자도 포함시켜야 합니다.",
-                capital: "대문자도 포함시켜야 합니다.",
-                lowercase: "소문자도 포함시켜야 합니다.",
+                lowercase: "영문(소문자)도 포함시켜야 합니다.",
               }}
             />
           </S.PasswordBox>
@@ -177,7 +175,7 @@ export default function SignUpDetailUI(props) {
             <S.PhoneNoInput
               type="text"
               name="phoneNumber"
-              placeholder="010-1234-5678"
+              placeholder="01012345678 "
               onChange={(e) => {
                 props.setValue("phoneNumber", e.target.value);
                 props.trigger("phoneNumber");
@@ -196,7 +194,7 @@ export default function SignUpDetailUI(props) {
                 type="text"
                 placeholder="인증번호를 입력하세요."
               />
-              <S.TimeOut>{props.showCount}</S.TimeOut>
+              <S.TimeOut ref={props.timeRef}>{props.showCount}</S.TimeOut>
             </S.VerificationNoBox>
             <S.ConfirmBtn
               type="button"

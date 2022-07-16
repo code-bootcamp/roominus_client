@@ -2,41 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import * as S from "./Login.styles";
 import WebPurpleLoginButton from "../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
-import { useEffect } from "react";
-import Head from "next/head";
 
 export default function LoginUI(props) {
-  useEffect(() => {
-    const script = document.createElement("script"); // <script></script>
-    script.src = "https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js";
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      const naverIdLogin = new naver_id_login(
-        "1wXq1o0g2z9j6TSlaVB0",
-        "http://localhost:3000/signup/detail"
-      );
-      const state = naverIdLogin.getUniqState();
-      naverIdLogin.setButton("green", 3, 80);
-      naverIdLogin.setDomain("http://localhost:3000/");
-      naverIdLogin.setState(state);
-
-      naverIdLogin.init_naver_id_login();
-    };
-  }, []);
-
   return (
     <S.Wrapper>
-      <Head>
-        <script
-          type="text/javascript"
-          src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="http://code.jquery.com/jquery-1.11.3.min.js"
-        ></script>
-      </Head>
       <S.Title>로그인</S.Title>
       <S.Form onSubmit={props.handleSubmit(props.onSubmitLogin)}>
         <S.IDdBox>
@@ -57,17 +26,29 @@ export default function LoginUI(props) {
             placeholder="비밀번호를 입력해주세요"
           />
           {props.openEye && (
-            <FontAwesomeIcon
-              icon={faEye}
-              style={{ color: "purple", fontSize: "1.5em", cursor: "pointer" }}
-            />
+            <S.EyeBox>
+              <FontAwesomeIcon
+                icon={faEye}
+                style={{
+                  color: "purple",
+                  fontSize: "1.5em",
+                  cursor: "pointer",
+                }}
+              />
+            </S.EyeBox>
           )}
           {!props.openEye && (
-            <FontAwesomeIcon
-              onClick={props.onClickShowPassword}
-              icon={faEyeSlash}
-              style={{ color: "purple", fontSize: "1.5em", cursor: "pointer" }}
-            />
+            <S.EyeBox>
+              <FontAwesomeIcon
+                onClick={props.onClickShowPassword}
+                icon={faEyeSlash}
+                style={{
+                  color: "purple",
+                  fontSize: "1.5em",
+                  cursor: "pointer",
+                }}
+              />
+            </S.EyeBox>
           )}
         </S.PasswordBox>
         <S.Error>{props.formState.errors.password?.message}</S.Error>
@@ -86,18 +67,19 @@ export default function LoginUI(props) {
       </S.SignUpBox>
       <S.Divider></S.Divider>
       <S.SocialLoginBtns>
-        <S.SocialLoginBtn
-          id="naver_id_login"
-          onClick={props.NaverLogin}
-        ></S.SocialLoginBtn>
-        <S.SocialLoginBtn onClick={props.onClickLoginKakao}>
+        <S.SocialLoginBtn>
           <S.SocialLoginLogo
-            src="/img/login/kakaoLogo.png"
+            src="/img/login/kakao_login_medium_narrow.png"
             alt="kakakoSocialLogo"
+            onClick={props.onClickLoginKakao}
           />
         </S.SocialLoginBtn>
-        <S.SocialLoginBtn onClick={props.onClickGoogleLogin}>
-          <S.SocialLoginLogo src="/img/login/googlelogo.png" alt="googleLogo" />
+        <S.SocialLoginBtn>
+          <S.SocialLoginLogo
+            src="/img/login/btn_google_signin_light_normal_web.png"
+            alt="googleLogo"
+            onClick={props.onClickGoogleLogin}
+          />
         </S.SocialLoginBtn>
       </S.SocialLoginBtns>
     </S.Wrapper>

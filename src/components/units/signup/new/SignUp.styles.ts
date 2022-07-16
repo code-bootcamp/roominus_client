@@ -70,6 +70,7 @@ export const CheckBox = styled.div`
   font-size: 1em;
   background-color: #4a00e0e7;
   border-radius: 10px;
+  cursor: pointer;
   :hover {
     background: linear-gradient(
       90deg,
@@ -77,7 +78,6 @@ export const CheckBox = styled.div`
       rgba(74, 0, 224, 1) 100%
     );
   }
-  transition: all 250ms ease-in-out;
 `;
 export const Check = styled.input`
   margin-right: 0.5em;
@@ -90,6 +90,7 @@ export const Check = styled.input`
 `;
 export const CheckLabel = styled.span`
   font-size: 1em;
+  cursor: pointer;
 `;
 export const NecessityInfoBox = styled.div`
   width: 100%;

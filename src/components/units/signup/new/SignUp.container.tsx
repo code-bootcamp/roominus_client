@@ -20,6 +20,10 @@ export default function SignUp() {
   const onOpenErrorModal = () => {
     Modal.warning({ content: "필수 이용약관은 필수!" });
   };
+  const onClickTotalCheck = () => {
+    console.log("clicked");
+    totalCheckRef.current.click();
+  };
   const onChangeBothCheckbox = () => {
     if (totalCheckRef.current.checked === true) {
       necessityCheckRef.current.checked = true;
@@ -53,6 +57,7 @@ export default function SignUp() {
       onChangeOptionalCheck={onChangeOptionalCheck}
       necessity={necessity}
       optional={optional}
+      onClickTotalCheck={onClickTotalCheck}
     />
   );
 }
