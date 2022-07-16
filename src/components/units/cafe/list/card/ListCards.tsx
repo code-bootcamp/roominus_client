@@ -14,8 +14,8 @@ const Wrapper = styled.div`
 `;
 
 const LocationBox = styled.div`
-  width: 4.7em;
-  height: 2.5em;
+  width: 5.5em;
+  height: 3.5em;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -23,29 +23,35 @@ const LocationBox = styled.div`
   /* align-items: center; */
   position: absolute;
   z-index: 1;
-  top: 1.5em;
+  top: 2.4em;
   left: -1px;
-  background-color: #8b54c1;
+  background-color: #4a00e0;
   /* background-color: #26282c; */
 `;
 
-const Location = styled.h4`
+const Location = styled.h3`
+  font-size: 1.3em;
+  font-weight: 600;
   /* background-color: green; */
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: flex-end; */
-  padding-top: 0.4em;
-  height: 2.5em;
+  justify-content: center;
+  /* padding-top: 0.4em; */
+  height: 100%;
   color: white;
 `;
 
 const LocationIcon = styled.img`
-  width: 1.1em;
-  height: 1em;
+  width: 1.3em;
+  height: 1.3em;
   display: flex;
   flex-direction: column;
   align-self: center;
   /* background-color: pink; */
+`;
+
+const Info = styled.div`
+  font-size: 1.3em;
 `;
 
 interface IListCardsProps {
@@ -83,7 +89,9 @@ const ListCards = (props: IListCardsProps) => (
         <LocationIcon src="/img/cafe/locationIcon.png" />
         <Location>{props.el.address}</Location>
       </LocationBox>
-      <Meta title={props.el.name} description={props.el.phone} />
+      <Info>
+        <Meta title={props.el.name} description={props.el.phone} />
+      </Info>
     </Card>
   </Wrapper>
 );

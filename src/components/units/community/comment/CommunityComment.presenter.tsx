@@ -6,7 +6,7 @@ export default function CommunityCommentUI() {
     <S.Wrapper>
       <S.CommentTitleBox>
         <S.CommentIcon src="/img/community/comment/commentIcon.png" />
-        <S.CommentTitle>댓글</S.CommentTitle>
+        <S.CommentTitle>댓글(UI참고용)</S.CommentTitle>
       </S.CommentTitleBox>
       <S.CommentWriteBox>
         <S.Name>이영* 님</S.Name>

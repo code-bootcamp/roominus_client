@@ -13,8 +13,10 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
         <S.InfoBox>
           <S.NamePhoneBox>
             <S.CafeName>{props.data?.fetchCafe.name}</S.CafeName>
+            {/* <S.LocationPhoneBox> */}
             <S.Location>🌏 {props.data?.fetchCafe.address}</S.Location>
             <S.CafePhone>📞 {props.data?.fetchCafe.phone}</S.CafePhone>
+            {/* </S.LocationPhoneBox> */}
           </S.NamePhoneBox>
           <S.MenuBox>
             <MenuTabs onChangeKey={props.onChangeKey} />
