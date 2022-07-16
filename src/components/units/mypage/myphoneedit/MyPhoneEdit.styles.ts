@@ -8,14 +8,14 @@ export const Container = styled.main`
 
 export const Title = styled.h1``;
 
-export const Wrapper = styled.form`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
 export const UserInfoBox = styled.div`
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid darkgray;
   line-height: 3em;
   display: flex;
   flex-direction: row;
@@ -36,13 +36,6 @@ export const UserDataLabel = styled.h5`
   }
 `;
 
-export const UserCertificationBox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-`;
-
 export const UserData = styled.p`
   margin-bottom: 0px;
   margin-right: 10px;
@@ -58,39 +51,117 @@ export const Edit = styled.span`
   }
 `;
 
-export const CertificationInput = styled.input`
-  ::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  ::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-`;
-
-export const UserCertification = styled.div`
+export const Form = styled.form`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  width: auto;
+  padding-bottom: 2em;
   gap: 1em;
 
   @media ${breakPoints.mobile} {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
+`;
+
+export const PhoneNewInputBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const PhoneBox = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8em;
+  }
+`;
+export const PhoneNewInput = styled.input`
+  width: 100%;
+  height: 3em;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
+  margin-right: 1em;
+  outline: none;
+  font-size: 1.3em;
+  padding: 0em 0.8em 0em 0.8em;
+  font-size: 1em;
+`;
+
+export const VerificationInputBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const VerificationNoBox = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8em;
+  }
+`;
+export const VerificationNoInput = styled.input`
+  width: 100%;
+  height: 3em;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
+  margin-right: 1em;
+  outline: none;
+  font-size: 1.3em;
+  padding: 0em 0.8em 0em 0.8em;
+  font-size: 1em;
+`;
+
+export const ConfirmBtn = styled.button`
+  width: 5em;
+  height: 3em;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  :hover {
+    background: linear-gradient(
+      90deg,
+      rgba(142, 45, 226, 1) 30%,
+      rgba(74, 0, 224, 1) 100%
+    );
+  }
+
+  background-color: #4a00e0e7;
+  color: #ffffff;
+`;
+export const TimeOut = styled.span`
+  margin: auto;
+  position: absolute;
+  top: 0.7em;
+  right: 2em;
+  /* visibility: hidden; */
+`;
+
+export const Error = styled.span`
+  color: red;
+  font-size: 1em;
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 1em;
-  padding-top: 2em;
-`;
-
-export const DeleteBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  padding-top: 15em;
 `;

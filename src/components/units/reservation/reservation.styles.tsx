@@ -49,7 +49,6 @@ export const BackBox = styled.div`
   font-size: 1.3em;
   font-weight: 700;
   padding-bottom: 0.5em;
-  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     font-size: 1.1em;
@@ -57,10 +56,13 @@ export const BackBox = styled.div`
 
   & span {
     margin-left: 0.5em;
+    cursor: pointer;
   }
 `;
 
-export const Left = styled(LeftOutlined)``;
+export const Left = styled(LeftOutlined)`
+  cursor: pointer;
+`;
 
 export const Form = styled.form`
   width: 100%;
@@ -93,7 +95,7 @@ export const Total = styled.div`
   font-size: 1.8em;
 
   & h4 {
-    color: red;
+    color: #4a00e0e7;
   }
 
   @media ${breakPoints.tablet} {

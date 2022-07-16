@@ -55,7 +55,6 @@
     "react-spring": "^9.4.5",
     "recoil": "^0.7.4",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.5",
     "sweetalert2": "^11.4.20",
     "typewriter-effect": "^2.19.0",
     "uuid": "^8.3.2",

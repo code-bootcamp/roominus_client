@@ -15,20 +15,31 @@ export const Wrapper = styled.div`
 export const Title = styled.h1``;
 
 export const TableTop = styled.div`
-  border-top: 2px solid gray;
+  border-top: 2px solid #b6a2ea;
   margin-top: 20px;
 `;
 
 export const TableBottom = styled.div`
-  border-bottom: 2px solid gray;
+  border-top: 2px solid #b6a2ea;
 `;
 
+export const TitleRow = styled.li`
+  display: flex;
+  flex-direction: row;
+  height: 52px;
+  line-height: 52px;
+  border-bottom: 2px solid #b6a2ea;
+`;
 export const Row = styled.li`
   display: flex;
   flex-direction: row;
   height: 52px;
   line-height: 52px;
   border-bottom: 1px solid gray;
+
+  &:last-of-type {
+    border: none;
+  }
 `;
 
 export const ColumnHeaderBasic = styled.div`

@@ -34,42 +34,61 @@ export default function MyPhoneEditUI(props) {
         </S.UserInfoBox>
 
         {props.isEdit && (
-          <S.UserInfoBox>
-            <S.UserDataLabel>변경할 전화번호</S.UserDataLabel>
-            <S.UserCertification>
-              <S.UserCertificationBox>
-                <input type="tel" />
-                <WebSmallBlackButton
-                  title="인증번호"
-                  type="button"
-                  onClick={props.onClickEdit}
-                ></WebSmallBlackButton>
-              </S.UserCertificationBox>
-              <S.UserCertificationBox>
-                <S.CertificationInput
-                  onKeyDown={(e) =>
-                    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()
-                  }
-                  type="number"
-                />
-                <span>{props.showCount}</span>
-              </S.UserCertificationBox>
-            </S.UserCertification>
-          </S.UserInfoBox>
-        )}
+          <>
+            <h3 style={{ padding: "1em" }}> 전화번호 수정</h3>
 
-        <S.ButtonWrapper>
-          <WebBlackButton
-            title="취소하기"
-            type="button"
-            onClick={props.onClickMoveToMain}
-          ></WebBlackButton>
-          <WebPurpleButton title="변경하기"> </WebPurpleButton>
-        </S.ButtonWrapper>
+            <S.Form onSubmit={props.handleSubmit(props.onClickPhonNumberEdit)}>
+              <>
+                <S.PhoneNewInputBox>
+                  <S.PhoneBox>
+                    <S.PhoneNewInput
+                      type="tel"
+                      name="phoneNumber"
+                      placeholder="-을 제외한 숫자만 입력하세요 "
+                      onChange={(e) => {
+                        props.setValue("phoneNumber", e.target.value);
+                        props.trigger("phoneNumber");
+                      }}
+                    />
+                  </S.PhoneBox>
+
+                  <S.ConfirmBtn
+                    onClick={props.onClickVerifyMySelfByNo}
+                    type="button"
+                  >
+                    인증
+                  </S.ConfirmBtn>
+                </S.PhoneNewInputBox>
+                <S.Error>{props.formState.errors.phoneNumber?.message}</S.Error>
+                <S.VerificationInputBox>
+                  <S.VerificationNoBox>
+                    <S.VerificationNoInput
+                      type="text"
+                      placeholder="인증번호를 입력하세요."
+                    />
+                    <S.TimeOut ref={props.timeRef}>{props.showCount}</S.TimeOut>
+                  </S.VerificationNoBox>
+
+                  <S.ConfirmBtn
+                    type="button"
+                    ref={props.verificationBtn}
+                    onClick={props.onClickCheckVerificationNo}
+                  >
+                    확인
+                  </S.ConfirmBtn>
+                </S.VerificationInputBox>
+              </>
+              <S.ButtonWrapper>
+                <WebBlackButton title="취소하기" type="reset"></WebBlackButton>
+                <WebPurpleButton
+                  onClick={props.onClickPhonNumberEdit}
+                  title="변경하기"
+                ></WebPurpleButton>
+              </S.ButtonWrapper>
+            </S.Form>
+          </>
+        )}
       </S.Wrapper>
-      <S.DeleteBox>
-        <span onClick={props.onClickResign}>탈퇴하기</span>
-      </S.DeleteBox>
     </S.Container>
   );
 }

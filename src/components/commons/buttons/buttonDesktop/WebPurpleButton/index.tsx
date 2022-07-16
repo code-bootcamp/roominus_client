@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../../commons/styles/media";
 
 const Button = styled.button`
   width: 9.4em;

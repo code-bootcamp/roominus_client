@@ -11,7 +11,7 @@ import LayoutSideBar from "./sidebar/LayoutSidebar.container";
 import LayoutSidebarAdmin from "./sidebarAdmin/LayoutSidebar.container";
 
 const HIDDEN_HEADER = ["/"];
-const HIDDEN_BANNER = ["/", "/home", "/cafe", "/login", "/signup"];
+const HIDDEN_BANNER = ["/", "/home", "/cafe"];
 const HIDDEN_TOP_HEADER = ["/"];
 // const VISIBLE_SIDE_BAR = [
 //   "/mypage",

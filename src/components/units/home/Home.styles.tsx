@@ -16,9 +16,10 @@ export const Wrapper = styled.section`
 
 export const BackGroundImg = styled.div`
   width: 100vw;
-  height: 38em;
-  background: url("/img/home/home.png") center/cover;
+  height: 45em;
+  background: url("/img/home/home2.png") center/cover;
   margin-bottom: 2em;
+  position: relative;
 
   @media ${breakPoints.tablet} {
     height: 26em;
