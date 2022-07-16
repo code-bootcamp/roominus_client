@@ -24,17 +24,17 @@ const CREATE_RESERVATION = gql`
       reservation_date
       memo
       status
-      theme_menu {
-        reservation_time
-        people_number
-        price
-        cafe {
-          name
-        }
-        theme {
-          title
-        }
-      }
+      # theme_menu {
+      #   reservation_time
+      #   people_number
+      #   price
+      #   cafe {
+      #     name
+      #   }
+      #   theme {
+      #     title
+      #   }
+      # }
     }
   }
 `;
@@ -81,7 +81,15 @@ export default function Payment(props) {
                 },
               },
             });
-            console.log(rsp.imp_uid);
+            console.log(
+              "impUid:",
+              rsp.imp_uid,
+              "price",
+              props.totalPrice,
+              "usepoint",
+              Number(props.usePoint)
+            );
+
             console.log(result);
             Modal.success({
               content: "결제에 성공하였습니다.",
@@ -91,6 +99,14 @@ export default function Payment(props) {
               content: error.message,
             });
             console.log(error.message);
+            console.log(
+              "impUid:",
+              rsp.imp_uid,
+              "price",
+              props.totalPrice,
+              "usepoint",
+              Number(props.usePoint)
+            );
           }
         } else {
           alert("다시 결제해주세요");

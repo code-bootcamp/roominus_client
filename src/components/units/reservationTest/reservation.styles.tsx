@@ -45,6 +45,7 @@ export const Wrapper = styled.section`
 `;
 
 export const BackBox = styled.div`
+  width: 100%;
   font-size: 1.3em;
   font-weight: 700;
   padding-bottom: 0.5em;
@@ -114,9 +115,8 @@ export const InformationUse = styled.div`
 
 export const CheckBox = styled.div`
   display: flex;
-  justify-content: center;
-  padding: 0.5em;
   font-size: 1.3em;
   font-weight: 700;
+  padding-bottom: 0.5em;
   gap: 0.5em;
 `;

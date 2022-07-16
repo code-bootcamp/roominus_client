@@ -1,19 +1,18 @@
 import * as S from "./reservation.styles";
-import { TextField, MenuItem, Grid, Box } from "@material-ui/core";
+import { TextField, MenuItem, Input } from "@material-ui/core";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
-  DatePicker,
 } from "@material-ui/pickers";
 // import moment from "moment";
 import MomentUtils from "@date-io/moment";
-import ReservationNotice from "./reservationNotice/reservationNotice.container";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import NoReservation from "./Noreservation";
 import { v4 as uuidv4 } from "uuid";
 import ReservationThemeInfo from "./reservationthemeInfo";
 import Payment from "../payment";
 import Swal from "sweetalert2";
+import ReservationNotice from "./reservationNotice/reservationNotice";
 
 export default function ReservationUI(props: any) {
   const date = new Date();
@@ -33,13 +32,13 @@ export default function ReservationUI(props: any) {
         {props.themeId ? (
           <>
             {props?.data?.fetchThemeMenus?.length ? (
-              <div>
+              <>
                 <S.BackBox onClick={props.onClickReset}>
                   <S.Left />
                   <span>처음으로 </span>
                 </S.BackBox>
                 <ReservationThemeInfo data={props.data} />
-              </div>
+              </>
             ) : (
               <S.Container>
                 <S.BackBox onClick={props.onClickReset}>
@@ -71,10 +70,9 @@ export default function ReservationUI(props: any) {
               label="테마 선택"
               id="filled-theme"
               onChange={props.onChangeTheme}
-              value={props?.themeId}
-              helperText="필수 입력 사항입니다."
+              value={props.themeId ? props.themeId : ""}
+              helperText="예약이 가능한 테마만 선택이 가능합니다."
               style={{ paddingBottom: "1.3em" }}
-              color="secondary"
             >
               {props?.themesList?.fetchThemes?.map((el: any) => (
                 <MenuItem key={uuidv4()} value={el.id}>
@@ -92,10 +90,9 @@ export default function ReservationUI(props: any) {
                 variant="outlined"
                 id="filled-cafe"
                 onChange={props.onChangeCafe}
-                value={props.cafeId}
-                helperText="필수 입력 사항입니다."
+                value={props?.cafeId ? props?.cafeId : ""}
+                helperText="예약이 가능한 매장만 선택이 가능합니다."
                 style={{ paddingBottom: "1.3em" }}
-                color="secondary"
               >
                 <MenuItem value={props?.data?.fetchThemeMenus[0]?.cafe?.id}>
                   {props?.data?.fetchThemeMenus[0]?.cafe?.name}
@@ -117,7 +114,7 @@ export default function ReservationUI(props: any) {
                     // label="방문일을 선택해주세요"
                     placeholder="방문일을 선택해주세요"
                     showTodayButton={true}
-                    value={props.reservationDate}
+                    value={props?.reservationDate ? props?.reservationDate : ""}
                     format="YYYY-MM-DD"
                     mask={"____-__-__"}
                     maxDate={MaxDate}
@@ -127,9 +124,8 @@ export default function ReservationUI(props: any) {
                     KeyboardButtonProps={{
                       "aria-label": "change date",
                     }}
-                    helperText="필수 입력 사항입니다."
+                    helperText="방문하실 날짜를 선택해주세요."
                     style={{ paddingBottom: "1.3em" }}
-                    color="secondary"
                   />
                 </MuiPickersUtilsProvider>
               </>
@@ -140,14 +136,13 @@ export default function ReservationUI(props: any) {
                 fullWidth
                 required
                 select
-                value={props.time}
+                value={props?.time ? props?.time : ""}
                 label="방문 시간 선택"
                 id="filled-time"
                 variant="outlined"
                 onChange={props.onChangeTime}
-                helperText="필수 입력 사항입니다."
+                helperText="방문하실 시간을 선택해주세요."
                 style={{ paddingBottom: "1.3em" }}
-                color="secondary"
               >
                 {props?.uniqeTime?.map((el: any) => (
                   <MenuItem key={uuidv4()} value={el}>
@@ -168,10 +163,9 @@ export default function ReservationUI(props: any) {
                   id="filled-headCount"
                   variant="outlined"
                   onChange={props.onChangeHeadCount}
-                  value={props.peopleNumber}
-                  helperText="필수 입력 사항입니다."
+                  value={props?.peopleNumber ? props?.peopleNumber : ""}
+                  helperText="방문하시는 인원을 선택해주세요."
                   style={{ paddingBottom: "1.3em" }}
-                  color="secondary"
                 >
                   {props?.selectTime?.map((el: any) => (
                     <MenuItem key={uuidv4()} value={el}>
@@ -193,7 +187,7 @@ export default function ReservationUI(props: any) {
                   onChange={props.onChangePoint}
                   variant="outlined"
                   InputProps={{ inputProps: { min: 0, max: 5000 } }}
-                  helperText="선택 입력 사항입니다."
+                  helperText="보유하신 적립금 중 입력 가능합니다."
                   style={{ paddingBottom: "1.3em" }}
                 />
               )}
@@ -211,11 +205,11 @@ export default function ReservationUI(props: any) {
                     shrink: true,
                   }}
                   multiline
-                  rows={4}
+                  maxRows={3}
                   variant="outlined"
                   register={props.register("memo")}
                   style={{ paddingBottom: "1.3em" }}
-                  helperText="선택 입력 사항입니다. 예약자와 방문자가 다를 경우 메모를 방문자의 정보를 작성해주세요."
+                  helperText="예약자와 방문자가 다를 경우 메모를 방문자의 정보를 작성해주세요."
                 />
               )}
           </div>
@@ -273,7 +267,6 @@ export default function ReservationUI(props: any) {
                       peopleNumber={props?.peopleNumber}
                       usePoint={props?.usePoint}
                     />
-                    {/* <button type="submit">ㅎㅇ</button> */}
                   </S.ButtonBox>
                 )}
               </S.FooterBox>

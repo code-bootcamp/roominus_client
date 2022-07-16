@@ -1,69 +1,92 @@
 import * as S from "./reservationNotice.styles";
+import {
+  HeartOutlined,
+  ShopOutlined,
+  ClockCircleOutlined,
+  CalendarOutlined,
+  TeamOutlined,
+  CreditCardOutlined,
+  CheckSquareOutlined,
+  PercentageOutlined,
+  FormOutlined,
+} from "@ant-design/icons";
 import Typewriter from "typewriter-effect";
 
-export default function ReservationNoticeUI() {
+export default function ReservationNotice() {
   return (
     <S.Container>
       <S.TitleBox>
-        <h1>예약 절차 안내</h1>
+        <FormOutlined style={{ marginBottom: "0.5em" }} />
+        <h1>예약 안내</h1>
       </S.TitleBox>
 
       <S.Wrapper>
         <S.StepBoxs>
           <S.StepBox>
             <S.Step>
-              <S.StepNumber>STEP1</S.StepNumber>
-              <S.Guide>
-                테마 & 매장 & <br></br> 날짜 선택
-              </S.Guide>
+              <HeartOutlined />
+              <h6>step1</h6>
+              <h4>테마 선택</h4>
             </S.Step>
             <S.Arrow src="/img/reservation/arrow.png" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <S.StepNumber>STEP2</S.StepNumber>
-              <S.Guide>
-                방문 시간과 <br></br> 인원 선택
-              </S.Guide>
+              <ShopOutlined />
+              <h6>step2</h6>
+
+              <h4>매장 선택</h4>
             </S.Step>
             <S.Arrow src="/img/reservation/arrow.png" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <S.StepNumber>STEP3</S.StepNumber>
-              <S.Guide>
-                결제 금액 확인 및 <br></br>적립금 사용
-              </S.Guide>
+              <CalendarOutlined />
+              <h6>step3</h6>
+
+              <h4>날짜 선택</h4>
+            </S.Step>
+            <S.Arrow src="/img/reservation/arrow.png" />
+          </S.StepBox>
+          <S.StepBox>
+            <S.Step>
+              <ClockCircleOutlined />
+              <h6>step4</h6>
+
+              <h4>시간 선택</h4>
             </S.Step>
           </S.StepBox>
         </S.StepBoxs>
-
         <S.StepBoxs>
           <S.StepBox>
             <S.Step>
-              <S.StepNumber>STEP4</S.StepNumber>
-
-              <S.Guide>예약 정보 입력</S.Guide>
-              <S.Guide>예약자 명과 번호</S.Guide>
+              <TeamOutlined />
+              <h6>step5</h6>
+              <h4>인원 선택</h4>
             </S.Step>
             <S.Arrow src="/img/reservation/arrow.png" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <S.StepNumber>STEP5</S.StepNumber>
-              <S.Guide>
-                최종금액 <br></br>
-                카드 결제
-              </S.Guide>
+              <PercentageOutlined />
+              <h6>step6</h6>
+              <h4>적립금 사용</h4>
             </S.Step>
             <S.Arrow src="/img/reservation/arrow.png" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <S.StepNumber>STEP6</S.StepNumber>
-              <S.Guide>
-                예약 내역 <br></br>확인 및 취소
-              </S.Guide>
+              <CreditCardOutlined />
+              <h6>step7</h6>
+              <h4>카드 결제</h4>
+            </S.Step>
+            <S.Arrow src="/img/reservation/arrow.png" />
+          </S.StepBox>
+          <S.StepBox>
+            <S.Step>
+              <CheckSquareOutlined />
+              <h6>step8</h6>
+              <h4>예약 확인</h4>
             </S.Step>
           </S.StepBox>
         </S.StepBoxs>
