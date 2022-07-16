@@ -19,10 +19,15 @@ export const Wrapper = styled.section`
 export const StarBox = styled.div`
   display: flex;
   flex-direction: row;
+  /* background-color: white;
+  padding: 0.5em;
+  border-radius: 8px; */
 `;
 
 export const StarScore = styled(Rate)`
-  color: yellowgreen;
+  .ant-rate-star-second {
+    color: #c6c8de;
+  }
 `;
 
 export const Star = styled(FontAwesomeIcon)`

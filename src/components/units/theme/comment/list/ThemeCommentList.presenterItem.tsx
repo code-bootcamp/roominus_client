@@ -67,7 +67,6 @@ export default function ThemeCommentListUIItem(props) {
       }
     });
   };
-  console.log(props.el);
   return isEdit ? (
     <>
       <ThemeCommentWrite isEdit={true} setIsEdit={setIsEdit} el={props.el} />
