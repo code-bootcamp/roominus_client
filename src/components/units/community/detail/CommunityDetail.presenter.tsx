@@ -5,6 +5,8 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./CommunityDetail.styles";
 import { getDateBefore } from "../../../commons/getDate";
 import Dompurify from "dompurify";
+import { Image } from "antd";
+import CommunityCommentWrite from "../comment/Write/CommunityCommentWrite.container";
 
 export default function CommunityDetailUI(props) {
   return (
@@ -14,7 +16,17 @@ export default function CommunityDetailUI(props) {
           <S.WriterName>작성자</S.WriterName>
           <S.Date>{getDateBefore(props.data?.fetchBoard.createdAt)}</S.Date>
         </S.NameDateBox>
-        <S.Picture src={props.data?.fetchBoard.mainImg} />
+        {/* <S.Picture> */}
+        <Image
+          src={props.data?.fetchBoard.mainImg}
+          style={{
+            width: "100%",
+            height: "31em",
+            // margin: "auto",
+            borderRadius: "10px",
+          }}
+        />
+        {/* </S.Picture> */}
         <S.PickAndShareBox>
           <S.PickBox>
             <S.RedHeart icon={faHeart} />
@@ -50,7 +62,10 @@ export default function CommunityDetailUI(props) {
           ></WebPurpleButton>
         </S.ButtonBox>
       </S.Wrapper>
-      <CommunityList />
+      <S.Comment>
+        <CommunityCommentWrite />
+        <CommunityList />
+      </S.Comment>
     </S.Container>
   );
 }

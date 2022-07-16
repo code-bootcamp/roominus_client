@@ -66,7 +66,16 @@ export const CafeName = styled.h1`
   font-weight: 700;
 `;
 
-export const CafePhone = styled.div``;
+// export const LocationPhoneBox = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   background-color: red;
+// `;
+
+export const CafePhone = styled.p`
+  font-size: 1.3em;
+  /* background-color: pink; */
+`;
 
 export const MenuBox = styled.div`
   display: flex;
@@ -85,9 +94,11 @@ export const InfoContentsBox = styled.div`
   margin: 1em 0em 2em 0em;
 `;
 
-export const ContentsTitle = styled.h3``;
+export const ContentsTitle = styled.h2``;
 
-export const Contents = styled.div``;
+export const Contents = styled.p`
+  font-size: 1.3em;
+`;
 
 export const Map = styled.img`
   width: 100%;
@@ -96,9 +107,13 @@ export const Map = styled.img`
 
 export const LocationBox = styled.div``;
 
-export const Location = styled.div``;
+export const Location = styled.p`
+  font-size: 1.3em;
+  /* background-color: orange; */
+`;
 
-export const LocationDetail = styled.div`
+export const LocationDetail = styled.p`
+  font-size: 1.2em;
   /* background-color: yellow; */
 `;
 

@@ -72,11 +72,12 @@ export const Date = styled.span`
   color: #a3a8b7;
 `;
 
-export const Picture = styled.img`
-  width: 100%;
+export const Picture = styled.div`
+  /* width: 100%;
   height: 31em;
   margin: auto;
-  border-radius: 10px;
+  border-radius: 10px; */
+  /* object-fit: cover; */
 
   @media ${breakPoints.mobile} {
     height: 20em;
@@ -117,12 +118,13 @@ export const BoardContents = styled.div`
   font-size: 1.1em;
 `;
 
-// export const Comment = styled.div`
-//   width: 80%;
-//   height: 5em;
-//   margin: auto;
-//   background-color: pink;
-// `;
+export const Comment = styled.div`
+  width: 80%;
+  /* width: 80%;
+  height: 5em;
+  margin: auto;
+  background-color: pink; */
+`;
 
 export const ButtonBox = styled.div`
   padding: 4em 0em 0em 0em;
@@ -132,6 +134,11 @@ export const ButtonBox = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+// export const Comment = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `;
 
 //--------------------0711 hani
 

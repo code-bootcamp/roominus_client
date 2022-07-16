@@ -76,6 +76,7 @@ export const Picture = styled.img`
   height: 220px;
   border-radius: 8px 8px 0px 0px;
   cursor: pointer;
+  /* object-fit: cover; */
 `;
 
 export const InfoBox = styled.div`
