@@ -40,11 +40,14 @@ export default function ThemeCommentWriteUI(props) {
   };
 
   useEffect(() => {
-    props.setValue("clear", Boolean(props.data?.fetchTheme?.clear));
-    props.setValue("rank", props.data?.fetchUseditem?.rank);
-    props.setValue("star", Number(props.data?.fetchUseditem?.star));
+    props.setValue("clear", Boolean(props.el?.clear));
+    props.setValue("rank", props.el?.rank);
+    props.setValue("star", Number(props.el?.star));
+    setIsEscape(Boolean(props.el?.clear));
   }, []);
 
+  console.log("isEscape", isEscape);
+  console.log("props.el.clear", props.el?.clear);
   return (
     <form
       onSubmit={
@@ -58,7 +61,7 @@ export default function ThemeCommentWriteUI(props) {
           <S.StarScore
             tooltips={desc}
             style={{ fontSize: "35px", color: "#7457E8" }}
-            defaultValue={4}
+            defaultValue={props.el?.star}
             character={({ index }: { index: number }) => customIcons[index + 1]}
             onChange={onChangeStar}
           />
@@ -84,38 +87,33 @@ export default function ThemeCommentWriteUI(props) {
             <S.RadioGroup
               color="secondary"
               onChange={onChange}
-              {...props.register("rank")}
               defaultValue={props.el?.rank}
             >
               <S.RadioButton
                 onClick={onChange}
-                selected={rank === "쉬움"}
+                selected={(rank || props.el?.rank) === "쉬움"}
                 value="쉬움"
-                {...props.register("rank")}
               >
                 쉬움
               </S.RadioButton>
               <S.RadioButton
                 onClick={onChange}
-                selected={rank === "보통"}
+                selected={(rank || props.el?.rank) === "보통"}
                 value="보통"
-                {...props.register("rank")}
               >
                 보통
               </S.RadioButton>
               <S.RadioButton
                 onClick={onChange}
-                selected={rank === "어려움"}
+                selected={(rank || props.el?.rank) === "어려움"}
                 value="어려움"
-                {...props.register("rank")}
               >
                 어려움
               </S.RadioButton>
               <S.RadioButton
                 onClick={onChange}
-                selected={rank === "매우 어려움"}
+                selected={(rank || props.el?.rank) === "매우 어려움"}
                 value="매우 어려움"
-                {...props.register("rank")}
               >
                 매우 어려움
               </S.RadioButton>
