@@ -41,8 +41,8 @@ const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1em;
-
-  width: 40em;
+  border-bottom: 1px solid darkgray;
+  width: 100%;
 
   @media ${breakPoints.tablet} {
     width: 25em;
@@ -50,6 +50,17 @@ const InfoBox = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 25em;
+  }
+
+  & h2 {
+    font-style: oblique;
+
+    @media ${breakPoints.tablet} {
+    }
+
+    @media ${breakPoints.mobile} {
+      font-size: 0.9em;
+    }
   }
 `;
 
@@ -63,18 +74,18 @@ const ThemeTitleBox = styled.div`
   @media ${breakPoints.mobile} {
     font-size: 1.1em;
   }
-`;
 
-const ThemeTitle = styled.h1`
-  font-size: 2.5em;
-  font-family: "GowunDodum-Regular";
+  & h1 {
+    font-size: 2.5em;
+    font-family: "GowunDodum-Regular";
 
-  @media ${breakPoints.tablet} {
-    font-size: 1.5em;
-  }
-  @media ${breakPoints.mobile} {
-    font-size: 1.3em;
-    width: auto;
+    @media ${breakPoints.tablet} {
+      font-size: 1.5em;
+    }
+    @media ${breakPoints.mobile} {
+      font-size: 1.3em;
+      width: auto;
+    }
   }
 `;
 
@@ -86,23 +97,14 @@ const ThemeCafe = styled.span`
   }
 `;
 
-const ThemeSub = styled.h3`
-  font-style: oblique;
-
-  @media ${breakPoints.tablet} {
-  }
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.9em;
-  }
-`;
-
 const RateBox = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   text-align: center;
   padding: 0.5em 0em 0.5em 0em;
+  margin-top: 2em;
+  border-top: 1px solid darkgray;
 
   & span {
     font-size: 1.2em;
@@ -110,17 +112,22 @@ const RateBox = styled.div`
   }
 `;
 
-const AgeBox = styled.div`
+const LimitBox = styled.div`
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   font-size: 1.1em;
-  color: red;
+  padding-top: 1em;
 
   @media ${breakPoints.tablet} {
     font-size: 1em;
   }
   @media ${breakPoints.mobile} {
     font-size: 1em;
+  }
+
+  & span {
+    color: red;
   }
 `;
 
@@ -133,9 +140,7 @@ export default function ReservationThemeInfo(props: any) {
         </ImageBox>
         <InfoBox>
           <ThemeTitleBox>
-            <ThemeTitle>
-              {props.data?.fetchThemeMenus[0]?.theme?.title}
-            </ThemeTitle>
+            <h1>{props.data?.fetchThemeMenus[0]?.theme?.title}</h1>
             <span>|</span>
             <ThemeCafe>
               {props.data?.fetchThemeMenus[0]?.cafe.address}{" "}
@@ -143,12 +148,8 @@ export default function ReservationThemeInfo(props: any) {
             </ThemeCafe>
           </ThemeTitleBox>
 
-          <ThemeSub>
-            {props.data?.fetchThemeMenus[0]?.theme?.intro_title}
-          </ThemeSub>
-          <ThemeSub>
-            {props.data?.fetchThemeMenus[0]?.theme?.intro_content}
-          </ThemeSub>
+          <h2>{props.data?.fetchThemeMenus[0]?.theme?.intro_title}</h2>
+          <h3>{props.data?.fetchThemeMenus[0]?.theme?.intro_content}</h3>
           <RateBox>
             <span>난이도 :</span>
             <Rate
@@ -156,11 +157,18 @@ export default function ReservationThemeInfo(props: any) {
               defaultValue={props.data?.fetchThemeMenus[0]?.theme?.rank}
             />
           </RateBox>
-          <AgeBox>
+          <LimitBox>
+            <h3>
+              이용시간 : {props.data?.fetchThemeMenus[0]?.theme?.clearTime}분
+            </h3>
+            <h3>
+              수용 인원 : 1 ~{" "}
+              {props.data?.fetchThemeMenus[0]?.theme?.peoplelimit}명
+            </h3>
             <span>
               {props.data?.fetchThemeMenus[0]?.theme?.agelimit}세 이상 이용가능
             </span>
-          </AgeBox>
+          </LimitBox>
         </InfoBox>
       </ImageInfoBox>
     </>

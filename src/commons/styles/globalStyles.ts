@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
+import { breakPoints } from "./media";
 
 export const globalStyles = css`
   * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Noto Sans KR", sans-serif;
   }
 
   html {

@@ -1,8 +1,6 @@
 // import moment from "moment";
-import { useMutation, useQuery } from "@apollo/client";
-import Modal from "antd/lib/modal/Modal";
-import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { useQuery } from "@apollo/client";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { getDate } from "../../commons/getDate";
 import ReservationUI from "./reservation.present";
@@ -17,7 +15,7 @@ export default function ReservationTest() {
   const [time, setTime] = useState("");
   const [selectTime, setSelectTime] = useState([]);
   const [peopleNumber, setPeopleNumber] = useState();
-  const [usePoint, setUsePoint] = useState(500);
+  const [usePoint, setUsePoint] = useState(0);
   const [totalPrice, setTotalPrice] = useState();
   const [checked, setChecked] = useState(false);
 
@@ -36,8 +34,6 @@ export default function ReservationTest() {
     setThemeId("");
   };
 
-  console.log(data?.fetchThemeMenus.length);
-
   const onChangeTheme = (event) => {
     setThemeId(event.target.value);
     console.log(themeId);
@@ -50,7 +46,6 @@ export default function ReservationTest() {
   const onChangeDate = (date: String) => {
     setReservationDate(getDate(date));
     // console.log("date:", date);
-    // console.log("reservationDate:", reservationDate);
     // String 포맷으로 저장할 때 dayjs 사용할 것
   };
 
@@ -67,7 +62,6 @@ export default function ReservationTest() {
       .filter((el: any) => el.reservation_time === time)
       .map((el: any) => el.people_number);
 
-    console.log(peopleResult);
     setSelectTime(peopleResult);
   }, [time]);
 
@@ -95,7 +89,11 @@ export default function ReservationTest() {
   console.log(ThemeMenuId);
 
   const onClickSubmit = (data) => {
-    console.log(data);
+    console.log("themeId:", themeId);
+    console.log("cafeId:", cafeId);
+    console.log("reservationDate:", reservationDate);
+    console.log("peopleNumber:", peopleNumber);
+    console.log("data.memo:", data.memo);
   };
 
   const onChangeChecked = () => {

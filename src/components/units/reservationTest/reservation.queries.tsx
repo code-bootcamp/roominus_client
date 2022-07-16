@@ -32,8 +32,12 @@ export const FETCH_THEME_MENUS = gql`
         intro_title
         intro_content
         agelimit
+        peoplelimit
         rank
-        like
+        clearTime
+        # genre {
+        #   name
+        # }
       }
       cafe {
         name
