@@ -10,7 +10,7 @@ export default function SignUpUI(props) {
         <S.Warning>
           이용약관에 동의하지않는 경우 서비스 이용에 제한이 있을 수 있습니다.
         </S.Warning>
-        <S.CheckBox>
+        <S.CheckBox onClick={props.onClickTotalCheck}>
           <S.Check
             type="checkbox"
             ref={props.totalCheckRef}

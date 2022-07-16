@@ -1,17 +1,11 @@
 import LoginUI from "./Login.presenter";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  getRedirectResult,
-} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
 import { LOGIN, FETCH_USER_LOGGEDIN } from "./Login.query";
-import Head from "next/head";
 import { useMutation, useApolloClient } from "@apollo/client";
 import { useRecoilState } from "recoil";
 import { accessTokenState, userInfoState } from "../../../commons/store";
@@ -30,7 +24,7 @@ const schema = yup.object({
   password: yup
     .string()
     .matches(
-      /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,14}$/,
+      /^(?=.*\d)(?=.*[a-z])[0-9a-z]{8,14}$/,
       "영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."
     )
     .required("영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."),
@@ -101,19 +95,6 @@ export default function LoginPage() {
     }, 1000);
   };
 
-  const NaverLogin = () => {
-    const naverIdLogin = new naver_id_login(
-      "1wXq1o0g2z9j6TSlaVB0",
-      "http://localhost:3000/signup/detail"
-    );
-    const state = naverIdLogin.getUniqState();
-    naverIdLogin.setButton("white", 0, 80);
-    naverIdLogin.setDomain("http://localhost:3000/");
-    naverIdLogin.setState(state);
-
-    naverIdLogin.init_naver_id_login();
-  };
-
   const onClickGoogleLogin = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -169,31 +150,9 @@ export default function LoginPage() {
       },
     });
   };
-  // useEffect(() => {
-  //   const naverIdLogin = new naver_id_login(
-  //     "1wXq1o0g2z9j6TSlaVB0",
-  //     "http://localhost:3000/signup/detail"
-  //   );
-  //   const state = naverIdLogin.getUniqState();
-  //   naverIdLogin.setButton("white", 0, 80);
-  //   naverIdLogin.setDomain("http://localhost:3000/");
-  //   naverIdLogin.setState(state);
-
-  //   naverIdLogin.init_naver_id_login();
-  // }, []);
 
   return (
     <>
-      <Head>
-        <script
-          type="text/javascript"
-          src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="http://code.jquery.com/jquery-1.11.3.min.js"
-        ></script>
-      </Head>
       <LoginUI
         onClickGoogleLogin={onClickGoogleLogin}
         onClickLoginKakao={onClickLoginKakao}
@@ -206,7 +165,6 @@ export default function LoginPage() {
         passwordInputRef={passwordInputRef}
         onClickShowPassword={onClickShowPassword}
         onClickMoveToFindIdPassword={onClickMoveToFindIdPassword}
-        NaverLogin={NaverLogin}
       />
     </>
   );

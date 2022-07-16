@@ -1,11 +1,6 @@
 import { useRouter } from "next/router";
 import SignUpDetailUI from "./SignUpDetail.presenter";
-import {
-  getAuth,
-  signOut,
-  signInWithRedirect,
-  GoogleAuthProvider,
-} from "firebase/auth";
+import { getAuth, signOut, GoogleAuthProvider } from "firebase/auth";
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import { useForm } from "react-hook-form";
@@ -26,7 +21,7 @@ const schema = yup.object({
   password: yup
     .string()
     .matches(
-      /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,14}$/,
+      /^(?=.*\d)(?=.*[a-z])[0-9a-z]{8,14}$/,
       "영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."
     )
     .required("영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."),
@@ -50,6 +45,7 @@ export default function SignUpDetail() {
   const passwordInputRef = useRef();
   const password2InputRef = useRef();
   const verificationBtn = useRef();
+  const timeRef = useRef();
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);
 
@@ -76,7 +72,7 @@ export default function SignUpDetail() {
 
   const onClickVerifyMySelfByNo = () => {
     let counts = count;
-
+    timeRef.current.style.visibility = "visible";
     const timer = setInterval(() => {
       counts = counts - 1;
       setCount(counts);
@@ -235,6 +231,7 @@ export default function SignUpDetail() {
         onClickCheckVerificationNo={onClickCheckVerificationNo}
         password={password}
         setPassword={setPassword}
+        timeRef={timeRef}
       />
     </>
   );

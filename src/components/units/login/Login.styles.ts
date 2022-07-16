@@ -49,8 +49,13 @@ export const PasswordBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
 `;
-
+export const EyeBox = styled.div`
+  position: absolute;
+  top: 0;
+  right: 1em;
+`;
 export const LoginBtn = styled.button`
   width: 100%;
   height: 4em;
@@ -62,15 +67,18 @@ export const LoginBtn = styled.button`
   cursor: pointer;
 `;
 export const SignUpBox = styled.div`
+  width: 52%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 2em;
 `;
 export const SignUpdetailBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   margin-bottom: 2em;
 `;
 
@@ -83,7 +91,8 @@ export const SignUpbtn = styled.button`
   border: none;
   background-color: transparent;
   color: black;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  font-weight: 600;
   cursor: pointer;
 `;
 export const FindIdPasswordBtn = styled.button`
@@ -101,25 +110,22 @@ export const Divider = styled.div`
 `;
 
 export const SocialLoginBtns = styled.div`
-  width: 50%;
+  width: 52%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    width: 52%;
+  }
 `;
 
 export const SocialLoginBtn = styled.button`
   border: none;
   background-color: transparent;
-  margin-right: 2em;
+  margin-bottom: 0.5em;
 `;
 export const SocialLoginLogo = styled.img`
-  width: 5em;
-  height: 5em;
-  border-radius: 50%;
+  width: 35%;
   cursor: pointer;
-  @media ${breakPoints.mobile} {
-    width: 3em;
-    height: 3em;
-  }
 `;
