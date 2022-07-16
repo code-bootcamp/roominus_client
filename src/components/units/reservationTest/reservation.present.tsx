@@ -11,7 +11,7 @@ import ReservationNotice from "./reservationNotice/reservationNotice.container";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import NoReservation from "./Noreservation";
 import { v4 as uuidv4 } from "uuid";
-import ReservationThemeInfo from "./reservationInfo";
+import ReservationThemeInfo from "./reservationthemeInfo";
 import Payment from "../payment";
 import Swal from "sweetalert2";
 

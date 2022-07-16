@@ -4,8 +4,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.nav`
   width: 100%;
-  height: 8%;
-  padding: 0.5em;
+  padding: 0.3em;
 
   @media ${breakPoints.tablet} {
     flex-direction: column;
@@ -75,7 +74,7 @@ export const MenuWrapper = styled.ul`
 export const MenuItem = styled.li`
   font-weight: ${(props) => (props.isActive ? "500" : "normal")};
   cursor: ${(props) => (props.isActive ? "none" : "pointer")};
-  color: ${(props) => (props.isActive ? "#BF9EEB" : "#5F6269")};
+  color: ${(props) => (props.isActive ? "#BF9EEB" : "#26282C")};
   font-size: 1.5em;
 `;
 

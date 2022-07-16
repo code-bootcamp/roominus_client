@@ -51,16 +51,8 @@ const Wrapper = styled.section`
 const Body = styled.div`
   width: 100%;
   height: 70%;
-  padding: 0px 20px;
+  padding: 0em 1em;
   min-height: 800px;
-
-  @media ${breakPoints.tablet} {
-    padding: 0px 20px;
-  }
-
-  @media ${breakPoints.mobile} {
-    padding: 0px 20px;
-  }
 `;
 
 interface ILayoutProps {

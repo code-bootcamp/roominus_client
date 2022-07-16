@@ -10,7 +10,6 @@ export const Container = styled.main`
 
   width: 30%;
   height: 100vh;
-
   border-right: 1px solid darkgray;
 
   @media ${breakPoints.tablet} {

@@ -1,28 +1,24 @@
 import { css } from "@emotion/react";
-import { breakPoints } from "./media";
 
 export const globalStyles = css`
   * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
   }
 
-  html,
+  html {
+    font-size: 16px;
+  }
+
   body {
-    max-width: 1200px;
     margin: auto;
+    max-width: 1200px;
     width: 100vw;
     height: 100vh;
-    font-size: 16px;
-    font-family: "Noto Sans KR", sans-serif;
 
-    @media ${breakPoints.tablet} {
-    }
-
-    @media ${breakPoints.mobile} {
-      padding: 0px;
-    }
+    overflow-x: hidden;
   }
 
   ul {
