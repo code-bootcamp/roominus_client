@@ -11,29 +11,27 @@ export default function ReservationSuccessUI() {
       </S.TitleBox>
 
       <S.Wrapper>
-        <S.TicketTitleBox>
-          <S.Ticket src="/img/reservation/ticket.png" />
-          <S.Title>TICKET</S.Title>
-          <S.Ticket src="/img/reservation/ticket.png" />
-        </S.TicketTitleBox>
         <S.IamgeDataBox>
           <>
             <S.Image src="/img/theme/월야애담.jpeg" />
           </>
           <S.DataBox>
-            <h3>월야애담</h3>
-            <span>예약자 : 홍길동</span>
-            <span>인원 : 3인</span>
-            <span>매장 : 홍대1호점</span>
-            <span>결제금액: 50000원</span>
-            <span>2022.07.29.금 17:30</span>
-            <span>12342R34233413</span>
+            <S.ThemeTitleBox>
+              <h2>익명의 여자</h2>
+              <span>|</span>
+              <span>비밀의 숲</span>
+            </S.ThemeTitleBox>
+            <S.ThemeInfoBox>
+              <span>3인 (50000원)</span>
+              <span>2022년 07월 29일 3시 30분</span>
+            </S.ThemeInfoBox>
+
+            <S.BarcodeBox>
+              <S.Barcode></S.Barcode>
+              <span>12342R34233413</span>
+            </S.BarcodeBox>
           </S.DataBox>
         </S.IamgeDataBox>
-
-        <S.BarcodeBox>
-          <S.Barcode></S.Barcode>
-        </S.BarcodeBox>
       </S.Wrapper>
 
       <S.NotionArea>

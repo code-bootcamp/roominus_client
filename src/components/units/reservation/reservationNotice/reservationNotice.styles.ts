@@ -146,12 +146,12 @@ export const RecommendationBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  gap: 1.5em;
+  gap: 1.8em;
 `;
 
 export const TypingBox = styled.div`
   font-weight: 800;
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: #4a00e0e7;
   font-family: "GowunDodum-Regular";
 `;

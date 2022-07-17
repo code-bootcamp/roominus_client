@@ -4,6 +4,7 @@ import { Fragment } from "react";
 
 const NAVIGATION_MENUS = [
   { name: "내 찜목록", page: "/mypage/mypick" },
+  { name: "내 후기목록", page: "/mypage/mypick" },
   { name: "최근 예약 내역", page: "/mypage/history" },
   { name: "최근 적립 내역", page: "/mypage/reward" },
 ];
@@ -12,14 +13,14 @@ export default function LayoutSideBarUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
-        <div>
+        <S.HeaderBox>
           <S.UserNameBox>
             <S.UserData onClick={props.onClickMyPage}>홍길동님</S.UserData>
-
-            <span>안녕하세요!</span>
           </S.UserNameBox>
+          <p>안녕하세요!</p>
+          <p>적립금 : 원</p>
           <S.line></S.line>
-        </div>
+        </S.HeaderBox>
         <S.MenuBoxs>
           {NAVIGATION_MENUS.map((el) => (
             <Fragment key={el.page}>

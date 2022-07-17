@@ -10,13 +10,17 @@ import {
   PercentageOutlined,
   FormOutlined,
 } from "@ant-design/icons";
-import Typewriter from "typewriter-effect";
+import { Idata, IReservationNotice } from "./reservationNotice.types";
+// import Typewriter from "typewriter-effect";
 
-export default function ReservationNotice() {
+export default function ReservationNotice(props: IReservationNotice) {
+  const list = props?.data?.map((el: Idata) => el.title);
+  console.log(list);
+
   return (
     <S.Container>
       <S.TitleBox>
-        <FormOutlined style={{ marginBottom: "0.5em" }} />
+        <FormOutlined style={{ marginBottom: "0.8em" }} />
         <h1>예약 안내</h1>
       </S.TitleBox>
 
@@ -24,7 +28,7 @@ export default function ReservationNotice() {
         <S.StepBoxs>
           <S.StepBox>
             <S.Step>
-              <HeartOutlined />
+              <HeartOutlined style={{ color: "#4a00e0" }} />
               <h6>step1</h6>
               <h4>테마 선택</h4>
             </S.Step>
@@ -32,7 +36,7 @@ export default function ReservationNotice() {
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <ShopOutlined />
+              <ShopOutlined style={{ color: "#4a00e0" }} />
               <h6>step2</h6>
 
               <h4>매장 선택</h4>
@@ -41,7 +45,7 @@ export default function ReservationNotice() {
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <CalendarOutlined />
+              <CalendarOutlined style={{ color: "#4a00e0" }} />
               <h6>step3</h6>
 
               <h4>날짜 선택</h4>
@@ -50,7 +54,7 @@ export default function ReservationNotice() {
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <ClockCircleOutlined />
+              <ClockCircleOutlined style={{ color: "#4a00e0" }} />
               <h6>step4</h6>
 
               <h4>시간 선택</h4>
@@ -60,7 +64,7 @@ export default function ReservationNotice() {
         <S.StepBoxs>
           <S.StepBox>
             <S.Step>
-              <TeamOutlined />
+              <TeamOutlined style={{ color: "#4a00e0" }} />
               <h6>step5</h6>
               <h4>인원 선택</h4>
             </S.Step>
@@ -68,7 +72,7 @@ export default function ReservationNotice() {
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <PercentageOutlined />
+              <PercentageOutlined style={{ color: "#4a00e0" }} />
               <h6>step6</h6>
               <h4>적립금 사용</h4>
             </S.Step>
@@ -76,7 +80,7 @@ export default function ReservationNotice() {
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <CreditCardOutlined />
+              <CreditCardOutlined style={{ color: "#4a00e0" }} />
               <h6>step7</h6>
               <h4>카드 결제</h4>
             </S.Step>
@@ -84,7 +88,7 @@ export default function ReservationNotice() {
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <CheckSquareOutlined />
+              <CheckSquareOutlined style={{ color: "#4a00e0" }} />
               <h6>step8</h6>
               <h4>예약 확인</h4>
             </S.Step>
@@ -100,14 +104,14 @@ export default function ReservationNotice() {
           <S.TypingBox>
             <Typewriter
               options={{
-                strings: ["네모네모", "익명의 여자", "동화나라"],
+                strings: list,
                 autoStart: true,
                 loop: true,
               }}
             />
           </S.TypingBox>
 
-          <S.ThemeGuide>해볼까?</S.ThemeGuide>
+          <S.ThemeGuide>해볼까요?</S.ThemeGuide>
         </S.RecommendationBox> */}
       </S.SelectGuideBox>
     </S.Container>

@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { Modal } from "antd";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 import { gql, useMutation } from "@apollo/client";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 declare const window: typeof globalThis & {
   IMP: any;
@@ -28,12 +29,12 @@ const CREATE_RESERVATION = gql`
       #   reservation_time
       #   people_number
       #   price
-      #   cafe {
-      #     name
-      #   }
-      #   theme {
-      #     title
-      #   }
+      # cafe {
+      #   name
+      # }
+      # theme {
+      #   title
+      # }
       # }
     }
   }
@@ -42,6 +43,7 @@ const CREATE_RESERVATION = gql`
 export default function Payment(props) {
   // const { data } = useQuery(FETCH_USER_LOGGED_IN);
   const [createReservation] = useMutation(CREATE_RESERVATION);
+  const router = useRouter();
 
   const requestPay = () => {
     const IMP = window.IMP; // window는 생략 가능
@@ -81,32 +83,22 @@ export default function Payment(props) {
                 },
               },
             });
-            console.log(
-              "impUid:",
-              rsp.imp_uid,
-              "price",
-              props.totalPrice,
-              "usepoint",
-              Number(props.usePoint)
-            );
-
+            Swal.fire({
+              icon: "success",
+              title: "예약 완료",
+              showConfirmButton: false,
+              timer: 1500,
+            });
             console.log(result);
-            Modal.success({
-              content: "결제에 성공하였습니다.",
-            });
+            router.push(`/reservation/${result.data?.createReservation.id}`);
           } catch (error) {
-            Modal.error({
-              content: error.message,
+            Swal.fire({
+              icon: "error",
+              title: "예약실패",
+              text: error.message,
+              timer: 1500,
             });
-            console.log(error.message);
-            console.log(
-              "impUid:",
-              rsp.imp_uid,
-              "price",
-              props.totalPrice,
-              "usepoint",
-              Number(props.usePoint)
-            );
+            router.push("/theme");
           }
         } else {
           alert("다시 결제해주세요");

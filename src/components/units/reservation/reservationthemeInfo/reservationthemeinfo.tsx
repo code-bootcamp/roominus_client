@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
+import { IReservationThemeInfoProps } from "./reservationthemeinfo.types";
 
 const ImageInfoBox = styled.div`
   width: 100%;
@@ -25,7 +26,7 @@ const Image = styled.img`
   width: 27em;
   height: 35em;
   border-radius: 15px;
-  box-shadow: 7px 7px 39px rgba(202, 136, 217, 0.25);
+  box-shadow: 10px 10px 39px rgba(183, 96, 202, 0.25);
 
   @media ${breakPoints.tablet} {
     width: 18em;
@@ -43,14 +44,6 @@ const InfoBox = styled.div`
   padding: 1em;
   border-bottom: 1px solid darkgray;
   width: 100%;
-
-  @media ${breakPoints.tablet} {
-    width: 25em;
-  }
-
-  @media ${breakPoints.mobile} {
-    width: 25em;
-  }
 
   & h2 {
     font-style: oblique;
@@ -131,7 +124,9 @@ const LimitBox = styled.div`
   }
 `;
 
-export default function ReservationThemeInfo(props: any) {
+export default function ReservationThemeInfo(
+  props: IReservationThemeInfoProps
+) {
   return (
     <>
       <ImageInfoBox>

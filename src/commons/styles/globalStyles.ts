@@ -61,9 +61,4 @@ export const globalStyles = css`
     font-weight: normal;
     font-style: normal;
   }
-
-  @font-face {
-    font-family: "PressStart2P";
-    src: url("/fonts/PressStart2P-Regular.ttf");
-  }
 `;

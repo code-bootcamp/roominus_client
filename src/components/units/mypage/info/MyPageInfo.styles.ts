@@ -164,3 +164,9 @@ export const ColumnTitle = styled.div`
   width: 40%;
   text-align: center;
 `;
+
+export const RowBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+`;
