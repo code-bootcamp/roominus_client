@@ -1,13 +1,14 @@
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./CommunityList.styles";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { ICommunityListProps, IFetchBoardsProps } from "./CommunityList.types";
 
-export default function CommunityListUI(props) {
+export default function CommunityListUI(props: ICommunityListProps) {
   return (
     <S.Wrapper>
       <S.Title>전체글보기</S.Title>
       <S.Etc>
-        {props.data?.fetchBoards.map((el) => (
+        {props.data?.fetchBoards.map((el: IFetchBoardsProps) => (
           <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
             {/* <S.ItemBox> */}
             <S.ItemBackground>
