@@ -6,6 +6,7 @@ import * as S from "./CommunityDetail.styles";
 import { getDateBefore } from "../../../commons/getDate";
 import Dompurify from "dompurify";
 import CommunityCommentWrite from "../comment/Write/CommunityCommentWrite.container";
+import CommunityCommentList from "../comment/List/CommunityCommentList.container";
 
 export default function CommunityDetailUI(props) {
   return (
@@ -53,6 +54,7 @@ export default function CommunityDetailUI(props) {
       </S.Wrapper>
       <S.Comment>
         <CommunityCommentWrite />
+        <CommunityCommentList />
         <CommunityList />
       </S.Comment>
     </S.Container>

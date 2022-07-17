@@ -8,14 +8,16 @@ export default function CommunityCommentWriteUI(props) {
         <S.CommentIcon src="/img/community/comment/commentIcon.png" />
         <S.CommentTitle>댓글</S.CommentTitle>
       </S.CommentTitleBox>
-      <S.CommentWriteBox>
-        <S.Name>이영* 님</S.Name>
-        <S.CommentInput placeholder="댓글을 입력하세요" />
-        <WebSmallPurpleButton
-          title="등록하기"
-          onClick={props.onClickComment}
-        ></WebSmallPurpleButton>
-      </S.CommentWriteBox>
+      <form onSubmit={props.handleSubmit(props.onClickComment)}>
+        <S.CommentWriteBox>
+          <S.Name>이영* 님</S.Name>
+          <S.CommentInput
+            placeholder="댓글을 입력하세요"
+            {...props.register("content")}
+          />
+          <WebSmallPurpleButton title="등록하기"></WebSmallPurpleButton>
+        </S.CommentWriteBox>
+      </form>
     </S.Wrapper>
   );
 }
