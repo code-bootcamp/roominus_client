@@ -17,6 +17,7 @@ const Button = styled.button`
   /* transition: all 250ms ease-in-out; */
   background-color: #4a00e0e7;
   color: #ffffff;
+  font-weight: 500;
 `;
 
 export default function WebPurpleButton(props) {

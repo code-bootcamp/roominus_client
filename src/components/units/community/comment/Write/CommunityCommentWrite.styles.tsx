@@ -2,14 +2,14 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
-  width: 70%;
+  width: 100%;
   /* margin: auto; */
   display: flex;
   flex-direction: column;
 
   @media ${breakPoints.tablet} {
     margin-top: 2em;
-    width: 90%;
+    /* width: 100%; */
   }
 
   @media ${breakPoints.mobile} {

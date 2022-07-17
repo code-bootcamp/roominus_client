@@ -73,12 +73,12 @@ export default function CommunityNewUI(props) {
             <WebBlackButton
               type="button"
               onClick={props.onClickList}
-              title="목 록"
+              title="목록으로"
             ></WebBlackButton>
             <WebPurpleButton
               type="button"
               onClick={props.handleSubmit(props.onClickSubmit)}
-              title="등 록"
+              title="등록하기"
             ></WebPurpleButton>
           </S.ButtonBox>
         </form>

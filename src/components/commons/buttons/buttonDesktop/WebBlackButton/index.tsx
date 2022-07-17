@@ -9,6 +9,7 @@ const Button = styled.button`
   cursor: pointer;
   background-color: #26282c;
   color: #ffffff;
+  font-weight: 500;
 `;
 
 export default function WebBlackButton(props) {

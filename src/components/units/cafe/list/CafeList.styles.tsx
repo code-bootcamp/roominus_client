@@ -273,6 +273,7 @@ export const BestTitle = styled.h1`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 0;
   /* background-color: yellow; */
 
   @media ${breakPoints.mobile} {

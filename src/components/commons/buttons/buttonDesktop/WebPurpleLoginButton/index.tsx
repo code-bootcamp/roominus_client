@@ -16,6 +16,7 @@ const Button = styled.button`
     );
   }
   transition: all 250ms ease-in-out;
+  font-weight: 500;
 `;
 
 export default function WebPurpleLoginButton(props) {
