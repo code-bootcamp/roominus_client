@@ -85,15 +85,15 @@ export default function SignUpDetailUI(props) {
             </S.PasswordInputBox>
             <S.Error>{props.formState.errors.password?.message}</S.Error>
             <PasswordChecklist
-              rules={["minLength", "number", "lowercase"]}
+              rules={["minLength", "lowercase", "number"]}
               minLength={8}
               maxLength={14}
               value={props.password}
               iconSize={10}
               messages={{
-                minLength: "최소 8자리 이상의 영문,숫자 혼합만 사용가능.",
-                number: "숫자도 포함시켜야 합니다.",
-                lowercase: "영문(소문자)도 포함시켜야 합니다.",
+                minLength: "최소 8자리 이상 입력해야 합니다.",
+                lowercase: "영문(소문자)을 포함해야 합니다.",
+                number: "숫자를 포함해야 합니다.",
               }}
             />
           </S.PasswordBox>
