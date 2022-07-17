@@ -16,15 +16,15 @@ export const Wrapper = styled.section`
 
 export const Title = styled.h1`
   font-size: 2.8em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   cursor: default;
 `;
 export const Form = styled.form`
-  width: 52%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 `;
 export const Input = styled.input`
   width: 100%;
@@ -50,6 +50,7 @@ export const PasswordBox = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
+  margin-bottom: 2em;
 `;
 export const EyeBox = styled.div`
   position: absolute;
@@ -58,16 +59,28 @@ export const EyeBox = styled.div`
 `;
 export const LoginBtn = styled.button`
   width: 100%;
-  height: 4em;
-  border-radius: 10px;
-  font-size: 1em;
+  height: 3.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
   border: none;
-  color: white;
-  background-color: #4a00e0;
+  background-color: #4a00e0e7;
+  color: #ffffff;
+  font-size: 1.2em;
   cursor: pointer;
+  :hover {
+    background: linear-gradient(
+      90deg,
+      rgba(142, 45, 226, 1) 30%,
+      rgba(74, 0, 224, 1) 100%
+    );
+  }
 `;
+
 export const SignUpBox = styled.div`
-  width: 52%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,7 +92,7 @@ export const SignUpdetailBox = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2em;
+  margin-bottom: 0.4em;
 `;
 
 export const SignupLabel = styled.span`
@@ -103,14 +116,14 @@ export const FindIdPasswordBtn = styled.button`
   cursor: pointer;
 `;
 export const Divider = styled.div`
-  width: 50%;
+  width: 40%;
   height: 1px;
-  background-color: black;
+  background-color: lightgray;
   margin-bottom: 2em;
 `;
 
 export const SocialLoginBtns = styled.div`
-  width: 52%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,12 +133,46 @@ export const SocialLoginBtns = styled.div`
   }
 `;
 
-export const SocialLoginBtn = styled.button`
+export const KakaoBtn = styled.div`
+  width: 100%;
+  height: 3.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 12px;
   border: none;
-  background-color: transparent;
-  margin-bottom: 0.5em;
+  background-color: #fee500;
+  color: #000000 85%;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-bottom: 1em;
 `;
-export const SocialLoginLogo = styled.img`
-  width: 35%;
+export const KakaoSymbol = styled.img`
+  margin-left: 10%;
+  margin-right: 28%;
+  width: 1.2em;
+  height: 1.2em;
+`;
+export const KakaoLabel = styled.span``;
+export const GoogleBtn = styled.div`
+  width: 100%;
+  height: 3.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 12px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  color: #000000 85%;
+  font-size: 1.2em;
   cursor: pointer;
 `;
+export const GoogleSymbol = styled.img`
+  margin-left: 10%;
+  margin-right: 28%;
+  width: 1.2em;
+  height: 1.2em;
+`;
+export const GoogleLabel = styled.span``;

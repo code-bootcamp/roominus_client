@@ -1,5 +1,6 @@
 import CommunityDetail from "../../../src/components/units/community/detail/CommunityDetail.container";
 import styled from "@emotion/styled";
+import useAuth from "../../../src/components/commons/hooks/useAuth";
 // import CommunityCommentWrite from "../../../src/components/units/community/comment/Write/CommunityCommentWrite.container";
 // import CommunityList from "../../../src/components/units/community/comment/CommunityComment.container";
 
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
 // `;
 
 export default function CommunityDetailPage() {
+  useAuth();
   return (
     <Wrapper>
       <CommunityDetail />

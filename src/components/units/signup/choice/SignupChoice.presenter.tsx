@@ -21,16 +21,17 @@ export default function SignupChoiceUI(props) {
           탈출러들-회원가입
         </S.PersonalSignupBtn>
         <S.SocialSignupBtnsBox>
-          <S.SocialSignupBtns
-            src="/img/login/kakaoLogo.png"
-            alt="kakakoSocialLogo"
-            onClick={props.onClickLoginKakao}
-          />
-          <S.SocialSignupBtns
-            src="/img/login/googlelogo.png"
-            alt="googleLogo"
-            onClick={props.onClickGoogleLogin}
-          />
+          <S.KakaoBtn onClick={props.onClickLoginKakao}>
+            <S.KakaoSymbol src="/img/login/kakaoSymbol.png" alt="kakaoSymbol" />
+            <S.KakaoLabel>카카오 로그인</S.KakaoLabel>
+          </S.KakaoBtn>
+          <S.GoogleBtn onClick={props.onClickGoogleLogin}>
+            <S.GoogleSymbol
+              src="/img/login/googleSymbol.png"
+              alt="googleSymbol"
+            />
+            <S.GoogleLabel>구글 로그인</S.GoogleLabel>
+          </S.GoogleBtn>
         </S.SocialSignupBtnsBox>
       </S.PersonalSignupBox>
       <S.StoreOwnerSignupBox>

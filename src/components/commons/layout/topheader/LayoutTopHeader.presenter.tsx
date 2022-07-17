@@ -10,7 +10,7 @@ export default function LayoutTopHeaderUI(props: any) {
             <S.Contents>로그인</S.Contents>
           </Link>
           <S.Contents>|</S.Contents>
-          <Link href={"/signup"}>
+          <Link href={"/signup/choice"}>
             <S.Contents>회원가입</S.Contents>
           </Link>
           <S.Contents>|</S.Contents>
