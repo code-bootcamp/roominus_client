@@ -5,7 +5,6 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./CommunityDetail.styles";
 import { getDateBefore } from "../../../commons/getDate";
 import Dompurify from "dompurify";
-import { Image } from "antd";
 import CommunityCommentWrite from "../comment/Write/CommunityCommentWrite.container";
 
 export default function CommunityDetailUI(props) {
@@ -16,17 +15,7 @@ export default function CommunityDetailUI(props) {
           <S.WriterName>작성자</S.WriterName>
           <S.Date>{getDateBefore(props.data?.fetchBoard.createdAt)}</S.Date>
         </S.NameDateBox>
-        {/* <S.Picture> */}
-        <Image
-          src={props.data?.fetchBoard.mainImg}
-          style={{
-            width: "100%",
-            height: "31em",
-            // margin: "auto",
-            borderRadius: "10px",
-          }}
-        />
-        {/* </S.Picture> */}
+        <S.ImageBox src={props.data?.fetchBoard.mainImg} />
         <S.PickAndShareBox>
           <S.PickBox>
             <S.RedHeart icon={faHeart} />
@@ -53,12 +42,12 @@ export default function CommunityDetailUI(props) {
         <S.ButtonBox>
           <WebBlackButton
             onClick={props.onClickList}
-            title="목 록"
+            title="목록으로"
           ></WebBlackButton>
-          <WebPurpleButton title="수 정"></WebPurpleButton>
+          <WebPurpleButton title="수정하기"></WebPurpleButton>
           <WebPurpleButton
             onClick={props.onClickDelete}
-            title="삭 제"
+            title="삭제하기"
           ></WebPurpleButton>
         </S.ButtonBox>
       </S.Wrapper>

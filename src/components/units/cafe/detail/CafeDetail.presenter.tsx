@@ -9,15 +9,19 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
   return (
     <S.Container>
       <S.SearchWrapper>
-        <S.CafePicture src={props.data?.fetchCafe.mainImg} />
+        <S.InfoSummaryBox>
+          <S.CafePicture src={props.data?.fetchCafe.mainImg} />
+          <S.InfoTitleBox>
+            <S.NamePhoneBox>
+              <S.CafeName>{props.data?.fetchCafe.name}</S.CafeName>
+              {/* <S.LocationPhoneBox> */}
+              <S.Location>🌏 {props.data?.fetchCafe.address}</S.Location>
+              <S.CafePhone>📞 {props.data?.fetchCafe.phone}</S.CafePhone>
+              {/* </S.LocationPhoneBox> */}
+            </S.NamePhoneBox>
+          </S.InfoTitleBox>
+        </S.InfoSummaryBox>
         <S.InfoBox>
-          <S.NamePhoneBox>
-            <S.CafeName>{props.data?.fetchCafe.name}</S.CafeName>
-            {/* <S.LocationPhoneBox> */}
-            <S.Location>🌏 {props.data?.fetchCafe.address}</S.Location>
-            <S.CafePhone>📞 {props.data?.fetchCafe.phone}</S.CafePhone>
-            {/* </S.LocationPhoneBox> */}
-          </S.NamePhoneBox>
           <S.MenuBox>
             <MenuTabs onChangeKey={props.onChangeKey} />
           </S.MenuBox>
@@ -50,11 +54,11 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
               </S.ThemeList>
             </S.Theme>
           )}
-          <S.ButtonBox>
-            <WebBlackButton title="목록으로" onClick={props.onClickList} />
-          </S.ButtonBox>
         </S.InfoBox>
       </S.SearchWrapper>
+      <S.ButtonBox>
+        <WebBlackButton title="목록으로" onClick={props.onClickList} />
+      </S.ButtonBox>
     </S.Container>
   );
 }

@@ -18,38 +18,71 @@ export const SearchWrapper = styled.section`
   width: 100%;
   /* background-color: #bdbdbd; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  gap: 4em;
+  /* align-items: center; */
 
   @media ${breakPoints.mobile} {
-    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0em;
+  }
+`;
+
+export const InfoSummaryBox = styled.div`
+  width: 50%;
+
+  @media ${breakPoints.mobile} {
+    width: 28em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0em;
   }
 `;
 
 export const CafePicture = styled.img`
-  width: 38em;
-  height: 35em;
-  background-color: pink;
+  width: 100%;
+  height: 37em;
+  /* background-color: pink; */
   object-fit: cover;
 
   @media ${breakPoints.mobile} {
-    width: 23em;
-    height: 20em;
+    width: 28em;
+    height: 26em;
   }
 `;
 
-export const InfoBox = styled.div`
-  width: 38em;
-  padding: 3em;
+export const InfoTitleBox = styled.div`
+  width: 100%;
+  padding: 3em 0em 0em 0em;
   /* gap: 2em; */
   display: flex;
   flex-direction: column;
   /* justify-content: space-around; */
-  border: 1px solid #bdbdbd;
+  /* border: 1px solid #bdbdbd; */
   /* background-color: #bdbdbd; */
 
   @media ${breakPoints.mobile} {
-    width: 23em;
+    width: 28em;
+    padding: 1.1em;
+  }
+`;
+
+export const InfoBox = styled.div`
+  /* width: 38em; */
+  width: 50%;
+  /* padding: 0em 3em 0em 0em; */
+  /* gap: 2em; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* border: 1px solid #bdbdbd; */
+  /* background-color: #bdbdbd; */
+
+  @media ${breakPoints.mobile} {
+    width: 28em;
     padding: 1.1em;
   }
 `;
@@ -72,7 +105,7 @@ export const CafeName = styled.h1`
 //   background-color: red;
 // `;
 
-export const CafePhone = styled.p`
+export const CafePhone = styled.div`
   font-size: 1.3em;
   /* background-color: pink; */
 `;
@@ -107,7 +140,7 @@ export const Map = styled.img`
 
 export const LocationBox = styled.div``;
 
-export const Location = styled.p`
+export const Location = styled.div`
   font-size: 1.3em;
   /* background-color: orange; */
 `;
@@ -145,7 +178,10 @@ export const ThemeList = styled.div`
 export const ButtonBox = styled.div`
   margin-top: 2em;
   display: flex;
-  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  /* align-self: center; */
+  /* background-color: pink; */
 
   @media ${breakPoints.mobile} {
     margin-top: 0;

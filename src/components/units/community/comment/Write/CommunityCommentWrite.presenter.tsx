@@ -12,7 +12,7 @@ export default function CommunityCommentWriteUI(props) {
         <S.Name>이영* 님</S.Name>
         <S.CommentInput placeholder="댓글을 입력하세요" />
         <WebSmallPurpleButton
-          title="등 록"
+          title="등록하기"
           onClick={props.onClickComment}
         ></WebSmallPurpleButton>
       </S.CommentWriteBox>

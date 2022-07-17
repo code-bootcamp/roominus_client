@@ -50,6 +50,7 @@ export const Title = styled.h1`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 0px;
 `;
 
 export const ItemBackground = styled.div`

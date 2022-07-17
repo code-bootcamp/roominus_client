@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { breakPoints } from "../../../../commons/styles/media";
+import { Image } from "antd";
 
 export const Container = styled.main`
   width: 100%;
@@ -18,6 +19,18 @@ export const Container = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+`;
+
+export const ImageBox = styled(Image)`
+  width: 100%;
+  height: 31em;
+  margin: auto;
+  border-radius: 10px;
+  /* object-fit: cover; */
+
+  @media ${breakPoints.mobile} {
+    height: 25em;
   }
 `;
 
@@ -72,18 +85,6 @@ export const Date = styled.span`
   color: #a3a8b7;
 `;
 
-export const Picture = styled.div`
-  /* width: 100%;
-  height: 31em;
-  margin: auto;
-  border-radius: 10px; */
-  /* object-fit: cover; */
-
-  @media ${breakPoints.mobile} {
-    height: 20em;
-  }
-`;
-
 export const PickAndShareBox = styled.div`
   display: flex;
   justify-content: space-between;
@@ -124,6 +125,14 @@ export const Comment = styled.div`
   height: 5em;
   margin: auto;
   background-color: pink; */
+
+  @media ${breakPoints.tablet} {
+    width: 90%;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ButtonBox = styled.div`
