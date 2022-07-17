@@ -9,12 +9,6 @@ const MySlider = styled(Slider)`
   width: 100%;
 `;
 
-const SliderImg = styled.img`
-  width: 290px;
-  height: 420px;
-  padding: 10px;
-`;
-
 const Theme = styled.div`
   /* position: absolute; */
   /* width: 100%;

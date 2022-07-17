@@ -1,9 +1,12 @@
 import * as S from "./ThemeCommentWrite.styles";
-import { ReactNode, useEffect, useState } from "react";
+import { ChangeEvent, ReactNode, useEffect, useState } from "react";
 import type { RadioChangeEvent } from "antd";
 import { FrownOutlined, MehOutlined, SmileOutlined } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { IThemeCommentWriteUIProps } from "./ThemeCommentWriter.types";
 
-export default function ThemeCommentWriteUI(props) {
+export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
   const desc = [
     "🍂흙길🥀 조금 부족해요!",
     "🌱풀길🌱 아쉬워요!",
@@ -23,6 +26,10 @@ export default function ThemeCommentWriteUI(props) {
     5: <SmileOutlined />,
   };
 
+  const onClickCancel = () => {
+    props.setIsEdit(false);
+  };
+
   const onClickEscape0 = () => {
     setIsEscape(true);
     props.setValue("clear", true);
@@ -40,13 +47,13 @@ export default function ThemeCommentWriteUI(props) {
     props.setValue("rank", e.target.value);
   };
 
-  const onChangeStar = (event) => {
+  const onChangeStar = (event: ChangeEvent) => {
     props.setValue("star", Number(event));
     props.trigger("star");
   };
 
   useEffect(() => {
-    props.setValue("clear", Boolean(props.el?.clear));
+    props.setValue("clear", Boolean(props.el?.clear || isEscape));
     props.setValue("rank", props.el?.rank);
     props.setValue("star", Number(props.el?.star));
     setIsEscape(Boolean(props.el?.clear));
@@ -69,6 +76,21 @@ export default function ThemeCommentWriteUI(props) {
             character={({ index }: { index: number }) => customIcons[index + 1]}
             onChange={onChangeStar}
           />
+          {props.isEdit ? (
+            <FontAwesomeIcon
+              icon={faXmark}
+              onClick={onClickCancel}
+              style={{
+                fontSize: "1.5em",
+                margin: "4px",
+                cursor: "pointer",
+                position: "absolute",
+                right: "2em",
+              }}
+            />
+          ) : (
+            ""
+          )}
         </S.StarBox>
         <S.EscapeRankBox>
           <S.RadioGroup color="secondary">
@@ -125,7 +147,7 @@ export default function ThemeCommentWriteUI(props) {
           </S.RankBox>
         </S.EscapeRankBox>
         <S.CommentBox>
-          <S.CommentWriter>신만*님</S.CommentWriter>
+          <S.CommentWriter>신만*</S.CommentWriter>
           <S.CommentInput
             defaultValue={props.el?.content}
             {...props.register("content")}

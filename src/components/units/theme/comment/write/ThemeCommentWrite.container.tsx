@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useForm, SubmitHandler } from "react-hook-form";
+import Swal from "sweetalert2";
 import ThemeCommentWriteUI from "./ThemeCommentWrite.presenter";
 import {
   CREATE_THEME_REVIEW,
@@ -31,6 +32,19 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
     });
 
   const onClickSubmit: SubmitHandler<Comment> = async (data) => {
+    if (!data.star) {
+      Swal.fire("만족도를 선택해주세요!");
+      return;
+    }
+    if (!data.content) {
+      Swal.fire("내용을 입력해주세요!");
+      return;
+    }
+    if (!data.rank) {
+      Swal.fire("난이도는 어땠는지 선택해주세요!");
+      return;
+    }
+
     try {
       await createThemeReview({
         variables: {
@@ -59,8 +73,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       if (data.content) updateThemeReviewInput.content = data.content;
       if (data.star) updateThemeReviewInput.star = data.star;
       if (data.rank) updateThemeReviewInput.rank = data.rank;
-      if (data.clear !== props.el?.clear)
-        updateThemeReviewInput.clear = data.clear;
+      if (data.clear) updateThemeReviewInput.clear = data.clear;
 
       await updateThemeReview({
         variables: {
@@ -88,11 +101,10 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       formState={formState}
       setValue={setValue}
       trigger={trigger}
-      onClickSubmit={onClic
-        kSubmit}
+      onClickSubmit={onClickSubmit}
       onClickUpdate={onClickUpdate}
       isEdit={props.isEdit}
-      setIsEdit={props.IsEdit}
+      setIsEdit={props.setIsEdit}
       el={props.el}
     />
   );

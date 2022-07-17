@@ -153,7 +153,7 @@ export const CommentBox = styled.div`
 `;
 export const CommentWriter = styled.h3`
   font-size: 1.1em;
-  white-space: nowrap;
+  margin-right: 5px;
 `;
 export const CommentInput = styled.input`
   max-width: 636px;
