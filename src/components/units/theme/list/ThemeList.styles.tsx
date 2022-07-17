@@ -178,7 +178,7 @@ export const ThemeList = styled.div`
 `;
 
 export const Flip = styled.div`
-  width: 260px;
+  width: 270px;
   height: 400px;
   position: relative;
 
@@ -226,7 +226,7 @@ export const Theme = styled(defaultDiv)`
       #26282c 100%
     ),
     url(${(props: IGenreProps) => props.src});
-  background-size: 260px 400px;
+  background-size: 270px 400px;
 `;
 
 export const ThemeBack = styled(defaultDiv)`
