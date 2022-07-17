@@ -14,10 +14,15 @@ export const Wrapper = styled.section`
   align-items: center;
 `;
 
+export const BackWrapper = styled.div`
+  width: 100vw;
+  height: 50em;
+`;
 export const BackGroundImg = styled.div`
   width: 100vw;
   height: 45em;
-  background: url("/img/home/home2.png") center/cover;
+  background: url("/img/home/home2.png") center;
+  background-size: 100% 100%;
   margin-bottom: 2em;
   position: relative;
 
@@ -87,7 +92,7 @@ export const StoreImgboxes = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 75%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -141,7 +146,14 @@ export const Location = styled(EnvironmentOutlined)`
 
 export const ThemeList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, auto));
+  /* grid-template-columns: repeat(auto-fill, minmax(290px, auto)); */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2em;
+
+  @media ${breakPoints.tablet} {
+    grid-template-columns: 1fr 1fr;
+  }
+
   @media ${breakPoints.mobile} {
     display: flex;
     flex-direction: column;

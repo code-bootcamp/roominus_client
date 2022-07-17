@@ -28,11 +28,14 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
             <S.LimitBox>
               <S.ThemeTime>
                 <S.AgeLimit>
-                  {props.data?.fetchTheme.agelimit}세 이상 이용 가능
+                  {props.data?.fetchTheme.agelimit}세 이상 2명 ~{" "}
+                  {props.data?.fetchTheme.peoplelimit}명 이용 가능
                 </S.AgeLimit>
               </S.ThemeTime>
               <S.ChargeBox>
-                <S.ThemeCharge>이용시간 : 120분</S.ThemeCharge>
+                <S.ThemeCharge>
+                  이용시간 : {props.data?.fetchTheme.clearTime}
+                </S.ThemeCharge>
               </S.ChargeBox>
             </S.LimitBox>
           </S.ThemeInfo>

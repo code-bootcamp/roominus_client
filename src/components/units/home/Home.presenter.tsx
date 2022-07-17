@@ -11,6 +11,7 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 import { useEffect, useState } from "react";
 import ThemeCardComponent from "./themecard/ThemeCard";
+import { height } from "@mui/material/node_modules/@mui/system";
 
 export default function HomeUI(props) {
   const [windowSize, setWindowSize] = useState(false);
