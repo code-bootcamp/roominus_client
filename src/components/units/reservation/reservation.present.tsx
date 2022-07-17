@@ -1,5 +1,5 @@
 import * as S from "./reservation.styles";
-import { TextField, MenuItem, Input } from "@material-ui/core";
+import { TextField, MenuItem } from "@material-ui/core";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -9,12 +9,13 @@ import MomentUtils from "@date-io/moment";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import NoReservation from "./Noreservation";
 import { v4 as uuidv4 } from "uuid";
-import ReservationThemeInfo from "./reservationthemeInfo";
 import Payment from "../payment";
 import Swal from "sweetalert2";
 import ReservationNotice from "./reservationNotice/reservationNotice";
+import { IReservationUIProps } from "./reservation.types";
+import ReservationThemeInfo from "./reservationthemeInfo/reservationthemeinfo";
 
-export default function ReservationUI(props: any) {
+export default function ReservationUI(props: IReservationUIProps) {
   const date = new Date();
   const MaxDate = date.setMonth(date.getMonth() + 3);
 
@@ -40,18 +41,18 @@ export default function ReservationUI(props: any) {
                 <ReservationThemeInfo data={props.data} />
               </>
             ) : (
-              <S.Container>
+              <>
                 <S.BackBox>
                   <S.Left onClick={props.onClickReset} />
                   <span onClick={props.onClickReset}>처음으로</span>
                 </S.BackBox>
                 <NoReservation />
-              </S.Container>
+              </>
             )}
           </>
         ) : (
           <>
-            <ReservationNotice />
+            <ReservationNotice data={props?.themesList?.fetchThemes} />
           </>
         )}
 

@@ -33,10 +33,9 @@ export const Wrapper = styled.section`
   align-items: center;
   font-family: "GowunDodum-Regular";
 
-  border: 1px solid darkgray;
   border-radius: 10px;
   gap: 1em;
-  padding: 1em;
+  padding: 2em 0em 5em 0em;
 
   @media ${breakPoints.tablet} {
     width: 100%;
@@ -53,34 +52,11 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const TicketTitleBox = styled.div`
-  display: flex;
-  align-items: center;
-  transform: rotate(270deg);
-  gap: 0.5em;
-
-  @media ${breakPoints.tablet} {
-    transform: rotate(0deg);
-  }
-  @media ${breakPoints.mobile} {
-    transform: rotate(0deg);
-  }
-`;
-
-export const Ticket = styled.img`
-  width: 2em;
-`;
-
-export const Title = styled.span`
-  font-size: 1.8em;
-  font-family: "PressStart2P";
-`;
-
 export const IamgeDataBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 3em;
   width: 100%;
 
   @media ${breakPoints.mobile} {
@@ -92,52 +68,61 @@ export const IamgeDataBox = styled.div`
 
 export const Image = styled.img`
   border-radius: 8px;
-  width: 15em;
-
-  @media ${breakPoints.tablet} {
-    width: 15em;
-  }
-  @media ${breakPoints.mobile} {
-    width: 11em;
-  }
+  width: 22em;
+  height: 30em;
+  box-shadow: 10px 10px 39px rgba(183, 96, 202, 0.25);
 `;
 export const DataBox = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
+
   border: 1px solid darkgray;
   border-radius: 8px;
-  width: 50%;
+  width: 22em;
+  height: 30em;
+  gap: 2em;
+  box-shadow: 10px 10px 39px rgba(183, 96, 202, 0.25);
 
-  font-size: 1em;
-  padding: 1em;
-
-  @media ${breakPoints.tablet} {
-    padding: 0.5em;
-  }
-
-  @media ${breakPoints.mobile} {
-    width: auto;
+  & span {
+    font-size: 1.2em;
   }
 `;
 
-export const BarcodeBox = styled.div``;
+export const BarcodeBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+`;
 
 export const Barcode = styled.div`
   background: url("/img/reservation/qr-code.png") center/cover;
+  width: 7em;
+  height: 7em;
+`;
 
-  width: 10em;
-  height: 10em;
-  transform: rotate(90deg);
+export const ThemeTitleBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 
-  @media ${breakPoints.tablet} {
-    transform: rotate(0deg);
+  .span {
+    color: darkgray;
   }
-  @media ${breakPoints.mobile} {
-    transform: rotate(0deg);
-    width: 10em;
-    height: 10em;
+
+  h2 {
+    font-size: 2em;
   }
+`;
+
+export const ThemeInfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
 `;
 
 export const NotionArea = styled.div`
@@ -147,13 +132,13 @@ export const NotionArea = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-
+  border-top: 1px solid darkgray;
   padding: 3em 0em 3em 0em;
 `;
 
 export const NoticeTitle = styled.span`
-  border-top: 2px solid #b2b2b2;
   font-size: 2.5em;
+  width: 80%;
 
   @media ${breakPoints.mobile} {
     font-size: 2em;
@@ -195,8 +180,8 @@ export const NoticeBox = styled.li`
 `;
 
 export const NoticeImg = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 8em;
+  height: 8em;
   padding-bottom: 1em;
 
   @media ${breakPoints.tablet} {
@@ -222,8 +207,7 @@ export const NoticeSubject = styled.h2`
   border-radius: 15px;
   font-size: 1.25em;
 
-  width: 8em;
-  margin-bottom: 1em;
+  width: 9.5em;
 
   @media ${breakPoints.mobile} {
     font-size: 1em;
@@ -231,8 +215,8 @@ export const NoticeSubject = styled.h2`
 `;
 
 export const NoticeDescription = styled.p`
-  color: darkgray;
-  font-size: 0.88em;
+  color: darkblue;
+  font-size: 1em;
 `;
 export const ButtonWrapper = styled.div`
   display: flex;

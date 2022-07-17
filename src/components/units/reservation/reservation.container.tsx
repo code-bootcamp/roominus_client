@@ -15,8 +15,8 @@ export default function Reservation() {
   const [time, setTime] = useState("");
   const [selectTime, setSelectTime] = useState([]);
   const [peopleNumber, setPeopleNumber] = useState();
-  const [usePoint, setUsePoint] = useState(0);
-  const [totalPrice, setTotalPrice] = useState();
+  const [usePoint, setUsePoint] = useState();
+  const [totalPrice, setTotalPrice] = useState(0);
   const [checked, setChecked] = useState(false);
 
   const { data: themesList } = useQuery(FETCH_THEMES);
@@ -93,7 +93,7 @@ export default function Reservation() {
     console.log("cafeId:", cafeId);
     console.log("reservationDate:", reservationDate);
     console.log("peopleNumber:", peopleNumber);
-    console.log("data.memo:", data.memo);
+    console.log("data:", data);
   };
 
   const onChangeChecked = () => {

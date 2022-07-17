@@ -54,66 +54,73 @@ export default function MyPageInfoUI(props) {
             </S.ThemeBox>
           </Link>
         </S.ThemeBoxs>
-        <S.InfoBox>
-          <S.InfoTitleBox>
-            <S.Label>최근 결제 내역</S.Label>
-            <S.addButton>
-              <Link href={"/mypage/history"}>
-                <S.Contents>더보기</S.Contents>
-              </Link>
-            </S.addButton>
-          </S.InfoTitleBox>
 
-          <S.TableWrapper>
-            <S.TableTop />
-            <S.TitleRow>
-              <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-              <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
-              <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
-              <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
-            </S.TitleRow>
-            {data.map((el) => (
-              <S.Row key={el._id}>
-                <S.ColumnBasic>
-                  {String(el._id).slice(-4).toUpperCase()}
-                </S.ColumnBasic>
-                <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
-                <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-                <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
-              </S.Row>
-            ))}
-            <S.TableBottom />
-          </S.TableWrapper>
-        </S.InfoBox>
-        <S.InfoBox>
-          <S.InfoTitleBox>
-            <S.Label>최근 적립 내역</S.Label>
-            <S.addButton>
-              <Link href={"/mypage/reward"}>
-                <S.Contents>더보기</S.Contents>
-              </Link>
-            </S.addButton>
-          </S.InfoTitleBox>
+        <S.RowBox>
+          <>
+            <S.InfoBox>
+              <S.InfoTitleBox>
+                <S.Label>최근 결제 내역</S.Label>
+                <S.addButton>
+                  <Link href={"/mypage/history"}>
+                    <S.Contents>더보기</S.Contents>
+                  </Link>
+                </S.addButton>
+              </S.InfoTitleBox>
 
-          <S.TableTop />
-          <S.TitleRow>
-            <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-            <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
-            <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
-            <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
-          </S.TitleRow>
-          {data.map((el) => (
-            <S.Row key={el._id}>
-              <S.ColumnBasic>
-                {String(el._id).slice(-4).toUpperCase()}
-              </S.ColumnBasic>
-              <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
-              <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-              <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
-            </S.Row>
-          ))}
-          <S.TableBottom />
-        </S.InfoBox>
+              <S.TableWrapper>
+                <S.TableTop />
+                <S.TitleRow>
+                  <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
+                  <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
+                  <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
+                  <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+                </S.TitleRow>
+                {data.map((el) => (
+                  <S.Row key={el._id}>
+                    <S.ColumnBasic>
+                      {String(el._id).slice(-4).toUpperCase()}
+                    </S.ColumnBasic>
+                    <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.writer}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+                  </S.Row>
+                ))}
+                <S.TableBottom />
+              </S.TableWrapper>
+            </S.InfoBox>
+          </>
+          <>
+            <S.InfoBox>
+              <S.InfoTitleBox>
+                <S.Label>최근 적립 내역</S.Label>
+                <S.addButton>
+                  <Link href={"/mypage/reward"}>
+                    <S.Contents>더보기</S.Contents>
+                  </Link>
+                </S.addButton>
+              </S.InfoTitleBox>
+
+              <S.TableTop />
+              <S.TitleRow>
+                <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+              </S.TitleRow>
+              {data.map((el) => (
+                <S.Row key={el._id}>
+                  <S.ColumnBasic>
+                    {String(el._id).slice(-4).toUpperCase()}
+                  </S.ColumnBasic>
+                  <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
+                  <S.ColumnBasic>{el.writer}</S.ColumnBasic>
+                  <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+                </S.Row>
+              ))}
+              <S.TableBottom />
+            </S.InfoBox>
+          </>
+        </S.RowBox>
       </S.Wrapper>
     </S.Container>
   );

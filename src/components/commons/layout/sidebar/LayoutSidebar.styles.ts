@@ -24,6 +24,19 @@ export const Wrapper = styled.section`
   align-items: center;
 `;
 
+export const HeaderBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & p {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+`;
+
 export const UserNameBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,7 +63,7 @@ export const UserData = styled.span`
 `;
 
 export const line = styled.div`
-  border: 1px solid #d9d6d0;
+  border: 1px solid #bf9eeb;
   width: 100%;
 `;
 
