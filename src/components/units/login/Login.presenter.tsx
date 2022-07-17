@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import * as S from "./Login.styles";
-import WebPurpleLoginButton from "../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 
 export default function LoginUI(props) {
   return (
@@ -52,7 +51,7 @@ export default function LoginUI(props) {
           )}
         </S.PasswordBox>
         <S.Error>{props.formState.errors.password?.message}</S.Error>
-        <WebPurpleLoginButton type="submit" title="로그인하기" />
+        <S.LoginBtn>로그인</S.LoginBtn>
       </S.Form>
       <S.SignUpBox>
         <S.SignUpdetailBox>
@@ -67,20 +66,17 @@ export default function LoginUI(props) {
       </S.SignUpBox>
       <S.Divider></S.Divider>
       <S.SocialLoginBtns>
-        <S.SocialLoginBtn>
-          <S.SocialLoginLogo
-            src="/img/login/kakao_login_medium_narrow.png"
-            alt="kakakoSocialLogo"
-            onClick={props.onClickLoginKakao}
+        <S.KakaoBtn onClick={props.onClickLoginKakao}>
+          <S.KakaoSymbol src="/img/login/kakaoSymbol.png" alt="kakaoSymbol" />
+          <S.KakaoLabel>카카오 로그인</S.KakaoLabel>
+        </S.KakaoBtn>
+        <S.GoogleBtn onClick={props.onClickGoogleLogin}>
+          <S.GoogleSymbol
+            src="/img/login/googleSymbol.png"
+            alt="googleSymbol"
           />
-        </S.SocialLoginBtn>
-        <S.SocialLoginBtn>
-          <S.SocialLoginLogo
-            src="/img/login/btn_google_signin_light_normal_web.png"
-            alt="googleLogo"
-            onClick={props.onClickGoogleLogin}
-          />
-        </S.SocialLoginBtn>
+          <S.GoogleLabel>구글 로그인</S.GoogleLabel>
+        </S.GoogleBtn>
       </S.SocialLoginBtns>
     </S.Wrapper>
   );

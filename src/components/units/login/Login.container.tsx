@@ -80,7 +80,7 @@ export default function LoginPage() {
     }
   };
   const onClickMoveToSignUp = () => {
-    router.push("/login/choice");
+    router.push("/signup/choice");
   };
   const onClickMoveToFindIdPassword = () => {
     router.push("/findidpassword");

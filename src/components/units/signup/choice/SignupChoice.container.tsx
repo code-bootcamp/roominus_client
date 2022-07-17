@@ -13,7 +13,7 @@ const auth = getAuth();
 export default function SignupChoice() {
   const router = useRouter();
   const onClickMoveToSignUp = () => {
-    router.push("/signup");
+    router.push("/signup/new");
   };
 
   const onClickGoogleLogin = () => {
