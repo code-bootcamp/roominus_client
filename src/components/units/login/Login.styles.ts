@@ -57,7 +57,7 @@ export const EyeBox = styled.div`
   top: 0;
   right: 1em;
 `;
-export const LoginBtn = styled.div`
+export const LoginBtn = styled.button`
   width: 100%;
   height: 3.5em;
   display: flex;

@@ -41,14 +41,18 @@ export default function LoginPage() {
   const passwordInputRef = useRef();
   const [openEye, setOpenEye] = useState(false);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+  const [setUserInfo] = useRecoilState(userInfoState);
 
   useEffect(() => {
     register("email", { required: true });
     register("password");
   }, []);
-
+  interface IDataProps {
+    email: string;
+    password: string;
+  }
   const onSubmitLogin = async (data) => {
+    console.log("clicked");
     try {
       const result = await logingql({
         variables: {
@@ -59,18 +63,20 @@ export default function LoginPage() {
       console.log(result.data?.Login);
       const Token = result.data?.Login;
       console.log("로그인은 됨");
-      const resultUserInfo = await client.query({
-        query: FETCH_USER_LOGGEDIN,
-        context: {
-          headers: {
-            Authorization: `Bearer ${Token}`,
-          },
-        },
-      });
-      console.log("로그드인도 됨");
-      console.log(resultUserInfo.data?.fetchUserLoggedIn);
-      const user = resultUserInfo.data?.fetchUserLoggedIn;
+      localStorage.setItem("accessToken", Token);
       setAccessToken(Token);
+      // const resultUserInfo = await client.query({
+      //   query: FETCH_USER_LOGGEDIN,
+      //   context: {
+      //     headers: {
+      //       Authorization: `Bearer ${Token}`,
+      //     },
+      //   },
+      // });
+      // console.log("로그드인도 됨");
+      // console.log(resultUserInfo.data?.fetchUserLoggedIn);
+      // const user = resultUserInfo.data?.fetchUserLoggedIn;
+
       // setUserInfo(user);
 
       Modal.success({ content: "성공" });
