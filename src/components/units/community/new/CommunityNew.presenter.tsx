@@ -9,7 +9,12 @@ const ToastEditor = dynamic(() => import("../../../commons/toast/Toast"), {
   ssr: false,
 });
 
-export default function CommunityNewUI(props) {
+interface ICommunityNewUIProps {
+  onClickList: () => void;
+  onClickSubmit: () => void;
+}
+
+export default function CommunityNewUI(props: ICommunityNewUIProps) {
   return (
     <S.Container>
       <S.Wrapper>

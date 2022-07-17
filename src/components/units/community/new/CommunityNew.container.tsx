@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { createRef, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { CREATE_BOARD } from "./CommunityNew.queries";
+import Swal from "sweetalert2";
 
 const schema = yup.object({
   title: yup.string().required("제목은 필수 입력 사항입니다."),
@@ -39,25 +40,43 @@ export default function CommunityNew() {
     router.push("/community");
   };
 
-  const onClickSubmit = async (data) => {
-    if (!fileUrl) {
-      alert("이미지를 등록해주세요");
-    } else if (fileUrl) {
-      console.log(tagList);
-      const result = await createBoard({
-        variables: {
-          createBoardInput: {
-            title: data.title,
-            content: data.content,
-            boardTags: tagList,
-            mainImg: fileUrl,
-            user: "469bb4c0-90f4-42d2-8099-69b34a139a79",
+  interface IDataProps {
+    title: string;
+    content: string;
+  }
+
+  const onClickSubmit = async (data: IDataProps) => {
+    try {
+      if (!fileUrl) {
+        Swal.fire({
+          icon: "warning",
+          title: "이미지를 등록해주세요!",
+        });
+      } else if (fileUrl) {
+        console.log(tagList);
+        const result = await createBoard({
+          variables: {
+            createBoardInput: {
+              title: data.title,
+              content: data.content,
+              boardTags: tagList,
+              mainImg: fileUrl,
+              user: "469bb4c0-90f4-42d2-8099-69b34a139a79",
+            },
           },
-        },
+        });
+        console.log(result);
+        Swal.fire({
+          icon: "success",
+          title: "등록이 완료되었습니다!",
+        });
+        router.push(`/community/${result.data?.createBoard.id}`);
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        text: error.message,
       });
-      console.log(result);
-      alert("등록이 완료되었습니다!");
-      router.push(`/community/${result.data?.createBoard.id}`);
     }
   };
 

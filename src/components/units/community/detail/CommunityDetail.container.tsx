@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 import CommunityDetailUI from "./CommunityDetail.presenter";
 import { DELETE_BOARD, FETCH_BOARD } from "./CommunityDetail.queries";
 
@@ -20,14 +21,32 @@ export default function CommunityDetail() {
   };
 
   const onClickDelete = async () => {
+    Swal.fire({
+      icon: "question",
+      title: "정말 삭제하시겠습니까?",
+      showCancelButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        onClickDeleteModal();
+        Swal.fire({
+          icon: "success",
+          title: "삭제되었습니다!",
+        });
+      }
+    });
+  };
+
+  const onClickDeleteModal = async () => {
     try {
       await deleteBoard({
         variables: { title: data?.fetchBoard.title },
       });
-      alert("삭제가 완료되었습니다!!");
       router.push("/community");
     } catch (error) {
-      alert(error.message);
+      Swal.fire({
+        icon: "error",
+        text: error.message,
+      });
     }
   };
 

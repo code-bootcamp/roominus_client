@@ -1,9 +1,9 @@
 import WebSmallBlackButton from "../../../../commons/buttons/buttonDesktop/WebSmallBlackButton";
 import WebSmallPurpleButton from "../../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
-import ListCards from "../../../cafe/list/card/ListCards";
 import * as S from "./AdminCafeDetail.styles";
+import { IAdminCafeListUIProps } from "./AdminCafeDetail.types";
 
-export default function AdminCafeListUI(props) {
+export default function AdminCafeListUI(props: IAdminCafeListUIProps) {
   return (
     <S.Wrapper>
       <S.Title>매장 상세페이지(관리자)</S.Title>

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { CREATE_CAFE, UPDATE_CAFE } from "./AdminCafeNew.query";
 import AdminCafeNewUI from "./AdminCafeNew.presenter";
+import Swal from "sweetalert2";
 
 export default function AdminCafeNew(props) {
   const router = useRouter();
@@ -63,7 +64,10 @@ export default function AdminCafeNew(props) {
       router.push(`/admin/cafe/${result.data?.createCafe.id}`);
       console.log(result.data?.createCafe);
     } catch (error) {
-      alert(error.message);
+      Swal.fire({
+        icon: "error",
+        text: error.message,
+      });
     }
   };
 
@@ -102,11 +106,17 @@ export default function AdminCafeNew(props) {
           // },
         },
       });
-      alert("수정이 완료되었습니다!");
+      Swal.fire({
+        icon: "success",
+        title: "수정이 완료되었습니다!",
+      });
       router.push(`/admin/cafe/${result.data?.updateCafe.id}`);
       console.log(result);
     } catch (error) {
-      alert(error.message);
+      Swal.fire({
+        icon: "error",
+        text: error.message,
+      });
     }
   };
 
