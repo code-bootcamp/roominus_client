@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { breakPoints } from "../../../../../commons/styles/media";
-import { Radio } from "antd";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { Rate } from "antd";
@@ -44,13 +43,9 @@ export const Star = styled(FontAwesomeIcon)`
 `;
 
 export const EscapeRankBox = styled.div`
-  /* max-width: 30em; */
   display: flex;
   flex-direction: row;
   gap: 1em;
-  /* flex-direction: row;
-  /* justify-content: space-between; */
-  /* align-items: center; */
 
   @media ${breakPoints.tablet} {
     display: flex;

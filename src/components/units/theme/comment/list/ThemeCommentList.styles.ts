@@ -20,6 +20,7 @@ export const CommentLeftBox = styled.div`
   }
 `;
 export const WriterImage = styled.div`
+  position: absolute;
   width: 54px;
   height: 54px;
   background-color: #5c4a7e;
@@ -43,7 +44,9 @@ export const WriterName = styled.div`
 
 export const ToolBox = styled.div`
   color: #5c4a7e;
-  font-size: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 export const Star = styled.span``;
 export const CreatedAt = styled.span`
@@ -52,8 +55,10 @@ export const CreatedAt = styled.span`
 export const EscapeRankBox = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 10px 0px;
+  padding: 5px 0px;
   align-items: center;
+  gap: 4px;
+  font-size: 0.9em;
 `;
 export const EscapeButton = styled.button`
   display: flex;
@@ -62,12 +67,11 @@ export const EscapeButton = styled.button`
   align-items: center;
   padding: 0px 15px;
   font-weight: 700;
-  height: 35px;
+  height: 2.5em;
   border: transparent;
   border-radius: 8px;
   background-color: #5c4a7e;
   color: white;
-  margin: 2px;
 `;
 
 export const RankButton = styled.button`
@@ -78,7 +82,7 @@ export const RankButton = styled.button`
   padding: 0px 15px;
   text-align: center;
   font-weight: 700;
-  height: 35px;
+  height: 2.5em;
   border: transparent;
   border-radius: 8px;
   background-color: #5c4a7e;
@@ -87,7 +91,9 @@ export const RankButton = styled.button`
 `;
 
 export const Contents = styled.div`
+  font-size: 1.1em;
   max-width: 788px;
+  padding: 10px 0px;
 `;
 
 export const CommentList = styled.div`

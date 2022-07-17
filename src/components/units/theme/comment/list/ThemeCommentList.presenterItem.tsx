@@ -19,11 +19,11 @@ export default function ThemeCommentListUIItem(props) {
   const [deleteThemeReview] = useMutation(DELETE_THEME_REVIEW);
 
   const customIcons: Record<number, React.ReactNode> = {
-    1: <FrownOutlined style={{ fontSize: "2.5em", color: "#e85757" }} />,
-    2: <FrownOutlined style={{ fontSize: "2.5em", color: "#e8b557" }} />,
-    3: <MehOutlined style={{ fontSize: "2.5em", color: "#b3e857" }} />,
-    4: <SmileOutlined style={{ fontSize: "2.5em", color: "#578ce8" }} />,
-    5: <SmileOutlined style={{ fontSize: "2.5em", color: "#7457E8" }} />,
+    1: <FrownOutlined style={{ fontSize: "4em", color: "#e85757" }} />,
+    2: <FrownOutlined style={{ fontSize: "4em", color: "#e8b557" }} />,
+    3: <MehOutlined style={{ fontSize: "4em", color: "#b3e857" }} />,
+    4: <SmileOutlined style={{ fontSize: "4em", color: "#578ce8" }} />,
+    5: <SmileOutlined style={{ fontSize: "4em", color: "#7457E8" }} />,
   };
 
   const [isEdit, setIsEdit] = useState(false);
@@ -74,7 +74,8 @@ export default function ThemeCommentListUIItem(props) {
   ) : (
     <S.Comment>
       <S.CommentLeftBox>
-        <S.WriterImage />
+        {/* <S.WriterImage /> */}
+        {customIcons[props.el?.star]}
       </S.CommentLeftBox>
       <S.CommentRightBox>
         <S.NameToolBox>
@@ -83,12 +84,16 @@ export default function ThemeCommentListUIItem(props) {
             <FontAwesomeIcon
               icon={faPen}
               onClick={onClickUpdate}
-              style={{ fontSize: "0.9em", margin: "2px" }}
+              style={{
+                fontSize: "1.1em",
+                margin: "4px",
+                cursor: "pointer",
+              }}
             />
             <FontAwesomeIcon
               icon={faXmark}
               onClick={onClickOpenDeleteModal}
-              style={{ fontSize: "1.2em", margin: "2px" }}
+              style={{ fontSize: "1.5em", margin: "4px", cursor: "pointer" }}
             />
           </S.ToolBox>
         </S.NameToolBox>
@@ -103,7 +108,6 @@ export default function ThemeCommentListUIItem(props) {
             defaultValue={props.el?.star}
             character={({ index }: { index: number }) => customIcons[index + 1]}
           /> */}
-            {customIcons[props.el?.star]}
           </S.Star>
         </S.EscapeRankBox>
         <S.Contents>

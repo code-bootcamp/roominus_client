@@ -1,15 +1,21 @@
 import * as S from "./ThemeCommentWrite.styles";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import type { RadioChangeEvent } from "antd";
 import { FrownOutlined, MehOutlined, SmileOutlined } from "@ant-design/icons";
 
 export default function ThemeCommentWriteUI(props) {
-  const desc = ["너무해요", "왜요", "더 줘요", "좋아요", "와우❤️‍🔥"];
+  const desc = [
+    "🍂흙길🥀 조금 부족해요!",
+    "🌱풀길🌱 아쉬워요!",
+    "🌷풀꽃길☘️ 괜찮네요!",
+    "🌸꽃길🌼 추천해요!",
+    "❤️‍🔥또 해도 좋아❤️‍🔥",
+  ];
 
   const [isEscape, setIsEscape] = useState(false);
   const [rank, setRank] = useState();
 
-  const customIcons: Record<number, React.ReactNode> = {
+  const customIcons: Record<number, ReactNode> = {
     1: <FrownOutlined />,
     2: <FrownOutlined />,
     3: <MehOutlined />,
@@ -46,8 +52,6 @@ export default function ThemeCommentWriteUI(props) {
     setIsEscape(Boolean(props.el?.clear));
   }, []);
 
-  console.log("isEscape", isEscape);
-  console.log("props.el.clear", props.el?.clear);
   return (
     <form
       onSubmit={

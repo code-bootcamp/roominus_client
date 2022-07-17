@@ -1,37 +1,38 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import ThemeCommentWriteUI from "./ThemeCommentWrite.presenter";
 import {
   CREATE_THEME_REVIEW,
   FETCH_THEME_REVIEWS,
   UPDATE_THEME_REVIEW,
 } from "./ThemeCommentWrite.queries";
-import { IUpdateThemeReviewInput } from "./ThemeCommentWriter.types";
+import {
+  IThemeCommentWriteProps,
+  IUpdateThemeReviewInput,
+} from "./ThemeCommentWriter.types";
 
-export default function ThemeCommentWrite(props) {
+type Comment = {
+  content: string;
+  star: number;
+  clear: boolean;
+  rank: string;
+};
+
+export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
   const router = useRouter();
 
   const [createThemeReview] = useMutation(CREATE_THEME_REVIEW);
   const [updateThemeReview] = useMutation(UPDATE_THEME_REVIEW);
 
-  const [isEscape, setIsEscape] = useState("");
-
   const { register, handleSubmit, formState, setValue, trigger, reset } =
-    useForm({
-      // defaultValues: {
-      //   writer: props.boardData?.fetchBoard.writer,
-      //   title: props.boardData?.fetchBoard.title,
-      //   contents: props.boardData?.fetchBoard.contents,
-      // },
-      //   resolver: yupResolver(schema),
+    useForm<Comment>({
       mode: "onChange",
     });
 
-  const onClickSubmit = async (data) => {
+  const onClickSubmit: SubmitHandler<Comment> = async (data) => {
     try {
-      const result = await createThemeReview({
+      await createThemeReview({
         variables: {
           createThemeReviewInput: {
             writerName: "신만두",
@@ -48,11 +49,11 @@ export default function ThemeCommentWrite(props) {
       });
       reset();
     } catch (error) {
-      alert(error.message);
+      alert((error as Error).message);
     }
   };
 
-  const onClickUpdate = async (data) => {
+  const onClickUpdate = async (data: Comment) => {
     try {
       const updateThemeReviewInput: IUpdateThemeReviewInput = {};
       if (data.content) updateThemeReviewInput.content = data.content;
@@ -61,7 +62,7 @@ export default function ThemeCommentWrite(props) {
       if (data.clear !== props.el?.clear)
         updateThemeReviewInput.clear = data.clear;
 
-      const result = await updateThemeReview({
+      await updateThemeReview({
         variables: {
           updateThemeReviewInput,
           themeReviewId: props.el?.id,
@@ -76,7 +77,7 @@ export default function ThemeCommentWrite(props) {
       props?.setIsEdit(false);
       reset();
     } catch (error) {
-      alert(error.message);
+      alert((error as Error).message);
     }
   };
 
@@ -87,9 +88,9 @@ export default function ThemeCommentWrite(props) {
       formState={formState}
       setValue={setValue}
       trigger={trigger}
-      onClickSubmit={onClickSubmit}
+      onClickSubmit={onClic
+        kSubmit}
       onClickUpdate={onClickUpdate}
-      isEscape={isEscape}
       isEdit={props.isEdit}
       setIsEdit={props.IsEdit}
       el={props.el}
