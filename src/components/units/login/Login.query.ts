@@ -8,7 +8,10 @@ export const LOGIN = gql`
 export const FETCH_USER_LOGGEDIN = gql`
   query fetchUserLoggedIn {
     fetchUserLoggedIn {
+      id
       name
+      email
+      point
     }
   }
 `;

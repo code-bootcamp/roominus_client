@@ -8,8 +8,8 @@ export const userInfoState = atom({
   key: "userInfoState",
   default: {
     id: "",
-    email: "",
     name: "",
+    email: "",
     point: 0,
   },
 });
