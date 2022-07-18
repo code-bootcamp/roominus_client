@@ -64,7 +64,7 @@ export default function HomeUI(props) {
       <S.BackGroundImg></S.BackGroundImg>
       <S.StoreBox>
         <S.TitleBox>
-          <S.Title>매장</S.Title>
+          <S.Title>신규 매장</S.Title>
           <Link href={"/cafe"}>
             <S.StoreListButton onClick={props.onClickMore}>
               더보기 {`>`}
@@ -73,7 +73,7 @@ export default function HomeUI(props) {
         </S.TitleBox>
         {!windowSize && (
           <S.StoreImgboxes>
-            {props.data?.fetchCafes.slice(-4).map((el: any) => (
+            {props.data?.fetchCafes.slice(0, 4).map((el: any) => (
               <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
                 <CafeCard el={el} />
               </span>
@@ -82,7 +82,7 @@ export default function HomeUI(props) {
         )}
         {windowSize && (
           <S.StoreImgboxes>
-            {props.data?.fetchCafes.slice(-2).map((el: any) => (
+            {props.data?.fetchCafes.slice(0, 2).map((el: any) => (
               <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
                 <CafeCard el={el} />
               </span>
@@ -92,7 +92,7 @@ export default function HomeUI(props) {
       </S.StoreBox>
       <S.ThemeBoxes>
         <S.TitleBox>
-          <S.Title>테마</S.Title>
+          <S.Title>신규 테마</S.Title>
           <Link href={"/theme"}>
             <S.ThemeListButton>더보기 {`>`}</S.ThemeListButton>
           </Link>

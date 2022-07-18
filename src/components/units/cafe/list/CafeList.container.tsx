@@ -13,7 +13,7 @@ export default function CafeListPage() {
   const [hongdae, setHongdae] = useState(false);
   const [kondae, setKondae] = useState(false);
 
-  const { data } = useQuery(FETCH_CAFES);
+  const { data, fetchMore } = useQuery(FETCH_CAFES);
   console.log(data);
 
   const onClickTotal = () => {
@@ -49,6 +49,24 @@ export default function CafeListPage() {
       router.push(`/cafe/${event?.currentTarget.id}`);
     };
 
+  const loadFunc = () => {
+    if (!data) return;
+
+    fetchMore({
+      variables: { page: Math.ceil(data.fetchCafes.length / 8) + 1 },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult.fetchCafes)
+          return {
+            fetchCafes: [...prev.fetchCafes],
+          };
+
+        return {
+          fetchCafes: [...prev.fetchCafes, ...fetchMoreResult.fetchCafes],
+        };
+      },
+    });
+  };
+
   return (
     <CafeListUIPage
       onClickCard={onClickCard}
@@ -61,6 +79,7 @@ export default function CafeListPage() {
       onClickGangnam={onClickGangnam}
       onClickHongdae={onClickHongdae}
       onClickKondae={onClickKondae}
+      loadFunc={loadFunc}
     />
   );
 }

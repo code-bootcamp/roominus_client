@@ -8,6 +8,7 @@ import CommunityCommentWrite from "../comment/Write/CommunityCommentWrite.contai
 import CommunityCommentList from "../comment/List/CommunityCommentList.container";
 import { ICommunityDetailProps } from "./CommunityDetail.types";
 import ShareButton from "../../../commons/buttons/sharebutton";
+import { getDateBefore } from "../../../commons/getDate";
 
 export default function CommunityDetailUI(props: ICommunityDetailProps) {
   return (

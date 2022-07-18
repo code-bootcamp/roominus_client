@@ -21,4 +21,5 @@ export interface ICafeListUIProps {
   gangnam: boolean;
   hongdae: boolean;
   kondae: boolean;
+  loadFunc: () => void;
 }
