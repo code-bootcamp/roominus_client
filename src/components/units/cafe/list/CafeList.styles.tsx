@@ -18,7 +18,7 @@ export const Container = styled.main`
 export const SearchWrapper = styled.section`
   width: 100vw;
   height: 14.38em;
-  background: url("/img/layout/banner.png") center/cover;
+  background: url("/img/layout/banner.webp") center/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -2,63 +2,7 @@ import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "./Reward.styles";
 
-export default function RewardUI() {
-  const data = [
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-  ];
+export default function RewardUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
@@ -70,14 +14,10 @@ export default function RewardUI() {
           <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {data.map((el) => (
+        {props.data?.map((el) => (
           <S.Row key={el._id}>
-            <S.ColumnBasic>
-              {String(el._id).slice(-4).toUpperCase()}
-            </S.ColumnBasic>
-            <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
-            <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-            <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+            <S.ColumnBasic>{el.price}</S.ColumnBasic>
+            <S.ColumnBasic>{el.usepoint}</S.ColumnBasic>
           </S.Row>
         ))}
         <S.TableBottom />

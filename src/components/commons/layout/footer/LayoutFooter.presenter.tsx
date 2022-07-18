@@ -2,7 +2,6 @@ import TopButton from "../../buttons/topbutton";
 import * as S from "./LayoutFooter.styles";
 import { GithubOutlined } from "@ant-design/icons";
 import Link from "next/link";
-import { ILayoutFooterUIProps } from "../Layout.types";
 
 export default function LayoutFooterUI() {
   return (
@@ -62,7 +61,7 @@ export default function LayoutFooterUI() {
                   style={{ fontSize: "30px", color: "#a3a8b7" }}
                 />
                 <img
-                  src="/img/layout/graylogo.png"
+                  src="/img/layout/graylogo.webp"
                   style={{ width: "110px" }}
                 />
               </S.InfoGithub>

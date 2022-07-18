@@ -6,6 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import * as yup from "yup";
 import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../commons/store";
 
 const schema = yup.object({
   phoneNumber: yup.string().required("필수 입력 사항입니다."),
@@ -23,6 +25,7 @@ export default function MyPhoneEdit() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+  const [userInfo] = useRecoilState(userInfoState);
 
   useEffect(() => {
     register("phoneNumber", { required: true });
@@ -110,6 +113,7 @@ export default function MyPhoneEdit() {
       onClickPhonNumberEdit={onClickPhonNumberEdit}
       onClickCheckVerificationNo={onClickCheckVerificationNo}
       onClickMoveToDelete={onClickMoveToDelete}
+      userInfo={userInfo}
     />
   );
 }

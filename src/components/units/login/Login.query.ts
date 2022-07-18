@@ -12,6 +12,7 @@ export const FETCH_USER_LOGGEDIN = gql`
       name
       email
       point
+      phone
     }
   }
 `;

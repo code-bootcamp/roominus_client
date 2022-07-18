@@ -82,7 +82,7 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
         <S.Wrapper>
           <S.LogoWrapper>
             <Link href={"/home"}>
-              <S.Logo src="/img/layout/logo.png" />
+              <S.Logo src="/img/layout/logo.webp" />
             </Link>
           </S.LogoWrapper>
 

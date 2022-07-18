@@ -53,7 +53,7 @@ export default function ReservationUI(props: IReservationUIProps) {
           </>
         ) : (
           <>
-            <ReservationNotice data={props?.themesList?.fetchThemes} />
+            <ReservationNotice data={props?.themesList?.fetchThemesAll} />
           </>
         )}
 

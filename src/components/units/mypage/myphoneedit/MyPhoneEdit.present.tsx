@@ -12,12 +12,12 @@ export default function MyPhoneEditUI(props) {
       <S.Wrapper>
         <S.UserInfoBox>
           <S.UserDataLabel>이름</S.UserDataLabel>
-          <S.UserData>홍길동</S.UserData>
+          <S.UserData>{props.userInfo.name}</S.UserData>
         </S.UserInfoBox>
 
         <S.UserInfoBox>
           <S.UserDataLabel> 이메일 </S.UserDataLabel>
-          <S.UserData> bcd@gamil.com </S.UserData>
+          <S.UserData> {props.userInfo.email} </S.UserData>
         </S.UserInfoBox>
 
         <S.UserInfoBox>
@@ -29,7 +29,7 @@ export default function MyPhoneEditUI(props) {
 
         <S.UserInfoBox>
           <S.UserDataLabel>내 전화번호</S.UserDataLabel>
-          <S.UserData> 010-1234-5678 </S.UserData>
+          <S.UserData>{props.userInfo.phone} </S.UserData>
           <S.Edit onClick={props.onClickEdit}>변경하기</S.Edit>
         </S.UserInfoBox>
 

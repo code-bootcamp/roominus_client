@@ -5,13 +5,16 @@ import Swal from "sweetalert2";
 
 import { LOG_OUT } from "./LayoutSidebar.query";
 import { useMutation, useApolloClient } from "@apollo/client";
-import { accessTokenState } from "../../../../commons/store";
+import { accessTokenState, userInfoState } from "../../../../commons/store";
 import { useRecoilState } from "recoil";
+
 export default function LayoutSidebar() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState<string>("");
   const client = useApolloClient();
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [userInfo] = useRecoilState(userInfoState);
+
   const [logoutgql] = useMutation(LOG_OUT);
   console.log(accessToken);
   const onClickLogout = async () => {
@@ -66,6 +69,7 @@ export default function LayoutSidebar() {
       onClickMenu={onClickMenu}
       onClickMyPage={onClickMyPage}
       onClickLogout={onClickLogout}
+      userInfo={userInfo}
     />
   );
 }

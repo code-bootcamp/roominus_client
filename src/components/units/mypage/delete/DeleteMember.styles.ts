@@ -36,5 +36,5 @@ export const EmailInput = styled.input`
   outline: none;
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;
-  margin-bottom: 0.5em;
+  margin-bottom: 10em;
 `;
