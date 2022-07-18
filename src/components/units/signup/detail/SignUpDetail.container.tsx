@@ -58,6 +58,7 @@ export default function SignUpDetail() {
   const [createUsergql] = useMutation(CREATE_USER);
   const [count, setCount] = useState(10);
   const [showCount, setShowCount] = useState("03:00");
+  const [start, setStart] = useState(false);
   useEffect(() => {
     register("email", { required: true });
     register("password", { required: true });
@@ -65,26 +66,40 @@ export default function SignUpDetail() {
     register("name", { required: true });
     register("phoneNumber", { required: true });
   }, []);
-
+  useEffect(() => {
+    let timer;
+    if (start) {
+      let counts = count;
+      timeRef.current.style.visibility = "visible";
+      timer = setInterval(() => {
+        counts = counts - 1;
+        setCount(counts);
+        console.log(counts);
+        if (counts <= 0) {
+          clearInterval(timer);
+          setCount(10);
+          verificationBtn.current.disabled = true;
+          Modal.error({ content: "인증번호 입력시간 초과" });
+        }
+        ShowCounts(counts);
+      }, 1000);
+    } else if (!start) {
+      clearInterval(timer);
+      Modal.success({ content: "인증 성공!" });
+      setCount(10);
+      timeRef.current.style.visibility = "hidden";
+    }
+    return () => {
+      clearInterval(timer);
+      setCount(10);
+    };
+  }, [start]);
   const onClickMoveToPasswordRef = () => {
     passwordInputRef.current.focus();
   };
 
   const onClickVerifyMySelfByNo = () => {
-    let counts = count;
-    timeRef.current.style.visibility = "visible";
-    const timer = setInterval(() => {
-      counts = counts - 1;
-      setCount(counts);
-      console.log(counts);
-      if (counts <= 0) {
-        clearInterval(timer);
-        setCount(10);
-        verificationBtn.current.disabled = true;
-        Modal.error({ content: "인증번호 입력시간 초과" });
-      }
-      ShowCounts(counts);
-    }, 1000);
+    setStart(true);
   };
   const ShowCounts = (data) => {
     let min = Math.floor(data / 60);
@@ -97,6 +112,7 @@ export default function SignUpDetail() {
   };
   const onClickCheckVerificationNo = () => {
     console.log("ddd");
+    setStart(false);
   };
 
   const onSubmitSignup = async (data) => {
