@@ -6,7 +6,7 @@ import { FETCH_THEME_REVIEWS } from "./ThemeCommentList.queries";
 export default function ThemeCommentList() {
   const router = useRouter();
 
-  const { data, fetchMore, refetch } = useQuery(FETCH_THEME_REVIEWS, {
+  const { data } = useQuery(FETCH_THEME_REVIEWS, {
     variables: {
       themeId: router.query.id,
     },

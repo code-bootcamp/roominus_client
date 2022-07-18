@@ -1,8 +1,9 @@
 import ThemeCommentListUIItem from "./ThemeCommentList.presenterItem";
 import * as S from "./ThemeCommentList.styles";
 import InfiniteScroll from "react-infinite-scroller";
+import { IThemeCommentListUIProps } from "./ThemeCommentList.types";
 
-export default function ThemeCommentListUI(props) {
+export default function ThemeCommentListUI(props: IThemeCommentListUIProps) {
   return (
     <S.Wrapper>
       <InfiniteScroll

@@ -1,10 +1,8 @@
-import { useState, Fragment, useEffect } from "react";
+import { useState, useEffect } from "react";
 import * as S from "./ThemeList.styles";
-import { v4 } from "uuid";
-import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { IThemeListProps } from "./ThemeList.types";
+import { IFetchThemes, IThemeListProps } from "./ThemeList.types";
 import MobileCarousel from "./MobileCarousel";
 
 const NAVIGATION_MENUS = [
@@ -20,26 +18,6 @@ const NAVIGATION_MENUS = [
   { name: "기타" },
 ];
 export default function ThemeListUI(props: IThemeListProps) {
-  const [isPicked, setIsPicked] = useState(false);
-  const router = useRouter();
-  const themes = [
-    "/img/theme/ex/1.png",
-    "/img/theme/ex/2.png",
-    "/img/theme/ex/3.jpeg",
-    "/img/theme/ex/4.jpeg",
-    "/img/theme/ex/5.png",
-    "/img/theme/ex/6.jpeg",
-    "/img/theme/ex/7.jpeg",
-    "/img/theme/ex/8.jpeg",
-    "/img/theme/ex/9.png",
-    "/img/theme/ex/10.jpeg",
-    "/img/theme/ex/11.png",
-    "/img/theme/ex/12.png",
-    "/img/theme/ex/13.jpeg",
-    "/img/theme/ex/14.jpeg",
-    "/img/theme/ex/15.jpeg",
-  ];
-
   // const onClickTheme = () => {
   //   router.push(`/theme/${el.id}`);
   // };
@@ -72,7 +50,6 @@ export default function ThemeListUI(props: IThemeListProps) {
           style={{ fontSize: "30px", color: "#DAD6E1" }}
         />
         <S.SearchInput placeholder="테마명을 입력하세요." />
-        {/* <S.SearchInputUnderline /> */}
       </S.SearchBox>
       <S.GenreList>
         <S.Genre isPicked={true}>전체</S.Genre>
@@ -88,27 +65,6 @@ export default function ThemeListUI(props: IThemeListProps) {
         <S.Genre isPicked={false}>동물</S.Genre>
         <S.Genre isPicked={false}>기타</S.Genre>
       </S.GenreList>
-      {/* {props.isToggled ? (
-        <S.Close onClick={props.onClickToggled} />
-      ) : (
-        <S.Menu onClick={props.onClickToggled} />
-      )}
-      {props.isToggled ? (
-        <S.Toggle>
-          <S.ToggleMenuWrapper>
-            {NAVIGATION_MENUS.map((el) => (
-              <Fragment key={v4()}>
-                <S.ToggleMenu>
-                  <a>{el.name}</a>
-                </S.ToggleMenu>
-              </Fragment>
-            ))}
-            <S.ToggleMenu>마이페이지</S.ToggleMenu>
-          </S.ToggleMenuWrapper>
-        </S.Toggle>
-      ) : (
-        <></>
-      )} */}
       {windowSize && (
         <div>
           <MobileCarousel data={props.data} />
@@ -119,7 +75,7 @@ export default function ThemeListUI(props: IThemeListProps) {
       {!windowSize && (
         <div>
           <S.ThemeList>
-            {props.data?.fetchThemes.map((el: any) => (
+            {props.data?.fetchThemes.map((el: IFetchThemes) => (
               <div key={el.id} onClick={props.onClickTheme(el)}>
                 <S.Flip>
                   <S.Card>

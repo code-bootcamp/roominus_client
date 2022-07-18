@@ -3,9 +3,8 @@ import * as S from "./ThemeCommentList.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPen } from "@fortawesome/free-solid-svg-icons";
 import ThemeCommentWrite from "../write/ThemeCommentWrite.container";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { FrownOutlined, MehOutlined, SmileOutlined } from "@ant-design/icons";
-import { Rate } from "antd";
 import Swal from "sweetalert2";
 import { useMutation } from "@apollo/client";
 import {
@@ -13,12 +12,15 @@ import {
   FETCH_THEME_REVIEWS,
 } from "./ThemeCommentList.queries";
 import { useRouter } from "next/router";
+import { IThemeCommentListUIItemProps } from "./ThemeCommentList.types";
 
-export default function ThemeCommentListUIItem(props) {
+export default function ThemeCommentListUIItem(
+  props: IThemeCommentListUIItemProps
+) {
   const router = useRouter();
   const [deleteThemeReview] = useMutation(DELETE_THEME_REVIEW);
 
-  const customIcons: Record<number, React.ReactNode> = {
+  const customIcons: Record<number, ReactNode> = {
     1: <FrownOutlined style={{ fontSize: "4em", color: "#e85757" }} />,
     2: <FrownOutlined style={{ fontSize: "4em", color: "#e8b557" }} />,
     3: <MehOutlined style={{ fontSize: "4em", color: "#b3e857" }} />,
@@ -47,7 +49,7 @@ export default function ThemeCommentListUIItem(props) {
       });
     } catch (error) {
       Swal.fire({
-        text: error.message,
+        text: (error as Error).message,
       });
     }
   };
