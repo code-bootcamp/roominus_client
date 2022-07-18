@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Fragment } from "react";
+import { ISideBarAdminUIProps } from "../Layout.types";
 import * as S from "./LayoutSidebar.styleds";
 
 const NAVIGATION_MENUS = [
@@ -12,7 +13,7 @@ const NAVIGATION_MENUS = [
   { name: "예약등록", page: "/admin/reservation/new" },
 ];
 
-export default function LayoutSideBarAdminUI(props) {
+export default function LayoutSideBarAdminUI(props: ISideBarAdminUIProps) {
   return (
     <S.Container>
       <S.Wrapper>

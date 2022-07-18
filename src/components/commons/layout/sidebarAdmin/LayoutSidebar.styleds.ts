@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { LogoutOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
+import { IIsActiveProps } from "../Layout.types";
 
 export const Container = styled.main`
   display: flex;
@@ -41,8 +42,8 @@ export const MenuBox = styled.div`
 `;
 
 export const MenuItem = styled.li`
-  font-weight: ${(props) => (props.isActive ? "700" : "400")};
-  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
+  font-weight: ${(props: IIsActiveProps) => (props.isActive ? "700" : "400")};
+  cursor: ${(props: IIsActiveProps) => (props.isActive ? "none" : "pointer")};
 
   font-size: 1.3em;
   padding-bottom: 0.5em;

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../commons/styles/media";
+import { IIsActiveProps } from "../Layout.types";
 
 export const Wrapper = styled.div`
   height: 3em;
@@ -17,7 +17,8 @@ export const MenuItem = styled.div`
   cursor: pointer;
   font-size: 0.8em;
 
-  color: ${(props) => (props.isActive ? "yellow" : "white")};
-  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
-  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
+  color: ${(props: IIsActiveProps) => (props.isActive ? "yellow" : "white")};
+  font-weight: ${(props: IIsActiveProps) =>
+    props.isActive ? "bold" : "normal"};
+  cursor: ${(props: IIsActiveProps) => (props.isActive ? "none" : "pointer")};
 `;

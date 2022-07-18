@@ -1,15 +1,15 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 import LayoutSideBarUI from "./LayoutSidebar.presenter";
 
 export default function LayoutSidebar() {
   const router = useRouter();
-  const [activedMenu, setActivedMenu] = useState("");
+  const [activedMenu, setActivedMenu] = useState<string>("");
 
-  const onClickMenu = (event) => {
+  const onClickMenu = (event: MouseEvent<HTMLDivElement>) => {
     if (event.target instanceof Element) {
-      router.push(event.target.id);
-      const activedMenu = event.target.id;
+      router.push((event.target as HTMLDivElement).id);
+      const activedMenu = (event.target as HTMLDivElement).id;
       setActivedMenu(activedMenu);
     }
   };
@@ -25,6 +25,10 @@ export default function LayoutSidebar() {
   }, [router.asPath]);
 
   return (
-    <LayoutSideBarUI onClickMenu={onClickMenu} onClickMyPage={onClickMyPage} />
+    <LayoutSideBarUI
+      activedMenu={activedMenu}
+      onClickMenu={onClickMenu}
+      onClickMyPage={onClickMyPage}
+    />
   );
 }

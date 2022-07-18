@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { useRecoilState } from "recoil";
 import { accessTokenState } from "../../../../commons/store";
+import { ITopHeaderUIProps } from "../Layout.types";
 import * as S from "./LayoutTopHeader.styles";
 
-export default function LayoutTopHeaderUI(props: any) {
+export default function LayoutTopHeaderUI(props: ITopHeaderUIProps) {
   const [accessToken] = useRecoilState(accessTokenState);
   return (
     <S.Container>

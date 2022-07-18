@@ -2,8 +2,9 @@ import TopButton from "../../buttons/topbutton";
 import * as S from "./LayoutFooter.styles";
 import { GithubOutlined } from "@ant-design/icons";
 import Link from "next/link";
+import { ILayoutFooterUIProps } from "../Layout.types";
 
-export default function LayoutFooterUI(props: any) {
+export default function LayoutFooterUI() {
   return (
     <S.Container>
       <S.Wrapper>
