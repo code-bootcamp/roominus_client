@@ -1,79 +1,9 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "./History.styles";
+import { IData, IHistoryUIProps } from "./History.types";
 
-export default function HistoryUI() {
-  const data = [
-    {
-      _id: "1234",
-      status: "방문 완료",
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      status: "방문 완료",
-
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      status: "방문 완료",
-
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      status: "방문 완료",
-
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      status: "환불 완료",
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      status: "환불 완료",
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      status: "방문대기",
-
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      status: "방문대기",
-
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1234",
-      status: "방문대기",
-
-      title: "dfdfa234sadfadsf",
-      writer: "34134",
-      createdAt: "234324",
-    },
-  ];
+export default function HistoryUI(props: IHistoryUIProps) {
   return (
     <S.Container>
       <S.Wrapper>
@@ -86,17 +16,10 @@ export default function HistoryUI() {
           <S.ColumnHeaderTitle>테마</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {data.map((el) => (
-          <S.Row key={el._id}>
-            <S.ColumnBasic>
-              {String(el._id).slice(-4).toUpperCase()}
-            </S.ColumnBasic>
-            <S.ColumnBasic id={el._id} onClick={() => setModal2Visible(true)}>
-              {el.title}
-            </S.ColumnBasic>
+        {props.data.map((el: IData) => (
+          <S.Row key={el.id}>
+            <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
             <S.ColumnBasic>{el.status}</S.ColumnBasic>
-            <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-            <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
           </S.Row>
         ))}
         <S.TableBottom />

@@ -3,6 +3,7 @@ import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton
 import { gql, useMutation } from "@apollo/client";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
+import { IPaymentProps } from "./payment.types";
 
 declare const window: typeof globalThis & {
   IMP: any;
@@ -40,7 +41,7 @@ const CREATE_RESERVATION = gql`
   }
 `;
 
-export default function Payment(props) {
+export default function Payment(props: IPaymentProps) {
   // const { data } = useQuery(FETCH_USER_LOGGED_IN);
   const [createReservation] = useMutation(CREATE_RESERVATION);
   const router = useRouter();
@@ -63,7 +64,7 @@ export default function Payment(props) {
         // buyer_postcode: "12345",
         m_redirect_url: "http://localhost:3000/mypage",
       },
-      async function (rsp: any) {
+      async function (rsp) {
         // callback
         if (rsp.success) {
           try {
@@ -95,7 +96,7 @@ export default function Payment(props) {
             Swal.fire({
               icon: "error",
               title: "예약실패",
-              text: error.message,
+              text: (error as Error).message,
               timer: 1500,
             });
             router.push("/theme");

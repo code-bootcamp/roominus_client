@@ -20,8 +20,8 @@ export const BackWrapper = styled.div`
 `;
 export const BackGroundImg = styled.div`
   width: 100vw;
-  height: 50em;
-  background: url("/img/home/home.png") center/cover;
+  height: 40em;
+  background: url("/img/home/main.webp") center/cover;
   /* background-size: 100% 100%; */
   margin-bottom: 2em;
   position: relative;

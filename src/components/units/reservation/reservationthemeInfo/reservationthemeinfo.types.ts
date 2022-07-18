@@ -9,6 +9,8 @@ export interface IReservationThemeInfoProps {
           intro_content: string;
           rank: number;
           clearTime: string;
+          peoplelimit: number;
+          agelimit: number;
         };
         cafe: {
           address: string;

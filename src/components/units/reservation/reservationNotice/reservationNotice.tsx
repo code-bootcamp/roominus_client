@@ -11,7 +11,7 @@ import {
   FormOutlined,
 } from "@ant-design/icons";
 import { Idata, IReservationNotice } from "./reservationNotice.types";
-// import Typewriter from "typewriter-effect";
+import Typewriter from "typewriter-effect";
 
 export default function ReservationNotice(props: IReservationNotice) {
   const list = props?.data?.map((el: Idata) => el.title);
@@ -108,7 +108,7 @@ export default function ReservationNotice(props: IReservationNotice) {
       <S.SelectGuideBox>
         <S.ThemeGuide>테마를 선택해 주세요!</S.ThemeGuide>
 
-        {/* <S.RecommendationBox>
+        <S.RecommendationBox>
           <S.ThemeGuide>오늘은</S.ThemeGuide>
           <S.TypingBox>
             <Typewriter
@@ -121,7 +121,7 @@ export default function ReservationNotice(props: IReservationNotice) {
           </S.TypingBox>
 
           <S.ThemeGuide>해볼까요?</S.ThemeGuide>
-        </S.RecommendationBox> */}
+        </S.RecommendationBox>
       </S.SelectGuideBox>
     </S.Container>
   );

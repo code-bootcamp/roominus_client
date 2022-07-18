@@ -2,8 +2,9 @@ import { Card } from "antd";
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "./MyPick.styles";
+import { IMyPickProps } from "./MyPick.types";
 
-export default function MyPickUI(props) {
+export default function MyPickUI(props: IMyPickProps) {
   const { Meta } = Card;
 
   return (

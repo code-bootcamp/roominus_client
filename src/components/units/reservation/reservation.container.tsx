@@ -1,9 +1,10 @@
 // import moment from "moment";
 import { useQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
-import { getDate } from "../../commons/getDate";
+import { ChangeEvent, useEffect, useState } from "react";
 import ReservationUI from "./reservation.present";
+import dayjs from "dayjs";
 import { FETCH_THEMES, FETCH_THEME_MENUS } from "./reservation.queries";
+import { IFetchThemeMenus } from "./reservation.types";
 
 export default function Reservation() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
@@ -13,7 +14,7 @@ export default function Reservation() {
   const [reservationDate, setReservationDate] = useState("");
   const [time, setTime] = useState("");
   const [selectTime, setSelectTime] = useState([]);
-  const [peopleNumber, setPeopleNumber] = useState();
+  const [peopleNumber, setPeopleNumber] = useState(0);
   const [usePoint, setUsePoint] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [memo, setMemo] = useState("");
@@ -24,7 +25,7 @@ export default function Reservation() {
     variables: { themeId },
   });
 
-  const dateFormatter = (str: any) => {
+  const dateFormatter = (str: string) => {
     return str;
   };
 
@@ -32,59 +33,64 @@ export default function Reservation() {
     setThemeId("");
   };
 
-  const onChangeTheme = (event) => {
+  const onChangeTheme = (event: ChangeEvent<HTMLInputElement>) => {
     setThemeId(event.target.value);
     console.log(themeId);
   };
 
-  const onChangeCafe = (event) => {
+  const onChangeCafe = (event: ChangeEvent<HTMLInputElement>) => {
     setCafeId(event.target.value);
   };
 
-  const onChangeDate = (date: String) => {
-    setReservationDate(getDate(date));
+  const onChangeDate = (date: string) => {
+    const selectDate = dayjs(date).format("YYYY-MM-DD");
+    console.log(selectDate);
+    setReservationDate(selectDate);
   };
 
-  const timeResult = data?.fetchThemeMenus.map((el) => el.reservation_time);
+  const timeResult = data?.fetchThemeMenus.map(
+    (el: IFetchThemeMenus) => el.reservation_time
+  );
   const set = new Set(timeResult);
   const uniqeTime = [...set];
 
-  const onChangeTime = (event) => {
+  const onChangeTime = (event: ChangeEvent<HTMLInputElement>) => {
     setTime(event.target.value);
   };
 
   useEffect(() => {
     const peopleResult = data?.fetchThemeMenus
-      .filter((el: any) => el.reservation_time === time)
-      .map((el: any) => el.people_number);
+      .filter((el: IFetchThemeMenus) => el.reservation_time === time)
+      .map((el: IFetchThemeMenus) => el.people_number);
 
     setSelectTime(peopleResult);
   }, [time]);
 
-  const onChangeHeadCount = (event: any) => {
-    setPeopleNumber(event.target.value);
+  const onChangeHeadCount = (event: ChangeEvent<HTMLInputElement>) => {
+    setPeopleNumber(Number(event.target.value));
   };
 
   useEffect(() => {
     const priceResult = data?.fetchThemeMenus
-      .filter((el: any) => el.reservation_time === time)
-      .filter((el: any) => el.people_number === peopleNumber)[0]?.price;
+      .filter((el: IFetchThemeMenus) => el.reservation_time === time)
+      .filter(
+        (el: IFetchThemeMenus) => el.people_number === peopleNumber
+      )[0]?.price;
 
     console.log("priceResult", priceResult);
     setTotalPrice(priceResult);
   }, [peopleNumber]);
 
-  const onChangePoint = (event: any) => {
-    setUsePoint(event.target.value);
+  const onChangePoint = (event: ChangeEvent<HTMLInputElement>) => {
+    setUsePoint(Number(event.target.value));
   };
 
   const ThemeMenuId = data?.fetchThemeMenus
-    .filter((el: any) => el.reservation_time === time)
-    .filter((el: any) => el.people_number === peopleNumber)[0]?.id;
+    .filter((el: IFetchThemeMenus) => el.reservation_time === time)
+    .filter((el: IFetchThemeMenus) => el.people_number === peopleNumber)[0]?.id;
 
-  const onChangeMemo = (event) => {
+  const onChangeMemo = (event: ChangeEvent<HTMLInputElement>) => {
     setMemo(event?.target.value);
-    console.log(memo);
   };
 
   const onChangeChecked = () => {
@@ -115,7 +121,6 @@ export default function Reservation() {
         onChangeHeadCount={onChangeHeadCount}
         // 포인트 변경
         usePoint={usePoint}
-        setUsePoint={setUsePoint}
         onChangePoint={onChangePoint}
         // 결제 금액 변경
         totalPrice={totalPrice}
