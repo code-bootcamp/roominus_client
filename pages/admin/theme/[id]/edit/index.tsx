@@ -25,19 +25,18 @@ const FETCH_THEME = gql`
 
 export default function AdminThemeEditPage() {
   const router = useRouter();
-  const { data: ThemeUpdateData, loading } = useQuery(FETCH_THEME, {
+  const { data: themeUpdateData, loading } = useQuery(FETCH_THEME, {
     variables: {
       themeId: router.query.id,
     },
   });
 
-  console.log("updatedata", ThemeUpdateData);
   return (
     <>
       {loading ? (
         <div></div>
       ) : (
-        <ThemeCreate isEdit={true} ThemeUpdateData={ThemeUpdateData} />
+        <ThemeCreate isEdit={true} themeUpdateData={themeUpdateData} />
       )}
     </>
   );

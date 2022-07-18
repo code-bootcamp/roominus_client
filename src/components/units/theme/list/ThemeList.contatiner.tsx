@@ -2,17 +2,20 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import ThemeUI from "./ThemeList.presenter";
-import { FETCH_THEMES } from "./ThemeList.queries";
+import { FETCH_GENRES, FETCH_THEMES } from "./ThemeList.queries";
 
 export default function ThemeList() {
   const { data } = useQuery(FETCH_THEMES);
+
+  const { data: fetchGenres } = useQuery(FETCH_GENRES);
+
   const router = useRouter();
   const [isToggled, setIsToggled] = useState(false);
   const onClickToggled = () => {
     setIsToggled(!isToggled);
   };
 
-  const onClickTheme = (el) => () => {
+  const onClickTheme = (el: any) => () => {
     console.log(el);
     router.push(`/theme/${el.id}`);
   };
@@ -22,6 +25,7 @@ export default function ThemeList() {
       onClickToggled={onClickToggled}
       onClickTheme={onClickTheme}
       data={data}
+      fetchGenres={fetchGenres}
     />
   );
 }

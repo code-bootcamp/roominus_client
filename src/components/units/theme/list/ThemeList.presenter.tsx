@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as S from "./ThemeList.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { IFetchThemes, IThemeListProps } from "./ThemeList.types";
+import { IFetchGenres, IFetchThemes, IThemeListProps } from "./ThemeList.types";
 import MobileCarousel from "./MobileCarousel";
 
 const NAVIGATION_MENUS = [
@@ -18,10 +18,6 @@ const NAVIGATION_MENUS = [
   { name: "기타" },
 ];
 export default function ThemeListUI(props: IThemeListProps) {
-  // const onClickTheme = () => {
-  //   router.push(`/theme/${el.id}`);
-  // };
-
   const [windowSize, setWindowSize] = useState(false);
 
   const handleResize = () => {
@@ -53,17 +49,11 @@ export default function ThemeListUI(props: IThemeListProps) {
       </S.SearchBox>
       <S.GenreList>
         <S.Genre isPicked={true}>전체</S.Genre>
-        <S.Genre isPicked={false}>추리</S.Genre>
-        <S.Genre isPicked={false}>스릴러</S.Genre>
-        <S.Genre isPicked={false}>공포</S.Genre>
-        <S.Genre isPicked={false}>로맨스</S.Genre>
-        <S.Genre isPicked={false}>범죄</S.Genre>
-        <S.Genre isPicked={false}>코미디</S.Genre>
-        <S.Genre isPicked={false}>모험</S.Genre>
-        <S.Genre isPicked={false}>일상</S.Genre>
-        <S.Genre isPicked={false}>감성</S.Genre>
-        <S.Genre isPicked={false}>동물</S.Genre>
-        <S.Genre isPicked={false}>기타</S.Genre>
+        {props.fetchGenres?.fetchGenres.map((el: IFetchGenres) => (
+          <S.Genre isPicked={false} key={el.id}>
+            {el.name}
+          </S.Genre>
+        ))}
       </S.GenreList>
       {windowSize && (
         <div>

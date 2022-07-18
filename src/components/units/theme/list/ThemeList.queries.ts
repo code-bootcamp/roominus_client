@@ -17,3 +17,12 @@ export const FETCH_THEMES = gql`
     }
   }
 `;
+
+export const FETCH_GENRES = gql`
+  query fetchGenres {
+    fetchGenres {
+      id
+      name
+    }
+  }
+`;
