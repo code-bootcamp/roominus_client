@@ -60,7 +60,7 @@ export const NameDateBox = styled.div`
   margin-bottom: 1em;
   display: flex;
   flex-direction: row;
-  /* background-color: red; */
+  /* background-color: #ff1b1b; */
 `;
 
 export const WriterName = styled.h1`
