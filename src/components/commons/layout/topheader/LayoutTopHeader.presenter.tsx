@@ -21,7 +21,9 @@ export default function LayoutTopHeaderUI(props: ITopHeaderUIProps) {
               </Link>
             </>
           )}
-          {accessToken && <S.Contents>로그아웃</S.Contents>}
+          {accessToken && (
+            <S.Contents onClick={props.onClickLogout}>로그아웃</S.Contents>
+          )}
         </S.LoginJoinWrapper>
       </S.LoginJoinMenuWrapper>
     </S.Container>

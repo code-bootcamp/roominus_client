@@ -15,7 +15,7 @@ export default function ApolloSetting(props) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   useEffect(() => {
     getAccessToken().then((newAccessToken) => {
-      // setAccessToken(newAccessToken);
+      setAccessToken(newAccessToken);
     });
   }, []);
 
@@ -45,8 +45,9 @@ export default function ApolloSetting(props) {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
+    credentials: "include",
   });
-  // credentials: "include",
+
   const client = new ApolloClient({
     link: ApolloLink.from([errorLink, uploadLink as unknown as ApolloLink]),
     cache: new InMemoryCache(),

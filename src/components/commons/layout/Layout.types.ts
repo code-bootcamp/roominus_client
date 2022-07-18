@@ -20,6 +20,7 @@ export interface ISideBarUIProps {
   activedMenu: string;
   onClickMenu: MouseEventHandler<HTMLLIElement>;
   onClickMyPage: () => void;
+  onClickLogout: () => Promise<void>;
 }
 
 export interface ISideBarAdminUIProps {
