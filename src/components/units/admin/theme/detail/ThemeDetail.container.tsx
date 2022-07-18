@@ -20,7 +20,7 @@ export default function ThemeDetail() {
     router.push("/admin/theme/list");
   };
 
-  const onClickEdit = (themeId) => () => {
+  const onClickEdit = (themeId: string) => () => {
     router.push(`/admin/theme/${themeId}/edit`);
   };
 
@@ -32,7 +32,7 @@ export default function ThemeDetail() {
       alert("삭제가 완료되었습니다!!");
       router.push("/admin/theme/list");
     } catch (error) {
-      alert(error.message);
+      alert((error as Error).message);
     }
   };
   const onClickMoveToCreateThemeMenu = () => {

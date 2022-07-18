@@ -2,12 +2,16 @@ import ThemeCreateUI from "./ThemeCreate.presenter";
 import { CREATE_THEME, UPDATE_THEME, FETCH_THEME } from "./ThemeCreate.queries";
 import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
-import { Modal } from "antd";
-import { useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
+import {
+  ICreateThemeData,
+  IThemeCreateProps,
+  IUpdateThemeInput,
+} from "./ThemeCreate.types";
 
-export default function ThemeCreate(props) {
+export default function ThemeCreate(props: IThemeCreateProps) {
   const [createThemegql] = useMutation(CREATE_THEME);
   const [updateThemegql] = useMutation(UPDATE_THEME);
   const router = useRouter();
@@ -16,12 +20,11 @@ export default function ThemeCreate(props) {
   const { register, handleSubmit, reset } = useForm();
   const [value, setValue] = useState(0);
 
-  console.log(props.ThemeUpdateData);
   const onClickRealInput = () => {
     imgRef.current.click();
   };
 
-  const onSubmitCreateTheme = async (data) => {
+  const onSubmitCreateTheme = async (data: ICreateThemeData) => {
     try {
       const result = await createThemegql({
         variables: {
@@ -40,6 +43,7 @@ export default function ThemeCreate(props) {
           },
         },
       });
+      reset();
       Swal.fire({
         title: "테마 등록 성공🥹",
       });
@@ -47,14 +51,14 @@ export default function ThemeCreate(props) {
     } catch (error) {
       Swal.fire({
         title: "error",
-        text: error.message,
+        text: (error as Error).message,
       });
     }
   };
-  const onSubmitUpdateTheme = async (data) => {
-    const updateThemeInput = {};
+  const onSubmitUpdateTheme = async (data: ICreateThemeData) => {
+    const updateThemeInput: IUpdateThemeInput = {};
     if (data.title) updateThemeInput.title = data.title;
-    if (value) updateThemeInput.rank = value;
+    if (value) updateThemeInput.star = value;
     if (data.intro_title) updateThemeInput.intro_title = data.intro_title;
     if (data.intro_content) updateThemeInput.intro_content = data.intro_content;
     if (data.agelimit) updateThemeInput.agelimit = Number(data.agelimit);
@@ -63,7 +67,7 @@ export default function ThemeCreate(props) {
     if (data.clearTime) updateThemeInput.clearTime = data.clearTime;
     if (imgurl) updateThemeInput.mainImg = imgurl;
     try {
-      const result = await updateThemegql({
+      await updateThemegql({
         variables: {
           themeId: router.query.id,
           updateThemeInput,
@@ -106,25 +110,16 @@ export default function ThemeCreate(props) {
     return result;
   };
 
-  const onChangeFile = async (event) => {
+  const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     upload(file).then((result) => setImgurl(result.url));
-    // upload(file).then((result) => console.log(typeof result.url));
   };
-  // useEffect(() => {
-  //   reset({
-  //     title: props.ThemeUpdateData.fetchTheme.title,
-  //     rank: props.ThemeUpdateData.fetchTheme.rank,
-  //     intro_title: props.ThemeUpdateData.fetchTheme.intro_title,
-  //     intro_content: props.ThemeUpdateData.fetchTheme.intro_content,
-  //     agelimit: props.ThemeUpdateData.fetchTheme.agelimit,
-  //   });
-  // }, [props.ThemeUpdateData]);
+
   useEffect(() => {
-    if (props.ThemeUpdateData?.fetchTheme.mainImg) {
-      setImgurl(props.ThemeUpdateData.fetchTheme.mainImg);
+    if (props.themeUpdateData?.fetchTheme.mainImg) {
+      setImgurl(props.themeUpdateData.fetchTheme.mainImg);
     }
-  }, [props.ThemeUpdateData]);
+  }, [props.themeUpdateData]);
   return (
     <ThemeCreateUI
       onSubmitCreateTheme={onSubmitCreateTheme}
@@ -137,7 +132,7 @@ export default function ThemeCreate(props) {
       imgRef={imgRef}
       onClickRealInput={onClickRealInput}
       isEdit={props.isEdit}
-      ThemeUpdateData={props.ThemeUpdateData}
+      themeUpdateData={props.themeUpdateData}
       onSubmitUpdateTheme={onSubmitUpdateTheme}
     />
   );

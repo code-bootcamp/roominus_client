@@ -1,4 +1,10 @@
 import { Dispatch, SetStateAction } from "react";
+import {
+  FieldValues,
+  FormState,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
 
 export interface IUpdateThemeReviewInput {
   rank?: string;
@@ -19,10 +25,11 @@ export interface IThemeCommentWriteUIProps {
   setIsEdit: Dispatch<SetStateAction<boolean>>;
   setValue: Function;
   trigger: Function;
-  handleSubmit: Function;
-  register: Function;
-  onClickUpdate: (event: MouseEvent) => void;
-  onClickSubmit: (event: MouseEvent) => void;
+  formState: FormState<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  register: UseFormRegister<FieldValues>;
+  onClickUpdate: Function;
+  onClickSubmit: Function;
 }
 
 export interface IDataProps {

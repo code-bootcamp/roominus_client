@@ -1,16 +1,15 @@
 import { Rate } from "antd";
 import WebPurpleLoginButton from "../../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
-import WebLongestHighlightUnderlineInput from "../../../../commons/inputs/inputDesktop/WebLongestHighlightUnderlineInput";
 import * as S from "./ThemeCreate.styles";
-export default function ThemeCreateUI(props) {
-  console.log(props.ThemeUpdateData);
+import { IThemeCreateUIProps } from "./ThemeCreate.types";
+export default function ThemeCreateUI(props: IThemeCreateUIProps) {
   return (
     <S.Wrapper>
       <S.Title>{props.isEdit ? "테마수정" : "테마등록"}</S.Title>
       <S.InputsTitle>난이도</S.InputsTitle>
       <Rate
         onChange={props.setValue}
-        value={props.value || props.ThemeUpdateData?.fetchTheme.rank}
+        value={props.value || props.themeUpdateData?.fetchTheme.rank}
       />
       <S.Form
         onSubmit={
@@ -24,35 +23,35 @@ export default function ThemeCreateUI(props) {
           type="text"
           placeholder="cafeName"
           {...props.register("cafeName")}
-          defaultValue={props.ThemeUpdateData?.fetchTheme.cafe?.name}
+          defaultValue={props.themeUpdateData?.fetchTheme.cafe?.name}
         />
         <S.InputsTitle>장르</S.InputsTitle>
         <S.MyInput
           type="text"
           placeholder="genreName"
           {...props.register("genreName")}
-          defaultValue={props.ThemeUpdateData?.fetchTheme.genre?.name}
+          defaultValue={props.themeUpdateData?.fetchTheme.genre?.name}
         />
         <S.InputsTitle>제목</S.InputsTitle>
         <S.MyInput
           type="text"
           placeholder="title"
           {...props.register("title")}
-          defaultValue={props.ThemeUpdateData?.fetchTheme.title}
+          defaultValue={props.themeUpdateData?.fetchTheme.title}
         />
         <S.InputsTitle>부 제목</S.InputsTitle>
         <S.MyInput
           type="text"
           placeholder="intro_title"
           {...props.register("intro_title")}
-          defaultValue={props.ThemeUpdateData?.fetchTheme.intro_title}
+          defaultValue={props.themeUpdateData?.fetchTheme.intro_title}
         />
         <S.InputsTitle>테마 상세 설명</S.InputsTitle>
         <S.MyInput
           type="text"
           placeholder="intro_content"
           {...props.register("intro_content")}
-          defaultValue={props.ThemeUpdateData?.fetchTheme.intro_content}
+          defaultValue={props.themeUpdateData?.fetchTheme.intro_content}
         />
 
         <S.InputsTitle>나이 제한</S.InputsTitle>
@@ -60,21 +59,21 @@ export default function ThemeCreateUI(props) {
           type="number"
           placeholder="agelimit"
           {...props.register("agelimit")}
-          defaultValue={props.ThemeUpdateData?.fetchTheme.agelimit}
+          defaultValue={props.themeUpdateData?.fetchTheme.agelimit}
         />
         <S.InputsTitle>인원 제한</S.InputsTitle>
         <S.MyInput
           type="number"
           placeholder="peoplelimit"
           {...props.register("peoplelimit")}
-          defaultValue={props.ThemeUpdateData?.fetchTheme.peoplelimit}
+          defaultValue={props.themeUpdateData?.fetchTheme.peoplelimit}
         />
         <S.InputsTitle>이용 시간</S.InputsTitle>
         <S.MyInput
           type="number"
           placeholder="clearTime"
           {...props.register("clearTime")}
-          defaultValue={props.ThemeUpdateData?.fetchTheme.clearTime}
+          defaultValue={props.themeUpdateData?.fetchTheme.clearTime}
         />
       </S.Form>
       <S.InputsTitle>이미지</S.InputsTitle>

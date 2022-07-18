@@ -1,6 +1,8 @@
 import * as S from "./ThemeList.styles";
 import { Rate } from "antd";
-export default function ThemeListUIItem(props) {
+import { IThemeListUIItemProps } from "./ThemeList.types";
+
+export default function ThemeListUIItem(props: IThemeListUIItemProps) {
   return (
     <S.ThemeItemWrapper
       onClick={props.onClickMoveToThemeDetail(props.ThemeData.id)}

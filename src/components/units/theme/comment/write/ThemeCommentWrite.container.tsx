@@ -27,7 +27,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
   const [updateThemeReview] = useMutation(UPDATE_THEME_REVIEW);
 
   const { register, handleSubmit, formState, setValue, trigger, reset } =
-    useForm<Comment>({
+    useForm({
       mode: "onChange",
     });
 

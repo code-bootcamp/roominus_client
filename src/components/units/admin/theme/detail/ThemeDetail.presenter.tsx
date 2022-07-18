@@ -1,8 +1,9 @@
 import WebSmallBlackButton from "../../../../commons/buttons/buttonDesktop/WebSmallBlackButton";
 import WebSmallPurpleButton from "../../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import * as S from "./ThemeDetail.styles";
+import { IThemeDetailUIProps } from "./ThemeDetail.types";
 
-export default function ThemeDetailUI(props) {
+export default function ThemeDetailUI(props: IThemeDetailUIProps) {
   return (
     <S.Wrapper>
       <S.Title>테마 상세페이지(관리자)</S.Title>
