@@ -7,7 +7,6 @@ export interface IThemeCommentListUIProps {
 }
 
 export interface IThemeCommentListUIItemProps {
-  setIsEdit: Dispatch<SetStateAction<boolean>>;
   el: {
     id: string;
     star: number;
