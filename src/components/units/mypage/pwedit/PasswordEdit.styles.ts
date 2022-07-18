@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   display: flex;
@@ -52,6 +51,7 @@ export const PasswordInputBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 `;
 export const PasswordInput = styled.input`
   width: 100%;
@@ -92,6 +92,7 @@ export const PasswordVerificationInputBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 `;
 export const PasswordVerificationInput = styled.input`
   width: 100%;

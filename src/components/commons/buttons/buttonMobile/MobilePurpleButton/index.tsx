@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
 
 const Button = styled.button`
   width: 7.4em;

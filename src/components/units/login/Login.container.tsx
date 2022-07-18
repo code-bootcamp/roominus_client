@@ -9,7 +9,7 @@ import { LOGIN, FETCH_USER_LOGGEDIN } from "./Login.query";
 import { useMutation, useApolloClient } from "@apollo/client";
 import { useRecoilState } from "recoil";
 import { accessTokenState, userInfoState } from "../../../commons/store";
-import { Modal } from "antd";
+import Swal from "sweetalert2";
 
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -31,16 +31,16 @@ const schema = yup.object({
 });
 
 export default function LoginPage() {
-  const { register, handleSubmit, setValue, formState } = useForm({
+  const { register, handleSubmit, setValue, formState, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
   const router = useRouter();
   const client = useApolloClient();
   const [logingql] = useMutation(LOGIN);
-  const passwordInputRef = useRef();
+  const passwordInputRef = useRef<HTMLInputElement>(null);
   const [openEye, setOpenEye] = useState(false);
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [setAccessToken] = useRecoilState(accessTokenState);
   const [setUserInfo] = useRecoilState(userInfoState);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function LoginPage() {
     email: string;
     password: string;
   }
-  const onSubmitLogin = async (data) => {
+  const onSubmitLogin = async (data: IDataProps) => {
     console.log("clicked");
     try {
       const result = await logingql({
@@ -65,24 +65,34 @@ export default function LoginPage() {
       console.log("로그인은 됨");
       localStorage.setItem("accessToken", Token);
       setAccessToken(Token);
-      // const resultUserInfo = await client.query({
-      //   query: FETCH_USER_LOGGEDIN,
-      //   context: {
-      //     headers: {
-      //       Authorization: `Bearer ${Token}`,
-      //     },
-      //   },
-      // });
-      // console.log("로그드인도 됨");
-      // console.log(resultUserInfo.data?.fetchUserLoggedIn);
-      // const user = resultUserInfo.data?.fetchUserLoggedIn;
+      const resultUserInfo = await client.query({
+        query: FETCH_USER_LOGGEDIN,
+        context: {
+          headers: {
+            Authorization: `Bearer ${Token}`,
+          },
+        },
+      });
+      console.log("로그드인도 됨");
+      console.log(resultUserInfo.data?.fetchUserLoggedIn);
+      const user = resultUserInfo.data?.fetchUserLoggedIn;
 
-      // setUserInfo(user);
+      setUserInfo(user);
 
-      Modal.success({ content: "성공" });
+      Swal.fire({
+        title: "성공",
+        icon: "success",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
       router.push("/home");
     } catch (error) {
-      Modal.error({ content: error.message });
+      Swal.fire({
+        title: error.message,
+        icon: "error",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
     }
   };
   const onClickMoveToSignUp = () => {
@@ -167,6 +177,7 @@ export default function LoginPage() {
         setValue={setValue}
         formState={formState}
         openEye={openEye}
+        trigger={trigger}
         onClickMoveToSignUp={onClickMoveToSignUp}
         passwordInputRef={passwordInputRef}
         onClickShowPassword={onClickShowPassword}

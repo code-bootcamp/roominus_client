@@ -12,13 +12,19 @@ export default function LoginUI(props) {
             type="text"
             name="email"
             placeholder="아이디를 입력해주세요"
-            onChange={(e) => props.setValue("email", e.target.value)}
+            onChange={(e) => {
+              props.setValue("email", e.target.value);
+              props.trigger("email");
+            }}
           />
         </S.IDdBox>
         <S.Error>{props.formState.errors.email?.message}</S.Error>
         <S.PasswordBox>
           <S.Input
-            onChange={(e) => props.setValue("password", e.target.value)}
+            onChange={(e) => {
+              props.setValue("password", e.target.value);
+              props.trigger("password");
+            }}
             name="password"
             ref={props.passwordInputRef}
             type="password"

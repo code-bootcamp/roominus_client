@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import styled from "@emotion/styled";
 
 export function MyDropzone(props) {
   const onDrop = useCallback((acceptedFiles) => {

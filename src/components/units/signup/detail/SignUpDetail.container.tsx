@@ -8,7 +8,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CREATE_USER } from "./SignUpDetail.query";
 import { useMutation } from "@apollo/client";
-import { Modal } from "antd";
+import Swal from "sweetalert2";
 
 const schema = yup.object({
   email: yup
@@ -33,7 +33,6 @@ const schema = yup.object({
   phoneNumber: yup.string().required("필수 입력 사항입니다."),
 });
 const auth = getAuth();
-const googleProvider = new GoogleAuthProvider();
 
 export default function SignUpDetail() {
   const router = useRouter();
@@ -58,7 +57,7 @@ export default function SignUpDetail() {
   const [createUsergql] = useMutation(CREATE_USER);
   const [count, setCount] = useState(10);
   const [showCount, setShowCount] = useState("03:00");
-  const [start, setStart] = useState(false);
+  const [start, setStart] = useState(1);
   useEffect(() => {
     register("email", { required: true });
     register("password", { required: true });
@@ -68,7 +67,7 @@ export default function SignUpDetail() {
   }, []);
   useEffect(() => {
     let timer;
-    if (start) {
+    if (start === 2) {
       let counts = count;
       timeRef.current.style.visibility = "visible";
       timer = setInterval(() => {
@@ -78,15 +77,27 @@ export default function SignUpDetail() {
         if (counts <= 0) {
           clearInterval(timer);
           setCount(10);
+          setStart(1);
           verificationBtn.current.disabled = true;
-          Modal.error({ content: "인증번호 입력시간 초과" });
+          Swal.fire({
+            title: "시간 초과",
+            icon: "warning",
+            confirmButtonText: "확인",
+            confirmButtonColor: "#4a00e0e7",
+          });
         }
         ShowCounts(counts);
       }, 1000);
-    } else if (!start) {
+    } else if (start === 3) {
       clearInterval(timer);
-      Modal.success({ content: "인증 성공!" });
+      Swal.fire({
+        title: "인증 완료",
+        icon: "success",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
       setCount(10);
+      setStart(1);
       timeRef.current.style.visibility = "hidden";
     }
     return () => {
@@ -99,12 +110,12 @@ export default function SignUpDetail() {
   };
 
   const onClickVerifyMySelfByNo = () => {
-    setStart(true);
+    setStart(2);
   };
   const ShowCounts = (data) => {
-    let min = Math.floor(data / 60);
-    let sec = data % 60;
-    let Showcount = `${String(min).padStart(2, "0")}:${String(sec).padStart(
+    const min = Math.floor(data / 60);
+    const sec = data % 60;
+    const Showcount = `${String(min).padStart(2, "0")}:${String(sec).padStart(
       2,
       "0"
     )}`;
@@ -112,7 +123,7 @@ export default function SignUpDetail() {
   };
   const onClickCheckVerificationNo = () => {
     console.log("ddd");
-    setStart(false);
+    setStart(3);
   };
 
   const onSubmitSignup = async (data) => {
@@ -128,7 +139,13 @@ export default function SignUpDetail() {
           },
         },
       });
-      Modal.success({ content: `${result.data.createUser.name}` });
+      Swal.fire({
+        title: `${result.data.createUser.name}`,
+        icon: "success",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
+
       router.push("/login");
     } catch (error) {
       alert(error.message);
@@ -163,7 +180,12 @@ export default function SignUpDetail() {
         router.push("/login");
       })
       .catch((error) => {
-        // An error happened.
+        Swal.fire({
+          title: error.message,
+          icon: "error",
+          confirmButtonText: "확인",
+          confirmButtonColor: "#4a00e0e7",
+        });
       });
   };
   // useEffect(() => {
@@ -206,21 +228,10 @@ export default function SignUpDetail() {
       window.Kakao.init("675cd5356e97bab7c2fafe02e722f558");
       window.Kakao.isInitialized();
     };
-
-    new naver_id_login(
-      "1wXq1o0g2z9j6TSlaVB0",
-      "http://localhost:3000/signup/detail"
-    );
   }, []);
   return (
     <>
-      <Head>
-        <script
-          type="text/javascript"
-          src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-          charset="utf-8"
-        ></script>
-      </Head>
+      <Head></Head>
       <SignUpDetailUI
         googleEmail={googleEmail}
         kakaoEmail={kakaoEmail}
