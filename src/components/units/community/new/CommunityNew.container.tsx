@@ -46,6 +46,7 @@ export default function CommunityNew() {
   }
 
   const onClickSubmit = async (data: IDataProps) => {
+    console.log(data);
     try {
       if (!fileUrl) {
         Swal.fire({
@@ -70,7 +71,7 @@ export default function CommunityNew() {
           icon: "success",
           title: "등록이 완료되었습니다!",
         });
-        router.push(`/community/${result.data?.createBoard.id}`);
+        // router.push(`/community/${result.data?.createBoard.id}`);
       }
     } catch (error) {
       Swal.fire({

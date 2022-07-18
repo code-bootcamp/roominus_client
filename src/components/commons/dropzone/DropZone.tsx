@@ -48,7 +48,7 @@ export function MyDropzone(props) {
       {isDragActive ? (
         <h4>여기에 놓아주세요</h4>
       ) : (
-        <img src="/img/community/download.png" />
+        <img src="/img/community/download.webp" />
       )}
     </div>
   );

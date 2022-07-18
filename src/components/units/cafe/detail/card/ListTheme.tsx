@@ -32,12 +32,28 @@ const TitleBox = styled.div`
   flex-direction: column;
   align-items: center;
 
+  .ant-card-meta-title {
+    width: 10em;
+    font-weight: 500;
+    font-size: 1.2em;
+    word-break: break-all;
+    text-align: center;
+    /* white-space: nowrap; */
+  }
+
   @media ${breakPoints.mobile} {
     height: 13px;
   }
 `;
 
-const ListTheme = () => (
+interface IListThemeProps {
+  el: {
+    mainImg: string;
+    title: string;
+  };
+}
+
+const ListTheme = (props: IListThemeProps) => (
   <>
     <Wrapper1>
       <Card
@@ -45,8 +61,8 @@ const ListTheme = () => (
         cover={
           <img
             alt="example"
-            src="/img/cafe/youngforever.jpg"
-            style={{ height: 250, cursor: "pointer" }}
+            src={props.el.mainImg}
+            style={{ height: 270, cursor: "pointer" }}
           />
         }
         // 관리자 권한일 때 사용하기
@@ -59,7 +75,7 @@ const ListTheme = () => (
         <TitleBox>
           <Meta
             // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-            title="YOUNG FOREVER"
+            title={props.el.title}
             // description="02-1234-5678"
           />
         </TitleBox>
@@ -76,7 +92,7 @@ const ListTheme = () => (
         cover={
           <img
             alt="example"
-            src="/img/cafe/youngforever.jpg"
+            src={props.el.mainImg}
             style={{ height: 180, cursor: "pointer" }}
           />
         }
@@ -90,7 +106,7 @@ const ListTheme = () => (
         <TitleBox>
           <Meta
             // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-            title="YOUNG FOREVER"
+            title={props.el.title}
             // description="02-1234-5678"
           />
         </TitleBox>

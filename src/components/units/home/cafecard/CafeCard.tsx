@@ -67,7 +67,7 @@ const CafeCard = (props) => (
       // ]}
     >
       <LocationBox>
-        <LocationIcon src="/img/cafe/locationIcon.png" />
+        <LocationIcon src="/img/cafe/locationIcon.webp" />
         <Location>{props.el?.address}</Location>
       </LocationBox>
       <Meta

@@ -13,3 +13,13 @@ export const FETCH_CAFE = gql`
     }
   }
 `;
+
+export const FETCH_THEMES_ON_THEME = gql`
+  query fetchThemesOnTheme($cafeId: String!) {
+    fetchThemesOnTheme(cafeId: $cafeId) {
+      id
+      title
+      mainImg
+    }
+  }
+`;

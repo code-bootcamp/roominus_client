@@ -3,7 +3,6 @@ import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleBut
 import CommunityList from "../comment/CommunityComment.container";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./CommunityDetail.styles";
-import { getDateBefore } from "../../../commons/getDate";
 import Dompurify from "dompurify";
 import CommunityCommentWrite from "../comment/Write/CommunityCommentWrite.container";
 import CommunityCommentList from "../comment/List/CommunityCommentList.container";

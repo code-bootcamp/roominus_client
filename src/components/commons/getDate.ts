@@ -54,7 +54,7 @@ export const getBeforeTime = (value: any) => {
   // return `${yyyy}.${String(mm).padStart(2, "0")}.${dd}`;
 };
 
-export const getDateBefore = (value) => {
+export const getDateBefore = (value: any) => {
   const today = new Date();
   const timeValue = new Date(value);
 
@@ -70,4 +70,11 @@ export const getDateBefore = (value) => {
   if (betweenTimeHour < 24) {
     return `${betweenTimeHour}시간전`;
   }
+
+  const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
+  if (betweenTimeDay < 365) {
+    return `${betweenTimeDay}일전`;
+  }
+
+  return `${Math.floor(betweenTimeDay / 365)}년전`;
 };

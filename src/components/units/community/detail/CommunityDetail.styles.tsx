@@ -60,7 +60,7 @@ export const NameDateBox = styled.div`
   margin-bottom: 1em;
   display: flex;
   flex-direction: row;
-  /* background-color: red; */
+  /* background-color: #ff1b1b; */
 `;
 
 export const WriterName = styled.h1`
@@ -108,15 +108,16 @@ export const PickCount = styled.span`
 `;
 
 export const BoardTitle = styled.h1`
-  font-size: 1.5em;
+  font-size: 1.6em;
 
   @media ${breakPoints.mobile} {
     font-size: 1.2em;
   }
 `;
 
-export const BoardContents = styled.div`
-  font-size: 1.1em;
+export const BoardContents = styled.p`
+  margin-bottom: 0px;
+  font-size: 1.2em;
 `;
 
 export const Comment = styled.div`

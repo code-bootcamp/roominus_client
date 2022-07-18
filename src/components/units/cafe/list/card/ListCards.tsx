@@ -9,7 +9,7 @@ import styled from "@emotion/styled";
 
 const { Meta } = Card;
 
-const Wrapper = styled.div`
+const Wrapper = styled.li`
   border: 1px solid #c2c2c2;
 `;
 
@@ -51,7 +51,13 @@ const LocationIcon = styled.img`
 `;
 
 const Info = styled.div`
+  height: 3.5em;
   font-size: 1.3em;
+
+  .ant-card-meta-title {
+    font-weight: 500;
+    font-size: 1.2em;
+  }
 `;
 
 interface IListCardsProps {
@@ -75,7 +81,7 @@ const ListCards = (props: IListCardsProps) => (
         <img
           alt="No Image"
           src={props.el.mainImg}
-          style={{ height: 270, cursor: "pointer" }}
+          style={{ height: 250, cursor: "pointer" }}
         />
       }
       // 관리자 권한일 때 사용하기
@@ -86,7 +92,7 @@ const ListCards = (props: IListCardsProps) => (
       // ]}
     >
       <LocationBox>
-        <LocationIcon src="/img/cafe/locationIcon.png" />
+        <LocationIcon src="/img/cafe/locationIcon.webp" />
         <Location>{props.el.address}</Location>
       </LocationBox>
       <Info>

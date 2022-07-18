@@ -5,7 +5,7 @@ export default function CommunityCommentUI() {
   return (
     <S.Wrapper>
       <S.CommentTitleBox>
-        <S.CommentIcon src="/img/community/comment/commentIcon.png" />
+        <S.CommentIcon src="/img/community/comment/commentIcon.webp" />
         <S.CommentTitle>댓글(UI참고용)</S.CommentTitle>
       </S.CommentTitleBox>
       <S.CommentWriteBox>
@@ -21,16 +21,16 @@ export default function CommunityCommentUI() {
               <S.Date>2022.07.06</S.Date>
             </S.InfoTitle>
             <S.InfoTitle>
-              <S.Comment src="/img/community/comment/recomment.png" />
-              <S.Edit src="/img/community/comment/commentedit.png" />
-              <S.Delete src="/img/community/comment/commentdelete.png" />
+              <S.Comment src="/img/community/comment/recomment.webp" />
+              <S.Edit src="/img/community/comment/commentedit.webp" />
+              <S.Delete src="/img/community/comment/commentdelete.webp" />
             </S.InfoTitle>
           </S.InfoTitleBox>
           <S.Contents>댓글내용이에요 우와 대단해~</S.Contents>
         </S.ListInfoBox>
       </S.CommentListBox>
       <S.CommentListBox>
-        <S.Arrow src="/img/community/arrow.png" />
+        <S.Arrow src="/img/community/arrow.webp" />
         <S.ListInfoBox>
           <S.InfoTitleBox>
             <S.InfoTitle>
@@ -38,16 +38,16 @@ export default function CommunityCommentUI() {
               <S.Date>2022.07.06</S.Date>
             </S.InfoTitle>
             <S.InfoTitle>
-              <S.Comment src="/img/community/comment/recomment.png" />
-              <S.Edit src="/img/community/comment/commentedit.png" />
-              <S.Delete src="/img/community/comment/commentdelete.png" />
+              <S.Comment src="/img/community/comment/recomment.webp" />
+              <S.Edit src="/img/community/comment/commentedit.webp" />
+              <S.Delete src="/img/community/comment/commentdelete.webp" />
             </S.InfoTitle>
           </S.InfoTitleBox>
           <S.Contents>이건 대댓글내용이에요 언제만들죠ㅠ</S.Contents>
         </S.ListInfoBox>
       </S.CommentListBox>
       <S.ReCommentListBox>
-        <S.Arrow src="/img/community/arrow.png" />
+        <S.Arrow src="/img/community/arrow.webp" />
         <S.ListInfoBox>
           <S.InfoTitleBox>
             <S.InfoName>김지* 님</S.InfoName>

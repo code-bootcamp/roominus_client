@@ -5,7 +5,7 @@ export default function CommunityCommentWriteUI(props) {
   return (
     <S.Wrapper>
       <S.CommentTitleBox>
-        <S.CommentIcon src="/img/community/comment/commentIcon.png" />
+        <S.CommentIcon src="/img/community/comment/commentIcon.webp" />
         <S.CommentTitle>댓글</S.CommentTitle>
       </S.CommentTitleBox>
       <form onSubmit={props.handleSubmit(props.onClickComment)}>
