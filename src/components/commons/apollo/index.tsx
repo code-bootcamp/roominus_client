@@ -47,12 +47,11 @@ export default function ApolloSetting(props) {
     },
   });
   // credentials: "include",
-
   const client = new ApolloClient({
-    link: ApolloLink.from([uploadLink as unknown as ApolloLink]),
+    link: ApolloLink.from([errorLink, uploadLink as unknown as ApolloLink]),
     cache: new InMemoryCache(),
     connectToDevTools: true,
   });
-  // errorLink
+
   return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
 }
