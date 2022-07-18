@@ -23,26 +23,13 @@ export default function FindIdUI(props) {
             </S.TabSecond>
           </S.TabBtns>
           <S.Form onSubmit={props.handleSubmit(props.onSubmitFindId)}>
-            <S.NameBox>
-              <S.TitleBox>
-                <S.Name>이름</S.Name>
-                <S.ImportantInfos>*</S.ImportantInfos>
-              </S.TitleBox>
-              <S.NameInput
-                type="text"
-                name="name"
-                placeholder="홍길동"
-                ref={props.IdFindinputRef}
-                onChange={(e) => props.setValue("name", e.target.value)}
-              />
-            </S.NameBox>
-            <S.Error>{props.formState.errors.name?.message}</S.Error>
             <S.EmailBox>
               <S.TitleBox>
                 <S.Email>이메일</S.Email>
                 <S.ImportantInfos>*</S.ImportantInfos>
               </S.TitleBox>
               <S.EmailInput
+                ref={props.IdFindinputRef}
                 type="text"
                 name="email"
                 placeholder="bubu123@gmail.com"
@@ -61,7 +48,6 @@ export default function FindIdUI(props) {
           onClickShowContentsSecond={props.onClickShowContentsSecond}
           isClickedsecond={props.isClickedsecond}
           isClickedfirst={props.isClickedfirst}
-          onSubmitVerificationEmail={props.onSubmitVerificationEmail}
           PasswordFindinputRef={props.PasswordFindinputRef}
         />
       )}
