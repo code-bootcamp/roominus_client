@@ -4,14 +4,39 @@ import * as S from "./CommunityNew.styles";
 import dynamic from "next/dynamic";
 import Tag from "../../../commons/tag/Tag";
 import { MyDropzone } from "../../../commons/dropzone/DropZone";
+import {
+  FieldValues,
+  FormState,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+import { Dispatch, RefObject, SetStateAction } from "react";
 
 const ToastEditor = dynamic(() => import("../../../commons/toast/Toast"), {
   ssr: false,
 });
 
+interface IDataProps {
+  boardTags: string;
+  content: string;
+  title: string;
+}
+
 interface ICommunityNewUIProps {
   onClickList: () => void;
-  onClickSubmit: () => void;
+  onClickSubmit: (data: IDataProps) => Promise<void>;
+  // editorRef: RefObject<unknown>;
+  onChangeContent: () => void;
+  register: UseFormRegister<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  formState: FormState<FieldValues>;
+  tagItem: string;
+  setTagItem: Dispatch<SetStateAction<string>>;
+  tagList: never[];
+  setTagList: Dispatch<SetStateAction<never[]>>;
+  setImageUrl: Dispatch<SetStateAction<string>>;
+  imageUrl: string;
+  setFileUrl: Dispatch<SetStateAction<string>>;
 }
 
 export default function CommunityNewUI(props: ICommunityNewUIProps) {
@@ -19,11 +44,17 @@ export default function CommunityNewUI(props: ICommunityNewUIProps) {
     <S.Container>
       <S.Wrapper>
         <S.Title>자유게시글 작성</S.Title>
-        <form onSubmit={"return false"}>
+        <form
+          onSubmit={() => {
+            "return false";
+          }}
+        >
           <S.HalfBox>
             <S.Picture
               src={
-                props?.imageUrl ? props?.imageUrl : "/img/community/preview.png"
+                props?.imageUrl
+                  ? props?.imageUrl
+                  : "/img/community/preview.webp"
               }
             />
             <S.HalfRightBox>

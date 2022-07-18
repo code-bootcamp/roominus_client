@@ -17,7 +17,8 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const Etc = styled.div`
+export const Etc = styled.ul`
+  margin-bottom: 0px;
   width: 100%;
   /* background-color: lightgreen; */
   display: grid;
@@ -53,7 +54,7 @@ export const Title = styled.h1`
   margin-bottom: 0px;
 `;
 
-export const ItemBackground = styled.div`
+export const ItemBackground = styled.li`
   /* width: 28em; */
   width: 100%;
   height: 320px;
@@ -82,7 +83,7 @@ export const Picture = styled.img`
 
 export const InfoBox = styled.div`
   width: 85%;
-  margin-top: 0.5em;
+  margin-top: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,7 +139,8 @@ export const PickBox = styled.div`
   /* background-color: green; */
 `;
 
-export const PickCount = styled.div`
+export const PickCount = styled.p`
+  margin-bottom: 0px;
   height: 2em;
   font-weight: 500;
   display: flex;

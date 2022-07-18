@@ -297,7 +297,7 @@ export const Flex = styled.div`
   }
 `;
 
-export const Etc = styled.div`
+export const Etc = styled.ul`
   width: 100%;
   /* background-color: lightgreen; */
   display: grid;

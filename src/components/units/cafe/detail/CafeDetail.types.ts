@@ -1,7 +1,17 @@
+import { MouseEvent } from "react";
+
+export interface IFetchThemesOnTheme {
+  title: string;
+  mainImg: string;
+}
+
 export interface ICafeDetailUI {
   tabKey: string;
   onChangeKey: (key: string) => void;
   onClickList: () => void;
+  onClickTheme: (
+    el: IFetchThemesOnTheme
+  ) => (event: MouseEvent<HTMLDivElement>) => void;
   data?: {
     fetchCafe: {
       mainImg: string;
@@ -10,6 +20,12 @@ export interface ICafeDetailUI {
       phone: string;
       intro_content: string;
       address_detail: string;
+    };
+  };
+  themeData?: {
+    fetchThemesOnTheme: {
+      title: string;
+      mainImg: string;
     };
   };
 }

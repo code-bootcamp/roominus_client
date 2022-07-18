@@ -3,7 +3,8 @@ import ListTheme from "./card/ListTheme";
 import MenuTabs from "./tabs/Tabs";
 import { v4 as uuidv4 } from "uuid";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import { ICafeDetailUI } from "./CafeDetail.types";
+import { ICafeDetailUI, IFetchThemesOnTheme } from "./CafeDetail.types";
+import NoTheme from "./notheme/notheme";
 
 export default function CafeDetailUI(props: ICafeDetailUI) {
   return (
@@ -44,14 +45,28 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
           )}
           {props.tabKey === "2" && (
             <S.Theme>
-              <S.ContentsTitle>테마</S.ContentsTitle>
-              <S.ThemeList>
-                {new Array(4).fill(1).map((el) => (
-                  <span key={uuidv4()}>
-                    <ListTheme />
-                  </span>
-                ))}
-              </S.ThemeList>
+              {props.themeData?.fetchThemesOnTheme ? (
+                <S.ContentsTitle>테마</S.ContentsTitle>
+              ) : (
+                ""
+              )}
+              {props.themeData?.fetchThemesOnTheme ? (
+                <S.ThemeList>
+                  {props.themeData?.fetchThemesOnTheme.map(
+                    (el: IFetchThemesOnTheme) => (
+                      <span
+                        key={uuidv4()}
+                        id={el.id}
+                        onClick={props.onClickTheme(el)}
+                      >
+                        <ListTheme el={el} />
+                      </span>
+                    )
+                  )}
+                </S.ThemeList>
+              ) : (
+                <NoTheme />
+              )}
             </S.Theme>
           )}
         </S.InfoBox>
