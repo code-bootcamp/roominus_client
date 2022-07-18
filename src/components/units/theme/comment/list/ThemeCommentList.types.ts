@@ -1,11 +1,21 @@
 import { Dispatch, SetStateAction } from "react";
 
 export interface IThemeCommentListUIProps {
-  loadMore: (page: number) => void;
+  fetchMore: Function;
   data: any;
-  setIsEdit: Dispatch<SetStateAction<boolean>>;
+  setIsEdit?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface IThemeCommentListUIItemProps {
-  el?: any;
+  el: {
+    id: string;
+    star: number;
+    user: {
+      name?: string;
+    };
+    createdAt: string;
+    clear: boolean;
+    rank: string;
+    content: string;
+  };
 }
