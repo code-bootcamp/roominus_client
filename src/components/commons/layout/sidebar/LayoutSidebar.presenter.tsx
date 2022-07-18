@@ -46,9 +46,7 @@ export default function LayoutSideBarUI(props: ISideBarUIProps) {
 
           <S.FooterBox>
             <S.Logout />
-            <Link href="/home">
-              <span>로그아웃</span>
-            </Link>
+            <span onClick={props.onClickLogout}>로그아웃</span>
           </S.FooterBox>
         </S.MenuFooterBox>
       </S.Wrapper>

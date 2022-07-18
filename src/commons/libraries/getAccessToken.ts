@@ -11,6 +11,7 @@ export async function getAccessToken() {
     const graphQLClient = new GraphQLClient("", { credentials: "include" });
     const result = await graphQLClient.request(RESTORE_ACCESS_TOKEN);
     const newAccessToken = result.restoreAccessToken;
+    console.log(newAccessToken);
     return newAccessToken;
   } catch (error) {
     console.log(error.message);

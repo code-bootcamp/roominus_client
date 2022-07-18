@@ -40,8 +40,8 @@ export default function LoginPage() {
   const [logingql] = useMutation(LOGIN);
   const passwordInputRef = useRef<HTMLInputElement>(null);
   const [openEye, setOpenEye] = useState(false);
-  const [setAccessToken] = useRecoilState(accessTokenState);
-  const [setUserInfo] = useRecoilState(userInfoState);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
 
   useEffect(() => {
     register("email", { required: true });
@@ -60,11 +60,9 @@ export default function LoginPage() {
           password: data.password,
         },
       });
-      console.log(result.data?.Login);
+
       const Token = result.data?.Login;
-      console.log("로그인은 됨");
-      localStorage.setItem("accessToken", Token);
-      setAccessToken(Token);
+
       const resultUserInfo = await client.query({
         query: FETCH_USER_LOGGEDIN,
         context: {
@@ -73,10 +71,9 @@ export default function LoginPage() {
           },
         },
       });
-      console.log("로그드인도 됨");
-      console.log(resultUserInfo.data?.fetchUserLoggedIn);
-      const user = resultUserInfo.data?.fetchUserLoggedIn;
 
+      const user = resultUserInfo.data?.fetchUserLoggedIn;
+      setAccessToken(Token);
       setUserInfo(user);
 
       Swal.fire({
