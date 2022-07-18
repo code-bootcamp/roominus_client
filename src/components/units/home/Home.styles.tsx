@@ -20,9 +20,9 @@ export const BackWrapper = styled.div`
 `;
 export const BackGroundImg = styled.div`
   width: 100vw;
-  height: 45em;
-  background: url("/img/home/home2.png") center;
-  background-size: 100% 100%;
+  height: 50em;
+  background: url("/img/home/home.png") center/cover;
+  /* background-size: 100% 100%; */
   margin-bottom: 2em;
   position: relative;
 
@@ -53,10 +53,9 @@ export const TitleBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* background-color: lightgreen; */
 
   @media ${breakPoints.mobile} {
-    width: 75%;
+    width: 100%;
   }
 `;
 
@@ -296,7 +295,7 @@ export const AlarmCarouselBoxes = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 75%;
+    width: 100%;
   }
 `;
 
@@ -334,10 +333,6 @@ export const FaQBoxes = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
-
-  @media ${breakPoints.mobile} {
-    width: 75%;
-  }
 `;
 
 export const FaQTitle = styled.div`

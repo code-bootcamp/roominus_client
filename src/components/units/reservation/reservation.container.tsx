@@ -1,7 +1,6 @@
 // import moment from "moment";
 import { useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
 import { getDate } from "../../commons/getDate";
 import ReservationUI from "./reservation.present";
 import { FETCH_THEMES, FETCH_THEME_MENUS } from "./reservation.queries";
@@ -15,16 +14,15 @@ export default function Reservation() {
   const [time, setTime] = useState("");
   const [selectTime, setSelectTime] = useState([]);
   const [peopleNumber, setPeopleNumber] = useState();
-  const [usePoint, setUsePoint] = useState();
+  const [usePoint, setUsePoint] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [memo, setMemo] = useState("");
   const [checked, setChecked] = useState(false);
 
   const { data: themesList } = useQuery(FETCH_THEMES);
   const { data } = useQuery(FETCH_THEME_MENUS, {
     variables: { themeId },
   });
-
-  const { register, handleSubmit, formState } = useForm();
 
   const dateFormatter = (str: any) => {
     return str;
@@ -45,8 +43,6 @@ export default function Reservation() {
 
   const onChangeDate = (date: String) => {
     setReservationDate(getDate(date));
-    // console.log("date:", date);
-    // String 포맷으로 저장할 때 dayjs 사용할 것
   };
 
   const timeResult = data?.fetchThemeMenus.map((el) => el.reservation_time);
@@ -86,14 +82,9 @@ export default function Reservation() {
     .filter((el: any) => el.reservation_time === time)
     .filter((el: any) => el.people_number === peopleNumber)[0]?.id;
 
-  console.log(ThemeMenuId);
-
-  const onClickSubmit = (data) => {
-    console.log("themeId:", themeId);
-    console.log("cafeId:", cafeId);
-    console.log("reservationDate:", reservationDate);
-    console.log("peopleNumber:", peopleNumber);
-    console.log("data:", data);
+  const onChangeMemo = (event) => {
+    setMemo(event?.target.value);
+    console.log(memo);
   };
 
   const onChangeChecked = () => {
@@ -128,27 +119,22 @@ export default function Reservation() {
         onChangePoint={onChangePoint}
         // 결제 금액 변경
         totalPrice={totalPrice}
-        // react-hook-form
-        register={register}
-        handleSubmit={handleSubmit}
-        formState={formState}
+        // 메모
+        memo={memo}
+        onChangeMemo={onChangeMemo}
         // 전체 테마 목록 데이터
         themesList={themesList}
         // 선택한 테마의 데이터
         data={data}
         // 목록으로 돌아가기
         onClickReset={onClickReset}
-        // 제출하기
-        onClickSubmit={onClickSubmit}
-        //
         // 예약에 사용할 props
         ThemeMenuId={ThemeMenuId}
         // cafeId={cafeId}
         // reservationDate={reservationDate}
-        memo={data?.memo}
+        // memo={data?.memo}
         // peopleNumber={peopleNumber}
         // usePoint={usePoint}
-
         // 동의 약관
         onChangeChecked={onChangeChecked}
         checked={checked}

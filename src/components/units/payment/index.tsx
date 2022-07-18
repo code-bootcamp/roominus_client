@@ -69,8 +69,8 @@ export default function Payment(props) {
           try {
             const result = await createReservation({
               variables: {
-                cafeId: props.cafeId,
                 themeMenuId: props.ThemeMenuId,
+                cafeId: props.cafeId,
                 createReservationInput: {
                   reservation_date: props.reservationDate,
                   memo: props.memo,

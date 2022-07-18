@@ -32,7 +32,7 @@ export default function MyPageInfoUI(props) {
               <S.ThemeSubTitle>
                 하고 싶은 테마들을 미리 담아두고 싶다면?
               </S.ThemeSubTitle>
-              <S.ThemeIcon src="/img/mypage/heart.png/" />
+              <S.ThemeIcon src="/img/mypage/heart.webp/" />
             </S.ThemeBox>
           </Link>
           <Link href={"/mypage/history"}>
@@ -41,7 +41,7 @@ export default function MyPageInfoUI(props) {
               <S.ThemeSubTitle>
                 탈출한 테마 내역을 확인하고 싶다면?
               </S.ThemeSubTitle>
-              <S.ThemeIcon src="/img/mypage/escape.png/" />
+              <S.ThemeIcon src="/img/mypage/escape.webp/" />
             </S.ThemeBox>
           </Link>
           <Link href={"/mypage"}>
@@ -50,7 +50,7 @@ export default function MyPageInfoUI(props) {
               <S.ThemeSubTitle>
                 탈출 후 내 후기를 적어 추억하고 싶다면?
               </S.ThemeSubTitle>
-              <S.ThemeIcon src="/img/mypage/board.png/" />
+              <S.ThemeIcon src="/img/mypage/board.webp/" />
             </S.ThemeBox>
           </Link>
         </S.ThemeBoxs>

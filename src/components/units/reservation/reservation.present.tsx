@@ -14,6 +14,7 @@ import Swal from "sweetalert2";
 import ReservationNotice from "./reservationNotice/reservationNotice";
 import { IReservationUIProps } from "./reservation.types";
 import ReservationThemeInfo from "./reservationthemeInfo/reservationthemeinfo";
+import Link from "next/link";
 
 export default function ReservationUI(props: IReservationUIProps) {
   const date = new Date();
@@ -56,11 +57,7 @@ export default function ReservationUI(props: IReservationUIProps) {
           </>
         )}
 
-        <S.Form
-          onSubmit={props.handleSubmit(props.onClickSubmit)}
-          noValidate
-          autoComplete="off"
-        >
+        <S.Form autoComplete="off">
           <div>
             <TextField
               fullWidth
@@ -201,13 +198,10 @@ export default function ReservationUI(props: IReservationUIProps) {
                   label="메모"
                   type="text"
                   fullWidth
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
                   multiline
-                  maxRows={3}
+                  maxRows={2}
                   variant="outlined"
-                  register={props.register("memo")}
+                  onChange={props.onChangeMemo}
                   style={{ paddingBottom: "1.3em" }}
                   helperText="예약자와 방문자가 다를 경우 방문자의 정보를 작성해주세요."
                 />
@@ -254,17 +248,22 @@ export default function ReservationUI(props: IReservationUIProps) {
                 </S.InformationUse>
                 {props?.checked && (
                   <S.ButtonBox>
-                    <WebBlackButton type="button" title="돌아가기" />
+                    <Link href="/home">
+                      <WebBlackButton type="button" title="돌아가기" />
+                    </Link>
+
                     <Payment
                       title="결제하기"
-                      type="submit"
-                      disabled={props?.formState.isSubmitting}
-                      totalPrice={props?.totalPrice - props?.usePoint}
+                      type="button"
+                      // 예약 데이터
                       ThemeMenuId={props?.ThemeMenuId}
                       cafeId={props?.cafeId}
+                      // createReservationInput
                       reservationDate={props?.reservationDate}
                       memo={props?.memo}
+                      // createPaymentInput
                       peopleNumber={props?.peopleNumber}
+                      totalPrice={props?.totalPrice - props?.usePoint}
                       usePoint={props?.usePoint}
                     />
                   </S.ButtonBox>

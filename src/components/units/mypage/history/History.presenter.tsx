@@ -1,12 +1,8 @@
-import { Modal } from "antd";
 import Link from "next/link";
-import { useState } from "react";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import LayoutNavigation from "../../../commons/layout/navigation/LayoutNavigation.container";
 import * as S from "./History.styles";
 
 export default function HistoryUI() {
-  const [modal2Visible, setModal2Visible] = useState(false);
   const data = [
     {
       _id: "1234",
