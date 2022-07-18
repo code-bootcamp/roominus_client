@@ -15,7 +15,6 @@ import { Idata, IReservationNotice } from "./reservationNotice.types";
 
 export default function ReservationNotice(props: IReservationNotice) {
   const list = props?.data?.map((el: Idata) => el.title);
-  console.log(list);
 
   return (
     <S.Container>
@@ -28,33 +27,37 @@ export default function ReservationNotice(props: IReservationNotice) {
         <S.StepBoxs>
           <S.StepBox>
             <S.Step>
-              <HeartOutlined style={{ color: "#4a00e0" }} />
+              <HeartOutlined style={{ color: "#4a00e0", fontSize: "1.3em" }} />
               <h6>step1</h6>
               <h4>테마 선택</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow src="/img/reservation/arrow.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <ShopOutlined style={{ color: "#4a00e0" }} />
+              <ShopOutlined style={{ color: "#4a00e0", fontSize: "1.3em" }} />
               <h6>step2</h6>
 
               <h4>매장 선택</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow src="/img/reservation/arrow.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <CalendarOutlined style={{ color: "#4a00e0" }} />
+              <CalendarOutlined
+                style={{ color: "#4a00e0", fontSize: "1.3em" }}
+              />
               <h6>step3</h6>
 
               <h4>날짜 선택</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow src="/img/reservation/arrow.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <ClockCircleOutlined style={{ color: "#4a00e0" }} />
+              <ClockCircleOutlined
+                style={{ color: "#4a00e0", fontSize: "1.3em" }}
+              />
               <h6>step4</h6>
 
               <h4>시간 선택</h4>
@@ -64,31 +67,37 @@ export default function ReservationNotice(props: IReservationNotice) {
         <S.StepBoxs>
           <S.StepBox>
             <S.Step>
-              <TeamOutlined style={{ color: "#4a00e0" }} />
+              <TeamOutlined style={{ color: "#4a00e0", fontSize: "1.3em" }} />
               <h6>step5</h6>
               <h4>인원 선택</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow src="/img/reservation/arrow.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <PercentageOutlined style={{ color: "#4a00e0" }} />
+              <PercentageOutlined
+                style={{ color: "#4a00e0", fontSize: "1.3em" }}
+              />
               <h6>step6</h6>
               <h4>적립금 사용</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow src="/img/reservation/arrow.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <CreditCardOutlined style={{ color: "#4a00e0" }} />
+              <CreditCardOutlined
+                style={{ color: "#4a00e0", fontSize: "1.3em" }}
+              />
               <h6>step7</h6>
               <h4>카드 결제</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.png" />
+            <S.Arrow src="/img/reservation/arrow.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
-              <CheckSquareOutlined style={{ color: "#4a00e0" }} />
+              <CheckSquareOutlined
+                style={{ color: "#4a00e0", fontSize: "1.3em" }}
+              />
               <h6>step8</h6>
               <h4>예약 확인</h4>
             </S.Step>

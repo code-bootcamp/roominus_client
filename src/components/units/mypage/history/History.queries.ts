@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_RESERVATIONSUSER = gql`
+export const FETCH_RESERVATIONS_USER = gql`
   query fetchReservationsUser($userId: String!) {
-    fetchReservationsUser(userId: $userId!) {
+    fetchReservationsUser(userId: $userId) {
       id
       reservation_date
       memo
@@ -10,7 +10,7 @@ export const FETCH_RESERVATIONSUSER = gql`
       cafe {
         name
       }
-      theme_menu{
+      theme_menu {
         reservation_time
         people_number
         price
@@ -19,5 +19,5 @@ export const FETCH_RESERVATIONSUSER = gql`
         }
       }
     }
-    }
+  }
 `;

@@ -8,7 +8,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  border-top: 1px solid #b2b2b2;
   padding-top: 1.5em;
 
   @media ${breakPoints.tablet} {

@@ -17,12 +17,12 @@ export const TitleBox = styled.div`
   gap: 0.5em;
   width: 100%;
 
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+
   & h1 {
     font-weight: 700;
-
-    @media ${breakPoints.mobile} {
-      font-size: 1em;
-    }
   }
 `;
 
