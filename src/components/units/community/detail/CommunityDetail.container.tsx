@@ -20,6 +20,10 @@ export default function CommunityDetail() {
     router.push("/community");
   };
 
+  const onClickEdit = () => {
+    router.push(`/community/${router.query.id}/edit`);
+  };
+
   const onClickDelete = async () => {
     Swal.fire({
       icon: "question",
@@ -45,7 +49,7 @@ export default function CommunityDetail() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        text: error.message,
+        text: (error as Error).message,
       });
     }
   };
@@ -53,6 +57,7 @@ export default function CommunityDetail() {
   return (
     <CommunityDetailUI
       onClickList={onClickList}
+      onClickEdit={onClickEdit}
       onClickDelete={onClickDelete}
       data={data}
     />

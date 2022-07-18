@@ -109,13 +109,37 @@ export const PickCount = styled.span`
 
 export const BoardTitle = styled.h1`
   font-size: 1.6em;
+  font-weight: 600;
 
   @media ${breakPoints.mobile} {
     font-size: 1.2em;
   }
 `;
 
+export const Tag = styled.div`
+  width: 100%;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: greenyellow; */
+`;
+
+export const Tags = styled.div`
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #dfd5f6;
+  color: #4a00e0e7;
+  margin-right: 10px;
+  border-radius: 15px;
+  padding: 13px;
+  font-size: 0.8em;
+`;
+
 export const BoardContents = styled.p`
+  margin-top: 2em;
   margin-bottom: 0px;
   font-size: 1.2em;
 `;

@@ -1,4 +1,4 @@
-import CommunityCommentWrite from "../Write/CommunityCommentWrite.container";
+import CommunityCommentWrite from "../write/CommunityCommentWrite.container";
 import * as S from "./CommunityCommentEdit.styles";
 
 export default function CommunityCommentEditUI(props) {

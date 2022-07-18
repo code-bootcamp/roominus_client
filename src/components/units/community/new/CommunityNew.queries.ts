@@ -16,3 +16,17 @@ export const CREATE_BOARD = gql`
     }
   }
 `;
+
+export const UPDATE_BOARD = gql`
+  mutation updateBoard($updateBoardInput: UpdateBoardInput!) {
+    updateBoard(updateBoardInput: $updateBoardInput) {
+      id
+      title
+      content
+      mainImg
+      boardTags {
+        title
+      }
+    }
+  }
+`;

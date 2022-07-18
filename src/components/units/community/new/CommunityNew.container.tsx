@@ -5,7 +5,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { createRef, useState } from "react";
 import { useMutation } from "@apollo/client";
-import { CREATE_BOARD } from "./CommunityNew.queries";
+import { CREATE_BOARD, UPDATE_BOARD } from "./CommunityNew.queries";
 import Swal from "sweetalert2";
 
 const schema = yup.object({
@@ -13,7 +13,7 @@ const schema = yup.object({
   content: yup.string().required("내용은 필수 입력 사항입니다."),
 });
 
-export default function CommunityNew() {
+export default function CommunityNew(props) {
   const router = useRouter();
 
   const [tagItem, setTagItem] = useState("");
@@ -22,6 +22,7 @@ export default function CommunityNew() {
   const [fileUrl, setFileUrl] = useState("");
 
   const [createBoard] = useMutation(CREATE_BOARD);
+  const [updateBoard] = useMutation(UPDATE_BOARD);
 
   const { register, handleSubmit, formState, setValue, trigger } = useForm({
     resolver: yupResolver(schema),
@@ -71,14 +72,20 @@ export default function CommunityNew() {
           icon: "success",
           title: "등록이 완료되었습니다!",
         });
-        // router.push(`/community/${result.data?.createBoard.id}`);
+        router.push(`/community/${result.data?.createBoard.id}`);
       }
     } catch (error) {
       Swal.fire({
         icon: "error",
-        text: error.message,
+        text: (error as Error).message,
       });
     }
+  };
+
+  const onClickEdit = async () => {
+    await updateBoard({
+      variables: {},
+    });
   };
 
   return (
@@ -97,6 +104,8 @@ export default function CommunityNew() {
       setImageUrl={setImageUrl}
       imageUrl={imageUrl}
       setFileUrl={setFileUrl}
+      isEdit={props.isEdit}
+      onClickEdit={onClickEdit}
     />
   );
 }
