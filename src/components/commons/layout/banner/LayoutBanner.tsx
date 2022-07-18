@@ -8,7 +8,7 @@ const BannerImage = styled.div`
   height: 14.38em;
   position: relative;
   left: calc(-50vw + 50%);
-  background: url("/img/layout/banner.png") center/cover;
+  background: url("/img/layout/banner.webp") center/cover;
   display: flex;
   flex-direction: row;
   justify-content: center;

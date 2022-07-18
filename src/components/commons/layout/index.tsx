@@ -52,7 +52,7 @@ const Body = styled.div`
   width: 100%;
   height: 70%;
   padding: 0em 1em;
-  min-height: 800px;
+  min-height: 500px;
 `;
 
 interface ILayoutProps {

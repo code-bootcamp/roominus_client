@@ -54,15 +54,20 @@ export const UserNameBox = styled.div`
     #b6a2ea 81%,
     #bf9eeb 100%
   );
-  margin: 2em 0em 1.7em 0em;
+  margin: 2em 0em 1.5em 0em;
   color: white;
 `;
 
 export const UserData = styled.span`
-  font-size: 1.5em;
+  font-size: 1.4em;
   cursor: pointer;
 `;
 
+export const UserPoint = styled.span`
+  color: #bf9eeb;
+  font-weight: 600;
+  font-size: 1.1em;
+`;
 export const line = styled.div`
   border: 1px solid #bf9eeb;
   width: 100%;

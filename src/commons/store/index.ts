@@ -1,4 +1,5 @@
-import { atom } from "recoil";
+import { atom, selector } from "recoil";
+import { getAccessToken } from "../libraries/getAccessToken";
 
 export const accessTokenState = atom({
   key: "accessTokenState",
@@ -10,20 +11,15 @@ export const userInfoState = atom({
     id: "",
     name: "",
     email: "",
+    phone: "",
     point: 0,
   },
 });
 
-export const ReservationInfoState = atom({
-  key: "ReservationInfoState",
-  default: {
-    themeId: "",
-    cafeId: "",
-    reservation_date: "",
-    memo: "",
-    people_number: 0,
-    totalPrice: 0,
-    usePoint: 0,
-    themeMenuId: "",
+export const restoreAccessTokenLoadable = selector({
+  key: "restoreAccessTokenLoadable",
+  get: async () => {
+    const newAccessToken = await getAccessToken();
+    return newAccessToken;
   },
 });

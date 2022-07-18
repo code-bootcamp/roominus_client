@@ -3,26 +3,6 @@ import * as S from "./MyPageInfo.styles";
 import { IMyPageInfoUIProps } from "./MyPageInfo.types";
 
 export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
-  const data = [
-    {
-      _id: "0",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "1",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-    {
-      _id: "2",
-      title: "dfdfa",
-      writer: "34134",
-      createdAt: "234324",
-    },
-  ];
   return (
     <S.Container>
       <S.Wrapper>
@@ -76,7 +56,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                   <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
                   <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
                 </S.TitleRow>
-                {data.map((el) => (
+                {props?.reservations?.map((el) => (
                   <S.Row key={el._id}>
                     <S.ColumnBasic>
                       {String(el._id).slice(-4).toUpperCase()}
@@ -108,7 +88,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                 <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
                 <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
               </S.TitleRow>
-              {data.map((el) => (
+              {props?.payments?.map((el) => (
                 <S.Row key={el._id}>
                   <S.ColumnBasic>
                     {String(el._id).slice(-4).toUpperCase()}
