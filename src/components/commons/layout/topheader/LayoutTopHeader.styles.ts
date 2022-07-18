@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.nav`

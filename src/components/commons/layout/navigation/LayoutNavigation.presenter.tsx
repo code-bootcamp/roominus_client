@@ -1,6 +1,6 @@
 import { Fragment } from "react";
+import { INavigationUIProps } from "../Layout.types";
 import { MenuItem, Wrapper } from "./LayoutNavigation.styles";
-import { ILayoutNavigationUIProps } from "./LayoutNavigation.types";
 
 const NAVIGATION_MENUS = [
   { name: "내 예약 내역 확인", page: "/mypage/history" },
@@ -9,7 +9,7 @@ const NAVIGATION_MENUS = [
   { name: "비밀번호 변경", page: "/mypage/pwedit" },
 ];
 
-export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
+export default function LayoutNavigationUI(props: INavigationUIProps) {
   return (
     <Wrapper>
       {NAVIGATION_MENUS.map((el) => (

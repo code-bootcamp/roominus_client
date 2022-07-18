@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import LayoutSideBarAdminUI from "./LayoutSidebar.presenter";
 
 export default function LayoutSidebarAdmin() {
@@ -7,11 +7,11 @@ export default function LayoutSidebarAdmin() {
 
   const [activedMenu, setActivedMenu] = useState("");
 
-  const onClickMenu = (event) => {
+  const onClickMenu = (event: MouseEvent<HTMLDivElement>) => {
     if (event.target instanceof Element) {
       router.push(event.target.id);
 
-      const activedMenu = event.target.id;
+      const activedMenu = (event.target as HTMLDivElement).id;
       setActivedMenu(activedMenu);
     }
   };

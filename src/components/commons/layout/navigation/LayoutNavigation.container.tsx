@@ -8,7 +8,7 @@ export default function LayoutNavigation() {
 
   const onClickMenu = (event: MouseEvent<HTMLDivElement>) => {
     if (event.target instanceof Element) router.push(event.target.id);
-    const activedMenu = event.target.id;
+    const activedMenu = (event.target as HTMLDivElement).id;
     setActivedMenu(activedMenu);
   };
 

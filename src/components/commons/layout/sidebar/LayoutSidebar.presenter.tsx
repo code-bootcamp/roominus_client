@@ -1,6 +1,7 @@
 import Link from "next/link";
 import * as S from "../sidebar/LayoutSidebar.styles";
 import { Fragment } from "react";
+import { ISideBarUIProps } from "../Layout.types";
 
 const NAVIGATION_MENUS = [
   { name: "내 찜목록", page: "/mypage/mypick" },
@@ -9,7 +10,7 @@ const NAVIGATION_MENUS = [
   { name: "최근 적립 내역", page: "/mypage/reward" },
 ];
 
-export default function LayoutSideBarUI(props) {
+export default function LayoutSideBarUI(props: ISideBarUIProps) {
   return (
     <S.Container>
       <S.Wrapper>

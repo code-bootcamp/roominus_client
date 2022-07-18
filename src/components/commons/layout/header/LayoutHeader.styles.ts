@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { breakPoints } from "../../../../commons/styles/media";
+import { IIsActiveProps } from "../Layout.types";
 
 export const Container = styled.nav`
   width: 100%;
@@ -72,9 +73,10 @@ export const MenuWrapper = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  font-weight: ${(props) => (props.isActive ? "500" : "normal")};
-  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
-  color: ${(props) => (props.isActive ? "#BF9EEB" : "#26282C")};
+  font-weight: ${(props: IIsActiveProps) =>
+    props.isActive ? "500" : "normal"};
+  cursor: ${(props: IIsActiveProps) => (props.isActive ? "none" : "pointer")};
+  color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#26282C")};
   font-size: 1.5em;
 `;
 

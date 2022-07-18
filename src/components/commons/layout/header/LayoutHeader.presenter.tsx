@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import * as S from "./LayoutHeader.styles";
 import { slide as Menu } from "react-burger-menu";
+import { IHeaderUIProps } from "../Layout.types";
 
 const NAVIGATION_MENUS = [
   { name: "매장", page: "/cafe" },
@@ -62,7 +63,7 @@ const styles = {
   },
 };
 
-export default function LayoutHeaderUI(props: any) {
+export default function LayoutHeaderUI(props: IHeaderUIProps) {
   const [openMypageOp, setOpenMypageOp] = useState(false);
 
   const onClickOpenMypageOp = () => {
