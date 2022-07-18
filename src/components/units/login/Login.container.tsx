@@ -82,7 +82,7 @@ export default function LoginPage() {
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
       });
-      router.push("/home");
+      router.push("/mypage");
     } catch (error) {
       Swal.fire({
         title: error.message,
