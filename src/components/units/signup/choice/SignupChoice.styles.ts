@@ -88,6 +88,8 @@ export const KakaoBtn = styled.div`
   border-radius: 12px;
   border: none;
   background-color: #fee500;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   color: #000000 85%;
   font-size: 1.2em;
   cursor: pointer;

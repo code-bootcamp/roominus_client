@@ -80,7 +80,7 @@ export default function LoginPage() {
       // setUserInfo(user);
 
       Modal.success({ content: "성공" });
-      router.push("/cafe");
+      router.push("/home");
     } catch (error) {
       Modal.error({ content: error.message });
     }
