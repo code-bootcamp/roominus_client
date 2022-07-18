@@ -4,9 +4,11 @@ import { useForm } from "react-hook-form";
 import FindIdUI from "./FindId.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { FETCH_USER } from "./FindId.query";
+import { useApolloClient } from "@apollo/client";
+import { Modal } from "antd";
 
 const schema = yup.object({
-  name: yup.string().required("필수 입력 사항입니다."),
   email: yup
     .string()
     .matches(
@@ -24,14 +26,13 @@ export default function FindId() {
 
   const IdFindinputRef = useRef();
   const PasswordFindinputRef = useRef();
-
+  const client = useApolloClient();
   const { register, handleSubmit, setValue, formState } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
 
   useEffect(() => {
-    register("name", { required: true });
     register("email", { required: true });
   }, []);
 
@@ -50,8 +51,23 @@ export default function FindId() {
       PasswordFindinputRef.current?.focus();
     }, 100);
   };
-  const onSubmitFindId = () => {};
-  const onSubmitVerificationEmail = () => {};
+  const onSubmitFindId = async (data) => {
+    try {
+      const result = await client.query({
+        query: FETCH_USER,
+        variables: {
+          email: data.email,
+        },
+      });
+      Modal.success({
+        content: `사용하시는 아이디: ${result.data?.fetchUser.email}`,
+      });
+    } catch (error) {
+      Modal.error({ content: "가입하지 않은 회원입니다." });
+      router.push(`/findidpassword/findid/${data.email}`);
+    }
+  };
+
   useEffect(() => {
     IdFindinputRef.current?.focus();
   }, []);
@@ -62,7 +78,6 @@ export default function FindId() {
       onClickShowContentsSecond={onClickShowContentsSecond}
       isClickedsecond={isClickedsecond}
       onSubmitFindId={onSubmitFindId}
-      onSubmitVerificationEmail={onSubmitVerificationEmail}
       IdFindinputRef={IdFindinputRef}
       PasswordFindinputRef={PasswordFindinputRef}
       handleSubmit={handleSubmit}

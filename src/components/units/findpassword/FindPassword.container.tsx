@@ -25,14 +25,14 @@ export default function FindPassword(props) {
     register("email", { required: true });
     register("phoneNumber", { required: true });
   }, []);
-
+  const onSubmitVerificationEmail = () => {};
   return (
     <FindPasswordUI
       onClickShowContentsFirst={props.onClickShowContentsFirst}
       onClickShowContentsSecond={props.onClickShowContentsSecond}
       isClickedsecond={props.isClickedsecond}
       isClickedfirst={props.isClickedfirst}
-      onSubmitVerificationEmail={props.onSubmitVerificationEmail}
+      onSubmitVerificationEmail={onSubmitVerificationEmail}
       PasswordFindinputRef={props.PasswordFindinputRef}
       handleSubmit={handleSubmit}
       setValue={setValue}
