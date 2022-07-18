@@ -59,19 +59,6 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
         </S.SearchBox>
       </S.SearchWrapper>
       <S.ListWrapper>
-        {/* <S.BestListBox>
-          <S.BestTitle>지금 가장 HOT한 매장 BEST5</S.BestTitle>
-          <S.Etc>
-            {new Array(5).fill(1).map((el) => (
-              <span key={el}>
-                <BestCards />
-              </span>
-            ))}
-          </S.Etc>
-        </S.BestListBox> */}
-
-        {/* <S.Line></S.Line> */}
-
         <S.Flex>
           <S.BestTitle>전체 매장</S.BestTitle>
           <S.Etc>
@@ -81,16 +68,10 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
                 {console.log(el)}
               </span>
             ))}
-
-            {/* {new Array(10).fill(1).map((el) => (
-              <span key={el} onClick={props.onClickCard}>
-                <ListCards />
-              </span>
-            ))} */}
           </S.Etc>
         </S.Flex>
         <S.MoreButtonBox>
-          <S.MoreButton>더보기</S.MoreButton>
+          <S.MoreButton onClick={props.loadFunc}>더보기</S.MoreButton>
         </S.MoreButtonBox>
       </S.ListWrapper>
     </S.Container>

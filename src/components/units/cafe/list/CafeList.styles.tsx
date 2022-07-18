@@ -339,6 +339,7 @@ export const MoreButton = styled.button`
   color: white;
   background-color: #26282c;
   font-weight: 700;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     width: 75%;
