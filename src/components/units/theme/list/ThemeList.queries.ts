@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_THEMES = gql`
-  query fetchThemes {
-    fetchThemes {
+  query fetchThemes($genreId: String, $page: Float = 1) {
+    fetchThemes(genreId: $genreId, page: $page) {
       id
       title
       rank

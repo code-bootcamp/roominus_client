@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { IFetchGenres, IFetchThemes, IThemeListProps } from "./ThemeList.types";
 import MobileCarousel from "./MobileCarousel";
+import { v4 as uuidv4 } from "uuid";
 
 const NAVIGATION_MENUS = [
   { name: "전체" },
@@ -48,9 +49,15 @@ export default function ThemeListUI(props: IThemeListProps) {
         <S.SearchInput placeholder="테마명을 입력하세요." />
       </S.SearchBox>
       <S.GenreList>
-        <S.Genre isPicked={true}>전체</S.Genre>
-        {props.fetchGenres?.fetchGenres.map((el: IFetchGenres) => (
-          <S.Genre isPicked={false} key={el.id}>
+        <S.Genre onClick={props.onClickAllGenre} isPicked={props.selectAll}>
+          전체
+        </S.Genre>
+        {props.fetchGenres?.fetchGenres.map((el: IFetchGenres, i: number) => (
+          <S.Genre
+            onClick={props.onClickGenre(el.id, i)}
+            isPicked={props.myIndex[i]}
+            key={el.id}
+          >
             {el.name}
           </S.Genre>
         ))}
@@ -66,7 +73,7 @@ export default function ThemeListUI(props: IThemeListProps) {
         <div>
           <S.ThemeList>
             {props.data?.fetchThemes.map((el: IFetchThemes) => (
-              <div key={el.id} onClick={props.onClickTheme(el)}>
+              <div key={uuidv4()} onClick={props.onClickTheme(el)}>
                 <S.Flip>
                   <S.Card>
                     <S.Theme src={el.mainImg}>
@@ -93,7 +100,9 @@ export default function ThemeListUI(props: IThemeListProps) {
             ))}
           </S.ThemeList>
           <S.ButtonBox>
-            <S.ShowMoreButton>더보기</S.ShowMoreButton>
+            <S.ShowMoreButton onClick={props.onClickMoreButton}>
+              더보기
+            </S.ShowMoreButton>
           </S.ButtonBox>
         </div>
       )}

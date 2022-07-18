@@ -103,51 +103,8 @@ export const Genre = styled.button`
   background-color: ${(props: IGenreProps) =>
     props.isPicked ? "#4A00E0" : "#DAD6E1"};
   margin: 5px;
+  cursor: pointer;
 `;
-
-// -------------------------------
-export const FlipDiv = styled.div`
-  width: 200px;
-  height: 250px;
-  position: relative;
-  perspective: 1100px;
-  margin: 2rem;
-  :hover {
-    transform: rotateY(180deg);
-  }
-`;
-
-export const CardDiv = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: 0.4s;
-  transform-style: preserve-3d;
-  :hover {
-    transform: rotateY(180deg);
-  }
-`;
-
-export const FrontBackDiv = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-`;
-
-export const FrontDiv = styled(FrontBackDiv)`
-  background-color: red;
-`;
-
-export const BackDiv = styled(FrontBackDiv)`
-  background-color: blue;
-  transform: rotateY(180deg);
-`;
-// -------------------------------
 
 export const MySlider = styled(Slider)`
   width: 100%;
@@ -308,6 +265,7 @@ export const ShowMoreButton = styled.button`
   color: white;
   border: transparent;
   background-color: #26282c;
+  cursor: pointer;
 `;
 
 export const Toggle = styled.div``;
