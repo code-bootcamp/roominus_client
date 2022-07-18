@@ -1,8 +1,11 @@
 import WebPurpleLoginButton from "../../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 import WebLongestHighlightUnderlineInput from "../../../../commons/inputs/inputDesktop/WebLongestHighlightUnderlineInput";
+import { IAdminReservationNewUIProps } from "./AdminReservation.types";
 import * as S from "./AdminReservationNewStyle";
 
-export default function AdminReservationNewUI(props) {
+export default function AdminReservationNewUI(
+  props: IAdminReservationNewUIProps
+) {
   return (
     <S.Wrapper>
       <S.Form onSubmit={props.handleSubmit(props.onClickSubmit)}>
@@ -19,15 +22,6 @@ export default function AdminReservationNewUI(props) {
           register={props.register("cafeName")}
         />
         <S.InputsTitle>운영 날짜</S.InputsTitle>
-
-        <select register={props.register("people")}>
-          <option value="" disabled selected>
-            인원을 선택해주세요
-          </option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
 
         <WebLongestHighlightUnderlineInput
           type="date"

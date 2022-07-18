@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../commons/styles/media";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   padding: 0em 0em 2em 0em;
@@ -109,12 +109,13 @@ export const ThemeTitleBox = styled.div`
   align-items: center;
   gap: 1em;
 
-  .span {
-    color: darkgray;
+  & span {
+    color: gray;
   }
 
-  h2 {
+  & h2 {
     font-size: 2em;
+    background-color: beige;
 
     @media ${breakPoints.tablet} {
       font-size: 1.6em;

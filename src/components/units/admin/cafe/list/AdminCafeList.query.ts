@@ -5,9 +5,6 @@ export const FETCH_CAFES = gql`
     fetchCafes {
       id
       name
-      phone
-      address
-      mainImg
     }
   }
 `;

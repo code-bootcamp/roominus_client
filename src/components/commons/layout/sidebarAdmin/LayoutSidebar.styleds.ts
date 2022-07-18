@@ -8,7 +8,7 @@ export const Container = styled.main`
   justify-content: center;
   align-items: center;
 
-  width: 15%;
+  width: 10%;
   border-right: 1px solid darkgray;
 
   @media ${breakPoints.tablet} {
@@ -22,20 +22,6 @@ export const Container = styled.main`
 
 export const Wrapper = styled.section``;
 
-export const UserNameBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 130px;
-  background-color: beige;
-`;
-
-export const UserData = styled.span`
-  font-size: 1.5em;
-`;
-
 export const MenuBox = styled.div`
   padding-top: 10em;
 `;
@@ -46,15 +32,4 @@ export const MenuItem = styled.li`
 
   font-size: 1.3em;
   padding-bottom: 0.5em;
-`;
-
-export const LogoutBox = styled.div`
-  font-size: 1.3em;
-  cursor: pointer;
-`;
-
-export const Logout = styled.span``;
-
-export const LogoutIcon = styled(LogoutOutlined)`
-  padding-right: 0.3em;
 `;

@@ -1,5 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
+import { IData } from "./AdminReservation.types";
 import { CREATE_RESERVATION_THEME_MENU } from "./AdminReservationNewQuery";
 import AdminReservationNewUI from "./AdminReservationNewUI";
 export default function AdminReservationNew() {
@@ -7,7 +8,7 @@ export default function AdminReservationNew() {
 
   const { register, handleSubmit } = useForm();
 
-  const onClickSubmit = async (data) => {
+  const onClickSubmit = async (data: IData) => {
     try {
       const result = await createThemeMenu({
         variables: {
@@ -22,7 +23,7 @@ export default function AdminReservationNew() {
       });
       console.log(result.data?.createThemeMenu);
     } catch (error) {
-      alert(error.message);
+      alert((error as Error).message);
     }
   };
 

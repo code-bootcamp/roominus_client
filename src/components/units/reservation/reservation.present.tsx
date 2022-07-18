@@ -7,13 +7,13 @@ import {
 // import moment from "moment";
 import MomentUtils from "@date-io/moment";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
-import NoReservation from "./Noreservation";
+import NoReservation from "./NoReservation";
 import { v4 as uuidv4 } from "uuid";
 import Payment from "../payment/payment";
 import Swal from "sweetalert2";
 import ReservationNotice from "./reservationNotice/reservationNotice";
 import { IReservationUIProps } from "./reservation.types";
-import ReservationThemeInfo from "./reservationthemeInfo/reservationthemeinfo";
+import ReservationThemeInfo from "./reservationThemeInfo/reservationthemeinfo";
 import Link from "next/link";
 
 export default function ReservationUI(props: IReservationUIProps) {
@@ -71,7 +71,7 @@ export default function ReservationUI(props: IReservationUIProps) {
               helperText="예약이 가능한 테마만 선택이 가능합니다."
               style={{ paddingBottom: "1.3em" }}
             >
-              {props?.themesList?.fetchThemes?.map((el: any) => (
+              {props?.themesList?.fetchThemesAll?.map((el: any) => (
                 <MenuItem key={uuidv4()} value={el.id}>
                   {el.title}
                 </MenuItem>

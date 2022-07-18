@@ -3,7 +3,7 @@ import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton
 import { gql, useMutation } from "@apollo/client";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
-import { IPaymentProps } from "./payment.types";
+import { IPaymentProps, IRsp } from "./payment.types";
 
 declare const window: typeof globalThis & {
   IMP: any;
@@ -64,7 +64,7 @@ export default function Payment(props: IPaymentProps) {
         // buyer_postcode: "12345",
         m_redirect_url: "http://localhost:3000/mypage",
       },
-      async function (rsp) {
+      async function (rsp: IRsp) {
         // callback
         if (rsp.success) {
           try {
@@ -126,7 +126,6 @@ export default function Payment(props: IPaymentProps) {
       <WebPurpleButton
         title={props.title}
         onClick={requestPay}
-        disabled={props.disabled}
         type={props.type}
       />
     </div>

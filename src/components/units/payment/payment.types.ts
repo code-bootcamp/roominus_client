@@ -6,4 +6,11 @@ export interface IPaymentProps {
   memo: string;
   peopleNumber: number;
   usePoint: number;
+  title: string;
+  type: string;
+}
+
+export interface IRsp {
+  success: boolean;
+  imp_uid: string;
 }

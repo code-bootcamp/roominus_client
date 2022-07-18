@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Swal from "sweetalert2";
 import { FETCH_CAFES } from "../../cafe/list/AdminCafeList.query";
 import {
@@ -11,7 +11,8 @@ import AdminReservationListUI from "./AdminReservationListUi";
 export default function AdminReservationList() {
   const [cafeId, setCafeId] = useState("");
   const [reservationDate, setReservationDate] = useState("");
-
+  const [reservationId, setReservationId] = useState("");
+  const [merchantUid, setMerchantUid] = useState("");
   const { data } = useQuery(FETCH_RESERVATIONS, {
     variables: {
       cafeId,
@@ -21,51 +22,41 @@ export default function AdminReservationList() {
   const { data: cafeList } = useQuery(FETCH_CAFES);
   const [deleteReservation] = useMutation(DELETE_RESERVATION);
 
-  console.log(cafeList);
-
-  const reservationId = data?.fetchReservatoins[0].id;
-  const merchantUid = data?.fetchReservatoins[0].payment.merchant_uid;
-  console.log(reservationId);
-  console.log(merchantUid);
-
-  const onChangeCafeId = (event) => {
+  const onChangeCafeId = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setCafeId(event.target.value);
-    console.log(cafeId);
   };
 
-  const onChangeDate = (event) => {
+  const onChangeDate = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setReservationDate(event.target.value);
-    console.log(reservationDate);
   };
 
-  const onClickRefund = async () => {
-    console.log("ㅎㅇ");
+  const onClickRefund = async (event: {
+    target: { id: SetStateAction<string> };
+  }) => {
+    setReservationId(event?.target.id);
+    // setMerchantUid(event?.target.id.el);
 
-    try {
-      await deleteReservation({
-        variables: {
-          reservationId,
-          merchantUid,
-        },
-      });
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        text: error.message,
-      });
-    }
+    // console.log(cafeId);
+    console.log(event.target.id);
+
+    // try {
+    //   await deleteReservation({
+    //     variables: {
+    //       reservationId,
+    //       merchantUid,
+    //     },
+    //   });
+    // } catch (error) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     text: (error as Error).message,
+    //   });
+    // }
   };
-
-  // console.log("data.fetchReservatoins.id", data?.fetchReservatoins.id);
-
-  // console.log(
-  //   "data.fetchReservatoins.payment.merchant_uid",
-  //   data?.fetchReservatoins.payment?.merchant_uid
-  // );
-  // console.log(
-  //   "data.fetchReservatoins.payment",
-  //   data?.fetchReservatoins.payment
-  // );
 
   return (
     <AdminReservationListUI

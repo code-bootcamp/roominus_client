@@ -21,7 +21,7 @@ export interface IReservationUIProps {
   data?: any;
 
   themesList: {
-    fetchThemes: any;
+    fetchThemesAll: any;
   };
 
   onChangeTheme: (event: ChangeEvent<HTMLInputElement>) => void;
