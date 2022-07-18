@@ -146,7 +146,7 @@ export const RecommendationBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  gap: 1.8em;
+  gap: 1.5em;
 `;
 
 export const TypingBox = styled.div`

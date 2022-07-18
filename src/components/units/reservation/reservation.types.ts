@@ -1,12 +1,17 @@
+import { ChangeEvent } from "react";
+
+export interface IFetchThemeMenus {
+  reservation_time: string;
+  people_number: number;
+}
 export interface IReservationUIProps {
   totalPrice: any;
   usePoint: number;
   themeId: string;
   cafeId: string;
   reservationDate: string;
-  dateFormatter: string;
   time: string;
-  uniqeTime: ["string"];
+  uniqeTime: any;
   peopleNumber: number;
   selectTime: any;
   checked: boolean;
@@ -19,12 +24,16 @@ export interface IReservationUIProps {
     fetchThemes: any;
   };
 
-  // onClickReset: () => void;
-  // onChangeTheme: () => void;
-  // onClickSubmit: (data: any) => void;
-  // onChangeCafe: () => void;
-  // onChangeDate: () => void;
-  // onChangeTime: () => void;
-  // onChangeHeadCount: () => void;
-  // onChangePoint: () => void;
+  onChangeTheme: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeCafe: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeTime: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeDate: (date: string) => void;
+  onChangeHeadCount: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangePoint: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeMemo: (event: ChangeEvent<HTMLInputElement>) => void;
+
+  onClickReset: () => void;
+  onChangeChecked: () => void;
+
+  dateFormatter: (str: string) => string;
 }

@@ -9,7 +9,7 @@ import MomentUtils from "@date-io/moment";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import NoReservation from "./Noreservation";
 import { v4 as uuidv4 } from "uuid";
-import Payment from "../payment";
+import Payment from "../payment/payment";
 import Swal from "sweetalert2";
 import ReservationNotice from "./reservationNotice/reservationNotice";
 import { IReservationUIProps } from "./reservation.types";

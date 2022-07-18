@@ -3,8 +3,9 @@ import * as S from "./ReservationSuccess.styles";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 import { QRCodeSVG } from "qrcode.react";
+import { IReservationSuccessUI } from "./reservationSuccess.types";
 
-export default function ReservationSuccessUI(props) {
+export default function ReservationSuccessUI(props: IReservationSuccessUI) {
   return (
     <S.Container>
       <S.TitleBox>
