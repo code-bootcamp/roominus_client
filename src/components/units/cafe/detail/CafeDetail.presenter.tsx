@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import { ICafeDetailUI, IFetchThemesOnTheme } from "./CafeDetail.types";
 import NoTheme from "./notheme/notheme";
+import KakaoMap from "./map/Map";
 
 export default function CafeDetailUI(props: ICafeDetailUI) {
   return (
@@ -34,12 +35,11 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
               </S.InfoContentsBox>
               <div>
                 <S.ContentsTitle>위치</S.ContentsTitle>
-                <S.Map src="/img/cafe/cafemap.png" />
-                {/* <S.LocationBox> */}
+                <KakaoMap data={props.data} />
+                {/* <S.LocationIcon src="/img/cafe/location.webp" /> */}
                 <S.LocationDetail>
-                  {props.data?.fetchCafe.address_detail}
+                  📍{props.data?.fetchCafe.address_detail}
                 </S.LocationDetail>
-                {/* </S.LocationBox> */}
               </div>
             </S.InfoLocationBox>
           )}

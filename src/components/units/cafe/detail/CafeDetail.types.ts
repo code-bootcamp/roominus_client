@@ -1,6 +1,7 @@
 import { MouseEvent } from "react";
 
 export interface IFetchThemesOnTheme {
+  id: string;
   title: string;
   mainImg: string;
 }
