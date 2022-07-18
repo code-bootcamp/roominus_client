@@ -133,9 +133,9 @@ export const Contents = styled.p`
   font-size: 1.3em;
 `;
 
-export const Map = styled.img`
+export const Map = styled.div`
   width: 100%;
-  height: 13.7em;
+  height: 22em;
 `;
 
 export const LocationBox = styled.div``;
@@ -145,8 +145,13 @@ export const Location = styled.div`
   /* background-color: orange; */
 `;
 
+export const LocationIcon = styled.img`
+  width: 1em;
+`;
+
 export const LocationDetail = styled.p`
   font-size: 1.2em;
+  margin-top: 0.8em;
   /* background-color: yellow; */
 `;
 
