@@ -38,3 +38,8 @@ export interface IDataProps {
   rank: string;
   clear: boolean;
 }
+
+export interface IStylesProps {
+  selected?: boolean;
+  checked?: boolean;
+}

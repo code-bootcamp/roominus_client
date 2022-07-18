@@ -1,7 +1,10 @@
 import ThemeCommentListUIItem from "./ThemeCommentList.presenterItem";
 import * as S from "./ThemeCommentList.styles";
 import InfiniteScroll from "react-infinite-scroller";
-import { IThemeCommentListUIProps } from "./ThemeCommentList.types";
+import {
+  IFetchThemeReviewsData,
+  IThemeCommentListUIProps,
+} from "./ThemeCommentList.types";
 
 export default function ThemeCommentListUI(props: IThemeCommentListUIProps) {
   return (
@@ -17,11 +20,13 @@ export default function ThemeCommentListUI(props: IThemeCommentListUIProps) {
         }}
       >
         <S.CommentList>
-          {props.data?.fetchThemeReviews.map((el: any, index: any) => (
-            <div key={el.id}>
-              <ThemeCommentListUIItem setIsEdit={props.setIsEdit} el={el} />
-            </div>
-          ))}
+          {props.data?.fetchThemeReviews.map(
+            (el: IFetchThemeReviewsData, index: number) => (
+              <div key={el.id}>
+                <ThemeCommentListUIItem setIsEdit={props.setIsEdit} el={el} />
+              </div>
+            )
+          )}
         </S.CommentList>
       </InfiniteScroll>
     </S.Wrapper>
