@@ -4,6 +4,7 @@ import { breakPoints } from "../../../../../commons/styles/media";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { Rate } from "antd";
+import { IStylesProps } from "./ThemeCommentWriter.types";
 
 export const Wrapper = styled.section`
   background-color: #f2ebf5;
@@ -96,7 +97,8 @@ export const EscapeButton = styled.div`
   border-radius: 8px;
   color: white;
   margin: 2px;
-  background-color: ${(props) => (props.checked ? "#A08BF3" : "")};
+  background-color: ${(props: IStylesProps) =>
+    props.checked ? "#A08BF3" : ""};
 `;
 
 export const RankBox = styled.div`
@@ -115,7 +117,7 @@ export const RadioGroup = styled(ButtonGroup)``;
 
 export const RadioButton = styled(Button)`
   border: 1px solid #a08bf3;
-  background-color: ${(props) =>
+  background-color: ${(props: IStylesProps) =>
     props.selected || props.checked ? "#A08BF3" : ""};
   /* background-color: yellowgreen; */
   color: #4a00e0;
