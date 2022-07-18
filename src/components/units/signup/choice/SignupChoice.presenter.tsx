@@ -22,12 +22,15 @@ export default function SignupChoiceUI(props) {
         </S.PersonalSignupBtn>
         <S.SocialSignupBtnsBox>
           <S.KakaoBtn onClick={props.onClickLoginKakao}>
-            <S.KakaoSymbol src="/img/login/kakaoSymbol.png" alt="kakaoSymbol" />
+            <S.KakaoSymbol
+              src="/img/login/kakaoSymbol.webp"
+              alt="kakaoSymbol"
+            />
             <S.KakaoLabel>카카오 로그인</S.KakaoLabel>
           </S.KakaoBtn>
           <S.GoogleBtn onClick={props.onClickGoogleLogin}>
             <S.GoogleSymbol
-              src="/img/login/googleSymbol.png"
+              src="/img/login/googleSymbol.webp"
               alt="googleSymbol"
             />
             <S.GoogleLabel>구글 로그인</S.GoogleLabel>

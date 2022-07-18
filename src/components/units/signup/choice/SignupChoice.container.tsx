@@ -1,11 +1,6 @@
 import { useRouter } from "next/router";
 import SignupChoiceUI from "./SignupChoice.presenter";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  getRedirectResult,
-} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();

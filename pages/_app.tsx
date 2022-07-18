@@ -27,7 +27,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const script = document.createElement("script"); // <script></script>

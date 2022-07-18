@@ -1,7 +1,7 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
-import WebSmallBlackButton from "../../../commons/buttons/buttonDesktop/WebSmallBlackButton";
+
 import * as S from "./MyPhoneEdit.styles";
 
 export default function MyPhoneEditUI(props) {
@@ -33,6 +33,10 @@ export default function MyPhoneEditUI(props) {
           <S.Edit onClick={props.onClickEdit}>변경하기</S.Edit>
         </S.UserInfoBox>
 
+        <S.UserInfoBox>
+          <S.UserDataLabel>회원 탈퇴</S.UserDataLabel>
+          <S.Edit onClick={props.onClickMoveToDelete}>탈퇴하기</S.Edit>
+        </S.UserInfoBox>
         {props.isEdit && (
           <>
             <h3 style={{ padding: "1em" }}> 전화번호 수정</h3>
@@ -42,7 +46,7 @@ export default function MyPhoneEditUI(props) {
                 <S.PhoneNewInputBox>
                   <S.PhoneBox>
                     <S.PhoneNewInput
-                      type="tel"
+                      type="text"
                       name="phoneNumber"
                       placeholder="-을 제외한 숫자만 입력하세요 "
                       onChange={(e) => {

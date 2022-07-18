@@ -151,7 +151,7 @@ export const TimeOut = styled.span`
   position: absolute;
   top: 0.7em;
   right: 2em;
-  /* visibility: hidden; */
+  visibility: hidden;
 `;
 
 export const Error = styled.span`
@@ -164,4 +164,16 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   gap: 1em;
   padding-top: 15em;
+`;
+export const DeleteForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 2em;
+  gap: 1em;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;

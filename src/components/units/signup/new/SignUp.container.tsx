@@ -1,7 +1,7 @@
-import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import SignUpUI from "./SignUp.presenter";
+import Swal from "sweetalert2";
 
 export default function SignUp() {
   const router = useRouter();
@@ -18,7 +18,12 @@ export default function SignUp() {
     router.push("/signup/detail");
   };
   const onOpenErrorModal = () => {
-    Modal.warning({ content: "필수 이용약관은 필수!" });
+    Swal.fire({
+      title: "필수 이용약관은 필수!",
+      icon: "warning",
+      confirmButtonText: "확인",
+      confirmButtonColor: "#4a00e0e7",
+    });
   };
   const onClickTotalCheck = () => {
     console.log("clicked");
