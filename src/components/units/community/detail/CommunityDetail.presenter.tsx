@@ -7,7 +7,6 @@ import Dompurify from "dompurify";
 import CommunityCommentWrite from "../comment/Write/CommunityCommentWrite.container";
 import CommunityCommentList from "../comment/List/CommunityCommentList.container";
 import { ICommunityDetailProps } from "./CommunityDetail.types";
-import { getDateBefore } from "../../../commons/getDate";
 import ShareButton from "../../../commons/buttons/sharebutton";
 
 export default function CommunityDetailUI(props: ICommunityDetailProps) {
