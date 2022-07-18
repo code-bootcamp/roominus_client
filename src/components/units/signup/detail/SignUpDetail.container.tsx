@@ -6,7 +6,11 @@ import Head from "next/head";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { CREATE_USER } from "./SignUpDetail.query";
+import {
+  CREATE_USER,
+  SEND_TOTKEN_TO_PHONE,
+  CHECK_INPUT_TOKEN,
+} from "./SignUpDetail.query";
 import { useMutation } from "@apollo/client";
 import Swal from "sweetalert2";
 
@@ -55,9 +59,14 @@ export default function SignUpDetail() {
 
   const [password, setPassword] = useState("");
   const [createUsergql] = useMutation(CREATE_USER);
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(60);
   const [showCount, setShowCount] = useState("03:00");
   const [start, setStart] = useState(1);
+
+  const [sendTokengql] = useMutation(SEND_TOTKEN_TO_PHONE);
+  const [checkInputTokengql] = useMutation(CHECK_INPUT_TOKEN);
+  const [phone, setPhone] = useState("");
+  const [tokenInput, setTokenInput] = useState("");
   useEffect(() => {
     register("email", { required: true });
     register("password", { required: true });
@@ -76,7 +85,7 @@ export default function SignUpDetail() {
         console.log(counts);
         if (counts <= 0) {
           clearInterval(timer);
-          setCount(10);
+          setCount(60);
           setStart(1);
           verificationBtn.current.disabled = true;
           Swal.fire({
@@ -90,27 +99,47 @@ export default function SignUpDetail() {
       }, 1000);
     } else if (start === 3) {
       clearInterval(timer);
-      Swal.fire({
-        title: "인증 완료",
-        icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
-      });
-      setCount(10);
+      // Swal.fire({
+      //   title: "인증 완료",
+      //   icon: "success",
+      //   confirmButtonText: "확인",
+      //   confirmButtonColor: "#4a00e0e7",
+      // });
+      setCount(60);
       setStart(1);
       timeRef.current.style.visibility = "hidden";
     }
     return () => {
       clearInterval(timer);
-      setCount(10);
+      setCount(60);
     };
   }, [start]);
   const onClickMoveToPasswordRef = () => {
     passwordInputRef.current.focus();
   };
 
-  const onClickVerifyMySelfByNo = () => {
+  const onClickVerifyMySelfByNo = async () => {
     setStart(2);
+    try {
+      await sendTokengql({
+        variables: {
+          phone,
+        },
+      });
+      Swal.fire({
+        title: "인증번호 전송 완료",
+        icon: "success",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
+    } catch (error) {
+      Swal.fire({
+        title: error.message,
+        icon: "warning",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
+    }
   };
   const ShowCounts = (data) => {
     const min = Math.floor(data / 60);
@@ -121,11 +150,34 @@ export default function SignUpDetail() {
     )}`;
     setShowCount(Showcount);
   };
-  const onClickCheckVerificationNo = () => {
+  const onClickCheckVerificationNo = async () => {
     console.log("ddd");
     setStart(3);
+    try {
+      await checkInputTokengql({
+        variables: {
+          phone,
+          tokenInput,
+        },
+      });
+      Swal.fire({
+        title: "인증완료",
+        icon: "success",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
+    } catch (error) {
+      Swal.fire({
+        title: error.message,
+        icon: "warning",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
+    }
   };
-
+  const onChangeTokenValue = (event) => {
+    setTokenInput(event.target.value);
+  };
   const onSubmitSignup = async (data) => {
     console.log(data);
     try {
@@ -259,6 +311,8 @@ export default function SignUpDetail() {
         password={password}
         setPassword={setPassword}
         timeRef={timeRef}
+        setPhone={setPhone}
+        onChangeTokenValue={onChangeTokenValue}
       />
     </>
   );
