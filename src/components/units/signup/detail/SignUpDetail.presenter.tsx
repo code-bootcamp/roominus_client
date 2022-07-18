@@ -179,6 +179,7 @@ export default function SignUpDetailUI(props) {
               onChange={(e) => {
                 props.setValue("phoneNumber", e.target.value);
                 props.trigger("phoneNumber");
+                props.setPhone(e.target.value);
               }}
             />
             <WebPurpleButton
@@ -193,6 +194,7 @@ export default function SignUpDetailUI(props) {
               <S.VerificationNoInput
                 type="text"
                 placeholder="인증번호를 입력하세요."
+                onChange={props.onChangeTokenValue}
               />
               <S.TimeOut ref={props.timeRef}>{props.showCount}</S.TimeOut>
             </S.VerificationNoBox>
