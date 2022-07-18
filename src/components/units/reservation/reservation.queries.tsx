@@ -1,14 +1,14 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_THEMES = gql`
-  query fetchThemes {
-    fetchThemes {
+export const FETCH_THEMES_ALL = gql`
+  query fetchThemesAll {
+    fetchThemesAll {
       id
       title
-      cafe {
-        id
-        name
-      }
+      # cafe {
+      #   id
+      #   name
+      # }
     }
   }
 `;

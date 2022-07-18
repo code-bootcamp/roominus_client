@@ -1,3 +1,1 @@
-export interface IMyPageInfoUIProps {
-  userData: any;
-}
+export interface IMyPageInfoUIProps {}

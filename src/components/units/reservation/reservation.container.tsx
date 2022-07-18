@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { ChangeEvent, useEffect, useState } from "react";
 import ReservationUI from "./reservation.present";
 import dayjs from "dayjs";
-import { FETCH_THEMES, FETCH_THEME_MENUS } from "./reservation.queries";
+import { FETCH_THEMES_ALL, FETCH_THEME_MENUS } from "./reservation.queries";
 import { IFetchThemeMenus } from "./reservation.types";
 
 export default function Reservation() {
@@ -20,10 +20,12 @@ export default function Reservation() {
   const [memo, setMemo] = useState("");
   const [checked, setChecked] = useState(false);
 
-  const { data: themesList } = useQuery(FETCH_THEMES);
+  const { data: themesList } = useQuery(FETCH_THEMES_ALL);
   const { data } = useQuery(FETCH_THEME_MENUS, {
     variables: { themeId },
   });
+
+  console.log("themesList", themesList);
 
   const dateFormatter = (str: string) => {
     return str;

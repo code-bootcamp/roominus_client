@@ -16,9 +16,8 @@ export default function HistoryUI(props: IHistoryUIProps) {
           <S.ColumnHeaderTitle>테마</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {props.data.map((el: IData) => (
+        {props.data?.map((el: IData) => (
           <S.Row key={el.id}>
-            <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
             <S.ColumnBasic>{el.status}</S.ColumnBasic>
           </S.Row>
         ))}

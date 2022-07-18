@@ -1,7 +1,8 @@
 import Link from "next/link";
 import * as S from "./MyPageInfo.styles";
+import { IMyPageInfoUIProps } from "./MyPageInfo.types";
 
-export default function MyPageInfoUI(props) {
+export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
   const data = [
     {
       _id: "0",

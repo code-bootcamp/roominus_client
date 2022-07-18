@@ -1,11 +1,12 @@
 import Link from "next/link";
 import * as S from "./ReservationSuccess.styles";
-import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
-import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
 import { QRCodeSVG } from "qrcode.react";
-import { IReservationSuccessUI } from "./reservationSuccess.types";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
+import { IReservationSuccessUI } from "./ReservationSuccess.types";
 
 export default function ReservationSuccessUI(props: IReservationSuccessUI) {
+  const ID = props.data?.fetchReservation.id;
   return (
     <S.Container>
       <S.TitleBox>
@@ -15,21 +16,24 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
       <S.Wrapper ref={props.printRef}>
         <S.IamgeDataBox>
           <>
-            <S.Image src="/img/theme/월야애담.jpeg" />
+            <S.Image
+              src={props.data?.fetchReservation.theme_menu.theme.mainImg}
+            />
           </>
           <S.DataBox>
             <S.ThemeTitleBox>
-              <h2>익명의 여자</h2>
+              <h2>{props.data?.fetchReservation.theme_menu.theme.title}</h2>
               <span>|</span>
-              <span>비밀의 숲</span>
+              <span>{props.data?.fetchReservation.cafe.name}</span>
             </S.ThemeTitleBox>
             <S.ThemeInfoBox>
-              <span>3인 (50000원)</span>
-              <span>2022년 07월 29일 3시 30분</span>
+              <span>
+                {props.data?.fetchReservation.theme_menu.people_number}명
+              </span>
+              <span>{props.data?.fetchReservation.theme_menu.price}원</span>
             </S.ThemeInfoBox>
 
             <S.QRcodeBox>
-              {/* <S.Barcode></S.Barcode> */}
               <S.QRcode>
                 <QRCodeSVG
                   value={props.link}
@@ -45,7 +49,7 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
                   // }}
                 />
               </S.QRcode>
-              <span>12342R34233413</span>
+              <span>{ID?.slice(-12).toUpperCase()}</span>
             </S.QRcodeBox>
           </S.DataBox>
         </S.IamgeDataBox>
@@ -117,9 +121,11 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
         </S.NoticeBoxs>
       </S.NotionArea>
       <S.ButtonWrapper>
-        <Link href={"/"}>
-          <WebBlackButton type="button" title="취소하기" />
-        </Link>
+        <WebBlackButton
+          onClick={props.onClickOpenRefundModal}
+          type="button"
+          title="취소하기"
+        />
 
         <Link href={"/mypage"}>
           <WebPurpleButton type="button" title="목록으로" />

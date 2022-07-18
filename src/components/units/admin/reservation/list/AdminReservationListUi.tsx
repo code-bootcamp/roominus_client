@@ -1,13 +1,16 @@
 import Link from "next/link";
 import WebBlackButton from "../../../../commons/buttons/buttonDesktop/WebBlackButton";
-import { v4 as uuidv4 } from "uuid";
 import * as S from "../list/AdminReservationListStyle";
+import { IAdminReservationListProps, IData } from "./AdminReservation.types";
 
-export default function AdminReservationListUI(props) {
+export default function AdminReservationListUI(
+  props: IAdminReservationListProps
+) {
   return (
     <S.Container>
       <S.Wrapper>
         <S.Title>예약내역</S.Title>
+
         <select onChange={props.onChangeCafeId}>
           <option disabled selected>
             매장을 선택해주세요
@@ -20,8 +23,9 @@ export default function AdminReservationListUI(props) {
         </select>
 
         <input type="date" onChange={props.onChangeDate} />
-
-        <button onClick={props.onClickSearch}>조회하기</button>
+        <Link href="/admin/reservation/new">
+          <button>등록하기</button>
+        </Link>
 
         <S.TableTop />
         <S.TitleRow>
@@ -30,30 +34,24 @@ export default function AdminReservationListUI(props) {
           <S.ColumnHeaderTitle>예약상태</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>예약자</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>예약폰번호</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>테마 예약ID</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>예약 시간</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>예약 인원</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>테마 가격</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>환불</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {props.data?.fetchReservatoins?.map((el) => (
+        {props.data?.fetchReservatoins?.map((el: IData) => (
           <S.Row key={el.id}>
-            <S.ColumnBasic>
-              {" "}
-              {el.id}
-              {/* {String(el._id).slice(-4).toUpperCase()} */}
-            </S.ColumnBasic>
+            <S.ColumnBasic>{el.id}</S.ColumnBasic>
             <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
             <S.ColumnBasic>{el.status}</S.ColumnBasic>
             <S.ColumnBasic>{el.memo}</S.ColumnBasic>
             <S.ColumnBasic>{el.user.name}</S.ColumnBasic>
-            <S.ColumnBasic>{el.user.phone}</S.ColumnBasic>
-            <S.ColumnBasic>{el.theme_menu.id}</S.ColumnBasic>
             <S.ColumnBasic>{el.theme_menu.reservation_time}</S.ColumnBasic>
             <S.ColumnBasic>{el.theme_menu.people_number}</S.ColumnBasic>
             <S.ColumnBasic>{el.theme_menu.price}</S.ColumnBasic>
-            <S.ColumnBasic onClick={props.onClickRefund}>
+            <S.ColumnBasic>{el.payment.merchant_uid}</S.ColumnBasic>
+
+            <S.ColumnBasic id={el.id} onClick={props.onClickRefund}>
               환불하기
             </S.ColumnBasic>
           </S.Row>
