@@ -7,8 +7,9 @@ import { getDateBefore } from "../../../commons/getDate";
 import Dompurify from "dompurify";
 import CommunityCommentWrite from "../comment/Write/CommunityCommentWrite.container";
 import CommunityCommentList from "../comment/List/CommunityCommentList.container";
+import { ICommunityDetailProps } from "./CommunityDetail.types";
 
-export default function CommunityDetailUI(props) {
+export default function CommunityDetailUI(props: ICommunityDetailProps) {
   return (
     <S.Container>
       <S.Wrapper>
