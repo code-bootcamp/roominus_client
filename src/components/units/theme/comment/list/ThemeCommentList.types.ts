@@ -11,35 +11,12 @@ export interface IThemeCommentListUIItemProps {
   el: {
     id: string;
     star: number;
+    user: {
+      name?: string;
+    };
     createdAt: string;
     clear: boolean;
     rank: string;
     content: string;
-    theme?: {
-      id: string;
-      title: string;
-      rank: number;
-      intro_title: string;
-      intro_content: string;
-      agelimit: number;
-      peoplelimit: number;
-      clearTime: number;
-    };
-    user: {
-      name: string;
-    };
-  };
-}
-
-export interface IFetchThemeReviewsData {
-  id: string;
-  star: number;
-  createdAt: string;
-  clear: boolean;
-  rank: string;
-  content: string;
-  user: {
-    id: string;
-    name: string;
   };
 }
