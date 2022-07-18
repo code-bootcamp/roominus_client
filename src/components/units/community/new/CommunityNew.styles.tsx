@@ -21,6 +21,7 @@ export const Wrapper = styled.section`
 export const Title = styled.h1`
   /* font-size: 2em; */
   /* align-self: center; */
+  margin-bottom: 0px;
   height: 100px;
   font-size: 25px;
   font-weight: 700;

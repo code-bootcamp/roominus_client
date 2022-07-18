@@ -1,4 +1,4 @@
-import CommunityCommentEdit from "../Edit/CommunityCommentEdit.container";
+import CommunityCommentEdit from "../edit/CommunityCommentEdit.container";
 import * as S from "./CommunityCommentList.styles";
 
 export default function CommunityCommentListUI() {

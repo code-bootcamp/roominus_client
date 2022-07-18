@@ -4,10 +4,14 @@ import CommunityList from "../comment/CommunityComment.container";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./CommunityDetail.styles";
 import Dompurify from "dompurify";
-import CommunityCommentWrite from "../comment/Write/CommunityCommentWrite.container";
-import CommunityCommentList from "../comment/List/CommunityCommentList.container";
-import { ICommunityDetailProps } from "./CommunityDetail.types";
+import CommunityCommentWrite from "../comment/write/CommunityCommentWrite.container";
+import CommunityCommentList from "../comment/list/CommunityCommentList.container";
+import {
+  IBoardTagsProps,
+  ICommunityDetailProps,
+} from "./CommunityDetail.types";
 import ShareButton from "../../../commons/buttons/sharebutton";
+import { getDateBefore } from "../../../commons/getDate";
 
 export default function CommunityDetailUI(props: ICommunityDetailProps) {
   return (
@@ -21,13 +25,17 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
         <S.PickAndShareBox>
           <S.PickBox>
             <S.RedHeart icon={faHeart} />
-            {/* <S.PickIcon src="/img/community/redheart.png" /> */}
             <S.PickCount>52</S.PickCount>
           </S.PickBox>
           {/* <ShareButton /> */}
         </S.PickAndShareBox>
 
         <S.BoardTitle>{props.data?.fetchBoard.title}</S.BoardTitle>
+        <S.Tag>
+          {props.data?.fetchBoard.boardTags.map((el: IBoardTagsProps) => (
+            <S.Tags key={el.id}># {el.title}</S.Tags>
+          ))}
+        </S.Tag>
         <S.BoardContents>
           {/* {props.data?.fetchBoard.content} */}
           {typeof window !== "undefined" ? (
@@ -46,7 +54,10 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
             onClick={props.onClickList}
             title="목록으로"
           ></WebBlackButton>
-          <WebPurpleButton title="수정하기"></WebPurpleButton>
+          <WebPurpleButton
+            title="수정하기"
+            onClick={props.onClickEdit}
+          ></WebPurpleButton>
           <WebPurpleButton
             onClick={props.onClickDelete}
             title="삭제하기"

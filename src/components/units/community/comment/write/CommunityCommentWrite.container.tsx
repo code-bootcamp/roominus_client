@@ -6,6 +6,7 @@ import {
   CREATE_BOARD_REVIEW,
   FETCH_BOARD_REVIEW,
 } from "./CommunityCommentWrite.queries";
+import Swal from "sweetalert2";
 
 export default function CommunityCommentWrite() {
   const router = useRouter();
@@ -35,7 +36,10 @@ export default function CommunityCommentWrite() {
       });
       reset();
       console.log(result);
-      alert("댓글이 등록되었습니다");
+      Swal.fire({
+        icon: "success",
+        title: "등록이 완료되었습니다!",
+      });
     } catch (error) {
       alert(error.message);
     }

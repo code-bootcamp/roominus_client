@@ -25,7 +25,7 @@ interface IDataProps {
 interface ICommunityNewUIProps {
   onClickList: () => void;
   onClickSubmit: (data: IDataProps) => Promise<void>;
-  // editorRef: RefObject<unknown>;
+  editorRef: RefObject<unknown>;
   onChangeContent: () => void;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
@@ -37,13 +37,17 @@ interface ICommunityNewUIProps {
   setImageUrl: Dispatch<SetStateAction<string>>;
   imageUrl: string;
   setFileUrl: Dispatch<SetStateAction<string>>;
+  isEdit: Boolean;
+  // onClickEdit:
 }
 
 export default function CommunityNewUI(props: ICommunityNewUIProps) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.Title>자유게시글 작성</S.Title>
+        <S.Title>
+          {props.isEdit ? "자유게시글 수정" : "자유게시글 작성"}
+        </S.Title>
         <form
           onSubmit={() => {
             "return false";
@@ -113,8 +117,10 @@ export default function CommunityNewUI(props: ICommunityNewUIProps) {
             ></WebBlackButton>
             <WebPurpleButton
               type="button"
-              onClick={props.handleSubmit(props.onClickSubmit)}
-              title="등록하기"
+              onClick={props.handleSubmit(
+                props.isEdit ? props.onClickEdit : props.onClickSubmit
+              )}
+              title={props.isEdit ? "수정하기" : "등록하기"}
             ></WebPurpleButton>
           </S.ButtonBox>
         </form>
