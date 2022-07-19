@@ -154,7 +154,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                 <MenuItem value={""} disabled>
                   시간을 선택해주세요
                 </MenuItem>
-                {props?.uniqeTime?.map((el: any) => (
+                {props?.ableTime?.map((el: any) => (
                   <MenuItem key={uuidv4()} value={el}>
                     {el}
                   </MenuItem>

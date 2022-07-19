@@ -1,6 +1,6 @@
 import Head from "next/head";
 import WebPurpleButton from "../../commons/buttons/buttonDesktop/WebPurpleButton";
-import { gql, useMutation } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 import { IPaymentProps, IRsp } from "./payment.types";
@@ -26,23 +26,24 @@ const CREATE_RESERVATION = gql`
       reservation_date
       memo
       status
-      # theme_menu {
-      #   reservation_time
-      #   people_number
-      #   price
-      # cafe {
-      #   name
-      # }
-      # theme {
-      #   title
-      # }
-      # }
+    }
+  }
+`;
+
+export const FETCH_USER_LOGGEDIN = gql`
+  query fetchUserLoggedIn {
+    fetchUserLoggedIn {
+      id
+      name
+      email
+      point
+      phone
     }
   }
 `;
 
 export default function Payment(props: IPaymentProps) {
-  // const { data } = useQuery(FETCH_USER_LOGGED_IN);
+  const { data } = useQuery(FETCH_USER_LOGGEDIN);
   const [createReservation] = useMutation(CREATE_RESERVATION);
   const router = useRouter();
 
@@ -57,11 +58,9 @@ export default function Payment(props: IPaymentProps) {
         // merchant_uid: "결제 번호",
         name: "룸인어스",
         amount: props.totalPrice,
-        // buyer_email: email,
-        // buyer_name: name,
-        // buyer_tel: "010-1234-5678",
-        // buyer_addr: "대한민국",
-        // buyer_postcode: "12345",
+        buyer_email: data?.fetchUserLoggedIn.email,
+        buyer_name: data?.fetchUserLoggedIn.name,
+        buyer_tel: data?.fetchUserLoggedIn.phone,
         m_redirect_url: "http://localhost:3000/mypage",
       },
       async function (rsp: IRsp) {

@@ -105,9 +105,6 @@ export default function ReservationSuccess() {
   if (data?.fetchReservation.status === "환불완료") {
     onClickOpenCancelModal();
   }
-  if (!data?.length) {
-    onClickOpenCancelModal();
-  }
 
   return (
     <Container>

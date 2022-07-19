@@ -1,10 +1,11 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, ReactNode } from "react";
 
 export interface IFetchThemeMenus {
   reservation_time: string;
   people_number: number;
 }
 export interface IReservationUIProps {
+  reservations: ReactNode;
   totalPrice: any;
   usePoint: number;
   themeId: string;
