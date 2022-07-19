@@ -16,7 +16,7 @@ export default function LayoutSidebar() {
   const [userInfo] = useRecoilState(userInfoState);
 
   const [logoutgql] = useMutation(LOG_OUT);
-  console.log(accessToken);
+
   const onClickLogout = async () => {
     try {
       const result = await client.mutate({

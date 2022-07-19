@@ -32,19 +32,17 @@ export default function Reservation() {
   const { data } = useQuery(FETCH_THEME_MENUS, {
     variables: { themeId },
   });
+
   const { data: reservations } = useQuery(FETCH_RESERVATIONS, {
     variables: {
       cafeId,
       reservationDate,
     },
   });
-  useEffect(() => {
-    console.log(reservations);
-  }, [reservationDate]);
 
-  console.log(cafeId);
-  console.log(reservationDate);
-  console.log("reservationList", reservations);
+  const soldOut = reservations?.fetchReservations?.map(
+    (el) => el.theme_menu.reservation_time
+  );
 
   const dateFormatter = (str: string) => {
     return str;
@@ -73,6 +71,12 @@ export default function Reservation() {
   );
   const set = new Set(timeResult);
   const uniqeTime = [...set];
+
+  const ableTime = uniqeTime?.filter((el) => {
+    if (!soldOut?.includes(el)) return el;
+  });
+
+  console.log(ableTime);
 
   const onChangeTime = (event: ChangeEvent<HTMLInputElement>) => {
     setTime(event.target.value);
@@ -131,7 +135,7 @@ export default function Reservation() {
         // inputValue={inputValue}
         dateFormatter={dateFormatter}
         // 시간변경
-        uniqeTime={uniqeTime}
+        ableTime={ableTime}
         time={time}
         onChangeTime={onChangeTime}
         selectTime={selectTime}
@@ -164,6 +168,7 @@ export default function Reservation() {
         checked={checked}
         // userInfo
         max={userInfo.point}
+        reservations={reservations}
       />
     </>
   );
