@@ -8,7 +8,7 @@ import { useRecoilState } from "recoil";
 
 export default function LayoutTopHeader() {
   const router = useRouter();
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [accessToken] = useRecoilState(accessTokenState);
   const [logoutgql] = useMutation(LOG_OUT);
   const client = useApolloClient();
   const onClickLogout = async () => {
@@ -31,7 +31,7 @@ export default function LayoutTopHeader() {
       router.push("/home");
     } catch (error) {
       Swal.fire({
-        title: error.message,
+        title: (error as Error).message,
         icon: "error",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",

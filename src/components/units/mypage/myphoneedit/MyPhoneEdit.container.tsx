@@ -31,7 +31,8 @@ export default function MyPhoneEdit() {
     register("phoneNumber", { required: true });
   }, []);
   useEffect(() => {
-    let timer;
+    // eslint-disable-next-line no-undef
+    let timer: string | number | NodeJS.Timer | undefined;
     if (start === 2) {
       let counts = count;
       timeRef.current.style.visibility = "visible";
@@ -75,7 +76,7 @@ export default function MyPhoneEdit() {
     setStart(2);
   };
 
-  const ShowCounts = (data) => {
+  const ShowCounts = (data: number) => {
     const min = Math.floor(data / 60);
     const sec = data % 60;
     const Showcount = `${String(min).padStart(2, "0")}:${String(sec).padStart(

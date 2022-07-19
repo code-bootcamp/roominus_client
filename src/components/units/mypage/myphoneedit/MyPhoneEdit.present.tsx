@@ -3,8 +3,9 @@ import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButto
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 
 import * as S from "./MyPhoneEdit.styles";
+import { IMyPhoneEditUIProps } from "./MyPhoneEdit.type";
 
-export default function MyPhoneEditUI(props) {
+export default function MyPhoneEditUI(props: IMyPhoneEditUIProps) {
   return (
     <S.Container>
       <S.Title>회원정보 수정</S.Title>

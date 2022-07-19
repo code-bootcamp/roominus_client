@@ -5,10 +5,6 @@ export const FETCH_THEMES_ALL = gql`
     fetchThemesAll {
       id
       title
-      # cafe {
-      #   id
-      #   name
-      # }
     }
   }
 `;

@@ -7,6 +7,7 @@ import { DELETE_USER } from "./DeleteMember.query";
 import Swal from "sweetalert2";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
+import { IData } from "./DeleteMember.types";
 
 const schema = yup.object({
   email: yup.string().required("필수 입력 사항입니다."),
@@ -19,7 +20,7 @@ export default function DeleteMember() {
     mode: "onChange",
   });
   const [deleteUsergql] = useMutation(DELETE_USER);
-  const onSubmitDeletMember = async (data) => {
+  const onSubmitDeleteMember = async (data: IData) => {
     try {
       await deleteUsergql({
         variables: {
@@ -35,7 +36,7 @@ export default function DeleteMember() {
       router.push("/home");
     } catch (error) {
       Swal.fire({
-        title: error.message,
+        title: (error as Error).message,
         icon: "error",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
@@ -50,7 +51,7 @@ export default function DeleteMember() {
   return (
     <DeleteMemberUI
       handleSubmit={handleSubmit}
-      onSubmitDeletMember={onSubmitDeletMember}
+      onSubmitDeleteMember={onSubmitDeleteMember}
       formState={formState}
       setValue={setValue}
       trigger={trigger}

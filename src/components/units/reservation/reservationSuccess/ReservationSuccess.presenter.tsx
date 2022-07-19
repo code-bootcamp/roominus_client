@@ -41,12 +41,6 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
                   bgColor={"#ffffff"}
                   fgColor={"#4a00e0e7"}
                   includeMargin={false}
-                  // imageSettings={{
-                  //   src: "/img/layout/graylogo.png",
-                  //   height: 20,
-                  //   width: 110,
-                  //   excavate: false,
-                  // }}
                 />
               </S.QRcode>
               <span>{ID?.slice(-12).toUpperCase()}</span>
@@ -126,7 +120,6 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
           type="button"
           title="취소하기"
         />
-
         <Link href={"/mypage"}>
           <WebPurpleButton type="button" title="목록으로" />
         </Link>

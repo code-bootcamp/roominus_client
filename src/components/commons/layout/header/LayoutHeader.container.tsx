@@ -16,7 +16,6 @@ export default function LayoutHeader() {
 
       setIsToggled(!isToggled);
     }
-    console.log(event.target, router);
   };
 
   const onClickToggled = () => {

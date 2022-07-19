@@ -155,7 +155,6 @@ export const TypingBox = styled.div`
   color: #4a00e0e7;
   font-family: "GowunDodum-Regular";
   text-shadow: 1px 1px 0px #b6a2ea, 2px 2px 0px #9eabe6, 3px 1px 0px #bf9eeb;
-  border-bottom: 1px solid #76bbe0;
 
   @media ${breakPoints.mobile} {
     font-size: 1.6em;

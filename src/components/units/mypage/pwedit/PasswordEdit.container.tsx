@@ -68,7 +68,7 @@ export default function PWedit() {
     }, 1000);
   };
 
-  const onSubmitChangePassword = (data) => {
+  const onSubmitChangePassword = (data: string) => {
     console.log(data);
   };
 
