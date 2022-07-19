@@ -4,7 +4,6 @@ import { QRCodeSVG } from "qrcode.react";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import { IReservationSuccessUI } from "./ReservationSuccess.types";
-import dayjs from "dayjs";
 
 export default function ReservationSuccessUI(props: IReservationSuccessUI) {
   const ID = props.data?.fetchReservation.id;

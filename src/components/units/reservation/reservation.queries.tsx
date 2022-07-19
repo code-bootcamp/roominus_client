@@ -44,3 +44,15 @@ export const FETCH_THEME_MENUS = gql`
     }
   }
 `;
+
+export const FETCH_RESERVATIONS = gql`
+  query fetchReservatoins($cafeId: String!, $reservationDate: String!) {
+    fetchReservatoins(cafeId: $cafeId, reservationDate: $reservationDate) {
+      id
+      reservation_date
+      theme_menu {
+        reservation_time
+      }
+    }
+  }
+`;
