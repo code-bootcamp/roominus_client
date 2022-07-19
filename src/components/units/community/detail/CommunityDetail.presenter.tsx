@@ -18,7 +18,7 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
     <S.Container>
       <S.Wrapper>
         <S.NameDateBox>
-          <S.WriterName>작성자</S.WriterName>
+          <S.WriterName>{props.data?.fetchBoard.user?.name}</S.WriterName>
           <S.Date>{getDateBefore(props.data?.fetchBoard.createdAt)}</S.Date>
         </S.NameDateBox>
         <S.ImageBox src={props.data?.fetchBoard.mainImg} />

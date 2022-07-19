@@ -42,9 +42,12 @@ export const SearchBox = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  /* align-items: center; */
+  justify-content: center;
   margin: auto;
+
+  @media ${breakPoints.tablet} {
+    width: 80vw;
+  }
 
   @media ${breakPoints.mobile} {
     height: 75%;
@@ -69,12 +72,16 @@ export const SearchDetailBox = styled.div`
 `;
 
 export const DetailBox = styled.div`
-  width: 38%; //35vw
-  height: 40px;
+  width: 40%; //35vw
+  height: 45px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   /* background-color: green; */
+
+  @media ${breakPoints.tablet} {
+    width: 45%;
+  }
 
   @media ${breakPoints.mobile} {
     display: flex;
@@ -84,20 +91,42 @@ export const DetailBox = styled.div`
   }
 `;
 
+export const LocationSelect = styled.select`
+  display: none;
+
+  @media ${breakPoints.mobile} {
+    display: block;
+    border: none;
+    outline: none;
+    background-color: white;
+    /* width: 21em; */
+    width: 80%;
+    height: 40px;
+    font-size: 1.2em;
+  }
+`;
+
 export const DetailTitle = styled.h3`
-  /* width: 15%; //3.5vw */
+  width: 3em; //3.5vw
   /* height: 100%; */
   height: 45px;
-  margin-right: 1em;
+  /* margin-right: 1em; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   /* background-color: yellow; */
+  font-size: 1.4em;
+
+  @media ${breakPoints.tablet} {
+    width: 15%;
+    font-size: 1.3em;
+  }
 
   @media ${breakPoints.mobile} {
     /* width: 3em; */
     /* margin-right: 0.5em; */
     /* background-color: yellow; */
+    font-size: 1.5em;
   }
 `;
 
@@ -109,7 +138,7 @@ interface ILocationButtonProps {
 }
 
 export const LocationButtonTotal = styled.button`
-  width: 16%;
+  width: 19%;
   height: 45px;
   margin-right: 0.5em;
   border: none;
@@ -131,7 +160,7 @@ export const LocationButtonTotal = styled.button`
 `;
 
 export const LocationButtonGangnam = styled.button`
-  width: 16%;
+  width: 19%;
   height: 45px;
   margin-right: 0.5em;
   border: none;
@@ -152,7 +181,7 @@ export const LocationButtonGangnam = styled.button`
 `;
 
 export const LocationButtonHongdae = styled.button`
-  width: 16%;
+  width: 19%;
   height: 45px;
   margin-right: 0.5em;
   border: none;
@@ -173,7 +202,7 @@ export const LocationButtonHongdae = styled.button`
 `;
 
 export const LocationButtonKondae = styled.button`
-  width: 16%;
+  width: 19%;
   height: 45px;
   margin-right: 0.5em;
   border: none;
@@ -194,20 +223,6 @@ export const LocationButtonKondae = styled.button`
   }
 `;
 
-export const LocationSelect = styled.select`
-  display: none;
-
-  @media ${breakPoints.mobile} {
-    display: block;
-    border: none;
-    outline: none;
-    background-color: white;
-    /* width: 21em; */
-    width: 80%;
-    height: 40px;
-  }
-`;
-
 export const LocationOption = styled.option`
   display: none;
 
@@ -225,9 +240,12 @@ export const DetailContents = styled.input`
   outline: none;
   border-bottom: 1px solid #bdbdbd;
   padding-left: 0.5em;
+  font-size: 1.1em;
+  margin-left: 1em;
 
   @media ${breakPoints.mobile} {
     width: 80%;
+    font-size: 1.2em;
     /* width: 21em; */
     /* height: 20px; */
   }

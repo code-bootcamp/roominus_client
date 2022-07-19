@@ -18,7 +18,7 @@ const FETCH_BOARD = gql`
 `;
 
 export default function CommunityEditPage() {
-  useAuth();
+  // useAuth();
 
   const router = useRouter();
 
@@ -26,5 +26,5 @@ export default function CommunityEditPage() {
     variables: { id: router.query.id },
   });
 
-  return loading ? <></> : <CommunityNew isEdit={true} EditData={data} />;
+  return loading ? <></> : <CommunityNew isEdit={true} editData={data} />;
 }

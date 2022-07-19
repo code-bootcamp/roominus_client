@@ -33,14 +33,14 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
                 <S.ContentsTitle>소개</S.ContentsTitle>
                 <S.Contents>{props.data?.fetchCafe.intro_content}</S.Contents>
               </S.InfoContentsBox>
-              <div>
+              <S.LocationFlex>
                 <S.ContentsTitle>위치</S.ContentsTitle>
-                <KakaoMap data={props.data} />
-                {/* <S.LocationIcon src="/img/cafe/location.webp" /> */}
                 <S.LocationDetail>
-                  📍{props.data?.fetchCafe.address_detail}
+                  | {props.data?.fetchCafe.address_detail}
                 </S.LocationDetail>
-              </div>
+              </S.LocationFlex>
+              <KakaoMap data={props.data} />
+              {/* <S.LocationIcon src="/img/cafe/location.webp" /> */}
             </S.InfoLocationBox>
           )}
           {props.tabKey === "2" && (

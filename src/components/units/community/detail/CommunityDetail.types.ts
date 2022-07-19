@@ -14,6 +14,9 @@ export interface ICommunityDetailProps {
       title: string;
       content: string;
       boardTags: [];
+      user: {
+        name: string;
+      };
     };
   };
 }

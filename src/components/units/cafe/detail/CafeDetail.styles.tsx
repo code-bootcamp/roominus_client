@@ -127,6 +127,11 @@ export const InfoContentsBox = styled.div`
   margin: 1em 0em 2em 0em;
 `;
 
+export const LocationFlex = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const ContentsTitle = styled.h2``;
 
 export const Contents = styled.p`
@@ -151,7 +156,9 @@ export const LocationIcon = styled.img`
 
 export const LocationDetail = styled.p`
   font-size: 1.2em;
-  margin-top: 0.8em;
+  margin: 0.3em 0em 0em 0.5em;
+  color: #a3a8b7;
+  /* margin-top: 0.8em; */
   /* background-color: yellow; */
 `;
 

@@ -52,10 +52,10 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
               <S.DetailContents placeholder="매장을 입력해주세요." />
             </S.DetailBox>
           </S.SearchDetailBox>
-          <S.ButtonBox>
+          {/* <S.ButtonBox>
             <WebBlackButton title="초기화" />
             <WebPurpleButton title="검색하기" />
-          </S.ButtonBox>
+          </S.ButtonBox> */}
         </S.SearchBox>
       </S.SearchWrapper>
       <S.ListWrapper>

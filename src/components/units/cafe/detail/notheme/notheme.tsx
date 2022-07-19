@@ -26,7 +26,7 @@ export default function NoTheme() {
   return (
     <SorryBox>
       <Sorry src="/img/reservation/sorry.webp" />
-      <SorryTitle>앗! 현재는 테마 준비 중입니다.</SorryTitle>
+      <SorryTitle>앗! 현재 운영 중인 테마가 없습니다.</SorryTitle>
     </SorryBox>
   );
 }

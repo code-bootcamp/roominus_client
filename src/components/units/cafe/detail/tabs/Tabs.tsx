@@ -101,7 +101,7 @@ const MenuTabs = (props: IMenuTabsProps) => (
     <Tabs
       defaultActiveKey="1"
       onChange={props.onChangeKey}
-      size="large"
+      // size="large"
       // type="card"
     >
       <TabPane tab="매장 소개" key="1">

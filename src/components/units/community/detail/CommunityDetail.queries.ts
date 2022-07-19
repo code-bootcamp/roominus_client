@@ -18,6 +18,10 @@ export const FETCH_BOARD = gql`
         id
         title
       }
+      user {
+        id
+        name
+      }
     }
   }
 `;

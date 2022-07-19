@@ -14,4 +14,5 @@ export interface IAdminCafeListUIProps {
     el: IFetchCafesProps
   ) => (event: MouseEvent<HTMLDivElement>) => void;
   data: any;
+  loadFunc: () => void;
 }
