@@ -19,6 +19,13 @@ export interface IThemeCommentWriteProps {
   setIsEdit: Dispatch<SetStateAction<boolean>>;
 }
 
+export interface IWriteCommentData {
+  star: number;
+  content: string;
+  rank: string;
+  clear: boolean;
+}
+
 export interface IThemeCommentWriteUIProps {
   el: any;
   isEdit: Boolean;
@@ -28,8 +35,8 @@ export interface IThemeCommentWriteUIProps {
   formState: FormState<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   register: UseFormRegister<FieldValues>;
-  onClickUpdate: Function;
-  onClickSubmit: Function;
+  onClickUpdate: (data: IWriteCommentData) => Promise<void>;
+  onClickSubmit: (data: IWriteCommentData) => Promise<void>;
 }
 
 export interface IDataProps {
@@ -42,4 +49,5 @@ export interface IDataProps {
 export interface IStylesProps {
   selected?: boolean;
   checked?: boolean;
+  isEdit?: Boolean;
 }

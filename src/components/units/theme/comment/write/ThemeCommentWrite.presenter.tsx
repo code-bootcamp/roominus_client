@@ -1,6 +1,11 @@
 import * as S from "./ThemeCommentWrite.styles";
-import { ChangeEvent, ReactNode, useEffect, useState } from "react";
-import type { RadioChangeEvent } from "antd";
+import {
+  ChangeEvent,
+  FormEventHandler,
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
 import { FrownOutlined, MehOutlined, SmileOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -16,8 +21,8 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
   ];
 
   const [isEscape, setIsEscape] = useState(false);
-  const [rank, setRank] = useState();
-
+  const [rank, setRank] = useState<string>("보통");
+  const [star, setStar] = useState<number>(3);
   const customIcons: Record<number, ReactNode> = {
     1: <FrownOutlined />,
     2: <FrownOutlined />,
@@ -42,21 +47,25 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
     props.trigger("clear");
   };
 
-  const onChange = (e: RadioChangeEvent) => {
-    setRank(e.target.value);
-    props.setValue("rank", e.target.value);
+  const onClickRank: FormEventHandler<HTMLButtonElement> = (
+    event: ChangeEvent<HTMLButtonElement>
+  ) => {
+    setRank(event.target.value);
+    props.setValue("rank", event.target.value);
   };
 
-  const onChangeStar = (event: ChangeEvent) => {
-    props.setValue("star", Number(event));
+  const onChangeStar = (value: number) => {
+    props.setValue("star", Number(value));
     props.trigger("star");
+    setStar(value);
   };
 
   useEffect(() => {
     props.setValue("clear", Boolean(props.el?.clear || isEscape));
-    props.setValue("rank", props.el?.rank);
-    props.setValue("star", Number(props.el?.star));
+    props.setValue("rank", props.el?.rank || rank);
+    props.setValue("star", Number(props.el?.star) || star);
     setIsEscape(Boolean(props.el?.clear));
+    setRank(props.el?.rank);
   }, []);
 
   return (
@@ -67,12 +76,13 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
           : props.handleSubmit(props.onClickSubmit)
       }
     >
-      <S.Wrapper>
+      <S.Wrapper isEdit={props.isEdit}>
         <S.StarBox>
           <S.StarScore
             tooltips={desc}
-            style={{ fontSize: "35px", color: "#7457E8" }}
-            defaultValue={props.el?.star}
+            style={{ fontSize: "3em", color: "#7457E8" }}
+            // defaultValue={props.el?.star || 3}
+            defaultValue={props.el?.star || star}
             character={({ index }: { index: number }) => customIcons[index + 1]}
             onChange={onChangeStar}
           />
@@ -85,7 +95,8 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
                 margin: "4px",
                 cursor: "pointer",
                 position: "absolute",
-                right: "2em",
+                right: "1em",
+                color: "#5c4a7e",
               }}
             />
           ) : (
@@ -110,35 +121,31 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
             </S.RadioButton>
           </S.RadioGroup>
           <S.RankBox>
-            <S.RadioGroup
-              color="secondary"
-              onChange={onChange}
-              defaultValue={props.el?.rank}
-            >
+            <S.RadioGroup color="secondary" defaultValue={props.el?.rank}>
               <S.RadioButton
-                onClick={onChange}
-                selected={(rank || props.el?.rank) === "쉬움"}
+                onClick={onClickRank}
+                selected={rank === "쉬움"}
                 value="쉬움"
               >
                 쉬움
               </S.RadioButton>
               <S.RadioButton
-                onClick={onChange}
-                selected={(rank || props.el?.rank) === "보통"}
+                onClick={onClickRank}
+                selected={rank === "보통"}
                 value="보통"
               >
                 보통
               </S.RadioButton>
               <S.RadioButton
-                onClick={onChange}
-                selected={(rank || props.el?.rank) === "어려움"}
+                onClick={onClickRank}
+                selected={rank === "어려움"}
                 value="어려움"
               >
                 어려움
               </S.RadioButton>
               <S.RadioButton
-                onClick={onChange}
-                selected={(rank || props.el?.rank) === "매우 어려움"}
+                onClick={onClickRank}
+                selected={rank === "매우 어려움"}
                 value="매우 어려움"
               >
                 매우 어려움

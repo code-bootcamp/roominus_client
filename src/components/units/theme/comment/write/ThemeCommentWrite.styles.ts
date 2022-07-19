@@ -7,21 +7,21 @@ import { Rate } from "antd";
 import { IStylesProps } from "./ThemeCommentWriter.types";
 
 export const Wrapper = styled.section`
+  position: relative;
   background-color: #f2ebf5;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 290px;
+  height: 250px;
   border-radius: 8px;
+  box-shadow: ${(props: IStylesProps) =>
+    props.isEdit ? "0px 0px 4px 0 #5c4a7e" : ""};
 `;
 
 export const StarBox = styled.div`
   display: flex;
   flex-direction: row;
-  /* background-color: white;
-  padding: 0.5em;
-  border-radius: 8px; */
 `;
 
 export const StarScore = styled(Rate)`
@@ -84,7 +84,6 @@ export const EscapeInput = styled.input`
 
 export const EscapeButton = styled.div`
   cursor: pointer;
-  /* width: 5em; */
   display: absolute;
   flex-direction: row;
   justify-content: center;
@@ -119,7 +118,6 @@ export const RadioButton = styled(Button)`
   border: 1px solid #a08bf3;
   background-color: ${(props: IStylesProps) =>
     props.selected || props.checked ? "#A08BF3" : ""};
-  /* background-color: yellowgreen; */
   color: #4a00e0;
   :focus {
     background-color: #a08bf3;
