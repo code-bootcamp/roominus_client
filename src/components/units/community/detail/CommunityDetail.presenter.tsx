@@ -65,6 +65,10 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
         </S.ButtonBox>
       </S.Wrapper>
       <S.Comment>
+        <S.CommentTitleBox>
+          <S.CommentIcon src="/img/community/comment/commentIcon.webp" />
+          <S.CommentTitle>댓글</S.CommentTitle>
+        </S.CommentTitleBox>
         <CommunityCommentWrite />
         <CommunityCommentList />
         <CommunityList />

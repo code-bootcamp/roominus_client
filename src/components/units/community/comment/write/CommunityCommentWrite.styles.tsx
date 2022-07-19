@@ -58,7 +58,8 @@ export const CommentWriteBox = styled.div`
   }
 `;
 
-export const Name = styled.h4`
+export const Name = styled.h3`
+  margin-bottom: 0em;
   width: 15%;
   height: 2.5em;
   display: flex;

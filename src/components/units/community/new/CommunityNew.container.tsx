@@ -42,12 +42,6 @@ export default function CommunityNew(props) {
     trigger("content");
   };
 
-  // toastUI defaultValue
-  useEffect(() => {
-    const html = props.editData?.fetchBoard.content;
-    editorRef.current?.getInstance().setHTML(html);
-  }, [props.editData]);
-
   const onClickList = () => {
     router.push("/community");
   };
@@ -141,6 +135,12 @@ export default function CommunityNew(props) {
     if (props.editData?.fetchBoard.mainImg) {
       setImageUrl(props.editData?.fetchBoard.mainImg);
     }
+  }, [props.editData]);
+
+  // toastUI defaultValue
+  useEffect(() => {
+    const html = props.editData?.fetchBoard.content;
+    editorRef.current?.getInstance().setHTML(html);
   }, [props.editData]);
 
   return (

@@ -4,10 +4,10 @@ import * as S from "./CommunityCommentWrite.styles";
 export default function CommunityCommentWriteUI(props) {
   return (
     <S.Wrapper>
-      <S.CommentTitleBox>
+      {/* <S.CommentTitleBox>
         <S.CommentIcon src="/img/community/comment/commentIcon.webp" />
         <S.CommentTitle>댓글</S.CommentTitle>
-      </S.CommentTitleBox>
+      </S.CommentTitleBox> */}
       <form onSubmit={props.handleSubmit(props.onClickComment)}>
         <S.CommentWriteBox>
           <S.Name>이영* 님</S.Name>

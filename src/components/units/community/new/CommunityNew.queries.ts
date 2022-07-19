@@ -28,6 +28,7 @@ export const UPDATE_BOARD = gql`
       content
       mainImg
       boardTags {
+        id
         title
       }
     }
