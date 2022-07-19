@@ -3,7 +3,11 @@ import { useQuery } from "@apollo/client";
 import { ChangeEvent, useEffect, useState } from "react";
 import ReservationUI from "./reservation.present";
 import dayjs from "dayjs";
-import { FETCH_THEMES_ALL, FETCH_THEME_MENUS } from "./reservation.queries";
+import {
+  FETCH_RESERVATIONS,
+  FETCH_THEMES_ALL,
+  FETCH_THEME_MENUS,
+} from "./reservation.queries";
 import { IFetchThemeMenus } from "./reservation.types";
 import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../commons/store";
@@ -28,6 +32,19 @@ export default function Reservation() {
   const { data } = useQuery(FETCH_THEME_MENUS, {
     variables: { themeId },
   });
+  const { data: reservations } = useQuery(FETCH_RESERVATIONS, {
+    variables: {
+      cafeId,
+      reservationDate,
+    },
+  });
+  useEffect(() => {
+    console.log(reservations);
+  }, [reservationDate]);
+
+  console.log(cafeId);
+  console.log(reservationDate);
+  console.log("reservationList", reservations);
 
   const dateFormatter = (str: string) => {
     return str;
@@ -48,7 +65,6 @@ export default function Reservation() {
 
   const onChangeDate = (date: string) => {
     const selectDate = dayjs(date).format("YYYY-MM-DD");
-    console.log(selectDate);
     setReservationDate(selectDate);
   };
 

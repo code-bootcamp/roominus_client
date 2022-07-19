@@ -89,7 +89,7 @@ export default function ReservationSuccess() {
     });
   };
 
-  const onClickOpenBackModal = () => {
+  const onClickOpenCancelModal = () => {
     Swal.fire({
       title: "취소 된 예약건입니다.",
       icon: "error",
@@ -103,7 +103,10 @@ export default function ReservationSuccess() {
   };
 
   if (data?.fetchReservation.status === "환불완료") {
-    onClickOpenBackModal();
+    onClickOpenCancelModal();
+  }
+  if (!data?.length) {
+    onClickOpenCancelModal();
   }
 
   return (
