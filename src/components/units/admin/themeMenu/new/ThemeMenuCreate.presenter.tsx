@@ -1,5 +1,6 @@
 import * as S from "./ThemeMenuCreate.styles";
-export default function ThemeMenuCreateUI(props) {
+import { IThemeMenuCreateUIProps } from "./ThemeMenuCreate.types";
+export default function ThemeMenuCreateUI(props: IThemeMenuCreateUIProps) {
   return (
     <section>
       <h1>테마 메뉴 추가 페이지</h1>

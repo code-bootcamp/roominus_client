@@ -1,6 +1,7 @@
 import * as S from "./ThemeMenuList.styles";
+import { IThemeMenuListUIProps } from "./ThemeMenuList.types";
 
-export default function ThemeMenuListUI(props) {
+export default function ThemeMenuListUI(props: IThemeMenuListUIProps) {
   return (
     <section>
       <h1>테마 메뉴들</h1>
