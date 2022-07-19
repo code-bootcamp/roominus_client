@@ -8,56 +8,61 @@ export default function LoginUI(props: ILoginUIProps) {
     <S.Wrapper>
       <S.Title>로그인</S.Title>
       <S.Form onSubmit={props.handleSubmit(props.onSubmitLogin)}>
-        <S.IDdBox>
-          <S.Input
-            type="text"
-            name="email"
-            placeholder="아이디를 입력해주세요"
-            onChange={(e) => {
-              props.setValue("email", e.target.value);
-              props.trigger("email");
-            }}
-          />
-        </S.IDdBox>
-        <S.Error>{props.formState.errors.email?.message}</S.Error>
-        <S.PasswordBox>
-          <S.Input
-            onChange={(e) => {
-              props.setValue("password", e.target.value);
-              props.trigger("password");
-            }}
-            name="password"
-            ref={props.passwordInputRef}
-            type="password"
-            placeholder="비밀번호를 입력해주세요"
-          />
-          {props.openEye && (
-            <S.EyeBox>
-              <FontAwesomeIcon
-                icon={faEye}
-                style={{
-                  color: "purple",
-                  fontSize: "1.5em",
-                  cursor: "pointer",
-                }}
-              />
-            </S.EyeBox>
-          )}
-          {!props.openEye && (
-            <S.EyeBox>
-              <FontAwesomeIcon
-                onClick={props.onClickShowPassword}
-                icon={faEyeSlash}
-                style={{
-                  color: "purple",
-                  fontSize: "1.5em",
-                  cursor: "pointer",
-                }}
-              />
-            </S.EyeBox>
-          )}
-        </S.PasswordBox>
-        <S.Error>{props.formState.errors.password?.message}</S.Error>
+        <S.IDBoxes>
+          <S.IDdBox>
+            <S.Input
+              type="text"
+              name="email"
+              placeholder="아이디를 입력해주세요"
+              onChange={(e) => {
+                props.setValue("email", e.target.value);
+                props.trigger("email");
+              }}
+            />
+          </S.IDdBox>
+          <S.Error>{props.formState.errors.email?.message}</S.Error>
+        </S.IDBoxes>
+        <S.PasswordBoxes>
+          <S.PasswordBox>
+            <S.Input
+              onChange={(e) => {
+                props.setValue("password", e.target.value);
+                props.trigger("password");
+              }}
+              name="password"
+              ref={props.passwordInputRef}
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            {props.openEye && (
+              <S.EyeBox>
+                <FontAwesomeIcon
+                  icon={faEye}
+                  style={{
+                    color: "purple",
+                    fontSize: "1.5em",
+                    cursor: "pointer",
+                  }}
+                />
+              </S.EyeBox>
+            )}
+            {!props.openEye && (
+              <S.EyeBox>
+                <FontAwesomeIcon
+                  onClick={props.onClickShowPassword}
+                  icon={faEyeSlash}
+                  style={{
+                    color: "purple",
+                    fontSize: "1.5em",
+                    cursor: "pointer",
+                  }}
+                />
+              </S.EyeBox>
+            )}
+          </S.PasswordBox>
+          <S.Error>{props.formState.errors.password?.message}</S.Error>
+        </S.PasswordBoxes>
+
         <S.LoginBtn>로그인</S.LoginBtn>
       </S.Form>
       <S.SignUpBox>
