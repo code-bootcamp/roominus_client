@@ -11,14 +11,8 @@ import {
 import {
   IThemeCommentWriteProps,
   IUpdateThemeReviewInput,
+  IWriteCommentData,
 } from "./ThemeCommentWriter.types";
-
-type Comment = {
-  content: string;
-  star: number;
-  clear: boolean;
-  rank: string;
-};
 
 export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
   const router = useRouter();
@@ -26,12 +20,12 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
   const [createThemeReview] = useMutation(CREATE_THEME_REVIEW);
   const [updateThemeReview] = useMutation(UPDATE_THEME_REVIEW);
 
-  const { register, handleSubmit, formState, setValue, trigger, reset } =
+  const { register, handleSubmit, formState, setValue, trigger, resetField } =
     useForm({
       mode: "onChange",
     });
 
-  const onClickSubmit: SubmitHandler<Comment> = async (data) => {
+  const onClickSubmit = async (data: IWriteCommentData) => {
     if (!data.star) {
       Swal.fire("만족도를 선택해주세요!");
       return;
@@ -61,13 +55,15 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
           },
         ],
       });
-      reset();
+      resetField("star");
+      resetField("rank");
+      resetField("content");
     } catch (error) {
       alert((error as Error).message);
     }
   };
 
-  const onClickUpdate = async (data: Comment) => {
+  const onClickUpdate = async (data: IWriteCommentData) => {
     try {
       const updateThemeReviewInput: IUpdateThemeReviewInput = {};
       if (data.content) updateThemeReviewInput.content = data.content;
@@ -88,7 +84,6 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
         ],
       });
       props?.setIsEdit(false);
-      reset();
     } catch (error) {
       alert((error as Error).message);
     }

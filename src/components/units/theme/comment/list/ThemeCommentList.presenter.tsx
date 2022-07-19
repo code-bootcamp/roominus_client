@@ -5,6 +5,7 @@ import {
   IFetchThemeReviewsData,
   IThemeCommentListUIProps,
 } from "./ThemeCommentList.types";
+import { v4 as uuidv4 } from "uuid";
 
 export default function ThemeCommentListUI(props: IThemeCommentListUIProps) {
   return (
@@ -13,7 +14,6 @@ export default function ThemeCommentListUI(props: IThemeCommentListUIProps) {
         pageStart={0}
         loadMore={props.loadMore}
         hasMore={true}
-        // loader={<div key={30}>열심히 불러오는 중</div>}
         useWindow={false}
         style={{
           width: "100%",
@@ -22,8 +22,8 @@ export default function ThemeCommentListUI(props: IThemeCommentListUIProps) {
         <S.CommentList>
           {props.data?.fetchThemeReviews.map(
             (el: IFetchThemeReviewsData, index: number) => (
-              <div key={el.id}>
-                <ThemeCommentListUIItem setIsEdit={props.setIsEdit} el={el} />
+              <div key={uuidv4()}>
+                <ThemeCommentListUIItem el={el} />
               </div>
             )
           )}
