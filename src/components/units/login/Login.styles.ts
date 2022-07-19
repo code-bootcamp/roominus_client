@@ -34,6 +34,11 @@ export const Input = styled.input`
   outline: none;
   font-size: 1.3em;
 `;
+export const IDBoxes = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 export const IDdBox = styled.div`
   width: 100%;
   display: flex;
@@ -45,12 +50,16 @@ export const Error = styled.div`
   color: red;
   margin-bottom: 2em;
 `;
+export const PasswordBoxes = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 export const PasswordBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-bottom: 2em;
 `;
 export const EyeBox = styled.div`
   position: absolute;

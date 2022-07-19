@@ -14,10 +14,13 @@ export default function LayoutTopHeader() {
     try {
       const result = await client.mutate({
         mutation: LOG_OUT,
+
         context: {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+          uri: "https://wawoong.shop/graphql",
+          // headers: {
+          //   Authorization: `Bearer ${accessToken}`,
+          // },
+          credentials: "include",
         },
       });
       console.log(result);
