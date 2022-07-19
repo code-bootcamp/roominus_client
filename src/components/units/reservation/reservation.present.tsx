@@ -24,7 +24,13 @@ export default function ReservationUI(props: IReservationUIProps) {
     Swal.fire({
       icon: "error",
       title: "적립금 오류",
-      text: "금액 오류가 발생하였습니다",
+    });
+  }
+
+  if (props.max < props.usePoint || props.usePoint < 0) {
+    Swal.fire({
+      icon: "error",
+      title: "적립금 오류",
     });
   }
 
@@ -71,6 +77,9 @@ export default function ReservationUI(props: IReservationUIProps) {
               helperText="예약이 가능한 테마만 선택이 가능합니다."
               style={{ paddingBottom: "1.3em" }}
             >
+              <MenuItem value={""} disabled>
+                테마를 선택해주세요
+              </MenuItem>
               {props?.themesList?.fetchThemesAll?.map((el: any) => (
                 <MenuItem key={uuidv4()} value={el.id}>
                   {el.title}
@@ -91,6 +100,9 @@ export default function ReservationUI(props: IReservationUIProps) {
                 helperText="예약이 가능한 매장만 선택이 가능합니다."
                 style={{ paddingBottom: "1.3em" }}
               >
+                <MenuItem value={""} disabled>
+                  매장을 선택해주세요
+                </MenuItem>
                 <MenuItem value={props?.data?.fetchThemeMenus[0]?.cafe?.id}>
                   {props?.data?.fetchThemeMenus[0]?.cafe?.name}
                 </MenuItem>
@@ -108,14 +120,12 @@ export default function ReservationUI(props: IReservationUIProps) {
                     autoOk={true}
                     disablePast={true}
                     id="filled-date"
-                    // label="방문일을 선택해주세요"
                     placeholder="방문일을 선택해주세요"
                     showTodayButton={true}
                     value={props?.reservationDate ? props?.reservationDate : ""}
                     format="YYYY-MM-DD"
                     mask={"____-__-__"}
                     maxDate={MaxDate}
-                    maxDateMessage="예약 가능한 일정이 없습니다."
                     onChange={props.onChangeDate}
                     rifmFormatter={props.dateFormatter}
                     KeyboardButtonProps={{
@@ -141,6 +151,9 @@ export default function ReservationUI(props: IReservationUIProps) {
                 helperText="방문하실 시간을 선택해주세요."
                 style={{ paddingBottom: "1.3em" }}
               >
+                <MenuItem value={""} disabled>
+                  시간을 선택해주세요
+                </MenuItem>
                 {props?.uniqeTime?.map((el: any) => (
                   <MenuItem key={uuidv4()} value={el}>
                     {el}
@@ -164,6 +177,9 @@ export default function ReservationUI(props: IReservationUIProps) {
                   helperText="방문하시는 인원을 선택해주세요."
                   style={{ paddingBottom: "1.3em" }}
                 >
+                  <MenuItem value={""} disabled>
+                    인원을 선택해주세요
+                  </MenuItem>
                   {props?.selectTime?.map((el: any) => (
                     <MenuItem key={uuidv4()} value={el}>
                       {el}
@@ -176,17 +192,20 @@ export default function ReservationUI(props: IReservationUIProps) {
               props?.themeId &&
               props?.cafeId &&
               props.reservationDate && (
-                <TextField
-                  id="filled-point"
-                  label="적립금을 입력해주세요"
-                  type="number"
-                  fullWidth
-                  onChange={props.onChangePoint}
-                  variant="outlined"
-                  InputProps={{ inputProps: { min: 0, max: 5000 } }}
-                  helperText="보유하신 적립금 중 입력 가능합니다."
-                  style={{ paddingBottom: "1.3em" }}
-                />
+                <>
+                  {" "}
+                  <TextField
+                    id="filled-point"
+                    label="적립금을 입력해주세요"
+                    type="number"
+                    fullWidth
+                    onChange={props.onChangePoint}
+                    variant="outlined"
+                    style={{ paddingBottom: "1.3em" }}
+                    defaultValue={props.max}
+                  />
+                  <span>현재 적립금 {props.max}원 사용이 가능합니다</span>
+                </>
               )}
 
             {!!props?.data?.fetchThemeMenus.length &&

@@ -4,13 +4,14 @@ import { QRCodeSVG } from "qrcode.react";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import { IReservationSuccessUI } from "./ReservationSuccess.types";
+import dayjs from "dayjs";
 
 export default function ReservationSuccessUI(props: IReservationSuccessUI) {
   const ID = props.data?.fetchReservation.id;
   return (
     <S.Container>
       <S.TitleBox>
-        <h1>예약이 완료되었습니다</h1>
+        <h1>{props.data?.fetchReservation.status}</h1>
       </S.TitleBox>
 
       <S.Wrapper ref={props.printRef}>
@@ -28,9 +29,26 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
             </S.ThemeTitleBox>
             <S.ThemeInfoBox>
               <span>
+                참가 인원 |{" "}
                 {props.data?.fetchReservation.theme_menu.people_number}명
               </span>
-              <span>{props.data?.fetchReservation.theme_menu.price}원</span>
+              <span>
+                결제 금액 | {props.data?.fetchReservation.theme_menu.price}원
+              </span>
+
+              <span>
+                탈출일 | {props.data?.fetchReservation.reservation_date}
+              </span>
+              <span>
+                탈출 시간 |{" "}
+                {props.data?.fetchReservation.theme_menu.reservation_time} ~
+              </span>
+              <S.ClearTimeBox>
+                <S.ClearTime>
+                  소요시간 :{" "}
+                  {props.data?.fetchReservation.theme_menu.theme.clearTime}분
+                </S.ClearTime>
+              </S.ClearTimeBox>
             </S.ThemeInfoBox>
 
             <S.QRcodeBox>
@@ -115,11 +133,14 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
         </S.NoticeBoxs>
       </S.NotionArea>
       <S.ButtonWrapper>
-        <WebBlackButton
-          onClick={props.onClickOpenRefundModal}
-          type="button"
-          title="취소하기"
-        />
+        {props.cancellable && (
+          <WebBlackButton
+            onClick={props.onClickOpenRefundModal}
+            type="button"
+            title="취소하기"
+          />
+        )}
+
         <Link href={"/mypage"}>
           <WebPurpleButton type="button" title="목록으로" />
         </Link>

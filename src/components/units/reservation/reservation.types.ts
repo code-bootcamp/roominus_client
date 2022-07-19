@@ -17,6 +17,7 @@ export interface IReservationUIProps {
   checked: boolean;
   ThemeMenuId: string;
   memo: string;
+  max: number;
 
   data?: any;
 

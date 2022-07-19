@@ -5,9 +5,13 @@ import ReservationUI from "./reservation.present";
 import dayjs from "dayjs";
 import { FETCH_THEMES_ALL, FETCH_THEME_MENUS } from "./reservation.queries";
 import { IFetchThemeMenus } from "./reservation.types";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../commons/store";
 
 export default function Reservation() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
+
+  const [userInfo] = useRecoilState(userInfoState);
 
   const [themeId, setThemeId] = useState("");
   const [cafeId, setCafeId] = useState("");
@@ -24,8 +28,6 @@ export default function Reservation() {
   const { data } = useQuery(FETCH_THEME_MENUS, {
     variables: { themeId },
   });
-
-  console.log("themesList", themesList);
 
   const dateFormatter = (str: string) => {
     return str;
@@ -79,7 +81,6 @@ export default function Reservation() {
         (el: IFetchThemeMenus) => el.people_number === peopleNumber
       )[0]?.price;
 
-    console.log("priceResult", priceResult);
     setTotalPrice(priceResult);
   }, [peopleNumber]);
 
@@ -145,6 +146,8 @@ export default function Reservation() {
         // 동의 약관
         onChangeChecked={onChangeChecked}
         checked={checked}
+        // userInfo
+        max={userInfo.point}
       />
     </>
   );
