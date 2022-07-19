@@ -119,7 +119,6 @@ export default function ReservationNotice(props: IReservationNotice) {
               }}
             />
           </S.TypingBox>
-
           <S.ThemeGuide>해볼까요?</S.ThemeGuide>
         </S.RecommendationBox>
       </S.SelectGuideBox>

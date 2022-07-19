@@ -28,4 +28,6 @@ export interface ISideBarAdminUIProps {
   onClickMenu: MouseEventHandler<HTMLLIElement>;
 }
 
-export interface ITopHeaderUIProps {}
+export interface ITopHeaderUIProps {
+  onClickLogout: MouseEventHandler<HTMLSpanElement> | undefined;
+}

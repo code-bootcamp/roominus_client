@@ -5,12 +5,13 @@ import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleBut
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { IPWeditUIProps } from "./PasswordEdit.types";
 
 const PasswordChecklist = dynamic(() => import("react-password-checklist"), {
   ssr: false,
 });
 
-export default function PWeditUI(props) {
+export default function PWeditUI(props: IPWeditUIProps) {
   return (
     <S.Container>
       <S.Title>비밀번호 수정</S.Title>
@@ -148,7 +149,7 @@ export default function PWeditUI(props) {
               )}
               {!props.openEye2 && (
                 <FontAwesomeIcon
-                  onClick={props.onClickShowPassword2}
+                  onClick={props.onClickShowPassword}
                   icon={faEyeSlash}
                   style={{
                     color: "purple",

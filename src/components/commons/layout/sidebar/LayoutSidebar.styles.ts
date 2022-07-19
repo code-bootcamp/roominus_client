@@ -66,7 +66,7 @@ export const UserData = styled.span`
 export const UserPoint = styled.span`
   color: #bf9eeb;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.15em;
 `;
 export const line = styled.div`
   border: 1px solid #bf9eeb;

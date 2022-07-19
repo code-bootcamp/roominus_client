@@ -5,7 +5,7 @@ import { ISideBarUIProps } from "../Layout.types";
 
 const NAVIGATION_MENUS = [
   { name: "내 찜목록", page: "/mypage/mypick" },
-  { name: "내 후기목록", page: "/mypage/mypick" },
+  { name: "내 후기목록", page: "/mypage/myboard" },
   { name: "최근 예약 내역", page: "/mypage/history" },
   { name: "최근 적립 내역", page: "/mypage/reward" },
 ];

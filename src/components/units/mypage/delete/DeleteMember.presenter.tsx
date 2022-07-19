@@ -1,11 +1,12 @@
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./DeleteMember.styles";
+import { IDeleteMemberUIProps } from "./DeleteMember.types";
 
-export default function DeleteMemberUI(props) {
+export default function DeleteMemberUI(props: IDeleteMemberUIProps) {
   return (
     <S.Container>
       <S.Title style={{ padding: "1em" }}> 회원 탈퇴</S.Title>
-      <S.Form onSubmit={props.handleSubmit(props.onSubmitDeletMember)}>
+      <S.Form onSubmit={props.handleSubmit(props.onSubmitDeleteMember)}>
         <S.EmailInputBox>
           <S.EmailInput
             type="text"

@@ -52,18 +52,17 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                 <S.TableTop />
                 <S.TitleRow>
                   <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-                  <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
-                  <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
+                  <S.ColumnHeaderTitle>예약 테마</S.ColumnHeaderTitle>
+                  <S.ColumnHeaderTitle>예약 상태</S.ColumnHeaderTitle>
+                  <S.ColumnHeaderTitle>결제 금액</S.ColumnHeaderTitle>
                   <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
                 </S.TitleRow>
                 {props?.reservations?.map((el) => (
-                  <S.Row key={el._id}>
+                  <S.Row key={el.id}>
                     <S.ColumnBasic>
-                      {String(el._id).slice(-4).toUpperCase()}
+                      {String(el.id).slice(-4).toUpperCase()}
                     </S.ColumnBasic>
-                    <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
-                    <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-                    <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+                    <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
                   </S.Row>
                 ))}
                 <S.TableBottom />
@@ -84,8 +83,9 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.TableTop />
               <S.TitleRow>
                 <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-                <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
-                <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>내용</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>금액</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>전체</S.ColumnHeaderTitle>
                 <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
               </S.TitleRow>
               {props?.payments?.map((el) => (
