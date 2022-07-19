@@ -61,4 +61,10 @@ export const globalStyles = css`
     font-weight: normal;
     font-style: normal;
   }
+
+  // 영어 폰트
+  @font-face {
+    font-family: "StMarie";
+    src: url("/fonts/StMarie-Thin.otf");
+  }
 `;

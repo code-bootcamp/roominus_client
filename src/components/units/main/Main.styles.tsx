@@ -8,7 +8,7 @@ export const Container = styled.main`
   position: relative;
 
   left: calc(-50vw + 50%);
-  background: url("/img/main/inkback.jpeg") center/cover;
+  background: url("/img/main/back1.jpeg") center/cover;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -65,8 +65,10 @@ export const Contents = styled.div`
 
 export const Title = styled.div`
   display: flex;
-  flex-direction: row;
-
+  flex-direction: column;
+  align-items: left;
+  font-family: "StMarie";
+  font-size: 3em;
   @media ${breakPoints.mobile} {
     display: flex;
     flex-direction: column;
@@ -75,6 +77,9 @@ export const Title = styled.div`
 `;
 
 export const RuminousTitle = styled.div`
+  font-family: "GowunDodum-Regular";
+  display: flex;
+  flex-direction: row;
   color: white;
   animation: animation 2s ease-in-out running;
   @keyframes animation {
@@ -176,6 +181,11 @@ export const Typing = styled.div`
 `;
 
 export const Neon = styled(Typing)`
+  position: absolute;
+  top: 60%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   font-family: "GowunBatang-Regular";
   max-width: 767;
   font-size: 7vw;
@@ -235,6 +245,12 @@ export const Layer1 = styled(ParallaxLayer)`
   align-items: center;
 `;
 
+export const Layer2 = styled(ParallaxLayer)`
+  width: auto;
+  height: 100vh;
+  position: relative;
+`;
+
 export const DoorWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -252,9 +268,34 @@ export const DoorBox = styled.div`
   line-height: 300px;
   border: 1px solid white;
   position: relative;
-  transform-style: preserve-3d;
-  /* transform: perspective(1500px); */
+  /* transform-style: preserve-3d;
+  transform: perspective(1500px);
   :hover {
+    transform: rotateY(180deg);
+    visibility: visible;
+  } */
+  .card-container {
+    display: flex;
+    margin-top: 12%;
+    margin-left: 15%;
+    margin-right: 15%;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-top: 50px;
+    border-radius: 2px;
+    -webkit-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
+    transform-style: preserve-3d;
+    transition: transform 10s;
+  }
+
+  .card-wrap:hover .card {
+    transform-origin: right;
     transform: rotateY(180deg);
   }
 `;
@@ -263,14 +304,16 @@ export const Door = styled.div`
   width: 100%;
   height: 100%;
   border: 1px solid;
+  border-top-left-radius: 45%;
+  border-top-right-radius: 45%;
   position: absolute;
   top: 0;
   left: 0;
   background-color: white;
-  transform-style: preserve-3d;
+  /* transform-style: preserve-3d;
   transform-origin: right;
-  transition: all 3s;
-  /* transform: rotateY(180deg); */
+  transition: 1s;
+  transform: rotateY(180deg);
   ::after {
     content: "";
     width: 20px;
@@ -282,8 +325,8 @@ export const Door = styled.div`
     border-radius: 50%;
   }
   :hover {
-    transform: rotateY(180deg);
-  }
+    transform: rotateY(-120deg);
+  } */
 `;
 
 export const NeonWrapper = styled.div`
