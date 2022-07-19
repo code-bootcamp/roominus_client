@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { MouseEvent, useState } from "react";
+import Swal from "sweetalert2";
 import CafeListUIPage from "./CafeList.presenter";
 import { FETCH_CAFES } from "./CafeList.queries";
 import { IFetchCafesProps } from "./CafeList.types";
@@ -49,22 +50,29 @@ export default function CafeListPage() {
       router.push(`/cafe/${event?.currentTarget.id}`);
     };
 
-  const loadFunc = () => {
+  const loadFunc = async () => {
     if (!data) return;
 
-    fetchMore({
-      variables: { page: Math.ceil(data.fetchCafes.length / 8) + 1 },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult.fetchCafes)
-          return {
-            fetchCafes: [...prev.fetchCafes],
-          };
+    try {
+      await fetchMore({
+        variables: { page: Math.ceil(data.fetchCafes.length / 8) + 1 },
+        updateQuery: (prev, { fetchMoreResult }) => {
+          if (!fetchMoreResult.fetchCafes)
+            return {
+              fetchCafes: [...prev.fetchCafes],
+            };
 
-        return {
-          fetchCafes: [...prev.fetchCafes, ...fetchMoreResult.fetchCafes],
-        };
-      },
-    });
+          return {
+            fetchCafes: [...prev.fetchCafes, ...fetchMoreResult.fetchCafes],
+          };
+        },
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "warning",
+        title: (error as Error).message,
+      });
+    }
   };
 
   return (

@@ -73,16 +73,17 @@ export default function AdminCafeNew(props) {
 
   console.log(props.editData);
 
-  interface IUpdateBoardInput {
+  interface IUpdateCafeInput {
     name?: string;
     phone?: string;
     intro_content?: string;
     address?: string;
     address_detail?: string;
+    mainImg?: string;
   }
 
   const onClickUpdate = async (data) => {
-    const updateCafeInput: IUpdateBoardInput = {};
+    const updateCafeInput: IUpdateCafeInput = {};
     if (data.name) updateCafeInput.name = data.name;
     if (data.phone) updateCafeInput.phone = data.phone;
     if (data.intro_content) updateCafeInput.intro_content = data.intro_content;

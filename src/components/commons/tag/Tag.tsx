@@ -11,10 +11,12 @@ export default function Tag(props: any) {
       console.log(props.tagList);
       //처음에 입력한 값
       if (props.tagList === undefined) {
+        console.log(props.tagList);
         props.setTagList([hashedtag]);
         props.setTagItem("");
       } else {
         //추가로 입력한 값
+        console.log(hashedtag);
         props.setTagList((prev) => [...prev, hashedtag]);
         // addList.filter((tagList: any) => tagList !== e.target.value);
         props.setTagItem("");
@@ -35,12 +37,6 @@ export default function Tag(props: any) {
     props.setTagItem(e.target.value);
   };
 
-  //수정시 map대신 useEffect
-  useEffect(() => {
-    if (props.marketData?.fetchUseditem !== undefined)
-      props.setTagList([...props.marketData?.fetchUseditem.tags]);
-  }, [props.marketData]);
-
   return (
     <TagBox>
       {/* 등록시 map */}
@@ -48,7 +44,6 @@ export default function Tag(props: any) {
         // const hashedtag = tagItem.replace(tagItem, `#${tagItem}`);
         return (
           <TagItem key={index}>
-            {/* <span>#</span> */}
             <Text>{tagItem}</Text>
             <Button type="button" onClick={deleteTagItem}>
               X

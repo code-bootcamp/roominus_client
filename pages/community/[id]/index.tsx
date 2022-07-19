@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 // `;
 
 export default function CommunityDetailPage() {
-  useAuth();
+  // useAuth();
   return (
     <Wrapper>
       <CommunityDetail />

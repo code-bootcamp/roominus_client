@@ -71,6 +71,7 @@ export default function CommunityNewUI(props: ICommunityNewUIProps) {
                   <S.InfoInput
                     placeholder="제목을 입력해주세요"
                     {...props.register("title")}
+                    defaultValue={props.editData?.fetchBoard.title}
                   />
                 </S.InfoBox>
               </div>
@@ -81,7 +82,7 @@ export default function CommunityNewUI(props: ICommunityNewUIProps) {
                   setTagItem={props.setTagItem}
                   tagList={props.tagList}
                   setTagList={props.setTagList}
-                  marketData={props.marketData}
+                  editData={props.editData}
                   register={props.register("boardTags")}
                 />
               </S.InfoBox>
@@ -104,7 +105,7 @@ export default function CommunityNewUI(props: ICommunityNewUIProps) {
             </S.InfoTitle>
             <S.Error>{props.formState.errors.content?.message}</S.Error>
             <ToastEditor
-              defaultValue={props.data?.fetchUseditem?.contents}
+              defaultValue={props.editData?.fetchBoard.content}
               editorRef={props.editorRef}
               onChangeContent={props.onChangeContent}
             />

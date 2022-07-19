@@ -7,7 +7,7 @@ declare const window: typeof globalThis & {
 
 const Map = styled.div`
   width: 100%;
-  height: 23em;
+  height: 26em;
 `;
 
 export default function KakaoMap(props) {
@@ -28,6 +28,16 @@ export default function KakaoMap(props) {
 
         const map = new window.kakao.maps.Map(container, options);
 
+        // const imageSrc = "/img/cafe/key.png"; // 마커이미지의 주소입니다
+        // const imageSize = new window.kakao.maps.Size(64, 69); // 마커이미지의 크기입니다
+        // const imageOption = { offset: new window.kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+        // const markerImage = new window.kakao.maps.MarkerImage(
+        //   imageSrc,
+        //   imageSize,
+        //   imageOption
+        // );
+
         const geocoder = new window.kakao.maps.services.Geocoder();
 
         geocoder.addressSearch(
@@ -45,6 +55,7 @@ export default function KakaoMap(props) {
               const marker = new window.kakao.maps.Marker({
                 map,
                 position: coords,
+                // image: markerImage,
               });
 
               map.setCenter(coords);

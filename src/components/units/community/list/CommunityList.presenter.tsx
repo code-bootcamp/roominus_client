@@ -18,7 +18,7 @@ export default function CommunityListUI(props: ICommunityListProps) {
                   <S.BoardName>{el.title}</S.BoardName>
                 </S.NameDateBox>
                 <S.DatePickBox>
-                  <S.WriteName>작성자</S.WriteName>
+                  <S.WriteName>{el.user?.name}</S.WriteName>
                   {/* <S.Date>2일전</S.Date> */}
                   {/* <Tooltip placement="topRight" title="52"> */}
                   <S.PickBox>
