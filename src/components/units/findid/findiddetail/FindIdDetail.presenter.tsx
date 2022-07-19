@@ -2,8 +2,9 @@ import { useRouter } from "next/router";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./FindIdDetail.style";
+import { IFindIdDetailUIProps } from "./FindIdDetail.types";
 
-export default function FindIdDetailUI(props) {
+export default function FindIdDetailUI(props: IFindIdDetailUIProps) {
   const router = useRouter();
   return (
     <S.Wrapper>

@@ -1,8 +1,9 @@
 import WebPurpleLoginButton from "../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 import FindPassword from "../findpassword/FindPassword.container";
 import * as S from "./FindId.styles";
+import { IFindIdUIProps } from "./FindId.types";
 
-export default function FindIdUI(props) {
+export default function FindIdUI(props: IFindIdUIProps) {
   return (
     <>
       {!props.isClickedsecond && (

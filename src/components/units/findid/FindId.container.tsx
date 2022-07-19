@@ -24,8 +24,8 @@ export default function FindId() {
 
   const router = useRouter();
 
-  const IdFindinputRef = useRef();
-  const PasswordFindinputRef = useRef();
+  const IdFindinputRef = useRef<HTMLInputElement>(null);
+  const PasswordFindinputRef = useRef<HTMLInputElement>(null);
   const client = useApolloClient();
   const { register, handleSubmit, setValue, formState } = useForm({
     resolver: yupResolver(schema),

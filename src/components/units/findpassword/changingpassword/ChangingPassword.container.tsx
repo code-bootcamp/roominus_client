@@ -20,8 +20,8 @@ const schema = yup.object({
 
 export default function ChangingPassword() {
   const router = useRouter();
-  const passwordInputRef = useRef();
-  const password2InputRef = useRef();
+  const passwordInputRef = useRef<HTMLInputElement>(null);
+  const password2InputRef = useRef<HTMLInputElement>(null);
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);
   const { register, handleSubmit, setValue, formState } = useForm({

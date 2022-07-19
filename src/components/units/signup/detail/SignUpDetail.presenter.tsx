@@ -5,12 +5,13 @@ import * as S from "./SignUpDetail.styles";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import dynamic from "next/dynamic";
+import { ISignUpDetailUIProps } from "./SignUpDetail.types";
 
 const PasswordChecklist = dynamic(() => import("react-password-checklist"), {
   ssr: false,
 });
 
-export default function SignUpDetailUI(props) {
+export default function SignUpDetailUI(props: ISignUpDetailUIProps) {
   return (
     <S.Wrapper>
       <S.Title>기본정보</S.Title>
