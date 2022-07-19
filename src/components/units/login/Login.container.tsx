@@ -10,6 +10,7 @@ import { useMutation, useApolloClient } from "@apollo/client";
 import { useRecoilState } from "recoil";
 import { accessTokenState, userInfoState } from "../../../commons/store";
 import Swal from "sweetalert2";
+import { IDataProps } from "./Login.types";
 
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -47,10 +48,7 @@ export default function LoginPage() {
     register("email", { required: true });
     register("password");
   }, []);
-  interface IDataProps {
-    email: string;
-    password: string;
-  }
+
   const onSubmitLogin = async (data: IDataProps) => {
     console.log("clicked");
     try {
@@ -143,7 +141,9 @@ export default function LoginPage() {
           data: {
             property_keys: ["kakao_account.email", "kakao_account.gender"],
           },
-          success: function (response) {
+          success: function (response: {
+            kakao_account: { email: any; has_email: any };
+          }) {
             console.log(response);
             router.push({
               pathname: `/signup/detail`,
@@ -153,12 +153,12 @@ export default function LoginPage() {
               },
             });
           },
-          fail: function (error) {
+          fail: function (error: any) {
             console.log(error);
           },
         });
       },
-      fail: function (error) {
+      fail: function (error: any) {
         console.log(error);
       },
     });
@@ -167,9 +167,9 @@ export default function LoginPage() {
   return (
     <>
       <LoginUI
+        handleSubmit={handleSubmit}
         onClickGoogleLogin={onClickGoogleLogin}
         onClickLoginKakao={onClickLoginKakao}
-        handleSubmit={handleSubmit}
         onSubmitLogin={onSubmitLogin}
         setValue={setValue}
         formState={formState}

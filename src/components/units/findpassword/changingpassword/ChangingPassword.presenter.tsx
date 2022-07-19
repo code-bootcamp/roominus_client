@@ -2,7 +2,8 @@ import * as S from "./ChangingPassword.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import WebPurpleLoginButton from "../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
-export default function ChangingPasswordUI(props) {
+import { IChangingPasswordUIProps } from "./ChangingPassword.types";
+export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
   return (
     <S.Wrapper>
       <S.Title>비밀번호 재설정</S.Title>

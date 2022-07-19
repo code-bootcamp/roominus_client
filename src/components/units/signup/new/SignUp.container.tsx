@@ -5,9 +5,9 @@ import Swal from "sweetalert2";
 
 export default function SignUp() {
   const router = useRouter();
-  const totalCheckRef = useRef();
-  const necessityCheckRef = useRef();
-  const optionalCheckRef = useRef();
+  const totalCheckRef = useRef<HTMLInputElement>(null);
+  const necessityCheckRef = useRef<HTMLInputElement>(null);
+  const optionalCheckRef = useRef<HTMLInputElement>(null);
   const [necessity, setNecessity] = useState(false);
   const [optional, setOptional] = useState(false);
 

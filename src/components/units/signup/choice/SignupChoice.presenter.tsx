@@ -4,8 +4,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as S from "./SignupChoice.styles";
+import { ISignupChoiceUIProps } from "./SignupChoice.types";
 
-export default function SignupChoiceUI(props) {
+export default function SignupChoiceUI(props: ISignupChoiceUIProps) {
   return (
     <S.Wrapper>
       <S.PersonalSignupBox>

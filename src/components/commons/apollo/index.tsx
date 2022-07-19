@@ -19,6 +19,10 @@ export default function ApolloSetting(props) {
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
 
   useEffect(() => {
+    // getAccessToken().then((newAccessToken) => {
+    //   setAccessToken(newAccessToken);
+    // });
+
     Auth.toPromise().then((newAccessToken) => {
       setAccessToken(newAccessToken);
     });

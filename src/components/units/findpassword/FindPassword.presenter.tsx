@@ -1,7 +1,8 @@
 import WebPurpleLoginButton from "../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 import * as S from "./FindPassword.styles";
+import { IFindPasswordUIProps } from "./FindPassword.types";
 
-export default function FindPasswordUI(props) {
+export default function FindPasswordUI(props: IFindPasswordUIProps) {
   return (
     <>
       <S.Wrapper>

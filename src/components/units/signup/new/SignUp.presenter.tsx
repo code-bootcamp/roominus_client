@@ -1,8 +1,9 @@
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./SignUp.styles";
+import { ISignUpUIProps } from "./SignUp.types";
 
-export default function SignUpUI(props) {
+export default function SignUpUI(props: ISignUpUIProps) {
   return (
     <S.Wrapper>
       <S.Title>회원가입</S.Title>

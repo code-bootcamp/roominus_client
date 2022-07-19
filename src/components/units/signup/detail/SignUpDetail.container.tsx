@@ -45,10 +45,10 @@ export default function SignUpDetail() {
   const googleLoggedIn = router.query.emailVerified;
   const kakaologgedIn = router.query.has_email;
 
-  const passwordInputRef = useRef();
-  const password2InputRef = useRef();
-  const verificationBtn = useRef();
-  const timeRef = useRef();
+  const passwordInputRef = useRef<HTMLInputElement>(null);
+  const password2InputRef = useRef<HTMLInputElement>(null);
+  const verificationBtn = useRef<HTMLButtonElement>(null);
+  const timeRef = useRef<HTMLSpanElement>(null);
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);
 

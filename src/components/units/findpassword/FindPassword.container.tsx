@@ -3,6 +3,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
+import { IFindPasswordProps } from "./FindPassword.types";
 
 const schema = yup.object({
   email: yup
@@ -15,7 +16,7 @@ const schema = yup.object({
   phoneNumber: yup.string().required("필수 입력 사항입니다."),
 });
 
-export default function FindPassword(props) {
+export default function FindPassword(props: IFindPasswordProps) {
   const { register, handleSubmit, setValue, formState } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",

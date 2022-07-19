@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import * as S from "./Login.styles";
+import { ILoginUIProps } from "./Login.types";
 
-export default function LoginUI(props) {
+export default function LoginUI(props: ILoginUIProps) {
   return (
     <S.Wrapper>
       <S.Title>로그인</S.Title>

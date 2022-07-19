@@ -9,7 +9,6 @@ import { useRecoilState } from "recoil";
 export default function LayoutTopHeader() {
   const router = useRouter();
   const [accessToken] = useRecoilState(accessTokenState);
-  const [logoutgql] = useMutation(LOG_OUT);
   const client = useApolloClient();
   const onClickLogout = async () => {
     try {
