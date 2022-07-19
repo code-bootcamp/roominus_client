@@ -21,6 +21,7 @@ export const FETCH_RESERVATION = gql`
         theme {
           title
           mainImg
+          clearTime
         }
       }
       payment {

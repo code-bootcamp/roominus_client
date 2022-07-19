@@ -80,6 +80,7 @@ export const DataBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
 
   border: 1px solid darkgray;
@@ -110,25 +111,42 @@ export const ThemeTitleBox = styled.div`
   gap: 1em;
 
   & span {
-    color: gray;
+    color: darkgray;
+    font-size: 1.1em;
+
+    @media ${breakPoints.tablet} {
+      font-size: 0.9em;
+    }
   }
 
   & h2 {
-    font-size: 2em;
-    background-color: beige;
+    font-size: 1.5em;
+    font-weight: 700;
 
     @media ${breakPoints.tablet} {
-      font-size: 1.6em;
+      font-size: 1em;
     }
   }
 `;
 
 export const ThemeInfoBox = styled.div`
+  width: 100%;
+  padding-left: 1.8em;
   display: flex;
   flex-direction: column;
-  gap: 0.3em;
+  align-items: flex-start;
 `;
 
+export const ClearTimeBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8em;
+  width: 90%;
+`;
+export const ClearTime = styled.span`
+  color: darkgray;
+  font-size: 0.3em;
+`;
 export const QRcodeBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -204,8 +222,8 @@ export const NoticeImg = styled.img`
   padding-bottom: 1em;
 
   @media ${breakPoints.tablet} {
-    width: 6em;
-    height: 6em;
+    width: 5.5em;
+    height: 5.5em;
   }
 
   @media ${breakPoints.mobile} {

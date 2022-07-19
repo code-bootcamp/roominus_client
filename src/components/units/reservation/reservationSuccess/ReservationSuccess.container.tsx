@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
 import { PrinterOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
@@ -11,6 +11,7 @@ import {
   DELETE_RESERVATION,
   FETCH_RESERVATION,
 } from "./ReservationSuccess.query";
+import { getToday } from "../../../commons/getDate";
 
 const Container = styled.main`
   display: flex;
@@ -42,9 +43,18 @@ export default function ReservationSuccess() {
   });
 
   const [deleteReservation] = useMutation(DELETE_RESERVATION);
+  const [cancellable, setCancellable] = useState(true);
 
   const componentRef = useRef(null);
   const link = `localhost:3000${router.asPath}`;
+
+  useEffect(() => {
+    const now = getToday(new Date());
+
+    if (data?.fetchReservation.reservation_date === now) {
+      setCancellable(false);
+    }
+  }, [cancellable]);
 
   const onClickRefund = async () => {
     try {
@@ -109,6 +119,7 @@ export default function ReservationSuccess() {
         link={link}
         printRef={componentRef}
         onClickOpenRefundModal={onClickOpenRefundModal}
+        cancellable={cancellable}
       />
       ;
     </Container>
