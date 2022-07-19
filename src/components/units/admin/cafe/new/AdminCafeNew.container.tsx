@@ -5,10 +5,10 @@ import { useForm } from "react-hook-form";
 import { CREATE_CAFE, UPDATE_CAFE } from "./AdminCafeNew.query";
 import AdminCafeNewUI from "./AdminCafeNew.presenter";
 import Swal from "sweetalert2";
-
-export default function AdminCafeNew(props) {
+import { IAdminCafeNewUIProps } from "./AdminCafeNew.types";
+export default function AdminCafeNew(props: IAdminCafeNewUIProps) {
   const router = useRouter();
-  const imgRef = useRef();
+  const imgRef = useRef<HTMLInputElement>(null);
 
   const [createCafe] = useMutation(CREATE_CAFE);
   const [updateCafe] = useMutation(UPDATE_CAFE);

@@ -6,6 +6,7 @@ import { CREATE_THEME_MENU } from "./ThemeMenuCreate.query";
 import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
+import { Idata, IThemeMenuCreateProps } from "./ThemeMenuCreate.types";
 
 const schema = yup.object({
   reservation_time: yup.string().required("필수 입력 사항입니다."),
@@ -13,7 +14,7 @@ const schema = yup.object({
   price: yup.number().required("필수 입력 사항입니다."),
 });
 
-export default function ThemeMenuCreate(props) {
+export default function ThemeMenuCreate(props: IThemeMenuCreateProps) {
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
@@ -25,7 +26,7 @@ export default function ThemeMenuCreate(props) {
   const [createThemeMenugql] = useMutation(CREATE_THEME_MENU);
   const themeId = router.query.id;
 
-  const onSubmitCreateThemeMenu = async (data) => {
+  const onSubmitCreateThemeMenu = async (data: Idata) => {
     try {
       await createThemeMenugql({
         variables: {
