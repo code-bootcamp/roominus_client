@@ -2,7 +2,7 @@ import { Dispatch, MouseEvent, SetStateAction } from "react";
 
 export interface IFetchThemes {
   id: string;
-  mainImg?: string;
+  mainImg: string;
   rank: number;
   genre?: { name: string; id: string } | any;
   title: string;
@@ -11,6 +11,7 @@ export interface IFetchThemes {
 
 export interface IThemeListProps {
   data?: any;
+  hotThemes?: any;
   fetchGenres?: any;
   isToggled?: boolean;
   myIndex: Array<boolean>;
@@ -29,4 +30,13 @@ export interface IThemeListProps {
 export interface IFetchGenres {
   id: string;
   name: string;
+}
+
+export interface IStyleProps {
+  src: string;
+}
+
+export interface ICarouselProps {
+  data: any;
+  onClickTheme: (el: IFetchThemes) => () => void;
 }

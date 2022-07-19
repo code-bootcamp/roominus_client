@@ -13,7 +13,6 @@ export default function ThemeCardComponent(props: any) {
       <S.Flip>
         <S.Card>
           <S.Theme src={props.el?.mainImg}>
-            <S.ImgGradient />
             <S.Rank>
               난이도
               <S.Star disabled defaultValue={props.el?.rank} />

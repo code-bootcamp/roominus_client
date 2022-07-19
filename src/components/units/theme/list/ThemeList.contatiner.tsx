@@ -16,6 +16,12 @@ export default function ThemeList() {
     },
   });
 
+  const { data: hotThemes } = useQuery(FETCH_THEMES, {
+    variables: {
+      page: 3,
+    },
+  });
+
   const { data: fetchGenres } = useQuery(FETCH_GENRES);
 
   const router = useRouter();
@@ -69,6 +75,7 @@ export default function ThemeList() {
   return (
     <ThemeUI
       data={data}
+      hotThemes={hotThemes}
       myIndex={myIndex}
       fetchGenres={fetchGenres}
       selectAll={selectAll}
