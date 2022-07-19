@@ -1,10 +1,12 @@
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { ParallaxLayer } from "@react-spring/parallax";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as S from "./Main.styles";
+import Typewriter from "typewriter-effect";
 
 export default function MainUI() {
   const router = useRouter();
+  const list = ["어쩌구", "저쩌구"];
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
@@ -22,23 +24,11 @@ export default function MainUI() {
   };
   return (
     <S.Container>
-      {/* <S.Page1><S.Carousel></S.Carousel></S.Page1>
-      <S.Page2>
-        <img src="/img/ink.png" />
-        <S.Image src="/img/ink.png" />
-      </S.Page2> */}
-      Roominus Roominus
-      <S.MyParallax pages={3}>
-        <S.Layer1
-          offset={0}
-          speed={1}
-          // style={{ backgroundColor: "#232946" }}
-        >
+      <S.MyParallax pages={4}>
+        <S.Layer1 speed={1}>
           <S.Title>
-            <S.RuminousTitle>
-              <img src="/img/main/roomin.png" />
-            </S.RuminousTitle>
             <S.RuminousTitleUs>
+              <img src="/img/main/roomin.png" />
               <img src="/img/main/us.png" />
             </S.RuminousTitleUs>
           </S.Title>
@@ -48,28 +38,34 @@ export default function MainUI() {
           </S.ScrollDownBox>
           <S.PressEnter>Skip : Enter</S.PressEnter>
         </S.Layer1>
-
-        {/* <ParallaxLayer
-          offset={1}
-          speed={1}
-          // style={{ backgroundColor: "#8bd3dd" }}
-        /> */}
-        <ParallaxLayer offset={1} speed={2} style={{ opacity: 1 }}>
+        <S.Layer2 offset={1} speed={0}>
           <img
             src="/img/main/lune.png"
-            style={{ width: "70%", opacity: "80%", marginLeft: "5%" }}
+            style={{
+              width: "60vw",
+              opacity: "80%",
+              marginLeft: "40%",
+            }}
           />
-          <S.FlashText>Room in us</S.FlashText>
-          <S.Neon>상상이 현실이 되는 밤</S.Neon>
-          <S.FlashText>상상이 현실이 되는 방</S.FlashText>
+          {/* <S.FlashText>Room in us</S.FlashText> */}
 
+          <S.Neon>
+            상상이 현실이 되는{" "}
+            <Typewriter
+              options={{
+                strings: ["밤", "방"],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </S.Neon>
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
             style={{ width: "50%", marginLeft: "20%" }}
           />
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.8 }}>
+        </S.Layer2>
+        <ParallaxLayer offset={2} speed={0.5} style={{}}>
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
@@ -82,15 +78,36 @@ export default function MainUI() {
             style={{ display: "block", width: "40%", marginLeft: "0" }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={2} speed={0.2} style={{ opacity: 1 }}>
+        <ParallaxLayer
+          offset={3}
+          speed={0.6}
+          style={{
+            opacity: 1,
+            backgroundImage: `url("/img/main/door.jpeg")`,
+            backgroundSize: "cover",
+          }}
+        >
           <S.DoorWrapper>
+            <S.RuminousTitle>
+              {/* <Typewriter
+                options={{
+                  strings: ["방탈출 통합 예약 서비스"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              /> */}
+            </S.RuminousTitle>
             <S.DoorBox onClick={onClickDoor}>
               들어가기
-              <S.Door></S.Door>
+              <div className="card-container">
+                <div className="card-wrap">
+                  <S.Door className="card"></S.Door>
+                </div>
+              </div>
             </S.DoorBox>
           </S.DoorWrapper>
           <S.NeonWrapper>
-            <S.NeonBottom>상상이 현실이 되는 방</S.NeonBottom>
+            <S.NeonBottom>들어가기</S.NeonBottom>
           </S.NeonWrapper>
           <img
             alt="cloud"
