@@ -20,7 +20,6 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  /* background-color: #26282c; */
   background: url("/img/inkback.jpeg") center/cover;
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -44,6 +43,10 @@ export const SearchBox = styled.div`
   border: 1px solid #dad6e1;
   border-radius: 30px;
   box-shadow: 0px 4px 4px #dad6e1;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 40px;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -61,33 +64,11 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const SearchInputUnderline = styled.span`
-  display: inline-block;
-  height: 2px;
-  background-color: dodgerblue;
-`;
-
-export const SearchButton = styled.button`
-  width: 4em;
-  height: 2.5em;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  :hover {
-    background: linear-gradient(
-      90deg,
-      rgba(142, 45, 226, 1) 30%,
-      rgba(74, 0, 224, 1) 100%
-    );
-  }
-  background-color: #4a00e0;
-  color: #ffffff;
-`;
 export const GenreList = styled.div`
   padding: 20px 0px;
   @media ${breakPoints.mobile} {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(110px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(70px, auto));
     grid-gap: 0px 30px;
     align-items: center;
   }
@@ -104,6 +85,10 @@ export const Genre = styled.button`
     props.isPicked ? "#4A00E0" : "#DAD6E1"};
   margin: 5px;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 45px;
+  }
 `;
 
 export const MySlider = styled(Slider)`
@@ -119,10 +104,8 @@ export const SliderImg = styled.img`
 export const ThemeList = styled.div`
   padding: 20px 0px;
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
   place-content: center;
   grid-template-columns: repeat(auto-fill, minmax(260px, auto));
-  /* grid-template-rows: repeat(auto-fill, minmax(420px, auto)); */
   /* grid-template-rows: repeat(3, minmax(400px, auto)); */
 
   column-gap: 30px;
@@ -191,7 +174,7 @@ export const ThemeBack = styled(defaultDiv)`
   width: 100%;
   height: 100%;
   background: url(${(props: IGenreProps) => props.src});
-  background-size: 260px 400px;
+  background-size: 270px 400px;
   transform: rotateY(180deg);
   padding: 20px;
   display: flex;
@@ -210,17 +193,6 @@ export const ThemeTitle = styled.div`
 export const ThemeInfo = styled.div`
   color: white;
   text-align: left;
-`;
-export const ImgGradient = styled.div`
-  /* width: 290px;
-  height: 420px;
-  background: linear-gradient(
-    180deg,
-    rgba(38, 40, 44, 0) 0%,
-    rgba(38, 40, 44, 0.14) 56.77%,
-    #26282c 100%
-  );
-  background-blend-mode: multiply; */
 `;
 
 export const GenreTag = styled.div`
@@ -268,29 +240,6 @@ export const ShowMoreButton = styled.button`
   cursor: pointer;
 `;
 
-export const Toggle = styled.div``;
-export const ToggleMenuWrapper = styled.ul`
-  display: none;
-
-  @media ${breakPoints.mobile} {
-    display: block;
-    flex-direction: column;
-    text-align: center;
-    font-size: 2em;
-    width: 100%;
-    padding: 15px;
-  }
-`;
-
-export const ToggleMenu = styled.li`
-  display: none;
-
-  @media ${breakPoints.mobile} {
-    display: block;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-`;
 export const Menu = styled(MenuOutlined)`
   display: none;
 
@@ -308,3 +257,10 @@ export const Close = styled(CloseOutlined)`
     font-size: 3em;
   }
 `;
+
+export const MobileList = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5em;
+`;
+export const MobileGenre = styled.h3``;
