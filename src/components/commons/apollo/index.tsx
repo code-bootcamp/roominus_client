@@ -7,14 +7,19 @@ import {
 import { createUploadLink } from "apollo-upload-client";
 import { onError } from "@apollo/client/link/error";
 import { useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValueLoadable } from "recoil";
 import { getAccessToken } from "../../../commons/libraries/getAccessToken";
-import { accessTokenState } from "../../../commons/store";
+import {
+  accessTokenState,
+  restoreAccessTokenLoadable,
+} from "../../../commons/store";
 
 export default function ApolloSetting(props) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
+
   useEffect(() => {
-    getAccessToken().then((newAccessToken) => {
+    Auth.toPromise().then((newAccessToken) => {
       setAccessToken(newAccessToken);
     });
   }, []);
