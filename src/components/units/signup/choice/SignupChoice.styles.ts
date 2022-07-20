@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   width: 100%;
   height: 40em;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-top: 4em;
@@ -16,12 +16,34 @@ export const Wrapper = styled.section`
     flex-direction: column;
   }
 `;
+
+export const SignUpTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ba9fe6;
+  font-size: 1.5em;
+`;
+
+export const SignupChoiceBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
+`;
 export const PersonalSignupBox = styled.div`
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 5em 5em 5em 5em;
+  border: 1px solid #d9d6e0;
+  border-radius: 15px;
+  gap: 20px;
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -31,8 +53,8 @@ export const PersonalSignupBox = styled.div`
 `;
 
 export const PersonalSignupBtn = styled.button`
-  width: 100%;
-  height: 3em;
+  width: 80%;
+  height: 50px;
   font-size: 1.2em;
   border-radius: 10px;
   border: none;
@@ -47,22 +69,26 @@ export const PersonalSignupBtn = styled.button`
   transition: all 250ms ease-in-out;
   background-color: #4a00e0;
   color: #ffffff;
-  margin-bottom: 1em;
 `;
 export const SocialSignupBtnsBox = styled.div`
   width: 100%;
   height: 30%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
 `;
 
 export const StoreOwnerSignupBox = styled.div`
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 5em 5em 5em 5em;
+  border: 1px solid #d9d6e0;
+  border-radius: 15px;
+  gap: 20px;
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -72,8 +98,8 @@ export const StoreOwnerSignupBox = styled.div`
 `;
 
 export const StoreOwnerSignupBtn = styled.button`
-  width: 100%;
-  height: 3em;
+  width: 80%;
+  height: 50px;
   font-size: 1.2em;
   border-radius: 10px;
   border: none;
@@ -98,10 +124,11 @@ export const KakaoBtn = styled.div`
   margin-bottom: 1em;
 `;
 export const KakaoSymbol = styled.img`
-  margin-left: 10%;
-  margin-right: 28%;
-  width: 1.2em;
-  height: 1.2em;
+  width: 45px;
+  height: 45px;
+  background-color: #fee500;
+  border-radius: 100%;
+  padding: 10px;
 `;
 export const KakaoLabel = styled.span``;
 export const GoogleBtn = styled.div`
@@ -120,9 +147,11 @@ export const GoogleBtn = styled.div`
   cursor: pointer;
 `;
 export const GoogleSymbol = styled.img`
-  margin-left: 10%;
-  margin-right: 28%;
-  width: 1.2em;
-  height: 1.2em;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border: 1px solid #e5e8eb;
+  border-radius: 100%;
+  padding: 7px;
 `;
 export const GoogleLabel = styled.span``;
