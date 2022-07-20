@@ -43,7 +43,7 @@ export default function ThemeMenuCreate(props: IThemeMenuCreateProps) {
       router.push(`/admin/themeMenu/list/${themeId}`);
       Modal.success({ content: "테마 메뉴 등록 성공" });
     } catch (error) {
-      Modal.error({ content: error.message });
+      Modal.error({ content: (error as Error).message });
     }
   };
 

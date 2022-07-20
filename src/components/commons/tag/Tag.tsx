@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 
 export default function Tag(props: any) {

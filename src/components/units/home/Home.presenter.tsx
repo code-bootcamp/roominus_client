@@ -1,17 +1,11 @@
 import * as S from "./Home.styles";
 import Link from "next/link";
-import { Rate } from "antd";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import ListCards from "../cafe/list/card/ListCards";
 import CafeCard from "./cafecard/CafeCard";
 import FAQ from "./faq/Faq";
-import styled from "@emotion/styled";
-import { breakPoints } from "../../../commons/styles/media";
 import { useEffect, useState } from "react";
 import ThemeCardComponent from "./themecard/ThemeCard";
-import { height } from "@mui/material/node_modules/@mui/system";
 
 export default function HomeUI(props) {
   const [windowSize, setWindowSize] = useState(false);
@@ -138,68 +132,7 @@ export default function HomeUI(props) {
       </S.AlarmCarouselBoxes>
       <S.FaQBoxes>
         <S.Title>자주 묻는 질문(FAQ)</S.Title>
-        {/* <S.FaQSmallBoxes> */}
         <FAQ />
-        {/* <S.FaQBox>
-            <S.FaQTitleBox>
-              {props.isOpened1 && (
-                <S.OpenBtnArrow onClick={props.onClickOpenQuestion1} />
-              )}
-              {!props.isOpened1 && (
-                <S.CloseBtnArrow onClick={props.onClickCloseQuestion1} />
-              )}
-              <S.QestionTitle>룸인어스 란?</S.QestionTitle>
-            </S.FaQTitleBox>
-            {props.isOpened1 && (
-              <S.FaQs>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                fuga ratione velit voluptatibus debitis iure cupiditate
-                consequuntur quasi, ducimus sunt, quia amet, dolor placeat
-                voluptate blanditiis laudantium veritatis repellendus at.
-              </S.FaQs>
-            )}
-          </S.FaQBox>
-          <S.FaQBox>
-            <S.FaQTitleBox>
-              {props.isOpened2 && (
-                <S.OpenBtnArrow onClick={props.onClickOpenQuestion2} />
-              )}
-              {!props.isOpened2 && (
-                <S.CloseBtnArrow onClick={props.onClickCloseQuestion2} />
-              )}
-
-              <S.QestionTitle>환불 가능 한가요?</S.QestionTitle>
-            </S.FaQTitleBox>
-            {props.isOpened2 && (
-              <S.FaQs>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                fuga ratione velit voluptatibus debitis iure cupiditate
-                consequuntur quasi, ducimus sunt, quia amet, dolor placeat
-                voluptate blanditiis laudantium veritatis repellendus at.
-              </S.FaQs>
-            )}
-          </S.FaQBox>
-          <S.FaQBox>
-            <S.FaQTitleBox>
-              {props.isOpened3 && (
-                <S.OpenBtnArrow onClick={props.onClickOpenQuestion3} />
-              )}
-              {!props.isOpened3 && (
-                <S.CloseBtnArrow onClick={props.onClickCloseQuestion3} />
-              )}
-              <S.QestionTitle>서울지역만 가능한가요?</S.QestionTitle>
-            </S.FaQTitleBox>
-
-            {props.isOpened3 && (
-              <S.FaQs>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                fuga ratione velit voluptatibus debitis iure cupiditate
-                consequuntur quasi, ducimus sunt, quia amet, dolor placeat
-                voluptate blanditiis laudantium veritatis repellendus at.
-              </S.FaQs>
-            )}
-          </S.FaQBox> */}
-        {/* </S.FaQSmallBoxes> */}
       </S.FaQBoxes>
     </S.Wrapper>
   );
