@@ -123,6 +123,7 @@ export const Flip = styled.div`
   position: relative;
 
   :hover {
+    cursor: pointer;
     /* transform: rotateY(180deg); */
   }
 `;
