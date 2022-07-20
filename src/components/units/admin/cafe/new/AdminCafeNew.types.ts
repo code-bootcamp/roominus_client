@@ -5,6 +5,20 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 
+export interface IAdminCafeNewProps {
+  isEdit: boolean;
+  editData?: {
+    fetchCafe: {
+      name: string;
+      phone: string;
+      intro_content: string;
+      address: string;
+      address_detail: string;
+      mainImg: string;
+    };
+  };
+}
+
 export interface IAdminCafeNewUIProps {
   register: UseFormRegister<FieldValues>;
   imgurl: string;
