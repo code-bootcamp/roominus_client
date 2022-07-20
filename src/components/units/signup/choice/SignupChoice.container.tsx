@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import SignupChoiceUI from "./SignupChoice.presenter";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -67,11 +68,16 @@ export default function SignupChoice() {
     });
   };
 
+  const onClickMoveToOwner = () => {
+    Swal.fire("서비스 준비중입니다!");
+  };
+
   return (
     <SignupChoiceUI
       onClickMoveToSignUp={onClickMoveToSignUp}
       onClickGoogleLogin={onClickGoogleLogin}
       onClickLoginKakao={onClickLoginKakao}
+      onClickMoveToOwner={onClickMoveToOwner}
     />
   );
 }

@@ -3,7 +3,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
-  height: 80em;
+  height: 40em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -32,9 +32,10 @@ export const PersonalSignupBox = styled.div`
 
 export const PersonalSignupBtn = styled.button`
   width: 100%;
-  height: 3.5em;
+  height: 3em;
   border-radius: 10px;
   border: none;
+  font-size: 1.1em;
   cursor: pointer;
   :hover {
     background: linear-gradient(
