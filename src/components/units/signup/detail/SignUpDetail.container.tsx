@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import SignUpDetailUI from "./SignUpDetail.presenter";
 import { getAuth, signOut, GoogleAuthProvider } from "firebase/auth";
-import { useEffect, useRef, useState } from "react";
+import { SetStateAction, useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -75,7 +75,7 @@ export default function SignUpDetail() {
     register("phoneNumber", { required: true });
   }, []);
   useEffect(() => {
-    let timer;
+    let timer: string | number | NodeJS.Timeout | undefined;
     if (start === 2) {
       let counts = count;
       timeRef.current.style.visibility = "visible";
@@ -134,14 +134,14 @@ export default function SignUpDetail() {
       });
     } catch (error) {
       Swal.fire({
-        title: error.message,
+        title: (error as Error).message,
         icon: "warning",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
       });
     }
   };
-  const ShowCounts = (data) => {
+  const ShowCounts = (data: number) => {
     const min = Math.floor(data / 60);
     const sec = data % 60;
     const Showcount = `${String(min).padStart(2, "0")}:${String(sec).padStart(
@@ -168,17 +168,24 @@ export default function SignUpDetail() {
       });
     } catch (error) {
       Swal.fire({
-        title: error.message,
+        title: (error as Error).message,
         icon: "warning",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
       });
     }
   };
-  const onChangeTokenValue = (event) => {
+  const onChangeTokenValue = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setTokenInput(event.target.value);
   };
-  const onSubmitSignup = async (data) => {
+  const onSubmitSignup = async (data: {
+    email: any;
+    password: any;
+    name: any;
+    phoneNumber: any;
+  }) => {
     console.log(data);
     try {
       const result = await createUsergql({
@@ -200,7 +207,7 @@ export default function SignUpDetail() {
 
       router.push("/login");
     } catch (error) {
-      alert(error.message);
+      alert((error as Error).message);
     }
   };
 
@@ -260,7 +267,7 @@ export default function SignUpDetail() {
       success: function (response) {
         console.log(response);
       },
-      fail: function (error) {
+      fail: function ((error) {
         console.log(error);
       },
     });

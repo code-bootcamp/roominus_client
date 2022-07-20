@@ -1,4 +1,4 @@
-import { useMutation, useApolloClient } from "@apollo/client";
+import { useApolloClient } from "@apollo/client";
 import LayoutTopHeaderUI from "./LayoutTopHeader.presenter";
 import { LOG_OUT } from "./LayoutTopHeader.query";
 import Swal from "sweetalert2";

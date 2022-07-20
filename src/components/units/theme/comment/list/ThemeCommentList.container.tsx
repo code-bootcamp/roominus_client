@@ -6,13 +6,14 @@ import { FETCH_THEME_REVIEWS } from "./ThemeCommentList.queries";
 export default function ThemeCommentList() {
   const router = useRouter();
 
-  const { data, fetchMore } = useQuery(FETCH_THEME_REVIEWS, {
+  const { data } = useQuery(FETCH_THEME_REVIEWS, {
     variables: {
       themeId: router.query.id,
     },
   });
 
   const loadFunc = () => {
+    // eslint-disable-next-line no-useless-return
     if (!data) return;
 
     // fetchMore({

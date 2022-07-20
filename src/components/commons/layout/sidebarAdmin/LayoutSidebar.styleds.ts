@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { LogoutOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
 import { IIsActiveProps } from "../Layout.types";
 

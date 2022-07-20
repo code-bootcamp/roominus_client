@@ -12,7 +12,7 @@ export default function LayoutSidebar() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState<string>("");
   const client = useApolloClient();
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [accessToken] = useRecoilState(accessTokenState);
   const [userInfo] = useRecoilState(userInfoState);
 
   const [logoutgql] = useMutation(LOG_OUT);
@@ -37,7 +37,7 @@ export default function LayoutSidebar() {
       router.push("/home");
     } catch (error) {
       Swal.fire({
-        title: error.message,
+        title: (error as Error).message,
         icon: "error",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
