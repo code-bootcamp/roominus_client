@@ -16,20 +16,20 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.ThemeIcon src="/img/mypage/heart.webp/" />
             </S.ThemeBox>
           </Link>
-          <Link href={"/mypage/history"}>
+          <Link href={"/mypage/myreview"}>
             <S.ThemeBox>
               <S.ThemeTitle>내 탈출</S.ThemeTitle>
               <S.ThemeSubTitle>
-                탈출한 테마 내역을 확인하고 싶다면?
+                내 탈출 후기만 모아 추억하고 싶다면?
               </S.ThemeSubTitle>
               <S.ThemeIcon src="/img/mypage/escape.webp/" />
             </S.ThemeBox>
           </Link>
           <Link href={"/mypage"}>
             <S.ThemeBox>
-              <S.ThemeTitle>내 후기</S.ThemeTitle>
+              <S.ThemeTitle>내 보드</S.ThemeTitle>
               <S.ThemeSubTitle>
-                탈출 후 내 후기를 적어 추억하고 싶다면?
+                내 탈출 보드만 모아 보고 싶다면?
               </S.ThemeSubTitle>
               <S.ThemeIcon src="/img/mypage/board.webp/" />
             </S.ThemeBox>
@@ -57,12 +57,10 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                   <S.ColumnHeaderTitle>결제 금액</S.ColumnHeaderTitle>
                   <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
                 </S.TitleRow>
-                {props?.reservations?.map((el) => (
-                  <S.Row key={el.id}>
-                    <S.ColumnBasic>
-                      {String(el.id).slice(-4).toUpperCase()}
-                    </S.ColumnBasic>
-                    <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
+                {props?.reservations?.map((el, index) => (
+                  <S.Row key={index}>
+                    <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+                    <S.ColumnBasic>>{el.fetchReservationsUser.status}</S.ColumnBasic>
                   </S.Row>
                 ))}
                 <S.TableBottom />
