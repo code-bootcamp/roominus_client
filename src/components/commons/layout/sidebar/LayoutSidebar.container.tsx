@@ -4,7 +4,7 @@ import LayoutSideBarUI from "./LayoutSidebar.presenter";
 import Swal from "sweetalert2";
 
 import { LOG_OUT } from "./LayoutSidebar.query";
-import { useMutation, useApolloClient } from "@apollo/client";
+import { useApolloClient } from "@apollo/client";
 import { accessTokenState, userInfoState } from "../../../../commons/store";
 import { useRecoilState } from "recoil";
 
@@ -15,7 +15,7 @@ export default function LayoutSidebar() {
   const [accessToken] = useRecoilState(accessTokenState);
   const [userInfo] = useRecoilState(userInfoState);
 
-  const [logoutgql] = useMutation(LOG_OUT);
+  // const [logoutgql] = useMutation(LOG_OUT);
 
   const onClickLogout = async () => {
     try {

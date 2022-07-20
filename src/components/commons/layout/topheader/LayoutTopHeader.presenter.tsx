@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRecoilState } from "recoil";
-import { accessTokenState, userInfoState } from "../../../../commons/store";
+import { accessTokenState } from "../../../../commons/store";
 import { ITopHeaderUIProps } from "../Layout.types";
 import * as S from "./LayoutTopHeader.styles";
 
