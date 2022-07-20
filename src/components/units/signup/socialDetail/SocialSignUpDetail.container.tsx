@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import { useRouter } from "next/router";
 import { SetStateAction, useEffect, useRef, useState } from "react";
 

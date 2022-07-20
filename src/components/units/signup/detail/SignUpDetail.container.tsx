@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-useless-escape */
 import { useRouter } from "next/router";
 import SignUpDetailUI from "./SignUpDetail.presenter";
 

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-useless-escape */
 import LoginUI from "./Login.presenter";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useRouter } from "next/router";
@@ -35,7 +37,9 @@ const schema = yup.object({
     )
     .required("영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."),
 });
-
+declare const window: typeof globalThis & {
+  Kakao: any;
+};
 export default function LoginPage() {
   const { register, handleSubmit, setValue, formState, trigger } = useForm({
     resolver: yupResolver(schema),
@@ -141,7 +145,7 @@ export default function LoginPage() {
   };
 
   const onClickLoginKakao = () => {
-    Kakao.Auth.login({
+    window.Kakao.Auth.login({
       success: () => {
         window.Kakao.API.request({
           url: "/v2/user/me",

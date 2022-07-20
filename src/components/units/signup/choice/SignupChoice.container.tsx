@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useRouter } from "next/router";
 import SignupChoiceUI from "./SignupChoice.presenter";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -8,6 +9,9 @@ import { GoogleInfoState, KakaoInfoState } from "../../../../commons/store";
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 
+declare const window: typeof globalThis & {
+  Kakao: any;
+};
 export default function SignupChoice() {
   const router = useRouter();
   const [googleInfo, setGoogleInfo] = useRecoilState(GoogleInfoState);
@@ -43,23 +47,23 @@ export default function SignupChoice() {
   };
 
   const onClickLoginKakao = () => {
-    Kakao.Auth.login({
+    window.Kakao.Auth.login({
       success: () => {
         window.Kakao.API.request({
           url: "/v2/user/me",
           data: {
             property_keys: ["kakao_account.email", "kakao_account.gender"],
           },
-          success: function (response) {
+          success: function (response: any) {
             setKakaoInfo(response.kakao_account);
             router.push(`/signup/socialDetail`);
           },
-          fail: function (error) {
+          fail: function (error: any) {
             console.log(error);
           },
         });
       },
-      fail: function (error) {
+      fail: function (error: any) {
         console.log(error);
       },
     });
