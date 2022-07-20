@@ -19,7 +19,7 @@ export default function SignupChoiceUI(props: ISignupChoiceUIProps) {
           }}
         />
         <S.PersonalSignupBtn onClick={props.onClickMoveToSignUp}>
-          탈출러들-회원가입
+          일반 회원가입
         </S.PersonalSignupBtn>
         <S.SocialSignupBtnsBox>
           <S.KakaoBtn onClick={props.onClickLoginKakao}>
@@ -27,14 +27,14 @@ export default function SignupChoiceUI(props: ISignupChoiceUIProps) {
               src="/img/login/kakaoSymbol.webp"
               alt="kakaoSymbol"
             />
-            <S.KakaoLabel>카카오 로그인</S.KakaoLabel>
+            <S.KakaoLabel>카카오 회원가입</S.KakaoLabel>
           </S.KakaoBtn>
           <S.GoogleBtn onClick={props.onClickGoogleLogin}>
             <S.GoogleSymbol
               src="/img/login/googleSymbol.webp"
               alt="googleSymbol"
             />
-            <S.GoogleLabel>구글 로그인</S.GoogleLabel>
+            <S.GoogleLabel>구글 회원가입</S.GoogleLabel>
           </S.GoogleBtn>
         </S.SocialSignupBtnsBox>
       </S.PersonalSignupBox>
@@ -43,8 +43,8 @@ export default function SignupChoiceUI(props: ISignupChoiceUIProps) {
           icon={faPeopleGroup}
           style={{ fontSize: "4em", marginBottom: "0.5em" }}
         />
-        <S.StoreOwnerSignupBtn onClick={props.onClickMoveToSignUp}>
-          점주님들-회원가입
+        <S.StoreOwnerSignupBtn onClick={props.onClickMoveToOwner}>
+          점주 회원가입
         </S.StoreOwnerSignupBtn>
       </S.StoreOwnerSignupBox>
     </S.Wrapper>
