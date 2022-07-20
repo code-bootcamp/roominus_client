@@ -11,6 +11,7 @@ export const FETCH_THEMES_USER = gql`
       createdAt
       theme {
         title
+        id
       }
     }
   }

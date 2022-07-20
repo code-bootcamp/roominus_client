@@ -1,7 +1,7 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "../myreview/myreview.style";
-import { IMyReviewUIProps } from "./myreview.type";
+import { IFetchThemesUser, IMyReviewUIProps } from "./myreview.type";
 
 export default function MyReviewUI(props: IMyReviewUIProps) {
   return (
@@ -17,16 +17,18 @@ export default function MyReviewUI(props: IMyReviewUIProps) {
           <S.ColumnHeaderTitle>내용</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>작성일</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {props.data?.fetchThemesUser.map((el, index) => (
-          <S.Row key={index}>
-            <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-            <S.ColumnBasic>{el.theme.title}</S.ColumnBasic>
-            <S.ColumnBasic>{el.clear}</S.ColumnBasic>
-            <S.ColumnBasic>{el.star}</S.ColumnBasic>
-            <S.ColumnBasic>{el.content}</S.ColumnBasic>
-            <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
-          </S.Row>
-        ))}
+        {props.data?.fetchThemesUser.map(
+          (el: IFetchThemesUser, index: number) => (
+            <S.Row key={index} id={el.theme.id}>
+              <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+              <S.ColumnBasic>{el.theme.title}</S.ColumnBasic>
+              <S.ColumnBasic>{el.clear}</S.ColumnBasic>
+              <S.ColumnBasic>{el.star}</S.ColumnBasic>
+              <S.ColumnBasic>{el.content}</S.ColumnBasic>
+              <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+            </S.Row>
+          )
+        )}
         <S.TableBottom />
         <S.ButtonBox>
           <Link href={"/mypage"}>

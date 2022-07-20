@@ -27,7 +27,7 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
             <S.RedHeart icon={faHeart} />
             <S.PickCount>52</S.PickCount>
           </S.PickBox>
-          {/* <ShareButton /> */}
+          <ShareButton />
         </S.PickAndShareBox>
 
         <S.BoardTitle>{props.data?.fetchBoard.title}</S.BoardTitle>

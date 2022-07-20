@@ -16,7 +16,7 @@ export default function HistoryUI(props: IHistoryUIProps) {
           <S.ColumnHeaderTitle>테마</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {props.data?.fetchReservationsUser.map((el: IData, index) => (
+        {props.data?.fetchReservationsUser.map((el: IData, index: number) => (
           <S.Row key={index}>
             <S.ColumnBasic>{index + 1}</S.ColumnBasic>
             <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>

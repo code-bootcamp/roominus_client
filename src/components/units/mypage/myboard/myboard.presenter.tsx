@@ -2,8 +2,9 @@ import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import { getToday } from "../../../commons/getDate";
 import * as S from "../myboard/myboard.styles";
+import { IFetchBoardsUserProps, IMyBoardUIProps } from "./myboard.types";
 
-export default function MyBoardUI(props) {
+export default function MyBoardUI(props: IMyBoardUIProps) {
   return (
     <S.Container>
       <S.Wrapper>
@@ -15,14 +16,16 @@ export default function MyBoardUI(props) {
           <S.ColumnHeaderTitle>좋아요</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {props.data?.fetchBoardsUser.map((el, index) => (
-          <S.Row key={el.index}>
-            <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-            <S.ColumnBasic>{el.title}</S.ColumnBasic>
-            <S.ColumnBasic>{el.like}</S.ColumnBasic>
-            <S.ColumnBasic>{getToday(el.createdAt)}</S.ColumnBasic>
-          </S.Row>
-        ))}
+        {props.data?.fetchBoardsUser.map(
+          (el: IFetchBoardsUserProps, index: number) => (
+            <S.Row key={index} id={el.id} onClick={props.onClickBoard}>
+              <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+              <S.ColumnBasic>{el.title}</S.ColumnBasic>
+              <S.ColumnBasic>{el.like}</S.ColumnBasic>
+              <S.ColumnBasic>{getToday(el.createdAt)}</S.ColumnBasic>
+            </S.Row>
+          )
+        )}
 
         <S.TableBottom />
         <S.ButtonBox>
