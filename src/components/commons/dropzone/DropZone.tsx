@@ -1,7 +1,10 @@
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-export function MyDropzone(props) {
+export function MyDropzone(props: {
+  setImageUrl: (arg0: string) => void;
+  setFileUrl: (arg0: any) => any;
+}) {
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
 
@@ -22,7 +25,7 @@ export function MyDropzone(props) {
     console.log(acceptedFiles);
   }, []);
 
-  const upload = (file) => {
+  const upload = (file: string | Blob) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", "tyx7y8ot");

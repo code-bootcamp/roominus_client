@@ -76,7 +76,7 @@ export default function SignUpDetail() {
     let timer: string | number | NodeJS.Timeout | undefined;
     if (start === 2) {
       let counts = count;
-      timeRef.current?.style?.visibility = "visible";
+      timeRef.current.style.visibility = "visible";
       timer = setInterval(() => {
         counts = counts - 1;
         setCount(counts);
@@ -85,7 +85,7 @@ export default function SignUpDetail() {
           clearInterval(timer);
           setCount(60);
           setStart(1);
-          verificationBtn.current?.disabled = true;
+          verificationBtn.current.disabled = true;
           Swal.fire({
             title: "시간 초과",
             icon: "warning",
@@ -254,6 +254,12 @@ export default function SignUpDetail() {
         timeRef={timeRef}
         setPhone={setPhone}
         onChangeTokenValue={onChangeTokenValue}
+        googleEmail={undefined}
+        kakaoEmail={undefined}
+        googleLoggedIn={undefined}
+        kakaologgedIn={undefined}
+        onClickLogoutkakao={undefined}
+        onClickSocialIDLogout={undefined}
       />
     </>
   );

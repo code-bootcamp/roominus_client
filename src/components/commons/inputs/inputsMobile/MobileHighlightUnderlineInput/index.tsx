@@ -16,7 +16,7 @@ const Input = styled.input`
   transition: all 250ms ease-in-out;
 `;
 
-export default function MobileHighlightUnderlineInput(props) {
+export default function MobileHighlightUnderlineInput(props: any) {
   return (
     <Input
       type={props?.type}

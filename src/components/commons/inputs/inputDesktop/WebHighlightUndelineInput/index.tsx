@@ -17,7 +17,7 @@ const Input = styled.input`
   transition: all 250ms ease-in-out;
 `;
 
-export default function WebHighlightUndelineInput(props) {
+export default function WebHighlightUndelineInput(props: any) {
   return (
     <Input
       type={props?.type}

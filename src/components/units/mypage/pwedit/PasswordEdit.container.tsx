@@ -26,9 +26,9 @@ const schema = yup.object({
 });
 
 export default function PWedit() {
-  const originpasswordInputRef = useRef();
-  const passwordInputRef = useRef();
-  const password2InputRef = useRef();
+  const originpasswordInputRef = useRef<HTMLInputElement>(null);
+  const passwordInputRef = useRef<HTMLInputElement>(null);
+  const password2InputRef = useRef<HTMLInputElement>(null);
   const [openEye, setOpenEye] = useState(false);
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);

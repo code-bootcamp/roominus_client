@@ -4,7 +4,8 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from "react-hook-form";
-import { Dispatch, RefObject, SetStateAction } from "react";
+import { Dispatch, LegacyRef, SetStateAction } from "react";
+import { Editor } from "@toast-ui/react-editor";
 
 export interface ICommunityNewProps {
   isEdit: boolean;
@@ -38,15 +39,18 @@ export interface IEditDataProps {
 export interface ICommunityNewUIProps {
   onClickList: () => void;
   onClickSubmit: (data: any) => Promise<void>;
-  editorRef: RefObject<unknown>;
+  // editorRef: RefObject<unknown>;
+  editorRef: LegacyRef<Editor>;
   onChangeContent: () => void;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   formState: FormState<FieldValues>;
   tagItem: string;
   setTagItem: Dispatch<SetStateAction<string>>;
-  tagList: never[];
-  setTagList: Dispatch<SetStateAction<never[]>>;
+  // tagList: never[];
+  tagList: any;
+  setTagList: any;
+  // setTagList: Dispatch<SetStateAction<never[]>>;
   setImageUrl: Dispatch<SetStateAction<string>>;
   imageUrl: string;
   setFileUrl: Dispatch<SetStateAction<string>>;

@@ -29,7 +29,7 @@ const FETCH_USER_LOGGEDIN = gql`
   }
 `;
 
-export default function ApolloSetting(props) {
+export default function ApolloSetting(props: any) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);

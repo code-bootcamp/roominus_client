@@ -18,7 +18,7 @@ export default function MyPhoneEdit() {
   const [isEdit, setIsEdit] = useState(false);
   const [count, setCount] = useState(10);
   const [showCount, setShowCount] = useState("03:00");
-  const timeRef = useRef();
+  const timeRef = useRef<HTMLInputElement>(null);
   const verificationBtn = useRef();
   const [start, setStart] = useState(1);
   const { register, handleSubmit, formState, setValue, trigger } = useForm({

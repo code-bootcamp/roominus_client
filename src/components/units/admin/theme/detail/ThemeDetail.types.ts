@@ -1,6 +1,7 @@
 export interface IThemeDetailUIProps {
   ThemeDetail: {
     fetchTheme: {
+      id: string;
       title?: string;
       mainImg?: string;
       intro_title?: string;

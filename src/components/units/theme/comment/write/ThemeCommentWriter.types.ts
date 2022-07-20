@@ -15,8 +15,8 @@ export interface IUpdateThemeReviewInput {
 
 export interface IThemeCommentWriteProps {
   el?: any;
-  isEdit: boolean;
-  setIsEdit: Dispatch<SetStateAction<boolean>>;
+  isEdit?: boolean;
+  setIsEdit?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface IWriteCommentData {

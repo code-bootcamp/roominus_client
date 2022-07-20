@@ -16,7 +16,7 @@ const Input = styled.input`
   padding: 0em 0.5em 0em 0.5em;
 `;
 
-export default function WebHighlightUnderlineSquareInput(props) {
+export default function WebHighlightUnderlineSquareInput(props: any) {
   return (
     <Input
       type={props?.type}

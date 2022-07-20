@@ -1,4 +1,4 @@
-export const getDate = (value) => {
+export const getDate = (value: string | number | Date) => {
   const today = new Date();
   const timeValue = new Date(value);
 

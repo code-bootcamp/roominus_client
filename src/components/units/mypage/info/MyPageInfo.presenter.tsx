@@ -55,7 +55,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                   <S.ColumnHeaderTitle>결제 금액</S.ColumnHeaderTitle>
                   <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
                 </S.TitleRow>
-                {props?.reservations?.map((el, index: number) => (
+                {props?.reservation?.map((el: any, index: number) => (
                   <S.Row key={index}>
                     <S.ColumnBasic>{index + 1}</S.ColumnBasic>
                     <S.ColumnBasic>
@@ -86,7 +86,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                 <S.ColumnHeaderTitle>전체</S.ColumnHeaderTitle>
                 <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
               </S.TitleRow>
-              {props?.payments?.map((el) => (
+              {props?.payments?.map((el: any, index: number) => (
                 <S.Row key={el._id}>
                   <S.ColumnBasic>
                     {String(el._id).slice(-4).toUpperCase()}

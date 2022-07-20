@@ -15,5 +15,5 @@ export default function MyPageInfo() {
   });
   const { data: payments } = useQuery(FETCH_PAYMENTS);
 
-  return <MyPageInfoUI reservations={reservations} payments={payments} />;
+  return <MyPageInfoUI reservation={reservations} payments={payments} />;
 }

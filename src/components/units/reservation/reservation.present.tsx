@@ -6,14 +6,14 @@ import {
 } from "@material-ui/pickers";
 import MomentUtils from "@date-io/moment";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
-import NoReservation from "./NoReservation";
 import { v4 as uuidv4 } from "uuid";
 import Payment from "../payment/payment";
 import Swal from "sweetalert2";
 import ReservationNotice from "./reservationNotice/reservationNotice";
 import { IReservationUIProps } from "./reservation.types";
-import ReservationThemeInfo from "./reservationThemeInfo/reservationthemeinfo";
 import Link from "next/link";
+import ReservationThemeInfo from "./reservationthemeInfo/reservationthemeinfo";
+import NoReservation from "./Noreservation";
 
 export default function ReservationUI(props: IReservationUIProps) {
   const date = new Date();
