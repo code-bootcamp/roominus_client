@@ -23,3 +23,15 @@ export const restoreAccessTokenLoadable = selector({
     return newAccessToken;
   },
 });
+export const GoogleInfoState = atom({
+  key: "GoogleInfoState",
+  default: {
+    email: "",
+  },
+});
+export const KakaoInfoState = atom({
+  key: "KakaoInfoState",
+  default: {
+    email: "",
+  },
+});

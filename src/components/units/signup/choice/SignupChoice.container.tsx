@@ -2,12 +2,16 @@ import { useRouter } from "next/router";
 import SignupChoiceUI from "./SignupChoice.presenter";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import Swal from "sweetalert2";
+import { useRecoilState } from "recoil";
+import { GoogleInfoState, KakaoInfoState } from "../../../../commons/store";
 
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 
 export default function SignupChoice() {
   const router = useRouter();
+  const [googleInfo, setGoogleInfo] = useRecoilState(GoogleInfoState);
+  const [kakaoInfo, setKakaoInfo] = useRecoilState(KakaoInfoState);
   const onClickMoveToSignUp = () => {
     router.push("/signup/new");
   };
@@ -21,10 +25,9 @@ export default function SignupChoice() {
         // The signed-in user info.
         const user = result.user;
         // ...
-        router.push({
-          pathname: `/signup/detail`,
-          query: { email: user.email, emailVerified: user.emailVerified },
-        });
+        setGoogleInfo(user);
+        router.push(`/signup/socialDetail`);
+
         console.log(user);
       })
       .catch((error) => {
@@ -48,14 +51,8 @@ export default function SignupChoice() {
             property_keys: ["kakao_account.email", "kakao_account.gender"],
           },
           success: function (response) {
-            console.log(response);
-            router.push({
-              pathname: `/signup/detail`,
-              query: {
-                email2: response.kakao_account.email,
-                has_email: response.kakao_account.has_email,
-              },
-            });
+            setKakaoInfo(response.kakao_account);
+            router.push(`/signup/socialDetail`);
           },
           fail: function (error) {
             console.log(error);

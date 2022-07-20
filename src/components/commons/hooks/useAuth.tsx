@@ -10,21 +10,18 @@ import {
 export default function useAuth() {
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
   const router = useRouter();
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [accessToken] = useRecoilState(accessTokenState);
 
   useEffect(() => {
-    // if (!accessToken) {
-    //   alert("로그인 후 이용 가능합니다!!!");
-    //   router.push("/login");
-    // }
-
-    Auth.toPromise().then((newAccessToken) => {
-      if (!newAccessToken) {
-        Modal.warning({ content: "로그인 먼저 해주세요." });
-        setTimeout(() => {
-          router.push("/login");
-        }, 500);
-      }
-    });
+    if (!accessToken) {
+      Auth.toPromise().then((newAccessToken) => {
+        if (!newAccessToken) {
+          Modal.warning({ content: "로그인 먼저 해주세요." });
+          setTimeout(() => {
+            router.push("/login");
+          }, 500);
+        }
+      });
+    }
   }, []);
 }
