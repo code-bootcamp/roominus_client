@@ -5,7 +5,7 @@ export const Container = styled.main`
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  padding: 2em 0em 2em 0em;
+  padding: 2em 2em 2em 2em;
 `;
 
 export const Wrapper = styled.div`

@@ -8,7 +8,12 @@ import { IMyPhoneEditUIProps } from "./MyPhoneEdit.type";
 export default function MyPhoneEditUI(props: IMyPhoneEditUIProps) {
   return (
     <S.Container>
-      <S.Title>회원정보 수정</S.Title>
+      <S.TitleBox>
+        <S.Title>회원정보 수정</S.Title>
+        <S.DeleteBox>
+          <span onClick={props.onClickMoveToDelete}>회원탈퇴</span>
+        </S.DeleteBox>
+      </S.TitleBox>
 
       <S.Wrapper>
         <S.UserInfoBox>
@@ -34,10 +39,6 @@ export default function MyPhoneEditUI(props: IMyPhoneEditUIProps) {
           <S.Edit onClick={props.onClickEdit}>변경하기</S.Edit>
         </S.UserInfoBox>
 
-        <S.UserInfoBox>
-          <S.UserDataLabel>회원 탈퇴</S.UserDataLabel>
-          <S.Edit onClick={props.onClickMoveToDelete}>탈퇴하기</S.Edit>
-        </S.UserInfoBox>
         {props.isEdit && (
           <>
             <h3 style={{ padding: "1em" }}> 전화번호 수정</h3>
