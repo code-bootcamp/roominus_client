@@ -62,15 +62,11 @@ export default function KakaoMap(props: IKakaoMapProps) {
                 result[0].x
               );
 
-              console.log(typeof result);
-              console.log(typeof status);
-
-              const marker = new window.kakao.maps.Marker({
+              new window.kakao.maps.Marker({
                 map,
                 position: coords,
                 // image: markerImage,
               });
-              console.log(marker);
 
               map.setCenter(coords);
             }

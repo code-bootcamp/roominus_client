@@ -65,7 +65,6 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             {props.data?.fetchCafes.map((el: IFetchCafesProps) => (
               <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
                 <ListCards el={el} />
-                {console.log(el)}
               </span>
             ))}
           </S.Etc>

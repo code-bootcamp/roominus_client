@@ -28,7 +28,7 @@ export default function AdminCafeNew(props: IAdminCafeNewUIProps) {
   const [imgurl, setImgurl] = useState("");
 
   const onClickRealInput = () => {
-    imgRef.current.click();
+    imgRef.current?.click();
   };
 
   const upload = (file: any) => {
@@ -51,7 +51,6 @@ export default function AdminCafeNew(props: IAdminCafeNewUIProps) {
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     upload(file).then((result) => setImgurl(result.url));
-    // upload(file).then((result) => console.log(typeof result.url));
   };
 
   const onClickButton = async (data: IDataProps) => {
@@ -72,7 +71,6 @@ export default function AdminCafeNew(props: IAdminCafeNewUIProps) {
         },
       });
       router.push(`/admin/cafe/${result.data?.createCafe.id}`);
-      console.log(result.data?.createCafe);
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -80,8 +78,6 @@ export default function AdminCafeNew(props: IAdminCafeNewUIProps) {
       });
     }
   };
-
-  console.log(props.editData);
 
   const onClickUpdate = async (data: IUpdateDataProps) => {
     const updateCafeInput: IUpdateCafeInput = {};
@@ -105,7 +101,6 @@ export default function AdminCafeNew(props: IAdminCafeNewUIProps) {
         title: "수정이 완료되었습니다!",
       });
       router.push(`/admin/cafe/${result.data?.updateCafe.id}`);
-      console.log(result);
     } catch (error) {
       Swal.fire({
         icon: "error",

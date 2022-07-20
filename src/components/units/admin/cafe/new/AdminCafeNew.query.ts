@@ -10,8 +10,6 @@ export const CREATE_CAFE = gql`
       address
       address_detail
       mainImg
-      # subImgs
-      # users
     }
   }
 `;

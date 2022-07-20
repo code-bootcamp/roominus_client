@@ -5,6 +5,9 @@ export interface IFetchBoardsProps {
   mainImg: string;
   title: string;
   like: string;
+  user: {
+    name: string;
+  };
 }
 
 export interface ICommunityListProps {

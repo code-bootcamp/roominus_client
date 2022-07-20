@@ -20,7 +20,7 @@ export default function CommunityCommentList() {
   });
   console.log(data);
 
-  const onClickDelete = async (event) => {
+  const onClickDelete = async (event: any) => {
     try {
       await deleteBoardreview({
         variables: {
