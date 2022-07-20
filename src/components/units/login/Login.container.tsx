@@ -67,6 +67,7 @@ export default function LoginPage() {
           headers: {
             Authorization: `Bearer ${Token}`,
           },
+          credentials: "include",
         },
       });
 

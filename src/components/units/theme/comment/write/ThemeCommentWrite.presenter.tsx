@@ -82,7 +82,8 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
             tooltips={desc}
             style={{ fontSize: "3em", color: "#7457E8" }}
             // defaultValue={props.el?.star || 3}
-            defaultValue={props.el?.star || star}
+            // defaultValue={props.el?.star || star}
+            value={props.el?.star || props.register("star")}
             character={({ index }: { index: number }) => customIcons[index + 1]}
             onChange={onChangeStar}
           />
