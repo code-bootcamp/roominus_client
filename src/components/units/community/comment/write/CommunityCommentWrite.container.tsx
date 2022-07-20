@@ -4,14 +4,18 @@ import { useRouter } from "next/router";
 import CommunityCommentWriteUI from "./CommunityCommentWrite.presenter";
 import {
   CREATE_BOARD_REVIEW,
-  FETCH_BOARD_REVIEW,
+  FETCH_BOARD_COMMENTS,
 } from "./CommunityCommentWrite.queries";
 import Swal from "sweetalert2";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 
 export default function CommunityCommentWrite() {
   const router = useRouter();
 
   const [createBoardreview] = useMutation(CREATE_BOARD_REVIEW);
+
+  // const [userInfo] = useRecoilState(userInfoState);
 
   const { register, handleSubmit, reset } = useForm({
     mode: "onChange",
@@ -29,8 +33,8 @@ export default function CommunityCommentWrite() {
         },
         refetchQueries: [
           {
-            query: FETCH_BOARD_REVIEW,
-            variables: { id: router.query.id },
+            query: FETCH_BOARD_COMMENTS,
+            variables: { boardId: router.query.id, page: 1 },
           },
         ],
       });
@@ -50,6 +54,7 @@ export default function CommunityCommentWrite() {
       onClickComment={onClickComment}
       register={register}
       handleSubmit={handleSubmit}
+      // userInfo={userInfo}
     />
   );
 }

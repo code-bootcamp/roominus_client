@@ -182,3 +182,34 @@ export const RedHeart = styled(FontAwesomeIcon)`
   color: #e35d5b;
   margin-right: 0.3em;
 `;
+
+export const CommentTitleBox = styled.div`
+  height: 1.5em;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  /* background-color: pink; */
+
+  @media ${breakPoints.tablet} {
+    margin-top: 2em;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-top: 2em;
+  }
+`;
+
+export const CommentIcon = styled.img`
+  width: 1.5em;
+  margin-right: 0.5em;
+  /* background-color: green; */
+`;
+
+export const CommentTitle = styled.h1`
+  font-size: 1.3em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: yellow; */
+`;

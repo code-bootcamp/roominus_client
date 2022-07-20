@@ -1,5 +1,6 @@
 import CommunityCommentWrite from "../write/CommunityCommentWrite.container";
 import * as S from "./CommunityCommentEdit.styles";
+import { getDate } from "../../../../../components/commons/getDate";
 
 export default function CommunityCommentEditUI(props) {
   return (
@@ -10,7 +11,7 @@ export default function CommunityCommentEditUI(props) {
             <S.InfoTitleBox>
               <S.InfoTitle>
                 <S.InfoName>신하* 님</S.InfoName>
-                <S.Date>2022.07.06</S.Date>
+                <S.Date>{getDate(props.el.createdAt)}</S.Date>
               </S.InfoTitle>
               <S.InfoTitle>
                 <S.Comment src="/img/community/comment/recomment.webp" />
@@ -18,10 +19,14 @@ export default function CommunityCommentEditUI(props) {
                   src="/img/community/comment/commentedit.webp"
                   onClick={props.onClickEdit}
                 />
-                <S.Delete src="/img/community/comment/commentdelete.webp" />
+                <S.Delete
+                  src="/img/community/comment/commentdelete.webp"
+                  onClick={props.onClickDelete}
+                  id={props.el.id}
+                />
               </S.InfoTitle>
             </S.InfoTitleBox>
-            <S.Contents>댓글내용이에요 우와 대단해~</S.Contents>
+            <S.Contents>{props.el.content}</S.Contents>
           </S.ListInfoBox>
         </S.CommentListBox>
       )}

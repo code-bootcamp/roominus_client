@@ -7,13 +7,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
 
-  @media ${breakPoints.tablet} {
-    margin-top: 2em;
-    /* width: 100%; */
-  }
-
   @media ${breakPoints.mobile} {
-    margin-top: 2em;
     width: 100%;
     font-size: 0.9em;
   }
@@ -55,11 +49,14 @@ export const InfoTitle = styled.div`
   align-items: center;
 `;
 
-export const InfoName = styled.div`
+export const InfoName = styled.h3`
+  margin-bottom: 0em;
   margin-right: 1em;
 `;
 
-export const Date = styled.div``;
+export const Date = styled.p`
+  margin-bottom: 0em;
+`;
 
 export const Comment = styled.img`
   width: 1.5em;
@@ -75,4 +72,7 @@ export const Delete = styled.img`
   width: 1.5em;
 `;
 
-export const Contents = styled.div``;
+export const Contents = styled.p`
+  margin-bottom: 0em;
+  font-size: 1.2em;
+`;
