@@ -11,6 +11,13 @@ export const Container = styled.main`
 export const Wrapper = styled.div`
   width: 100%;
 `;
+
+export const CountBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
+
 export const Title = styled.h1``;
 
 export const TableTop = styled.div`

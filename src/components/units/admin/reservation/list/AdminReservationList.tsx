@@ -33,6 +33,7 @@ export default function AdminReservationList() {
       cafeList={cafeList}
       onChangeCafeId={onChangeCafeId}
       onChangeDate={onChangeDate}
+      onClickRefund={undefined}
     />
   );
 }

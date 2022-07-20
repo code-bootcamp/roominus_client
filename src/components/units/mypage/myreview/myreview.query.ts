@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const FETCH_THEMES_USER = gql`
+export const FETCH_THEMES_REVIEWS_USER = gql`
   query fetchThemesUser {
     fetchThemesUser {
       id
@@ -14,5 +14,11 @@ export const FETCH_THEMES_USER = gql`
         id
       }
     }
+  }
+`;
+
+export const FETCH_THEMES_REVIEWS_USER_COUNT = gql`
+  query fetchThemeReviewsUserCount {
+    fetchThemeReviewsUserCount
   }
 `;

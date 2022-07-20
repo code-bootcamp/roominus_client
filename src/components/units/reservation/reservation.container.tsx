@@ -76,7 +76,7 @@ export default function Reservation() {
   // });
 
   const ableTime = timeTable.filter((el) => {
-    return !soldOut.includes(el);
+    return !soldOut?.includes(el);
   });
 
   const onChangeTime = (event: ChangeEvent<HTMLInputElement>) => {

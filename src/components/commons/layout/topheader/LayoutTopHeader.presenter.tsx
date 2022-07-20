@@ -6,7 +6,6 @@ import * as S from "./LayoutTopHeader.styles";
 
 export default function LayoutTopHeaderUI(props: ITopHeaderUIProps) {
   const [accessToken] = useRecoilState(accessTokenState);
-  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
   return (
     <S.Container>
       <S.LoginJoinMenuWrapper>

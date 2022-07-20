@@ -1,5 +1,12 @@
+import { MouseEventHandler } from "react";
+
 export interface IMyReviewUIProps {
+  count: {
+    fetchThemeReviewsUserCount: number;
+  };
+
   data: any;
+  onClickReview: MouseEventHandler<HTMLLIElement> | undefined;
 }
 
 export interface IFetchThemesUser {
