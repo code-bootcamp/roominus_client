@@ -1,6 +1,7 @@
 import * as S from "./ThemeDetail.styles";
 import { IThemeDetailProps } from "./ThemeDetail.types";
 import { Rate } from "antd";
+import Link from "next/link";
 
 export default function ThemeDetailUI(props: IThemeDetailProps) {
   return (
@@ -28,19 +29,21 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
             <S.LimitBox>
               <S.ThemeTime>
                 <S.AgeLimit>
-                  {props.data?.fetchTheme.agelimit}세 이상 2명 ~{" "}
+                  {props.data?.fetchTheme.agelimit}세 이상, 2명 ~{" "}
                   {props.data?.fetchTheme.peoplelimit}명 이용 가능
                 </S.AgeLimit>
               </S.ThemeTime>
               <S.ChargeBox>
                 <S.ThemeCharge>
-                  이용시간 : {props.data?.fetchTheme.clearTime}
+                  이용시간 : {props.data?.fetchTheme.clearTime}분
                 </S.ThemeCharge>
               </S.ChargeBox>
             </S.LimitBox>
           </S.ThemeInfo>
           <S.ButtonWrapper>
-            <S.ReservationButton>예약하기</S.ReservationButton>
+            <Link href={"/reservation"}>
+              <S.ReservationButton>예약하기</S.ReservationButton>
+            </Link>
           </S.ButtonWrapper>
         </S.ThemeRightBox>
       </S.ThemeInfoWrapper>
