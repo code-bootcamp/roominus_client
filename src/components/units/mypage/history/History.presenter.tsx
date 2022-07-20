@@ -20,7 +20,7 @@ export default function HistoryUI(props: IHistoryUIProps) {
           <S.Row key={index}>
             <S.ColumnBasic>{index + 1}</S.ColumnBasic>
             <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
-            <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+            <S.ColumnBasic>{el.status}</S.ColumnBasic>
             <S.ColumnBasic>{index + 1}</S.ColumnBasic>
           </S.Row>
         ))}
