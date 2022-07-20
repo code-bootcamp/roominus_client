@@ -10,4 +10,5 @@ export interface ICommunityCommentEditUIProps {
   onClickEdit: () => void;
   onClickDelete: (event: any) => Promise<void>;
   el: IBoardreviewEl;
+  isAnswer: boolean;
 }

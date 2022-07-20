@@ -10,9 +10,7 @@ export const CREATE_BOARD = gql`
 
       # }
       mainImg
-      # user {
-      #   name
-      # }
+      # user
     }
   }
 `;

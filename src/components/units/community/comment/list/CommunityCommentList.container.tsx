@@ -15,7 +15,6 @@ export default function CommunityCommentList() {
   const { data } = useQuery(FETCH_BOARD_COMMENTS, {
     variables: {
       boardId: router.query.id,
-      page: 1,
     },
   });
   console.log(data);
@@ -29,7 +28,7 @@ export default function CommunityCommentList() {
         refetchQueries: [
           {
             query: FETCH_BOARD_COMMENTS,
-            variables: { boardId: router.query.id, page: 1 },
+            variables: { boardId: router.query.id },
           },
         ],
       });

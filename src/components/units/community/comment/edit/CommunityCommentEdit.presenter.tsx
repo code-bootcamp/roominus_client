@@ -2,6 +2,7 @@ import CommunityCommentWrite from "../write/CommunityCommentWrite.container";
 import * as S from "./CommunityCommentEdit.styles";
 import { getDate } from "../../../../../components/commons/getDate";
 import { ICommunityCommentEditUIProps } from "./CommunityCommentEdit.types";
+import CommentAnswerWrite from "../answer/write/CommentAnswer.container";
 
 export default function CommunityCommentEditUI(
   props: ICommunityCommentEditUIProps
@@ -13,7 +14,7 @@ export default function CommunityCommentEditUI(
           <S.ListInfoBox>
             <S.InfoTitleBox>
               <S.InfoTitle>
-                <S.InfoName>신하* 님</S.InfoName>
+                <S.InfoName>{props.el.user.name}</S.InfoName>
                 <S.Date>{getDate(props.el.createdAt)}</S.Date>
               </S.InfoTitle>
               <S.InfoTitle>
@@ -35,6 +36,8 @@ export default function CommunityCommentEditUI(
       )}
 
       {props.isEdit === true && <CommunityCommentWrite />}
+
+      {props.isAnswer === true && <CommentAnswerWrite />}
     </S.Wrapper>
   );
 }

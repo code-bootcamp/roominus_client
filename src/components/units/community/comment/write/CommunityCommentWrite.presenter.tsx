@@ -7,13 +7,9 @@ export default function CommunityCommentWriteUI(
 ) {
   return (
     <S.Wrapper>
-      {/* <S.CommentTitleBox>
-        <S.CommentIcon src="/img/community/comment/commentIcon.webp" />
-        <S.CommentTitle>댓글</S.CommentTitle>
-      </S.CommentTitleBox> */}
       <form onSubmit={props.handleSubmit(props.onClickComment)}>
         <S.CommentWriteBox>
-          <S.Name>이영* 님</S.Name>
+          <S.Name>{props.userInfo?.name}</S.Name>
           <S.CommentInput
             placeholder="댓글을 입력하세요"
             {...props.register("content")}

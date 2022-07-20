@@ -43,13 +43,13 @@ export default function CommunityDetail() {
   const onClickDeleteModal = async () => {
     try {
       await deleteBoard({
-        variables: { title: data?.fetchBoard.title },
+        variables: { boardId: router.query.id },
       });
       router.push("/community");
     } catch (error) {
       Swal.fire({
         icon: "error",
-        text: (error as Error).message,
+        title: (error as Error).message,
       });
     }
   };

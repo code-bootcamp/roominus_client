@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const DELETE_BOARD = gql`
-  mutation deleteBoard($title: String!) {
-    deleteBoard(title: $title)
+  mutation deleteBoard($boardId: String!) {
+    deleteBoard(boardId: $boardId)
   }
 `;
 
