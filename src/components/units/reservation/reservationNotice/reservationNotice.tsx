@@ -106,10 +106,8 @@ export default function ReservationNotice(props: IReservationNotice) {
       </S.Wrapper>
 
       <S.SelectGuideBox>
-        <S.ThemeGuide>테마를 선택해 주세요!</S.ThemeGuide>
-
         <S.RecommendationBox>
-          <S.ThemeGuide>오늘은</S.ThemeGuide>
+          <S.ThemeGuide>오늘은...</S.ThemeGuide>
           <S.TypingBox>
             <Typewriter
               options={{
