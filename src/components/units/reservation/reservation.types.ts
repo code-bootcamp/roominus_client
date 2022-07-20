@@ -29,7 +29,7 @@ export interface IReservationUIProps {
   onChangeTheme: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeCafe: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeTime: (event: ChangeEvent<HTMLInputElement>) => void;
-  onChangeDate: (date: string) => void;
+  onChangeDate: any;
   onChangeHeadCount: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangePoint: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeMemo: (event: ChangeEvent<HTMLInputElement>) => void;

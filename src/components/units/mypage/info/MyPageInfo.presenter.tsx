@@ -57,10 +57,12 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                   <S.ColumnHeaderTitle>결제 금액</S.ColumnHeaderTitle>
                   <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
                 </S.TitleRow>
-                {props?.reservations?.map((el, index) => (
+                {props?.reservations?.map((el, index: number) => (
                   <S.Row key={index}>
                     <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-                    <S.ColumnBasic>>{el.fetchReservationsUser.status}</S.ColumnBasic>
+                    <S.ColumnBasic>
+                      {el.fetchReservationsUser.status}
+                    </S.ColumnBasic>
                   </S.Row>
                 ))}
                 <S.TableBottom />
