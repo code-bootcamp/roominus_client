@@ -10,17 +10,14 @@ export const Container = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: red; */
   }
 `;
 
 export const SearchWrapper = styled.section`
   width: 100%;
-  /* background-color: #bdbdbd; */
   display: flex;
   flex-direction: row;
   gap: 4em;
-  /* align-items: center; */
 
   @media ${breakPoints.mobile} {
     display: flex;
@@ -45,7 +42,6 @@ export const InfoSummaryBox = styled.div`
 export const CafePicture = styled.img`
   width: 100%;
   height: 37em;
-  /* background-color: pink; */
   object-fit: cover;
 
   @media ${breakPoints.mobile} {
@@ -57,12 +53,8 @@ export const CafePicture = styled.img`
 export const InfoTitleBox = styled.div`
   width: 100%;
   padding: 3em 0em 0em 0em;
-  /* gap: 2em; */
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
-  /* border: 1px solid #bdbdbd; */
-  /* background-color: #bdbdbd; */
 
   @media ${breakPoints.mobile} {
     width: 28em;
@@ -71,15 +63,9 @@ export const InfoTitleBox = styled.div`
 `;
 
 export const InfoBox = styled.div`
-  /* width: 38em; */
   width: 50%;
-  /* padding: 0em 3em 0em 0em; */
-  /* gap: 2em; */
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
-  /* border: 1px solid #bdbdbd; */
-  /* background-color: #bdbdbd; */
 
   @media ${breakPoints.mobile} {
     width: 28em;
@@ -99,15 +85,8 @@ export const CafeName = styled.h1`
   font-weight: 700;
 `;
 
-// export const LocationPhoneBox = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   background-color: red;
-// `;
-
 export const CafePhone = styled.div`
   font-size: 1.3em;
-  /* background-color: pink; */
 `;
 
 export const MenuBox = styled.div`
@@ -115,10 +94,7 @@ export const MenuBox = styled.div`
   flex-direction: row;
 `;
 
-export const InfoLocationBox = styled.div`
-  /* background-color: yellow;
-  gap: 2em; */
-`;
+export const InfoLocationBox = styled.div``;
 
 export const InfoContentsBox = styled.div`
   display: flex;
@@ -147,7 +123,6 @@ export const LocationBox = styled.div``;
 
 export const Location = styled.div`
   font-size: 1.3em;
-  /* background-color: orange; */
 `;
 
 export const LocationIcon = styled.img`
@@ -158,8 +133,6 @@ export const LocationDetail = styled.p`
   font-size: 1.2em;
   margin: 0.3em 0em 0em 0.5em;
   color: #a3a8b7;
-  /* margin-top: 0.8em; */
-  /* background-color: yellow; */
 `;
 
 export const Theme = styled.div`
@@ -167,9 +140,6 @@ export const Theme = styled.div`
   margin: 1em 0em;
 
   @media ${breakPoints.mobile} {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
   }
 `;
 
@@ -180,7 +150,6 @@ export const ThemeList = styled.div`
   grid-gap: 2.5em;
 
   @media ${breakPoints.mobile} {
-    /* width: 80%; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0em;
@@ -192,8 +161,6 @@ export const ButtonBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* align-self: center; */
-  /* background-color: pink; */
 
   @media ${breakPoints.mobile} {
     margin-top: 0;

@@ -64,9 +64,7 @@ export default function AdminCafeNew(props: IAdminCafeNewUIProps) {
             address: data.address,
             address_detail: data.address_detail,
             mainImg: imgurl,
-            // subImgs: [imgurl],
             users: userInfo.id,
-            // coordinate: 2,
           },
         },
       });

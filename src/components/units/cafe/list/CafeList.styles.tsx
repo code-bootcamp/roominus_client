@@ -7,7 +7,6 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background-color: lightcoral; */
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
@@ -59,7 +58,6 @@ export const SearchDetailBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* background-color: pink; */
 
   @media ${breakPoints.mobile} {
     height: 90px;
@@ -67,17 +65,15 @@ export const SearchDetailBox = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* background-color: pink; */
   }
 `;
 
 export const DetailBox = styled.div`
-  width: 40%; //35vw
+  width: 40%; //50vw
   height: 45px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* background-color: green; */
 
   @media ${breakPoints.tablet} {
     width: 45%;
@@ -99,7 +95,6 @@ export const LocationSelect = styled.select`
     border: none;
     outline: none;
     background-color: white;
-    /* width: 21em; */
     width: 80%;
     height: 40px;
     font-size: 1.2em;
@@ -108,13 +103,10 @@ export const LocationSelect = styled.select`
 
 export const DetailTitle = styled.h3`
   width: 3em; //3.5vw
-  /* height: 100%; */
   height: 45px;
-  /* margin-right: 1em; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: yellow; */
   font-size: 1.4em;
 
   @media ${breakPoints.tablet} {
@@ -123,9 +115,6 @@ export const DetailTitle = styled.h3`
   }
 
   @media ${breakPoints.mobile} {
-    /* width: 3em; */
-    /* margin-right: 0.5em; */
-    /* background-color: yellow; */
     font-size: 1.5em;
   }
 `;
@@ -146,8 +135,6 @@ export const LocationButtonTotal = styled.button`
   color: white;
   font-weight: 500;
   border-radius: 5px;
-  /* border-radius: 5px 0px 0px 5px; */
-  /* gap: 10px; */
   cursor: pointer;
   background-color: ${(props: ILocationButtonProps) =>
     props.total ? "#4a00e0e7" : "#a3a8b7"};
@@ -168,7 +155,6 @@ export const LocationButtonGangnam = styled.button`
   color: white;
   font-weight: 500;
   border-radius: 5px;
-  /* gap: 10px; */
   cursor: pointer;
   background-color: ${(props: ILocationButtonProps) =>
     props.gangnam ? "#4a00e0e7" : "#a3a8b7"};
@@ -189,7 +175,6 @@ export const LocationButtonHongdae = styled.button`
   color: white;
   font-weight: 500;
   border-radius: 5px;
-  /* gap: 10px; */
   cursor: pointer;
   background-color: ${(props: ILocationButtonProps) =>
     props.hongdae ? "#4a00e0e7" : "#a3a8b7"};
@@ -210,8 +195,6 @@ export const LocationButtonKondae = styled.button`
   color: white;
   font-weight: 500;
   border-radius: 5px;
-  /* border-radius: 0px 5px 5px 0px; */
-  /* gap: 10px; */
   cursor: pointer;
   background-color: ${(props: ILocationButtonProps) =>
     props.kondae ? "#4a00e0e7" : "#a3a8b7"};
@@ -246,8 +229,6 @@ export const DetailContents = styled.input`
   @media ${breakPoints.mobile} {
     width: 80%;
     font-size: 1.2em;
-    /* width: 21em; */
-    /* height: 20px; */
   }
 `;
 
@@ -274,14 +255,12 @@ export const Button = styled.button`
 
 export const ListWrapper = styled.section`
   width: 100%;
-  /* background-color: lightcoral; */
 `;
 
 export const BestListBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* background-color: lightblue; */
 `;
 
 export const BestTitle = styled.h1`
@@ -292,7 +271,6 @@ export const BestTitle = styled.h1`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 0;
-  /* background-color: yellow; */
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -317,15 +295,9 @@ export const Flex = styled.div`
 
 export const Etc = styled.ul`
   width: 100%;
-  /* background-color: lightgreen; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
-  /* display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  gap: 20px; */
-  /* margin-bottom: 2em; */
 
   @media ${breakPoints.tablet} {
     width: 100%;

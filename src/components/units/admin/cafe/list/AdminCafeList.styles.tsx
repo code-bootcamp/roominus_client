@@ -18,12 +18,10 @@ export const ButtonBox = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   margin: 1em 0em;
-  /* background-color: yellow; */
 `;
 
 export const Etc = styled.ul`
   width: 100%;
-  /* background-color: lightgreen; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;

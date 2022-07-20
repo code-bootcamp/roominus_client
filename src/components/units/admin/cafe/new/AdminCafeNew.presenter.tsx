@@ -56,7 +56,6 @@ export default function AdminCafeNewUI(props: IAdminCafeNewUIProps) {
           <S.ImgAddBtn />
         </S.ImgBox>
         {props.imgurl && <S.PreviewImg src={props.imgurl} alt="picture" />}
-        {/* <S.PreviewEmpty></S.PreviewEmpty> */}
       </S.PreviewBox>
       <S.Form2
         onSubmit={props.handleSubmit(

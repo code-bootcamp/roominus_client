@@ -16,10 +16,8 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
           <S.InfoTitleBox>
             <S.NamePhoneBox>
               <S.CafeName>{props.data?.fetchCafe.name}</S.CafeName>
-              {/* <S.LocationPhoneBox> */}
               <S.Location>🌏 {props.data?.fetchCafe.address}</S.Location>
               <S.CafePhone>📞 {props.data?.fetchCafe.phone}</S.CafePhone>
-              {/* </S.LocationPhoneBox> */}
             </S.NamePhoneBox>
           </S.InfoTitleBox>
         </S.InfoSummaryBox>
@@ -40,7 +38,6 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
                 </S.LocationDetail>
               </S.LocationFlex>
               <KakaoMap data={props.data} />
-              {/* <S.LocationIcon src="/img/cafe/location.webp" /> */}
             </S.InfoLocationBox>
           )}
           {props.tabKey === "2" && (
