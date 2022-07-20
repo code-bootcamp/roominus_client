@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
-import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
+import {
+  SettingOutlined,
+  LogoutOutlined,
+  MailOutlined,
+} from "@ant-design/icons";
 import { IIsActiveProps } from "../Layout.types";
 
 export const Container = styled.main`
@@ -110,5 +114,9 @@ export const Setting = styled(SettingOutlined)`
 `;
 
 export const Logout = styled(LogoutOutlined)`
+  margin-top: 0.2em;
+`;
+
+export const Mail = styled(MailOutlined)`
   margin-top: 0.2em;
 `;
