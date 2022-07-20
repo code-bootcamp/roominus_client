@@ -6,6 +6,12 @@ export const FETCH_PAYMENTS = gql`
       id
       price
       usepoint
+      reservation {
+        reservation_date
+      }
+      user {
+        point
+      }
     }
   }
 `;

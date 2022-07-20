@@ -1,4 +1,1 @@
-export interface IMyPageInfoUIProps {
-  reservations: [];
-  payments: [];
-}
+export interface IMyPageInfoUIProps {}

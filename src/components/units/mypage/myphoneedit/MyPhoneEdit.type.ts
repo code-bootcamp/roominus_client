@@ -10,7 +10,7 @@ export interface IMyPhoneEditUIProps {
   onClickVerifyMySelfByNo: MouseEventHandler<HTMLButtonElement> | undefined;
 
   // eslint-disable-next-line no-undef
-  isEdit: JSX.Element;
+  isEdit: boolean;
   onClickMoveToDelete: MouseEventHandler<HTMLSpanElement> | undefined;
   onClickEdit: MouseEventHandler<HTMLSpanElement> | undefined;
 
