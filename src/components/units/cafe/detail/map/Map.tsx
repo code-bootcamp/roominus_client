@@ -10,7 +10,20 @@ const Map = styled.div`
   height: 26em;
 `;
 
-export default function KakaoMap(props) {
+interface IKakaoMapProps {
+  data?: {
+    fetchCafe: {
+      mainImg: string;
+      name: string;
+      address: string;
+      phone: string;
+      intro_content: string;
+      address_detail: string;
+    };
+  };
+}
+
+export default function KakaoMap(props: IKakaoMapProps) {
   //지도
   useEffect(() => {
     const script = document.createElement("script");
@@ -42,21 +55,22 @@ export default function KakaoMap(props) {
 
         geocoder.addressSearch(
           props.data?.fetchCafe?.address_detail,
-          function (result, status) {
+          function (result: any, status: string) {
             if (status === window.kakao.maps.services.Status.OK) {
               const coords = new window.kakao.maps.LatLng(
                 result[0].y,
                 result[0].x
               );
 
-              console.log(result);
-              console.log(status);
+              console.log(typeof result);
+              console.log(typeof status);
 
               const marker = new window.kakao.maps.Marker({
                 map,
                 position: coords,
                 // image: markerImage,
               });
+              console.log(marker);
 
               map.setCenter(coords);
             }

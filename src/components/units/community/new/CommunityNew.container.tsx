@@ -34,7 +34,7 @@ export default function CommunityNew(props) {
     mode: "onSubmit",
   });
 
-  const editorRef = createRef();
+  const editorRef = createRef<Editor>();
 
   const onChangeContent = () => {
     const inputs = editorRef.current?.getInstance().getHTML();

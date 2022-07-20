@@ -24,9 +24,6 @@ export interface ICafeDetailUI {
     };
   };
   themeData?: {
-    fetchThemesOnTheme: {
-      title: string;
-      mainImg: string;
-    };
+    fetchThemesOnTheme: any;
   };
 }

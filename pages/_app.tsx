@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     document.head.appendChild(script);
 
     script.onload = () => {
-      window.Kakao.init("675cd5356e97bab7c2fafe02e722f558");
+      window.Kakao.init("1988a9a8f46853586b98dd3981a6b87e");
       window.Kakao.isInitialized();
     };
   }, []);
