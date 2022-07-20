@@ -54,7 +54,10 @@ export default function ReservationSuccess() {
     if (data?.fetchReservation.reservation_date === now) {
       setCancellable(false);
     }
-  }, [cancellable]);
+    console.log(data?.fetchReservation.reservation_date);
+    console.log(now);
+    console.log(cancellable);
+  }, []);
 
   const onClickRefund = async () => {
     try {
