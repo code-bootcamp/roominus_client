@@ -139,14 +139,21 @@ export const SelectGuideBox = styled.div`
 export const ThemeGuide = styled.span`
   font-size: 1.5em;
   font-family: "GowunDodum-Regular";
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2em;
+  }
 `;
 
 export const RecommendationBox = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  gap: 1.5em;
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
 `;
 
 export const TypingBox = styled.div`
@@ -157,6 +164,6 @@ export const TypingBox = styled.div`
   text-shadow: 1px 1px 0px #b6a2ea, 2px 2px 0px #9eabe6, 3px 1px 0px #bf9eeb;
 
   @media ${breakPoints.mobile} {
-    font-size: 1.6em;
+    font-size: 1.5em;
   }
 `;

@@ -6,7 +6,7 @@ import Layout from "../src/components/commons/layout";
 import { initializeApp } from "firebase/app";
 import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
-import Head from "next/head";
+// import Head from "next/head";
 import ApolloSetting from "../src/components/commons/apollo";
 
 declare const window: typeof globalThis & {
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Roominus</title>
         <meta
           property="og:Roominus"
@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           type="text/javascript"
           src="http://code.jquery.com/jquery-1.11.3.min.js"
         ></script>
-      </Head>
+      </Head> */}
       <RecoilRoot>
         <ApolloSetting>
           <Global styles={globalStyles} />
