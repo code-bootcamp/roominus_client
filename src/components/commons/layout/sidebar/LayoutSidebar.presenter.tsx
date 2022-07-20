@@ -43,6 +43,12 @@ export default function LayoutSideBarUI(props: ISideBarUIProps) {
 
         <S.MenuFooterBox>
           <S.FooterBox>
+            <S.Mail />
+            <Link href="/contactUs">
+              <span>문의하기</span>
+            </Link>
+          </S.FooterBox>
+          <S.FooterBox>
             <S.Setting />
             <Link href="/mypage/phoneedit">
               <span>회원정보 수정</span>
