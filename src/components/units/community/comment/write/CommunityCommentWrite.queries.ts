@@ -13,8 +13,8 @@ export const CREATE_BOARD_REVIEW = gql`
 `;
 
 export const FETCH_BOARD_COMMENTS = gql`
-  query fetchBoardComments($page: Float!, $boardId: String!) {
-    fetchBoardComments(page: $page, boardId: $boardId) {
+  query fetchBoardComments($boardId: String!) {
+    fetchBoardComments(boardId: $boardId) {
       boardreview {
         id
         content
@@ -26,15 +26,3 @@ export const FETCH_BOARD_COMMENTS = gql`
     }
   }
 `;
-
-// export const FETCH_BOARD_REVIEW = gql`
-//   query fetchBoardreview($id: String!) {
-//     fetchBoardreview(id: $id) {
-//       id
-//       content
-//       board {
-//         id
-//       }
-//     }
-//   }
-// `;

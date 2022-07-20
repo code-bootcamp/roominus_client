@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import CommunityCommentWriteUI from "./CommunityCommentWrite.presenter";
@@ -8,34 +8,34 @@ import {
 } from "./CommunityCommentWrite.queries";
 import Swal from "sweetalert2";
 import { IDataProps } from "./CommunityCommentWrite.types";
-// import { useRecoilState } from "recoil";
-// import { userInfoState } from "../../../../../commons/store";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 
 export default function CommunityCommentWrite() {
   const router = useRouter();
 
   const [createBoardreview] = useMutation(CREATE_BOARD_REVIEW);
 
-  // const [userInfo] = useRecoilState(userInfoState);
+  const [userInfo] = useRecoilState(userInfoState);
 
   const { register, handleSubmit, reset } = useForm({
     mode: "onChange",
   });
 
   const onClickComment = async (data: IDataProps) => {
-    // console.log(data);
     try {
       const result = await createBoardreview({
         variables: {
           createBoardreviewInput: {
             content: data.content,
             board: router.query.id,
+            // user: userInfo.id,
           },
         },
         refetchQueries: [
           {
             query: FETCH_BOARD_COMMENTS,
-            variables: { boardId: router.query.id, page: 1 },
+            variables: { boardId: router.query.id },
           },
         ],
       });
@@ -55,7 +55,7 @@ export default function CommunityCommentWrite() {
       onClickComment={onClickComment}
       register={register}
       handleSubmit={handleSubmit}
-      // userInfo={userInfo}
+      userInfo={userInfo}
     />
   );
 }

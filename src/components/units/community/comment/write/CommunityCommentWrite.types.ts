@@ -12,4 +12,7 @@ export interface ICommunityCommentWriteUIProps {
   onClickComment: (data: any) => Promise<void>;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
+  userInfo: {
+    name: string;
+  };
 }

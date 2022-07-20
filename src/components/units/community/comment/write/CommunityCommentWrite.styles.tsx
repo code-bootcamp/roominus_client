@@ -60,7 +60,7 @@ export const CommentWriteBox = styled.div`
 
 export const Name = styled.h3`
   margin-bottom: 0em;
-  width: 15%;
+  width: 17%;
   height: 2.5em;
   display: flex;
   flex-direction: column;

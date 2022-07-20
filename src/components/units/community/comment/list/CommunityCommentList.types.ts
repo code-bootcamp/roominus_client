@@ -9,4 +9,7 @@ export interface IBoardreviewEl {
   id: string;
   createdAt: string;
   content: string;
+  user: {
+    name: string;
+  };
 }

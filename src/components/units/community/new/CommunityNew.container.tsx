@@ -70,7 +70,6 @@ export default function CommunityNew(props: ICommunityNewProps) {
               content: data.content,
               boardTags: tagList,
               mainImg: fileUrl,
-              // user: "469bb4c0-90f4-42d2-8099-69b34a139a79",
               user: userInfo.id,
             },
           },
@@ -96,7 +95,7 @@ export default function CommunityNew(props: ICommunityNewProps) {
     const updateBoardInput: IUpdateBoardInput = {};
     if (data.title) updateBoardInput.title = data.title;
     if (data.content) updateBoardInput.content = data.content;
-    if (tagList) updateBoardInput.boardTags = tagList;
+    // if (tagList) updateBoardInput.boardTags = tagList;
     if (fileUrl) updateBoardInput.mainImg = fileUrl;
 
     try {
