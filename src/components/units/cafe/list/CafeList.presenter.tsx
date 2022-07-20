@@ -1,5 +1,3 @@
-// import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-// import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./CafeList.styles";
 import { ICafeListUIProps, IFetchCafesProps } from "./CafeList.types";
 import ListCards from "./card/ListCards";
@@ -52,10 +50,6 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
               <S.DetailContents placeholder="매장을 입력해주세요." />
             </S.DetailBox>
           </S.SearchDetailBox>
-          {/* <S.ButtonBox>
-            <WebBlackButton title="초기화" />
-            <WebPurpleButton title="검색하기" />
-          </S.ButtonBox> */}
         </S.SearchBox>
       </S.SearchWrapper>
       <S.ListWrapper>

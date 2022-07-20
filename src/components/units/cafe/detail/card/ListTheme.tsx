@@ -1,8 +1,3 @@
-// import {
-//   EditOutlined,
-//   EllipsisOutlined,
-//   SettingOutlined,
-// } from "@ant-design/icons";
 import { Card } from "antd";
 import React from "react";
 import styled from "@emotion/styled";
@@ -26,7 +21,6 @@ const Wrapper2 = styled.div`
 `;
 
 const TitleBox = styled.div`
-  /* background-color: yellow; */
   height: 20px;
   display: flex;
   flex-direction: column;
@@ -38,7 +32,6 @@ const TitleBox = styled.div`
     font-size: 1.2em;
     word-break: break-all;
     text-align: center;
-    /* white-space: nowrap; */
   }
 
   @media ${breakPoints.mobile} {
@@ -65,19 +58,9 @@ const ListTheme = (props: IListThemeProps) => (
             style={{ height: 270, cursor: "pointer" }}
           />
         }
-        // 관리자 권한일 때 사용하기
-        // actions={[
-        //   <SettingOutlined key="setting" />,
-        //   <EditOutlined key="edit" />,
-        //   <EllipsisOutlined key="ellipsis" />,
-        // ]}
       >
         <TitleBox>
-          <Meta
-            // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-            title={props.el.title}
-            // description="02-1234-5678"
-          />
+          <Meta title={props.el.title} />
         </TitleBox>
       </Card>
     </Wrapper1>
@@ -96,19 +79,9 @@ const ListTheme = (props: IListThemeProps) => (
             style={{ height: 180, cursor: "pointer" }}
           />
         }
-        // 관리자 권한일 때 사용하기
-        // actions={[
-        //   <SettingOutlined key="setting" />,
-        //   <EditOutlined key="edit" />,
-        //   <EllipsisOutlined key="ellipsis" />,
-        // ]}
       >
         <TitleBox>
-          <Meta
-            // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-            title={props.el.title}
-            // description="02-1234-5678"
-          />
+          <Meta title={props.el.title} />
         </TitleBox>
       </Card>
     </Wrapper2>

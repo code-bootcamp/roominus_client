@@ -12,7 +12,7 @@ export default function CommunityCommentList() {
 
   const [deleteBoardreview] = useMutation(DELETE_BOARD_REVIEW);
 
-  const { data, fetchMore } = useQuery(FETCH_BOARD_COMMENTS, {
+  const { data } = useQuery(FETCH_BOARD_COMMENTS, {
     variables: {
       boardId: router.query.id,
       page: 1,

@@ -1,8 +1,3 @@
-// import {
-//   EditOutlined,
-//   EllipsisOutlined,
-//   SettingOutlined,
-// } from "@ant-design/icons";
 import { Card } from "antd";
 import React from "react";
 import styled from "@emotion/styled";
@@ -20,23 +15,19 @@ const LocationBox = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 0.3em;
-  /* align-items: center; */
   position: absolute;
   z-index: 1;
   top: 2.4em;
   left: -1px;
   background-color: #4a00e0;
-  /* background-color: #26282c; */
 `;
 
 const Location = styled.h3`
   font-size: 1.3em;
   font-weight: 600;
-  /* background-color: green; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding-top: 0.4em; */
   height: 100%;
   color: white;
 `;
@@ -47,7 +38,6 @@ const LocationIcon = styled.img`
   display: flex;
   flex-direction: column;
   align-self: center;
-  /* background-color: pink; */
 `;
 
 const Info = styled.div`
@@ -84,12 +74,6 @@ const ListCards = (props: IListCardsProps) => (
           style={{ height: 250, cursor: "pointer" }}
         />
       }
-      // 관리자 권한일 때 사용하기
-      // actions={[
-      //   <SettingOutlined key="setting" />,
-      //   <EditOutlined key="edit" />,
-      //   <EllipsisOutlined key="ellipsis" />,
-      // ]}
     >
       <LocationBox>
         <LocationIcon src="/img/cafe/locationIcon.webp" />
