@@ -1,5 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Swal from "sweetalert2";
 import ThemeCommentWriteUI from "./ThemeCommentWrite.presenter";
@@ -88,7 +89,9 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       alert((error as Error).message);
     }
   };
-
+  useEffect(() => {
+    register("star", { required: true });
+  }, []);
   return (
     <ThemeCommentWriteUI
       register={register}
