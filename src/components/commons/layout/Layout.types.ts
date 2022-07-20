@@ -17,6 +17,7 @@ export interface IIsActiveProps {
 }
 
 export interface ISideBarUIProps {
+  userInfo: any;
   activedMenu: string;
   onClickMenu: MouseEventHandler<HTMLLIElement>;
   onClickMyPage: () => void;

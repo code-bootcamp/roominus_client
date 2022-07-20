@@ -1,4 +1,4 @@
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+// import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import * as S from "./Main.styles";
 
 export default function MainUI() {

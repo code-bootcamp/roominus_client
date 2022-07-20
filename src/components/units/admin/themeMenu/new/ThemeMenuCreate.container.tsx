@@ -34,8 +34,8 @@ export default function ThemeMenuCreate(props: IThemeMenuCreateProps) {
             reservation_time: data.reservation_time,
             people_number: Number(data.people_number),
             price: Number(data.price),
-            cafeName: cafeName,
-            themeTitle: themeTitle,
+            cafeName,
+            themeTitle,
           },
         },
       });

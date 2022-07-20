@@ -6,7 +6,7 @@ import Typewriter from "typewriter-effect";
 
 export default function MainUI() {
   const router = useRouter();
-  const list = ["어쩌구", "저쩌구"];
+  // const list = ["어쩌구", "저쩌구"];
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
