@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../../commons/store";
+import { FETCH_PAYMENTS, FETCH_RESERVATIONS_USER } from "./MyPage.query";
 
 import MyPageInfoUI from "./MyPageInfo.presenter";
 
