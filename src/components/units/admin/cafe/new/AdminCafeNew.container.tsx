@@ -6,7 +6,7 @@ import { CREATE_CAFE, UPDATE_CAFE } from "./AdminCafeNew.query";
 import AdminCafeNewUI from "./AdminCafeNew.presenter";
 import Swal from "sweetalert2";
 import {
-  IAdminCafeNewUIProps,
+  IAdminCafeNewProps,
   IDataProps,
   IUpdateDataProps,
   IUpdateCafeInput,
@@ -14,7 +14,7 @@ import {
 import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../../../commons/store";
 
-export default function AdminCafeNew(props: IAdminCafeNewUIProps) {
+export default function AdminCafeNew(props: IAdminCafeNewProps) {
   const router = useRouter();
   const imgRef = useRef<HTMLInputElement>(null);
 

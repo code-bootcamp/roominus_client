@@ -29,7 +29,7 @@ export default function ChangingPassword() {
     mode: "onChange",
   });
 
-  const onSubmitChangingPassword = (data) => {
+  const onSubmitChangingPassword = (data: any) => {
     console.log(data);
     router.push("/login");
   };

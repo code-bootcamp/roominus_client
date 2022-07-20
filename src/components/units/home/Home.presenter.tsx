@@ -7,7 +7,8 @@ import FAQ from "./faq/Faq";
 import { useEffect, useState } from "react";
 import ThemeCardComponent from "./themecard/ThemeCard";
 
-export default function HomeUI(props) {
+// 타입 지정 해주셔야 합니다.
+export default function HomeUI(props: any) {
   const [windowSize, setWindowSize] = useState(false);
 
   const handleResize = () => {
@@ -93,7 +94,7 @@ export default function HomeUI(props) {
         </S.TitleBox>
         {!windowSize && (
           <S.ThemeList>
-            {props.fetchThemes?.fetchThemes.slice(0, 4).map((el) => (
+            {props.fetchThemes?.fetchThemes.slice(0, 4).map((el: any) => (
               <div key={el.id}>
                 <ThemeCardComponent el={el} />
               </div>
@@ -102,7 +103,7 @@ export default function HomeUI(props) {
         )}
         {windowSize && (
           <S.ThemeList>
-            {props.fetchThemes?.fetchThemes.slice(0, 2).map((el) => (
+            {props.fetchThemes?.fetchThemes.slice(0, 2).map((el: any) => (
               <div key={el.id}>
                 <ThemeCardComponent el={el} />
               </div>

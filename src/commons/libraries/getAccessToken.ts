@@ -6,6 +6,7 @@ const RESTORE_ACCESS_TOKEN = gql`
     restoreAccessToken
   }
 `;
+
 export async function getAccessToken() {
   try {
     const graphQLClient = new GraphQLClient("https://wawoong.shop/graphql", {
@@ -16,6 +17,6 @@ export async function getAccessToken() {
     console.log(newAccessToken);
     return newAccessToken;
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 }

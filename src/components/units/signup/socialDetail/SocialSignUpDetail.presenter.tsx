@@ -1,8 +1,40 @@
 import * as S from "./SocialSignUpDetail.styles";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import {
+  FormEventHandler,
+  ReactChild,
+  ReactFragment,
+  ReactPortal,
+  ChangeEventHandler,
+  LegacyRef,
+  MouseEventHandler,
+} from "react";
 
-export default function SocialSignUpDetailUI(props) {
+// 타입 수정하세요!!
+export default function SocialSignUpDetailUI(props: {
+  handleSubmit: (arg0: any) => FormEventHandler<HTMLFormElement>;
+  onSubmitSignup: any;
+  kakaoInfo: { email: any };
+  googleInfo: { email: any };
+  setValue: (arg0: string, arg1: string) => void;
+  trigger: (arg0: string) => void;
+  setPhone: (arg0: string) => void;
+  onClickVerifyMySelfByNo: any;
+  formState: {
+    errors: {
+      phoneNumber: {
+        message: boolean | ReactChild | ReactFragment | ReactPortal;
+      };
+    };
+  };
+  onChangeTokenValue: ChangeEventHandler<HTMLInputElement>;
+  timeRef: LegacyRef<HTMLSpanElement>;
+  showCount: boolean | ReactChild | ReactFragment | ReactPortal;
+  verificationBtn: LegacyRef<HTMLButtonElement>;
+  onClickCheckVerificationNo: MouseEventHandler<HTMLButtonElement>;
+  onClickMoveToLogin: any;
+}) {
   return (
     <S.Wrapper>
       <S.Title>기본정보</S.Title>

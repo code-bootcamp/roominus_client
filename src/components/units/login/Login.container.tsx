@@ -96,11 +96,12 @@ export default function LoginPage() {
       router.push("/mypage");
     } catch (error) {
       Swal.fire({
-        title: error.message,
+        title: "로그인에 실패하였습니다",
         icon: "error",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
       });
+      console.log(error);
     }
   };
   const onClickMoveToSignUp = () => {

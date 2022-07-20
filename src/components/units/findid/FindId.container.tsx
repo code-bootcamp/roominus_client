@@ -52,7 +52,7 @@ export default function FindId() {
       PasswordFindinputRef.current?.focus();
     }, 100);
   };
-  const onSubmitFindId = async (data) => {
+  const onSubmitFindId = async (data: { email: any }) => {
     try {
       const result = await client.query({
         query: FETCH_USER,

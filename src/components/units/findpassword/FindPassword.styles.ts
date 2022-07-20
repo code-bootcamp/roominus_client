@@ -39,21 +39,30 @@ export const TabBtns = styled.div`
     font-size: 1.6em;
   }
 `;
+
+interface IClickedFirstProps {
+  isClickedfirst: boolean;
+}
+
 export const TabFirst = styled.button`
   width: 45%;
   height: 3.5em;
   color: white;
-  background-color: ${(props) =>
+  background-color: ${(props: IClickedFirstProps) =>
     props.isClickedfirst ? "#4a00e0e7" : "#6D737D99"};
   border-radius: 10px 10px 0px 0px;
   border: none;
   cursor: pointer;
 `;
+
+interface IClickedSecondProps {
+  isClickedsecond: boolean;
+}
 export const TabSecond = styled.button`
   width: 45%;
   height: 3.5em;
   color: white;
-  background-color: ${(props) =>
+  background-color: ${(props: IClickedSecondProps) =>
     props.isClickedsecond ? "#4a00e0e7" : "#6D737D99"};
   border-radius: 10px 10px 0px 0px;
   border: none;

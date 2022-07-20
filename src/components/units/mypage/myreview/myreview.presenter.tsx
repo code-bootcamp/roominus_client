@@ -24,10 +24,7 @@ export default function MyReviewUI(props: IMyReviewUIProps) {
           (el: IFetchThemesUser, index: number) => (
             <S.Row key={index}>
               <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-              <S.ColumnTitle
-                id={el.theme.id}
-                onClickReview={props.onClickReview}
-              >
+              <S.ColumnTitle id={el.theme.id} onClick={props.onClickReview}>
                 {el.theme.title}
               </S.ColumnTitle>
               <S.ColumnBasic>{el.clear}</S.ColumnBasic>

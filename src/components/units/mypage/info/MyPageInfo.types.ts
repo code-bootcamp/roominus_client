@@ -1,1 +1,4 @@
-export interface IMyPageInfoUIProps {}
+export interface IMyPageInfoUIProps {
+  reservation: any;
+  payments: any;
+}

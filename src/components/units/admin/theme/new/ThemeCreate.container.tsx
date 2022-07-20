@@ -15,13 +15,13 @@ export default function ThemeCreate(props: IThemeCreateProps) {
   const [createThemegql] = useMutation(CREATE_THEME);
   const [updateThemegql] = useMutation(UPDATE_THEME);
   const router = useRouter();
-  const imgRef = useRef();
+  const imgRef = useRef<HTMLInputElement>(null);
   const [imgurl, setImgurl] = useState("");
   const { register, handleSubmit, reset } = useForm();
   const [value, setValue] = useState(0);
 
   const onClickRealInput = () => {
-    imgRef.current.click();
+    imgRef.current?.click();
   };
 
   const onSubmitCreateTheme = async (data: ICreateThemeData) => {

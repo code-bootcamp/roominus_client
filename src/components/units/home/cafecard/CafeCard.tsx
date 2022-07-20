@@ -48,7 +48,18 @@ const LocationIcon = styled.img`
   /* background-color: pink; */
 `;
 
-const CafeCard = (props) => (
+const CafeCard = (props: {
+  el: {
+    mainImg: string;
+    address:
+      | boolean
+      | React.ReactChild
+      | React.ReactFragment
+      | React.ReactPortal;
+    name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal;
+    phone: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal;
+  };
+}) => (
   <Wrapper>
     <Card
       style={{ width: "100%", position: "relative" }}

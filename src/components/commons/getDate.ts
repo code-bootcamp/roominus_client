@@ -1,4 +1,4 @@
-export const getDate = (value: any) => {
+export const getDate = (value: string | number | Date) => {
   const date = new Date(value);
   const yyyy = date.getFullYear();
   const mm = date.getMonth() + 1;
@@ -15,13 +15,13 @@ export const getToday = (value: string | number | Date) => {
   return `${yyyy}-${mm}-${dd}`;
 };
 
-export const getTime = (value: any) => {
+export const getTime = (value: string | number | Date) => {
   const date = new Date(value);
   const hh = date.getHours();
   return `${hh}시`;
 };
 
-export const getDateTime = (value: any) => {
+export const getDateTime = (value: string | number | Date) => {
   const today = new Date();
   const year = today.getFullYear();
   const month = today.getMonth() + 1;
@@ -41,7 +41,7 @@ export const getDateTime = (value: any) => {
   // return `${yyyy}.${String(mm).padStart(2, "0")}.${dd}`;
 };
 
-export const getBeforeTime = (value: any) => {
+export const getBeforeTime = (value: string | number | Date) => {
   const today = new Date();
   const year = today.getFullYear();
   const month = today.getMonth() + 1;
@@ -63,7 +63,7 @@ export const getBeforeTime = (value: any) => {
   // return `${yyyy}.${String(mm).padStart(2, "0")}.${dd}`;
 };
 
-export const getDateBefore = (value: any) => {
+export const getDateBefore = (value: string | number | Date) => {
   const today = new Date();
   const timeValue = new Date(value);
 

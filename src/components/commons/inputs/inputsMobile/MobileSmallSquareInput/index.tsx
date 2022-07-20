@@ -11,7 +11,7 @@ const Input = styled.input`
   padding: 0em 0.5em 0em 0.5em;
 `;
 
-export default function MobileSmallSquareInput(props) {
+export default function MobileSmallSquareInput(props: any) {
   return (
     <Input
       type={props?.type}

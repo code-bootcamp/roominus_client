@@ -12,7 +12,7 @@ export default function ThemeMenuList() {
   console.log(data);
   return (
     <>
-      {data?.fetchThemeMenus.map((el) => (
+      {data?.fetchThemeMenus.map((el: { id: any }) => (
         <ThemeMenuListUI key={el.id} el={el} />
       ))}
     </>
