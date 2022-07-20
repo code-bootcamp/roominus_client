@@ -14,7 +14,6 @@ export default function AdminCafeDetail() {
       cafeId: router.query.id,
     },
   });
-  console.log(data);
 
   const onClickList = () => {
     router.push("/admin/cafe");
@@ -44,7 +43,6 @@ export default function AdminCafeDetail() {
     try {
       await deleteCafe({
         variables: { cafeId: router.query.id },
-        // refetchQueries: [{ query: FETCH_CAFES }],
       });
       router.push("/admin/cafe");
     } catch (error) {

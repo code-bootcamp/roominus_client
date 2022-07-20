@@ -18,5 +18,6 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "spaced-comment": "off",
+    "no-new": 0,
   },
 };

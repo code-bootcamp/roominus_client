@@ -10,7 +10,6 @@ export default function AdminCafeList() {
   const router = useRouter();
 
   const { data, fetchMore } = useQuery(FETCH_CAFES);
-  console.log(data);
 
   const onClickNew = () => {
     router.push("/admin/cafe/new");

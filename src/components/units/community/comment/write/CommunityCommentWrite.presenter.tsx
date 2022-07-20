@@ -1,7 +1,10 @@
 import WebSmallPurpleButton from "../../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import * as S from "./CommunityCommentWrite.styles";
+import { ICommunityCommentWriteUIProps } from "./CommunityCommentWrite.types";
 
-export default function CommunityCommentWriteUI(props) {
+export default function CommunityCommentWriteUI(
+  props: ICommunityCommentWriteUIProps
+) {
   return (
     <S.Wrapper>
       {/* <S.CommentTitleBox>

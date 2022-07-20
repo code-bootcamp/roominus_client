@@ -7,8 +7,9 @@ import {
   FETCH_BOARD_COMMENTS,
 } from "./CommunityCommentWrite.queries";
 import Swal from "sweetalert2";
-import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../../../commons/store";
+import { IDataProps } from "./CommunityCommentWrite.types";
+// import { useRecoilState } from "recoil";
+// import { userInfoState } from "../../../../../commons/store";
 
 export default function CommunityCommentWrite() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function CommunityCommentWrite() {
     mode: "onChange",
   });
 
-  const onClickComment = async (data) => {
+  const onClickComment = async (data: IDataProps) => {
     // console.log(data);
     try {
       const result = await createBoardreview({
@@ -45,7 +46,7 @@ export default function CommunityCommentWrite() {
         title: "등록이 완료되었습니다!",
       });
     } catch (error) {
-      alert(error.message);
+      alert((error as Error).message);
     }
   };
 

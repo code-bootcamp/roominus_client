@@ -10,13 +10,20 @@ import Swal from "sweetalert2";
 import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../../commons/store";
 import { Editor } from "@toast-ui/react-editor";
+import {
+  ICommunityNewProps,
+  IUpdateBoardInput,
+  IEditDataProps,
+  IEl,
+  IDataProps,
+} from "./CommunityNew.types";
 
 const schema = yup.object({
   title: yup.string().required("제목은 필수 입력 사항입니다."),
   content: yup.string().required("내용은 필수 입력 사항입니다."),
 });
 
-export default function CommunityNew(props) {
+export default function CommunityNew(props: ICommunityNewProps) {
   const router = useRouter();
 
   const [tagItem, setTagItem] = useState("");
@@ -45,11 +52,6 @@ export default function CommunityNew(props) {
   const onClickList = () => {
     router.push("/community");
   };
-
-  interface IDataProps {
-    title: string;
-    content: string;
-  }
 
   const onClickSubmit = async (data: IDataProps) => {
     console.log(data);
@@ -88,14 +90,7 @@ export default function CommunityNew(props) {
     }
   };
 
-  interface IUpdateBoardInput {
-    title?: string;
-    content?: string;
-    boardTags?: never[];
-    mainImg?: string;
-  }
-
-  const onClickEdit = async (data) => {
+  const onClickEdit = async (data: IEditDataProps) => {
     console.log(props.editData);
 
     const updateBoardInput: IUpdateBoardInput = {};
@@ -127,7 +122,9 @@ export default function CommunityNew(props) {
   // 태그 수정시 defaultValue
   useEffect(() => {
     if (props.editData?.fetchBoard.boardTags.length)
-      setTagList(props.editData?.fetchBoard.boardTags.map((el) => el.title));
+      setTagList(
+        props.editData?.fetchBoard.boardTags.map((el: IEl) => el.title)
+      );
   }, [props.editData]);
 
   // 이미지 수정시 defaultValue
@@ -139,7 +136,7 @@ export default function CommunityNew(props) {
 
   // toastUI defaultValue
   useEffect(() => {
-    const html = props.editData?.fetchBoard.content;
+    const html: any = props.editData?.fetchBoard.content;
     editorRef.current?.getInstance().setHTML(html);
   }, [props.editData]);
 

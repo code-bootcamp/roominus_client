@@ -18,7 +18,7 @@ const FETCH_BOARD = gql`
 `;
 
 export default function CommunityEditPage() {
-  // useAuth();
+  useAuth();
 
   const router = useRouter();
 

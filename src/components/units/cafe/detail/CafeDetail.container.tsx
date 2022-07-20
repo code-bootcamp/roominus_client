@@ -15,14 +15,12 @@ export default function CafeDetail() {
       cafeId: router.query.id,
     },
   });
-  console.log(data);
 
   const { data: fetchThemesOnTheme } = useQuery(FETCH_THEMES_ON_THEME, {
     variables: {
       cafeId: router.query.id,
     },
   });
-  console.log(fetchThemesOnTheme);
 
   const onChangeKey = (key: string) => {
     setTabKey(key);

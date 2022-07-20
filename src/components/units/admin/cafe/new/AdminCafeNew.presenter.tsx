@@ -10,7 +10,6 @@ export default function AdminCafeNewUI(props: IAdminCafeNewUIProps) {
           {props.isEdit ? "cafe 수정페이지" : "cafe 등록페이지"}
         </S.Title>
         <S.InputsTitle>매장 이름</S.InputsTitle>
-        {console.log(props.editData)}
         <S.Input
           type="text"
           {...props.register("name")}

@@ -1,8 +1,11 @@
 import CommunityCommentWrite from "../write/CommunityCommentWrite.container";
 import * as S from "./CommunityCommentEdit.styles";
 import { getDate } from "../../../../../components/commons/getDate";
+import { ICommunityCommentEditUIProps } from "./CommunityCommentEdit.types";
 
-export default function CommunityCommentEditUI(props) {
+export default function CommunityCommentEditUI(
+  props: ICommunityCommentEditUIProps
+) {
   return (
     <S.Wrapper>
       {props.isEdit === false && (

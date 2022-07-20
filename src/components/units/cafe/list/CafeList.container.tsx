@@ -15,7 +15,6 @@ export default function CafeListPage() {
   const [kondae, setKondae] = useState(false);
 
   const { data, fetchMore } = useQuery(FETCH_CAFES);
-  console.log(data);
 
   const onClickTotal = () => {
     setTotal(true);
