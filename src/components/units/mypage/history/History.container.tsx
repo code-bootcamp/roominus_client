@@ -9,11 +9,12 @@ export default function History() {
 
   const { data } = useQuery(FETCH_RESERVATIONS_USER, {
     variables: {
-      userId: userInfo.id,
+      userId: "9dce6ff0-ac63-419b-a6c8-6293c277a3f2",
     },
   });
 
   console.log(data);
+  console.log(userInfo);
 
   return <HistoryUI data={data} />;
 }

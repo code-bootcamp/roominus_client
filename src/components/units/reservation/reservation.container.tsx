@@ -41,7 +41,8 @@ export default function Reservation() {
   });
 
   const soldOut = reservations?.fetchReservations?.map(
-    (el) => el.theme_menu.reservation_time
+    (el: { theme_menu: { reservation_time: any } }) =>
+      el.theme_menu.reservation_time
   );
 
   const dateFormatter = (str: string) => {
@@ -54,7 +55,6 @@ export default function Reservation() {
 
   const onChangeTheme = (event: ChangeEvent<HTMLInputElement>) => {
     setThemeId(event.target.value);
-    console.log(themeId);
   };
 
   const onChangeCafe = (event: ChangeEvent<HTMLInputElement>) => {
@@ -75,8 +75,6 @@ export default function Reservation() {
   const ableTime = uniqeTime?.filter((el) => {
     if (!soldOut?.includes(el)) return el;
   });
-
-  console.log(ableTime);
 
   const onChangeTime = (event: ChangeEvent<HTMLInputElement>) => {
     setTime(event.target.value);

@@ -4,7 +4,6 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
-// import moment from "moment";
 import MomentUtils from "@date-io/moment";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import NoReservation from "./NoReservation";

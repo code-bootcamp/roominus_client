@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import HomeUI from "./Home.presenter";
 import { FETCH_CAFES, FETCH_THEMES } from "./Home.query";
 
@@ -15,8 +15,6 @@ export default function Home() {
   const { data } = useQuery(FETCH_CAFES);
 
   const { data: fetchThemes } = useQuery(FETCH_THEMES);
-
-  console.log(data);
 
   const onClickOpenQuestion1 = () => {
     setIsOpened1((prev) => !prev);
@@ -41,7 +39,7 @@ export default function Home() {
     router.push("/cafe");
   };
 
-  const onClickCard = (el) => (event) => {
+  const onClickCard = (el: any) => (event: { currentTarget: { id: any } }) => {
     router.push(`/cafe/${event?.currentTarget.id}`);
   };
 

@@ -1,25 +1,29 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import { getToday } from "../../../commons/getDate";
 import * as S from "../myboard/myboard.styles";
 
 export default function MyBoardUI(props) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.Title>내가 쓴 후기</S.Title>
+        <S.Title>나의 글 목록</S.Title>
         <S.TableTop />
         <S.TitleRow>
           <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>적립 내역</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>전체 적립금</S.ColumnHeaderTitle>
+          <S.ColumnHeaderTitle>제목</S.ColumnHeaderTitle>
+          <S.ColumnHeaderTitle>좋아요</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {props.data?.map((el) => (
-          <S.Row key={el._id}>
-            <S.ColumnBasic>{el.price}</S.ColumnBasic>
-            <S.ColumnBasic>{el.usepoint}</S.ColumnBasic>
+        {props.data?.fetchBoardsUser.map((el, index) => (
+          <S.Row key={el.index}>
+            <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+            <S.ColumnBasic>{el.title}</S.ColumnBasic>
+            <S.ColumnBasic>{el.like}</S.ColumnBasic>
+            <S.ColumnBasic>{getToday(el.createdAt)}</S.ColumnBasic>
           </S.Row>
         ))}
+
         <S.TableBottom />
         <S.ButtonBox>
           <Link href={"/mypage"}>

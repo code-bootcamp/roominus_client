@@ -5,6 +5,7 @@ export interface IFetchThemeMenus {
   people_number: number;
 }
 export interface IReservationUIProps {
+  ableTime: any;
   reservations: ReactNode;
   totalPrice: any;
   usePoint: number;
@@ -12,7 +13,6 @@ export interface IReservationUIProps {
   cafeId: string;
   reservationDate: string;
   time: string;
-  uniqeTime: any;
   peopleNumber: number;
   selectTime: any;
   checked: boolean;

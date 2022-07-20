@@ -10,7 +10,7 @@ export default function MyPickUI(props: IMyPickProps) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.Title>테마 찜목록</S.Title>
+        <S.Title>나의 찜 목록</S.Title>
         <S.PickedCard
           onClick={props.onClickMoveToDetail}
           hoverable
