@@ -69,7 +69,7 @@ export const Form = styled.form`
 `;
 
 export const FooterBox = styled.div`
-  padding-top: 3em;
+  padding-top: 1em;
   display: flex;
   flex-direction: column;
 `;
@@ -86,8 +86,7 @@ export const Total = styled.div`
   flex-direction: column;
   align-items: flex-end;
   border-top: 1px solid darkgray;
-  border-bottom: 1px solid darkgray;
-  padding-top: 1.5em;
+  padding-top: 1em;
   padding-bottom: 1em;
   font-weight: 700;
 
@@ -113,6 +112,9 @@ export const InformationUse = styled.div`
   margin-top: 1em;
   padding-top: 1em;
   width: 100%;
+
+  border: 1px solid darkgray;
+  padding-left: 1em;
 `;
 
 export const CheckBox = styled.div`
@@ -121,4 +123,16 @@ export const CheckBox = styled.div`
   font-weight: 700;
   padding-bottom: 0.5em;
   gap: 0.5em;
+`;
+
+export const Point = styled.div`
+  padding-left: 1.2em;
+  font-size: 0.85em;
+  padding-bottom: 0.9em;
+  color: gray;
+
+  & span {
+    font-size: 1em;
+    color: red;
+  }
 `;

@@ -199,11 +199,13 @@ export default function ReservationUI(props: IReservationUIProps) {
                     type="number"
                     fullWidth
                     onChange={props.onChangePoint}
+                    style={{ paddingBottom: "0.2em" }}
                     variant="outlined"
-                    style={{ paddingBottom: "1.3em" }}
                     defaultValue={props.max}
                   />
-                  <span>현재 적립금 {props.max}원 사용이 가능합니다</span>
+                  <S.Point>
+                    현재 적립금 <span>{props.max}원</span> 사용 가능합니다.
+                  </S.Point>
                 </>
               )}
 
