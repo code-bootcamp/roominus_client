@@ -6,7 +6,7 @@ export const Container = styled.main`
   display: flex;
 
   width: 100%;
-  padding: 2em 0em 2em 0em;
+  padding: 2em 2em 2em 2em;
 
   flex-wrap: wrap;
 `;

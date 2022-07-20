@@ -3,15 +3,33 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 100%;
-  padding: 2em 0em 2em 0em;
+  padding: 2em 2em 2em 2em;
 `;
 
-export const Title = styled.h1``;
+export const TitleBox = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+export const Title = styled.h1`
+  margin: 0;
+  width: 100%;
+`;
+
+export const DeleteBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  color: gainsboro;
+`;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 2em;
 `;
 
 export const UserInfoBox = styled.div`
