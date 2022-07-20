@@ -12,7 +12,7 @@ export interface ICommunityDetailProps {
       createdAt: string;
       mainImg: string;
       title: string;
-      content: string;
+      content: any;
       boardTags: [];
       user: {
         name: string;

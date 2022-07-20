@@ -50,7 +50,7 @@ export default function AdminCafeDetail() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        text: error.message,
+        text: (error as Error).message,
       });
     }
   };

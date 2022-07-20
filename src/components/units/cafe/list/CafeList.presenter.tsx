@@ -1,5 +1,5 @@
-import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
+// import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+// import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import * as S from "./CafeList.styles";
 import { ICafeListUIProps, IFetchCafesProps } from "./CafeList.types";
 import ListCards from "./card/ListCards";

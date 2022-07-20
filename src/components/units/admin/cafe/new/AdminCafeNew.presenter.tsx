@@ -1,7 +1,8 @@
 import WebPurpleLoginButton from "../../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 import * as S from "./AdminCafeNew.styles";
+import { IAdminCafeNewUIProps } from "./AdminCafeNew.types";
 
-export default function AdminCafeNewUI(props) {
+export default function AdminCafeNewUI(props: IAdminCafeNewUIProps) {
   return (
     <S.Wrapper>
       <S.Form onSubmit={props.handleSubmit(props.onClickButton)}>

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import {
   FacebookShareButton,
@@ -17,12 +17,13 @@ const Container = styled.div`
 `;
 
 const URLShareButton = styled.button`
-  width: 2.1em;
-  height: 2.1em;
+  width: 2.3em;
+  height: 2.3em;
   color: white;
   border-radius: 24px;
   border: none;
-  font-size: 1em;
+  /* font-size: 0.8em; */
+  margin-top: 0.1em;
   cursor: pointer;
   background: linear-gradient(90deg, #7c21e1 0%, #4a00e0 100%);
 `;
@@ -32,9 +33,9 @@ const KakaoShareButton = styled.a`
 `;
 
 const KakaoIcon = styled.img`
-  width: 2.1em;
-  height: 2.1em;
-  border-radius: 24px;
+  width: 2.4em;
+  height: 2.5em;
+  border-radius: 50%;
 `;
 
 declare const window: typeof globalThis & {
@@ -42,8 +43,12 @@ declare const window: typeof globalThis & {
 };
 
 export default function ShareButton() {
+  const [currentUrl, setCurrentUrl] = useState("");
   // window 객체에서 현재 url 가져오기
-  const currentUrl = window.location.href;
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    setCurrentUrl(currentUrl);
+  }, []);
 
   // kakao SDK import하기
   const status = useScript("https://developers.kakao.com/sdk/js/kakao.js");
