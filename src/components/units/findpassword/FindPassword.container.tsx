@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import FindPasswordUI from "./FindPassword.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";

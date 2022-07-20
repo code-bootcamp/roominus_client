@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useApolloClient } from "@apollo/client";
 import LayoutTopHeaderUI from "./LayoutTopHeader.presenter";
 import { LOG_OUT } from "./LayoutTopHeader.query";

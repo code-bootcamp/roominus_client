@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
