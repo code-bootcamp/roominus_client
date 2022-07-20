@@ -1,24 +1,23 @@
 import { css } from "@emotion/react";
-import { breakPoints } from "./media";
 
 export const globalStyles = css`
   * {
     box-sizing: border-box;
-    /* margin: 0;
-    padding: 0; */
-    font-family: "myFont";
+    margin: 0;
+    padding: 0;
   }
 
-  html,
+  html {
+    font-size: 16px;
+  }
+
   body {
+    margin: auto;
+    max-width: 1200px;
     width: 100vw;
     height: 100vh;
-    font-size: 16px;
-
-    @media ${breakPoints.mobile} {
-      font-size: 12px;
-      margin: 0;
-    }
+    font-family: "Noto Sans KR", sans-serif;
+    overflow-x: hidden; // 가로 스크롤 제거
   }
 
   ul {
@@ -29,8 +28,32 @@ export const globalStyles = css`
     list-style: none;
   }
 
-  /* @font-face {
-    font-family: "myFont";
-    src: url("/fonts/Jua-Regular.ttf");
-  } */
+  a {
+    color: black;
+    :hover {
+      color: black;
+    }
+  }
+
+  // 기본 폰트
+
+  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+  .notosanskr * {
+    font-family: "Noto Sans KR", sans-serif;
+  }
+
+  // 커뮤니티 페이지 폰트
+  @font-face {
+    font-family: "GowunDodum-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  // 영어 폰트
+  @font-face {
+    font-family: "StMarie";
+    src: url("/fonts/StMarie-Thin.otf");
+  }
 `;

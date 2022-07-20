@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: ["plugin:react/recommended", "standard", "prettier"],
   parser: "@typescript-eslint/parser",
+
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -17,5 +18,6 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "spaced-comment": "off",
+    "no-new": 0,
   },
 };
