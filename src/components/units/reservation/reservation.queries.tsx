@@ -31,9 +31,6 @@ export const FETCH_THEME_MENUS = gql`
         peoplelimit
         rank
         clearTime
-        # genre {
-        #   name
-        # }
       }
       cafe {
         name

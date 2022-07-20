@@ -16,7 +16,6 @@ export default function Reservation() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
 
   const [userInfo] = useRecoilState(userInfoState);
-
   const [themeId, setThemeId] = useState("");
   const [cafeId, setCafeId] = useState("");
   const [reservationDate, setReservationDate] = useState("");
@@ -70,10 +69,14 @@ export default function Reservation() {
     (el: IFetchThemeMenus) => el.reservation_time
   );
   const set = new Set(timeResult);
-  const uniqeTime = [...set];
+  const timeTable = [...set];
 
-  const ableTime = uniqeTime?.filter((el) => {
-    if (!soldOut?.includes(el)) return el;
+  // const ableTime = timeTable?.filter((el) => {
+  //   if (!soldOut?.includes(el)) return el;
+  // });
+
+  const ableTime = timeTable.filter((el) => {
+    return !soldOut.includes(el);
   });
 
   const onChangeTime = (event: ChangeEvent<HTMLInputElement>) => {

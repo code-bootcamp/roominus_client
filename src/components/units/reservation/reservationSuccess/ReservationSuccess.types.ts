@@ -1,8 +1,7 @@
 import { LegacyRef } from "react";
 
 export interface IReservationSuccessUI {
-  // eslint-disable-next-line no-undef
-  cancellable: JSX.Element;
+  cancellable: boolean;
   data: any;
   onClickOpenRefundModal: any;
   link: string;

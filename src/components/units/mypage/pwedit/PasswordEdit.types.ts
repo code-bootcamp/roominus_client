@@ -10,7 +10,7 @@ export interface IPWeditUIProps {
   // eslint-disable-next-line no-undef
   openEye2: JSX.Element;
   passwordInputRef: LegacyRef<HTMLInputElement> | undefined;
-  setPassword(value: string);
+  setPassword: any;
   onClickShowPassword: MouseEventHandler<SVGSVGElement> | undefined;
   // eslint-disable-next-line no-undef
   openEye: JSX.Element;
