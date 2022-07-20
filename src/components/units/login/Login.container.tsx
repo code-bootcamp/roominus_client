@@ -8,7 +8,12 @@ import { useEffect, useRef, useState } from "react";
 import { LOGIN, FETCH_USER_LOGGEDIN } from "./Login.query";
 import { useMutation, useApolloClient } from "@apollo/client";
 import { useRecoilState } from "recoil";
-import { accessTokenState, userInfoState } from "../../../commons/store";
+import {
+  accessTokenState,
+  GoogleInfoState,
+  KakaoInfoState,
+  userInfoState,
+} from "../../../commons/store";
 import Swal from "sweetalert2";
 import { IDataProps } from "./Login.types";
 
@@ -43,6 +48,9 @@ export default function LoginPage() {
   const [openEye, setOpenEye] = useState(false);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+
+  const [googleInfo, setGoogleInfo] = useRecoilState(GoogleInfoState);
+  const [kakaoInfo, setKakaoInfo] = useRecoilState(KakaoInfoState);
 
   useEffect(() => {
     register("email", { required: true });
@@ -115,10 +123,8 @@ export default function LoginPage() {
         // The signed-in user info.
         const user = result.user;
         // ...
-        router.push({
-          pathname: `/signup/detail`,
-          query: { email: user.email, emailVerified: user.emailVerified },
-        });
+
+        router.push(`/home`);
         console.log(user);
       })
       .catch((error) => {
@@ -145,13 +151,7 @@ export default function LoginPage() {
             kakao_account: { email: any; has_email: any };
           }) {
             console.log(response);
-            router.push({
-              pathname: `/signup/detail`,
-              query: {
-                email2: response.kakao_account.email,
-                has_email: response.kakao_account.has_email,
-              },
-            });
+            router.push(`/home`);
           },
           fail: function (error: any) {
             console.log(error);

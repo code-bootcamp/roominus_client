@@ -8,12 +8,6 @@ import {
 } from "react-hook-form";
 
 export interface ISignUpDetailUIProps {
-  googleEmail: string | string[] | undefined;
-  kakaoEmail: string | string[] | undefined;
-  googleLoggedIn: string | string[] | undefined;
-  kakaologgedIn: string | string[] | undefined;
-  onClickSocialIDLogout: () => void;
-  onClickLogoutkakao: () => void;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   setValue: UseFormSetValue<FieldValues>;
   formState: FormState<FieldValues>;
