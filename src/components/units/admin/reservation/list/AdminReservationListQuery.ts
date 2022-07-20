@@ -16,9 +16,6 @@ export const FETCH_RESERVATIONS = gql`
         reservation_time
         people_number
         price
-        # theme {
-        #   title
-        # }
       }
       payment {
         price

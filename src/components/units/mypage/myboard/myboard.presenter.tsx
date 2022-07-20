@@ -9,6 +9,9 @@ export default function MyBoardUI(props: IMyBoardUIProps) {
     <S.Container>
       <S.Wrapper>
         <S.Title>나의 글 목록</S.Title>
+        <S.CountBox>
+          <span>총 {props.count?.fetchBoardsUserCount} 건</span>
+        </S.CountBox>
         <S.TableTop />
         <S.TitleRow>
           <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
@@ -18,9 +21,11 @@ export default function MyBoardUI(props: IMyBoardUIProps) {
         </S.TitleRow>
         {props.data?.fetchBoardsUser.map(
           (el: IFetchBoardsUserProps, index: number) => (
-            <S.Row key={index} id={el.id} onClick={props.onClickBoard}>
+            <S.Row key={index}>
               <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-              <S.ColumnBasic>{el.title}</S.ColumnBasic>
+              <S.ColumnTitle id={el.id} onClick={props.onClickBoard}>
+                {el.title}
+              </S.ColumnTitle>
               <S.ColumnBasic>{el.like}</S.ColumnBasic>
               <S.ColumnBasic>{getToday(el.createdAt)}</S.ColumnBasic>
             </S.Row>

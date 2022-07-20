@@ -8,23 +8,30 @@ export default function MyReviewUI(props: IMyReviewUIProps) {
     <S.Container>
       <S.Wrapper>
         <S.Title>나의 후기 목록</S.Title>
+
+        <S.CountBox>
+          <span>총 {props.count?.fetchThemeReviewsUserCount}건</span>
+        </S.CountBox>
         <S.TableTop />
         <S.TitleRow>
           <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>테마</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>탈출여부</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>별점</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>내용</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>작성일</S.ColumnHeaderTitle>
         </S.TitleRow>
         {props.data?.fetchThemesUser.map(
           (el: IFetchThemesUser, index: number) => (
-            <S.Row key={index} id={el.theme.id}>
+            <S.Row key={index}>
               <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-              <S.ColumnBasic>{el.theme.title}</S.ColumnBasic>
+              <S.ColumnTitle
+                id={el.theme.id}
+                onClickReview={props.onClickReview}
+              >
+                {el.theme.title}
+              </S.ColumnTitle>
               <S.ColumnBasic>{el.clear}</S.ColumnBasic>
               <S.ColumnBasic>{el.star}</S.ColumnBasic>
-              <S.ColumnBasic>{el.content}</S.ColumnBasic>
               <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
             </S.Row>
           )

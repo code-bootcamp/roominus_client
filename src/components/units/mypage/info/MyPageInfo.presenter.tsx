@@ -25,7 +25,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.ThemeIcon src="/img/mypage/escape.webp/" />
             </S.ThemeBox>
           </Link>
-          <Link href={"/mypage"}>
+          <Link href={"/mypage/myboard"}>
             <S.ThemeBox>
               <S.ThemeTitle>내 보드</S.ThemeTitle>
               <S.ThemeSubTitle>

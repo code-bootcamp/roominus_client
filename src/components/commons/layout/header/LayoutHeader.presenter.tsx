@@ -177,6 +177,20 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
                 <S.MyMenues
                   id="history"
                   className="menu-item"
+                  href="/mypage/myreview"
+                >
+                  내가 쓴 리뷰
+                </S.MyMenues>
+                <S.MyMenues
+                  id="history"
+                  className="menu-item"
+                  href="/mypage/myboard"
+                >
+                  내가 쓴 게시물
+                </S.MyMenues>
+                <S.MyMenues
+                  id="history"
+                  className="menu-item"
                   href="/mypage/history"
                 >
                   최근 예약내역
