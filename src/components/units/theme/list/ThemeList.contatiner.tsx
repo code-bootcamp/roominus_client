@@ -52,7 +52,10 @@ export default function ThemeList() {
         },
       });
     } catch (error) {
-      Swal.fire("더이상 등록된 테마가 없습니다.");
+      Swal.fire({
+        icon: "warning",
+        title: "더이상 등록된 테마가 없습니다.",
+      });
     }
   };
   const [myIndex, setMyIndex] = useState(
