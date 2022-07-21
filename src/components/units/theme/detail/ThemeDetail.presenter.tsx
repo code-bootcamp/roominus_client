@@ -2,6 +2,8 @@ import * as S from "./ThemeDetail.styles";
 import { IThemeDetailProps } from "./ThemeDetail.types";
 import { Rate } from "antd";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function ThemeDetailUI(props: IThemeDetailProps) {
   return (
@@ -12,6 +14,34 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
         </S.ThemeLeftBox>
         <S.ThemeRightBox>
           <S.ThemeTitle>{props.data?.fetchTheme.title}</S.ThemeTitle>
+          {props.love ? (
+            <FontAwesomeIcon
+              icon={faHeart}
+              style={{
+                fontSize: "2.5em",
+                color: "#E53935",
+                position: "absolute",
+                right: "5%",
+                top: "0%",
+                cursor: "pointer",
+              }}
+              onClick={props.onClickLove}
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={faHeart}
+              style={{
+                fontSize: "2.5em",
+                color: "#DAD6E1",
+                position: "absolute",
+                right: "5%",
+                top: "0%",
+                cursor: "pointer",
+              }}
+              onClick={props.onClickLove}
+            />
+          )}
+
           <S.ThemeSubTitle>
             {props.data?.fetchTheme.intro_title}
           </S.ThemeSubTitle>

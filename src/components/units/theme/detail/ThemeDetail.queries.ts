@@ -17,3 +17,9 @@ export const FETCH_THEME = gql`
     }
   }
 `;
+
+export const CREATE_LIKE_THEME = gql`
+  mutation createLikeTheme($themeId: String!) {
+    createLikeTheme(themeId: $themeId)
+  }
+`;

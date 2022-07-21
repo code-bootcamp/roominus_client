@@ -19,12 +19,6 @@ export const CREATE_THEME = gql`
       agelimit
       like
       mainImg
-      cafe {
-        name
-      }
-      genre {
-        name
-      }
     }
   }
 `;
