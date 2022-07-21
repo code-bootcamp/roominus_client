@@ -7,7 +7,6 @@ import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../../commons/store";
 import Swal from "sweetalert2";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export default function ContactUs() {
   const [userInfo] = useRecoilState(userInfoState);

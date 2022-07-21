@@ -1,6 +1,7 @@
 import { MouseEventHandler } from "react";
 
 export interface IfetchUserLikeThemesProps {
+  theme: any;
   id: string;
   mainImg: string;
   title: string;

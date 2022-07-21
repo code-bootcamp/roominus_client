@@ -4,22 +4,25 @@ import styled from "@emotion/styled";
 
 const { Meta } = Card;
 
-const Wrapper = styled.li`
-  border: 1px solid #c2c2c2;
-`;
+const Wrapper = styled.li``;
 
 const Info = styled.div`
-  height: 3.5em;
   font-size: 1.3em;
 
   .ant-card-meta-title {
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1em;
+  }
+  .ant-card-meta-description {
+    font-weight: 400;
+    font-size: 0.7em;
+    word-break: break-all;
   }
 `;
 
 interface IListPickCardsProps {
   el: {
+    theme: any;
     mainImg: string;
     title: string;
     like: number;
@@ -31,19 +34,23 @@ const ListPickCards = (props: IListPickCardsProps) => (
     <Card
       hoverable
       style={{
-        width: "100%",
+        width: 230,
+        height: 400,
         position: "relative",
       }}
       cover={
         <img
           alt="No Image"
-          src={props.el.mainImg}
-          style={{ height: 250, cursor: "pointer" }}
+          src={props.el.theme.mainImg}
+          style={{ width: 230, height: 300, cursor: "pointer" }}
         />
       }
     >
       <Info>
-        <Meta title={props.el.title} description={props.el.like} />
+        <Meta
+          title={props.el.theme.title}
+          description={props.el.theme.intro_title}
+        />
       </Info>
     </Card>
   </Wrapper>
