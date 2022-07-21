@@ -27,13 +27,13 @@ export default function ContactUs() {
       .then(
         (result) => {
           Swal.fire({
-            title: "소중한 의견 감사합니다.",
+            title: "이메일 전송이 완료되었습니다.",
             icon: "success",
             showConfirmButton: false,
             timer: 1500,
           });
           console.log(result);
-          router.push("/home");
+          // router.push("/home");
         },
         (error) => {
           Swal.fire({
