@@ -4,14 +4,10 @@ import { GithubOutlined } from "@ant-design/icons";
 
 export const Container = styled.div`
   width: 100%;
-  height: 20%;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  height: 22em;
 
   display: flex;
   justify-content: center;
-
-  padding-top: 1.5em;
 
   @media ${breakPoints.tablet} {
     display: flex;
@@ -27,12 +23,15 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   width: 100%;
   max-width: 1200px;
+  padding-top: 2em;
   display: flex;
   text-align: left;
   justify-content: center;
 
   @media ${breakPoints.mobile} {
-    font-size: 0.1em;
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
   }
 `;
 
@@ -45,52 +44,55 @@ export const MenuInfoWrapper = styled.div`
 export const MenuWrapper = styled.ul`
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  height: 5em;
 `;
 
 export const Menu = styled.li`
   margin-right: 20px;
-  border-right: 1px solid white;
+  border-right: 1px solid black;
   padding-right: 20px;
   cursor: pointer;
+
   &:last-of-type {
     border: none;
   }
+
   font-weight: 600;
   font-size: 1.1rem;
 
   @media ${breakPoints.tablet} {
-    padding-right: 0;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    margin-right: 1em;
     border: none;
-    font-size: 1.1rem;
   }
+
   @media ${breakPoints.mobile} {
-    padding-right: 0;
-    margin-bottom: 0.5rem;
     text-align: center;
-    font-size: 0.5rem;
-    border: none;
+    font-size: 0.8em;
+    text-align: center;
+
+    &:last-of-type {
+      padding: 0;
+      margin: 0;
+    }
   }
 `;
 
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: row;
+
   @media ${breakPoints.tablet} {
-    font-size: 0.1em;
+    font-size: 0.9em;
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 0.1em;
     display: flex;
     flex-direction: column;
   }
 `;
 
 export const InfoLeftBox = styled.div`
-  width: 150%;
+  width: 165%;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -98,48 +100,25 @@ export const InfoLeftBox = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 100%;
-
-    font-size: 0.1em;
-    display: flex;
-    flex-direction: column;
   }
 `;
 
-export const InfoTitle = styled.h3`
-  font-weight: 700;
+export const InfoTitle = styled.h2`
+  font-weight: 600;
   color: #a3a8b7;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2em;
+  }
 `;
 
 export const Info = styled.span`
-  margin-top: 0.5em;
-  font-weight: 400;
-  font-size: 0.9rem;
+  font-weight: 500;
   color: #a3a8b7;
-
-  @media ${breakPoints.tablet} {
-    font-size: 0.1em;
-  }
+  line-height: 2em;
 
   @media ${breakPoints.mobile} {
-    font-size: 0.1em;
-  }
-`;
-
-export const ContactUS = styled.span`
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #a3a8b7;
-
-  :hover {
-    cursor: pointer;
-    color: #282828;
-  }
-  @media ${breakPoints.tablet} {
-    font-size: 0.1em;
-  }
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.1em;
+    font-size: 0.8em;
   }
 `;
 
@@ -157,16 +136,23 @@ export const InfoRightBox = styled.div`
   justify-content: space-evenly;
   width: 100%;
   float: right;
-
-  @media ${breakPoints.mobile} {
-  }
 `;
 
 export const InfoGithub = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-end;
+  gap: 1em;
+  height: 8em;
+
+  @media ${breakPoints.tablet} {
+    height: 5em;
+  }
+
+  @media ${breakPoints.mobile} {
+    justify-content: center;
+    height: 3em;
+  }
 `;
 
 export const Github = styled(GithubOutlined)`
@@ -177,7 +163,19 @@ export const Github = styled(GithubOutlined)`
   }
 
   color: #a3a8b7;
-  /* font-size: 1.7em; */
-  font-size: 20px;
+  font-size: 2em;
   transition: all 300ms ease-in-out;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.7em;
+  }
+`;
+
+export const Logo = styled.img`
+  width: 6em;
+  cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 7em;
+  }
 `;
