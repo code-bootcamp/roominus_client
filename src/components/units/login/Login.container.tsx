@@ -7,7 +7,12 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
-import { LOGIN, FETCH_USER_LOGGEDIN, SOCIAL_LOGIN } from "./Login.query";
+import {
+  LOGIN,
+  FETCH_USER_LOGGEDIN,
+  SOCIAL_LOGIN,
+  FETCH_SOCIAL_USER_LOGGED_IN,
+} from "./Login.query";
 import { useMutation, useApolloClient } from "@apollo/client";
 import { useRecoilState } from "recoil";
 import {
@@ -129,9 +134,24 @@ export default function LoginPage() {
         // The signed-in user info.
         const user = result.user;
         // ...
-
+        socialLogingql({
+          variables: {
+            email: user.email,
+          },
+        }).then((result) => {
+          client
+            .query({
+              query: FETCH_SOCIAL_USER_LOGGED_IN,
+              context: {
+                headers: {
+                  Authorization: `Bearer ${result.data.SocialLogin}`,
+                },
+                credentials: "include",
+              },
+            })
+            .then((result) => setUserInfo(result.data.fetchSocialUserLoggedIn));
+        });
         router.push(`/home`);
-        console.log(user);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -157,7 +177,27 @@ export default function LoginPage() {
             kakao_account: { email: any; has_email: any };
           }) {
             console.log(response);
-            router.push(`/home`);
+            socialLogingql({
+              variables: {
+                email: response.kakao_account.email,
+              },
+            }).then((result) => {
+              client
+                .query({
+                  query: FETCH_SOCIAL_USER_LOGGED_IN,
+                  context: {
+                    headers: {
+                      Authorization: `Bearer ${result.data.SocialLogin}`,
+                    },
+                    credentials: "include",
+                  },
+                })
+                .then((result) =>
+                  setUserInfo(result.data.fetchSocialUserLoggedIn)
+                );
+            });
+
+            router.push("/home");
           },
           fail: function (error: any) {
             console.log(error);

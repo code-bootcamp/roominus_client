@@ -17,7 +17,16 @@ export const FETCH_USER_LOGGEDIN = gql`
   }
 `;
 export const SOCIAL_LOGIN = gql`
-  mutation SocialLogin($email: String!, $phone: String!) {
-    SocialLogin(email: $email, phone: $phone)
+  mutation SocialLogin($email: String!) {
+    SocialLogin(email: $email)
+  }
+`;
+export const FETCH_SOCIAL_USER_LOGGED_IN = gql`
+  query fetchSocialUserLoggedIn {
+    fetchSocialUserLoggedIn {
+      id
+      email
+      phone
+    }
   }
 `;
