@@ -36,7 +36,7 @@ export default function PWedit() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [accessToken] = useRecoilState(accessTokenState);
   useEffect(() => {
     register("password", { required: true });
     register("password2", { required: true });
