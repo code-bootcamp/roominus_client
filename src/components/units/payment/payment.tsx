@@ -55,7 +55,6 @@ export default function Payment(props: IPaymentProps) {
       {
         pg: "html5_inicis",
         pay_method: "card",
-        // merchant_uid: "결제 번호",
         name: "룸인어스",
         amount: props.totalPrice,
         buyer_email: data?.fetchUserLoggedIn.email,
