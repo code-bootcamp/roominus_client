@@ -20,6 +20,9 @@ export const FETCH_REVIEW_COMMENTS = gql`
     fetchReviewComments(boardreviewId: $boardreviewId) {
       id
       content
+      boardsecondreview {
+        content
+      }
     }
   }
 `;

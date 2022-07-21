@@ -1,8 +1,9 @@
 import CommentAnswerWrite from "../write/CommentAnswerWrite.container";
 import * as S from "./CommentAnswerEdit.styles";
 import { getDate } from "../../../../../../components/commons/getDate";
+import { ICommentAnswerEditUIProps } from "./CommentAnswerEdit.types";
 
-export default function CommentAnswerEditUI(props) {
+export default function CommentAnswerEditUI(props: ICommentAnswerEditUIProps) {
   return (
     <S.Wrapper>
       {props.isAnswerEdit === false && (
@@ -11,7 +12,7 @@ export default function CommentAnswerEditUI(props) {
           <S.ListInfoBox>
             <S.InfoTitleBox>
               <S.InfoTitle>
-                <S.InfoName>{props.el.user.name}</S.InfoName>
+                <S.InfoName>{props.el.user?.name}</S.InfoName>
                 <S.Date>{getDate(props.el.createdAt)}</S.Date>
               </S.InfoTitle>
               <S.InfoTitle>
@@ -38,8 +39,11 @@ export default function CommentAnswerEditUI(props) {
           refetch={props.refetch}
           isAnswerEdit={props.isAnswerEdit}
           setIsAnswerEdit={props.setIsAnswerEdit}
-          // firstId={props.el._id} //key
           answerData={props.el}
+          // 타입 지정 때문에 작성
+          isAnswer={undefined}
+          answerId={""}
+          setIsAnswer={undefined}
         />
       )}
     </S.Wrapper>

@@ -19,7 +19,6 @@ export default function CommunityCommentEdit(props: ICommunityCommentEdit) {
     setEditId(event.target.id);
   };
 
-  console.log(props.el);
   return (
     <CommunityCommentEditUI
       isEdit={isEdit}

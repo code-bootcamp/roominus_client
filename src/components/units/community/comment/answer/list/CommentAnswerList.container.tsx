@@ -1,35 +1,32 @@
 import { useMutation, useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import CommentAnswerListUI from "./CommentAnswerList.presenter";
 import {
   DELETE_BOARD_SECOND_REVIEW,
   FETCH_REVIEW_COMMENTS,
 } from "./CommentAnswerList.queries";
+import { ICommentAnswerListProps } from "./CommentAnswerList.types";
 
-export default function CommentAnswerList(props) {
-  const router = useRouter();
-
+export default function CommentAnswerList(props: ICommentAnswerListProps) {
   const [deleteBoardsecondreview] = useMutation(DELETE_BOARD_SECOND_REVIEW);
 
   const { data: answerData, refetch } = useQuery(FETCH_REVIEW_COMMENTS, {
     variables: { boardreviewId: props.el.id },
   });
-  console.log(answerData);
 
-  const onClickDelete = async (event) => {
+  const onClickDelete = async (event: any) => {
     try {
-      const result = await deleteBoardsecondreview({
+      await deleteBoardsecondreview({
         variables: {
           secondReviewId: event.target.id,
         },
       });
-      console.log(result);
       refetch();
       Swal.fire({
         icon: "success",
         title: "답글 삭제가 완료되었습니다!",
-        timer: 1500,
+        timer: 1300,
+        showConfirmButton: false,
       });
     } catch (error) {
       Swal.fire({

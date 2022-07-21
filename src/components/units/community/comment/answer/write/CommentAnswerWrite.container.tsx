@@ -1,5 +1,4 @@
-import { useMutation, useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
+import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
 import Swal from "sweetalert2";
@@ -10,8 +9,12 @@ import {
   FETCH_REVIEW_COMMENTS,
   UPDATE_BOARD_SECOND_REVIEW,
 } from "./CommentAnswerWrite.queries";
+import {
+  ICommentAnswerWriteProps,
+  IDataProps,
+} from "./CommentAnswerWrite.types";
 
-export default function CommentAnswerWrite(props) {
+export default function CommentAnswerWrite(props: ICommentAnswerWriteProps) {
   const [userInfo] = useRecoilState(userInfoState);
 
   const [createBoardsecondreview] = useMutation(CREATE_BOARD_SECOND_REVIEW);
@@ -21,9 +24,9 @@ export default function CommentAnswerWrite(props) {
     mode: "onChange",
   });
 
-  const onClickReComment = async (data) => {
+  const onClickReComment = async (data: IDataProps) => {
     try {
-      const result = await createBoardsecondreview({
+      await createBoardsecondreview({
         variables: {
           boardReviewId: props.answerId,
           createBoardsecondreviewInput: {
@@ -39,11 +42,11 @@ export default function CommentAnswerWrite(props) {
           },
         ],
       });
-      console.log(result);
       Swal.fire({
         icon: "success",
         title: "답글이 등록되었습니다!",
-        timer: 1500,
+        timer: 1300,
+        showConfirmButton: false,
       });
     } catch (error) {
       Swal.fire({
@@ -51,10 +54,10 @@ export default function CommentAnswerWrite(props) {
         title: (error as Error).message,
       });
     }
-    props.setIsAnswer((prev) => !prev);
+    props.setIsAnswer((prev: any) => !prev);
   };
 
-  const onClickReCommentUpdate = async (data) => {
+  const onClickReCommentUpdate = async (data: IDataProps) => {
     try {
       await udpateBoardsecondreview({
         variables: {
@@ -65,11 +68,12 @@ export default function CommentAnswerWrite(props) {
         },
       });
       props.refetch();
-      props.setIsAnswerEdit((prev) => !prev);
+      props.setIsAnswerEdit((prev: any) => !prev);
       Swal.fire({
         icon: "success",
         title: "답글 수정이 완료되었습니다!",
-        timer: 1500,
+        timer: 1300,
+        showConfirmButton: false,
       });
     } catch (error) {
       Swal.fire({

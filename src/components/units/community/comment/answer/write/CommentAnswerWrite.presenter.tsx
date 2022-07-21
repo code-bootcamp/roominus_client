@@ -1,8 +1,11 @@
 import WebSmallBlackButton from "../../../../../commons/buttons/buttonDesktop/WebSmallBlackButton";
 import WebSmallPurpleButton from "../../../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import * as S from "./CommentAnswerWrite.styles";
+import { ICommentAnswerWriteUIProps } from "./CommentAnswerWrite.types";
 
-export default function CommentAnswerWriteUI(props) {
+export default function CommentAnswerWriteUI(
+  props: ICommentAnswerWriteUIProps
+) {
   return (
     <S.Wrapper>
       <form

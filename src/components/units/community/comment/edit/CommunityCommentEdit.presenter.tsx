@@ -16,7 +16,7 @@ export default function CommunityCommentEditUI(
             <S.ListInfoBox>
               <S.InfoTitleBox>
                 <S.InfoTitle>
-                  <S.InfoName>{props.el.user.name}</S.InfoName>
+                  <S.InfoName>{props.el.user?.name}</S.InfoName>
                   <S.Date>{getDate(props.el.createdAt)}</S.Date>
                 </S.InfoTitle>
                 <S.InfoTitle>

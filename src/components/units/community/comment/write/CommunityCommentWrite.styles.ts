@@ -3,7 +3,6 @@ import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
-  /* margin: auto; */
   display: flex;
   flex-direction: column;
 
@@ -18,14 +17,12 @@ export const CommentTitleBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 1em;
-  /* background-color: pink; */
 `;
 
 export const CommentIcon = styled.img`
   width: 1.5em;
   height: 100%;
   margin-right: 0.5em;
-  /* background-color: green; */
 `;
 
 export const CommentTitle = styled.h1`
@@ -33,7 +30,6 @@ export const CommentTitle = styled.h1`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: yellow; */
 `;
 
 export const CommentWriteBox = styled.div`
@@ -60,7 +56,6 @@ export const Name = styled.h3`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: pink; */
 
   @media ${breakPoints.mobile} {
     width: 17%;
