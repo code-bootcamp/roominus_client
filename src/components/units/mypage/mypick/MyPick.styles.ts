@@ -4,7 +4,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   width: 100%;
   padding: 2em 2em 2em 2em;
@@ -12,6 +12,7 @@ export const Container = styled.main`
 
 export const Wrapper = styled.div`
   width: 100%;
+  padding-top: 3em;
 
   @media ${breakPoints.tablet} {
     display: flex;
@@ -34,8 +35,8 @@ export const Title = styled.h1``;
 export const Etc = styled.ul`
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 5em;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2em;
 
   @media ${breakPoints.tablet} {
     width: 100%;
@@ -57,5 +58,5 @@ export const PickedCard = styled(Card)``;
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 2em;
+  margin-top: 10em;
 `;

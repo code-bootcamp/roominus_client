@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { CaretUpOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
-import KakaoChat from "../../../units/mypage/chat";
+// import KakaoChat from "../../../units/mypage/chat";
 
 const TopBtnBox = styled.div`
   z-index: 999;
