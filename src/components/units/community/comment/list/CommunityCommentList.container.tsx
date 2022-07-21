@@ -12,7 +12,7 @@ export default function CommunityCommentList() {
 
   const [deleteBoardreview] = useMutation(DELETE_BOARD_REVIEW);
 
-  const { data } = useQuery(FETCH_BOARD_COMMENTS, {
+  const { data, fetchMore } = useQuery(FETCH_BOARD_COMMENTS, {
     variables: {
       boardId: router.query.id,
     },
@@ -23,7 +23,7 @@ export default function CommunityCommentList() {
     try {
       await deleteBoardreview({
         variables: {
-          id: event.target.id,
+          boardReviewId: event.target.id,
         },
         refetchQueries: [
           {
@@ -39,37 +39,39 @@ export default function CommunityCommentList() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        text: (error as Error).message,
+        title: (error as Error).message,
       });
     }
   };
 
-  // const loadFunc = () => {
-  //   if (!data) return;
+  const loadFunc = () => {
+    if (!data) return;
 
-  //   fetchMore({
-  //     variables: { page: Math.ceil(data.fetchBoardComments.length / 10) + 1 },
-  //     updateQuery: (prev, { fetchMoreResult }) => {
-  //       if (!fetchMoreResult.fetchBoardComments)
-  //         return {
-  //           fetchBoardComments: [...prev.fetchBoardComments],
-  //         };
+    fetchMore({
+      variables: {
+        page: Math.ceil(data.fetchBoardComments.boardreview.length / 10) + 1,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult.fetchBoardComments.boardreview)
+          return {
+            fetchBoardComments: [...prev.fetchBoardComments.boardreview],
+          };
 
-  //       return {
-  //         fetchBoardComments: [
-  //           ...prev.fetchBoardComments,
-  //           ...fetchMoreResult.fetchBoardComments,
-  //         ],
-  //       };
-  //     },
-  //   });
-  // };
+        return {
+          fetchBoardComments: [
+            ...prev.fetchBoardComments.boardreview,
+            ...fetchMoreResult.fetchBoardComments.boardreview,
+          ],
+        };
+      },
+    });
+  };
 
   return (
     <CommunityCommentListUI
       data={data}
       onClickDelete={onClickDelete}
-      // loadFunc={loadFunc}
+      loadFunc={loadFunc}
     />
   );
 }

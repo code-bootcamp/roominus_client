@@ -5,9 +5,6 @@ export const CREATE_BOARD_REVIEW = gql`
     createBoardreview(createBoardreviewInput: $createBoardreviewInput) {
       id
       content
-      # board {
-      #   id
-      # }
     }
   }
 `;
@@ -23,6 +20,21 @@ export const FETCH_BOARD_COMMENTS = gql`
       user {
         name
       }
+    }
+  }
+`;
+
+export const UPDATE_BOARD_REVIEW = gql`
+  mutation updateBoardreview(
+    $boardReviewId: String!
+    $updateBoardreviewInput: UpdateBoardReviewInput!
+  ) {
+    updateBoardreview(
+      boardReviewId: $boardReviewId
+      updateBoardreviewInput: $updateBoardreviewInput
+    ) {
+      id
+      content
     }
   }
 `;

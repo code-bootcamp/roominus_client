@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { IBoardreviewEl } from "../list/CommunityCommentList.types";
 
 export interface ICommunityCommentEdit {
@@ -7,8 +8,11 @@ export interface ICommunityCommentEdit {
 
 export interface ICommunityCommentEditUIProps {
   isEdit: boolean;
-  onClickEdit: () => void;
+  setIsEdit: Dispatch<SetStateAction<boolean>>;
+  onClickEdit: (event: any) => void;
   onClickDelete: (event: any) => Promise<void>;
   el: IBoardreviewEl;
   isAnswer: boolean;
+  editId: string;
+  setEditId: Dispatch<SetStateAction<string>>;
 }

@@ -16,7 +16,7 @@ export const FETCH_BOARD_COMMENTS = gql`
 `;
 
 export const DELETE_BOARD_REVIEW = gql`
-  mutation deleteBoardreview($id: String!) {
-    deleteBoardreview(id: $id)
+  mutation deleteBoardreview($boardReviewId: String!) {
+    deleteBoardreview(boardReviewId: $boardReviewId)
   }
 `;

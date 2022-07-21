@@ -7,13 +7,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
 
-  @media ${breakPoints.tablet} {
-    margin-top: 2em;
-    /* width: 100%; */
-  }
-
   @media ${breakPoints.mobile} {
-    margin-top: 2em;
     width: 100%;
     font-size: 0.9em;
   }
@@ -81,6 +75,7 @@ export const CommentInput = styled.input`
   padding-left: 1em;
 
   @media ${breakPoints.mobile} {
-    width: 60%;
+    height: 3em;
+    width: 55%;
   }
 `;
