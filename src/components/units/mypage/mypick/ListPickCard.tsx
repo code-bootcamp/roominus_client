@@ -8,38 +8,6 @@ const Wrapper = styled.li`
   border: 1px solid #c2c2c2;
 `;
 
-const LocationBox = styled.div`
-  width: 5.5em;
-  height: 3.5em;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 0.3em;
-  position: absolute;
-  z-index: 1;
-  top: 2.4em;
-  left: -1px;
-  background-color: #4a00e0;
-`;
-
-const Location = styled.h3`
-  font-size: 1.3em;
-  font-weight: 600;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  color: white;
-`;
-
-const LocationIcon = styled.img`
-  width: 1.3em;
-  height: 1.3em;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-`;
-
 const Info = styled.div`
   height: 3.5em;
   font-size: 1.3em;
@@ -50,19 +18,18 @@ const Info = styled.div`
   }
 `;
 
-interface IListCardsProps {
+interface IListPickCardsProps {
   el: {
-    address: string;
-    id: string;
     mainImg: string;
-    name: string;
-    phone: string;
+    title: string;
+    like: number;
   };
 }
 
-const ListPickCards = (props: IListCardsProps) => (
+const ListPickCards = (props: IListPickCardsProps) => (
   <Wrapper>
     <Card
+      hoverable
       style={{
         width: "100%",
         position: "relative",
@@ -75,12 +42,8 @@ const ListPickCards = (props: IListCardsProps) => (
         />
       }
     >
-      <LocationBox>
-        <LocationIcon src="/img/cafe/locationIcon.webp" />
-        <Location>{props.el.address}</Location>
-      </LocationBox>
       <Info>
-        <Meta title={props.el.name} description={props.el.phone} />
+        <Meta title={props.el.title} description={props.el.like} />
       </Info>
     </Card>
   </Wrapper>
