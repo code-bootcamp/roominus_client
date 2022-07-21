@@ -35,8 +35,8 @@ export interface IThemeCommentWriteUIProps {
   formState: FormState<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   register: UseFormRegister<FieldValues>;
-  onClickUpdate: (data: IWriteCommentData) => Promise<void>;
-  onClickSubmit: (data: IWriteCommentData) => Promise<void>;
+  onClickUpdate: any;
+  onClickSubmit: any;
 }
 
 export interface IDataProps {

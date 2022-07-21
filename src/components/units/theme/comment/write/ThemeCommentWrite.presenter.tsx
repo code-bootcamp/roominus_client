@@ -10,8 +10,12 @@ import { FrownOutlined, MehOutlined, SmileOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { IThemeCommentWriteUIProps } from "./ThemeCommentWriter.types";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 
 export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
+  const [userInfo] = useRecoilState(userInfoState);
+
   const desc = [
     "🍂흙길🥀 조금 부족해요!",
     "🌱풀길🌱 아쉬워요!",
@@ -155,7 +159,7 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
           </S.RankBox>
         </S.EscapeRankBox>
         <S.CommentBox>
-          <S.CommentWriter>신만*</S.CommentWriter>
+          <S.CommentWriter>{userInfo.name}</S.CommentWriter>
           <S.CommentInput
             defaultValue={props.el?.content}
             {...props.register("content")}

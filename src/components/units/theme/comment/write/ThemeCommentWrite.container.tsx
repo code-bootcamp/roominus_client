@@ -44,7 +44,6 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       await createThemeReview({
         variables: {
           createThemeReviewInput: {
-            writerName: "신만두",
             ...data,
           },
           themeId: router.query.id,
