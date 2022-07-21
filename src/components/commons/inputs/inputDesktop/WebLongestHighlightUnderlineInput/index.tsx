@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { ChangeEventHandler } from "react";
 
 const Input = styled.input`
   width: 41em;
@@ -17,7 +18,15 @@ const Input = styled.input`
   padding: 0em 0.5em 0em 0.5em;
 `;
 
-export default function WebLongestHighlightUnderlineInput(props: any) {
+interface IProps {
+  register: any;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  value: string | number | readonly string[];
+  defaultValue: string | number | readonly string[];
+  placeholder: any;
+  type: string;
+}
+export default function WebLongestHighlightUnderlineInput(props: IProps) {
   return (
     <Input
       type={props?.type}

@@ -7,5 +7,6 @@ export interface IData {
 }
 
 export interface IHistoryUIProps {
+  count: any;
   data: any;
 }

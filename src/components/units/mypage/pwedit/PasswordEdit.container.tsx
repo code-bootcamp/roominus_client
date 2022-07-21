@@ -36,7 +36,7 @@ export default function PWedit() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [accessToken] = useRecoilState(accessTokenState);
   useEffect(() => {
     register("password", { required: true });
     register("password2", { required: true });
@@ -59,7 +59,7 @@ export default function PWedit() {
     }, 1000);
   };
 
-  const onSubmitChangePassword = async (data: string) => {
+  const onSubmitChangePassword = async (data: { password: any }) => {
     try {
       const result = await client.query({
         query: FETCH_USER_LOGGEDIN,
