@@ -24,20 +24,21 @@ export default function FindIdUI(props: IFindIdUIProps) {
             </S.TabSecond>
           </S.TabBtns>
           <S.Form onSubmit={props.handleSubmit(props.onSubmitFindId)}>
-            <S.EmailBox>
+            <S.PhoneBox>
               <S.TitleBox>
-                <S.Email>이메일</S.Email>
+                <S.Phone>전화번호</S.Phone>
                 <S.ImportantInfos>*</S.ImportantInfos>
               </S.TitleBox>
-              <S.EmailInput
+              <S.PhoneInput
                 ref={props.IdFindinputRef}
                 type="text"
-                name="email"
-                placeholder="bubu123@gmail.com"
-                onChange={(e) => props.setValue("email", e.target.value)}
+                name="phoneNumber"
+                placeholder="01012345678"
+                onChange={(e) => props.setValue("phoneNumber", e.target.value)}
               />
-            </S.EmailBox>
-            <S.Error>{props.formState.errors.email?.message}</S.Error>
+              <S.Error>{props.formState.errors.phoneNumber?.message}</S.Error>
+            </S.PhoneBox>
+
             <WebPurpleLoginButton type="submit" title="확인" />
           </S.Form>
         </S.Wrapper>

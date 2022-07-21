@@ -6,7 +6,6 @@ export const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid gray;
   margin: auto;
 `;
 export const Title = styled.h1`
@@ -94,6 +93,7 @@ export const InputBoxes = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 `;
 export const TitleBox = styled.div`
   display: flex;

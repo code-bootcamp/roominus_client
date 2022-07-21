@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
-import { LOGIN, FETCH_USER_LOGGEDIN } from "./Login.query";
+import { LOGIN, FETCH_USER_LOGGEDIN, SOCIAL_LOGIN } from "./Login.query";
 import { useMutation, useApolloClient } from "@apollo/client";
 import { useRecoilState } from "recoil";
 import {
@@ -55,7 +55,7 @@ export default function LoginPage() {
 
   const [googleInfo, setGoogleInfo] = useRecoilState(GoogleInfoState);
   const [kakaoInfo, setKakaoInfo] = useRecoilState(KakaoInfoState);
-
+  const [socialLogingql] = useMutation(SOCIAL_LOGIN);
   useEffect(() => {
     register("email", { required: true });
     register("password");
