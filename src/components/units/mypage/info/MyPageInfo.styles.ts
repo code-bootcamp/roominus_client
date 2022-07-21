@@ -9,6 +9,10 @@ export const Container = styled.main`
 
   width: 100%;
   padding: 2em 2em 2em 2em;
+
+  @media ${breakPoints.mobile} {
+    padding: 2em 0em 2em 0em;
+  }
 `;
 
 export const Wrapper = styled.div`
