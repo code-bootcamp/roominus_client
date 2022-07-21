@@ -10,9 +10,3 @@ export const FETCH_USER_LIKE_THEMES = gql`
     }
   }
 `;
-
-// export const FETCH_THEMES_REVIEWS_USER_COUNT = gql`
-//   query fetchThemeReviewsUserCount {
-//     fetchThemeReviewsUserCount
-//   }
-// `;

@@ -7,9 +7,15 @@ export default function MyPick() {
   const router = useRouter();
   const { data } = useQuery(FETCH_USER_LIKE_THEMES);
 
-  const onClickMoveToDetail = () => {
-    router.push("/theme/_id");
+  const onClickMoveToThemeDetail = (event: { currentTarget: { id: any } }) => {
+    router.push(`/theme/${event?.currentTarget.id}`);
   };
 
-  return <MyPickUI onClickMoveToDetail={onClickMoveToDetail} data={data} />;
+  return (
+    <MyPickUI
+      data={data}
+      onClickMoveToThemeDetail={onClickMoveToThemeDetail}
+      id={""}
+    />
+  );
 }
