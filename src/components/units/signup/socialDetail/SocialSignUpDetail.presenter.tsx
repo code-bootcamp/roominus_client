@@ -2,7 +2,8 @@ import * as S from "./SocialSignUpDetail.styles";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 
-export default function SocialSignUpDetailUI(props) {
+// 타입 수정하세요!!
+export default function SocialSignUpDetailUI(props: any) {
   return (
     <S.Wrapper>
       <S.Title>기본정보</S.Title>

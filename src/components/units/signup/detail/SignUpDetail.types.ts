@@ -2,13 +2,19 @@ import { Dispatch, RefObject, SetStateAction } from "react";
 import {
   FieldValues,
   FormState,
-  UseFormHandleSubmit,
   UseFormSetValue,
   UseFormTrigger,
 } from "react-hook-form";
 
 export interface ISignUpDetailUIProps {
-  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  googleLoggedIn: any;
+  kakaologgedIn: any;
+  onClickLogoutkakao: any;
+  onClickSocialIDLogout: any;
+  googleEmail: any;
+  kakaoEmail: any;
+  handleSubmit: any;
+  // handleSubmit: UseFormHandleSubmit<FieldValues>;
   setValue: UseFormSetValue<FieldValues>;
   formState: FormState<FieldValues>;
   trigger: UseFormTrigger<FieldValues>;
@@ -30,4 +36,5 @@ export interface ISignUpDetailUIProps {
   setPassword: Dispatch<SetStateAction<string>>;
   setPhone: Dispatch<SetStateAction<string>>;
   onChangeTokenValue: (event: any) => void;
+  setTokenInput: Dispatch<SetStateAction<string>>;
 }

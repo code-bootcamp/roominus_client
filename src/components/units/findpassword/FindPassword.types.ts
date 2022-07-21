@@ -1,21 +1,15 @@
 import { RefObject } from "react";
-import {
-  FieldValues,
-  FormState,
-  UseFormHandleSubmit,
-  UseFormSetValue,
-} from "react-hook-form";
 
 export interface IFindPasswordUIProps {
   onClickShowContentsFirst: any;
   onClickShowContentsSecond: any;
   isClickedsecond: any;
   isClickedfirst: any;
-  onSubmitVerificationEmail: () => void;
+  onSubmitVerificationEmail: any;
   PasswordFindinputRef: any;
-  handleSubmit: UseFormHandleSubmit<FieldValues>;
-  setValue: UseFormSetValue<FieldValues>;
-  formState: FormState<FieldValues>;
+  handleSubmit: any;
+  setValue: any;
+  formState: any;
 }
 export interface IFindPasswordProps {
   onClickShowContentsFirst: () => void;

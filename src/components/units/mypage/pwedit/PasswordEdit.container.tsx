@@ -3,15 +3,13 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
-
+import { FETCH_USER_LOGGEDIN, UPDATE_USER } from "./PasswordEdit.query";
+import { useApolloClient, useMutation } from "@apollo/client";
+import { accessTokenState } from "../../../../commons/store";
+import { useRecoilState } from "recoil";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 const schema = yup.object({
-  originpassword: yup
-    .string()
-    .matches(
-      /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,14}$/,
-      "영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."
-    )
-    .required("영문+숫자 조합 8~14자리의 비밀번호를 입력해주세요."),
   password: yup
     .string()
     .matches(
@@ -26,10 +24,11 @@ const schema = yup.object({
 });
 
 export default function PWedit() {
-  const originpasswordInputRef = useRef();
-  const passwordInputRef = useRef();
-  const password2InputRef = useRef();
-  const [openEye, setOpenEye] = useState(false);
+  const passwordInputRef = useRef<HTMLInputElement>(null);
+  const password2InputRef = useRef<HTMLInputElement>(null);
+  const client = useApolloClient();
+  const router = useRouter();
+  const [updateusergql] = useMutation(UPDATE_USER);
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);
   const [password, setPassword] = useState("");
@@ -37,20 +36,12 @@ export default function PWedit() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+  const [accessToken] = useRecoilState(accessTokenState);
   useEffect(() => {
-    register("originpassword", { required: true });
     register("password", { required: true });
     register("password2", { required: true });
   }, []);
 
-  const onClickShowPassword = () => {
-    originpasswordInputRef.current.type = "text";
-    setOpenEye(true);
-    setTimeout(() => {
-      originpasswordInputRef.current.type = "password";
-      setOpenEye(false);
-    }, 1000);
-  };
   const onClickShowPassword1 = () => {
     passwordInputRef.current.type = "text";
     setOpenEye1(true);
@@ -68,8 +59,34 @@ export default function PWedit() {
     }, 1000);
   };
 
-  const onSubmitChangePassword = (data: string) => {
-    console.log(data);
+  const onSubmitChangePassword = async (data: { password: any }) => {
+    try {
+      const result = await client.query({
+        query: FETCH_USER_LOGGEDIN,
+        context: {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          credentials: "include",
+        },
+      });
+      const userId = result.data.fetchUserLoggedIn.id;
+      await updateusergql({
+        variables: {
+          userId,
+          updateUserInput: {
+            password: data.password,
+          },
+        },
+      });
+      Swal.fire({
+        title: "비밀번호가 변경되었습니다.",
+        icon: "success",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
+      router.push("/mypage");
+    } catch (error) {}
   };
 
   return (
@@ -77,13 +94,10 @@ export default function PWedit() {
       handleSubmit={handleSubmit}
       setValue={setValue}
       formState={formState}
-      openEye={openEye}
       openEye1={openEye1}
       openEye2={openEye2}
-      originpasswordInputRef={originpasswordInputRef}
       passwordInputRef={passwordInputRef}
       password2InputRef={password2InputRef}
-      onClickShowPassword={onClickShowPassword}
       onClickShowPassword1={onClickShowPassword1}
       onClickShowPassword2={onClickShowPassword2}
       onSubmitChangePassword={onSubmitChangePassword}

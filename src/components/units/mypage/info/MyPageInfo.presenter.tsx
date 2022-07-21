@@ -1,6 +1,10 @@
 import Link from "next/link";
 import * as S from "./MyPageInfo.styles";
-import { IMyPageInfoUIProps } from "./MyPageInfo.types";
+import {
+  IFetchPayments,
+  IFetchReservationUser,
+  IMyPageInfoUIProps,
+} from "./MyPageInfo.types";
 
 export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
   return (
@@ -55,14 +59,16 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                   <S.ColumnHeaderTitle>결제 금액</S.ColumnHeaderTitle>
                   <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
                 </S.TitleRow>
-                {props?.reservations?.map((el, index: number) => (
-                  <S.Row key={index}>
-                    <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-                    <S.ColumnBasic>
-                      {el.fetchReservationsUser.status}
-                    </S.ColumnBasic>
-                  </S.Row>
-                ))}
+                {props?.reservation?.fetchReservationsUser.map(
+                  (el: IFetchReservationUser, index: number) => (
+                    <S.Row key={index}>
+                      <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+
+                      <S.ColumnBasic>{el.status}</S.ColumnBasic>
+                      <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
+                    </S.Row>
+                  )
+                )}
                 <S.TableBottom />
               </S.TableWrapper>
             </S.InfoBox>
@@ -86,16 +92,15 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                 <S.ColumnHeaderTitle>전체</S.ColumnHeaderTitle>
                 <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
               </S.TitleRow>
-              {props?.payments?.map((el) => (
-                <S.Row key={el._id}>
-                  <S.ColumnBasic>
-                    {String(el._id).slice(-4).toUpperCase()}
-                  </S.ColumnBasic>
-                  <S.ColumnBasic id={el._id}>{el.title}</S.ColumnBasic>
-                  <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-                  <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
-                </S.Row>
-              ))}
+              {props?.payments?.fetchPayments.map(
+                (el: IFetchPayments, index: number) => (
+                  <S.Row key={el.id}>
+                    <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.writer}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+                  </S.Row>
+                )
+              )}
               <S.TableBottom />
             </S.InfoBox>
           </>

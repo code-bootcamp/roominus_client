@@ -69,7 +69,12 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
         </S.InfoBox>
       </S.SearchWrapper>
       <S.ButtonBox>
-        <WebBlackButton title="목록으로" onClick={props.onClickList} />
+        <WebBlackButton
+          title="목록으로"
+          onClick={props.onClickList}
+          type={"button"}
+          value={undefined}
+        />
       </S.ButtonBox>
     </S.Container>
   );

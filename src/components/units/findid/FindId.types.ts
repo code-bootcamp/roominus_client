@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import React, { ReactNode, RefObject } from "react";
 import {
   FieldValues,
   FormState,
@@ -6,11 +6,16 @@ import {
   UseFormSetValue,
 } from "react-hook-form";
 
+export interface LinkType {
+  children: ReactNode;
+  onClick: React.MouseEventHandler<HTMLElement>;
+}
+
 export interface IFindIdUIProps {
   onClickShowContentsFirst: () => void;
   isClickedfirst: boolean;
-  onClickShowContentsSecond: () => void;
   isClickedsecond: boolean;
+  onClickShowContentsSecond: () => void;
   IdFindinputRef: RefObject<HTMLInputElement>;
   PasswordFindinputRef: RefObject<HTMLInputElement>;
   onSubmitFindId: (data: any) => Promise<void>;

@@ -9,10 +9,21 @@ export interface IDataProps {
 }
 
 export interface ICommunityCommentWriteUIProps {
+  isEdit: boolean;
   onClickComment: (data: any) => Promise<void>;
+  onClickEditComment: (data: any) => Promise<void>;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   userInfo: {
     name: string;
   };
+  defaultValue: any;
+  onClickCancel: () => void;
+}
+
+export interface ICommunityCommentWriteProps {
+  el: any;
+  isEdit: boolean;
+  editId: any;
+  setIsEdit: any;
 }

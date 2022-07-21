@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export default function Tag(props: any) {
-  const onKeyPress = (e) => {
+  const onKeyPress = (e: any) => {
     const hashedtag = e.target.value.replace(
       e.target.value,
       `#${e.target.value}`
@@ -16,7 +16,7 @@ export default function Tag(props: any) {
       } else {
         //추가로 입력한 값
         console.log(hashedtag);
-        props.setTagList((prev) => [...prev, hashedtag]);
+        props.setTagList((prev: any) => [...prev, hashedtag]);
         // addList.filter((tagList: any) => tagList !== e.target.value);
         props.setTagItem("");
       }

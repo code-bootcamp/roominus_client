@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import WebPurpleLoginButton from "../../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 import WebLongestHighlightUnderlineInput from "../../../../commons/inputs/inputDesktop/WebLongestHighlightUnderlineInput";
 import { IAdminReservationNewUIProps } from "./AdminReservation.types";
@@ -15,38 +16,77 @@ export default function AdminReservationNewUI(
           type="text"
           register={props.register("id")}
           placeholder="테마 id를 입력하세요"
+          onChange={function (event: ChangeEvent<HTMLInputElement>): void {
+            throw new Error("Function not implemented.");
+          }}
+          value={""}
+          defaultValue={""}
         />
         <S.InputsTitle>운영 매장</S.InputsTitle>
         <WebLongestHighlightUnderlineInput
           type="text"
           register={props.register("cafeName")}
+          onChange={function (event: ChangeEvent<HTMLInputElement>): void {
+            throw new Error("Function not implemented.");
+          }}
+          value={""}
+          defaultValue={""}
+          placeholder={undefined}
         />
         <S.InputsTitle>운영 날짜</S.InputsTitle>
 
         <WebLongestHighlightUnderlineInput
           type="date"
           register={props.register("date")}
+          onChange={function (event: ChangeEvent<HTMLInputElement>): void {
+            throw new Error("Function not implemented.");
+          }}
+          value={""}
+          defaultValue={""}
+          placeholder={undefined}
         />
 
         <S.InputsTitle>운영 타임</S.InputsTitle>
         <WebLongestHighlightUnderlineInput
           type="text"
           register={props.register("time")}
+          onChange={function (event: ChangeEvent<HTMLInputElement>): void {
+            throw new Error("Function not implemented.");
+          }}
+          value={""}
+          defaultValue={""}
+          placeholder={undefined}
         />
 
         <S.InputsTitle>인원</S.InputsTitle>
         <WebLongestHighlightUnderlineInput
           type="number"
           register={props.register("people")}
+          onChange={function (event: ChangeEvent<HTMLInputElement>): void {
+            throw new Error("Function not implemented.");
+          }}
+          value={""}
+          defaultValue={""}
+          placeholder={undefined}
         />
 
         <S.InputsTitle>금액</S.InputsTitle>
         <WebLongestHighlightUnderlineInput
           type="number"
           register={props.register("price")}
+          onChange={function (event: ChangeEvent<HTMLInputElement>): void {
+            throw new Error("Function not implemented.");
+          }}
+          value={""}
+          defaultValue={""}
+          placeholder={undefined}
         />
 
-        <WebPurpleLoginButton type="submit" title="등록하기" />
+        <WebPurpleLoginButton
+          type="submit"
+          title="등록하기"
+          onClick={undefined}
+        />
       </S.Form>
     </S.Wrapper>
   );

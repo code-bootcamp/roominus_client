@@ -1,5 +1,4 @@
 /* eslint-disable no-useless-escape */
-import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import FindIdUI from "./FindId.presenter";
@@ -7,23 +6,15 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FETCH_USER } from "./FindId.query";
 import { useApolloClient } from "@apollo/client";
-import { Modal } from "antd";
+import Swal from "sweetalert2";
 
 const schema = yup.object({
-  email: yup
-    .string()
-    .matches(
-      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i,
-      "이메일 아이디를 @까지 정확하게 입력해주세요."
-    )
-    .required("이메일 아이디를 @까지 정확하게 입력해주세요."),
+  phoneNumber: yup.string().required("필수 입력 사항입니다."),
 });
 
 export default function FindId() {
   const [isClickedfirst, setIsClickedfirst] = useState(true);
   const [isClickedsecond, setIsClickedsecond] = useState(false);
-
-  const router = useRouter();
 
   const IdFindinputRef = useRef<HTMLInputElement>(null);
   const PasswordFindinputRef = useRef<HTMLInputElement>(null);
@@ -34,7 +25,7 @@ export default function FindId() {
   });
 
   useEffect(() => {
-    register("email", { required: true });
+    register("phoneNumber", { required: true });
   }, []);
 
   const onClickShowContentsFirst = () => {
@@ -52,20 +43,28 @@ export default function FindId() {
       PasswordFindinputRef.current?.focus();
     }, 100);
   };
-  const onSubmitFindId = async (data) => {
+  const onSubmitFindId = async (data: { phoneNumber: any }) => {
     try {
       const result = await client.query({
         query: FETCH_USER,
         variables: {
-          email: data.email,
+          phone: data.phoneNumber,
         },
       });
-      Modal.success({
-        content: `사용하시는 아이디: ${result.data?.fetchUser.email}`,
+      Swal.fire({
+        title: `가입하신 아이디는 ${result.data.fetchUser.email}입니다`,
+        icon: "success",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
       });
     } catch (error) {
-      Modal.error({ content: "가입하지 않은 회원입니다." });
-      router.push(`/findidpassword/findid/${data.email}`);
+      Swal.fire({
+        title: "조회하신 번호로 가입된 정보가 없습니다.",
+        width: 700,
+        icon: "error",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
     }
   };
 

@@ -11,7 +11,11 @@ export default function AdminCafeListUI(props: IAdminCafeListUIProps) {
       <InfiniteScroll pageStart={0} loadMore={props.loadFunc} hasMore={true}>
         <S.Title>매장리스트(관리자)</S.Title>
         <S.ButtonBox>
-          <WebSmallPurpleButton onClick={props.onClickNew} title="매장등록" />
+          <WebSmallPurpleButton
+            onClick={props.onClickNew}
+            title="매장등록"
+            type={"button"}
+          />
         </S.ButtonBox>
         <S.Etc>
           {props.data?.fetchCafes.map((el: IFetchCafesProps) => (

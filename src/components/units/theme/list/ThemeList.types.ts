@@ -6,11 +6,16 @@ export interface IFetchThemes {
   rank: number;
   genre?: { name: string; id: string } | any;
   title: string;
+  intro_title: string;
+  intro_content: string;
+  clearTime: string;
   agelimit?: number;
+  peoplelimit: number;
 }
 
 export interface IThemeListProps {
   data?: any;
+  more: boolean;
   hotThemes?: any;
   fetchGenres?: any;
   isToggled?: boolean;

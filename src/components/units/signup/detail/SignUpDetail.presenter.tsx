@@ -194,8 +194,13 @@ export default function SignUpDetailUI(props: ISignUpDetailUIProps) {
             <S.VerificationNoBox>
               <S.VerificationNoInput
                 type="text"
-                placeholder="인증번호를 입력하세요."
-                onChange={props.onChangeTokenValue}
+                name="phoneToken"
+                placeholder="인증번호를 입력해주세요."
+                onChange={(e) => {
+                  props.setValue("phoneToken", e.target.value);
+                  props.trigger("phoneToken");
+                  props.setTokenInput(e.target.value);
+                }}
               />
               <S.TimeOut ref={props.timeRef}>{props.showCount}</S.TimeOut>
             </S.VerificationNoBox>

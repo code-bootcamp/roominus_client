@@ -1,27 +1,39 @@
-import { Card } from "antd";
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "./MyPick.styles";
-import { IMyPickProps } from "./MyPick.types";
+import { IfetchUserLikeThemesProps, IMyPickUIProps } from "./MyPick.types";
 
-export default function MyPickUI(props: IMyPickProps) {
-  const { Meta } = Card;
-
+export default function MyPickUI(props: IMyPickUIProps) {
   return (
     <S.Container>
+      <S.Title>나의 찜 목록</S.Title>
+
       <S.Wrapper>
-        <S.Title>나의 찜 목록</S.Title>
-        <S.PickedCard
-          onClick={props.onClickMoveToDetail}
-          hoverable
-          style={{ width: "200px" }}
-          cover={<img alt="example" src="/img/theme/월야애담.webp" />}
-        >
-          <Meta title="월야애담" description="찜한 날짜" />
-        </S.PickedCard>{" "}
+        <S.Etc>
+          {props.data?.fetchUserLikeThemes?.map(
+            (el: IfetchUserLikeThemesProps) => (
+              <div
+                key={el.theme.id}
+                id={el.theme.id}
+                onClick={props.onClickMoveToThemeDetail}
+              >
+                <img
+                  alt="myPick"
+                  src={el.theme.mainImg}
+                  style={{ width: 150, height: 250, cursor: "pointer" }}
+                />
+              </div>
+            )
+          )}
+        </S.Etc>
         <S.ButtonBox>
           <Link href={"/mypage"}>
-            <WebBlackButton type="button" title="목록으로" />
+            <WebBlackButton
+              type="button"
+              title="목록으로"
+              onClick={undefined}
+              value={undefined}
+            />
           </Link>
         </S.ButtonBox>
       </S.Wrapper>

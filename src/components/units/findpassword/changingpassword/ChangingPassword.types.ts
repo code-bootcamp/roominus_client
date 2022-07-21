@@ -4,6 +4,7 @@ import {
   FormState,
   UseFormHandleSubmit,
   UseFormSetValue,
+  UseFormTrigger,
 } from "react-hook-form";
 
 export interface IChangingPasswordUIProps {
@@ -17,4 +18,5 @@ export interface IChangingPasswordUIProps {
   onClickShowPassword: () => void;
   onClickShowPassword2: () => void;
   onSubmitChangingPassword: (data: any) => void;
+  trigger: UseFormTrigger<FieldValues>;
 }

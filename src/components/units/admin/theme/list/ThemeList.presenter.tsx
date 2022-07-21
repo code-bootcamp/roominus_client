@@ -7,7 +7,7 @@ export default function ThemeListUI(props: IThemeListUIProps) {
     <S.Wrapper>
       <S.Title>테마 리스트</S.Title>
       <S.ThemeLists>
-        {props.data?.fetchThemes.map((el: IFetchThemesData) => (
+        {props.data?.fetchThemesAll.map((el: IFetchThemesData) => (
           <ThemeListUIItem
             key={el.id}
             ThemeData={el}

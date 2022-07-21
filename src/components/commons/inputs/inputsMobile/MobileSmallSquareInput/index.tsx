@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { ChangeEventHandler } from "react";
 
 const Input = styled.input`
   width: 13em;
@@ -10,8 +11,17 @@ const Input = styled.input`
   outline: none;
   padding: 0em 0.5em 0em 0.5em;
 `;
+interface Iprops {
+  value: string | number | readonly string[];
+  defaultValue: string | number | readonly string[];
+  placeholder: any;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  // eslint-disable-next-line no-undef
+  register: any;
+  type: string;
+}
 
-export default function MobileSmallSquareInput(props) {
+export default function MobileSmallSquareInput(props: Iprops) {
   return (
     <Input
       type={props?.type}

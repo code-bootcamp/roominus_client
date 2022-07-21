@@ -92,11 +92,11 @@ export default function ThemeListUI(props: IThemeListProps) {
                     <S.ThemeBack src="/img/theme/card-back.png">
                       <S.ThemeTitle>{el.title}</S.ThemeTitle>
                       <S.ThemeInfo>
-                        정원 1~2인
+                        이용인원 ~ {el.peoplelimit}명
                         <br />
-                        나이제한 {el.agelimit}
+                        나이제한 {el.agelimit}세
                         <br />
-                        요금 20,000원
+                        {el.intro_title}
                       </S.ThemeInfo>
                     </S.ThemeBack>
                   </S.Card>
@@ -104,11 +104,15 @@ export default function ThemeListUI(props: IThemeListProps) {
               </div>
             ))}
           </S.ThemeList>
-          <S.ButtonBox>
-            <S.ShowMoreButton onClick={props.onClickMoreButton}>
-              더보기
-            </S.ShowMoreButton>
-          </S.ButtonBox>
+          {props.more ? (
+            <S.ButtonBox>
+              <S.ShowMoreButton onClick={props.onClickMoreButton}>
+                더보기
+              </S.ShowMoreButton>
+            </S.ButtonBox>
+          ) : (
+            ""
+          )}
         </div>
       )}
     </S.Wrapper>

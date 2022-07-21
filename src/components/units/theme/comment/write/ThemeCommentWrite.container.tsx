@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import ThemeCommentWriteUI from "./ThemeCommentWrite.presenter";
@@ -20,14 +20,14 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
 
   const [createThemeReview] = useMutation(CREATE_THEME_REVIEW);
   const [updateThemeReview] = useMutation(UPDATE_THEME_REVIEW);
-
+  const [star, setStar] = useState<number>(0);
   const { register, handleSubmit, formState, setValue, trigger, resetField } =
     useForm({
       mode: "onChange",
     });
 
   const onClickSubmit = async (data: IWriteCommentData) => {
-    if (!data.star) {
+    if (star === 0) {
       Swal.fire("만족도를 선택해주세요!");
       return;
     }
@@ -44,8 +44,10 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       await createThemeReview({
         variables: {
           createThemeReviewInput: {
-            writerName: "신만두",
-            ...data,
+            clear: data.clear,
+            rank: data.rank,
+            star,
+            content: data.content,
           },
           themeId: router.query.id,
         },
@@ -56,22 +58,22 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
           },
         ],
       });
-      resetField("star");
+      resetField("clear");
       resetField("rank");
       resetField("content");
+      setStar(0);
     } catch (error) {
-      alert((error as Error).message);
+      console.log((error as Error).message);
     }
   };
 
   const onClickUpdate = async (data: IWriteCommentData) => {
+    const updateThemeReviewInput: IUpdateThemeReviewInput = {};
+    if (data.content) updateThemeReviewInput.content = data.content;
+    if (star) updateThemeReviewInput.star = star;
+    if (data.rank) updateThemeReviewInput.rank = data.rank;
+    if (data.clear) updateThemeReviewInput.clear = data.clear;
     try {
-      const updateThemeReviewInput: IUpdateThemeReviewInput = {};
-      if (data.content) updateThemeReviewInput.content = data.content;
-      if (data.star) updateThemeReviewInput.star = data.star;
-      if (data.rank) updateThemeReviewInput.rank = data.rank;
-      if (data.clear) updateThemeReviewInput.clear = data.clear;
-
       await updateThemeReview({
         variables: {
           updateThemeReviewInput,
@@ -89,9 +91,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       alert((error as Error).message);
     }
   };
-  useEffect(() => {
-    register("star", { required: true });
-  }, []);
+
   return (
     <ThemeCommentWriteUI
       register={register}
@@ -104,6 +104,8 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       isEdit={props.isEdit}
       setIsEdit={props.setIsEdit}
       el={props.el}
+      setStar={setStar}
+      star={star}
     />
   );
 }

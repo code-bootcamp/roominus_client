@@ -15,13 +15,13 @@ export default function ThemeCreate(props: IThemeCreateProps) {
   const [createThemegql] = useMutation(CREATE_THEME);
   const [updateThemegql] = useMutation(UPDATE_THEME);
   const router = useRouter();
-  const imgRef = useRef();
+  const imgRef = useRef<HTMLInputElement>(null);
   const [imgurl, setImgurl] = useState("");
   const { register, handleSubmit, reset } = useForm();
   const [value, setValue] = useState(0);
 
   const onClickRealInput = () => {
-    imgRef.current.click();
+    imgRef.current?.click();
   };
 
   const onSubmitCreateTheme = async (data: ICreateThemeData) => {
@@ -39,7 +39,7 @@ export default function ThemeCreate(props: IThemeCreateProps) {
             subImgs: [imgurl],
             agelimit: Number(data.agelimit),
             peoplelimit: Number(data.peoplelimit),
-            clearTime: data.clearTime,
+            clearTime: String(data.clearTime),
           },
         },
       });
@@ -58,7 +58,7 @@ export default function ThemeCreate(props: IThemeCreateProps) {
   const onSubmitUpdateTheme = async (data: ICreateThemeData) => {
     const updateThemeInput: IUpdateThemeInput = {};
     if (data.title) updateThemeInput.title = data.title;
-    if (value) updateThemeInput.star = value;
+    if (value) updateThemeInput.rank = value;
     if (data.intro_title) updateThemeInput.intro_title = data.intro_title;
     if (data.intro_content) updateThemeInput.intro_content = data.intro_content;
     if (data.agelimit) updateThemeInput.agelimit = Number(data.agelimit);

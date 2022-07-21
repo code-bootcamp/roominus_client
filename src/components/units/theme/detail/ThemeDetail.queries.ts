@@ -14,6 +14,15 @@ export const FETCH_THEME = gql`
       genre {
         name
       }
+      likeUsers {
+        userId
+      }
     }
+  }
+`;
+
+export const CREATE_LIKE_THEME = gql`
+  mutation createLikeTheme($themeId: String!) {
+    createLikeTheme(themeId: $themeId)
   }
 `;

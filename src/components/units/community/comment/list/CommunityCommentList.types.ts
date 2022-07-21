@@ -3,6 +3,7 @@ export interface ICommunityCommentListUIProps {
     fetchBoardComments: any;
   };
   onClickDelete: (event: any) => Promise<void>;
+  // loadFunc: () => void;
 }
 
 export interface IBoardreviewEl {

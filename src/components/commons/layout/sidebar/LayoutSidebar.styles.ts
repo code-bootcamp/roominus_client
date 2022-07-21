@@ -1,11 +1,15 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
-import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
+import {
+  SettingOutlined,
+  LogoutOutlined,
+  MailOutlined,
+} from "@ant-design/icons";
 import { IIsActiveProps } from "../Layout.types";
 
 export const Container = styled.main`
-  width: 30%;
-  height: 800px;
+  width: 20%;
+  min-height: 100%;
   border-right: 1px solid darkgray;
 
   @media ${breakPoints.tablet} {
@@ -18,7 +22,6 @@ export const Container = styled.main`
 `;
 
 export const Wrapper = styled.section`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,6 +82,7 @@ export const MenuBoxs = styled.div`
   justify-content: center;
   text-align: center;
   gap: 0.8em;
+  height: 25em;
 `;
 
 export const MenuItem = styled.li`
@@ -110,5 +114,9 @@ export const Setting = styled(SettingOutlined)`
 `;
 
 export const Logout = styled(LogoutOutlined)`
+  margin-top: 0.2em;
+`;
+
+export const Mail = styled(MailOutlined)`
   margin-top: 0.2em;
 `;

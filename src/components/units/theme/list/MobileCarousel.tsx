@@ -39,7 +39,7 @@ export default function MobileCarousel(props: ICarouselProps) {
         },
       },
       {
-        breakpoint: 380,
+        breakpoint: 355,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

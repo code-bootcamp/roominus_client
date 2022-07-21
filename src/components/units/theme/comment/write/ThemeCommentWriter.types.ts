@@ -15,8 +15,8 @@ export interface IUpdateThemeReviewInput {
 
 export interface IThemeCommentWriteProps {
   el?: any;
-  isEdit: boolean;
-  setIsEdit: Dispatch<SetStateAction<boolean>>;
+  isEdit?: boolean;
+  setIsEdit?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface IWriteCommentData {
@@ -27,6 +27,8 @@ export interface IWriteCommentData {
 }
 
 export interface IThemeCommentWriteUIProps {
+  star: number;
+  setStar: Dispatch<SetStateAction<number>>;
   el: any;
   isEdit: Boolean;
   setIsEdit: Dispatch<SetStateAction<boolean>>;
@@ -35,8 +37,8 @@ export interface IThemeCommentWriteUIProps {
   formState: FormState<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   register: UseFormRegister<FieldValues>;
-  onClickUpdate: (data: IWriteCommentData) => Promise<void>;
-  onClickSubmit: (data: IWriteCommentData) => Promise<void>;
+  onClickUpdate: any;
+  onClickSubmit: any;
 }
 
 export interface IDataProps {

@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { CaretUpOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
+// import KakaoChat from "../../../units/mypage/chat";
 
-const TopBtn = styled(CaretUpOutlined)`
+const TopBtnBox = styled.div`
   z-index: 999;
   position: fixed;
   display: flex;
@@ -34,6 +35,8 @@ const TopBtn = styled(CaretUpOutlined)`
     height: 1.5em;
   }
 `;
+
+const TopBtn = styled(CaretUpOutlined)``;
 
 const TopBtnActive = styled.button`
   display: none;
@@ -77,9 +80,15 @@ export default function TopButton() {
   return (
     <>
       {btnStatus ? (
-        <TopBtn onClick={handleTop}></TopBtn>
+        <>
+          <TopBtnBox onClick={handleTop}>
+            <TopBtn />
+          </TopBtnBox>
+        </>
       ) : (
-        <TopBtnActive></TopBtnActive>
+        <>
+          <TopBtnActive></TopBtnActive>
+        </>
       )}
     </>
   );

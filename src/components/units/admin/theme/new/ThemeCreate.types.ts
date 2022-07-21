@@ -18,8 +18,7 @@ export interface ICreateThemeData {
 
 export interface IUpdateThemeInput {
   title?: string;
-  rank?: string;
-  star?: number;
+  rank?: number;
   intro_title?: string;
   intro_content?: string;
   agelimit?: number;

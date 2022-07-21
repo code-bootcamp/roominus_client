@@ -17,13 +17,12 @@ export default function CommunityCommentList() {
       boardId: router.query.id,
     },
   });
-  console.log(data);
 
   const onClickDelete = async (event: any) => {
     try {
       await deleteBoardreview({
         variables: {
-          id: event.target.id,
+          boardReviewId: event.target.id,
         },
         refetchQueries: [
           {
@@ -35,11 +34,13 @@ export default function CommunityCommentList() {
       Swal.fire({
         icon: "success",
         title: "댓글이 삭제되었습니다!",
+        timer: 1300,
+        showConfirmButton: false,
       });
     } catch (error) {
       Swal.fire({
         icon: "error",
-        text: (error as Error).message,
+        title: (error as Error).message,
       });
     }
   };
@@ -48,17 +49,19 @@ export default function CommunityCommentList() {
   //   if (!data) return;
 
   //   fetchMore({
-  //     variables: { page: Math.ceil(data.fetchBoardComments.length / 10) + 1 },
+  //     variables: {
+  //       page: Math.ceil(data.fetchBoardComments.boardreview.length / 10) + 1,
+  //     },
   //     updateQuery: (prev, { fetchMoreResult }) => {
-  //       if (!fetchMoreResult.fetchBoardComments)
+  //       if (!fetchMoreResult.fetchBoardComments.boardreview)
   //         return {
-  //           fetchBoardComments: [...prev.fetchBoardComments],
+  //           fetchBoardComments: [...prev.fetchBoardComments.boardreview],
   //         };
 
   //       return {
   //         fetchBoardComments: [
-  //           ...prev.fetchBoardComments,
-  //           ...fetchMoreResult.fetchBoardComments,
+  //           ...prev.fetchBoardComments.boardreview,
+  //           ...fetchMoreResult.fetchBoardComments.boardreview,
   //         ],
   //       };
   //     },

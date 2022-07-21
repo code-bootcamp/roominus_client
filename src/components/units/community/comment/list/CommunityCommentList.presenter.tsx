@@ -13,10 +13,10 @@ export default function CommunityCommentListUI(
       {/* <InfiniteScroll
         pageStart={0}
         loadMore={props.loadFunc}
-        hasMore={true || false}
+        hasMore={true}
         useWindow={true}
       > */}
-      {props.data?.fetchBoardComments.boardreview.map((el: IBoardreviewEl) => (
+      {props.data?.fetchBoardComments.boardreview?.map((el: IBoardreviewEl) => (
         <div key={el.id}>
           <CommunityCommentEdit
             key={el.id}

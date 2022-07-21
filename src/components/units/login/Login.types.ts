@@ -1,6 +1,5 @@
 import { RefObject } from "react";
 import {
-  UseFormHandleSubmit,
   UseFormSetValue,
   FormState,
   UseFormTrigger,
@@ -15,7 +14,7 @@ export interface IDataProps {
 export interface ILoginUIProps {
   onClickGoogleLogin: () => void;
   onClickLoginKakao: () => void;
-  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  handleSubmit: any;
   onSubmitLogin: (data: IDataProps) => Promise<void>;
   setValue: UseFormSetValue<FieldValues>;
   formState: FormState<FieldValues>;

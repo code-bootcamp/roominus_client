@@ -10,8 +10,12 @@ import { FrownOutlined, MehOutlined, SmileOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { IThemeCommentWriteUIProps } from "./ThemeCommentWriter.types";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 
 export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
+  const [userInfo] = useRecoilState(userInfoState);
+
   const desc = [
     "🍂흙길🥀 조금 부족해요!",
     "🌱풀길🌱 아쉬워요!",
@@ -22,7 +26,7 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
 
   const [isEscape, setIsEscape] = useState(false);
   const [rank, setRank] = useState<string>("보통");
-  const [star, setStar] = useState<number>(3);
+
   const customIcons: Record<number, ReactNode> = {
     1: <FrownOutlined />,
     2: <FrownOutlined />,
@@ -54,56 +58,56 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
     props.setValue("rank", event.target.value);
   };
 
-  const onChangeStar = (value: number) => {
-    props.setValue("star", Number(value));
-    props.trigger("star");
-    setStar(value);
-  };
-
   useEffect(() => {
-    props.setValue("clear", Boolean(props.el?.clear || isEscape));
-    props.setValue("rank", props.el?.rank || rank);
-    props.setValue("star", Number(props.el?.star) || star);
-    setIsEscape(Boolean(props.el?.clear));
-    setRank(props.el?.rank);
+    if (props.el?.clear) {
+      props.setValue("clear", Boolean(props.el?.clear));
+      setIsEscape(Boolean(props.el?.clear));
+    }
+    if (props.el?.rank) {
+      props.setValue("rank", props.el?.rank);
+      setRank(props.el?.rank);
+    }
+
+    // props.setValue("clear", Boolean(props.el?.clear || isEscape));
+    // props.setValue("rank", props.el?.rank || rank);
+    // setIsEscape(Boolean(props.el?.clear));
+    // setRank(props.el?.rank);
   }, []);
 
   return (
-    <form
-      onSubmit={
-        props.isEdit
-          ? props.handleSubmit(props.onClickUpdate)
-          : props.handleSubmit(props.onClickSubmit)
-      }
-    >
-      <S.Wrapper isEdit={props.isEdit}>
-        <S.StarBox>
-          <S.StarScore
-            tooltips={desc}
-            style={{ fontSize: "3em", color: "#7457E8" }}
-            // defaultValue={props.el?.star || 3}
-            // defaultValue={props.el?.star || star}
-            value={props.el?.star || props.register("star")}
-            character={({ index }: { index: number }) => customIcons[index + 1]}
-            onChange={onChangeStar}
+    <S.Wrapper isEdit={props.isEdit}>
+      <S.StarBox>
+        <S.StarScore
+          tooltips={desc}
+          style={{ fontSize: "3em", color: "#7457E8" }}
+          onChange={props.setStar}
+          value={props.star || props.el?.star}
+          character={({ index }: { index: number }) => customIcons[index + 1]}
+        />
+        {props.isEdit ? (
+          <FontAwesomeIcon
+            icon={faXmark}
+            onClick={onClickCancel}
+            style={{
+              fontSize: "1.5em",
+              margin: "4px",
+              cursor: "pointer",
+              position: "absolute",
+              right: "1em",
+              color: "#5c4a7e",
+            }}
           />
-          {props.isEdit ? (
-            <FontAwesomeIcon
-              icon={faXmark}
-              onClick={onClickCancel}
-              style={{
-                fontSize: "1.5em",
-                margin: "4px",
-                cursor: "pointer",
-                position: "absolute",
-                right: "1em",
-                color: "#5c4a7e",
-              }}
-            />
-          ) : (
-            ""
-          )}
-        </S.StarBox>
+        ) : (
+          ""
+        )}
+      </S.StarBox>
+      <form
+        onSubmit={
+          props.isEdit
+            ? props.handleSubmit(props.onClickUpdate)
+            : props.handleSubmit(props.onClickSubmit)
+        }
+      >
         <S.EscapeRankBox>
           <S.RadioGroup color="secondary">
             <S.RadioButton
@@ -155,7 +159,7 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
           </S.RankBox>
         </S.EscapeRankBox>
         <S.CommentBox>
-          <S.CommentWriter>신만*</S.CommentWriter>
+          <S.CommentWriter>{userInfo.name}</S.CommentWriter>
           <S.CommentInput
             defaultValue={props.el?.content}
             {...props.register("content")}
@@ -163,7 +167,7 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
           />
           <S.SubmitButton>{props.isEdit ? "수정" : "등록"}</S.SubmitButton>
         </S.CommentBox>
-      </S.Wrapper>
-    </form>
+      </form>
+    </S.Wrapper>
   );
 }
