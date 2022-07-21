@@ -59,7 +59,7 @@ export default function PWedit() {
     }, 1000);
   };
 
-  const onSubmitChangePassword = async (data: string) => {
+  const onSubmitChangePassword = async (data: { password: any }) => {
     try {
       const result = await client.query({
         query: FETCH_USER_LOGGEDIN,

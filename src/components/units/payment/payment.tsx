@@ -126,6 +126,7 @@ export default function Payment(props: IPaymentProps) {
         title={props.title}
         onClick={requestPay}
         type={props.type}
+        value={""}
       />
     </div>
   );

@@ -56,7 +56,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                   <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
                 </S.TitleRow>
                 {props?.reservation?.fetchReservationsUser.map(
-                  (el: any, index: number) => (
+                  (el, index: number) => (
                     <S.Row key={index}>
                       <S.ColumnBasic>{index + 1}</S.ColumnBasic>
 

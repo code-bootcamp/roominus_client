@@ -15,3 +15,9 @@ export const FETCH_PAYMENTS = gql`
     }
   }
 `;
+
+export const FETCH_PAYMENTS_COUNT = gql`
+  query fetchPaymentsCount {
+    fetchPaymentsCount
+  }
+`;
