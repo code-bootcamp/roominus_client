@@ -20,3 +20,10 @@ export interface ICommunityCommentWriteUIProps {
   defaultValue: any;
   onClickCancel: () => void;
 }
+
+export interface ICommunityCommentWriteProps {
+  el: any;
+  isEdit: boolean;
+  editId: any;
+  setIsEdit: any;
+}

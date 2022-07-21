@@ -1,11 +1,12 @@
 import { useState } from "react";
 import CommentAnswerEditUI from "./CommentAnswerEdit.presenter";
+import { ICommentAnswerEditProps } from "./CommentAnswerEdit.types";
 
-export default function CommentAnswerEdit(props) {
+export default function CommentAnswerEdit(props: ICommentAnswerEditProps) {
   const [isAnswerEdit, setIsAnswerEdit] = useState(false);
   const [answerEditId, setAnswerEditId] = useState("");
 
-  const onClickEdit = (event) => {
+  const onClickEdit = (event: any) => {
     setIsAnswerEdit((prev) => !prev);
     setAnswerEditId(event.target.id);
   };
@@ -13,7 +14,6 @@ export default function CommentAnswerEdit(props) {
   return (
     <CommentAnswerEditUI
       answerEditId={answerEditId}
-      // key={props.el.id}
       el={props.el}
       answerData={props.answerData}
       isAnswerEdit={isAnswerEdit}

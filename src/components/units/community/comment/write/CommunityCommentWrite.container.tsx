@@ -8,11 +8,16 @@ import {
   UPDATE_BOARD_REVIEW,
 } from "./CommunityCommentWrite.queries";
 import Swal from "sweetalert2";
-import { IDataProps } from "./CommunityCommentWrite.types";
+import {
+  ICommunityCommentWriteProps,
+  IDataProps,
+} from "./CommunityCommentWrite.types";
 import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../../../commons/store";
 
-export default function CommunityCommentWrite(props) {
+export default function CommunityCommentWrite(
+  props: ICommunityCommentWriteProps
+) {
   const router = useRouter();
 
   const [createBoardreview] = useMutation(CREATE_BOARD_REVIEW);
@@ -26,7 +31,7 @@ export default function CommunityCommentWrite(props) {
 
   const onClickComment = async (data: IDataProps) => {
     try {
-      const result = await createBoardreview({
+      await createBoardreview({
         variables: {
           createBoardreviewInput: {
             content: data.content,
@@ -42,11 +47,11 @@ export default function CommunityCommentWrite(props) {
         ],
       });
       reset();
-      console.log(result);
       Swal.fire({
         icon: "success",
         title: "댓글 등록이 완료되었습니다!",
-        timer: 1500,
+        timer: 1300,
+        showConfirmButton: false,
       });
     } catch (error) {
       Swal.fire({
@@ -58,7 +63,7 @@ export default function CommunityCommentWrite(props) {
 
   const onClickEditComment = async (data: IDataProps) => {
     try {
-      const result = await updateBoardreview({
+      await updateBoardreview({
         variables: {
           boardReviewId: props.editId,
           updateBoardreviewInput: {
@@ -66,11 +71,11 @@ export default function CommunityCommentWrite(props) {
           },
         },
       });
-      console.log(result);
       Swal.fire({
         icon: "success",
         title: "댓글 수정이 완료되었습니다!",
-        timer: 1500,
+        timer: 1300,
+        showConfirmButton: false,
       });
     } catch (error) {
       Swal.fire({

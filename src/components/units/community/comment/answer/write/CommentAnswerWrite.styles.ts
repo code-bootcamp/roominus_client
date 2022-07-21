@@ -1,33 +1,30 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../../commons/styles/media";
+import { breakPoints } from "../../../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
-  /* margin: auto; */
   display: flex;
   flex-direction: column;
 
   @media ${breakPoints.tablet} {
     margin-top: 2em;
-    /* width: 100%; */
-  }
-
-  @media ${breakPoints.mobile} {
-    margin-top: 2em;
-    width: 100%;
-    font-size: 0.9em;
+    width: 90%;
   }
 `;
 
-export const CommentListBox = styled.div`
+export const ReCommentListBox = styled.div`
   width: 100%;
-  /* height: 100px; */
   padding: 1em;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
-  background-color: #ffffff;
+  background-color: #f2ebf5;
   border-bottom: 1px solid #bdbdbd;
+`;
+
+export const Arrow = styled.img`
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 1.2em;
 `;
 
 export const ListInfoBox = styled.div`
@@ -44,31 +41,34 @@ export const InfoTitleBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  /* background-color: red; */
 `;
 
 export const InfoTitle = styled.div`
-  /* background-color: yellow; */
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 `;
 
-export const InfoName = styled.div`
+export const InfoName = styled.h3`
   margin-right: 1em;
 `;
 
-export const Date = styled.div``;
-
-export const Comment = styled.img`
-  margin-right: 0.5em;
+export const ReCommentWriteBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
-export const Edit = styled.img`
-  margin-right: 0.5em;
+export const ReCommentInput = styled.input`
+  width: 68%;
+  height: 2.5em;
+  border: none;
+  border-radius: 8px;
+  padding-left: 1em;
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+  }
 `;
-
-export const Delete = styled.img``;
-
-export const Contents = styled.div``;

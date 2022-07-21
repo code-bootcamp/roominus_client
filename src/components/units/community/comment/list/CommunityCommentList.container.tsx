@@ -12,12 +12,11 @@ export default function CommunityCommentList() {
 
   const [deleteBoardreview] = useMutation(DELETE_BOARD_REVIEW);
 
-  const { data, fetchMore } = useQuery(FETCH_BOARD_COMMENTS, {
+  const { data } = useQuery(FETCH_BOARD_COMMENTS, {
     variables: {
       boardId: router.query.id,
     },
   });
-  console.log(data);
 
   const onClickDelete = async (event: any) => {
     try {
@@ -35,6 +34,8 @@ export default function CommunityCommentList() {
       Swal.fire({
         icon: "success",
         title: "댓글이 삭제되었습니다!",
+        timer: 1300,
+        showConfirmButton: false,
       });
     } catch (error) {
       Swal.fire({
@@ -44,34 +45,34 @@ export default function CommunityCommentList() {
     }
   };
 
-  const loadFunc = () => {
-    if (!data) return;
+  // const loadFunc = () => {
+  //   if (!data) return;
 
-    fetchMore({
-      variables: {
-        page: Math.ceil(data.fetchBoardComments.boardreview.length / 10) + 1,
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult.fetchBoardComments.boardreview)
-          return {
-            fetchBoardComments: [...prev.fetchBoardComments.boardreview],
-          };
+  //   fetchMore({
+  //     variables: {
+  //       page: Math.ceil(data.fetchBoardComments.boardreview.length / 10) + 1,
+  //     },
+  //     updateQuery: (prev, { fetchMoreResult }) => {
+  //       if (!fetchMoreResult.fetchBoardComments.boardreview)
+  //         return {
+  //           fetchBoardComments: [...prev.fetchBoardComments.boardreview],
+  //         };
 
-        return {
-          fetchBoardComments: [
-            ...prev.fetchBoardComments.boardreview,
-            ...fetchMoreResult.fetchBoardComments.boardreview,
-          ],
-        };
-      },
-    });
-  };
+  //       return {
+  //         fetchBoardComments: [
+  //           ...prev.fetchBoardComments.boardreview,
+  //           ...fetchMoreResult.fetchBoardComments.boardreview,
+  //         ],
+  //       };
+  //     },
+  //   });
+  // };
 
   return (
     <CommunityCommentListUI
       data={data}
       onClickDelete={onClickDelete}
-      loadFunc={loadFunc}
+      // loadFunc={loadFunc}
     />
   );
 }

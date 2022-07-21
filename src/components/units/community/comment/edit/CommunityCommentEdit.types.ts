@@ -15,4 +15,7 @@ export interface ICommunityCommentEditUIProps {
   isAnswer: boolean;
   editId: string;
   setEditId: Dispatch<SetStateAction<string>>;
+  onClickReComment: (event: any) => void;
+  setIsAnswer: Dispatch<SetStateAction<boolean>>;
+  answerId: string;
 }

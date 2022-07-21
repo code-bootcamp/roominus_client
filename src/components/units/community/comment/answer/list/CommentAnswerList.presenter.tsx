@@ -1,20 +1,25 @@
 import CommentAnswerEdit from "../edit/CommentAnswerEdit.container";
-import * as S from "./CommentAnswerList.styles";
+import {
+  IBoardsecondreviewEl,
+  ICommentAnswerListUIProps,
+} from "./CommentAnswerList.types";
 
-export default function CommentAnswerListUI(props) {
+export default function CommentAnswerListUI(props: ICommentAnswerListUIProps) {
   return (
-    <S.Wrapper>
-      {props.answerData?.fetchReviewComments.boardsecondreview.map((el) => (
-        <S.Wrap key={el.id}>
-          <CommentAnswerEdit
-            refetch={props.refetch}
-            key={el.id}
-            onClickDelete={props.onClickDelete}
-            el={el}
-            answerData={props.answerData}
-          />
-        </S.Wrap>
-      ))}
-    </S.Wrapper>
+    <div>
+      {props.answerData?.fetchReviewComments.boardsecondreview?.map(
+        (el: IBoardsecondreviewEl) => (
+          <div key={el.id}>
+            <CommentAnswerEdit
+              refetch={props.refetch}
+              key={el.id}
+              onClickDelete={props.onClickDelete}
+              el={el}
+              answerData={props.answerData}
+            />
+          </div>
+        )
+      )}
+    </div>
   );
 }
