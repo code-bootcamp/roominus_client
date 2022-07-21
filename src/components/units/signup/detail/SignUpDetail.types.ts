@@ -36,4 +36,5 @@ export interface ISignUpDetailUIProps {
   setPassword: Dispatch<SetStateAction<string>>;
   setPhone: Dispatch<SetStateAction<string>>;
   onChangeTokenValue: (event: any) => void;
+  setTokenInput: Dispatch<SetStateAction<string>>;
 }

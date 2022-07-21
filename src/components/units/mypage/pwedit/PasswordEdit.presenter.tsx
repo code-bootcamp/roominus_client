@@ -19,50 +19,6 @@ export default function PWeditUI(props: IPWeditUIProps) {
         <S.PasswordBoxes>
           <S.PasswordBox>
             <S.TitleBox>
-              <S.PasswordTitle>현재 비밀번호</S.PasswordTitle>
-              <S.ImportantInfos>*</S.ImportantInfos>
-            </S.TitleBox>
-            <S.PasswordInputBox>
-              <S.PasswordInput
-                onChange={(e) =>
-                  props.setValue("originpassword", e.target.value)
-                }
-                name="originpassword"
-                ref={props.originpasswordInputRef}
-                type="password"
-              />
-              {props.openEye && (
-                <FontAwesomeIcon
-                  icon={faEye}
-                  style={{
-                    color: "purple",
-                    fontSize: "1.5em",
-                    cursor: "pointer",
-                    position: "absolute",
-                    top: "0em",
-                    right: "2em",
-                  }}
-                />
-              )}
-              {!props.openEye && (
-                <FontAwesomeIcon
-                  onClick={props.onClickShowPassword}
-                  icon={faEyeSlash}
-                  style={{
-                    color: "purple",
-                    fontSize: "1.5em",
-                    cursor: "pointer",
-                    position: "absolute",
-                    top: "0em",
-                    right: "2em",
-                  }}
-                />
-              )}
-            </S.PasswordInputBox>
-            <S.Error>{props.formState.errors.originpassword?.message}</S.Error>
-          </S.PasswordBox>
-          <S.PasswordBox>
-            <S.TitleBox>
               <S.PasswordTitle>새 비밀번호</S.PasswordTitle>
               <S.ImportantInfos>*</S.ImportantInfos>
             </S.TitleBox>

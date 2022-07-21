@@ -33,7 +33,7 @@ export const TabBtns = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   @media ${breakPoints.mobile} {
     font-size: 1.6em;
   }
@@ -70,48 +70,27 @@ export const TabSecond = styled.button`
 
 export const Form = styled.form`
   width: 60%;
+  height: 19em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 2em;
 `;
-export const NameBox = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2em;
-`;
-export const Name = styled.div`
-  font-size: 1.2em;
-  @media ${breakPoints.mobile} {
-    font-size: 1.8em;
-  }
-`;
-export const NameInput = styled.input`
-  width: 100%;
-  height: 2.5em;
-  border: none;
-  border-bottom: 1px solid lightgray;
-  outline: none;
-  font-size: 1.3em;
-  @media ${breakPoints.mobile} {
-    font-size: 1.5em;
-  }
-`;
 
-export const EmailBox = styled.div`
+export const PhoneBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
+  margin: auto;
 `;
-export const Email = styled.div`
+export const Phone = styled.div`
   font-size: 1.2em;
   @media ${breakPoints.mobile} {
     font-size: 1.8em;
   }
 `;
-export const EmailInput = styled.input`
+export const PhoneInput = styled.input`
   width: 100%;
   height: 2.5em;
   border: none;

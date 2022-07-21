@@ -29,10 +29,10 @@ export default function FindPasswordUI(props: IFindPasswordUIProps) {
             </S.TitleBox>
             <S.NameInput
               type="text"
-              name="name"
-              placeholder="홍길동"
+              name="email"
+              placeholder="email"
               ref={props.PasswordFindinputRef}
-              onChange={(e) => props.setValue("name", e.target.value)}
+              onChange={(e) => props.setValue("email", e.target.value)}
             />
           </S.NameBox>
           <S.Error>{props.formState.errors.name?.message}</S.Error>

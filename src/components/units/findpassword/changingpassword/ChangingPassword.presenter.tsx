@@ -17,7 +17,10 @@ export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
             <S.PassWordInput
               type="password"
               name="password"
-              onChange={(e) => props.setValue("password", e.target.value)}
+              onChange={(e) => {
+                props.setValue("password", e.target.value);
+                props.trigger("password");
+              }}
               ref={props.passwordInputRef}
             />
             {props.openEye1 && (
@@ -27,6 +30,9 @@ export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
                   color: "purple",
                   fontSize: "1.5em",
                   cursor: "pointer",
+                  position: "absolute",
+                  top: "0em",
+                  right: "1em",
                 }}
               />
             )}
@@ -38,6 +44,9 @@ export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
                   color: "purple",
                   fontSize: "1.5em",
                   cursor: "pointer",
+                  position: "absolute",
+                  top: "0em",
+                  right: "1em",
                 }}
               />
             )}
@@ -54,7 +63,10 @@ export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
               ref={props.password2InputRef}
               type="password"
               name="password2"
-              onChange={(e) => props.setValue("password2", e.target.value)}
+              onChange={(e) => {
+                props.setValue("password2", e.target.value);
+                props.trigger("password2");
+              }}
             />
             {props.openEye2 && (
               <FontAwesomeIcon
@@ -63,6 +75,9 @@ export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
                   color: "purple",
                   fontSize: "1.5em",
                   cursor: "pointer",
+                  position: "absolute",
+                  top: "0em",
+                  right: "1em",
                 }}
               />
             )}
@@ -74,6 +89,9 @@ export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
                   color: "purple",
                   fontSize: "1.5em",
                   cursor: "pointer",
+                  position: "absolute",
+                  top: "0em",
+                  right: "1em",
                 }}
               />
             )}

@@ -34,7 +34,7 @@ export const TabBtns = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   @media ${breakPoints.mobile} {
     font-size: 1.6em;
   }
@@ -71,8 +71,10 @@ export const TabSecond = styled.button`
 
 export const Form = styled.form`
   width: 60%;
+  height: 19em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 2em;
 `;

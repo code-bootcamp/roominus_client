@@ -5,6 +5,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { IFindPasswordProps } from "./FindPassword.types";
+import { FETCH_FIND_PASSWORD } from "./FindPassword.query";
+import { useApolloClient } from "@apollo/client";
+import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 const schema = yup.object({
   email: yup
@@ -22,12 +26,35 @@ export default function FindPassword(props: IFindPasswordProps) {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
-
+  const client = useApolloClient();
+  const router = useRouter();
   useEffect(() => {
     register("email", { required: true });
     register("phoneNumber", { required: true });
   }, []);
-  const onSubmitVerificationEmail = () => {};
+  const onSubmitVerificationEmail = async (data) => {
+    console.log(data);
+    try {
+      const result = await client.query({
+        query: FETCH_FIND_PASSWORD,
+        variables: {
+          email: data.email,
+          phone: data.phoneNumber,
+        },
+      });
+      router.push(
+        `/findidpassword/findpassword/${result.data.fetchFindPassword.id}`
+      );
+    } catch (error) {
+      Swal.fire({
+        title: "이메일 또는 핸드폰 번호가 올바르지 않습니다.",
+        width: 700,
+        icon: "error",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
+    }
+  };
   return (
     <FindPasswordUI
       onClickShowContentsFirst={props.onClickShowContentsFirst}

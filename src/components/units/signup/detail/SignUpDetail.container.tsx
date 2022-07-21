@@ -37,6 +37,7 @@ const schema = yup.object({
     .required("영문+숫자 조합 8~16자리의 비밀번호를 입력해주세요."),
   name: yup.string().required("필수 입력 사항입니다."),
   phoneNumber: yup.string().required("필수 입력 사항입니다."),
+  phoneToken: yup.string().required("필수 입력 사항입니다."),
 });
 
 export default function SignUpDetail() {
@@ -63,6 +64,7 @@ export default function SignUpDetail() {
   const [sendTokengql] = useMutation(SEND_TOTKEN_TO_PHONE);
   const [checkInputTokengql] = useMutation(CHECK_INPUT_TOKEN);
   const [phone, setPhone] = useState("");
+  const [smsToken, setSmsToken] = useState("");
   const [tokenInput, setTokenInput] = useState("");
 
   useEffect(() => {
@@ -71,6 +73,7 @@ export default function SignUpDetail() {
     register("password2", { required: true });
     register("name", { required: true });
     register("phoneNumber", { required: true });
+    register("phoneToken", { required: true });
   }, []);
   useEffect(() => {
     let timer: string | number | NodeJS.Timeout | undefined;
@@ -117,19 +120,21 @@ export default function SignUpDetail() {
   };
 
   const onClickVerifyMySelfByNo = async () => {
-    setStart(2);
     try {
-      await sendTokengql({
+      const result = await sendTokengql({
         variables: {
           phone,
         },
       });
+      console.log(result.data.sendTotkentoPhone);
+      setSmsToken(result.data.sendTotkentoPhone);
       Swal.fire({
         title: "인증번호 전송 완료",
         icon: "success",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
       });
+      setStart(2);
     } catch (error) {
       Swal.fire({
         title: (error as Error).message,
@@ -150,22 +155,27 @@ export default function SignUpDetail() {
   };
   const onClickCheckVerificationNo = async () => {
     setStart(3);
-    try {
-      await checkInputTokengql({
-        variables: {
-          phone,
-          tokenInput,
-        },
-      });
+    if (smsToken === tokenInput) {
+      try {
+        const result = await checkInputTokengql({
+          variables: {
+            phone,
+            tokenInput,
+          },
+        });
+        console.log(result.data.checkinputToken);
+        Swal.fire({
+          title: "인증완료",
+          icon: "success",
+          confirmButtonText: "확인",
+          confirmButtonColor: "#4a00e0e7",
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (smsToken !== tokenInput) {
       Swal.fire({
-        title: "인증완료",
-        icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
-      });
-    } catch (error) {
-      Swal.fire({
-        title: (error as Error).message,
+        title: "토큰이 올바르지 않습니다.",
         icon: "warning",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
@@ -260,6 +270,7 @@ export default function SignUpDetail() {
         kakaologgedIn={undefined}
         onClickLogoutkakao={undefined}
         onClickSocialIDLogout={undefined}
+        setTokenInput={setTokenInput}
       />
     </>
   );

@@ -4,6 +4,11 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
+
+import { UPDATE_USER } from "./ChangingPassword.query";
+import { useMutation } from "@apollo/client";
+
+import Swal from "sweetalert2";
 const schema = yup.object({
   password: yup
     .string()
@@ -24,14 +29,34 @@ export default function ChangingPassword() {
   const password2InputRef = useRef<HTMLInputElement>(null);
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);
-  const { register, handleSubmit, setValue, formState } = useForm({
+
+  const [updateUsergql] = useMutation(UPDATE_USER);
+
+  const { register, handleSubmit, setValue, formState, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
 
-  const onSubmitChangingPassword = (data: any) => {
-    console.log(data);
-    router.push("/login");
+  const onSubmitChangingPassword = async (data: any) => {
+    try {
+      const result = await updateUsergql({
+        variables: {
+          userId: router.query.id,
+          updateUserInput: {
+            password: data.password,
+          },
+        },
+      });
+      Swal.fire({
+        title: `${result.data.updateUser.name}님 비밀번호가 수정되었습니다.`,
+        icon: "success",
+        confirmButtonText: "확인",
+        confirmButtonColor: "#4a00e0e7",
+      });
+      router.push("/login");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   const onClickShowPassword = () => {
@@ -71,6 +96,7 @@ export default function ChangingPassword() {
       onClickShowPassword={onClickShowPassword}
       onClickShowPassword2={onClickShowPassword2}
       onSubmitChangingPassword={onSubmitChangingPassword}
+      trigger={trigger}
     />
   );
 }
