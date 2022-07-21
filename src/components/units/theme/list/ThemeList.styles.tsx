@@ -76,7 +76,7 @@ export const GenreList = styled.div`
 
 export const Genre = styled.button`
   font-size: 18px;
-  width: 140px;
+  width: 138px;
   height: 56px;
   border: 0px;
   border-radius: 50px;

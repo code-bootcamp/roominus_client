@@ -9,6 +9,7 @@ import { IFetchThemes } from "./ThemeList.types";
 export default function ThemeList() {
   const [genre, setGenre] = useState("");
   const [selectAll, setSelectAll] = useState(true);
+  const [more, setMore] = useState(true);
 
   const { data, fetchMore } = useQuery(FETCH_THEMES, {
     variables: {
@@ -18,7 +19,7 @@ export default function ThemeList() {
 
   const { data: hotThemes } = useQuery(FETCH_THEMES, {
     variables: {
-      page: 3,
+      page: 2,
     },
   });
 
@@ -39,19 +40,23 @@ export default function ThemeList() {
 
     try {
       await fetchMore({
-        variables: { page: Math.ceil(data?.fetchThemes.length) / 6 + 1 },
+        variables: { page: Math.ceil(data?.fetchThemes.length) / 12 + 1 },
         updateQuery: (prev, { fetchMoreResult }) => {
-          console.log(fetchMoreResult.fetchThemes);
-          if (!fetchMoreResult.fetchThemes)
+          if (!fetchMoreResult.fetchThemes) {
+            setMore(false);
             return {
               fetchThemes: [...prev.fetchThemes],
             };
+          }
+
           return {
             fetchThemes: [...prev.fetchThemes, ...fetchMoreResult?.fetchThemes],
           };
         },
       });
     } catch (error) {
+      setMore(false);
+
       Swal.fire({
         icon: "warning",
         title: "더이상 등록된 테마가 없습니다.",
@@ -78,6 +83,7 @@ export default function ThemeList() {
   return (
     <ThemeUI
       data={data}
+      more={more}
       hotThemes={hotThemes}
       myIndex={myIndex}
       fetchGenres={fetchGenres}

@@ -54,7 +54,7 @@ export const ThemeImg = styled.img`
   }
 `;
 export const ThemeRightBox = styled.div`
-  /* min-width: 600px; */
+  position: relative;
   width: 100%;
   max-width: 650px;
   max-height: 560px;

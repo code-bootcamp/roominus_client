@@ -9,6 +9,7 @@ export const FETCH_THEMES = gql`
       intro_title
       intro_content
       agelimit
+      peoplelimit
       like
       mainImg
       genre {
