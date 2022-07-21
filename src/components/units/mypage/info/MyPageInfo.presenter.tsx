@@ -1,6 +1,10 @@
 import Link from "next/link";
 import * as S from "./MyPageInfo.styles";
-import { IMyPageInfoUIProps } from "./MyPageInfo.types";
+import {
+  IFetchPayments,
+  IFetchReservationUser,
+  IMyPageInfoUIProps,
+} from "./MyPageInfo.types";
 
 export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
   return (
@@ -56,7 +60,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                   <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
                 </S.TitleRow>
                 {props?.reservation?.fetchReservationsUser.map(
-                  (el, index: number) => (
+                  (el: IFetchReservationUser, index: number) => (
                     <S.Row key={index}>
                       <S.ColumnBasic>{index + 1}</S.ColumnBasic>
 
@@ -88,13 +92,15 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                 <S.ColumnHeaderTitle>전체</S.ColumnHeaderTitle>
                 <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
               </S.TitleRow>
-              {props?.payments?.fetchPayments.map((el: any, index: number) => (
-                <S.Row key={el.id}>
-                  <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
-                  <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-                  <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
-                </S.Row>
-              ))}
+              {props?.payments?.fetchPayments.map(
+                (el: IFetchPayments, index: number) => (
+                  <S.Row key={el.id}>
+                    <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.writer}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+                  </S.Row>
+                )
+              )}
               <S.TableBottom />
             </S.InfoBox>
           </>

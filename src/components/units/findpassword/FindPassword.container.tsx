@@ -32,7 +32,10 @@ export default function FindPassword(props: IFindPasswordProps) {
     register("email", { required: true });
     register("phoneNumber", { required: true });
   }, []);
-  const onSubmitVerificationEmail = async (data) => {
+  const onSubmitVerificationEmail = async (data: {
+    email: any;
+    phoneNumber: any;
+  }) => {
     console.log(data);
     try {
       const result = await client.query({

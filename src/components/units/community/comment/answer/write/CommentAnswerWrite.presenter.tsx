@@ -29,6 +29,8 @@ export default function CommentAnswerWriteUI(
               />
               <WebSmallPurpleButton
                 title={props.isAnswerEdit ? "수정하기" : "등록하기"}
+                onClick={undefined}
+                type="submit"
               />
               {props.isAnswerEdit && (
                 <WebSmallBlackButton

@@ -55,7 +55,7 @@ export default function ChangingPassword() {
       });
       router.push("/login");
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
     }
   };
 

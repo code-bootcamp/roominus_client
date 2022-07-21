@@ -18,9 +18,21 @@ export default function AdminCafeListUI(props: IAdminCafeListUIProps) {
         </S.Info>
       </S.InfoBox>
       <S.ButtonBox>
-        <WebSmallBlackButton onClick={props.onClickList} title="목록으로" />
-        <WebSmallPurpleButton onClick={props.onClickEdit} title="수정하기" />
-        <WebSmallPurpleButton onClick={props.onClickDelete} title="삭제하기" />
+        <WebSmallBlackButton
+          onClick={props.onClickList}
+          title="목록으로"
+          type={"button"}
+        />
+        <WebSmallPurpleButton
+          onClick={props.onClickEdit}
+          title="수정하기"
+          type={"button"}
+        />
+        <WebSmallPurpleButton
+          onClick={props.onClickDelete}
+          title="삭제하기"
+          type={"button"}
+        />
       </S.ButtonBox>
     </S.Wrapper>
   );

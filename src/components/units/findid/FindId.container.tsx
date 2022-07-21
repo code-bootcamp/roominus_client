@@ -1,5 +1,4 @@
 /* eslint-disable no-useless-escape */
-import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import FindIdUI from "./FindId.presenter";
@@ -7,7 +6,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FETCH_USER } from "./FindId.query";
 import { useApolloClient } from "@apollo/client";
-import { Modal } from "antd";
 import Swal from "sweetalert2";
 
 const schema = yup.object({
@@ -17,8 +15,6 @@ const schema = yup.object({
 export default function FindId() {
   const [isClickedfirst, setIsClickedfirst] = useState(true);
   const [isClickedsecond, setIsClickedsecond] = useState(false);
-
-  const router = useRouter();
 
   const IdFindinputRef = useRef<HTMLInputElement>(null);
   const PasswordFindinputRef = useRef<HTMLInputElement>(null);

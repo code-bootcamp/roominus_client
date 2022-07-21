@@ -23,13 +23,21 @@ export default function ThemeDetailUI(props: IThemeDetailUIProps) {
         </S.Info>
       </S.InfoBox>
       <S.ButtonBox>
-        <WebSmallBlackButton onClick={props.onClickList} title="목록으로" />
+        <WebSmallBlackButton
+          onClick={props.onClickList}
+          title="목록으로"
+          type={"button"}
+        />
         <WebSmallPurpleButton
           type="button"
           onClick={props.onClickEdit(props.ThemeDetail?.fetchTheme.id)}
           title="수정하기"
         />
-        <WebSmallPurpleButton onClick={props.onClickDelete} title="삭제하기" />
+        <WebSmallPurpleButton
+          onClick={props.onClickDelete}
+          title="삭제하기"
+          type={"button"}
+        />
       </S.ButtonBox>
       <button onClick={props.onClickMoveToCreateThemeMenu}>
         테마 메뉴 등록하러 가기

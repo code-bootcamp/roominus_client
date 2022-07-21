@@ -20,10 +20,10 @@ const Button = styled.button`
   font-weight: 500;
 `;
 interface IProps {
-  onClick: MouseEventHandler;
-  type: "button" | "submit" | "reset" | any;
-  title: string;
-  value: string;
+  onClick?: MouseEventHandler;
+  type?: "button" | "submit" | "reset" | any;
+  title?: string;
+  value?: string;
 }
 export default function WebPurpleButton(props: IProps) {
   return (
