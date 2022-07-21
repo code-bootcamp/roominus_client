@@ -59,7 +59,12 @@ export default function AdminReservationListUI(
         <S.TableBottom />
         <S.ButtonBox>
           <Link href={"/mypage"}>
-            <WebBlackButton type="button" title="목록으로" />
+            <WebBlackButton
+              type="button"
+              title="목록으로"
+              onClick={undefined}
+              value={undefined}
+            />
           </Link>
         </S.ButtonBox>
       </S.Wrapper>

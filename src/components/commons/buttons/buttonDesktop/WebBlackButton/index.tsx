@@ -13,10 +13,10 @@ const Button = styled.button`
 
 interface IProps {
   // onClick: MouseEventHandler<HTMLButtonElement>;
-  onClick: any;
-  type: "button" | "submit" | "reset";
-  title: string;
-  value: any;
+  onClick?: any;
+  type?: "button" | "submit" | "reset";
+  title?: string;
+  value?: any;
 }
 
 export default function WebBlackButton(props: IProps) {

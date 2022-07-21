@@ -44,6 +44,10 @@ export default function CommentAnswerEditUI(props: ICommentAnswerEditUIProps) {
           isAnswer={undefined}
           answerId={""}
           setIsAnswer={undefined}
+          el={undefined}
+          onClickReComment={function (event: any): void {
+            throw new Error("Function not implemented.");
+          }}
         />
       )}
     </S.Wrapper>

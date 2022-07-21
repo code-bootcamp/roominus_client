@@ -1,8 +1,3 @@
-import {
-  faPersonRunning,
-  faPeopleGroup,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as S from "./SignupChoice.styles";
 import { ISignupChoiceUIProps } from "./SignupChoice.types";
 

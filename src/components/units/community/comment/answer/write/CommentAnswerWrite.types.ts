@@ -33,4 +33,6 @@ export interface ICommentAnswerWriteProps {
   answerEditId: string;
   refetch: any;
   setIsAnswerEdit: any;
+  el: any;
+  onClickReComment: (event: any) => void;
 }

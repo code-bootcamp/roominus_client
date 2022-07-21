@@ -60,6 +60,12 @@ export default function CommunityCommentEditUI(
           answerId={props.answerId}
           setIsAnswer={props.setIsAnswer}
           onClickReComment={props.onClickReComment}
+          // 타입용
+          answerData={undefined}
+          isAnswerEdit={undefined}
+          answerEditId={""}
+          refetch={undefined}
+          setIsAnswerEdit={undefined}
         />
       )}
     </S.Wrapper>

@@ -65,6 +65,7 @@ export default function AdminCafeNewUI(props: IAdminCafeNewUIProps) {
         <WebPurpleLoginButton
           type="submit"
           title={props.isEdit ? "수정하기" : "등록하기"}
+          onClick={undefined}
         />
       </S.Form2>
     </S.Wrapper>

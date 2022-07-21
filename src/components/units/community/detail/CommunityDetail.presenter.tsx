@@ -52,14 +52,20 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
           <WebBlackButton
             onClick={props.onClickList}
             title="목록으로"
+            type={"button"}
+            value={undefined}
           ></WebBlackButton>
           <WebPurpleButton
             title="수정하기"
             onClick={props.onClickEdit}
+            type={undefined}
+            value={""}
           ></WebPurpleButton>
           <WebPurpleButton
             onClick={props.onClickDelete}
             title="삭제하기"
+            type={undefined}
+            value={""}
           ></WebPurpleButton>
         </S.ButtonBox>
       </S.Wrapper>
@@ -68,7 +74,13 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
           <S.CommentIcon src="/img/community/comment/commentIcon.webp" />
           <S.CommentTitle>댓글</S.CommentTitle>
         </S.CommentTitleBox>
-        <CommunityCommentWrite />
+        <CommunityCommentWrite
+          // 타입용
+          el={undefined}
+          isEdit={false}
+          editId={undefined}
+          setIsEdit={undefined}
+        />
         <CommunityCommentList />
       </S.Comment>
     </S.Container>

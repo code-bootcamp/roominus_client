@@ -105,7 +105,7 @@ export default function PWeditUI(props: IPWeditUIProps) {
               )}
               {!props.openEye2 && (
                 <FontAwesomeIcon
-                  onClick={props.onClickShowPassword}
+                  onClick={props.onClickShowPassword2}
                   icon={faEyeSlash}
                   style={{
                     color: "purple",
