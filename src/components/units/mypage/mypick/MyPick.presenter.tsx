@@ -9,18 +9,20 @@ export default function MyPickUI(props: IMyPickUIProps) {
     <S.Container>
       <S.Wrapper>
         <S.Title>나의 찜 목록</S.Title>
-        {props.data?.fetchUserLikeThemes.theme.map(
-          (el: IfetchUserLikeThemesProps) => (
-            <span
-              key={el.id}
-              id={el.id}
-              onClick={props.onClickMoveToThemeDetail}
-            >
-              <ListPickCards el={el} />
-            </span>
-          )
-        )}
 
+        <S.Etc>
+          {props.data?.fetchUserLikeThemes?.map(
+            (el: IfetchUserLikeThemesProps) => (
+              <span
+                key={el.theme.id}
+                id={el.theme.id}
+                onClick={props.onClickMoveToThemeDetail}
+              >
+                <ListPickCards el={el} />
+              </span>
+            )
+          )}
+        </S.Etc>
         <S.ButtonBox>
           <Link href={"/mypage"}>
             <WebBlackButton type="button" title="목록으로" />

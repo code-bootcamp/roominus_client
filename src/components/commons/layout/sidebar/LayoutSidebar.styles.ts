@@ -8,8 +8,8 @@ import {
 import { IIsActiveProps } from "../Layout.types";
 
 export const Container = styled.main`
-  width: 30%;
-  height: 800px;
+  width: 20%;
+  min-height: 100%;
   border-right: 1px solid darkgray;
 
   @media ${breakPoints.tablet} {
@@ -22,7 +22,6 @@ export const Container = styled.main`
 `;
 
 export const Wrapper = styled.section`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,6 +82,7 @@ export const MenuBoxs = styled.div`
   justify-content: center;
   text-align: center;
   gap: 0.8em;
+  height: 25em;
 `;
 
 export const MenuItem = styled.li`
