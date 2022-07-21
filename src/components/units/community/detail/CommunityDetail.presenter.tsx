@@ -1,6 +1,5 @@
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
-import CommunityList from "../comment/CommunityComment.container";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import * as S from "./CommunityDetail.styles";
 import Dompurify from "dompurify";
@@ -71,7 +70,6 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
         </S.CommentTitleBox>
         <CommunityCommentWrite />
         <CommunityCommentList />
-        <CommunityList />
       </S.Comment>
     </S.Container>
   );

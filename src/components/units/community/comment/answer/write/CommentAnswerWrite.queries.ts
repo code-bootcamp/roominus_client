@@ -15,9 +15,24 @@ export const CREATE_BOARD_SECOND_REVIEW = gql`
   }
 `;
 
-export const FETCH_BOARD_REVIEW_COMMENTS = gql`
-  query fetchBoardReviewComments($boardreviewId: String!) {
-    fetchBoardReviewComments(boardreviewId: $boardreviewId) {
+export const FETCH_REVIEW_COMMENTS = gql`
+  query fetchReviewComments($boardreviewId: String!) {
+    fetchReviewComments(boardreviewId: $boardreviewId) {
+      id
+      content
+    }
+  }
+`;
+
+export const UPDATE_BOARD_SECOND_REVIEW = gql`
+  mutation udpateBoardsecondreview(
+    $secondReviewId: String!
+    $updateBoardSecondReviewInput: UpdateBoardSecondReviewInput!
+  ) {
+    udpateBoardsecondreview(
+      secondReviewId: $secondReviewId
+      updateBoardSecondReviewInput: $updateBoardSecondReviewInput
+    ) {
       id
       content
     }

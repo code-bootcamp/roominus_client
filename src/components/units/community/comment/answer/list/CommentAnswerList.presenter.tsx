@@ -4,7 +4,7 @@ import * as S from "./CommentAnswerList.styles";
 export default function CommentAnswerListUI(props) {
   return (
     <S.Wrapper>
-      {props.answerData?.fetchBoardReviewComments.map((el) => (
+      {props.answerData?.fetchReviewComments.boardsecondreview.map((el) => (
         <S.Wrap key={el.id}>
           <CommentAnswerEdit
             refetch={props.refetch}

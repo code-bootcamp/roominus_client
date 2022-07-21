@@ -1,5 +1,6 @@
 import CommentAnswerWrite from "../write/CommentAnswerWrite.container";
 import * as S from "./CommentAnswerEdit.styles";
+import { getDate } from "../../../../../../components/commons/getDate";
 
 export default function CommentAnswerEditUI(props) {
   return (
@@ -10,21 +11,36 @@ export default function CommentAnswerEditUI(props) {
           <S.ListInfoBox>
             <S.InfoTitleBox>
               <S.InfoTitle>
-                <S.InfoName>손은* 님</S.InfoName>
-                <S.Date>2022.07.06</S.Date>
+                <S.InfoName>{props.el.user.name}</S.InfoName>
+                <S.Date>{getDate(props.el.createdAt)}</S.Date>
               </S.InfoTitle>
               <S.InfoTitle>
-                <S.Edit src="/img/community/comment/commentedit.webp" />
-                <S.Delete src="/img/community/comment/commentdelete.webp" />
+                <S.Edit
+                  src="/img/community/comment/commentedit.webp"
+                  onClick={props.onClickEdit}
+                  id={props.el.id}
+                />
+                <S.Delete
+                  src="/img/community/comment/commentdelete.webp"
+                  onClick={props.onClickDelete}
+                  id={props.el.id}
+                />
               </S.InfoTitle>
             </S.InfoTitleBox>
-            <S.Contents>이건 대댓글내용이에요 언제만들죠ㅠ</S.Contents>
+            <S.Contents>{props.el.content}</S.Contents>
           </S.ListInfoBox>
         </S.CommentListBox>
       )}
 
       {props.isAnswerEdit === true && (
-        <CommentAnswerWrite answerEditId={props.answerEditId} />
+        <CommentAnswerWrite
+          answerEditId={props.answerEditId}
+          refetch={props.refetch}
+          isAnswerEdit={props.isAnswerEdit}
+          setIsAnswerEdit={props.setIsAnswerEdit}
+          // firstId={props.el._id} //key
+          answerData={props.el}
+        />
       )}
     </S.Wrapper>
   );
