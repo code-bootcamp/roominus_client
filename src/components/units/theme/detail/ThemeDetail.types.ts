@@ -5,3 +5,7 @@ export interface IThemeDetailProps {
   onClickToggled?: () => void;
   onClickLove?: () => void;
 }
+
+export interface IFetchThemeData {
+  userId: string;
+}

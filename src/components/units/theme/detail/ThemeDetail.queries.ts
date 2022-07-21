@@ -14,6 +14,9 @@ export const FETCH_THEME = gql`
       genre {
         name
       }
+      likeUsers {
+        userId
+      }
     }
   }
 `;
