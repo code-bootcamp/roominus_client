@@ -85,10 +85,17 @@ export default function MyPhoneEditUI(props: IMyPhoneEditUIProps) {
                 </S.VerificationInputBox>
               </>
               <S.ButtonWrapper>
-                <WebBlackButton title="취소하기" type="reset"></WebBlackButton>
+                <WebBlackButton
+                  title="취소하기"
+                  type="reset"
+                  onClick={undefined}
+                  value={undefined}
+                ></WebBlackButton>
                 <WebPurpleButton
                   onClick={props.onClickPhonNumberEdit}
                   title="변경하기"
+                  type={undefined}
+                  value={""}
                 ></WebPurpleButton>
               </S.ButtonWrapper>
             </S.Form>
