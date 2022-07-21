@@ -186,12 +186,13 @@ export const ThemeBack = styled(defaultDiv)`
 export const ThemeTitle = styled.div`
   color: white;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 2em;
   text-shadow: 0 0 10px #fffbcb, 0 0 20px #fffbcb, 0 0 30px #fffbcb;
   word-break: break-all;
 `;
 
 export const ThemeInfo = styled.div`
+  font-size: 1.2em;
   color: white;
   text-align: left;
 `;
