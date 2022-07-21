@@ -7,13 +7,15 @@ import { userInfoState } from "../../../../../../commons/store";
 import CommentAnswerWriteUI from "./CommentAnswerWrite.presenter";
 import {
   CREATE_BOARD_SECOND_REVIEW,
-  FETCH_BOARD_REVIEW_COMMENTS,
+  FETCH_REVIEW_COMMENTS,
+  UPDATE_BOARD_SECOND_REVIEW,
 } from "./CommentAnswerWrite.queries";
 
 export default function CommentAnswerWrite(props) {
   const [userInfo] = useRecoilState(userInfoState);
 
   const [createBoardsecondreview] = useMutation(CREATE_BOARD_SECOND_REVIEW);
+  const [udpateBoardsecondreview] = useMutation(UPDATE_BOARD_SECOND_REVIEW);
 
   const { register, handleSubmit } = useForm({
     mode: "onChange",
@@ -30,7 +32,7 @@ export default function CommentAnswerWrite(props) {
         },
         refetchQueries: [
           {
-            query: FETCH_BOARD_REVIEW_COMMENTS,
+            query: FETCH_REVIEW_COMMENTS,
             variables: {
               boardreviewId: props.answerId,
             },
@@ -49,21 +51,49 @@ export default function CommentAnswerWrite(props) {
         title: (error as Error).message,
       });
     }
-    props.setIsAnswer(false);
+    props.setIsAnswer((prev) => !prev);
+  };
+
+  const onClickReCommentUpdate = async (data) => {
+    try {
+      await udpateBoardsecondreview({
+        variables: {
+          secondReviewId: props.answerEditId,
+          updateBoardSecondReviewInput: {
+            ...data,
+          },
+        },
+      });
+      props.refetch();
+      props.setIsAnswerEdit((prev) => !prev);
+      Swal.fire({
+        icon: "success",
+        title: "답글 수정이 완료되었습니다!",
+        timer: 1500,
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: (error as Error).message,
+      });
+    }
   };
 
   const onClickCancel = () => {
-    props.setIsAnswer(false);
+    props.setIsAnswerEdit(false);
   };
 
   return (
     <CommentAnswerWriteUI
       userInfo={userInfo}
-      isAnswer={props.isAnswer}
       onClickCancel={onClickCancel}
       register={register}
       handleSubmit={handleSubmit}
       onClickReComment={onClickReComment}
+      onClickReCommentUpdate={onClickReCommentUpdate}
+      isAnswerEdit={props.isAnswerEdit}
+      answerData={props.answerData}
+      isAnswer={props.isAnswer}
     />
   );
 }

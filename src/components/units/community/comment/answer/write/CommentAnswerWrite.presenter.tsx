@@ -22,9 +22,12 @@ export default function CommentAnswerWriteUI(props) {
               <S.ReCommentInput
                 placeholder="답글을 입력하세요"
                 {...props.register("content")}
+                defaultValue={props.answerData?.content}
               />
-              <WebSmallPurpleButton title="등록하기" />
-              {props.isAnswer && (
+              <WebSmallPurpleButton
+                title={props.isAnswerEdit ? "수정하기" : "등록하기"}
+              />
+              {props.isAnswerEdit && (
                 <WebSmallBlackButton
                   title="취소하기"
                   type="button"

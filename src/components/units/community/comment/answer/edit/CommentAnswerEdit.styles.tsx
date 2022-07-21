@@ -26,7 +26,7 @@ export const CommentListBox = styled.div`
 export const Arrow = styled.img`
   width: 1.5em;
   height: 1.5em;
-  margin-left: 1.2em;
+  margin-left: 1.5em;
   /* margin-right: 1.8em; */
 `;
 
@@ -55,16 +55,23 @@ export const InfoTitle = styled.div`
   align-items: center;
 `;
 
-export const InfoName = styled.div`
+export const InfoName = styled.h3`
+  margin-bottom: 0em;
   margin-right: 1em;
 `;
 
 export const Date = styled.div``;
 
 export const Edit = styled.img`
+  width: 1.5em;
   margin-right: 0.5em;
 `;
 
-export const Delete = styled.img``;
+export const Delete = styled.img`
+  width: 1.5em;
+`;
 
-export const Contents = styled.div``;
+export const Contents = styled.p`
+  margin-bottom: 0em;
+  font-size: 1.2em;
+`;
