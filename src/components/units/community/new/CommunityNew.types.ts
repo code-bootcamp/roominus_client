@@ -22,7 +22,7 @@ export interface ICommunityNewProps {
 export interface IUpdateBoardInput {
   title?: string;
   content?: string;
-  boardTags?: never[];
+  boardTags?: any[];
   mainImg?: string;
 }
 
