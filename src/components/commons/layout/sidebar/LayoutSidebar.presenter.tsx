@@ -8,7 +8,7 @@ const NAVIGATION_MENUS = [
   { name: "내 게시물 목록", page: "/mypage/myboard" },
   { name: "내 테마 리뷰 목록", page: "/mypage/myreview" },
   { name: "최근 예약 내역", page: "/mypage/history" },
-  { name: "최근 적립 내역", page: "/mypage/reward" },
+  { name: "최근 결제 내역", page: "/mypage/reward" },
 ];
 
 export default function LayoutSideBarUI(props: ISideBarUIProps) {
@@ -44,7 +44,7 @@ export default function LayoutSideBarUI(props: ISideBarUIProps) {
         <S.MenuFooterBox>
           <S.FooterBox>
             <S.Mail />
-            <Link href="/contactUs">
+            <Link href="/customer/contactUs">
               <span>문의하기</span>
             </Link>
           </S.FooterBox>

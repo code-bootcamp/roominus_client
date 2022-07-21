@@ -5,6 +5,8 @@ import { GithubOutlined } from "@ant-design/icons";
 export const Container = styled.div`
   width: 100%;
   height: 20%;
+  padding-top: 1em;
+  padding-bottom: 1em;
 
   display: flex;
   justify-content: center;
@@ -35,6 +37,7 @@ export const Wrapper = styled.div`
 `;
 
 export const MenuInfoWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -81,15 +84,25 @@ export const InfoWrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     font-size: 0.1em;
+    display: flex;
+    flex-direction: column;
   }
 `;
 
 export const InfoLeftBox = styled.div`
-  width: 130%;
+  width: 150%;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+
+    font-size: 0.1em;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const InfoTitle = styled.h3`
@@ -97,7 +110,7 @@ export const InfoTitle = styled.h3`
   color: #a3a8b7;
 `;
 
-export const Info = styled.div`
+export const Info = styled.span`
   margin-top: 0.5em;
   font-weight: 400;
   font-size: 0.9rem;
@@ -144,6 +157,9 @@ export const InfoRightBox = styled.div`
   justify-content: space-evenly;
   width: 100%;
   float: right;
+
+  @media ${breakPoints.mobile} {
+  }
 `;
 
 export const InfoGithub = styled.div`
@@ -161,6 +177,7 @@ export const Github = styled(GithubOutlined)`
   }
 
   color: #a3a8b7;
-  font-size: 30px;
+  /* font-size: 1.7em; */
+  font-size: 20px;
   transition: all 300ms ease-in-out;
 `;

@@ -12,7 +12,6 @@ import { useRouter } from "next/router";
 export default function ContactUs() {
   const [userInfo] = useRecoilState(userInfoState);
   const form = useRef<HTMLFormElement>(null);
-  const router = useRouter();
 
   const sendEmail = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -52,6 +51,7 @@ export default function ContactUs() {
       <S.Title>CONTACT US</S.Title>
       <S.HighLighting></S.HighLighting>
       <p>고객님 의견에 귀 기울이는 룸인어스가 되겠습니다</p>
+      <p>고객님의 소중한 의견은 개발팀 email로 전달됩니다.</p>
       <S.Form ref={form} onSubmit={sendEmail} autoComplete="off">
         <label>
           이름 <span>*</span>

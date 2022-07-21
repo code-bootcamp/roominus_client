@@ -317,7 +317,7 @@ export const AlarmTitle = styled.div`
 
 export const AlarmImgs = styled.img`
   width: 100%;
-  height: 35em;
+  height: 45em;
 
   @media ${breakPoints.tablet} {
     height: 23em;

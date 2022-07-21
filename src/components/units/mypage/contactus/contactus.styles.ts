@@ -7,11 +7,11 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 2em;
+  padding: 2em 0em 2em 0em;
 
   & p {
-    font-size: 1.2em;
-    margin-top: 0.3em;
+    font-size: 1.1em;
+    margin: 0;
 
     @media ${breakPoints.mobile} {
       font-size: 1em;
@@ -27,11 +27,12 @@ export const HighLighting = styled.div`
   width: 16em;
   height: 1em;
   margin-top: -4em;
+  margin-bottom: 1em;
   background-color: purple;
 `;
 
 export const Form = styled.form`
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
