@@ -25,6 +25,8 @@ export default function CommentAnswerWrite(props: ICommentAnswerWriteProps) {
   });
 
   const onClickReComment = async (data: IDataProps) => {
+    if (!data.content) return;
+
     try {
       await createBoardsecondreview({
         variables: {

@@ -95,7 +95,7 @@ export default function CommunityNew(props: ICommunityNewProps) {
     const updateBoardInput: IUpdateBoardInput = {};
     if (data.title) updateBoardInput.title = data.title;
     if (data.content) updateBoardInput.content = data.content;
-    // if (tagList) updateBoardInput.boardTags = tagList;
+    if (tagList) updateBoardInput.boardTags = tagList;
     if (fileUrl) updateBoardInput.mainImg = fileUrl;
 
     try {
