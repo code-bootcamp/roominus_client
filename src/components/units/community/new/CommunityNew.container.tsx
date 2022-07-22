@@ -7,8 +7,6 @@ import { createRef, useEffect, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { CREATE_BOARD, UPDATE_BOARD } from "./CommunityNew.queries";
 import Swal from "sweetalert2";
-import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../../commons/store";
 import { Editor } from "@toast-ui/react-editor";
 import {
   ICommunityNewProps,
@@ -30,8 +28,6 @@ export default function CommunityNew(props: ICommunityNewProps) {
   const [tagList, setTagList] = useState([]);
   const [imageUrl, setImageUrl] = useState(""); //썸네일 미리보기 url
   const [fileUrl, setFileUrl] = useState(""); //사진등록 url
-
-  const [userInfo] = useRecoilState(userInfoState);
 
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
@@ -70,7 +66,6 @@ export default function CommunityNew(props: ICommunityNewProps) {
               content: data.content,
               boardTags: tagList,
               mainImg: fileUrl,
-              user: userInfo.id,
             },
           },
         });
@@ -95,7 +90,7 @@ export default function CommunityNew(props: ICommunityNewProps) {
     const updateBoardInput: IUpdateBoardInput = {};
     if (data.title) updateBoardInput.title = data.title;
     if (data.content) updateBoardInput.content = data.content;
-    // if (tagList) updateBoardInput.boardTags = tagList;
+    if (tagList) updateBoardInput.boardTags = tagList;
     if (fileUrl) updateBoardInput.mainImg = fileUrl;
 
     try {
@@ -105,11 +100,12 @@ export default function CommunityNew(props: ICommunityNewProps) {
           updateBoardInput,
         },
       });
+      console.log(result);
       Swal.fire({
         icon: "success",
         title: "수정이 완료되었습니다!",
       });
-      router.push(`/community/${result.data?.createBoard.id}`);
+      router.push(`/community/${result.data?.updateBoard.id}`);
     } catch (error) {
       Swal.fire({
         icon: "error",

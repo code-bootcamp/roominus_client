@@ -7,6 +7,7 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from "react-share";
+import Swal from "sweetalert2";
 import useScript from "../../hooks/useScript";
 
 const Container = styled.div`
@@ -71,6 +72,15 @@ export default function ShareButton() {
     });
   };
 
+  const onClickURL = () => {
+    Swal.fire({
+      icon: "success",
+      title: "링크가 복사되었습니다!",
+      timer: 1300,
+      showConfirmButton: false,
+    });
+  };
+
   return (
     <Container>
       <FacebookShareButton url={currentUrl}>
@@ -90,7 +100,7 @@ export default function ShareButton() {
         ></TwitterIcon>
       </TwitterShareButton>
       <CopyToClipboard text={currentUrl}>
-        <URLShareButton>URL</URLShareButton>
+        <URLShareButton onClick={onClickURL}>URL</URLShareButton>
       </CopyToClipboard>
       <KakaoShareButton onClick={handleKakaoButton}>
         <KakaoIcon src="/img/login/kakaoLogo.png" />
