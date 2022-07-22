@@ -13,7 +13,7 @@ export default function LayoutTopHeader() {
   const client = useApolloClient();
   const onClickLogout = async () => {
     try {
-      const result = await client.mutate({
+      await client.mutate({
         mutation: LOG_OUT,
 
         context: {
@@ -24,7 +24,8 @@ export default function LayoutTopHeader() {
           credentials: "include",
         },
       });
-      console.log(result);
+      localStorage.clear();
+      sessionStorage.clear();
       Swal.fire({
         title: "로그아웃 되었습니다",
         icon: "success",

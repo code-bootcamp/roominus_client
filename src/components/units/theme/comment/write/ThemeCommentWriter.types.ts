@@ -27,8 +27,6 @@ export interface IWriteCommentData {
 }
 
 export interface IThemeCommentWriteUIProps {
-  star: number;
-  setStar: Dispatch<SetStateAction<number>>;
   el: any;
   isEdit: Boolean;
   setIsEdit: Dispatch<SetStateAction<boolean>>;
