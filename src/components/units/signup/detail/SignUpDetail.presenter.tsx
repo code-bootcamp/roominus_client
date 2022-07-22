@@ -212,6 +212,7 @@ export default function SignUpDetailUI(props: ISignUpDetailUIProps) {
               확인
             </S.ConfirmBtn>
           </S.VerificationInputBox>
+          <S.Error>{props.formState.errors.phoneToken?.message}</S.Error>
         </S.PhoneNoBox>
         <S.SignUpBtns>
           <WebBlackButton

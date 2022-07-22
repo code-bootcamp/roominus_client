@@ -83,7 +83,7 @@ export default function SignUpDetail() {
       timer = setInterval(() => {
         counts = counts - 1;
         setCount(counts);
-        console.log(counts);
+
         if (counts <= 0) {
           clearInterval(timer);
           setCount(60);
