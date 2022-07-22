@@ -27,8 +27,8 @@ export default function MainUI() {
         <S.Layer1 speed={1}>
           <S.Title>
             <S.RuminousTitleUs>
-              <img src="/img/main/roomin.png" />
-              <img src="/img/main/us.png" />
+              <S.TitleLogo src="/img/main/roomin.png" />
+              <S.TitleLogo2 src="/img/main/us.png" />
             </S.RuminousTitleUs>
           </S.Title>
           <S.ScrollDownBox>
@@ -38,14 +38,7 @@ export default function MainUI() {
           <S.PressEnter>Skip : Enter</S.PressEnter>
         </S.Layer1>
         <S.Layer2 offset={1} speed={0}>
-          <img
-            src="/img/main/lune.png"
-            style={{
-              width: "60vw",
-              opacity: "80%",
-              marginLeft: "40%",
-            }}
-          />
+          <S.Lune src="/img/main/lune.png" />
           {/* <S.FlashText>Room in us</S.FlashText> */}
 
           <S.Neon>
@@ -82,8 +75,6 @@ export default function MainUI() {
           speed={0.6}
           style={{
             opacity: 1,
-            backgroundImage: `url("/img/main/door.jpeg")`,
-            backgroundSize: "cover",
           }}
         >
           <S.DoorWrapper>
@@ -98,11 +89,7 @@ export default function MainUI() {
             </S.RuminousTitle>
             <S.DoorBox onClick={onClickDoor}>
               들어가기
-              <div className="card-container">
-                <div className="card-wrap">
-                  <S.Door className="card"></S.Door>
-                </div>
-              </div>
+              <S.Door></S.Door>
             </S.DoorBox>
           </S.DoorWrapper>
           <S.NeonWrapper>

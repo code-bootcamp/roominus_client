@@ -106,7 +106,11 @@ export const RuminousTitle = styled.div`
 
 export const RuminousTitleUs = styled(RuminousTitle)`
   text-shadow: 0 0 10px #fffbcb, 0 0 20px #fffbcb, 0 0 30px #fffbcb;
-
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   @keyframes animation {
     0% {
       opacity: 0;
@@ -124,6 +128,18 @@ export const RuminousTitleUs = styled(RuminousTitle)`
       opacity: 1;
       filter: blur(10px);
     }
+  }
+`;
+
+export const TitleLogo = styled.img`
+  @media ${breakPoints.mobile} {
+    width: 50%;
+  }
+`;
+
+export const TitleLogo2 = styled.img`
+  @media ${breakPoints.mobile} {
+    width: 20%;
   }
 `;
 
@@ -251,6 +267,15 @@ export const Layer2 = styled(ParallaxLayer)`
   position: relative;
 `;
 
+export const Lune = styled.img`
+  width: 40vw;
+  opacity: 80%;
+  margin-left: 40%;
+  @media ${breakPoints.mobile} {
+    width: 60vw;
+  }
+`;
+
 export const DoorWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -258,75 +283,35 @@ export const DoorWrapper = styled.div`
 `;
 
 export const DoorBox = styled.div`
-  color: white;
-  opacity: 70%;
+  opacity: 80%;
   width: 30vw;
   height: 40vw;
-  font-size: 1.8rem;
-  font-weight: 600;
+
   text-align: center;
-  line-height: 300px;
-  border: 1px solid white;
   position: relative;
-  /* transform-style: preserve-3d;
-  transform: perspective(1500px);
-  :hover {
-    transform: rotateY(180deg);
-    visibility: visible;
-  } */
-  .card-container {
-    display: flex;
-    margin-top: 12%;
-    margin-left: 15%;
-    margin-right: 15%;
-    justify-content: space-evenly;
-    text-align: center;
-    flex-wrap: wrap;
-  }
-
-  .card {
-    margin-top: 50px;
-    border-radius: 2px;
-    -webkit-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.75);
-    transform-style: preserve-3d;
-    transition: transform 10s;
-  }
-
-  .card-wrap:hover .card {
-    transform-origin: right;
-    transform: rotateY(180deg);
-  }
 `;
 
 export const Door = styled.div`
   width: 100%;
   height: 100%;
-  border: 1px solid;
   border-top-left-radius: 45%;
   border-top-right-radius: 45%;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: white;
-  /* transform-style: preserve-3d;
-  transform-origin: right;
-  transition: 1s;
-  transform: rotateY(180deg);
-  ::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    background-color: white;
-    border-radius: 50%;
+  background-color: black;
+  animation: neon2 2s ease-out alternate infinite forwards;
+  @keyframes neon2 {
+    0%,
+    100% {
+      box-shadow: 0 0 0.1vw #fffbcb, 0 0 3vw #fffbcb, 0 0 10vw #fffbcb,
+        0 0 0.4vw #fed128;
+    }
+    50% {
+      box-shadow: 0 0 0.5vw #fffbcb, 0 0 1.5vw #fffbcb, 0 0 5vw #fffbcb,
+        0 0 5vw #fffbcb, 0 0 0.2vw #fffbcb;
+    }
   }
-  :hover {
-    transform: rotateY(-120deg);
-  } */
 `;
 
 export const NeonWrapper = styled.div`
