@@ -6,8 +6,10 @@ export const FETCH_USER_LIKE_THEMES = gql`
       theme {
         id
         title
-        intro_title
         mainImg
+        cafe {
+          name
+        }
       }
     }
   }

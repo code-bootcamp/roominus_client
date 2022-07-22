@@ -17,7 +17,6 @@ export const CountBox = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
-
 export const Title = styled.h1``;
 
 export const TableTop = styled.div`
@@ -35,6 +34,7 @@ export const TitleRow = styled.li`
   height: 52px;
   line-height: 52px;
   border-bottom: 2px solid #b6a2ea;
+  font-size: 1.2em;
 `;
 export const Row = styled.li`
   display: flex;
@@ -54,7 +54,7 @@ export const ColumnHeaderBasic = styled.div`
 `;
 
 export const ColumnHeaderTitle = styled.div`
-  width: 35%;
+  width: 40%;
   text-align: center;
 `;
 
@@ -64,7 +64,7 @@ export const ColumnBasic = styled.div`
 `;
 
 export const ColumnTitle = styled.div`
-  width: 35%;
+  width: 30%;
   text-align: center;
   cursor: pointer;
 `;

@@ -1,6 +1,9 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import * as S from "../myreview/myreview.style";
+import { getToday } from "../../../commons/getDate";
+// import * as S from "../myreview/myreview.style";
+import * as S from "../My.styles";
+
 import { IFetchThemesUser, IMyReviewUIProps } from "./myreview.type";
 
 export default function MyReviewUI(props: IMyReviewUIProps) {
@@ -20,7 +23,7 @@ export default function MyReviewUI(props: IMyReviewUIProps) {
           <S.ColumnHeaderTitle>별점</S.ColumnHeaderTitle>
           <S.ColumnHeaderTitle>작성일</S.ColumnHeaderTitle>
         </S.TitleRow>
-        {props.data?.fetchThemesUser.map(
+        {props.data?.fetchThemeReviewsUser.map(
           (el: IFetchThemesUser, index: number) => (
             <S.Row key={index}>
               <S.ColumnBasic>{index + 1}</S.ColumnBasic>
@@ -29,7 +32,7 @@ export default function MyReviewUI(props: IMyReviewUIProps) {
               </S.ColumnTitle>
               <S.ColumnBasic>{el.clear}</S.ColumnBasic>
               <S.ColumnBasic>{el.star}</S.ColumnBasic>
-              <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+              <S.ColumnBasic>{getToday(el.createdAt)}</S.ColumnBasic>
             </S.Row>
           )
         )}

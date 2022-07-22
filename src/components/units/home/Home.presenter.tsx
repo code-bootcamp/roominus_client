@@ -6,6 +6,7 @@ import CafeCard from "./cafecard/CafeCard";
 import FAQ from "./faq/Faq";
 import { useEffect, useState } from "react";
 import ThemeCardComponent from "./themecard/ThemeCard";
+import Test from "./test";
 
 // 타입 지정 해주셔야 합니다.
 export default function HomeUI(props: any) {

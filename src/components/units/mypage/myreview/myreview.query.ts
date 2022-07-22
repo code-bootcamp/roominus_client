@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_THEMES_REVIEWS_USER = gql`
-  query fetchThemesUser {
-    fetchThemesUser {
+  query fetchThemeReviewsUser {
+    fetchThemeReviewsUser {
       id
       clear
       rank
