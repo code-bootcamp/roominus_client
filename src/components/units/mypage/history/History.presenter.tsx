@@ -40,12 +40,7 @@ export default function HistoryUI(props: IHistoryUIProps) {
 
       <S.ButtonBox>
         <Link href={"/mypage"}>
-          <WebBlackButton
-            type="button"
-            title="목록으로"
-            onClick={undefined}
-            value={undefined}
-          />
+          <WebBlackButton type="button" title="돌아가기" />
         </Link>
       </S.ButtonBox>
     </S.Container>

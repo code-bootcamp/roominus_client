@@ -39,16 +39,14 @@ export default function MyBoardUI(props: IMyBoardUIProps) {
         <S.TableBottom />
       </S.Wrapper>
       <S.PaginationsWrapper>
-        <Paginations01 count={props.count} refetch={props.refetch} />
+        <Paginations01
+          count={props.count?.fetchBoardsUserCount}
+          refetch={props.refetch}
+        />
       </S.PaginationsWrapper>
       <S.ButtonBox>
         <Link href={"/mypage"}>
-          <WebBlackButton
-            type="button"
-            title="돌아가기"
-            onClick={undefined}
-            value={undefined}
-          />
+          <WebBlackButton type="button" title="돌아가기" />
         </Link>
       </S.ButtonBox>
     </S.Container>

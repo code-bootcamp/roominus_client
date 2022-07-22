@@ -24,7 +24,6 @@ export default function CommunityCommentWriteUI(
           />
           <WebSmallPurpleButton
             title={props.isEdit ? "수정하기" : "등록하기"}
-            onClick={undefined}
             type={"submit"}
           ></WebSmallPurpleButton>
           {props.isEdit && (

@@ -19,12 +19,12 @@ const Input = styled.input`
 `;
 
 interface IProps {
-  register: any;
-  onChange: ChangeEventHandler<HTMLInputElement>;
-  value: string | number | readonly string[];
-  defaultValue: string | number | readonly string[];
-  placeholder: any;
-  type: string;
+  register?: any;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  value?: string | number | readonly string[];
+  defaultValue?: string | number | readonly string[];
+  placeholder?: any;
+  type?: string;
 }
 export default function WebLongestHighlightUnderlineInput(props: IProps) {
   return (

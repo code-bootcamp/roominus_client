@@ -137,17 +137,11 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
             onClick={props.onClickOpenRefundModal}
             type="button"
             title="취소하기"
-            value={undefined}
           />
         )}
 
         <Link href={"/mypage"}>
-          <WebPurpleButton
-            type="button"
-            title="목록으로"
-            onClick={undefined}
-            value={undefined}
-          />
+          <WebPurpleButton type="button" title="목록으로" />
         </Link>
       </S.ButtonWrapper>
     </S.Container>

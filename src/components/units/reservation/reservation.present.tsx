@@ -269,12 +269,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                 {props?.checked && (
                   <S.ButtonBox>
                     <Link href="/home">
-                      <WebBlackButton
-                        type="button"
-                        title="돌아가기"
-                        onClick={undefined}
-                        value={undefined}
-                      />
+                      <WebBlackButton type="button" title="돌아가기" />
                     </Link>
 
                     <Payment
