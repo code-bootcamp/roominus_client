@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  min-height: 20em;
 `;
 
 export const ThemeBoxs = styled.div`
@@ -172,5 +172,6 @@ export const ColumnTitle = styled.div`
 export const RowBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.5em;
+  justify-content: space-between;
+  margin-top: 2em;
 `;

@@ -2,14 +2,18 @@ import styled from "@emotion/styled";
 
 export const Container = styled.main`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+  min-height: 60em;
   padding: 2em 2em 2em 2em;
 `;
 
 export const Wrapper = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 50em;
 `;
 
 export const CountBox = styled.div`
@@ -26,6 +30,7 @@ export const TableTop = styled.div`
 
 export const TableBottom = styled.div`
   border-bottom: 2px solid #b6a2ea;
+  margin-bottom: 5em;
 `;
 
 export const TitleRow = styled.li`
@@ -48,6 +53,11 @@ export const Row = styled.li`
   }
 `;
 
+export const ColumnHeaderNumber = styled.div`
+  width: 10%;
+  text-align: center;
+`;
+
 export const ColumnHeaderBasic = styled.div`
   width: 30%;
   text-align: center;
@@ -58,17 +68,27 @@ export const ColumnHeaderTitle = styled.div`
   text-align: center;
 `;
 
+export const ColumnNumber = styled.div`
+  width: 10%;
+  text-align: center;
+`;
+
 export const ColumnBasic = styled.div`
   width: 30%;
   text-align: center;
 `;
 
 export const ColumnTitle = styled.div`
-  width: 30%;
+  width: 40%;
   text-align: center;
   cursor: pointer;
+  font-weight: 700;
 `;
 
+export const PaginationsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;

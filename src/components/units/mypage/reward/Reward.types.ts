@@ -1,4 +1,5 @@
 export interface IRewardUIProps {
+  refetch: any;
   count: any;
   data: any;
 }
