@@ -80,18 +80,12 @@ export default function ContactUs() {
 
         <S.ButtonBox>
           <Link href="/home">
-            <WebBlackButton
-              type="button"
-              title="돌아가기"
-              onClick={undefined}
-              value={""}
-            ></WebBlackButton>
+            <WebBlackButton type="button" title="돌아가기"></WebBlackButton>
           </Link>
           <WebPurpleButton
             title="제출하기"
             type="submit"
             value="Send"
-            onClick={undefined}
           ></WebPurpleButton>
         </S.ButtonBox>
       </S.Form>

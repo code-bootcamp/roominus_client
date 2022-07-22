@@ -31,7 +31,6 @@ export default function AdminReservationNewUI(
           }}
           value={""}
           defaultValue={""}
-          placeholder={undefined}
         />
         <S.InputsTitle>운영 날짜</S.InputsTitle>
 
@@ -41,9 +40,6 @@ export default function AdminReservationNewUI(
           onChange={function (event: ChangeEvent<HTMLInputElement>): void {
             throw new Error("Function not implemented.");
           }}
-          value={""}
-          defaultValue={""}
-          placeholder={undefined}
         />
 
         <S.InputsTitle>운영 타임</S.InputsTitle>
@@ -53,9 +49,6 @@ export default function AdminReservationNewUI(
           onChange={function (event: ChangeEvent<HTMLInputElement>): void {
             throw new Error("Function not implemented.");
           }}
-          value={""}
-          defaultValue={""}
-          placeholder={undefined}
         />
 
         <S.InputsTitle>인원</S.InputsTitle>
@@ -65,9 +58,6 @@ export default function AdminReservationNewUI(
           onChange={function (event: ChangeEvent<HTMLInputElement>): void {
             throw new Error("Function not implemented.");
           }}
-          value={""}
-          defaultValue={""}
-          placeholder={undefined}
         />
 
         <S.InputsTitle>금액</S.InputsTitle>
@@ -77,16 +67,9 @@ export default function AdminReservationNewUI(
           onChange={function (event: ChangeEvent<HTMLInputElement>): void {
             throw new Error("Function not implemented.");
           }}
-          value={""}
-          defaultValue={""}
-          placeholder={undefined}
         />
 
-        <WebPurpleLoginButton
-          type="submit"
-          title="등록하기"
-          onClick={undefined}
-        />
+        <WebPurpleLoginButton type="submit" title="등록하기" />
       </S.Form>
     </S.Wrapper>
   );

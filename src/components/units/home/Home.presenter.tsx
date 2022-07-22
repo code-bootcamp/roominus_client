@@ -4,12 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CafeCard from "./cafecard/CafeCard";
 import FAQ from "./faq/Faq";
-import { useEffect, useState } from "react";
 import ThemeCardComponent from "./themecard/ThemeCard";
-import Test from "./test";
+import { IHomeUIProps } from "./Home.type";
+import { useEffect, useState } from "react";
 
-// 타입 지정 해주셔야 합니다.
-export default function HomeUI(props: any) {
+export default function HomeUI(props: IHomeUIProps) {
   const [windowSize, setWindowSize] = useState(false);
 
   const handleResize = () => {

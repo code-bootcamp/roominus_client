@@ -53,12 +53,7 @@ export default function MyReviewUI(props: IMyReviewUIProps) {
       </S.PaginationsWrapper>
       <S.ButtonBox>
         <Link href={"/mypage"}>
-          <WebBlackButton
-            type="button"
-            title="돌아가기"
-            onClick={undefined}
-            value={undefined}
-          />
+          <WebBlackButton type="button" title="돌아가기" />
         </Link>
       </S.ButtonBox>
     </S.Container>

@@ -30,12 +30,7 @@ export default function MyPickUI(props: IMyPickUIProps) {
         </S.Etc>
         <S.ButtonBox>
           <Link href={"/mypage"}>
-            <WebBlackButton
-              type="button"
-              title="목록으로"
-              onClick={undefined}
-              value={undefined}
-            />
+            <WebBlackButton type="button" title="목록으로" />
           </Link>
         </S.ButtonBox>
       </S.Wrapper>

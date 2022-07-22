@@ -13,14 +13,11 @@ export default function MyBoard() {
     router.push(`/community/${event.currentTarget.id}`);
   };
 
-  console.log(data, "data");
-  console.log(count?.fetchBoardsUserCount, "count");
-
   return (
     <MyBoardUI
       data={data}
       refetch={refetch}
-      count={count?.fetchBoardsUserCount}
+      count={count}
       onClickBoard={onClickBoard}
     />
   );

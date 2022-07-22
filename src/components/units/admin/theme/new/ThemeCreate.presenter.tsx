@@ -100,7 +100,6 @@ export default function ThemeCreateUI(props: IThemeCreateUIProps) {
         <WebPurpleLoginButton
           type="submit"
           title={props.isEdit ? "테마 수정" : "테마 등록"}
-          onClick={undefined}
         />
       </S.Form2>
     </S.Wrapper>
