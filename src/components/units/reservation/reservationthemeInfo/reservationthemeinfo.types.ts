@@ -1,6 +1,8 @@
 export interface IReservationThemeInfoProps {
+  timeTable: any;
   data: {
     fetchThemeMenus: {
+      map(arg0: (el: any) => any): import("react").ReactNode;
       [0]: {
         theme: {
           mainImg: string;

@@ -11,6 +11,7 @@ import {
 import { IFetchThemeMenus } from "./reservation.types";
 import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../commons/store";
+import _ from "lodash";
 
 export default function Reservation() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
@@ -105,8 +106,12 @@ export default function Reservation() {
     setTotalPrice(priceResult);
   }, [peopleNumber]);
 
+  const getDebounce = _.debounce((data) => {
+    setUsePoint(Number(data));
+  }, 400);
+
   const onChangePoint = (event: ChangeEvent<HTMLInputElement>) => {
-    setUsePoint(Number(event.target.value));
+    getDebounce(event.target.value);
   };
 
   const ThemeMenuId = data?.fetchThemeMenus
@@ -170,6 +175,7 @@ export default function Reservation() {
         // userInfo
         max={userInfo.point}
         reservations={reservations}
+        timeTable={timeTable}
       />
     </>
   );

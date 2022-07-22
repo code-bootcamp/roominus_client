@@ -12,7 +12,7 @@ export default function LayoutSidebar() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState<string>("");
   const client = useApolloClient();
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [accessToken] = useRecoilState(accessTokenState);
   const [userInfo] = useRecoilState(userInfoState);
 
   // const [logoutgql] = useMutation(LOG_OUT);

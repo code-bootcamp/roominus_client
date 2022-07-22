@@ -27,7 +27,7 @@ export const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
 
-  gap: 3em;
+  gap: 2em;
 
   @media ${breakPoints.tablet} {
     width: 100%;
@@ -48,7 +48,6 @@ export const BackBox = styled.div`
   width: 100%;
   font-size: 1.3em;
   font-weight: 700;
-  padding-bottom: 0.5em;
 
   @media ${breakPoints.mobile} {
     font-size: 1.1em;
