@@ -1,6 +1,8 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import * as S from "./Reward.styles";
+// import * as S from "./Reward.styles";
+import * as S from "../My.styles";
+
 import { IFetchPayments, IRewardUIProps } from "./Reward.types";
 
 export default function RewardUI(props: IRewardUIProps) {

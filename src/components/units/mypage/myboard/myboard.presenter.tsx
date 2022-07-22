@@ -1,8 +1,9 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import { getToday } from "../../../commons/getDate";
-import * as S from "../myboard/myboard.styles";
+// import * as S from "../myboard/myboard.styles";
 import { IFetchBoardsUserProps, IMyBoardUIProps } from "./myboard.types";
+import * as S from "../My.styles";
 
 export default function MyBoardUI(props: IMyBoardUIProps) {
   return (
@@ -10,7 +11,7 @@ export default function MyBoardUI(props: IMyBoardUIProps) {
       <S.Wrapper>
         <S.Title>나의 글 목록</S.Title>
         <S.CountBox>
-          <span>총 {props.count?.fetchBoardsUserCount} 건</span>
+          <span>총 {props.count?.fetchBoardsUserCount}건</span>
         </S.CountBox>
         <S.TableTop />
         <S.TitleRow>

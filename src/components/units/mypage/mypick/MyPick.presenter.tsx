@@ -1,5 +1,6 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import GradientCover from "./card";
 import * as S from "./MyPick.styles";
 import { IfetchUserLikeThemesProps, IMyPickUIProps } from "./MyPick.types";
 
@@ -17,11 +18,12 @@ export default function MyPickUI(props: IMyPickUIProps) {
                 id={el.theme.id}
                 onClick={props.onClickMoveToThemeDetail}
               >
-                <img
+                {/* <img
                   alt="myPick"
                   src={el.theme.mainImg}
                   style={{ width: 150, height: 250, cursor: "pointer" }}
-                />
+                /> */}
+                <GradientCover el={el} />
               </div>
             )
           )}

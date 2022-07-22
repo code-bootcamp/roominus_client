@@ -89,7 +89,7 @@ export default function Payment(props: IPaymentProps) {
               timer: 1500,
             });
             console.log(result);
-            router.push(`/reservation/${result.data?.createReservation.id}`);
+            // router.push(`/reservation/${result.data?.createReservation.id}`);
           } catch (error) {
             Swal.fire({
               icon: "error",
@@ -97,7 +97,8 @@ export default function Payment(props: IPaymentProps) {
               text: (error as Error).message,
               timer: 1500,
             });
-            router.push("/theme");
+            console.log(error.message);
+            // router.push("/theme");
           }
         } else {
           alert("다시 결제해주세요");

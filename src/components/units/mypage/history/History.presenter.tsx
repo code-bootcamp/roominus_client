@@ -1,6 +1,7 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import * as S from "./History.styles";
+// import * as S from "./History.styles";
+import * as S from "../My.styles";
 import { IData, IHistoryUIProps } from "./History.types";
 
 export default function HistoryUI(props: IHistoryUIProps) {
