@@ -97,7 +97,7 @@ export default function LoginPage() {
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
       });
-      router.push("/mypage");
+      router.push("/home");
     } catch (error) {
       Swal.fire({
         title: "로그인에 실패하였습니다",

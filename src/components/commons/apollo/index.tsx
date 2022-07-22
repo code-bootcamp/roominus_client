@@ -28,7 +28,6 @@ const FETCH_USER_LOGGEDIN = gql`
     }
   }
 `;
-
 const FETCH_SOCIAL_USER_LOGGED_IN = gql`
   query fetchSocialUserLoggedIn {
     fetchSocialUserLoggedIn {
@@ -38,10 +37,10 @@ const FETCH_SOCIAL_USER_LOGGED_IN = gql`
     }
   }
 `;
+
 export default function ApolloSetting(props: any) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
-
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
 
   useEffect(() => {
@@ -59,7 +58,7 @@ export default function ApolloSetting(props: any) {
         const user = resultuserInfo.data?.fetchUserLoggedIn;
         setUserInfo(user);
       });
-    } else if (!localStorage.getItem("#SL")) {
+    } else if (localStorage.getItem("#NL")) {
       Auth.toPromise().then(async (newAccessToken) => {
         setAccessToken(newAccessToken);
         const resultuserInfo = await client.query({

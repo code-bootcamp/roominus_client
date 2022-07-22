@@ -9,7 +9,7 @@ import { useRecoilState } from "recoil";
 
 export default function LayoutTopHeader() {
   const router = useRouter();
-  const [accessToken] = useRecoilState(accessTokenState);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const client = useApolloClient();
   const onClickLogout = async () => {
     try {
@@ -26,6 +26,7 @@ export default function LayoutTopHeader() {
       });
       localStorage.clear();
       sessionStorage.clear();
+      setAccessToken("");
       Swal.fire({
         title: "로그아웃 되었습니다",
         icon: "success",

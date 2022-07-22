@@ -1,7 +1,7 @@
-import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useRecoilState, useRecoilValueLoadable } from "recoil";
+import Swal from "sweetalert2";
 import {
   accessTokenState,
   restoreAccessTokenLoadable,
@@ -16,7 +16,12 @@ export default function useAuth() {
     if (!accessToken) {
       Auth.toPromise().then((newAccessToken) => {
         if (!newAccessToken) {
-          Modal.warning({ content: "로그인 먼저 해주세요." });
+          Swal.fire({
+            title: "로그인을 먼저 해주세요.",
+            icon: "warning",
+            confirmButtonText: "확인",
+            confirmButtonColor: "#4a00e0e7",
+          });
           setTimeout(() => {
             router.push("/login");
           }, 500);
