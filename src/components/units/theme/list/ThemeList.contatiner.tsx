@@ -78,6 +78,8 @@ export default function ThemeList() {
 
   const onClickAllGenre = () => {
     setGenre("");
+    const temp = Array(fetchGenres?.fetchGenres.length).fill(false);
+    setMyIndex(temp);
     setSelectAll(true);
   };
   return (
