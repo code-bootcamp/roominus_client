@@ -12,10 +12,40 @@ export default function LayoutSidebar() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState<string>("");
   const client = useApolloClient();
-  const [accessToken] = useRecoilState(accessTokenState);
-  const [userInfo] = useRecoilState(userInfoState);
-
-  // const [logoutgql] = useMutation(LOG_OUT);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+  const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
+  // useEffect(() => {
+  //   if (localStorage.getItem("#SL")) {
+  //     Auth.toPromise().then(async (newAccessToken) => {
+  //       setAccessToken(newAccessToken);
+  //       const resultuserInfo = await client.query({
+  //         query: FETCH_SOCIAL_USER_LOGGED_IN,
+  //         context: {
+  //           headers: {
+  //             Authorization: `Bearer ${newAccessToken}`,
+  //           },
+  //         },
+  //       });
+  //       const user = resultuserInfo.data?.fetchUserLoggedIn;
+  //       setUserInfo(user);
+  //     });
+  //   } else if (localStorage.getItem("#NL")) {
+  //     Auth.toPromise().then(async (newAccessToken) => {
+  //       setAccessToken(newAccessToken);
+  //       const resultuserInfo = await client.query({
+  //         query: FETCH_USER_LOGGEDIN,
+  //         context: {
+  //           headers: {
+  //             Authorization: `Bearer ${newAccessToken}`,
+  //           },
+  //         },
+  //       });
+  //       const user = resultuserInfo.data?.fetchUserLoggedIn;
+  //       setUserInfo(user);
+  //     });
+  //   }
+  // }, []);
 
   const onClickLogout = async () => {
     try {
