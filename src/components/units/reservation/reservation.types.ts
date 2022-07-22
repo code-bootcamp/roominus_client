@@ -5,6 +5,7 @@ export interface IFetchThemeMenus {
   people_number: number;
 }
 export interface IReservationUIProps {
+  timeTable: any;
   ableTime: any;
   reservations: ReactNode;
   totalPrice: any;

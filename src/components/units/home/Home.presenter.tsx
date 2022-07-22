@@ -7,6 +7,7 @@ import FAQ from "./faq/Faq";
 import ThemeCardComponent from "./themecard/ThemeCard";
 import { IHomeUIProps } from "./Home.type";
 import { useEffect, useState } from "react";
+import Notice from "./notice";
 
 export default function HomeUI(props: IHomeUIProps) {
   const [windowSize, setWindowSize] = useState(false);
@@ -112,7 +113,7 @@ export default function HomeUI(props: IHomeUIProps) {
         )}
       </S.ThemeBoxes>
       <S.AlarmCarouselBoxes>
-        <S.Title>룸인어스 공지사항</S.Title>
+        <S.Title>룸인어스 이벤트</S.Title>
         <S.StyledSlider {...settings}>
           <S.AlarmCarouselBox>
             <S.AlarmImgs src="/img/home/alarm1.webp" alt="alarm1" />
@@ -131,10 +132,15 @@ export default function HomeUI(props: IHomeUIProps) {
           </S.AlarmCarouselBox>
         </S.StyledSlider>
       </S.AlarmCarouselBoxes>
+
       <S.FaQBoxes>
         <S.Title>자주 묻는 질문(FAQ)</S.Title>
         <FAQ />
       </S.FaQBoxes>
+      <S.NoticeBoxes>
+        <S.Title>룸인어스 공지사항</S.Title>
+        <Notice />
+      </S.NoticeBoxes>
     </S.Wrapper>
   );
 }

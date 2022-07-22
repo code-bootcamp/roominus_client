@@ -18,6 +18,12 @@ export const globalStyles = css`
     height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
     overflow-x: hidden; // 가로 스크롤 제거
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    ::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
   }
 
   ul {

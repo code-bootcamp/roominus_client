@@ -371,3 +371,9 @@ export const FaQs = styled.pre`
   border-radius: 10px;
   padding: 1em 1em 1em 1em;
 `;
+
+export const NoticeBoxes = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
