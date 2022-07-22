@@ -12,14 +12,14 @@ export default function LayoutSidebar() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState<string>("");
   const client = useApolloClient();
-  const [accessToken] = useRecoilState(accessTokenState);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [userInfo] = useRecoilState(userInfoState);
 
   // const [logoutgql] = useMutation(LOG_OUT);
 
   const onClickLogout = async () => {
     try {
-      const result = await client.mutate({
+      await client.mutate({
         mutation: LOG_OUT,
         context: {
           headers: {
@@ -27,7 +27,8 @@ export default function LayoutSidebar() {
           },
         },
       });
-      console.log(result);
+      localStorage.clear();
+      sessionStorage.clear();
       Swal.fire({
         title: "로그아웃 되었습니다",
         icon: "success",

@@ -67,7 +67,6 @@ export default function LoginPage() {
   }, []);
 
   const onSubmitLogin = async (data: IDataProps) => {
-    console.log("clicked");
     try {
       const result = await logingql({
         variables: {
@@ -75,7 +74,7 @@ export default function LoginPage() {
           password: data.password,
         },
       });
-
+      localStorage.setItem("#NL", "NL");
       const Token = result.data?.Login;
 
       const resultUserInfo = await client.query({
@@ -134,23 +133,44 @@ export default function LoginPage() {
         // The signed-in user info.
         const user = result.user;
         // ...
+        localStorage.setItem("#SL", "SL");
         socialLogingql({
           variables: {
             email: user.email,
           },
-        }).then((result) => {
-          client
-            .query({
-              query: FETCH_SOCIAL_USER_LOGGED_IN,
-              context: {
-                headers: {
-                  Authorization: `Bearer ${result.data.SocialLogin}`,
+        })
+          .then((result) => {
+            setAccessToken(result.data.SocialLogin);
+            client
+              .query({
+                query: FETCH_SOCIAL_USER_LOGGED_IN,
+                context: {
+                  headers: {
+                    Authorization: `Bearer ${result.data.SocialLogin}`,
+                  },
+                  credentials: "include",
                 },
-                credentials: "include",
-              },
+              })
+              .then((result) =>
+                setUserInfo(result.data.fetchSocialUserLoggedIn)
+              )
+              .catch((error) =>
+                Swal.fire({
+                  title: error,
+                  icon: "error",
+                  confirmButtonText: "확인",
+                  confirmButtonColor: "#4a00e0e7",
+                })
+              );
+          })
+          .catch((error) =>
+            Swal.fire({
+              title: error,
+              icon: "error",
+              confirmButtonText: "확인",
+              confirmButtonColor: "#4a00e0e7",
             })
-            .then((result) => setUserInfo(result.data.fetchSocialUserLoggedIn));
-        });
+          );
         router.push(`/home`);
       })
       .catch((error) => {
@@ -176,26 +196,44 @@ export default function LoginPage() {
           success: function (response: {
             kakao_account: { email: any; has_email: any };
           }) {
-            console.log(response);
+            localStorage.setItem("#SL", "SL");
             socialLogingql({
               variables: {
                 email: response.kakao_account.email,
               },
-            }).then((result) => {
-              client
-                .query({
-                  query: FETCH_SOCIAL_USER_LOGGED_IN,
-                  context: {
-                    headers: {
-                      Authorization: `Bearer ${result.data.SocialLogin}`,
+            })
+              .then((result) => {
+                setAccessToken(result.data.SocialLogin);
+                client
+                  .query({
+                    query: FETCH_SOCIAL_USER_LOGGED_IN,
+                    context: {
+                      headers: {
+                        Authorization: `Bearer ${result.data.SocialLogin}`,
+                      },
+                      credentials: "include",
                     },
-                    credentials: "include",
-                  },
+                  })
+                  .then((result) =>
+                    setUserInfo(result.data.fetchSocialUserLoggedIn)
+                  )
+                  .catch((error) =>
+                    Swal.fire({
+                      title: error,
+                      icon: "error",
+                      confirmButtonText: "확인",
+                      confirmButtonColor: "#4a00e0e7",
+                    })
+                  );
+              })
+              .catch((error) =>
+                Swal.fire({
+                  title: error,
+                  icon: "error",
+                  confirmButtonText: "확인",
+                  confirmButtonColor: "#4a00e0e7",
                 })
-                .then((result) =>
-                  setUserInfo(result.data.fetchSocialUserLoggedIn)
-                );
-            });
+              );
 
             router.push("/home");
           },

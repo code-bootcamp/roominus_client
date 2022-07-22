@@ -21,33 +21,59 @@ const FETCH_USER_LOGGEDIN = gql`
   query fetchUserLoggedIn {
     fetchUserLoggedIn {
       id
-      name
       email
-      point
       phone
+      name
+      point
     }
   }
 `;
 
+const FETCH_SOCIAL_USER_LOGGED_IN = gql`
+  query fetchSocialUserLoggedIn {
+    fetchSocialUserLoggedIn {
+      id
+      email
+      phone
+    }
+  }
+`;
 export default function ApolloSetting(props: any) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
 
   useEffect(() => {
-    Auth.toPromise().then(async (newAccessToken) => {
-      setAccessToken(newAccessToken);
-      const resultuserInfo = await client.query({
-        query: FETCH_USER_LOGGEDIN,
-        context: {
-          headers: {
-            Authorization: `Bearer ${newAccessToken}`,
+    if (localStorage.getItem("#SL")) {
+      Auth.toPromise().then(async (newAccessToken) => {
+        setAccessToken(newAccessToken);
+        const resultuserInfo = await client.query({
+          query: FETCH_SOCIAL_USER_LOGGED_IN,
+          context: {
+            headers: {
+              Authorization: `Bearer ${newAccessToken}`,
+            },
           },
-        },
+        });
+        const user = resultuserInfo.data?.fetchUserLoggedIn;
+        setUserInfo(user);
       });
-      const user = resultuserInfo.data?.fetchUserLoggedIn;
-      setUserInfo(user);
-    });
+    } else if (!localStorage.getItem("#SL")) {
+      Auth.toPromise().then(async (newAccessToken) => {
+        setAccessToken(newAccessToken);
+        const resultuserInfo = await client.query({
+          query: FETCH_USER_LOGGEDIN,
+          context: {
+            headers: {
+              Authorization: `Bearer ${newAccessToken}`,
+            },
+          },
+        });
+        const user = resultuserInfo.data?.fetchUserLoggedIn;
+        setUserInfo(user);
+      });
+    }
   }, []);
 
   const errorLink = onError(({ graphQLErrors, operation, forward }) => {
