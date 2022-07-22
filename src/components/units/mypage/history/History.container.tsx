@@ -6,10 +6,10 @@ import {
 } from "./History.queries";
 
 export default function History() {
-  const { data } = useQuery(FETCH_RESERVATIONS_USER);
+  const { data, refetch } = useQuery(FETCH_RESERVATIONS_USER);
   const { data: count } = useQuery(FETCH_RESERVATIONS_USER_COUNT);
 
-  console.log("data", data);
+  console.log("count", count);
 
-  return <HistoryUI data={data} count={count} />;
+  return <HistoryUI data={data} count={count} refetch={refetch} />;
 }

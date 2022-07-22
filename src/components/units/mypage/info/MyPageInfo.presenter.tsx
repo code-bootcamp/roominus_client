@@ -39,71 +39,68 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
         </S.ThemeBoxs>
 
         <S.RowBox>
-          <>
-            <S.InfoBox>
-              <S.InfoTitleBox>
-                <S.Label>최근 결제 내역</S.Label>
-                <S.addButton>
-                  <Link href={"/mypage/history"}>
-                    <S.Contents>더보기</S.Contents>
-                  </Link>
-                </S.addButton>
-              </S.InfoTitleBox>
+          <S.InfoBox>
+            <S.InfoTitleBox>
+              <S.Label>최근 결제 내역</S.Label>
+              <S.addButton>
+                <Link href={"/mypage/history"}>
+                  <S.Contents>더보기</S.Contents>
+                </Link>
+              </S.addButton>
+            </S.InfoTitleBox>
 
-              <S.TableWrapper>
-                <S.TableTop />
-                <S.TitleRow>
-                  <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-                  <S.ColumnHeaderTitle>예약 테마</S.ColumnHeaderTitle>
-                  <S.ColumnHeaderTitle>예약 상태</S.ColumnHeaderTitle>
-                  <S.ColumnHeaderTitle>결제 금액</S.ColumnHeaderTitle>
-                  <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
-                </S.TitleRow>
-                {props?.reservation?.fetchReservationsUser.map(
-                  (el: IFetchReservationUser, index: number) => (
-                    <S.Row key={index}>
-                      <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-
-                      <S.ColumnBasic>{el.status}</S.ColumnBasic>
-                      <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
-                    </S.Row>
-                  )
-                )}
-                <S.TableBottom />
-              </S.TableWrapper>
-            </S.InfoBox>
-          </>
-          <>
-            <S.InfoBox>
-              <S.InfoTitleBox>
-                <S.Label>최근 적립 내역</S.Label>
-                <S.addButton>
-                  <Link href={"/mypage/reward"}>
-                    <S.Contents>더보기</S.Contents>
-                  </Link>
-                </S.addButton>
-              </S.InfoTitleBox>
-
+            <S.TableWrapper>
               <S.TableTop />
               <S.TitleRow>
                 <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-                <S.ColumnHeaderTitle>내용</S.ColumnHeaderTitle>
-                <S.ColumnHeaderTitle>금액</S.ColumnHeaderTitle>
-                <S.ColumnHeaderTitle>전체</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>예약 테마</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>예약 상태</S.ColumnHeaderTitle>
+                <S.ColumnHeaderTitle>결제 금액</S.ColumnHeaderTitle>
                 <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
               </S.TitleRow>
-              {props?.payments?.fetchPayments.map(
-                (el: IFetchPayments, index: number) => (
-                  <S.Row key={el.id}>
-                    <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
-                    <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-                    <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+              {props?.reservation?.fetchReservationsUser.map(
+                (el: IFetchReservationUser, index: number) => (
+                  <S.Row key={index}>
+                    <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+
+                    <S.ColumnBasic>{el.status}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
                   </S.Row>
                 )
               )}
               <S.TableBottom />
-            </S.InfoBox>
-          </>
+            </S.TableWrapper>
+          </S.InfoBox>
+
+          <S.InfoBox>
+            <S.InfoTitleBox>
+              <S.Label>최근 적립 내역</S.Label>
+              <S.addButton>
+                <Link href={"/mypage/reward"}>
+                  <S.Contents>더보기</S.Contents>
+                </Link>
+              </S.addButton>
+            </S.InfoTitleBox>
+
+            <S.TableTop />
+            <S.TitleRow>
+              <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
+              <S.ColumnHeaderTitle>내용</S.ColumnHeaderTitle>
+              <S.ColumnHeaderTitle>금액</S.ColumnHeaderTitle>
+              <S.ColumnHeaderTitle>전체</S.ColumnHeaderTitle>
+              <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+            </S.TitleRow>
+            {props?.payments?.fetchPayments.map(
+              (el: IFetchPayments, index: number) => (
+                <S.Row key={el.id}>
+                  <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
+                  <S.ColumnBasic>{el.writer}</S.ColumnBasic>
+                  <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+                </S.Row>
+              )
+            )}
+            <S.TableBottom />
+          </S.InfoBox>
         </S.RowBox>
       </S.Wrapper>
     </S.Container>

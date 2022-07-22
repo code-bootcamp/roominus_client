@@ -7,6 +7,7 @@ export const FETCH_BOARDS_USER = gql`
       title
       createdAt
       like
+      view
     }
   }
 `;

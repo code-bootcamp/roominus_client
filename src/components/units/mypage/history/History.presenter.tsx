@@ -1,5 +1,6 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import Paginations01 from "../../../commons/pagination/Paginations.container";
 // import * as S from "./History.styles";
 import * as S from "../My.styles";
 import { IData, IHistoryUIProps } from "./History.types";
@@ -29,17 +30,24 @@ export default function HistoryUI(props: IHistoryUIProps) {
           </S.Row>
         ))}
         <S.TableBottom />
-        <S.ButtonBox>
-          <Link href={"/mypage"}>
-            <WebBlackButton
-              type="button"
-              title="목록으로"
-              onClick={undefined}
-              value={undefined}
-            />
-          </Link>
-        </S.ButtonBox>
       </S.Wrapper>
+      <S.PaginationsWrapper>
+        <Paginations01
+          count={props.count?.fetchReservationUserCount}
+          refetch={props.refetch}
+        />
+      </S.PaginationsWrapper>
+
+      <S.ButtonBox>
+        <Link href={"/mypage"}>
+          <WebBlackButton
+            type="button"
+            title="목록으로"
+            onClick={undefined}
+            value={undefined}
+          />
+        </Link>
+      </S.ButtonBox>
     </S.Container>
   );
 }
