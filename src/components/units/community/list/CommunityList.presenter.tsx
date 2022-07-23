@@ -19,7 +19,7 @@ export default function CommunityListUI(props: ICommunityListProps) {
                 src={
                   new RegExp(error, "i").test(el.mainImg)
                     ? el.mainImg
-                    : "/img/community/NoImage.webp"
+                    : "/img/community/noImage.png"
                 }
               />
               <S.InfoBox>
