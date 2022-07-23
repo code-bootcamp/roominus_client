@@ -3,6 +3,7 @@ import {
   ChangeEvent,
   FormEventHandler,
   ReactNode,
+  SetStateAction,
   useEffect,
   useState,
 } from "react";
@@ -50,7 +51,7 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
     props.setValue("clear", false);
     props.trigger("clear");
   };
-  const onClickChangeStar = (value) => {
+  const onClickChangeStar = (value: SetStateAction<number>) => {
     props.setValue("star", value);
     props.trigger("star");
     setStar(value);
