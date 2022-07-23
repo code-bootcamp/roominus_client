@@ -1,19 +1,30 @@
 import styled from "@emotion/styled";
 import { useEffect, useRef, useState } from "react";
+import { breakPoints } from "../../../../commons/styles/media";
 
 const Container = styled.ul`
-  padding: 0 3em;
+  padding: 0px 30px;
+  /* padding: 0 3em; */
   height: 50px;
+  height: 3.13em;
   overflow: hidden;
   border-top: 1px solid darkgray;
   border-bottom: 1px solid darkgray;
-  /* font-size: 1.5em; */
+  font-size: 1.1em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.9em;
+    padding: 0px 0.2em;
+  }
 `;
 
 const Content = styled.li`
   height: 30px;
+  /* height: 1.88em; */
   padding: 10px 0px 60px 0px;
+  /* padding: 0.63em 0em 3.75em 0em; */
   line-height: 30px;
+  line-height: 1.88em;
 `;
 
 const Wrapper = styled.div`
@@ -23,10 +34,14 @@ const Wrapper = styled.div`
 const NoticeBox = styled.div`
   display: flex;
   gap: 10em;
+
+  @media ${breakPoints.mobile} {
+    gap: 1em;
+  }
 `;
 
 const Title = styled.span`
-  width: 50em;
+  width: 60%;
 `;
 
 export default function Notice() {
@@ -70,7 +85,6 @@ export default function Notice() {
     setInterval(() => {
       idxRef.current = (idxRef.current + 1) % notice.length;
       setIdx(idxRef.current);
-      console.log(idxRef);
     }, 4000);
   }, [notice.length]);
 
