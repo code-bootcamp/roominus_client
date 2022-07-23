@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Card } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
@@ -8,11 +7,16 @@ export const Container = styled.main`
 
   width: 100%;
   padding: 2em 2em 2em 2em;
+
+  @media ${breakPoints.mobile} {
+    padding: 1em 0.1em 1em 0.1em;
+  }
 `;
 
 export const Wrapper = styled.div`
   width: 100%;
   padding-top: 3em;
+  min-height: 50em;
 
   @media ${breakPoints.tablet} {
     display: flex;
@@ -24,39 +28,40 @@ export const Wrapper = styled.div`
   @media ${breakPoints.mobile} {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
   }
 `;
 
-export const Title = styled.h1``;
+export const CountBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const Title = styled.h1`
+  @media ${breakPoints.mobile} {
+    font-size: 1.2em;
+  }
+`;
 
 export const Etc = styled.ul`
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2em;
 
-  @media ${breakPoints.tablet} {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   @media ${breakPoints.mobile} {
-    margin-top: 2em;
-    width: 75%;
-
-    display: grid;
     grid-template-columns: 1fr;
   }
 `;
 
-export const PickedCard = styled(Card)``;
-
+export const PaginationsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 10em;
+  padding-top: 2em;
 `;

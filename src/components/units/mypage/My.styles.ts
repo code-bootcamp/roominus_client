@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Container = styled.main`
   display: flex;
@@ -7,6 +8,10 @@ export const Container = styled.main`
   width: 100%;
   min-height: 60em;
   padding: 2em 2em 2em 2em;
+
+  @media ${breakPoints.mobile} {
+    padding: 1em 0.1em 1em 0.1em;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -21,7 +26,11 @@ export const CountBox = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  @media ${breakPoints.mobile} {
+    font-size: 1.2em;
+  }
+`;
 
 export const TableTop = styled.div`
   border-bottom: 2px solid #b6a2ea;
@@ -40,6 +49,10 @@ export const TitleRow = styled.li`
   line-height: 52px;
   border-bottom: 2px solid #b6a2ea;
   font-size: 1.2em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
 `;
 export const Row = styled.li`
   display: flex;
@@ -48,8 +61,16 @@ export const Row = styled.li`
   line-height: 52px;
   border-bottom: 1px solid gray;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   &:last-of-type {
     border: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8em;
   }
 `;
 
@@ -61,6 +82,10 @@ export const ColumnHeaderNumber = styled.div`
 export const ColumnHeaderBasic = styled.div`
   width: 30%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    width: 20%;
+  }
 `;
 
 export const ColumnHeaderTitle = styled.div`
@@ -76,6 +101,10 @@ export const ColumnNumber = styled.div`
 export const ColumnBasic = styled.div`
   width: 30%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    width: 20%;
+  }
 `;
 
 export const ColumnTitle = styled.div`
@@ -89,6 +118,7 @@ export const PaginationsWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;

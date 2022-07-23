@@ -12,7 +12,7 @@ export default function GradientCover(props: {
   };
 }) {
   return (
-    <Card sx={{ minHeight: "300px", minWidth: 200 }}>
+    <Card sx={{ minHeight: "200px", minWidth: 150 }}>
       <CardCover>
         <img src={props.el?.theme.mainImg} />
       </CardCover>

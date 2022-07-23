@@ -23,8 +23,8 @@ export default function LayoutFooterUI() {
               <S.Menu>청소년 보호 정책</S.Menu>
             </Link>
 
-            <Link href={"https://github.com/code-bootcamp/f7b3_team05_client"}>
-              <S.Menu>고객센터</S.Menu>
+            <Link href={"/customer/contactUs"}>
+              <S.Menu>고객지원</S.Menu>
             </Link>
           </S.MenuWrapper>
 

@@ -25,10 +25,10 @@ export default function RewardUI(props: IRewardUIProps) {
         {props.data?.fetchPayments.map((el: IFetchPayments, index: number) => (
           <S.Row key={index}>
             <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-            <S.ColumnTitle>{el.price}</S.ColumnTitle>
+            {/* <S.ColumnTitle>{el.price}</S.ColumnTitle>
             <S.ColumnBasic>{el.usepoint}</S.ColumnBasic>
             <S.ColumnBasic>{el.user.point}</S.ColumnBasic>
-            <S.ColumnBasic>{el.reservation.reservation_date}</S.ColumnBasic>
+            <S.ColumnBasic>{el.reservation.reservation_date}</S.ColumnBasic> */}
           </S.Row>
         ))}
         <S.TableBottom />
