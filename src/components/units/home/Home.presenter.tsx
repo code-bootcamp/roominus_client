@@ -113,7 +113,7 @@ export default function HomeUI(props: IHomeUIProps) {
         )}
       </S.ThemeBoxes>
       <S.AlarmCarouselBoxes>
-        <S.Title>룸인어스 이벤트</S.Title>
+        <S.Title>이벤트</S.Title>
         <S.StyledSlider {...settings}>
           <S.AlarmCarouselBox>
             <S.AlarmImgs src="/img/home/alarm1.webp" alt="alarm1" />
@@ -138,7 +138,7 @@ export default function HomeUI(props: IHomeUIProps) {
         <FAQ />
       </S.FaQBoxes>
       <S.NoticeBoxes>
-        <S.Title>룸인어스 공지사항</S.Title>
+        <S.Title>공지사항</S.Title>
         <Notice />
       </S.NoticeBoxes>
     </S.Wrapper>

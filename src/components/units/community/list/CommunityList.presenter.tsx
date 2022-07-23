@@ -4,6 +4,8 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { ICommunityListProps, IFetchBoardsProps } from "./CommunityList.types";
 
 export default function CommunityListUI(props: ICommunityListProps) {
+  const error = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
+
   return (
     <S.Wrapper>
       <S.Title>전체글보기</S.Title>
@@ -12,7 +14,14 @@ export default function CommunityListUI(props: ICommunityListProps) {
           <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
             {/* <S.ItemBox> */}
             <S.ItemBackground>
-              <S.Picture src={el.mainImg} />
+              {/* <S.Picture src={el.mainImg} /> */}
+              <S.Picture
+                src={
+                  new RegExp(error, "i").test(el.mainImg)
+                    ? el.mainImg
+                    : "/img/community/noImage.png"
+                }
+              />
               <S.InfoBox>
                 <S.NameDateBox>
                   <S.BoardName>{el.title}</S.BoardName>
