@@ -54,11 +54,14 @@ export default function LayoutFooterUI() {
               </S.Info>
 
               <S.InfoGithub>
-                <Link href="https://github.com/code-bootcamp/f7b3_team05_server">
+                <Link href="https://github.com/code-bootcamp/f7b3_team05_client">
                   <S.Github />
                 </Link>
                 <Link href="/home">
                   <S.Logo src="/img/layout/graylogo.webp" />
+                </Link>
+                <Link href="https://github.com/code-bootcamp/f7b3_team05_server">
+                  <S.Github />
                 </Link>
               </S.InfoGithub>
             </S.InfoRightBox>
