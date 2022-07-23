@@ -5,3 +5,8 @@ export const DELETE_USER = gql`
     deleteUser(email: $email)
   }
 `;
+export const LOG_OUT = gql`
+  mutation logout {
+    logout
+  }
+`;
