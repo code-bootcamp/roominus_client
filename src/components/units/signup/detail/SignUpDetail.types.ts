@@ -7,14 +7,7 @@ import {
 } from "react-hook-form";
 
 export interface ISignUpDetailUIProps {
-  googleLoggedIn: any;
-  kakaologgedIn: any;
-  onClickLogoutkakao: any;
-  onClickSocialIDLogout: any;
-  googleEmail: any;
-  kakaoEmail: any;
   handleSubmit: any;
-  // handleSubmit: UseFormHandleSubmit<FieldValues>;
   setValue: UseFormSetValue<FieldValues>;
   formState: FormState<FieldValues>;
   trigger: UseFormTrigger<FieldValues>;

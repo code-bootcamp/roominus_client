@@ -11,11 +11,12 @@ export const CHECK_INPUT_TOKEN = gql`
   }
 `;
 export const CREATE_SOCIAL_USER = gql`
-  mutation createSocialUser($email: String!, $phone: String!) {
-    createSocialUser(email: $email, phone: $phone) {
+  mutation createSocialUser($email: String!, $phone: String!, $name: String!) {
+    createSocialUser(email: $email, phone: $phone, name: $name) {
       id
       email
       phone
+      name
     }
   }
 `;

@@ -169,3 +169,32 @@ export const SignUpBtns = styled.div`
     font-size: 1.2em;
   }
 `;
+
+export const NameBoxes = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.6em;
+`;
+export const NameBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const NameTitle = styled.span`
+  font-size: 1.3em;
+  margin-bottom: 1em;
+`;
+export const NameInputBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+export const NameInput = styled.input`
+  width: 100%;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
+  outline: none;
+  font-size: 1.3em;
+  padding: 0em 0.8em 0em 0.8em;
+`;

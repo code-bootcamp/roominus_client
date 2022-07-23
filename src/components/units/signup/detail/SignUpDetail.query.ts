@@ -6,6 +6,7 @@ export const CREATE_USER = gql`
       id
       name
       email
+      phone
     }
   }
 `;
