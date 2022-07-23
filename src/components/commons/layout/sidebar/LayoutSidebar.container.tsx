@@ -68,6 +68,13 @@ export default function LayoutSidebar() {
       localStorage.clear();
       sessionStorage.clear();
       setAccessToken("");
+      setUserInfo({
+        id: "",
+        name: "",
+        email: "",
+        phone: "",
+        point: 0,
+      });
       Swal.fire({
         title: "로그아웃 되었습니다",
         icon: "success",
