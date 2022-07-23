@@ -24,7 +24,6 @@ export default function SignUpDetailUI(props: ISignUpDetailUIProps) {
           <S.EmailInputBox>
             <S.EmailInput
               type="text"
-              value={props.kakaoEmail || props.googleEmail}
               onChange={(e) => {
                 props.setValue("email", e.target.value);
                 props.trigger("email");
@@ -217,11 +216,7 @@ export default function SignUpDetailUI(props: ISignUpDetailUIProps) {
         <S.SignUpBtns>
           <WebBlackButton
             type="button"
-            onClick={
-              (props.googleLoggedIn && props.onClickSocialIDLogout) ||
-              (props.kakaologgedIn && props.onClickLogoutkakao) ||
-              props.onClickMoveToLogin
-            }
+            onClick={props.onClickMoveToLogin}
             title="취소하기"
           />
           <WebPurpleButton title="가입하기" />
