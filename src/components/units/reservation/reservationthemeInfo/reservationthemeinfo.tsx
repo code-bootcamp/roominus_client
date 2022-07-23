@@ -2,10 +2,19 @@ import { v4 as uuidv4 } from "uuid";
 import { IReservationThemeInfoProps } from "./reservationthemeinfo.types";
 import * as S from "../reservationthemeInfo/reservationthemeinfo.styles";
 import { ReactChild, ReactFragment, ReactPortal } from "react";
+import { useRouter } from "next/router";
 
 export default function ReservationThemeInfo(
   props: IReservationThemeInfoProps
 ) {
+  const router = useRouter();
+  const onClickMoveToThemeDetail = (event: { currentTarget: { id: any } }) => {
+    router.push(`/theme/${event.currentTarget.id}`);
+  };
+
+  const onClickMoveToCafeDetail = (event: { currentTarget: { id: any } }) => {
+    router.push(`/cafe/${event.currentTarget.id}`);
+  };
   return (
     <S.ImageInfoBox>
       <S.ImageBox>
@@ -13,9 +22,17 @@ export default function ReservationThemeInfo(
       </S.ImageBox>
       <S.InfoBox>
         <S.ThemeTitleBox>
-          <h1>{props.data?.fetchThemeMenus[0]?.theme?.title}</h1>
+          <h1
+            id={props.data?.fetchThemeMenus[0]?.theme?.id}
+            onClick={onClickMoveToThemeDetail}
+          >
+            {props.data?.fetchThemeMenus[0]?.theme?.title}
+          </h1>
           <span>|</span>
-          <S.ThemeCafe>
+          <S.ThemeCafe
+            id={props.data.fetchThemeMenus[0]?.cafe.id}
+            onClick={onClickMoveToCafeDetail}
+          >
             {props.data?.fetchThemeMenus[0]?.cafe.address}{" "}
             {props.data?.fetchThemeMenus[0]?.cafe.name}
           </S.ThemeCafe>

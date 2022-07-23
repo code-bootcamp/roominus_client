@@ -44,7 +44,6 @@ export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.5em;
-  border-bottom: 1px solid darkgray;
   width: 100%;
   height: 35em;
   gap: 1em;
@@ -77,6 +76,7 @@ export const ThemeTitleBox = styled.div`
     font-size: 2.5em;
     font-family: "GowunDodum-Regular";
     margin: 0;
+    cursor: pointer;
 
     @media ${breakPoints.tablet} {
       font-size: 1.5em;
@@ -90,6 +90,7 @@ export const ThemeTitleBox = styled.div`
 
 export const ThemeCafe = styled.span`
   color: darkgray;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     font-size: 0.8em;

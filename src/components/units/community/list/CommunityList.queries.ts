@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_BOARDS = gql`
-  query fetchBoards {
-    fetchBoards {
+  query fetchBoards($page: Float = 1) {
+    fetchBoards(page: $page) {
       id
       title
       mainImg
@@ -11,5 +11,11 @@ export const FETCH_BOARDS = gql`
         name
       }
     }
+  }
+`;
+
+export const FETCH_BOARDS_COUNT = gql`
+  query fetchBoardsCount {
+    fetchBoardsCount
   }
 `;

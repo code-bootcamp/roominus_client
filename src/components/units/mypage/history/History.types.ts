@@ -6,6 +6,7 @@ export interface IData {
   reservation_date: ReactNode;
   id: string;
   status: string;
+  reservation_time: string;
 }
 
 export interface IHistoryUIProps {

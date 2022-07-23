@@ -46,7 +46,7 @@ export default function ReservationSuccess() {
   const [cancellable, setCancellable] = useState(true);
 
   const componentRef = useRef(null);
-  const link = `localhost:3000${router.asPath}`;
+  const link = `roominus.site/${router.asPath}`;
 
   useEffect(() => {
     const now = getToday(new Date());

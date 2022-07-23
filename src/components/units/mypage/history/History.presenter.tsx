@@ -17,7 +17,7 @@ export default function HistoryUI(props: IHistoryUIProps) {
         <S.TitleRow>
           <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
           <S.ColumnHeaderTitle>예약 번호</S.ColumnHeaderTitle>
-
+          <S.ColumnHeaderBasic>테마</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>방문일</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>시간</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>예약 상태</S.ColumnHeaderBasic>
@@ -28,9 +28,11 @@ export default function HistoryUI(props: IHistoryUIProps) {
             <S.ColumnTitle id={el.id} onClick={props.onClickReservationDetail}>
               {el.id.split("-")[0]}
             </S.ColumnTitle>
-
+            <S.ColumnBasic id={el.id} onClick={props.onClickReservationDetail}>
+              {el.theme_menu.theme.title}
+            </S.ColumnBasic>
             <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
-            <S.ColumnBasic>{el.theme_menu.reservation_time}</S.ColumnBasic>
+            <S.ColumnBasic>{el.theme_menu?.reservation_time}</S.ColumnBasic>
             <S.ColumnBasic>{el.status}</S.ColumnBasic>
           </S.Row>
         ))}

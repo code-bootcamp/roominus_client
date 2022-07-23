@@ -1,6 +1,7 @@
 import * as S from "./CafeList.styles";
 import { ICafeListUIProps, IFetchCafesProps } from "./CafeList.types";
 import ListCards from "./card/ListCards";
+import StoreIcon from "@mui/icons-material/Store";
 
 export default function CafeListUIPage(props: ICafeListUIProps) {
   return (
@@ -54,7 +55,14 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
       </S.SearchWrapper>
       <S.ListWrapper>
         <S.Flex>
-          <S.BestTitle>전체 매장</S.BestTitle>
+          <S.TitleBox>
+            <StoreIcon fontSize="large" />
+            <h1>전체 매장</h1>
+          </S.TitleBox>
+          <S.CountBox>
+            <span>총 {props.count?.fetchCafesCount}개 매장</span>
+          </S.CountBox>
+
           <S.Etc>
             {props.data?.fetchCafes.map((el: IFetchCafesProps) => (
               <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>

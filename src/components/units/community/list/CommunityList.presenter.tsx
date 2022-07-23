@@ -2,19 +2,25 @@ import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleBut
 import * as S from "./CommunityList.styles";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { ICommunityListProps, IFetchBoardsProps } from "./CommunityList.types";
-
+import Paginations02 from "../../../commons/pagination02/Paginations.container";
+import AssignmentIndOutlinedIcon from "@mui/icons-material/AssignmentIndOutlined";
 export default function CommunityListUI(props: ICommunityListProps) {
   const error = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
 
   return (
     <S.Wrapper>
-      <S.Title>전체글보기</S.Title>
+      <S.TitleBox>
+        <AssignmentIndOutlinedIcon fontSize="large" />
+        <h1>전체글보기</h1>
+      </S.TitleBox>
+
+      <S.CountBox>
+        <span>총 {props.count?.fetchBoardsCount}건</span>
+      </S.CountBox>
       <S.Etc>
         {props.data?.fetchBoards.map((el: IFetchBoardsProps) => (
           <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
-            {/* <S.ItemBox> */}
             <S.ItemBackground>
-              {/* <S.Picture src={el.mainImg} /> */}
               <S.Picture
                 src={
                   new RegExp(error, "i").test(el.mainImg)
@@ -28,18 +34,13 @@ export default function CommunityListUI(props: ICommunityListProps) {
                 </S.NameDateBox>
                 <S.DatePickBox>
                   <S.WriteName>{el.user?.name}</S.WriteName>
-                  {/* <S.Date>2일전</S.Date> */}
-                  {/* <Tooltip placement="topRight" title="52"> */}
                   <S.PickBox>
                     <S.RedHeart icon={faHeart} />
-                    {/* <S.Pick src="/img/community/redheart.png" /> */}
                     <S.PickCount>{el.like}</S.PickCount>
                   </S.PickBox>
-                  {/* </Tooltip> */}
                 </S.DatePickBox>
               </S.InfoBox>
             </S.ItemBackground>
-            {/* </S.ItemBox> */}
           </span>
         ))}
       </S.Etc>
@@ -47,7 +48,12 @@ export default function CommunityListUI(props: ICommunityListProps) {
       <S.ButtonBox>
         <WebPurpleButton title="작성하기" onClick={props.onClickWrite} />
       </S.ButtonBox>
-      <S.Pagination>◀️ 1 2 3 4 5 6 7 8 9 10 ▶️</S.Pagination>
+      <S.PaginationsWrapper>
+        <Paginations02
+          count={props.count?.fetchBoardsCount}
+          refetch={props.refetch}
+        />
+      </S.PaginationsWrapper>
     </S.Wrapper>
   );
 }

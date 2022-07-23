@@ -3,17 +3,20 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
-  height: 35em;
+  height: 40em;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  gap: 3em;
   margin-top: 4em;
+  margin-bottom: 4em;
+
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    gap: 2em;
   }
 `;
 
@@ -29,7 +32,7 @@ export const SignupChoiceBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 1.5em;
   @media ${breakPoints.mobile} {
     flex-direction: column;
   }
@@ -120,7 +123,7 @@ export const KakaoBtn = styled.div`
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   color: #000000 85%;
   font-size: 1.2em;
-  cursor: pointer;
+
   margin-bottom: 1em;
 `;
 export const KakaoSymbol = styled.img`
@@ -144,7 +147,6 @@ export const GoogleBtn = styled.div`
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   color: #000000 85%;
   font-size: 1.2em;
-  cursor: pointer;
 `;
 export const GoogleSymbol = styled.img`
   width: 45px;

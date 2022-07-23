@@ -1,6 +1,5 @@
 import * as S from "./SocialSignUpDetail.styles";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
-import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import { ISocialSignUpDetailUIProps } from "./SocialSignUpDetail.types";
 
 export default function SocialSignUpDetailUI(
@@ -89,12 +88,9 @@ export default function SocialSignUpDetailUI(
           <S.Error>{props.formState.errors.phoneToken?.message}</S.Error>
         </S.PhoneNoBox>
         <S.SignUpBtns>
-          <WebBlackButton
-            type="button"
-            onClick={props.onClickMoveToLogin}
-            title="취소하기"
-          />
-          <WebPurpleButton title="가입하기" />
+          <S.WebPurpleSignUpButton type="submit">
+            가입하기
+          </S.WebPurpleSignUpButton>
         </S.SignUpBtns>
       </S.FormFirst>
     </S.Wrapper>

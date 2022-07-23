@@ -11,3 +11,9 @@ export const FETCH_CAFES = gql`
     }
   }
 `;
+
+export const FETCH_CAFES_COUNT = gql`
+  query fetchCafesCount {
+    fetchCafesCount
+  }
+`;

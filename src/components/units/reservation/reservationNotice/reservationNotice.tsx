@@ -8,8 +8,8 @@ import {
   CreditCardOutlined,
   CheckSquareOutlined,
   PercentageOutlined,
-  FormOutlined,
 } from "@ant-design/icons";
+import BookOnlineOutlinedIcon from "@mui/icons-material/BookOnlineOutlined";
 import { Idata, IReservationNotice } from "./reservationNotice.types";
 import Typewriter from "typewriter-effect";
 
@@ -19,7 +19,7 @@ export default function ReservationNotice(props: IReservationNotice) {
   return (
     <S.Container>
       <S.TitleBox>
-        <FormOutlined style={{ marginBottom: "0.8em" }} />
+        <BookOnlineOutlinedIcon fontSize="large" />
         <h1>예약 안내</h1>
       </S.TitleBox>
 

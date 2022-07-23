@@ -263,14 +263,36 @@ export const BestListBox = styled.div`
   flex-direction: column;
 `;
 
-export const BestTitle = styled.h1`
-  height: 100px;
+export const TitleBox = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.5em;
+  width: 100%;
+  height: 4em;
+
+  & h1 {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 0;
+  }
+`;
+
+export const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+`;
+export const Title = styled.h1`
   font-size: 25px;
   font-weight: 700;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 1em 0em 1em 0em;
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -278,6 +300,13 @@ export const BestTitle = styled.h1`
   }
 `;
 
+export const CountBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.1em;
+  padding-bottom: 0.5em;
+`;
 export const Line = styled.div`
   margin: 2em 0em;
   border-bottom: 0.1em solid #c2c2c2;

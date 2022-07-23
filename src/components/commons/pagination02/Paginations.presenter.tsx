@@ -1,7 +1,7 @@
 import { Page } from "./Paginations.styles";
 import { IPageinations01UIProps } from "./Paginations.types";
 
-export default function Paginations01UI(props: IPageinations01UIProps) {
+export default function Paginations02UI(props: IPageinations01UIProps) {
   return (
     <div>
       <Page onClick={props.onClickPrevPage}>{`<`}</Page>

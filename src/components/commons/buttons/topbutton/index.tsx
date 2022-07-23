@@ -11,9 +11,8 @@ const TopBtnBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  right: 0;
-  bottom: 0;
+  right: 0.1em;
+  bottom: 0.1em;
   transform: translate(-20%, -20%);
   width: 4rem;
   height: 4rem;
@@ -29,10 +28,14 @@ const TopBtnBox = styled.div`
   @media ${breakPoints.tablet} {
     width: 1.5em;
     height: 1.5em;
+    right: 0;
+    bottom: 0;
   }
   @media ${breakPoints.mobile} {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.3em;
+    height: 1.3em;
+    right: 0.5em;
+    bottom: 0.1em;
   }
 `;
 
