@@ -18,17 +18,17 @@ export default function RewardUI(props: IRewardUIProps) {
         <S.TitleRow>
           <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
           <S.ColumnHeaderTitle>결제 가격</S.ColumnHeaderTitle>
-          <S.ColumnHeaderBasic>포인트</S.ColumnHeaderBasic>
-          <S.ColumnHeaderBasic>포인트변동</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>사용한 포인트</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>적립예정 포인트</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>날짜</S.ColumnHeaderBasic>
         </S.TitleRow>
         {props.data?.fetchPayments.map((el: IFetchPayments, index: number) => (
           <S.Row key={index}>
-            <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-            {/* <S.ColumnTitle>{el.price}</S.ColumnTitle>
-            <S.ColumnBasic>{el.usepoint}</S.ColumnBasic>
-            <S.ColumnBasic>{el.user.point}</S.ColumnBasic>
-            <S.ColumnBasic>{el.reservation.reservation_date}</S.ColumnBasic> */}
+            <S.ColumnNumber>{index + 1}</S.ColumnNumber>
+            <S.ColumnTitle>{el.price}</S.ColumnTitle>
+            <S.ColumnBasic>{el.usepoint}원</S.ColumnBasic>
+            <S.ColumnBasic>{Math.ceil(el.price * 0.03)}원</S.ColumnBasic>
+            <S.ColumnBasic>{el.reservation.reservation_date}</S.ColumnBasic>
           </S.Row>
         ))}
         <S.TableBottom />

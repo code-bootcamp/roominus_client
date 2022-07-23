@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 export interface IData {
   reservation_date: ReactNode;
@@ -7,6 +7,7 @@ export interface IData {
 }
 
 export interface IHistoryUIProps {
+  onClickReservationDetail: MouseEventHandler<HTMLDivElement>;
   refetch: any;
   count: any;
   data: any;

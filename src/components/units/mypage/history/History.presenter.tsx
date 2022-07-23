@@ -15,18 +15,23 @@ export default function HistoryUI(props: IHistoryUIProps) {
         </S.CountBox>
         <S.TableTop />
         <S.TitleRow>
-          <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
+          <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
           <S.ColumnHeaderTitle>예약 번호</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>예약 상태</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>테마</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+
+          <S.ColumnHeaderBasic>방문일</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>시간</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>예약 상태</S.ColumnHeaderBasic>
         </S.TitleRow>
         {props.data?.fetchReservationsUser.map((el: IData, index: number) => (
           <S.Row key={index}>
-            <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+            <S.ColumnNumber>{index + 1}</S.ColumnNumber>
+            <S.ColumnTitle id={el.id} onClick={props.onClickReservationDetail}>
+              {el.id.split("-")[0]}
+            </S.ColumnTitle>
+
             <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
+            <S.ColumnBasic>{el.theme_menu.reservation_time}</S.ColumnBasic>
             <S.ColumnBasic>{el.status}</S.ColumnBasic>
-            <S.ColumnBasic>{index + 1}</S.ColumnBasic>
           </S.Row>
         ))}
         <S.TableBottom />

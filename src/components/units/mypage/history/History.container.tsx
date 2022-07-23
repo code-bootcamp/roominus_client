@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
 import HistoryUI from "./History.presenter";
 import {
   FETCH_RESERVATIONS_USER,
@@ -6,10 +7,23 @@ import {
 } from "./History.queries";
 
 export default function History() {
-  const { data, refetch } = useQuery(FETCH_RESERVATIONS_USER);
+  const router = useRouter();
+  const { data, refetch } = useQuery(FETCH_RESERVATIONS_USER, {
+    variables: {
+      page: 1,
+    },
+  });
   const { data: count } = useQuery(FETCH_RESERVATIONS_USER_COUNT);
 
-  console.log("count", count);
-
-  return <HistoryUI data={data} count={count} refetch={refetch} />;
+  const onClickReservationDetail = (event: { currentTarget: { id: any } }) => {
+    router.push(`/reservation/${event.currentTarget.id}`);
+  };
+  return (
+    <HistoryUI
+      data={data}
+      count={count}
+      refetch={refetch}
+      onClickReservationDetail={onClickReservationDetail}
+    />
+  );
 }
