@@ -41,10 +41,10 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
         <S.RowBox>
           <S.InfoBox>
             <S.InfoTitleBox>
-              <S.Label>최근 결제 내역</S.Label>
+              <S.Label>최근 예약 내역</S.Label>
               <S.addButton>
                 <Link href={"/mypage/history"}>
-                  <S.Contents>더보기</S.Contents>
+                  <S.Contents>더보기{" >"}</S.Contents>
                 </Link>
               </S.addButton>
             </S.InfoTitleBox>
@@ -52,22 +52,28 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
             <S.TableWrapper>
               <S.TableTop />
               <S.TitleRow>
-                <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
+                <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
                 <S.ColumnHeaderTitle>예약 테마</S.ColumnHeaderTitle>
-                <S.ColumnHeaderTitle>예약 상태</S.ColumnHeaderTitle>
-                <S.ColumnHeaderTitle>결제 금액</S.ColumnHeaderTitle>
-                <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+                <S.ColumnHeaderBasic>매장</S.ColumnHeaderBasic>
+                <S.ColumnHeaderBasic>방문일</S.ColumnHeaderBasic>
+                <S.ColumnHeaderBasic>예약 상태</S.ColumnHeaderBasic>
               </S.TitleRow>
-              {props?.reservation?.fetchReservationsUser.map(
-                (el: IFetchReservationUser, index: number) => (
+              {props?.reservation?.fetchReservationsUser
+                .slice(0, 3)
+                .map((el: IFetchReservationUser, index: number) => (
                   <S.Row key={index}>
-                    <S.ColumnBasic>{index + 1}</S.ColumnBasic>
-
-                    <S.ColumnBasic>{el.status}</S.ColumnBasic>
+                    <S.ColumnNumber>{index + 1}</S.ColumnNumber>
+                    <S.ColumnTitle
+                      id={el.id}
+                      onClick={props.onClickReservationDetail}
+                    >
+                      {el.theme_menu.theme.title}
+                    </S.ColumnTitle>
+                    <S.ColumnBasic>{el.cafe.name}</S.ColumnBasic>
                     <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.status}</S.ColumnBasic>
                   </S.Row>
-                )
-              )}
+                ))}
               <S.TableBottom />
             </S.TableWrapper>
           </S.InfoBox>
@@ -77,28 +83,32 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.Label>최근 적립 내역</S.Label>
               <S.addButton>
                 <Link href={"/mypage/reward"}>
-                  <S.Contents>더보기</S.Contents>
+                  <S.Contents>더보기{" >"}</S.Contents>
                 </Link>
               </S.addButton>
             </S.InfoTitleBox>
 
             <S.TableTop />
             <S.TitleRow>
-              <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-              <S.ColumnHeaderTitle>내용</S.ColumnHeaderTitle>
-              <S.ColumnHeaderTitle>금액</S.ColumnHeaderTitle>
-              <S.ColumnHeaderTitle>전체</S.ColumnHeaderTitle>
-              <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+              <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
+              <S.ColumnHeaderBasic>결제번호</S.ColumnHeaderBasic>
+              <S.ColumnHeaderBasic>결제 가격</S.ColumnHeaderBasic>
+              <S.ColumnHeaderBasic>사용한 포인트</S.ColumnHeaderBasic>
+              <S.ColumnHeaderBasic>적립예정 포인트</S.ColumnHeaderBasic>
             </S.TitleRow>
-            {props?.payments?.fetchPayments.map(
-              (el: IFetchPayments, index: number) => (
+            {props?.payments?.fetchPayments
+              .slice(0, 3)
+              .map((el: IFetchPayments, index: number) => (
                 <S.Row key={el.id}>
-                  <S.ColumnBasic id={el.id}>{el.title}</S.ColumnBasic>
-                  <S.ColumnBasic>{el.writer}</S.ColumnBasic>
-                  <S.ColumnBasic>{el.createdAt}</S.ColumnBasic>
+                  <S.ColumnNumber>{index + 1}</S.ColumnNumber>
+                  <S.ColumnBasic>
+                    {el.imp_uid.split("_")[1].slice(0, 5)}
+                  </S.ColumnBasic>
+                  <S.ColumnBasic>{el.price}</S.ColumnBasic>
+                  <S.ColumnBasic>{el.usepoint}원</S.ColumnBasic>
+                  <S.ColumnBasic>{Math.ceil(el.price * 0.03)}원</S.ColumnBasic>
                 </S.Row>
-              )
-            )}
+              ))}
             <S.TableBottom />
           </S.InfoBox>
         </S.RowBox>

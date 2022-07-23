@@ -17,18 +17,43 @@ export const Wrapper = styled.section`
   }
 `;
 
+export const TitleBox = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.5em;
+  width: 100%;
+  height: 4em;
+
+  & h1 {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 0;
+  }
+`;
+export const Title = styled.h1`
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 1em 0em 1em 0em;
+`;
+export const CountBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.1em;
+  padding-bottom: 0.5em;
+`;
+
 export const Etc = styled.ul`
   margin-bottom: 0px;
   width: 100%;
-  /* background-color: lightgreen; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1em;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px; */
-  /* margin-bottom: 2em; */
 
   @media ${breakPoints.tablet} {
     display: grid;
@@ -40,18 +65,6 @@ export const Etc = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
   }
-`;
-
-export const Title = styled.h1`
-  /* font-size: 2em; */
-  /* align-self: center; */
-  height: 100px;
-  font-size: 25px;
-  font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 0px;
 `;
 
 export const ItemBackground = styled.li`
@@ -161,12 +174,10 @@ export const ButtonBox = styled.div`
   }
 `;
 
-export const Pagination = styled.div`
-  font-size: 20px;
-  align-self: center;
-  /* height: 5em; */
+export const PaginationsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;
-
 export const RedHeart = styled(FontAwesomeIcon)`
   /* padding: 2px; */
   font-size: 17px;

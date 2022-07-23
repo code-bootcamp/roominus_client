@@ -1,8 +1,8 @@
 import { MouseEvent, useState } from "react";
-import Paginations01UI from "./Paginations.presenter";
+import Paginations02UI from "./Paginations.presenter";
 import { IPaginations01Props } from "./Paginations.types";
 
-export default function Paginations01(props: IPaginations01Props) {
+export default function Paginations02(props: IPaginations01Props) {
   const [startPage, setStartPage] = useState(1);
   const [activedPage, setActivedPage] = useState(1);
   const lastPage = props.count ? Math.ceil(props.count / 8) : 0;
@@ -30,7 +30,7 @@ export default function Paginations01(props: IPaginations01Props) {
   };
 
   return (
-    <Paginations01UI
+    <Paginations02UI
       startPage={startPage}
       lastPage={lastPage}
       activedPage={activedPage}

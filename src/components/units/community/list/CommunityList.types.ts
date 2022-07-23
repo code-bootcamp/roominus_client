@@ -11,6 +11,8 @@ export interface IFetchBoardsProps {
 }
 
 export interface ICommunityListProps {
+  refetch: any;
+  count: any;
   onClickCard: (
     el: IFetchBoardsProps
   ) => (event: MouseEvent<HTMLDivElement>) => void;

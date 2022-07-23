@@ -17,18 +17,20 @@ export default function RewardUI(props: IRewardUIProps) {
         <S.TableTop />
         <S.TitleRow>
           <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
-          <S.ColumnHeaderTitle>결제 가격</S.ColumnHeaderTitle>
+          <S.ColumnHeaderBasic>결제번호</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>결제 가격</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>사용한 포인트</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>적립예정 포인트</S.ColumnHeaderBasic>
-          <S.ColumnHeaderBasic>날짜</S.ColumnHeaderBasic>
         </S.TitleRow>
         {props.data?.fetchPayments.map((el: IFetchPayments, index: number) => (
-          <S.Row key={index}>
+          <S.Row key={el.id}>
             <S.ColumnNumber>{index + 1}</S.ColumnNumber>
-            <S.ColumnTitle>{el.price}</S.ColumnTitle>
+            <S.ColumnBasic>
+              {el.imp_uid.split("_")[1].slice(0, 5)}
+            </S.ColumnBasic>
+            <S.ColumnBasic>{el.price}</S.ColumnBasic>
             <S.ColumnBasic>{el.usepoint}원</S.ColumnBasic>
             <S.ColumnBasic>{Math.ceil(el.price * 0.03)}원</S.ColumnBasic>
-            <S.ColumnBasic>{el.reservation.reservation_date}</S.ColumnBasic>
           </S.Row>
         ))}
         <S.TableBottom />

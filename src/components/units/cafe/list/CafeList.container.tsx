@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { MouseEvent, useState } from "react";
 import Swal from "sweetalert2";
 import CafeListUIPage from "./CafeList.presenter";
-import { FETCH_CAFES } from "./CafeList.queries";
+import { FETCH_CAFES, FETCH_CAFES_COUNT } from "./CafeList.queries";
 import { IFetchCafesProps } from "./CafeList.types";
 
 export default function CafeListPage() {
@@ -15,6 +15,7 @@ export default function CafeListPage() {
   const [kondae, setKondae] = useState(false);
 
   const { data, fetchMore } = useQuery(FETCH_CAFES);
+  const { data: count } = useQuery(FETCH_CAFES_COUNT);
 
   const onClickTotal = () => {
     setTotal(true);
@@ -87,6 +88,7 @@ export default function CafeListPage() {
       onClickHongdae={onClickHongdae}
       onClickKondae={onClickKondae}
       loadFunc={loadFunc}
+      count={count}
     />
   );
 }

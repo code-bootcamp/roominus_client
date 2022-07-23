@@ -1,6 +1,6 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import Paginations01 from "../../../commons/pagination/Paginations.container";
+import Paginations02 from "../../../commons/pagination02/Paginations.container";
 import GradientCover from "./card";
 import * as S from "./MyPick.styles";
 import { IfetchUserLikeThemesProps, IMyPickUIProps } from "./MyPick.types";
@@ -17,6 +17,7 @@ export default function MyPickUI(props: IMyPickUIProps) {
           {props.data?.fetchUserLikeThemes?.map(
             (el: IfetchUserLikeThemesProps) => (
               <div
+                style={{ cursor: "pointer" }}
                 key={el.theme.id}
                 id={el.theme.id}
                 onClick={props.onClickMoveToThemeDetail}
@@ -28,7 +29,7 @@ export default function MyPickUI(props: IMyPickUIProps) {
         </S.Etc>
       </S.Wrapper>
       <S.PaginationsWrapper>
-        <Paginations01
+        <Paginations02
           count={props.count?.fetchUserLikeThemesCount}
           refetch={props.refetch}
         />

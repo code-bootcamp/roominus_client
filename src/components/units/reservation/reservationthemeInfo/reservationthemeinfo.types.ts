@@ -5,6 +5,7 @@ export interface IReservationThemeInfoProps {
       map(arg0: (el: any) => any): import("react").ReactNode;
       [0]: {
         theme: {
+          id: string;
           mainImg: string;
           title: string;
           intro_title: string;
@@ -15,6 +16,7 @@ export interface IReservationThemeInfoProps {
           agelimit: number;
         };
         cafe: {
+          id: string;
           address: string;
           name: string;
         };

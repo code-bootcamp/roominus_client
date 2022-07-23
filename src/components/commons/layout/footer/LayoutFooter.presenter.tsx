@@ -1,14 +1,14 @@
 import TopButton from "../../buttons/topbutton";
 import * as S from "./LayoutFooter.styles";
 import Link from "next/link";
-// import KakaoChat from "../../../units/mypage/chat";
+import KakaoChat from "../../../units/mypage/chat";
 
 export default function LayoutFooterUI() {
   return (
     <S.Container>
       <S.Wrapper>
         <TopButton />
-        {/* <KakaoChat /> */}
+        <KakaoChat />
 
         <S.MenuInfoWrapper>
           <S.MenuWrapper>

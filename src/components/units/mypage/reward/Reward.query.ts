@@ -5,6 +5,7 @@ export const FETCH_PAYMENTS = gql`
     fetchPayments(page: $page) {
       id
       price
+      imp_uid
       usepoint
       reservation {
         reservation_date

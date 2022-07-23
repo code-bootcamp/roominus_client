@@ -5,6 +5,8 @@ export interface IRewardUIProps {
 }
 
 export interface IFetchPayments {
+  imp_uid: string;
+  id: string;
   price: number;
   usepoint: number;
   reservation: {

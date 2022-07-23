@@ -9,12 +9,10 @@ export const FETCH_RESERVATIONS_USER = gql`
       theme_menu {
         reservation_time
         people_number
-        # cafe {
-        #   name
-        # }
-        # theme {
-        #   title
-        # }
+
+        theme {
+          title
+        }
       }
     }
   }

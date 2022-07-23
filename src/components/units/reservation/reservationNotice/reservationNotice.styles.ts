@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
-export const Container = styled.div`
+export const Container = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,9 +13,9 @@ export const TitleBox = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  font-size: 1.5em;
   gap: 0.5em;
   width: 100%;
+  height: 4em;
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -23,6 +23,8 @@ export const TitleBox = styled.div`
 
   & h1 {
     font-weight: 700;
+    font-size: 1.5em;
+    margin: 0;
   }
 `;
 

@@ -15,7 +15,7 @@ export const Container = styled.main`
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding-top: 3em;
+  padding-top: 1em;
   min-height: 50em;
 
   @media ${breakPoints.tablet} {

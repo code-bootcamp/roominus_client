@@ -2,11 +2,15 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.section`
-  margin-top: 4em;
+  margin-top: 3em;
+  margin-bottom: 4em;
+
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 55em;
+  gap: 1em;
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
@@ -25,6 +29,7 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   margin-bottom: 4em;
+  gap: 1em;
 `;
 export const Input = styled.input`
   width: 100%;
@@ -78,6 +83,7 @@ export const LoginBtn = styled.button`
   background-color: #4a00e0e7;
   color: #ffffff;
   font-size: 1.2em;
+  margin-top: 1em;
   cursor: pointer;
   :hover {
     background: linear-gradient(
@@ -94,6 +100,7 @@ export const SignUpBox = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 2em;
+  gap: 1em;
 `;
 export const SignUpdetailBox = styled.div`
   width: 100%;
