@@ -126,7 +126,7 @@ export default function SignUpDetail() {
           phone,
         },
       });
-      console.log(result.data.sendTotkentoPhone);
+      console.log(result);
       setSmsToken(result.data.sendTotkentoPhone);
       Swal.fire({
         title: "인증번호 전송 완료",
@@ -154,33 +154,33 @@ export default function SignUpDetail() {
     setShowCount(Showcount);
   };
   const onClickCheckVerificationNo = async () => {
-    setStart(3);
-    if (smsToken === tokenInput) {
-      try {
-        const result = await checkInputTokengql({
-          variables: {
-            phone,
-            tokenInput,
-          },
-        });
-        console.log(result.data.checkinputToken);
-        Swal.fire({
-          title: "인증완료",
-          icon: "success",
-          confirmButtonText: "확인",
-          confirmButtonColor: "#4a00e0e7",
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    } else if (smsToken !== tokenInput) {
+    // if (smsToken === tokenInput) {
+    try {
+      const result = await checkInputTokengql({
+        variables: {
+          phone,
+          tokenInput,
+        },
+      });
+      console.log(result.data.checkinputToken);
       Swal.fire({
-        title: "토큰이 올바르지 않습니다.",
-        icon: "warning",
+        title: "인증완료",
+        icon: "success",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
       });
+      setStart(3);
+    } catch (error) {
+      console.log(error);
     }
+    // } else if (smsToken !== tokenInput) {
+    // Swal.fire({
+    //   title: "토큰이 올바르지 않습니다.",
+    //   icon: "warning",
+    //   confirmButtonText: "확인",
+    //   confirmButtonColor: "#4a00e0e7",
+    // });
+    // }
   };
   const onChangeTokenValue = (event: {
     target: { value: SetStateAction<string> };

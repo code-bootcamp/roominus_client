@@ -43,7 +43,7 @@ export default function FindPasswordUI(props: IFindPasswordUIProps) {
             </S.TitleBox>
             <S.PhoneNoInput
               type="text"
-              placeholder="010-1234-5678"
+              placeholder="01012345678"
               name="phoneNumber"
               onChange={(e) => props.setValue("phoneNumber", e.target.value)}
             />
