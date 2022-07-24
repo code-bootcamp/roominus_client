@@ -34,6 +34,8 @@ const FETCH_SOCIAL_USER_LOGGED_IN = gql`
       id
       email
       phone
+      name
+      point
     }
   }
 `;
@@ -55,7 +57,9 @@ export default function ApolloSetting(props: any) {
             },
           },
         });
-        const user = resultuserInfo.data?.fetchUserLoggedIn;
+        const user = resultuserInfo.data?.fetchSocialUserLoggedIn;
+        console.log(newAccessToken);
+        console.log(user);
         setUserInfo(user);
       });
     } else if (localStorage.getItem("#NL")) {
@@ -70,6 +74,8 @@ export default function ApolloSetting(props: any) {
           },
         });
         const user = resultuserInfo.data?.fetchUserLoggedIn;
+        console.log(newAccessToken);
+        console.log(user);
         setUserInfo(user);
       });
     }
