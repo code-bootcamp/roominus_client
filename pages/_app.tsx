@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
 // import Head from "next/head";
 import ApolloSetting from "../src/components/commons/apollo";
+import Head from "next/head";
 
 declare const window: typeof globalThis & {
   Kakao: any;
@@ -41,15 +42,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      {/* <Head>
-        <title>Roominus</title>
+      <Head>
+        <title>roominus</title>
         <meta
-          property="og:Roominus"
-          content="안녕하세요, 방탈출 예약 플랫폼 룸인어스입니다."
+          property="og:roominus"
+          content="방탈출 통합 플랫폼 룸인어스"
         ></meta>
         <meta
           property="og:description"
-          content="안녕하세요, 방탈출 예약 플랫폼 룸인어스입니다."
+          content="안녕하세요, 방탈출 통합 플랫폼 룸인어스입니다."
         ></meta>
         <script
           type="text/javascript"
@@ -59,7 +60,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           type="text/javascript"
           src="http://code.jquery.com/jquery-1.11.3.min.js"
         ></script>
-      </Head> */}
+      </Head>
       <RecoilRoot>
         <ApolloSetting>
           <Global styles={globalStyles} />

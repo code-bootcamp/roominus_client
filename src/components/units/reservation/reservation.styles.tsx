@@ -45,16 +45,21 @@ export const Wrapper = styled.section`
 
 export const BackBox = styled.div`
   width: 100%;
-  font-size: 1.3em;
-  font-weight: 700;
+  font-size: 1.5em;
+  padding-top: 1em;
+  font-weight: 600;
+
+  :hover {
+    color: gray;
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 1.1em;
   }
 
   & span {
-    margin-left: 0.5em;
     cursor: pointer;
+    margin: 0;
   }
 `;
 

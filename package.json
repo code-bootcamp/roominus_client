@@ -1,5 +1,4 @@
 {
- 
   "name": "project",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "mybuild": "next build&& next export",
+    "build:ssg": "next build && next export",
     "lint": "next lint",
     "generate": "graphql-codegen"
   },

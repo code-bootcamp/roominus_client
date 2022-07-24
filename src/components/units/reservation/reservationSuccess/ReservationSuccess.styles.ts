@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
-  padding: 0em 0em 2em 0em;
+  padding: 1em 0em 2em 0em;
 
   display: flex;
   flex-direction: column;
@@ -67,13 +67,13 @@ export const IamgeDataBox = styled.div`
 
 export const Image = styled.img`
   border-radius: 8px;
-  width: 22em;
-  height: 30em;
+  width: 25em;
+  height: 35em;
   box-shadow: 10px 10px 39px rgba(183, 96, 202, 0.25);
 
   @media ${breakPoints.tablet} {
-    width: 16em;
-    height: 25em;
+    width: 20em;
+    height: 30em;
   }
 `;
 export const DataBox = styled.div`
@@ -85,8 +85,8 @@ export const DataBox = styled.div`
 
   border: 1px solid darkgray;
   border-radius: 8px;
-  width: 22em;
-  height: 30em;
+  width: 25em;
+  height: 35em;
   gap: 2em;
   box-shadow: 10px 10px 39px rgba(183, 96, 202, 0.25);
 
@@ -99,8 +99,8 @@ export const DataBox = styled.div`
   }
 
   @media ${breakPoints.tablet} {
-    width: 16em;
-    height: 25em;
+    width: 20em;
+    height: 30em;
   }
 `;
 
@@ -108,7 +108,7 @@ export const ThemeTitleBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1.5em;
 
   & span {
     color: darkgray;
@@ -120,11 +120,11 @@ export const ThemeTitleBox = styled.div`
   }
 
   & h2 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 700;
 
     @media ${breakPoints.tablet} {
-      font-size: 1em;
+      font-size: 1.3em;
     }
   }
 `;
@@ -133,8 +133,13 @@ export const ThemeInfoBox = styled.div`
   width: 100%;
   padding-left: 1.8em;
   display: flex;
+  gap: 0.5em;
   flex-direction: column;
   align-items: flex-start;
+
+  @media ${breakPoints.tablet} {
+    gap: 0em;
+  }
 `;
 
 export const ClearTimeBox = styled.div`
@@ -169,13 +174,11 @@ export const NotionArea = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-top: 1px solid darkgray;
   padding: 3em 0em 3em 0em;
 `;
 
 export const NoticeTitle = styled.span`
   font-size: 2.5em;
-  width: 80%;
 
   @media ${breakPoints.mobile} {
     font-size: 2em;

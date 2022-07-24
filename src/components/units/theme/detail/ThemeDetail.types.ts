@@ -1,4 +1,7 @@
+import { MouseEventHandler } from "react";
+
 export interface IThemeDetailProps {
+  onClickReservation: MouseEventHandler<HTMLButtonElement>;
   love: boolean;
   data?: any;
   isToggled?: boolean;

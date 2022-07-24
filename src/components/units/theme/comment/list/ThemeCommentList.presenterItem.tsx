@@ -104,21 +104,9 @@ export default function ThemeCommentListUIItem(
         <S.EscapeRankBox>
           <S.EscapeButton>{props.el?.clear ? "탈출" : "미탈출"}</S.EscapeButton>
           <S.RankButton>난이도 : {props.el?.rank}</S.RankButton>
-          <S.Star>
-            {/* <Rate
-            style={{ fontSize: "35px", color: "#7457E8" }}
-            defaultValue={props.el?.star}
-            character={({ index }: { index: number }) => customIcons[index + 1]}
-          /> */}
-          </S.Star>
+          <S.Star></S.Star>
         </S.EscapeRankBox>
-        <S.Contents>
-          {props.el?.content}
-          {/* 머무 재밌멌머묘. 다믐메 또 몰게묘! 다른 테마들도 궁금해묘! 후속작
-          내주세묘! 머무 재밌멌머묘. 다믐메 또 몰게묘! 다른 테마들도 궁금해묘!
-          후속작 내주세묘! 머무 재밌멌머묘. 다믐메 또 몰게묘! 다른 테마들도
-          궁금해묘! 후속작 내주세묘! */}
-        </S.Contents>
+        <S.Contents>{props.el?.content}</S.Contents>
       </S.CommentRightBox>
     </S.Comment>
   );

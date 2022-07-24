@@ -1,7 +1,6 @@
 import * as S from "./ThemeDetail.styles";
 import { IThemeDetailProps } from "./ThemeDetail.types";
 import { Rate } from "antd";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
@@ -71,9 +70,9 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
             </S.LimitBox>
           </S.ThemeInfo>
           <S.ButtonWrapper>
-            <Link href={"/reservation"}>
-              <S.ReservationButton>예약하기</S.ReservationButton>
-            </Link>
+            <S.ReservationButton onClick={props.onClickReservation}>
+              예약하기
+            </S.ReservationButton>
           </S.ButtonWrapper>
         </S.ThemeRightBox>
       </S.ThemeInfoWrapper>
