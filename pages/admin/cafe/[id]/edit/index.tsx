@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import useAdminAuth from "../../../../../src/components/commons/hooks/useAdminAuth";
 import AdminCafeNew from "../../../../../src/components/units/admin/cafe/new/AdminCafeNew.container";
 
 const FETCH_CAFE = gql`
@@ -17,6 +18,7 @@ const FETCH_CAFE = gql`
 `;
 
 export default function AdminCafeEditPage() {
+  useAdminAuth();
   const router = useRouter();
 
   const { data } = useQuery(FETCH_CAFE, {
