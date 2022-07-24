@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:ssr": "next build",
-    "build:ssg": "next build && next export",
+    "build": "next build",
     "start": "next start",
+    "mybuild": "next build&& next export",
     "lint": "next lint",
     "generate": "graphql-codegen"
   },

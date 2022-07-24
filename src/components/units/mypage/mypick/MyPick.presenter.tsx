@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import Paginations02 from "../../../commons/pagination02/Paginations.container";
 import GradientCover from "./card";
-import MobileCarousel from "./MobileCarousel";
 import * as S from "./MyPick.styles";
 import { IfetchUserLikeThemesProps, IMyPickUIProps } from "./MyPick.types";
 
