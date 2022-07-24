@@ -23,8 +23,12 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
         <S.ImageBox src={props.data?.fetchBoard.mainImg} />
         <S.PickAndShareBox>
           <S.PickBox>
-            <S.RedHeart icon={faHeart} />
-            <S.PickCount>52</S.PickCount>
+            {props.like ? (
+              <S.RedHeart icon={faHeart} onClick={props.onClickLike} />
+            ) : (
+              <S.GrayHeart icon={faHeart} onClick={props.onClickLike} />
+            )}
+            <S.PickCount>{props.data?.fetchBoard.like}</S.PickCount>
           </S.PickBox>
           <ShareButton />
         </S.PickAndShareBox>

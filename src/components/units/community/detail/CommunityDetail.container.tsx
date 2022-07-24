@@ -1,20 +1,32 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 import Swal from "sweetalert2";
+import { userInfoState } from "../../../../commons/store";
 import CommunityDetailUI from "./CommunityDetail.presenter";
-import { DELETE_BOARD, FETCH_BOARD } from "./CommunityDetail.queries";
+import {
+  CREATE_LIKE_BOARD,
+  DELETE_BOARD,
+  FETCH_BOARD,
+} from "./CommunityDetail.queries";
+import { IFetchBoardEl } from "./CommunityDetail.types";
 
 export default function CommunityDetail() {
   const router = useRouter();
 
-  const [deleteBoard] = useMutation(DELETE_BOARD);
+  const [userInfo] = useRecoilState(userInfoState);
 
-  const { data } = useQuery(FETCH_BOARD, {
+  const [like, setLike] = useState(false);
+
+  const [deleteBoard] = useMutation(DELETE_BOARD);
+  const [createLikeBoard] = useMutation(CREATE_LIKE_BOARD);
+
+  const { data, refetch } = useQuery(FETCH_BOARD, {
     variables: {
       id: router.query.id,
     },
   });
-  console.log(data);
 
   const onClickList = () => {
     router.push("/community");
@@ -54,12 +66,32 @@ export default function CommunityDetail() {
     }
   };
 
+  const onClickLike = async () => {
+    await createLikeBoard({
+      variables: {
+        boardId: router.query.id,
+      },
+    });
+    refetch();
+  };
+
+  //하트 색깔 바꾸기
+  useEffect(() => {
+    data?.fetchBoard.likeUsers.filter(
+      (el: IFetchBoardEl) => el.userId === userInfo.id
+    ).length === 1
+      ? setLike(true)
+      : setLike(false);
+  }, [data?.fetchBoard.likeUsers]);
+
   return (
     <CommunityDetailUI
       onClickList={onClickList}
       onClickEdit={onClickEdit}
       onClickDelete={onClickDelete}
       data={data}
+      onClickLike={onClickLike}
+      like={like}
     />
   );
 }
