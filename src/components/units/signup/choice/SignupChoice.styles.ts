@@ -132,6 +132,7 @@ export const KakaoSymbol = styled.img`
   background-color: #fee500;
   border-radius: 100%;
   padding: 10px;
+  cursor: pointer;
 `;
 export const KakaoLabel = styled.span``;
 export const GoogleBtn = styled.div`
@@ -155,5 +156,6 @@ export const GoogleSymbol = styled.img`
   border: 1px solid #e5e8eb;
   border-radius: 100%;
   padding: 7px;
+  cursor: pointer;
 `;
 export const GoogleLabel = styled.span``;

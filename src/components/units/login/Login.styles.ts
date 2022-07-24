@@ -145,7 +145,7 @@ export const SocialLoginBtns = styled.div`
   justify-content: center;
   margin-bottom: 2em;
   @media ${breakPoints.mobile} {
-    width: 52%;
+    width: 40%;
   }
 `;
 
