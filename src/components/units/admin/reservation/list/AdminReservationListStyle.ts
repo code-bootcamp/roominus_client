@@ -50,9 +50,6 @@ export const ColumnHeaderBasic = styled.div`
 export const ColumnHeaderTitle = styled.div`
   width: 10%;
   text-align: center;
-
- 
-  }
 `;
 
 export const ColumnBasic = styled.div`

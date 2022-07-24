@@ -52,6 +52,9 @@ export const Etc = styled.ul`
   gap: 2em;
 
   @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5em;
     grid-template-columns: 1fr;
   }
 `;
@@ -65,3 +68,10 @@ export const ButtonBox = styled.div`
   justify-content: center;
   padding-top: 2em;
 `;
+
+export const MobileList = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5em;
+`;
+export const MobileGenre = styled.h3``;

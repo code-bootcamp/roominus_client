@@ -19,8 +19,8 @@ export default function RewardUI(props: IRewardUIProps) {
           <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
           <S.ColumnHeaderBasic>결제번호</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>결제 가격</S.ColumnHeaderBasic>
-          <S.ColumnHeaderBasic>사용한 포인트</S.ColumnHeaderBasic>
-          <S.ColumnHeaderBasic>적립예정 포인트</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>사용</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>적립예정</S.ColumnHeaderBasic>
         </S.TitleRow>
         {props.data?.fetchPayments.map((el: IFetchPayments, index: number) => (
           <S.Row key={el.id}>
