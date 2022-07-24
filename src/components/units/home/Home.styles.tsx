@@ -332,7 +332,7 @@ export const FaQBoxes = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 `;
 
 export const FaQTitle = styled.div`

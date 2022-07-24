@@ -181,6 +181,15 @@ export const RedHeart = styled(FontAwesomeIcon)`
   font-size: 25px;
   color: #e35d5b;
   margin-right: 0.3em;
+  cursor: pointer;
+`;
+
+export const GrayHeart = styled(FontAwesomeIcon)`
+  padding: 2px;
+  font-size: 25px;
+  color: #dad6e1;
+  margin-right: 0.3em;
+  cursor: pointer;
 `;
 
 export const CommentTitleBox = styled.div`

@@ -60,7 +60,7 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             <h1>전체 매장</h1>
           </S.TitleBox>
           <S.CountBox>
-            <span>총 {props.count?.fetchCafesCount}개 매장</span>
+            <span>총 {props.count?.fetchCafesCount}개</span>
           </S.CountBox>
 
           <S.Etc>

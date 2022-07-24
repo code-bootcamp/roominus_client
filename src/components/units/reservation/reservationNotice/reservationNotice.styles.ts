@@ -16,6 +16,7 @@ export const TitleBox = styled.div`
   gap: 0.5em;
   width: 100%;
   height: 4em;
+  margin-top: 1em;
 
   @media ${breakPoints.mobile} {
     display: none;

@@ -17,6 +17,13 @@ export interface ICommunityDetailProps {
       user: {
         name: string;
       };
+      like: number;
     };
   };
+  onClickLike: () => void;
+  like: boolean;
+}
+
+export interface IFetchBoardEl {
+  userId: string;
 }
