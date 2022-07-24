@@ -52,13 +52,12 @@ export const CafePicture = styled.img`
 
 export const InfoTitleBox = styled.div`
   width: 100%;
-  padding: 3em 0em 0em 0em;
+  padding: 2em 0em 1em 0em;
   display: flex;
   flex-direction: column;
 
   @media ${breakPoints.mobile} {
     width: 28em;
-    padding: 1.1em;
   }
 `;
 
@@ -69,7 +68,7 @@ export const InfoBox = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 28em;
-    padding: 1.1em;
+    padding: 1em 0em;
   }
 `;
 
@@ -77,7 +76,6 @@ export const NamePhoneBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 1.5em;
 `;
 
 export const CafeName = styled.h1`
@@ -86,7 +84,13 @@ export const CafeName = styled.h1`
 `;
 
 export const CafePhone = styled.div`
-  font-size: 1.3em;
+  display: flex;
+  flex-direction: row;
+
+  & p {
+    font-size: 1.3em;
+    margin: 0em 0em 0em 0.3em;
+  }
 `;
 
 export const MenuBox = styled.div`
@@ -122,7 +126,13 @@ export const Map = styled.div`
 export const LocationBox = styled.div``;
 
 export const Location = styled.div`
-  font-size: 1.3em;
+  display: flex;
+  flex-direction: row;
+
+  & p {
+    font-size: 1.3em;
+    margin: 0em 0em 0em 0.3em;
+  }
 `;
 
 export const LocationIcon = styled.img`

@@ -6,6 +6,8 @@ import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButto
 import { ICafeDetailUI, IFetchThemesOnTheme } from "./CafeDetail.types";
 import NoTheme from "./notheme/notheme";
 import KakaoMap from "./map/Map";
+import PublicIcon from "@mui/icons-material/Public";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 export default function CafeDetailUI(props: ICafeDetailUI) {
   return (
@@ -16,8 +18,14 @@ export default function CafeDetailUI(props: ICafeDetailUI) {
           <S.InfoTitleBox>
             <S.NamePhoneBox>
               <S.CafeName>{props.data?.fetchCafe.name}</S.CafeName>
-              <S.Location>🌏 {props.data?.fetchCafe.address}</S.Location>
-              <S.CafePhone>📞 {props.data?.fetchCafe.phone}</S.CafePhone>
+              <S.Location>
+                <PublicIcon />
+                <p>{props.data?.fetchCafe.address}</p>
+              </S.Location>
+              <S.CafePhone>
+                <PhoneIcon />
+                <p>{props.data?.fetchCafe.phone}</p>
+              </S.CafePhone>
             </S.NamePhoneBox>
           </S.InfoTitleBox>
         </S.InfoSummaryBox>

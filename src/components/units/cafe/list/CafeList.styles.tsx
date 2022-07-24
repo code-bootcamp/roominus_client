@@ -270,11 +270,23 @@ export const TitleBox = styled.div`
   gap: 0.5em;
   width: 100%;
   height: 4em;
+  margin-top: 1em;
+  /* background-color: orange; */
 
   & h1 {
     font-weight: 700;
     font-size: 1.5em;
     margin: 0;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-top: 3em;
+    width: 75%;
+
+    & h1 {
+      font-weight: 700;
+      font-size: 2.5em;
+    }
   }
 `;
 
@@ -306,6 +318,19 @@ export const CountBox = styled.div`
   justify-content: flex-end;
   font-size: 1.1em;
   padding-bottom: 0.5em;
+
+  & span {
+    font-size: 1.1em;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+    padding-bottom: 0em;
+
+    & span {
+      font-size: 1.8em;
+    }
+  }
 `;
 export const Line = styled.div`
   margin: 2em 0em;

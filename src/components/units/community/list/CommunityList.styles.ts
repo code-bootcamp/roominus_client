@@ -24,11 +24,22 @@ export const TitleBox = styled.div`
   gap: 0.5em;
   width: 100%;
   height: 4em;
+  margin-top: 1em;
 
   & h1 {
     font-weight: 700;
     font-size: 1.5em;
     margin: 0;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin-top: 1em;
+    width: 75%;
+
+    & h1 {
+      font-weight: 700;
+      font-size: 1.5em;
+    }
   }
 `;
 export const Title = styled.h1`
@@ -46,6 +57,18 @@ export const CountBox = styled.div`
   justify-content: flex-end;
   font-size: 1.1em;
   padding-bottom: 0.5em;
+
+  & span {
+    font-size: 1.1em;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 75%;
+
+    & span {
+      font-size: 1em;
+    }
+  }
 `;
 
 export const Etc = styled.ul`
@@ -61,7 +84,7 @@ export const Etc = styled.ul`
   }
 
   @media ${breakPoints.mobile} {
-    width: 70%;
+    width: 75%;
     display: grid;
     grid-template-columns: 1fr;
   }

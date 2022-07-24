@@ -22,6 +22,16 @@ export const FETCH_BOARD = gql`
         id
         name
       }
+      like
+      likeUsers {
+        userId
+      }
     }
+  }
+`;
+
+export const CREATE_LIKE_BOARD = gql`
+  mutation createLikeBoard($boardId: String!) {
+    createLikeBoard(boardId: $boardId)
   }
 `;
