@@ -10,13 +10,15 @@ import {
 } from "./reservation.queries";
 import { IFetchThemeMenus } from "./reservation.types";
 import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../commons/store";
+import { userInfoState, userPickThemeState } from "../../../commons/store";
 import _ from "lodash";
 
 export default function Reservation() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
 
   const [userInfo] = useRecoilState(userInfoState);
+  const [pickTheme] = useRecoilState(userPickThemeState);
+
   const [themeId, setThemeId] = useState("");
   const [cafeId, setCafeId] = useState("");
   const [reservationDate, setReservationDate] = useState("");
@@ -126,6 +128,7 @@ export default function Reservation() {
     setChecked((prev) => !prev);
   };
 
+  console.log(pickTheme);
   return (
     <>
       <ReservationUI

@@ -64,6 +64,11 @@ export const UserNameBox = styled.div`
 export const UserData = styled.span`
   font-size: 1.4em;
   cursor: pointer;
+
+  :hover {
+    transform: scale(1.1);
+  }
+  transition: all 300ms ease-in-out;
 `;
 
 export const UserPoint = styled.span`
@@ -81,7 +86,7 @@ export const MenuBoxs = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap: 0.8em;
+  gap: 1em;
   height: 25em;
 `;
 
@@ -90,7 +95,32 @@ export const MenuItem = styled.li`
     props.isActive ? "500" : "normal"};
   cursor: ${(props: IIsActiveProps) => (props.isActive ? "none" : "pointer")};
   color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#26282C")};
-  font-size: 1.4em;
+
+  font-size: 1.5em;
+
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #dab3f8;
+    transition: width 0.6s ease 0s, left 0.6s ease 0s;
+    width: 0;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
 `;
 
 export const FooterBox = styled.div`

@@ -12,22 +12,24 @@ import {
   FETCH_RESERVATION,
 } from "./ReservationSuccess.query";
 import { getToday } from "../../../commons/getDate";
-
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-`;
+import ShareButton from "../../../commons/buttons/sharebutton";
 
 const PrintBox = styled.div`
-  width: 99%;
   display: flex;
   justify-content: flex-end;
 `;
 
 const Printer = styled(PrinterOutlined)`
-  font-size: 1.8em;
-  padding-top: 0.5em;
-  color: #4a00e0e7;
+  margin-top: 0.5em;
+  padding-top: 0.4em;
+  margin-right: 0.2em;
+  background-color: pink;
+  color: white;
+  border: 1px solid pink;
+  border-radius: 50%;
+  width: 1.8em;
+  height: 1.8em;
+  font-size: 1.3em;
 
   :hover {
     transform: scale(1.1);
@@ -46,12 +48,19 @@ export default function ReservationSuccess() {
   const [cancellable, setCancellable] = useState(true);
 
   const componentRef = useRef(null);
-  const link = `roominus.site/${router.asPath}`;
+  const link = `roominus.site${router.asPath}`;
 
   useEffect(() => {
+    const today = String(new Date());
+    const timeValue = data?.fetchReservation?.reservation_date;
     const now = getToday(new Date());
+    const betweenTime = Math.floor(
+      (Date.parse(today) - Date.parse(timeValue)) / 1000 / 60
+    );
 
-    if (data?.fetchReservation.reservation_date === now) {
+    console.log(betweenTime);
+
+    if (data?.fetchReservation.reservation_date === now && betweenTime > 0) {
       setCancellable(false);
     }
   }, []);
@@ -107,12 +116,13 @@ export default function ReservationSuccess() {
   }
 
   return (
-    <Container>
+    <>
       <PrintBox>
         <ReactToPrint
           trigger={() => <Printer />}
           content={() => componentRef.current}
         />
+        <ShareButton />
       </PrintBox>
       <ReservationSuccessUI
         data={data}
@@ -121,7 +131,6 @@ export default function ReservationSuccess() {
         onClickOpenRefundModal={onClickOpenRefundModal}
         cancellable={cancellable}
       />
-      ;
-    </Container>
+    </>
   );
 }

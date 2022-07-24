@@ -77,6 +77,20 @@ export const ThemeTitleBox = styled.div`
     font-family: "GowunDodum-Regular";
     margin: 0;
     cursor: pointer;
+    position: relative;
+    animation: h1 1s;
+    -webkit-box-reflect: below -45px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+
+    @keyframes h1 {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
 
     @media ${breakPoints.tablet} {
       font-size: 1.5em;
@@ -91,6 +105,30 @@ export const ThemeTitleBox = styled.div`
 export const ThemeCafe = styled.span`
   color: darkgray;
   cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  transition: color 400ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 20;
+    width: auto;
+    height: 0.1em;
+    background-color: #dab3f8;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 400ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 0.8em;
@@ -126,6 +164,9 @@ export const ContentBox = styled.div`
   @media ${breakPoints.mobile} {
     width: 6em;
     height: 7em;
+  }
+
+  & h4 {
   }
 `;
 
