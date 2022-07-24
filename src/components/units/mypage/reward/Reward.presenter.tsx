@@ -1,6 +1,9 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
-import * as S from "./Reward.styles";
+import Paginations01 from "../../../commons/pagination/Paginations.container";
+// import * as S from "./Reward.styles";
+import * as S from "../My.styles";
+
 import { IFetchPayments, IRewardUIProps } from "./Reward.types";
 
 export default function RewardUI(props: IRewardUIProps) {
@@ -13,33 +16,36 @@ export default function RewardUI(props: IRewardUIProps) {
         </S.CountBox>
         <S.TableTop />
         <S.TitleRow>
-          <S.ColumnHeaderTitle>번호</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>결제 가격</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>포인트</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>포인트변동</S.ColumnHeaderTitle>
-          <S.ColumnHeaderTitle>날짜</S.ColumnHeaderTitle>
+          <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
+          <S.ColumnHeaderBasic>결제번호</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>결제 가격</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>사용</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>적립예정</S.ColumnHeaderBasic>
         </S.TitleRow>
         {props.data?.fetchPayments.map((el: IFetchPayments, index: number) => (
-          <S.Row key={index}>
-            <S.ColumnBasic>{index + 1}</S.ColumnBasic>
+          <S.Row key={el.id}>
+            <S.ColumnNumber>{index + 1}</S.ColumnNumber>
+            <S.ColumnBasic>
+              {el.imp_uid.split("_")[1].slice(0, 5)}
+            </S.ColumnBasic>
             <S.ColumnBasic>{el.price}</S.ColumnBasic>
-            <S.ColumnBasic>{el.usepoint}</S.ColumnBasic>
-            <S.ColumnBasic>{el.user.point}</S.ColumnBasic>
-            <S.ColumnBasic>{el.reservation.reservation_date}</S.ColumnBasic>
+            <S.ColumnBasic>{el.usepoint}원</S.ColumnBasic>
+            <S.ColumnBasic>{Math.ceil(el.price * 0.03)}원</S.ColumnBasic>
           </S.Row>
         ))}
         <S.TableBottom />
-        <S.ButtonBox>
-          <Link href={"/mypage"}>
-            <WebBlackButton
-              type="button"
-              title="목록으로"
-              onClick={undefined}
-              value={undefined}
-            />
-          </Link>
-        </S.ButtonBox>
-      </S.Wrapper>
+      </S.Wrapper>{" "}
+      <S.PaginationsWrapper>
+        <Paginations01
+          count={props.count?.fetchPaymentsCount}
+          refetch={props.refetch}
+        />
+      </S.PaginationsWrapper>
+      <S.ButtonBox>
+        <Link href={"/mypage"}>
+          <WebBlackButton type="button" title="돌아가기" />
+        </Link>
+      </S.ButtonBox>
     </S.Container>
   );
 }

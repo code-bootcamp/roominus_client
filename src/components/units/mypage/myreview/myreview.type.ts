@@ -1,6 +1,8 @@
 export interface IMyReviewUIProps {
+  refetch: any;
   onClickReview: any;
   count: {
+    fetchBoardsUserCount: any;
     fetchThemeReviewsUserCount: number;
   };
 

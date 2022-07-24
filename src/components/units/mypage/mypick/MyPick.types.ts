@@ -9,6 +9,8 @@ export interface IfetchUserLikeThemesProps {
 }
 
 export interface IMyPickUIProps {
+  refetch: any;
+  count: any;
   onClickMoveToThemeDetail: MouseEventHandler<HTMLSpanElement>;
   id: string;
   data: any;

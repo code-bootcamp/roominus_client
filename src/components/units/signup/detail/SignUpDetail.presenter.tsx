@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as S from "./SignUpDetail.styles";
 
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
-import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import dynamic from "next/dynamic";
 import { ISignUpDetailUIProps } from "./SignUpDetail.types";
 
@@ -24,7 +23,6 @@ export default function SignUpDetailUI(props: ISignUpDetailUIProps) {
           <S.EmailInputBox>
             <S.EmailInput
               type="text"
-              value={props.kakaoEmail || props.googleEmail}
               onChange={(e) => {
                 props.setValue("email", e.target.value);
                 props.trigger("email");
@@ -212,18 +210,12 @@ export default function SignUpDetailUI(props: ISignUpDetailUIProps) {
               확인
             </S.ConfirmBtn>
           </S.VerificationInputBox>
+          <S.Error>{props.formState.errors.phoneToken?.message}</S.Error>
         </S.PhoneNoBox>
         <S.SignUpBtns>
-          <WebBlackButton
-            type="button"
-            onClick={
-              (props.googleLoggedIn && props.onClickSocialIDLogout) ||
-              (props.kakaologgedIn && props.onClickLogoutkakao) ||
-              props.onClickMoveToLogin
-            }
-            title="취소하기"
-          />
-          <WebPurpleButton title="가입하기" />
+          <S.WebPurpleSignUpButton type="submit">
+            가입하기
+          </S.WebPurpleSignUpButton>
         </S.SignUpBtns>
       </S.FormFirst>
     </S.Wrapper>

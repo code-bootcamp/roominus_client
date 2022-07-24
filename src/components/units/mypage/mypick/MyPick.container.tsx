@@ -8,10 +8,9 @@ import {
 
 export default function MyPick() {
   const router = useRouter();
-  const { data } = useQuery(FETCH_USER_LIKE_THEMES);
+  const { data, refetch } = useQuery(FETCH_USER_LIKE_THEMES);
   const { data: count } = useQuery(FETCH_USER_LIKE_THEMES_COUNT);
 
-  console.log(data);
   console.log(count);
 
   const onClickMoveToThemeDetail = (event: { currentTarget: { id: any } }) => {
@@ -23,6 +22,8 @@ export default function MyPick() {
       data={data}
       onClickMoveToThemeDetail={onClickMoveToThemeDetail}
       id={""}
+      refetch={refetch}
+      count={count}
     />
   );
 }

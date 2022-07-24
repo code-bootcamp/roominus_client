@@ -21,9 +21,9 @@ const Button = styled.button`
 `;
 
 interface IProps {
-  onClick: MouseEventHandler;
-  type: "button" | "submit" | "reset";
-  title: string;
+  onClick?: MouseEventHandler;
+  type?: "button" | "submit" | "reset";
+  title?: string;
 }
 
 export default function WebSmallPurpleButton(props: IProps) {

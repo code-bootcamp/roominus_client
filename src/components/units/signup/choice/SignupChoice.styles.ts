@@ -6,14 +6,17 @@ export const Wrapper = styled.section`
   height: 40em;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  gap: 3em;
   margin-top: 4em;
+  margin-bottom: 4em;
+
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    gap: 2em;
   }
 `;
 
@@ -29,7 +32,7 @@ export const SignupChoiceBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 1.5em;
   @media ${breakPoints.mobile} {
     flex-direction: column;
   }
@@ -120,7 +123,7 @@ export const KakaoBtn = styled.div`
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   color: #000000 85%;
   font-size: 1.2em;
-  cursor: pointer;
+
   margin-bottom: 1em;
 `;
 export const KakaoSymbol = styled.img`
@@ -129,6 +132,7 @@ export const KakaoSymbol = styled.img`
   background-color: #fee500;
   border-radius: 100%;
   padding: 10px;
+  cursor: pointer;
 `;
 export const KakaoLabel = styled.span``;
 export const GoogleBtn = styled.div`
@@ -144,7 +148,6 @@ export const GoogleBtn = styled.div`
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   color: #000000 85%;
   font-size: 1.2em;
-  cursor: pointer;
 `;
 export const GoogleSymbol = styled.img`
   width: 45px;
@@ -153,5 +156,6 @@ export const GoogleSymbol = styled.img`
   border: 1px solid #e5e8eb;
   border-radius: 100%;
   padding: 7px;
+  cursor: pointer;
 `;
 export const GoogleLabel = styled.span``;

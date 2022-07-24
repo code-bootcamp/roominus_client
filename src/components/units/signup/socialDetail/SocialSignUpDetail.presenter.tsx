@@ -1,9 +1,10 @@
 import * as S from "./SocialSignUpDetail.styles";
 import WebPurpleButton from "../../../commons/buttons/buttonDesktop/WebPurpleButton";
-import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
+import { ISocialSignUpDetailUIProps } from "./SocialSignUpDetail.types";
 
-// 타입 수정하세요!!
-export default function SocialSignUpDetailUI(props: any) {
+export default function SocialSignUpDetailUI(
+  props: ISocialSignUpDetailUIProps
+) {
   return (
     <S.Wrapper>
       <S.Title>기본정보</S.Title>
@@ -20,6 +21,25 @@ export default function SocialSignUpDetailUI(props: any) {
             />
           </S.EmailInputBox>
         </S.EmailBox>
+        <S.NameBoxes>
+          <S.NameBox>
+            <S.TitleBox>
+              <S.NameTitle>이름</S.NameTitle>
+              <S.ImportantInfos>*</S.ImportantInfos>
+            </S.TitleBox>
+            <S.NameInputBox>
+              <S.NameInput
+                type="text"
+                onChange={(e) => {
+                  props.setValue("name", e.target.value);
+                  props.trigger("name");
+                }}
+                name="name"
+              />
+            </S.NameInputBox>
+            <S.Error>{props.formState.errors.name?.message}</S.Error>
+          </S.NameBox>
+        </S.NameBoxes>
         <S.PhoneNoBox>
           <S.TitleBox>
             <S.PhoneNoTitle>휴대폰번호</S.PhoneNoTitle>
@@ -47,8 +67,13 @@ export default function SocialSignUpDetailUI(props: any) {
             <S.VerificationNoBox>
               <S.VerificationNoInput
                 type="text"
-                placeholder="인증번호를 입력하세요."
-                onChange={props.onChangeTokenValue}
+                name="phoneToken"
+                placeholder="인증번호를 입력해주세요."
+                onChange={(e) => {
+                  props.setValue("phoneToken", e.target.value);
+                  props.trigger("phoneToken");
+                  props.setTokenInput(e.target.value);
+                }}
               />
               <S.TimeOut ref={props.timeRef}>{props.showCount}</S.TimeOut>
             </S.VerificationNoBox>
@@ -60,14 +85,12 @@ export default function SocialSignUpDetailUI(props: any) {
               확인
             </S.ConfirmBtn>
           </S.VerificationInputBox>
+          <S.Error>{props.formState.errors.phoneToken?.message}</S.Error>
         </S.PhoneNoBox>
         <S.SignUpBtns>
-          <WebBlackButton
-            type="button"
-            onClick={props.onClickMoveToLogin}
-            title="취소하기"
-          />
-          <WebPurpleButton title="가입하기" />
+          <S.WebPurpleSignUpButton type="submit">
+            가입하기
+          </S.WebPurpleSignUpButton>
         </S.SignUpBtns>
       </S.FormFirst>
     </S.Wrapper>

@@ -4,11 +4,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CafeCard from "./cafecard/CafeCard";
 import FAQ from "./faq/Faq";
-import { useEffect, useState } from "react";
 import ThemeCardComponent from "./themecard/ThemeCard";
+import { IHomeUIProps } from "./Home.type";
+import { useEffect, useState } from "react";
+import Notice from "./notice";
 
-// 타입 지정 해주셔야 합니다.
-export default function HomeUI(props: any) {
+export default function HomeUI(props: IHomeUIProps) {
   const [windowSize, setWindowSize] = useState(false);
 
   const handleResize = () => {
@@ -112,7 +113,7 @@ export default function HomeUI(props: any) {
         )}
       </S.ThemeBoxes>
       <S.AlarmCarouselBoxes>
-        <S.Title>룸인어스 공지사항</S.Title>
+        <S.Title>이벤트</S.Title>
         <S.StyledSlider {...settings}>
           <S.AlarmCarouselBox>
             <S.AlarmImgs src="/img/home/alarm1.webp" alt="alarm1" />
@@ -131,10 +132,15 @@ export default function HomeUI(props: any) {
           </S.AlarmCarouselBox>
         </S.StyledSlider>
       </S.AlarmCarouselBoxes>
+
       <S.FaQBoxes>
         <S.Title>자주 묻는 질문(FAQ)</S.Title>
         <FAQ />
       </S.FaQBoxes>
+      <S.NoticeBoxes>
+        <S.Title>공지사항</S.Title>
+        <Notice />
+      </S.NoticeBoxes>
     </S.Wrapper>
   );
 }

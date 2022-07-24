@@ -1,13 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { useEffect } from "react";
 import DeleteMemberUI from "./DeleteMember.presenter";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { DELETE_USER } from "./DeleteMember.query";
+import { DELETE_USER, LOG_OUT } from "./DeleteMember.query";
 import Swal from "sweetalert2";
-import { useMutation } from "@apollo/client";
+import { useMutation, useApolloClient } from "@apollo/client";
 import { useRouter } from "next/router";
 import { IData } from "./DeleteMember.types";
+import { accessTokenState, userInfoState } from "../../../../commons/store";
+import { useRecoilState } from "recoil";
 
 const schema = yup.object({
   email: yup.string().required("필수 입력 사항입니다."),
@@ -19,7 +22,10 @@ export default function DeleteMember() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+  const client = useApolloClient();
   const [deleteUsergql] = useMutation(DELETE_USER);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
   const onSubmitDeleteMember = async (data: IData) => {
     try {
       await deleteUsergql({
@@ -32,6 +38,26 @@ export default function DeleteMember() {
         icon: "success",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
+      });
+      await client.mutate({
+        mutation: LOG_OUT,
+
+        context: {
+          uri: "https://wawoong.shop/graphql",
+          // headers: {
+          //   Authorization: `Bearer ${accessToken}`,
+          // },
+          credentials: "include",
+        },
+      });
+      localStorage.clear();
+      setAccessToken("");
+      setUserInfo({
+        id: "",
+        name: "",
+        email: "",
+        phone: "",
+        point: 0,
       });
       router.push("/home");
     } catch (error) {
@@ -46,7 +72,7 @@ export default function DeleteMember() {
 
   useEffect(() => {
     register("email", { required: true });
-  }, []);
+  }, [accessToken]);
 
   return (
     <DeleteMemberUI

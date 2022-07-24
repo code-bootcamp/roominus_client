@@ -1,25 +1,64 @@
+/* eslint-disable no-unused-vars */
 import { useRouter } from "next/router";
 import { useEffect, useState, MouseEvent } from "react";
 import LayoutSideBarUI from "./LayoutSidebar.presenter";
 import Swal from "sweetalert2";
 
-import { LOG_OUT } from "./LayoutSidebar.query";
+import {
+  LOG_OUT,
+  FETCH_SOCIAL_USER_LOGGED_IN,
+  FETCH_USER_LOGGEDIN,
+} from "./LayoutSidebar.query";
 import { useApolloClient } from "@apollo/client";
-import { accessTokenState, userInfoState } from "../../../../commons/store";
-import { useRecoilState } from "recoil";
+import {
+  accessTokenState,
+  restoreAccessTokenLoadable,
+  userInfoState,
+} from "../../../../commons/store";
+import { useRecoilState, useRecoilValueLoadable } from "recoil";
 
 export default function LayoutSidebar() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState<string>("");
   const client = useApolloClient();
-  const [accessToken] = useRecoilState(accessTokenState);
-  const [userInfo] = useRecoilState(userInfoState);
-
-  // const [logoutgql] = useMutation(LOG_OUT);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
+  const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
+  // useEffect(() => {
+  //   if (localStorage.getItem("#SL")) {
+  //     Auth.toPromise().then(async (newAccessToken) => {
+  //       setAccessToken(newAccessToken);
+  //       const resultuserInfo = await client.query({
+  //         query: FETCH_SOCIAL_USER_LOGGED_IN,
+  //         context: {
+  //           headers: {
+  //             Authorization: `Bearer ${newAccessToken}`,
+  //           },
+  //         },
+  //       });
+  //       const user = resultuserInfo.data?.fetchUserLoggedIn;
+  //       setUserInfo(user);
+  //     });
+  //   } else if (localStorage.getItem("#NL")) {
+  //     Auth.toPromise().then(async (newAccessToken) => {
+  //       setAccessToken(newAccessToken);
+  //       const resultuserInfo = await client.query({
+  //         query: FETCH_USER_LOGGEDIN,
+  //         context: {
+  //           headers: {
+  //             Authorization: `Bearer ${newAccessToken}`,
+  //           },
+  //         },
+  //       });
+  //       const user = resultuserInfo.data?.fetchUserLoggedIn;
+  //       setUserInfo(user);
+  //     });
+  //   }
+  // }, []);
 
   const onClickLogout = async () => {
     try {
-      const result = await client.mutate({
+      await client.mutate({
         mutation: LOG_OUT,
         context: {
           headers: {
@@ -27,7 +66,16 @@ export default function LayoutSidebar() {
           },
         },
       });
-      console.log(result);
+      localStorage.clear();
+      sessionStorage.clear();
+      setAccessToken("");
+      setUserInfo({
+        id: "",
+        name: "",
+        email: "",
+        phone: "",
+        point: 0,
+      });
       Swal.fire({
         title: "로그아웃 되었습니다",
         icon: "success",

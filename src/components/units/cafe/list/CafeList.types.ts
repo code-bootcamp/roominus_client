@@ -22,4 +22,5 @@ export interface ICafeListUIProps {
   hongdae: boolean;
   kondae: boolean;
   loadFunc: () => void;
+  count: any;
 }

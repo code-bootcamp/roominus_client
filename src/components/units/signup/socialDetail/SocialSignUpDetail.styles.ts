@@ -3,11 +3,13 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
-  height: 100%;
+  min-height: 50em;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1em;
+  gap: 2em;
+
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
@@ -17,12 +19,17 @@ export const Wrapper = styled.section`
 
 export const Title = styled.h1`
   font-size: 2.8em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+  }
 `;
 export const FormFirst = styled.form`
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2em;
 
   @media ${breakPoints.mobile} {
     width: 80%;
@@ -156,16 +163,62 @@ export const TimeOut = styled.span`
   visibility: hidden;
 `;
 
+export const NameBoxes = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.6em;
+`;
+export const NameBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const NameTitle = styled.span`
+  font-size: 1.3em;
+  margin-bottom: 1em;
+`;
+export const NameInputBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+export const NameInput = styled.input`
+  width: 100%;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
+  outline: none;
+  font-size: 1.3em;
+  padding: 0em 0.8em 0em 0.8em;
+`;
+
 export const SignUpBtns = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: auto;
-  gap: 2em;
-  margin-bottom: 1.4em;
+  margin-top: 2em;
   @media ${breakPoints.mobile} {
     width: 100%;
     font-size: 1.2em;
   }
+`;
+
+export const WebPurpleSignUpButton = styled.button`
+  width: 100%;
+  height: 3.5em;
+  border-radius: 15px;
+  border: none;
+  background-color: #4a00e0e7;
+  color: #ffffff;
+  cursor: pointer;
+  :hover {
+    background: linear-gradient(
+      90deg,
+      rgba(142, 45, 226, 1) 30%,
+      rgba(74, 0, 224, 1) 100%
+    );
+  }
+  transition: all 250ms ease-in-out;
+  font-weight: 500;
 `;

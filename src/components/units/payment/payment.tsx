@@ -88,7 +88,6 @@ export default function Payment(props: IPaymentProps) {
               showConfirmButton: false,
               timer: 1500,
             });
-            console.log(result);
             router.push(`/reservation/${result.data?.createReservation.id}`);
           } catch (error) {
             Swal.fire({

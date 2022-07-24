@@ -23,6 +23,7 @@ export const FETCH_THEME_MENUS = gql`
         id
       }
       theme {
+        id
         mainImg
         title
         intro_title

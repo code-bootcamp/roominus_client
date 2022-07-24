@@ -1,4 +1,4 @@
-import { getDateTime } from "../../../../commons/getDate";
+import { getDateBefore } from "../../../../commons/getDate";
 import * as S from "./ThemeCommentList.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPen } from "@fortawesome/free-solid-svg-icons";
@@ -100,7 +100,7 @@ export default function ThemeCommentListUIItem(
           </S.ToolBox>
         </S.NameToolBox>
 
-        <S.CreatedAt>{getDateTime(props.el?.createdAt)}</S.CreatedAt>
+        <S.CreatedAt>{getDateBefore(props.el?.createdAt)}</S.CreatedAt>
         <S.EscapeRankBox>
           <S.EscapeButton>{props.el?.clear ? "탈출" : "미탈출"}</S.EscapeButton>
           <S.RankButton>난이도 : {props.el?.rank}</S.RankButton>

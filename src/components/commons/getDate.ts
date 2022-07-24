@@ -64,18 +64,21 @@ export const getBeforeTime = (value: string | number | Date) => {
 };
 
 export const getDateBefore = (value: string | number | Date) => {
-  const today = new Date();
-  const timeValue = new Date(value);
+  const today = new Date().toString();
+
+  const timeValue = new Date(value).toUTCString();
 
   const betweenTime = Math.floor(
-    (today.getTime() - timeValue.getTime()) / 1000 / 60
+    (Date.parse(today) - (Date.parse(timeValue) - 32399000)) / 1000 / 60
   );
+
   if (betweenTime < 1) return "방금전";
   if (betweenTime < 60) {
     return `${betweenTime}분전`;
   }
 
   const betweenTimeHour = Math.floor(betweenTime / 60);
+
   if (betweenTimeHour < 24) {
     return `${betweenTimeHour}시간전`;
   }

@@ -3,6 +3,7 @@ import {
   ChangeEvent,
   FormEventHandler,
   ReactNode,
+  SetStateAction,
   useEffect,
   useState,
 } from "react";
@@ -26,7 +27,7 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
 
   const [isEscape, setIsEscape] = useState(false);
   const [rank, setRank] = useState<string>("보통");
-
+  const [star, setStar] = useState<number>(0);
   const customIcons: Record<number, ReactNode> = {
     1: <FrownOutlined />,
     2: <FrownOutlined />,
@@ -50,6 +51,11 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
     props.setValue("clear", false);
     props.trigger("clear");
   };
+  const onClickChangeStar = (value: SetStateAction<number>) => {
+    props.setValue("star", value);
+    props.trigger("star");
+    setStar(value);
+  };
 
   const onClickRank: FormEventHandler<HTMLButtonElement> = (
     event: ChangeEvent<HTMLButtonElement>
@@ -67,6 +73,10 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
       props.setValue("rank", props.el?.rank);
       setRank(props.el?.rank);
     }
+    if (props.el?.star) {
+      props.setValue("star", props.el?.star);
+      setStar(props.el?.star);
+    }
 
     // props.setValue("clear", Boolean(props.el?.clear || isEscape));
     // props.setValue("rank", props.el?.rank || rank);
@@ -75,39 +85,40 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
   }, []);
 
   return (
-    <S.Wrapper isEdit={props.isEdit}>
-      <S.StarBox>
-        <S.StarScore
-          tooltips={desc}
-          style={{ fontSize: "3em", color: "#7457E8" }}
-          onChange={props.setStar}
-          value={props.star || props.el?.star}
-          character={({ index }: { index: number }) => customIcons[index + 1]}
-        />
-        {props.isEdit ? (
-          <FontAwesomeIcon
-            icon={faXmark}
-            onClick={onClickCancel}
-            style={{
-              fontSize: "1.5em",
-              margin: "4px",
-              cursor: "pointer",
-              position: "absolute",
-              right: "1em",
-              color: "#5c4a7e",
-            }}
+    <form
+      onSubmit={
+        props.isEdit
+          ? props.handleSubmit(props.onClickUpdate)
+          : props.handleSubmit(props.onClickSubmit)
+      }
+    >
+      <S.Wrapper isEdit={props.isEdit}>
+        <S.StarBox>
+          <S.StarScore
+            tooltips={desc}
+            style={{ fontSize: "3em", color: "#7457E8" }}
+            onChange={onClickChangeStar}
+            value={star || props.el?.star}
+            character={({ index }: { index: number }) => customIcons[index + 1]}
           />
-        ) : (
-          ""
-        )}
-      </S.StarBox>
-      <form
-        onSubmit={
-          props.isEdit
-            ? props.handleSubmit(props.onClickUpdate)
-            : props.handleSubmit(props.onClickSubmit)
-        }
-      >
+          {props.isEdit ? (
+            <FontAwesomeIcon
+              icon={faXmark}
+              onClick={onClickCancel}
+              style={{
+                fontSize: "1.5em",
+                margin: "4px",
+                cursor: "pointer",
+                position: "absolute",
+                right: "1em",
+                color: "#5c4a7e",
+              }}
+            />
+          ) : (
+            ""
+          )}
+        </S.StarBox>
+
         <S.EscapeRankBox>
           <S.RadioGroup color="secondary">
             <S.RadioButton
@@ -167,7 +178,7 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
           />
           <S.SubmitButton>{props.isEdit ? "수정" : "등록"}</S.SubmitButton>
         </S.CommentBox>
-      </form>
-    </S.Wrapper>
+      </S.Wrapper>
+    </form>
   );
 }

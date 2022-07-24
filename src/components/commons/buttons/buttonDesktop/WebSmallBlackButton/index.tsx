@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { MouseEventHandler } from "react";
 
 const Button = styled.button`
   width: 4.7em;
@@ -13,9 +12,10 @@ const Button = styled.button`
 `;
 
 interface IProps {
-  onClick: MouseEventHandler;
-  type: "button" | "submit" | "reset";
-  title: string;
+  onClick?: any;
+  type?: "button" | "submit" | "reset";
+  title?: string;
+  value?: any;
 }
 
 export default function WebSmallBlackButton(props: IProps) {

@@ -16,7 +16,7 @@ export const Wrapper = styled.section`
 `;
 export const Title = styled.h1`
   font-size: 2.5em;
-  margin-top: 1em;
+  margin-top: 2em;
   @media ${breakPoints.mobile} {
     font-size: 3em;
   }
@@ -33,7 +33,8 @@ export const TabBtns = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 1em;
+  margin-top: 3em;
+  margin-bottom: 3em;
   @media ${breakPoints.mobile} {
     font-size: 1.6em;
   }
@@ -70,7 +71,7 @@ export const TabSecond = styled.button`
 
 export const Form = styled.form`
   width: 60%;
-  height: 19em;
+  height: 28em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -82,7 +83,7 @@ export const PhoneBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin-top: 8em;
 `;
 export const Phone = styled.div`
   font-size: 1.2em;

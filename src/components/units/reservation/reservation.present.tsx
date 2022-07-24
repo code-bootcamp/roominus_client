@@ -44,7 +44,10 @@ export default function ReservationUI(props: IReservationUIProps) {
                   <S.Left onClick={props.onClickReset} />
                   <span onClick={props.onClickReset}>처음으로 </span>
                 </S.BackBox>
-                <ReservationThemeInfo data={props.data} />
+                <ReservationThemeInfo
+                  data={props.data}
+                  timeTable={props.timeTable}
+                />
               </>
             ) : (
               <>
@@ -269,12 +272,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                 {props?.checked && (
                   <S.ButtonBox>
                     <Link href="/home">
-                      <WebBlackButton
-                        type="button"
-                        title="돌아가기"
-                        onClick={undefined}
-                        value={undefined}
-                      />
+                      <WebBlackButton type="button" title="돌아가기" />
                     </Link>
 
                     <Payment

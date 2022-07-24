@@ -58,7 +58,7 @@ export default function SignUpDetail() {
   const [password, setPassword] = useState("");
   const [createUsergql] = useMutation(CREATE_USER);
   const [count, setCount] = useState(60);
-  const [showCount, setShowCount] = useState("03:00");
+  const [showCount, setShowCount] = useState("01:00");
   const [start, setStart] = useState(1);
 
   const [sendTokengql] = useMutation(SEND_TOTKEN_TO_PHONE);
@@ -66,6 +66,8 @@ export default function SignUpDetail() {
   const [phone, setPhone] = useState("");
   const [smsToken, setSmsToken] = useState("");
   const [tokenInput, setTokenInput] = useState("");
+
+  const [tokenavail, setTokenavail] = useState(false);
 
   useEffect(() => {
     register("email", { required: true });
@@ -83,12 +85,12 @@ export default function SignUpDetail() {
       timer = setInterval(() => {
         counts = counts - 1;
         setCount(counts);
-        console.log(counts);
+
         if (counts <= 0) {
           clearInterval(timer);
           setCount(60);
           setStart(1);
-          verificationBtn.current.disabled = true;
+
           Swal.fire({
             title: "시간 초과",
             icon: "warning",
@@ -126,8 +128,8 @@ export default function SignUpDetail() {
           phone,
         },
       });
-      console.log(result.data.sendTotkentoPhone);
-      setSmsToken(result.data.sendTotkentoPhone);
+
+      setSmsToken(result.data.sendTotkentoPhone.split(" ")[2].split("를")[0]);
       Swal.fire({
         title: "인증번호 전송 완료",
         icon: "success",
@@ -154,7 +156,6 @@ export default function SignUpDetail() {
     setShowCount(Showcount);
   };
   const onClickCheckVerificationNo = async () => {
-    setStart(3);
     if (smsToken === tokenInput) {
       try {
         const result = await checkInputTokengql({
@@ -170,6 +171,8 @@ export default function SignUpDetail() {
           confirmButtonText: "확인",
           confirmButtonColor: "#4a00e0e7",
         });
+        setStart(3);
+        setTokenavail(true);
       } catch (error) {
         console.log(error);
       }
@@ -182,6 +185,7 @@ export default function SignUpDetail() {
       });
     }
   };
+
   const onChangeTokenValue = (event: {
     target: { value: SetStateAction<string> };
   }) => {
@@ -193,28 +197,36 @@ export default function SignUpDetail() {
     name: any;
     phoneNumber: any;
   }) => {
-    console.log(data);
-    try {
-      const result = await createUsergql({
-        variables: {
-          createUserInput: {
-            email: data.email,
-            password: data.password,
-            name: data.name,
-            phone: data.phoneNumber,
+    if (tokenavail) {
+      try {
+        const result = await createUsergql({
+          variables: {
+            createUserInput: {
+              email: data.email,
+              password: data.password,
+              name: data.name,
+              phone: data.phoneNumber,
+            },
           },
-        },
-      });
+        });
+        Swal.fire({
+          title: `${result.data.createUser.name}`,
+          icon: "success",
+          confirmButtonText: "확인",
+          confirmButtonColor: "#4a00e0e7",
+        });
+
+        router.push("/login");
+      } catch (error) {
+        alert((error as Error).message);
+      }
+    } else if (!tokenavail) {
       Swal.fire({
-        title: `${result.data.createUser.name}`,
-        icon: "success",
+        title: "모바일 인증은 필수입니다.",
+        icon: "warning",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
       });
-
-      router.push("/login");
-    } catch (error) {
-      alert((error as Error).message);
     }
   };
 
@@ -264,12 +276,6 @@ export default function SignUpDetail() {
         timeRef={timeRef}
         setPhone={setPhone}
         onChangeTokenValue={onChangeTokenValue}
-        googleEmail={undefined}
-        kakaoEmail={undefined}
-        googleLoggedIn={undefined}
-        kakaologgedIn={undefined}
-        onClickLogoutkakao={undefined}
-        onClickSocialIDLogout={undefined}
         setTokenInput={setTokenInput}
       />
     </>

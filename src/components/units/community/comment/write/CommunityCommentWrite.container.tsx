@@ -30,6 +30,8 @@ export default function CommunityCommentWrite(
   });
 
   const onClickComment = async (data: IDataProps) => {
+    if (!data.content) return;
+
     try {
       await createBoardreview({
         variables: {

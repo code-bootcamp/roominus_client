@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  min-height: 20em;
 `;
 
 export const ThemeBoxs = styled.div`
@@ -103,6 +103,11 @@ export const addButton = styled.button`
   background-color: white;
   width: 4em;
 
+  :hover {
+    transform: translatex(0.3em);
+  }
+  transition: all 250ms ease-in-out;
+
   @media ${breakPoints.mobile} {
     font-size: 0.8em;
   }
@@ -117,14 +122,14 @@ export const Contents = styled.span`
   background-color: white;
   cursor: pointer;
 `;
-
 export const TableTop = styled.div`
-  border-top: 2px solid #b6a2ea;
-  margin-top: 1em;
+  border-bottom: 2px solid #b6a2ea;
+  margin-top: 20px;
 `;
 
 export const TableBottom = styled.div`
   border-bottom: 2px solid #b6a2ea;
+  margin-bottom: 5em;
 `;
 
 export const TitleRow = styled.li`
@@ -133,44 +138,75 @@ export const TitleRow = styled.li`
   height: 52px;
   line-height: 52px;
   border-bottom: 2px solid #b6a2ea;
-`;
+  font-size: 1.2em;
 
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
+`;
 export const Row = styled.li`
   display: flex;
   flex-direction: row;
   height: 52px;
   line-height: 52px;
-  border-bottom: 1px solid darkgray;
+  border-bottom: 1px solid gray;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   &:last-of-type {
     border: none;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8em;
+  }
+`;
+
+export const ColumnHeaderNumber = styled.div`
+  width: 10%;
+  text-align: center;
 `;
 
 export const ColumnHeaderBasic = styled.div`
   width: 30%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    width: 20%;
+  }
 `;
 
 export const ColumnHeaderTitle = styled.div`
   width: 40%;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.1em;
+`;
+
+export const ColumnNumber = styled.div`
+  width: 10%;
+  text-align: center;
 `;
 
 export const ColumnBasic = styled.div`
   width: 30%;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    width: 20%;
+  }
 `;
 
 export const ColumnTitle = styled.div`
   width: 40%;
   text-align: center;
+  cursor: pointer;
+  font-weight: 700;
 `;
 
 export const RowBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.5em;
+  justify-content: space-between;
+  margin-top: 2em;
 `;
