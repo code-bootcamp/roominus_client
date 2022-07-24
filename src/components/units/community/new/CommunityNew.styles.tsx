@@ -57,6 +57,7 @@ export const Picture = styled.img`
 
   @media ${breakPoints.mobile} {
     width: 100%;
+    height: 30em;
   }
 `;
 

@@ -107,6 +107,10 @@ export const ItemBackground = styled.li`
   }
   transition: all 250ms ease-in-out;
   /* justify-content: space-evenly; */
+
+  @media ${breakPoints.mobile} {
+    height: 380px;
+  }
 `;
 
 export const Picture = styled.img`
@@ -115,6 +119,10 @@ export const Picture = styled.img`
   border-radius: 8px 8px 0px 0px;
   cursor: pointer;
   /* object-fit: cover; */
+
+  @media ${breakPoints.mobile} {
+    height: 280px;
+  }
 `;
 
 export const InfoBox = styled.div`
@@ -200,7 +208,13 @@ export const ButtonBox = styled.div`
 export const PaginationsWrapper = styled.div`
   display: flex;
   justify-content: center;
+  /* background-color: orange; */
+
+  @media ${breakPoints.mobile} {
+    margin-top: 2em;
+  }
 `;
+
 export const RedHeart = styled(FontAwesomeIcon)`
   /* padding: 2px; */
   font-size: 17px;
