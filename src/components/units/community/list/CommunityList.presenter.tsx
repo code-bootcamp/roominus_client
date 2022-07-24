@@ -4,8 +4,30 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { ICommunityListProps, IFetchBoardsProps } from "./CommunityList.types";
 import Paginations02 from "../../../commons/pagination02/Paginations.container";
 import AssignmentIndOutlinedIcon from "@mui/icons-material/AssignmentIndOutlined";
+import TopButton from "../../../commons/buttons/topbutton/community";
+import { useEffect, useState } from "react";
 export default function CommunityListUI(props: ICommunityListProps) {
   const error = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
+
+  const [windowSize, setWindowSize] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    } else {
+      setWindowSize(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowSize]);
 
   return (
     <S.Wrapper>
@@ -45,9 +67,13 @@ export default function CommunityListUI(props: ICommunityListProps) {
         ))}
       </S.Etc>
 
-      <S.ButtonBox>
-        <WebPurpleButton title="작성하기" onClick={props.onClickWrite} />
-      </S.ButtonBox>
+      {!windowSize && (
+        <S.ButtonBox>
+          <WebPurpleButton title="작성하기" onClick={props.onClickWrite} />
+        </S.ButtonBox>
+      )}
+      {windowSize && <TopButton />}
+
       <S.PaginationsWrapper>
         <Paginations02
           count={props.count?.fetchBoardsCount}
