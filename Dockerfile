@@ -1,7 +1,7 @@
 FROM node:14
 
-WORKDIR /ROOMINUS/ 
-COPY . /ROOMINUS/
+WORKDIR /roominus/
+COPY . /roominus/
 
 RUN yarn install
 RUN yarn build
