@@ -147,10 +147,6 @@ export default function Reservation() {
     setPickTheme("");
   };
 
-  console.log(new Date());
-  console.log(soldOut);
-  console.log(reservations?.fetchReservations);
-
   return (
     <ReservationUI
       // 테마 변경

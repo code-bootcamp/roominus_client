@@ -8,8 +8,8 @@ const Container = styled.ul`
   height: 50px;
   height: 3.13em;
   overflow: hidden;
-  border-top: 1px solid darkgray;
-  border-bottom: 1px solid darkgray;
+  border-top: 1px solid #4a00e0e7;
+  border-bottom: 1px solid #4a00e0e7;
   font-size: 1.1em;
 
   @media ${breakPoints.mobile} {
