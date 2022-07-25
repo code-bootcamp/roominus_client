@@ -1,6 +1,6 @@
-import { useQuery } from "@apollo/client";
+import { useLazyQuery, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import CafeListUIPage from "./CafeList.presenter";
 import { FETCH_CAFES, FETCH_CAFES_COUNT } from "./CafeList.queries";
@@ -13,14 +13,19 @@ export default function CafeListPage() {
   const [gangnam, setGangnam] = useState(false);
   const [hongdae, setHongdae] = useState(false);
   const [kondae, setKondae] = useState(false);
-
+  const [aaa, { data: Totaldata }] = useLazyQuery(FETCH_CAFES);
   const { data, fetchMore, refetch } = useQuery(FETCH_CAFES);
   const { data: count } = useQuery(FETCH_CAFES_COUNT);
+  const [newdata, setNewdata] = useState([]);
+  useEffect(() => {
+    onClickTotal();
+  }, []);
+  const onClickTotal = () => {
+    // refetch({
+    //   page: Number(event.target.id),
+    // });
+    aaa().then((result) => setNewdata(result.data.fetchCafes));
 
-  const onClickTotal = (event) => {
-    refetch({
-      page: event.target.id,
-    });
     setTotal(true);
     setGangnam(false);
     setHongdae(false);
@@ -30,7 +35,9 @@ export default function CafeListPage() {
   const onClickGangnam = (event) => {
     refetch({
       address: event.target.id,
-    });
+    }).then((result) => setNewdata(result.data.fetchCafes));
+
+    setNewdata([]);
     setTotal(false);
     setGangnam(true);
     setHongdae(false);
@@ -40,7 +47,8 @@ export default function CafeListPage() {
   const onClickHongdae = (event) => {
     refetch({
       address: event.target.id,
-    });
+    }).then((result) => setNewdata(result.data.fetchCafes));
+    setNewdata([]);
     setTotal(false);
     setGangnam(false);
     setHongdae(true);
@@ -50,7 +58,8 @@ export default function CafeListPage() {
   const onClickKondae = (event) => {
     refetch({
       address: event.target.id,
-    });
+    }).then((result) => setNewdata(result.data.fetchCafes));
+    setNewdata([]);
     setTotal(false);
     setGangnam(false);
     setHongdae(false);
@@ -120,6 +129,7 @@ export default function CafeListPage() {
       loadFunc={loadFunc}
       count={count}
       onChangeLocation={onChangeLocation}
+      newdata={newdata}
     />
   );
 }

@@ -64,11 +64,18 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
           </S.CountBox>
 
           <S.Etc>
-            {props.data?.fetchCafes.map((el: IFetchCafesProps) => (
-              <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
-                <ListCards el={el} />
-              </span>
-            ))}
+            {/* {props.newdata &&
+              props.data?.fetchCafes.map((el: IFetchCafesProps) => (
+                <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
+                  <ListCards el={el} />
+                </span>
+              ))} */}
+            {props.newdata &&
+              props.newdata.map((el: IFetchCafesProps) => (
+                <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
+                  <ListCards el={el} />
+                </span>
+              ))}
           </S.Etc>
         </S.Flex>
         <S.MoreButtonBox>

@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_CAFES = gql`
-  query fetchCafes($address: String, $page: Float = 1) {
+  query fetchCafes($address: String, $page: Float) {
     fetchCafes(address: $address, page: $page) {
       id
       name
