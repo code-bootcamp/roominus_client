@@ -14,8 +14,8 @@ export interface IData {
 }
 
 export interface IAdminReservationNewUIProps {
+  themesList: any;
   onClickSubmit: any;
-  // onClickSubmit: (data: IData) => Promise<void>;
 
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   register: UseFormRegister<FieldValues>;

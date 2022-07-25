@@ -2,6 +2,7 @@ import { ChangeEvent } from "react";
 import WebPurpleLoginButton from "../../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 import WebLongestHighlightUnderlineInput from "../../../../commons/inputs/inputDesktop/WebLongestHighlightUnderlineInput";
 import { IAdminReservationNewUIProps } from "./AdminReservation.types";
+import { v4 as uuidv4 } from "uuid";
 import * as S from "./AdminReservationNewStyle";
 
 export default function AdminReservationNewUI(
@@ -12,17 +13,16 @@ export default function AdminReservationNewUI(
       <S.Form onSubmit={props.handleSubmit(props.onClickSubmit)}>
         <S.Title>예약 리스트 등록페이지</S.Title>
         <S.InputsTitle>테마 아이디</S.InputsTitle>
-        <WebLongestHighlightUnderlineInput
-          type="text"
-          register={props.register("id")}
-          placeholder="테마 id를 입력하세요"
-          onChange={function (event: ChangeEvent<HTMLInputElement>): void {
-            throw new Error("Function not implemented.");
-          }}
-          value={""}
-          defaultValue={""}
-        />
+        <select register={props.register("id")}>
+          {props?.themesList?.fetchThemesAll?.map((el: any) => (
+            <option key={uuidv4()} value={el.id}>
+              {el.title}
+            </option>
+          ))}
+        </select>
+
         <S.InputsTitle>운영 매장</S.InputsTitle>
+
         <WebLongestHighlightUnderlineInput
           type="text"
           register={props.register("cafeName")}
