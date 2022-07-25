@@ -71,6 +71,17 @@ export const Form = styled.form`
   width: 100%;
 `;
 
+export const GridBox = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+
+  @media ${breakPoints.mobile} {
+    display: inline;
+  }
+`;
+
 export const FooterBox = styled.div`
   padding-top: 1em;
   display: flex;

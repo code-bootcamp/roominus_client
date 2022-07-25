@@ -11,8 +11,6 @@ export default function MyPick() {
   const { data, refetch } = useQuery(FETCH_USER_LIKE_THEMES);
   const { data: count } = useQuery(FETCH_USER_LIKE_THEMES_COUNT);
 
-  console.log(count);
-
   const onClickMoveToThemeDetail = (event: { currentTarget: { id: any } }) => {
     router.push(`/theme/${event?.currentTarget.id}`);
   };

@@ -98,6 +98,7 @@ export const ThemeTitleBox = styled.div`
     @media ${breakPoints.mobile} {
       font-size: 1.3em;
       width: auto;
+      -webkit-box-reflect: below -25px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
     }
   }
 `;
