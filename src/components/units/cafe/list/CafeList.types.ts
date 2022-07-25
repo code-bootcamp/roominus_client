@@ -10,9 +10,9 @@ export interface IFetchCafesProps {
 
 export interface ICafeListUIProps {
   onClickTotal: () => void;
-  onClickGangnam: () => void;
-  onClickHongdae: () => void;
-  onClickKondae: () => void;
+  onClickGangnam: (event: MouseEvent<HTMLButtonElement>) => void;
+  onClickHongdae: (event: MouseEvent<HTMLButtonElement>) => void;
+  onClickKondae: (event: MouseEvent<HTMLButtonElement>) => void;
   onClickCard: (
     el: IFetchCafesProps
   ) => (event: MouseEvent<HTMLDivElement>) => void;
@@ -23,4 +23,5 @@ export interface ICafeListUIProps {
   kondae: boolean;
   loadFunc: () => void;
   count: any;
+  onChangeLocation: (event: any) => void;
 }

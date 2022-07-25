@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../../commons/store";
 import CommentAnswerEditUI from "./CommentAnswerEdit.presenter";
 import { ICommentAnswerEditProps } from "./CommentAnswerEdit.types";
 
 export default function CommentAnswerEdit(props: ICommentAnswerEditProps) {
+  const [userInfo] = useRecoilState(userInfoState);
+
   const [isAnswerEdit, setIsAnswerEdit] = useState(false);
   const [answerEditId, setAnswerEditId] = useState("");
 
@@ -22,6 +26,7 @@ export default function CommentAnswerEdit(props: ICommentAnswerEditProps) {
       setAnswerEditId={setAnswerEditId}
       onClickDelete={props.onClickDelete}
       onClickEdit={onClickEdit}
+      userInfo={userInfo}
     />
   );
 }

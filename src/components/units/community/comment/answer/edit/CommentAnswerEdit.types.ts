@@ -17,6 +17,9 @@ export interface ICommentAnswerEditUIProps {
   setAnswerEditId: Dispatch<SetStateAction<string>>;
   onClickDelete: () => void;
   onClickEdit: (event: any) => void;
+  userInfo: {
+    name: string;
+  };
 }
 
 export interface ICommentAnswerEditProps {

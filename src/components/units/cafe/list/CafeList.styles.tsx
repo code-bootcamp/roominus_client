@@ -270,7 +270,7 @@ export const TitleBox = styled.div`
   gap: 0.5em;
   width: 100%;
   height: 4em;
-  margin-top: 1em;
+  margin: 1em 0em;
   /* background-color: orange; */
 
   & h1 {
@@ -312,26 +312,6 @@ export const Title = styled.h1`
   }
 `;
 
-export const CountBox = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.1em;
-  padding-bottom: 0.5em;
-
-  & span {
-    font-size: 1.1em;
-  }
-
-  @media ${breakPoints.mobile} {
-    width: 75%;
-    padding-bottom: 0em;
-
-    & span {
-      font-size: 1.8em;
-    }
-  }
-`;
 export const Line = styled.div`
   margin: 2em 0em;
   border-bottom: 0.1em solid #c2c2c2;

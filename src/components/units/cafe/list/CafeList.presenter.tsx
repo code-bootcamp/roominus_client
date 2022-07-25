@@ -12,7 +12,6 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             <S.DetailBox>
               <S.DetailTitle>장소</S.DetailTitle>
               <S.LocationButtonTotal
-                id="1"
                 onClick={props.onClickTotal}
                 total={props.total}
               >
@@ -40,7 +39,7 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
                 건대
               </S.LocationButtonKondae>
               <S.LocationSelect onChange={props.onChangeLocation}>
-                <S.LocationOption>전체</S.LocationOption>
+                <S.LocationOption value="전체">전체</S.LocationOption>
                 <S.LocationOption value="강남">강남</S.LocationOption>
                 <S.LocationOption value="홍대">홍대</S.LocationOption>
                 <S.LocationOption value="건대">건대</S.LocationOption>
@@ -59,10 +58,6 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             <StoreIcon fontSize="large" />
             <h1>전체 매장</h1>
           </S.TitleBox>
-          <S.CountBox>
-            <span>총 {props.count?.fetchCafesCount}개</span>
-          </S.CountBox>
-
           <S.Etc>
             {props.data?.fetchCafes.map((el: IFetchCafesProps) => (
               <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>

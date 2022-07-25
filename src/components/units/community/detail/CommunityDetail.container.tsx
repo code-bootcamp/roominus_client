@@ -95,6 +95,7 @@ export default function CommunityDetail() {
       data={data}
       onClickLike={onClickLike}
       like={like}
+      userInfo={userInfo}
     />
   );
 }

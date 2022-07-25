@@ -1,4 +1,3 @@
-import WebSmallBlackButton from "../../../../commons/buttons/buttonDesktop/WebSmallBlackButton";
 import WebSmallPurpleButton from "../../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import * as S from "./CommunityCommentWrite.styles";
 import { ICommunityCommentWriteUIProps } from "./CommunityCommentWrite.types";
@@ -26,13 +25,6 @@ export default function CommunityCommentWriteUI(
             title={props.isEdit ? "수정하기" : "등록하기"}
             type={"submit"}
           ></WebSmallPurpleButton>
-          {props.isEdit && (
-            <WebSmallBlackButton
-              type="button"
-              title="취소하기"
-              onClick={props.onClickCancel}
-            />
-          )}
         </S.CommentWriteBox>
       </form>
     </S.Wrapper>

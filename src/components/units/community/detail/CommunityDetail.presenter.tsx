@@ -59,18 +59,25 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
             type={"button"}
             value={undefined}
           ></WebBlackButton>
-          <WebPurpleButton
-            title="수정하기"
-            onClick={props.onClickEdit}
-            type={undefined}
-            value={""}
-          ></WebPurpleButton>
-          <WebPurpleButton
-            onClick={props.onClickDelete}
-            title="삭제하기"
-            type={undefined}
-            value={""}
-          ></WebPurpleButton>
+
+          {props.data?.fetchBoard.user?.name !== props.userInfo?.name ? (
+            ""
+          ) : (
+            <S.ButtonBox>
+              <WebPurpleButton
+                title="수정하기"
+                onClick={props.onClickEdit}
+                type={undefined}
+                value={""}
+              ></WebPurpleButton>
+              <WebPurpleButton
+                onClick={props.onClickDelete}
+                title="삭제하기"
+                type={undefined}
+                value={""}
+              ></WebPurpleButton>
+            </S.ButtonBox>
+          )}
         </S.ButtonBox>
       </S.Wrapper>
       <S.Comment>
