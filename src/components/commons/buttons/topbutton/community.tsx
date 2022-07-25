@@ -17,9 +17,9 @@ const ButtonBox = styled.div`
     color: #ffffff;
     font-size: 20px;
     cursor: pointer;
-    width: 1em;
-    height: 7em;
-    right: 1em;
+    width: 1rem;
+    height: 10rem;
+    right: 0.9em;
   }
 `;
 
