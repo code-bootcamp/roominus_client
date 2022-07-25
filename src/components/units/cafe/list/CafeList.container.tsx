@@ -14,35 +14,65 @@ export default function CafeListPage() {
   const [hongdae, setHongdae] = useState(false);
   const [kondae, setKondae] = useState(false);
 
-  const { data, fetchMore } = useQuery(FETCH_CAFES);
+  const { data, fetchMore, refetch } = useQuery(FETCH_CAFES);
   const { data: count } = useQuery(FETCH_CAFES_COUNT);
 
-  const onClickTotal = () => {
+  const onClickTotal = (event) => {
+    refetch({
+      page: event.target.id,
+    });
     setTotal(true);
     setGangnam(false);
     setHongdae(false);
     setKondae(false);
   };
 
-  const onClickGangnam = () => {
+  const onClickGangnam = (event) => {
+    refetch({
+      address: event.target.id,
+    });
     setTotal(false);
     setGangnam(true);
     setHongdae(false);
     setKondae(false);
   };
 
-  const onClickHongdae = () => {
+  const onClickHongdae = (event) => {
+    refetch({
+      address: event.target.id,
+    });
     setTotal(false);
     setGangnam(false);
     setHongdae(true);
     setKondae(false);
   };
 
-  const onClickKondae = () => {
+  const onClickKondae = (event) => {
+    refetch({
+      address: event.target.id,
+    });
     setTotal(false);
     setGangnam(false);
     setHongdae(false);
     setKondae(true);
+  };
+
+  const onChangeLocation = (event) => {
+    if (event.target.value === "강남") {
+      refetch({
+        address: event.target.value,
+      });
+    }
+    if (event.target.value === "홍대") {
+      refetch({
+        address: event.target.value,
+      });
+    }
+    if (event.target.value === "건대") {
+      refetch({
+        address: event.target.value,
+      });
+    }
   };
 
   const onClickCard =
@@ -89,6 +119,7 @@ export default function CafeListPage() {
       onClickKondae={onClickKondae}
       loadFunc={loadFunc}
       count={count}
+      onChangeLocation={onChangeLocation}
     />
   );
 }
