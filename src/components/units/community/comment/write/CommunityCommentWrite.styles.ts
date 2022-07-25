@@ -71,6 +71,6 @@ export const CommentInput = styled.input`
 
   @media ${breakPoints.mobile} {
     height: 3em;
-    width: 55%;
+    width: 65%;
   }
 `;

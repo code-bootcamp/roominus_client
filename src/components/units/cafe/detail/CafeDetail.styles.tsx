@@ -20,6 +20,7 @@ export const SearchWrapper = styled.section`
   gap: 4em;
 
   @media ${breakPoints.mobile} {
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +32,7 @@ export const InfoSummaryBox = styled.div`
   width: 50%;
 
   @media ${breakPoints.mobile} {
-    width: 28em;
+    width: 130%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,8 +46,7 @@ export const CafePicture = styled.img`
   object-fit: cover;
 
   @media ${breakPoints.mobile} {
-    width: 28em;
-    height: 26em;
+    height: 23em;
   }
 `;
 
@@ -55,10 +55,6 @@ export const InfoTitleBox = styled.div`
   padding: 2em 0em 1em 0em;
   display: flex;
   flex-direction: column;
-
-  @media ${breakPoints.mobile} {
-    width: 28em;
-  }
 `;
 
 export const InfoBox = styled.div`
@@ -67,7 +63,7 @@ export const InfoBox = styled.div`
   flex-direction: column;
 
   @media ${breakPoints.mobile} {
-    width: 28em;
+    width: 130%;
     padding: 1em 0em;
   }
 `;
@@ -110,6 +106,11 @@ export const InfoContentsBox = styled.div`
 export const LocationFlex = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const ContentsTitle = styled.h2``;
@@ -143,6 +144,10 @@ export const LocationDetail = styled.p`
   font-size: 1.2em;
   margin: 0.3em 0em 0em 0.5em;
   color: #a3a8b7;
+
+  @media ${breakPoints.mobile} {
+    margin: 0em 0em 0.5em 0em;
+  }
 `;
 
 export const Theme = styled.div`

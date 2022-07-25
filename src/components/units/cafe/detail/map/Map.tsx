@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 declare const window: typeof globalThis & {
   kakao: any;
@@ -8,6 +9,10 @@ declare const window: typeof globalThis & {
 const Map = styled.div`
   width: 100%;
   height: 25em;
+
+  @media ${breakPoints.mobile} {
+    height: 18em;
+  }
 `;
 
 interface IKakaoMapProps {

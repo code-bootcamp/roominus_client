@@ -29,10 +29,11 @@ export default function CafeListPage() {
     setKondae(false);
   };
 
-  const onClickGangnam = (event) => {
-    refetch({
-      address: event.target.id,
-    });
+  const onClickGangnam = (event: MouseEvent<HTMLButtonElement>) => {
+    if (event.target instanceof Element)
+      refetch({
+        address: event.target.id,
+      });
 
     setTotal(false);
     setGangnam(true);
@@ -40,10 +41,11 @@ export default function CafeListPage() {
     setKondae(false);
   };
 
-  const onClickHongdae = (event) => {
-    refetch({
-      address: event.target.id,
-    });
+  const onClickHongdae = (event: MouseEvent<HTMLButtonElement>) => {
+    if (event.target instanceof Element)
+      refetch({
+        address: event.target.id,
+      });
 
     setTotal(false);
     setGangnam(false);
@@ -51,10 +53,11 @@ export default function CafeListPage() {
     setKondae(false);
   };
 
-  const onClickKondae = (event) => {
-    refetch({
-      address: event.target.id,
-    });
+  const onClickKondae = (event: MouseEvent<HTMLButtonElement>) => {
+    if (event.target instanceof Element)
+      refetch({
+        address: event.target.id,
+      });
 
     setTotal(false);
     setGangnam(false);
@@ -62,7 +65,13 @@ export default function CafeListPage() {
     setKondae(true);
   };
 
-  const onChangeLocation = (event) => {
+  const onChangeLocation = (event: any) => {
+    if (event.target.value === "전체") {
+      refetch({
+        address: "",
+        page: 1,
+      });
+    }
     if (event.target.value === "강남") {
       refetch({
         address: event.target.value,

@@ -140,7 +140,7 @@ export const Tags = styled.div`
 
 export const BoardContents = styled.p`
   margin-top: 2em;
-  margin-bottom: 0px;
+  margin-bottom: 4em;
   font-size: 1.2em;
 `;
 
@@ -161,20 +161,16 @@ export const Comment = styled.div`
 `;
 
 export const ButtonBox = styled.div`
-  padding: 4em 0em 0em 0em;
   gap: 2em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    gap: 0.7em;
+  }
 `;
-
-// export const Comment = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
-
-//--------------------0711 hani
 
 export const RedHeart = styled(FontAwesomeIcon)`
   padding: 2px;

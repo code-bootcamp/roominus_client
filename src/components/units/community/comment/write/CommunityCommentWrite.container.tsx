@@ -88,10 +88,6 @@ export default function CommunityCommentWrite(
     props.setIsEdit(false);
   };
 
-  const onClickCancel = () => {
-    props.setIsEdit(false);
-  };
-
   return (
     <CommunityCommentWriteUI
       onClickComment={onClickComment}
@@ -101,7 +97,6 @@ export default function CommunityCommentWrite(
       userInfo={userInfo}
       isEdit={props.isEdit}
       defaultValue={props.el}
-      onClickCancel={onClickCancel}
     />
   );
 }

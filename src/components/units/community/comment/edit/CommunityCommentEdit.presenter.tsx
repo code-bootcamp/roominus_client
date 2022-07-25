@@ -25,16 +25,22 @@ export default function CommunityCommentEditUI(
                     onClick={props.onClickReComment}
                     id={props.el.id}
                   />
-                  <S.Edit
-                    src="/img/community/comment/commentedit.webp"
-                    onClick={props.onClickEdit}
-                    id={props.el.id}
-                  />
-                  <S.Delete
-                    src="/img/community/comment/commentdelete.webp"
-                    onClick={props.onClickDelete}
-                    id={props.el.id}
-                  />
+                  {props.el.user?.name !== props.userInfo?.name ? (
+                    ""
+                  ) : (
+                    <div>
+                      <S.Edit
+                        src="/img/community/comment/commentedit.webp"
+                        onClick={props.onClickEdit}
+                        id={props.el.id}
+                      />
+                      <S.Delete
+                        src="/img/community/comment/commentdelete.webp"
+                        onClick={props.onClickDelete}
+                        id={props.el.id}
+                      />
+                    </div>
+                  )}
                 </S.InfoTitle>
               </S.InfoTitleBox>
               <S.Contents>{props.el.content}</S.Contents>
