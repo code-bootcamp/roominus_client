@@ -38,16 +38,16 @@ export default function LayoutTopHeader() {
       Swal.fire({
         title: "로그아웃 되었습니다",
         icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
       });
       router.push("/home");
     } catch (error) {
       Swal.fire({
         title: (error as Error).message,
         icon: "error",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
       });
     }
   };

@@ -36,8 +36,8 @@ export default function useAdminAuth() {
           Swal.fire({
             title: "로그인을 먼저 해주세요.",
             icon: "warning",
-            confirmButtonText: "확인",
-            confirmButtonColor: "#4a00e0e7",
+            showConfirmButton: false,
+            timer: 1000,
           });
           setTimeout(() => {
             router.push("/login");
@@ -61,8 +61,8 @@ export default function useAdminAuth() {
                   Swal.fire({
                     title: "관리자 페이지 입니다.",
                     icon: "warning",
-                    confirmButtonText: "확인",
-                    confirmButtonColor: "#4a00e0e7",
+                    showConfirmButton: false,
+                    timer: 1000,
                   });
                   router.push("/");
                 }
@@ -82,8 +82,8 @@ export default function useAdminAuth() {
                   Swal.fire({
                     title: "관리자 페이지 입니다.",
                     icon: "warning",
-                    confirmButtonText: "확인",
-                    confirmButtonColor: "#4a00e0e7",
+                    showConfirmButton: false,
+                    timer: 1000,
                   });
                   router.push("/");
                 }

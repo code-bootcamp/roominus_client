@@ -92,18 +92,18 @@ export default function LoginPage() {
       setUserInfo(user);
 
       Swal.fire({
-        title: "성공",
+        title: "반갑습니다",
         icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
       });
       router.push("/home");
     } catch (error) {
       Swal.fire({
         title: "로그인에 실패하였습니다",
         icon: "error",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
       });
       console.log(error);
     }
@@ -151,15 +151,21 @@ export default function LoginPage() {
                   credentials: "include",
                 },
               })
-              .then((result) =>
-                setUserInfo(result.data.fetchSocialUserLoggedIn)
-              )
+              .then((result) => {
+                setUserInfo(result.data.fetchSocialUserLoggedIn);
+                Swal.fire({
+                  title: "반갑습니다",
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 1000,
+                });
+              })
               .catch((error) =>
                 Swal.fire({
                   title: error,
                   icon: "error",
-                  confirmButtonText: "확인",
-                  confirmButtonColor: "#4a00e0e7",
+                  showConfirmButton: false,
+                  timer: 1000,
                 })
               );
           })
@@ -167,8 +173,8 @@ export default function LoginPage() {
             Swal.fire({
               title: error,
               icon: "error",
-              confirmButtonText: "확인",
-              confirmButtonColor: "#4a00e0e7",
+              showConfirmButton: false,
+              timer: 1000,
             })
           );
         router.push(`/home`);
@@ -214,15 +220,21 @@ export default function LoginPage() {
                       credentials: "include",
                     },
                   })
-                  .then((result) =>
-                    setUserInfo(result.data.fetchSocialUserLoggedIn)
-                  )
+                  .then((result) => {
+                    setUserInfo(result.data.fetchSocialUserLoggedIn);
+                    Swal.fire({
+                      title: "반갑습니다",
+                      icon: "success",
+                      showConfirmButton: false,
+                      timer: 1000,
+                    });
+                  })
                   .catch((error) =>
                     Swal.fire({
                       title: error,
                       icon: "error",
-                      confirmButtonText: "확인",
-                      confirmButtonColor: "#4a00e0e7",
+                      showConfirmButton: false,
+                      timer: 1000,
                     })
                   );
               })
@@ -230,8 +242,8 @@ export default function LoginPage() {
                 Swal.fire({
                   title: error,
                   icon: "error",
-                  confirmButtonText: "확인",
-                  confirmButtonColor: "#4a00e0e7",
+                  showConfirmButton: false,
+                  timer: 1000,
                 })
               );
 
