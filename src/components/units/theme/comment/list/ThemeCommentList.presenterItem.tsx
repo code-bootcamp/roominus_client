@@ -13,10 +13,13 @@ import {
 } from "./ThemeCommentList.queries";
 import { useRouter } from "next/router";
 import { IThemeCommentListUIItemProps } from "./ThemeCommentList.types";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 
 export default function ThemeCommentListUIItem(
   props: IThemeCommentListUIItemProps
 ) {
+  const [userInfo] = useRecoilState(userInfoState);
   const router = useRouter();
   const [deleteThemeReview] = useMutation(DELETE_THEME_REVIEW);
 
@@ -82,22 +85,24 @@ export default function ThemeCommentListUIItem(
       <S.CommentRightBox>
         <S.NameToolBox>
           <S.WriterName>{props.el?.user.name}</S.WriterName>
-          <S.ToolBox>
-            <FontAwesomeIcon
-              icon={faPen}
-              onClick={onClickUpdate}
-              style={{
-                fontSize: "1.1em",
-                margin: "4px",
-                cursor: "pointer",
-              }}
-            />
-            <FontAwesomeIcon
-              icon={faXmark}
-              onClick={onClickOpenDeleteModal}
-              style={{ fontSize: "1.5em", margin: "4px", cursor: "pointer" }}
-            />
-          </S.ToolBox>
+          {userInfo.id === props.el?.user.id && (
+            <S.ToolBox>
+              <FontAwesomeIcon
+                icon={faPen}
+                onClick={onClickUpdate}
+                style={{
+                  fontSize: "1.1em",
+                  margin: "4px",
+                  cursor: "pointer",
+                }}
+              />
+              <FontAwesomeIcon
+                icon={faXmark}
+                onClick={onClickOpenDeleteModal}
+                style={{ fontSize: "1.5em", margin: "4px", cursor: "pointer" }}
+              />
+            </S.ToolBox>
+          )}
         </S.NameToolBox>
 
         <S.CreatedAt>{getDateBefore(props.el?.createdAt)}</S.CreatedAt>

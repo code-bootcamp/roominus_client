@@ -7,6 +7,7 @@ export interface IThemeDetailProps {
   isToggled?: boolean;
   onClickToggled?: () => void;
   onClickLove?: () => void;
+  onClickMoveToList?: () => void;
 }
 
 export interface IFetchThemeData {

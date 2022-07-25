@@ -190,15 +190,15 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 5px;
   @media ${breakPoints.tablet} {
     justify-content: left;
   }
 `;
 
 export const ReservationButton = styled.button`
-  width: 45vw;
-  min-width: 20em;
-  height: 56px;
+  width: 100%;
+  height: 50px;
   border-radius: 8px;
   font-weight: 700;
   border: transparent;
@@ -210,7 +210,18 @@ export const ReservationButton = styled.button`
     background: linear-gradient(90deg, #7c21e1 0%, #4a00e0 100%);
   }
   @media ${breakPoints.mobile} {
-    min-width: none;
-    width: 100px;
+  }
+`;
+
+export const MoveToListButton = styled.button`
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: transparent;
+  background-color: #26282c;
+  color: white;
+  :hover {
+    cursor: pointer;
   }
 `;

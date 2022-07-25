@@ -13,6 +13,7 @@ export interface IThemeCommentListUIItemProps {
     content: string;
     user: {
       name?: string;
+      id?: string;
     };
   };
 }
