@@ -70,9 +70,9 @@ export const Title = styled.div`
   font-family: "StMarie";
   font-size: 3em;
   @media ${breakPoints.mobile} {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
   }
 `;
 
@@ -101,15 +101,16 @@ export const RuminousTitle = styled.div`
     }
   }
   @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
 export const RuminousTitleUs = styled(RuminousTitle)`
   text-shadow: 0 0 10px #fffbcb, 0 0 20px #fffbcb, 0 0 30px #fffbcb;
+
   @media ${breakPoints.mobile} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   @keyframes animation {
     0% {
@@ -133,7 +134,7 @@ export const RuminousTitleUs = styled(RuminousTitle)`
 
 export const TitleLogo = styled.img`
   @media ${breakPoints.mobile} {
-    width: 50%;
+    width: 60%;
   }
 `;
 
@@ -284,8 +285,8 @@ export const DoorWrapper = styled.div`
 
 export const DoorBox = styled.div`
   opacity: 80%;
-  width: 30vw;
-  height: 40vw;
+  width: 40vw;
+  height: 60vw;
 
   text-align: center;
   position: relative;
@@ -299,7 +300,6 @@ export const Door = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: black;
   animation: neon2 2s ease-out alternate infinite forwards;
   @keyframes neon2 {
     0%,
@@ -318,8 +318,9 @@ export const NeonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 `;
 
 export const NeonBottom = styled(Neon)`
-  text-align: right;
+  justify-content: center;
 `;
