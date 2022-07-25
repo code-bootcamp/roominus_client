@@ -12,38 +12,38 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             <S.DetailBox>
               <S.DetailTitle>장소</S.DetailTitle>
               <S.LocationButtonTotal
-                id="total"
+                id="1"
                 onClick={props.onClickTotal}
                 total={props.total}
               >
                 전체
               </S.LocationButtonTotal>
               <S.LocationButtonGangnam
-                id="gangnam"
+                id="강남"
                 onClick={props.onClickGangnam}
                 gangnam={props.gangnam}
               >
                 강남
               </S.LocationButtonGangnam>
               <S.LocationButtonHongdae
-                id="hongdae"
+                id="홍대"
                 onClick={props.onClickHongdae}
                 hongdae={props.hongdae}
               >
                 홍대
               </S.LocationButtonHongdae>
               <S.LocationButtonKondae
-                id="kondae"
+                id="건대"
                 onClick={props.onClickKondae}
                 kondae={props.kondae}
               >
                 건대
               </S.LocationButtonKondae>
-              <S.LocationSelect>
+              <S.LocationSelect onChange={props.onChangeLocation}>
                 <S.LocationOption>전체</S.LocationOption>
-                <S.LocationOption>강남</S.LocationOption>
-                <S.LocationOption>홍대</S.LocationOption>
-                <S.LocationOption>건대</S.LocationOption>
+                <S.LocationOption value="강남">강남</S.LocationOption>
+                <S.LocationOption value="홍대">홍대</S.LocationOption>
+                <S.LocationOption value="건대">건대</S.LocationOption>
               </S.LocationSelect>
             </S.DetailBox>
             <S.DetailBox>

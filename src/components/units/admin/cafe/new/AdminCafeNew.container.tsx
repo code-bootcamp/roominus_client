@@ -64,7 +64,8 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
             address: data.address,
             address_detail: data.address_detail,
             mainImg: imgurl,
-            users: userInfo.id,
+            users: userInfo.name,
+            coordinate: 2,
           },
         },
       });
@@ -86,6 +87,7 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
     if (data.address_detail)
       updateCafeInput.address_detail = data.address_detail;
     if (imgurl) updateCafeInput.mainImg = imgurl;
+    // if (userInfo.name) updateCafeInput.users = userInfo.name;
 
     try {
       const result = await updateCafe({
@@ -94,6 +96,7 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
           updateCafeInput,
         },
       });
+      console.log(result);
       Swal.fire({
         icon: "success",
         title: "수정이 완료되었습니다!",
