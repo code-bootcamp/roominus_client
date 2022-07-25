@@ -83,12 +83,12 @@ export default function ReservationSuccess() {
   const onClickOpenRefundModal = () => {
     Swal.fire({
       title: "예약을 취소하시겠습니까?",
-      icon: "warning",
+      icon: "question",
       showCancelButton: true,
-      confirmButtonColor: "#843dca",
-      cancelButtonColor: "#ff6262",
       confirmButtonText: "네",
       cancelButtonText: "아니요",
+      reverseButtons: true,
+      // backdrop: false,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickRefund();

@@ -20,7 +20,7 @@ export const Page = styled.button`
     props.isActive ? "#4A00E0e7" : "white"};
 
   @media ${breakPoints.mobile} {
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin: 0px 5px;
   }
 `;

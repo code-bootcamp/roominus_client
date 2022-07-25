@@ -56,12 +56,12 @@ export default function ThemeCommentListUIItem(
 
   const onClickOpenDeleteModal = () => {
     Swal.fire({
-      title: "삭제하시겠습니까?",
+      icon: "question",
+      title: "정말 삭제하시겠습니까?",
       showCancelButton: true,
-      confirmButtonColor: "#843dca",
-      cancelButtonColor: "#ff6262",
-      confirmButtonText: "네!",
-      cancelButtonText: "고민 좀 하고요.",
+      confirmButtonText: "네",
+      cancelButtonText: "아니요",
+      reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDelete();

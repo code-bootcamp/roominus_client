@@ -41,6 +41,9 @@ export default function CommunityDetail() {
       icon: "question",
       title: "정말 삭제하시겠습니까?",
       showCancelButton: true,
+      confirmButtonText: "네",
+      cancelButtonText: "아니요",
+      reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDeleteModal();
