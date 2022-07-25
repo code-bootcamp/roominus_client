@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import * as S from "./LayoutHeader.styles";
 import { slide as Menu } from "react-burger-menu";
 import { IHeaderUIProps } from "../Layout.types";
+import { accessTokenState } from "../../../../commons/store";
+import { useRecoilState } from "recoil";
 
 const NAVIGATION_MENUS = [
   { name: "매장", page: "/cafe" },
@@ -65,7 +68,7 @@ const styles = {
 
 export default function LayoutHeaderUI(props: IHeaderUIProps) {
   const [openMypageOp, setOpenMypageOp] = useState(false);
-
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const onClickOpenMypageOp = () => {
     setOpenMypageOp(true);
   };
@@ -101,7 +104,13 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
           </S.MenuWrapper>
         </S.Wrapper>
         <S.Hamburger>
-          <Menu width={"70%"} right styles={styles} disableOverlayClick>
+          <Menu
+            width={"70%"}
+            isOpen={props.isToggled}
+            right
+            styles={styles}
+            disableOverlayClick
+          >
             {/* <Link href="/home">메인</Link>
             <Link href="/cafe">매장</Link>
             <Link href="/theme">테마</Link>
@@ -211,9 +220,22 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
                 </S.MyMenues>
               </S.MyMenubox>
             )}
-            <a id="contact" className="menu-item" href="/mypage">
-              로그아웃
-            </a>
+
+            {!accessToken && (
+              <a id="contact" className="menu-item" href="/login">
+                로그인
+              </a>
+            )}
+            {accessToken && (
+              <a
+                id="contact"
+                className="menu-item"
+                href="/home"
+                onClick={props.onClickLogout}
+              >
+                로그아웃
+              </a>
+            )}
           </Menu>
         </S.Hamburger>
       </S.Container>
