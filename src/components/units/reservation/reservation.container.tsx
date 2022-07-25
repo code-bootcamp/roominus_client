@@ -17,9 +17,9 @@ export default function Reservation() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
 
   const [userInfo] = useRecoilState(userInfoState);
-  const [pickTheme] = useRecoilState(userPickThemeState);
+  const [pickTheme, setPickTheme] = useRecoilState(userPickThemeState);
 
-  const [themeId, setThemeId] = useState("");
+  const [themeId, setThemeId] = useState("" || pickTheme);
   const [cafeId, setCafeId] = useState("");
   const [reservationDate, setReservationDate] = useState("");
   const [time, setTime] = useState("");
@@ -53,10 +53,12 @@ export default function Reservation() {
 
   const onClickReset = () => {
     setThemeId("");
+    setPickTheme("");
   };
 
   const onChangeTheme = (event: ChangeEvent<HTMLInputElement>) => {
     setThemeId(event.target.value);
+    setPickTheme("");
   };
 
   const onChangeCafe = (event: ChangeEvent<HTMLInputElement>) => {
@@ -128,7 +130,6 @@ export default function Reservation() {
     setChecked((prev) => !prev);
   };
 
-  console.log(pickTheme);
   return (
     <>
       <ReservationUI
