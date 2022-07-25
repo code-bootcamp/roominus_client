@@ -104,13 +104,7 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
           </S.MenuWrapper>
         </S.Wrapper>
         <S.Hamburger>
-          <Menu
-            width={"70%"}
-            isOpen={props.isToggled}
-            right
-            styles={styles}
-            disableOverlayClick
-          >
+          <Menu width={"70%"} right styles={styles} disableOverlayClick>
             {/* <Link href="/home">메인</Link>
             <Link href="/cafe">매장</Link>
             <Link href="/theme">테마</Link>

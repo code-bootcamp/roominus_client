@@ -39,8 +39,8 @@ export default function useAuth() {
           Swal.fire({
             title: "로그인을 먼저 해주세요.",
             icon: "warning",
-            confirmButtonText: "확인",
-            confirmButtonColor: "#4a00e0e7",
+            showConfirmButton: false,
+            timer: 1000,
           });
           router.push("/login");
         }
@@ -67,8 +67,8 @@ export default function useAuth() {
                 Swal.fire({
                   title: "로그인을 먼저 해주세요.",
                   icon: "warning",
-                  confirmButtonText: "확인",
-                  confirmButtonColor: "#4a00e0e7",
+                  showConfirmButton: false,
+                  timer: 1000,
                 });
                 router.push("/login");
               });
