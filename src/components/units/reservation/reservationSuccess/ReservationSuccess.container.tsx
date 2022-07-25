@@ -11,8 +11,8 @@ import {
   DELETE_RESERVATION,
   FETCH_RESERVATION,
 } from "./ReservationSuccess.query";
-import { getToday } from "../../../commons/getDate";
 import ShareButton from "../../../commons/buttons/sharebutton";
+import { getToday } from "../../../commons/getDate";
 
 const PrintBox = styled.div`
   display: flex;
@@ -39,34 +39,31 @@ const Printer = styled(PrinterOutlined)`
 
 export default function ReservationSuccess() {
   const router = useRouter();
-
   const { data } = useQuery(FETCH_RESERVATION, {
     variables: { reservationId: router.query.id },
   });
-
   const [deleteReservation] = useMutation(DELETE_RESERVATION);
-  const [cancellable, setCancellable] = useState(true);
 
   const componentRef = useRef(null);
   const link = `roominus.site${router.asPath}`;
 
+  // 방문일 (당일)부터 취소하기 버튼이 안보이게
+  const [cancellable, setCancellable] = useState(true);
+
+  const today = String(new Date());
+  const timeValue = data?.fetchReservation?.reservation_date;
+  const now = getToday(new Date());
+  const betweenTime = Math.floor(
+    (Date.parse(today) - Date.parse(timeValue)) / 1000 / 60
+  );
+
   useEffect(() => {
-    const today = String(new Date());
-    const timeValue = data?.fetchReservation?.reservation_date;
-    const now = getToday(new Date());
-    const betweenTime = Math.floor(
-      (Date.parse(today) - Date.parse(timeValue)) / 1000 / 60
-    );
-
-    console.log(betweenTime);
-
-    if (data?.fetchReservation.reservation_date === now && betweenTime > 0) {
+    if (data?.fetchReservation.reservation_date === now || betweenTime > 0) {
       setCancellable(false);
     }
-  }, []);
+  });
 
-  console.log(data?.fetchReservation);
-
+  // 취소하기
   const onClickRefund = async () => {
     try {
       await deleteReservation({
@@ -113,6 +110,7 @@ export default function ReservationSuccess() {
     });
   };
 
+  // 환불 완료일 경우 페이지 접속 불가
   if (data?.fetchReservation.status === "환불완료") {
     onClickOpenCancelModal();
   }

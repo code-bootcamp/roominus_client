@@ -25,16 +25,16 @@ const TopBtnBox = styled.div`
   cursor: pointer;
 
   @media ${breakPoints.tablet} {
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
     right: 0;
     bottom: 0;
   }
   @media ${breakPoints.mobile} {
     right: 0em;
     bottom: 0.3em;
-    width: 1.3em;
-    height: 1.3em;
+    width: 2em;
+    height: 2em;
   }
 `;
 
