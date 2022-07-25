@@ -70,6 +70,9 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
             </S.LimitBox>
           </S.ThemeInfo>
           <S.ButtonWrapper>
+            <S.MoveToListButton onClick={props.onClickMoveToList}>
+              목록으로
+            </S.MoveToListButton>
             <S.ReservationButton onClick={props.onClickReservation}>
               예약하기
             </S.ReservationButton>

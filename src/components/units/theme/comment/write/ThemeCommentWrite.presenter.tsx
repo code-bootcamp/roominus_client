@@ -27,7 +27,7 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
 
   const [isEscape, setIsEscape] = useState(false);
   const [rank, setRank] = useState<string>("보통");
-  const [star, setStar] = useState<number>(0);
+  const [star, setStar] = useState<number>(3);
   const customIcons: Record<number, ReactNode> = {
     1: <FrownOutlined />,
     2: <FrownOutlined />,
@@ -77,8 +77,9 @@ export default function ThemeCommentWriteUI(props: IThemeCommentWriteUIProps) {
       props.setValue("star", props.el?.star);
       setStar(props.el?.star);
     }
-
-    // props.setValue("clear", Boolean(props.el?.clear || isEscape));
+    props.setValue("rank", props.el?.rank || rank);
+    props.setValue("clear", Boolean(props.el?.clear || isEscape));
+    props.setValue("star", props.el?.star || star);
     // props.setValue("rank", props.el?.rank || rank);
     // setIsEscape(Boolean(props.el?.clear));
     // setRank(props.el?.rank);

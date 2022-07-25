@@ -35,8 +35,11 @@ export default function ThemeDetail() {
 
   const onClickReservation = () => {
     setPickTheme(data.fetchTheme.id);
-    console.log(pickTheme);
     router.push("/reservation");
+  };
+
+  const onClickMoveToList = () => {
+    router.push("/theme");
   };
 
   useEffect(() => {
@@ -53,6 +56,7 @@ export default function ThemeDetail() {
       data={data}
       onClickLove={onClickLove}
       onClickReservation={onClickReservation}
+      onClickMoveToList={onClickMoveToList}
     />
   );
 }

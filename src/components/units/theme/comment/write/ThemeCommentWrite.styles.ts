@@ -8,7 +8,7 @@ import { IStylesProps } from "./ThemeCommentWriter.types";
 
 export const Wrapper = styled.section`
   position: relative;
-  background-color: #f2ebf5;
+  background-color: #e5d3eb;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -25,9 +25,9 @@ export const StarBox = styled.div`
 `;
 
 export const StarScore = styled(Rate)`
-  .ant-rate-star-second {
+  /* .ant-rate-star-second {
     color: #c6c8de;
-  }
+  } */
 `;
 
 export const Star = styled(FontAwesomeIcon)`
@@ -144,7 +144,7 @@ export const RankButton = styled.input`
 export const CommentBox = styled.div`
   padding: 1em;
   gap: 0.9em;
-  max-width: 850px;
+  max-width: 860px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -152,11 +152,11 @@ export const CommentBox = styled.div`
   align-items: center;
 `;
 export const CommentWriter = styled.h3`
-  font-size: 1.1em;
+  font-size: 1em;
   margin-right: 5px;
 `;
 export const CommentInput = styled.input`
-  max-width: 636px;
+  max-width: 630px;
   width: 100%;
   height: 56px;
   padding: 10px;
