@@ -7,9 +7,8 @@ export default function LayoutFooterUI() {
   return (
     <S.Container>
       <S.Wrapper>
-        <TopButton />
         <KakaoChat />
-
+        <TopButton />
         <S.MenuInfoWrapper>
           <S.MenuWrapper>
             <Link href={"/customer/agreement/service"}>

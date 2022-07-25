@@ -97,7 +97,6 @@ export const MenuItem = styled.li`
   color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#26282C")};
 
   font-size: 1.5em;
-
   text-decoration: none;
   display: inline-block;
   position: relative;

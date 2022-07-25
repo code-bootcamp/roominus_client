@@ -19,9 +19,8 @@ const KaKaoChat = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    bottom: 40px;
-    /* left: -100px; */
-    right: -5px;
+    right: 2.5em;
+    bottom: 0;
   }
 `;
 

@@ -192,9 +192,10 @@ export const ThemeTitle = styled.div`
 `;
 
 export const ThemeInfo = styled.div`
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: white;
   text-align: left;
+  font-weight: 700;
 `;
 
 export const GenreTag = styled.div`
@@ -202,12 +203,13 @@ export const GenreTag = styled.div`
   height: 30px;
   border-radius: 8px;
   background-color: #220d4daf;
-  font-size: 1em;
+  font-size: 1.1em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   color: white;
+  font-weight: 600;
 `;
 
 export const Star = styled(Rate)`
@@ -222,7 +224,15 @@ export const Rank = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: start;
+  text-align: center;
   align-items: center;
+`;
+
+export const Ranktext = styled.span`
+  text-align: center;
+  margin-right: 7px;
+  margin-top: 5px;
+  font-weight: 700;
 `;
 
 export const ButtonBox = styled.div`
@@ -234,12 +244,14 @@ export const ButtonBox = styled.div`
 export const ShowMoreButton = styled.button`
   width: 344px;
   height: 56px;
-  border-radius: 8px;
-  font-size: 18px;
+  border-radius: 10px;
+  font-size: 1.3em;
   color: white;
   border: transparent;
   background-color: #26282c;
   cursor: pointer;
+  margin: 2em 0em 2em 0em;
+  font-weight: 700;
 `;
 
 export const Menu = styled(MenuOutlined)`

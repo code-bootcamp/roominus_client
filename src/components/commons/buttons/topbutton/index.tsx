@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { CaretUpOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
-// import KakaoChat from "../../../units/mypage/chat";
 
 const TopBtnBox = styled.div`
   z-index: 999;
@@ -32,10 +31,10 @@ const TopBtnBox = styled.div`
     bottom: 0;
   }
   @media ${breakPoints.mobile} {
+    right: 0em;
+    bottom: 0.3em;
     width: 1.3em;
     height: 1.3em;
-    right: 0.5em;
-    bottom: 0.1em;
   }
 `;
 

@@ -91,7 +91,6 @@ export const Etc = styled.ul`
 `;
 
 export const ItemBackground = styled.li`
-  /* width: 28em; */
   width: 100%;
   height: 320px;
   background-color: #ffffff;
@@ -106,7 +105,6 @@ export const ItemBackground = styled.li`
     /* cursor: pointer; */
   }
   transition: all 250ms ease-in-out;
-  /* justify-content: space-evenly; */
 
   @media ${breakPoints.mobile} {
     height: 380px;
@@ -131,7 +129,6 @@ export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: green; */
 `;
 
 export const NameDateBox = styled.div`
@@ -144,7 +141,6 @@ export const DatePickBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: yellow; */
 `;
 
 export const WriteName = styled.h3`
@@ -152,18 +148,7 @@ export const WriteName = styled.h3`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* color: #a3a8b7; */
-  /* background-color: green; */
 `;
-
-// export const Date = styled.div`
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   color: #a3a8b7;
-//   background-color: green;
-// `;
 
 export const BoardName = styled.h3`
   font-size: 1.3em;
@@ -171,7 +156,6 @@ export const BoardName = styled.h3`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* background-color: gray; */
 `;
 
 export const PickBox = styled.div`
@@ -180,7 +164,6 @@ export const PickBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* background-color: green; */
 `;
 
 export const PickCount = styled.p`
@@ -190,7 +173,6 @@ export const PickCount = styled.p`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: orange; */
 `;
 
 export const ButtonBox = styled.div`
@@ -201,14 +183,12 @@ export const ButtonBox = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 70%;
-    /* background-color: red; */
   }
 `;
 
 export const PaginationsWrapper = styled.div`
   display: flex;
   justify-content: center;
-  /* background-color: orange; */
 
   @media ${breakPoints.mobile} {
     margin-top: 2em;
@@ -216,11 +196,7 @@ export const PaginationsWrapper = styled.div`
 `;
 
 export const RedHeart = styled(FontAwesomeIcon)`
-  /* padding: 2px; */
   font-size: 17px;
   color: #e35d5b;
   margin-right: 0.3em;
-  /* background-color: pink; */
 `;
-
-// -------------------------- 0711 hani

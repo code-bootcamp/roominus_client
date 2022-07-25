@@ -369,7 +369,6 @@ export const Etc = styled.ul`
 `;
 
 export const MoreButtonBox = styled.div`
-  height: 8em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -377,17 +376,20 @@ export const MoreButtonBox = styled.div`
 `;
 
 export const MoreButton = styled.button`
-  width: 25em;
-  height: 4em;
+  width: 344px;
+  height: 56px;
   border-radius: 10px;
   color: white;
   background-color: #26282c;
   font-weight: 700;
   cursor: pointer;
+  margin: 2em 0em 2em 0em;
+  font-size: 1.3em;
 
   @media ${breakPoints.mobile} {
     width: 75%;
-    height: 6em;
+    height: 3.5em;
     margin-bottom: 2em;
+    font-size: 2em;
   }
 `;

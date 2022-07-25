@@ -65,6 +65,8 @@ export default function ReservationSuccess() {
     }
   }, []);
 
+  console.log(data?.fetchReservation);
+
   const onClickRefund = async () => {
     try {
       await deleteReservation({

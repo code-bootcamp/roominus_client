@@ -120,7 +120,7 @@ export const ThemeContents = styled.h5`
   border-top: 1px solid #c8c8c8;
   border-bottom: 1px solid #c8c8c8;
   font-size: 1.3em;
-  min-height: 200px;
+  min-height: 260px;
 
   @media ${breakPoints.tablet} {
     letter-spacing: 0.6px;
