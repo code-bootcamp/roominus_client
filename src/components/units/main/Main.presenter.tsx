@@ -23,21 +23,19 @@ export default function MainUI() {
   };
   return (
     <S.Container>
-      <S.MyParallax pages={4}>
+      <S.MyParallax pages={3}>
         <S.Layer1 speed={1}>
-          <S.Title>
-            <S.RuminousTitleUs>
-              <S.TitleLogo src="/img/main/roomin.png" />
-              <S.TitleLogo2 src="/img/main/us.png" />
-            </S.RuminousTitleUs>
-          </S.Title>
+          <S.RuminousTitle>
+            <S.TitleLogo src="/img/main/roominus.png" />
+          </S.RuminousTitle>
+
           <S.ScrollDownBox>
             <S.ScrollDownLine />
             <S.ScrollDown>Scroll</S.ScrollDown>
           </S.ScrollDownBox>
           <S.PressEnter>Skip : Enter</S.PressEnter>
         </S.Layer1>
-        <S.Layer2 offset={1} speed={0}>
+        <S.Layer2 offset={1} speed={0.3} factor={0.5}>
           <S.Lune src="/img/main/lune.png" />
           {/* <S.FlashText>Room in us</S.FlashText> */}
 
@@ -54,10 +52,10 @@ export default function MainUI() {
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
-            style={{ width: "50%", marginLeft: "20%" }}
+            style={{ width: "50%", marginLeft: "20%", opacity: "60%" }}
           />
         </S.Layer2>
-        <ParallaxLayer offset={2} speed={0.5} style={{}}>
+        <ParallaxLayer offset={2} speed={0} style={{}} factor={0.5}>
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
@@ -71,11 +69,12 @@ export default function MainUI() {
           />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={3}
+          offset={2}
           speed={0.6}
           style={{
             opacity: 1,
           }}
+          factor={0.5}
         >
           <S.DoorWrapper>
             <S.RuminousTitle>
@@ -87,8 +86,8 @@ export default function MainUI() {
                 }}
               /> */}
             </S.RuminousTitle>
+
             <S.DoorBox onClick={onClickDoor}>
-              들어가기
               <S.Door></S.Door>
             </S.DoorBox>
           </S.DoorWrapper>
