@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 
 export const Container = styled.main`
   display: flex;
@@ -123,4 +124,19 @@ export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 2em;
+`;
+
+// history
+
+export const TitleBox = styled.div`
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+`;
+
+export const Calendar = styled(CalendarMonthOutlinedIcon)`
+  :hover {
+    cursor: pointer;
+    color: darkgray;
+  }
 `;

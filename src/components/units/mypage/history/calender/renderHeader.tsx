@@ -1,9 +1,13 @@
 import { format } from "date-fns";
 import * as S from "./calender.styles";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-export default function RenderHeader(props) {
+interface IRenderHeaderProps {
+  currentMonth: any;
+  prevMonth: any;
+  nextMonth: any;
+}
+
+export default function RenderHeader(props: IRenderHeaderProps) {
   return (
     <S.CalenderHeader>
       <S.StartMonth>
@@ -13,8 +17,8 @@ export default function RenderHeader(props) {
         </span>
       </S.StartMonth>
       <S.EndMonth>
-        <ArrowBackIosIcon onClick={props.prevMonth} />
-        <ArrowForwardIosIcon onClick={props.nextMonth} />
+        <S.ArrowBack onClick={props.prevMonth} />
+        <S.ArrowForward onClick={props.nextMonth} />
       </S.EndMonth>
     </S.CalenderHeader>
   );

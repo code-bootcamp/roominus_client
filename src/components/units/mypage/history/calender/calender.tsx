@@ -1,5 +1,10 @@
+import { useQuery } from "@apollo/client";
 import { addMonths, subMonths } from "date-fns";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import WebBlackButton from "../../../../commons/buttons/buttonDesktop/WebBlackButton";
+import { FETCH_RESERVATIONS_USER } from "../History.queries";
 import * as S from "./calender.styles";
 import RenderDays from "./rederDays";
 import RenderCells from "./renderCells";
@@ -8,8 +13,8 @@ import RenderHeader from "./renderHeader";
 export default function Calendar() {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   // 월
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  // 일
+  const router = useRouter();
+  const { data } = useQuery(FETCH_RESERVATIONS_USER);
 
   // 이전 달
   const prevMonth = () => {
@@ -21,11 +26,10 @@ export default function Calendar() {
     setCurrentMonth(addMonths(currentMonth, 1));
   };
 
-  // 날짜 선택
-  const onDateClick = (day) => {
-    setSelectedDate(day);
-    console.log(selectedDate);
+  const onClickDetail = (event: { target: { id: any } }) => {
+    router.push(`/reservation/${event?.target.id}`);
   };
+
   return (
     <S.CalenderWrapper>
       <RenderHeader
@@ -35,10 +39,16 @@ export default function Calendar() {
       />
       <RenderDays />
       <RenderCells
+        data={data}
         currentMonth={currentMonth}
-        selectedDate={selectedDate}
-        onDateClick={onDateClick}
+        onClickDetail={onClickDetail}
       />
+
+      <S.ButtonBox>
+        <Link href={"/mypage"}>
+          <WebBlackButton type="button" title="돌아가기" />
+        </Link>
+      </S.ButtonBox>
     </S.CalenderWrapper>
   );
 }

@@ -12,6 +12,7 @@ export const FETCH_RESERVATIONS_USER = gql`
 
         theme {
           title
+          mainImg
         }
       }
     }
