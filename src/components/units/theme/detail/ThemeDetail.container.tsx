@@ -4,13 +4,13 @@ import { CREATE_LIKE_THEME, FETCH_THEME } from "./ThemeDetail.queries";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { userInfoState, userPickThemeState } from "../../../../commons/store";
+import { userInfoState } from "../../../../commons/store";
 import { IFetchThemeData } from "./ThemeDetail.types";
 import _ from "lodash";
 
 export default function ThemeDetail() {
   const [userInfo] = useRecoilState(userInfoState);
-  const [setUserPickThemeState] = useRecoilState(userPickThemeState);
+  // const [setUserPickThemeState] = useRecoilState(userPickThemeState);
 
   const router = useRouter();
   const { data } = useQuery(FETCH_THEME, {
@@ -34,7 +34,7 @@ export default function ThemeDetail() {
   };
 
   const onClickReservation = () => {
-    setUserPickThemeState(router.query.id);
+    // setUserPickThemeState(router.query.id);
     router.push("/reservation");
   };
 

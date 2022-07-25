@@ -51,7 +51,7 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
             <S.RankTimeBox>
               장르 : {props.data?.fetchTheme.genre?.name}
               <S.ThemeRank>
-                난이도 :{/* <img src="/img/theme/rankstar.webp" /> */}
+                난이도 :
                 <Rate disabled defaultValue={props.data?.fetchTheme.rank} />
               </S.ThemeRank>
             </S.RankTimeBox>

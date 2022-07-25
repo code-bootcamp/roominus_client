@@ -80,8 +80,8 @@ export const FooterBox = styled.div`
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 3em;
-  gap: 1em;
+  margin: 3em 0em 3em 0em;
+  gap: 2em;
 `;
 
 export const Total = styled.div`

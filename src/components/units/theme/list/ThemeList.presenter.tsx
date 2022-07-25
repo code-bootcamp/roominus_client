@@ -84,7 +84,7 @@ export default function ThemeListUI(props: IThemeListProps) {
                   <S.Card>
                     <S.Theme src={el.mainImg}>
                       <S.Rank>
-                        난이도
+                        <S.Ranktext>난이도</S.Ranktext>
                         <S.Star disabled defaultValue={el.rank} />
                       </S.Rank>
                       <S.GenreTag>#{el?.genre.name}</S.GenreTag>

@@ -14,7 +14,7 @@ export default function ThemeCardComponent(props: any) {
         <S.Card>
           <S.Theme src={props.el?.mainImg}>
             <S.Rank>
-              난이도
+              <S.Ranktext>난이도</S.Ranktext>
               <S.Star disabled defaultValue={props.el?.rank} />
             </S.Rank>
             <S.GenreTag>#{props.el?.genre.name}</S.GenreTag>

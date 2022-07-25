@@ -72,6 +72,7 @@ export default function CommunityListUI(props: ICommunityListProps) {
           <WebPurpleButton title="작성하기" onClick={props.onClickWrite} />
         </S.ButtonBox>
       )}
+
       {windowSize && <TopButton />}
 
       <S.PaginationsWrapper>
