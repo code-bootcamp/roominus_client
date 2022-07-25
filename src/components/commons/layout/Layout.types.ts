@@ -6,6 +6,8 @@ export interface IHeaderUIProps {
   // onClickMenu: MouseEventHandler<HTMLLIElement>;
   onClickToggled: () => void;
   onClickMenu: any;
+
+  onClickLogout: () => Promise<void>;
 }
 
 export interface INavigationUIProps {

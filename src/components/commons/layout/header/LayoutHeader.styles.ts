@@ -124,3 +124,9 @@ export const MyMenues = styled.a`
     color: #d1d1d1;
   }
 `;
+export const LogInandOutBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+`;

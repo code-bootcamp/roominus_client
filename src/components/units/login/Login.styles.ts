@@ -30,6 +30,10 @@ export const Form = styled.form`
   align-items: center;
   margin-bottom: 4em;
   gap: 1em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 2em;
+  }
 `;
 export const Input = styled.input`
   width: 100%;
@@ -101,6 +105,10 @@ export const SignUpBox = styled.div`
   align-items: center;
   margin-bottom: 2em;
   gap: 1em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 2em;
+  }
 `;
 export const SignUpdetailBox = styled.div`
   width: 100%;
@@ -144,8 +152,10 @@ export const SocialLoginBtns = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 2em;
+
   @media ${breakPoints.mobile} {
-    width: 40%;
+    width: 100%;
+    font-size: 2em;
   }
 `;
 
