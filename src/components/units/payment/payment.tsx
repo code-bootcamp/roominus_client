@@ -49,7 +49,7 @@ export default function Payment(props: IPaymentProps) {
 
   const requestPay = () => {
     const IMP = window.IMP; // window는 생략 가능
-    IMP.init("imp44516396");
+    IMP.init(process.env.NEXT_PUBLIC_IMP_API_KEY);
 
     IMP.request_pay(
       {
@@ -116,7 +116,7 @@ export default function Payment(props: IPaymentProps) {
         {/* <!-- iamport.payment.js --> */}
         <script
           type="text/javascript"
-          src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
+          src={process.env.NEXT_PUBLIC_IAMPORT_URL}
         ></script>
       </Head>
 
