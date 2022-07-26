@@ -104,7 +104,7 @@ export const ThemeTitleBox = styled.div`
 `;
 
 export const ThemeCafe = styled.span`
-  color: darkgray;
+  color: #a3a8b7;
   cursor: pointer;
   position: relative;
   background-color: transparent;
@@ -143,7 +143,7 @@ export const LimitBox = styled.div`
 `;
 
 export const ContentBox = styled.div`
-  border: 1px solid gray;
+  border: 1px solid #a3a8b7;
   width: 10em;
   height: 7em;
 

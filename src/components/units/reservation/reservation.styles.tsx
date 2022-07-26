@@ -50,7 +50,7 @@ export const BackBox = styled.div`
   font-weight: 600;
 
   :hover {
-    color: gray;
+    color: #a3a8b7;
   }
 
   @media ${breakPoints.mobile} {
@@ -99,7 +99,7 @@ export const Total = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  border-top: 1px solid darkgray;
+  border-top: 1px solid #a3a8b7;
   padding-top: 1em;
   padding-bottom: 1em;
   font-weight: 700;
@@ -127,7 +127,7 @@ export const InformationUse = styled.div`
   padding-top: 1em;
   width: 100%;
 
-  border: 1px solid darkgray;
+  border: 1px solid #a3a8b7;
   padding-left: 1em;
 `;
 
@@ -143,7 +143,7 @@ export const Point = styled.div`
   padding-left: 1.2em;
   font-size: 0.85em;
   padding-bottom: 0.9em;
-  color: gray;
+  color: #a3a8b7;
 
   & span {
     font-size: 1em;

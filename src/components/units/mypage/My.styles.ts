@@ -60,7 +60,7 @@ export const Row = styled.li`
   flex-direction: row;
   height: 52px;
   line-height: 52px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #a3a8b7;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -137,6 +137,6 @@ export const TitleBox = styled.div`
 export const Calendar = styled(CalendarMonthOutlinedIcon)`
   :hover {
     cursor: pointer;
-    color: darkgray;
+    color: #b6a2ea;
   }
 `;

@@ -10,7 +10,7 @@ import { IIsActiveProps } from "../Layout.types";
 export const Container = styled.main`
   width: 20%;
   min-height: 100%;
-  border-right: 1px solid darkgray;
+  border-right: 1px solid #a3a8b7;
 
   @media ${breakPoints.tablet} {
     display: none;
