@@ -2,13 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  generateBuildId: () => "roominus",
+  // generateBuildId: () => "roominus",
   exportPathMap: () => ({
     "/": { page: "/" },
     "/cafe": { page: "/cafe" },
-    "/community": { page: "/community" },
     "/reservation": { page: "/reservation" },
     "/theme": { page: "/theme" },
+    "/community": { page: "/community" },
+    "/mypage": { page: "/mypage" },
     "/404": { page: "/404" },
   }),
 

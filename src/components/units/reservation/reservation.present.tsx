@@ -193,7 +193,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                   style={{ paddingBottom: "0.2em" }}
                   variant="outlined"
                   defaultValue={props.max}
-                  onWheel={(e) => e.target.blur()}
+                  onWheel={(e) => (e.target as HTMLInputElement).blur()}
                 />
                 <S.Point>
                   현재 적립금 <span>{props.max}원</span> 사용 가능합니다.

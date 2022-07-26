@@ -26,7 +26,7 @@ const Box = styled.div`
 
   & span {
     display: block;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-align: center;
     /* height: 10vh; */
     line-height: 5;

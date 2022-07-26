@@ -47,8 +47,8 @@ export const UserNameBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 3em;
+  margin-bottom: 2em;
 
   width: 8em;
   height: 8em;

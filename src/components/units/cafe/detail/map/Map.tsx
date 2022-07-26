@@ -31,6 +31,7 @@ interface IKakaoMapProps {
 export default function KakaoMap(props: IKakaoMapProps) {
   //지도
   if (props.data?.fetchCafe?.address_detail) {
+    console.log(props.data?.fetchCafe?.address_detail);
     useEffect(() => {
       const script = document.createElement("script");
       script.src =
