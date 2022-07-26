@@ -19,13 +19,6 @@ export default function ReservationUI(props: IReservationUIProps) {
   const date = new Date();
   const MaxDate = date.setMonth(date.getMonth() + 3);
 
-  if (props.totalPrice - props.usePoint < 0) {
-    Swal.fire({
-      icon: "error",
-      title: "적립금 오류",
-    });
-  }
-
   if (props.max < props.usePoint || props.usePoint < 0) {
     Swal.fire({
       icon: "error",
@@ -73,7 +66,7 @@ export default function ReservationUI(props: IReservationUIProps) {
             id="filled-theme"
             onChange={props.onChangeTheme}
             value={props.themeId ? props.themeId : ""}
-            helperText="예약이 가능한 테마만 선택이 가능합니다."
+            helperText="예약이 가능한 테마만 예약 과정이 진행됩니다."
             style={{ paddingBottom: "1.3em" }}
           >
             <MenuItem value={""} disabled>
@@ -200,6 +193,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                   style={{ paddingBottom: "0.2em" }}
                   variant="outlined"
                   defaultValue={props.max}
+                  onWheel={(e) => e.target.blur()}
                 />
                 <S.Point>
                   현재 적립금 <span>{props.max}원</span> 사용 가능합니다.

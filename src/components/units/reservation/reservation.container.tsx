@@ -25,7 +25,7 @@ export default function Reservation() {
   const [time, setTime] = useState("");
   const [selectTime, setSelectTime] = useState([]);
   const [peopleNumber, setPeopleNumber] = useState(0);
-  const [usePoint, setUsePoint] = useState(0);
+  const [usePoint, setUsePoint] = useState(userInfo.point);
   const [totalPrice, setTotalPrice] = useState(0);
   const [memo, setMemo] = useState("");
   const [checked, setChecked] = useState(false);
@@ -57,6 +57,10 @@ export default function Reservation() {
   const onChangeTheme = (event: ChangeEvent<HTMLInputElement>) => {
     setThemeId(event.target.value);
     setPickTheme("");
+    setPeopleNumber(0);
+    setReservationDate("");
+    setTime("");
+    setCafeId("");
   };
 
   // 매장 선택 -> cafeId 추출

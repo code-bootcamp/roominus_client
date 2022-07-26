@@ -17,6 +17,7 @@ export const Container = styled.div`
   @media ${breakPoints.mobile} {
     display: flex;
     justify-content: center;
+    height: 36em;
   }
 `;
 
@@ -32,6 +33,7 @@ export const Wrapper = styled.div`
     font-size: 1em;
     width: 100%;
     text-align: center;
+    height: 22em;
   }
 `;
 
@@ -50,7 +52,7 @@ export const MenuWrapper = styled.ul`
 export const Menu = styled.li`
   margin-right: 20px;
   border-right: 1px solid black;
-  padding-right: 20px;
+  padding-right: 15px;
   cursor: pointer;
 
   &:last-of-type {
@@ -58,7 +60,7 @@ export const Menu = styled.li`
   }
 
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.3em;
 
   @media ${breakPoints.tablet} {
     margin-right: 1em;
@@ -67,8 +69,8 @@ export const Menu = styled.li`
 
   @media ${breakPoints.mobile} {
     text-align: center;
-    font-size: 0.8em;
     text-align: center;
+    font-size: 0.8em;
 
     &:last-of-type {
       padding: 0;
@@ -144,6 +146,7 @@ export const InfoGithub = styled.div`
   align-items: flex-end;
   gap: 1em;
   height: 8em;
+  color: #a3a8b7;
 
   @media ${breakPoints.tablet} {
     height: 5em;
@@ -159,10 +162,9 @@ export const Github = styled(GithubOutlined)`
   :hover {
     transform: scale(1.1);
     cursor: pointer;
-    color: #282828;
+    color: #a08bf3;
   }
 
-  color: #a3a8b7;
   font-size: 2em;
   transition: all 300ms ease-in-out;
 

@@ -1,12 +1,12 @@
 import * as React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import FolderIcon from "@mui/icons-material/Folder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import BookOnlineOutlinedIcon from "@mui/icons-material/BookOnlineOutlined";
 import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import Link from "next/link";
 
 export default function LayoutBottomNavigation() {
   const [value, setValue] = React.useState("recents");
@@ -17,35 +17,47 @@ export default function LayoutBottomNavigation() {
 
   return (
     <BottomNavigation
-      sx={{ width: "100%", position: "absolute", bottom: 0 }}
+      sx={{
+        padding: 1,
+        width: "100%",
+        position: "fixed",
+        zIndex: 999,
+        bottom: 0,
+        "& .MuiBottomNavigationAction-root, .Mui-selected, svg": {
+          color: "#7457E8",
+        },
+      }}
       value={value}
       onChange={handleChange}
     >
-      <BottomNavigationAction
-        label="매장"
-        value="매장"
-        icon={<StorefrontOutlinedIcon />}
-      />
-      <BottomNavigationAction
-        label="테마"
-        value="테마"
-        icon={<FavoriteIcon />}
-      />
-      <BottomNavigationAction
-        label="예약"
-        value="예약"
-        icon={<BookOnlineOutlinedIcon />}
-      />
-      <BottomNavigationAction
-        label="커뮤니티"
-        value="커뮤니티"
-        icon={<ChatOutlinedIcon />}
-      />
-      <BottomNavigationAction
-        label="마이페이지"
-        value="마이페이지"
-        icon={<PermIdentityOutlinedIcon />}
-      />
+      <Link href="/cafe">
+        <BottomNavigationAction
+          value="매장"
+          icon={<StorefrontOutlinedIcon />}
+        />
+      </Link>
+
+      <Link href={"/theme"}>
+        <BottomNavigationAction value="테마" icon={<FavoriteIcon />} />
+      </Link>
+
+      <Link href={"/reservation"}>
+        <BottomNavigationAction
+          value="예약"
+          icon={<BookOnlineOutlinedIcon />}
+        />
+      </Link>
+
+      <Link href={"/community"}>
+        <BottomNavigationAction value="커뮤니티" icon={<ChatOutlinedIcon />} />
+      </Link>
+
+      <Link href="/mypage">
+        <BottomNavigationAction
+          value="마이페이지"
+          icon={<PermIdentityOutlinedIcon />}
+        />
+      </Link>
     </BottomNavigation>
   );
 }

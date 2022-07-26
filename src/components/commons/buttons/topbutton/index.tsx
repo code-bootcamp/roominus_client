@@ -32,7 +32,7 @@ const TopBtnBox = styled.div`
   }
   @media ${breakPoints.mobile} {
     right: 0em;
-    bottom: 0.3em;
+    bottom: 2em;
     width: 2em;
     height: 2em;
   }
