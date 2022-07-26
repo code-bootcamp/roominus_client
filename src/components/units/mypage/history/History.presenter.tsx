@@ -1,15 +1,24 @@
 import Link from "next/link";
 import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import Paginations01 from "../../../commons/pagination/Paginations.container";
-// import * as S from "./History.styles";
 import * as S from "../My.styles";
 import { IData, IHistoryUIProps } from "./History.types";
+
+import Tooltip from "@mui/material/Tooltip";
 
 export default function HistoryUI(props: IHistoryUIProps) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.Title>나의 예약내역</S.Title>
+        <S.TitleBox>
+          <S.Title>나의 예약내역</S.Title>
+          <Link href={"/mypage/history/calendar"}>
+            <Tooltip title="Photo Calendar">
+              <S.Calendar />
+            </Tooltip>
+          </Link>
+        </S.TitleBox>
+
         <S.CountBox>
           <span>총 {props.count?.fetchReservationUserCount}건</span>
         </S.CountBox>
