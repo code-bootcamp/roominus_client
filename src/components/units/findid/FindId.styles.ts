@@ -95,7 +95,7 @@ export const PhoneInput = styled.input`
   width: 100%;
   height: 2.5em;
   border: none;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #a3a8b7;
   outline: none;
   font-size: 1.3em;
   @media ${breakPoints.mobile} {

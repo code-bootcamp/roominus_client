@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
 `;
 
 export const UserInfoBox = styled.div`
-  border-bottom: 1px solid darkgray;
+  border-bottom: 1px solid #a3a8b7;
   line-height: 3em;
   display: flex;
   flex-direction: row;

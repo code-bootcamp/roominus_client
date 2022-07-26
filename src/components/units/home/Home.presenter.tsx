@@ -8,6 +8,7 @@ import ThemeCardComponent from "./themecard/ThemeCard";
 import { IHomeUIProps } from "./Home.type";
 import { useEffect, useState } from "react";
 import Notice from "./notice";
+import BestBoard from "./board";
 
 export default function HomeUI(props: IHomeUIProps) {
   const [windowSize, setWindowSize] = useState(false);
@@ -132,7 +133,16 @@ export default function HomeUI(props: IHomeUIProps) {
           </S.AlarmCarouselBox>
         </S.StyledSlider>
       </S.AlarmCarouselBoxes>
+      <S.BoardBox>
+        <S.TitleBox>
+          <S.Title>현재 인기글</S.Title>
+          <Link href={"/community"}>
+            <S.ThemeListButton>더보기 {`>`}</S.ThemeListButton>
+          </Link>
+        </S.TitleBox>
 
+        <BestBoard />
+      </S.BoardBox>
       <S.FaQBoxes>
         <S.Title>자주 묻는 질문(FAQ)</S.Title>
         <FAQ />

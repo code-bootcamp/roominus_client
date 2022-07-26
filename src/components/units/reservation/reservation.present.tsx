@@ -259,28 +259,34 @@ export default function ReservationUI(props: IReservationUIProps) {
                   </p>
                 </div>
               </S.InformationUse>
-              {props?.checked && (
-                <S.ButtonBox>
-                  <Link href="/home">
-                    <WebBlackButton type="button" title="돌아가기" />
-                  </Link>
+              {props?.checked &&
+                props?.selectTime &&
+                props?.totalPrice &&
+                props?.themeId &&
+                props?.cafeId &&
+                props?.reservationDate &&
+                props?.peopleNumber && (
+                  <S.ButtonBox>
+                    <Link href="/home">
+                      <WebBlackButton type="button" title="돌아가기" />
+                    </Link>
 
-                  <Payment
-                    title="결제하기"
-                    type="button"
-                    // 예약 데이터
-                    ThemeMenuId={props?.ThemeMenuId}
-                    cafeId={props?.cafeId}
-                    // createReservationInput
-                    reservationDate={props?.reservationDate}
-                    memo={props?.memo}
-                    // createPaymentInput
-                    peopleNumber={props?.peopleNumber}
-                    totalPrice={props?.totalPrice - props?.usePoint}
-                    usePoint={props?.usePoint}
-                  />
-                </S.ButtonBox>
-              )}
+                    <Payment
+                      title="결제하기"
+                      type="button"
+                      // 예약 데이터
+                      ThemeMenuId={props?.ThemeMenuId}
+                      cafeId={props?.cafeId}
+                      // createReservationInput
+                      reservationDate={props?.reservationDate}
+                      memo={props?.memo}
+                      // createPaymentInput
+                      peopleNumber={props?.peopleNumber}
+                      totalPrice={props?.totalPrice - props?.usePoint}
+                      usePoint={props?.usePoint}
+                    />
+                  </S.ButtonBox>
+                )}
             </S.FooterBox>
           )}
         </S.Form>

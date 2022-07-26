@@ -6,13 +6,12 @@ import {
   startOfMonth,
   startOfWeek,
 } from "date-fns";
-import { MouseEventHandler } from "react";
 import { getToday } from "../../../../commons/getDate";
 
 import * as S from "./calender.styles";
 
 interface IRenderCellsProps {
-  onClickDetail: MouseEventHandler<HTMLImageElement>;
+  onClickDetail: any;
   currentMonth: Date;
   data: any;
 }
@@ -50,7 +49,10 @@ export default function RenderCells(props: IRenderCellsProps) {
           <S.Column key={day}>
             {format(props.currentMonth, "M") !== format(day, "M") ? (
               <S.NotValid>
-                <S.NotValidSpan> {formattedDate}</S.NotValidSpan>
+                <S.NotValidSpan style={{ display: "none" }}>
+                  {" "}
+                  {formattedDate}
+                </S.NotValidSpan>
                 <S.ThemeImgae
                   id={Id}
                   src={ImgUrl}
@@ -59,7 +61,9 @@ export default function RenderCells(props: IRenderCellsProps) {
               </S.NotValid>
             ) : (
               <S.Valid>
-                <S.ValidSpan>{formattedDate}</S.ValidSpan>
+                <S.ValidSpan style={{ display: "none" }}>
+                  {formattedDate}
+                </S.ValidSpan>
                 <S.ThemeImgae
                   id={Id}
                   src={ImgUrl}
@@ -76,10 +80,12 @@ export default function RenderCells(props: IRenderCellsProps) {
             {format(props.currentMonth, "M") !== format(day, "M") ? (
               <S.NotValid>
                 <S.NotValidSpan> {formattedDate}</S.NotValidSpan>
+                <S.NoImage></S.NoImage>
               </S.NotValid>
             ) : (
               <S.Valid>
                 <S.ValidSpan>{formattedDate}</S.ValidSpan>
+                <S.NoImage></S.NoImage>
               </S.Valid>
             )}
           </S.Column>

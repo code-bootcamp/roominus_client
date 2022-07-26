@@ -9,7 +9,7 @@ const Input = styled.input`
   background-color: #ffffff;
   color: black;
   border: none;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid #a3a8b7;
   outline: none;
   padding: 0em 0.5em 0em 0.5em;
   :focus {

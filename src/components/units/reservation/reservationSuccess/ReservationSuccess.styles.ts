@@ -83,7 +83,7 @@ export const DataBox = styled.div`
   align-items: center;
   text-align: center;
 
-  border: 1px solid darkgray;
+  border: 1px solid #a3a8b7;
   border-radius: 8px;
   width: 25em;
   height: 35em;
@@ -111,7 +111,7 @@ export const ThemeTitleBox = styled.div`
   gap: 1.5em;
 
   & span {
-    color: darkgray;
+    color: #a3a8b7;
     font-size: 1.1em;
 
     @media ${breakPoints.tablet} {
@@ -149,7 +149,7 @@ export const ClearTimeBox = styled.div`
   width: 90%;
 `;
 export const ClearTime = styled.span`
-  color: darkgray;
+  color: #a3a8b7;
   font-size: 0.3em;
 `;
 export const QRcodeBox = styled.div`
@@ -256,7 +256,7 @@ export const NoticeSubject = styled.h2`
 `;
 
 export const NoticeDescription = styled.p`
-  color: darkblue;
+  color: #7457e8;
   font-size: 1em;
 `;
 export const ButtonWrapper = styled.div`

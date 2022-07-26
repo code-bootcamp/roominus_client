@@ -98,7 +98,7 @@ export const NecessityInfoBox = styled.div`
   flex-direction: column;
   background-color: transparent;
   padding: 1em 1em 1em 1em;
-  border: 1px dotted lightgray;
+  border: 1px dotted #a3a8b7;
   border-radius: 10px;
   margin-bottom: 1em;
 
@@ -159,7 +159,7 @@ export const OptionalInfoBox = styled.div`
   flex-direction: column;
   background-color: transparent;
   padding: 1em 1em 1em 1em;
-  border: 1px dotted lightgray;
+  border: 1px dotted #a3a8b7;
   border-radius: 10px;
   margin-bottom: 1em;
   @media ${breakPoints.mobile} {

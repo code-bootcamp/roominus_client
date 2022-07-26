@@ -39,7 +39,7 @@ export const Input = styled.input`
   width: 100%;
   height: 2em;
   border: none;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #a3a8b7;
   outline: none;
   font-size: 1.3em;
 `;
@@ -142,7 +142,7 @@ export const FindIdPasswordBtn = styled.button`
 export const Divider = styled.div`
   width: 40%;
   height: 1px;
-  background-color: lightgray;
+  background-color: #a3a8b7;
   margin-bottom: 2em;
 `;
 

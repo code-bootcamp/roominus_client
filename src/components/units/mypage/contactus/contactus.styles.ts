@@ -116,7 +116,7 @@ export const ReasonBox = styled.div`
   flex-direction: column;
 
   border-radius: 1em;
-  border: 1px solid darkgray;
+  border: 1px solid #a3a8b7;
   box-shadow: 10px 10px 39px rgba(183, 96, 202, 0.25);
 
   padding: 2em;

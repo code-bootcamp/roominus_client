@@ -24,7 +24,7 @@ export const Img = styled.img`
   width: 15em;
   height: 15em;
   margin-right: 1em;
-  background-color: gray;
+  background-color: #a3a8b7;
 `;
 
 export const Info = styled.div`
