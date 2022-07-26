@@ -63,7 +63,7 @@ export default function LayoutSidebar() {
         mutation: LOG_OUT,
 
         context: {
-          uri: process.env.NEXT_PUBLIC_BACKEND_URL,
+          uri: "https://wawoong.shop/graphql",
           // headers: {
           //   Authorization: `Bearer ${accessToken}`,
           // },

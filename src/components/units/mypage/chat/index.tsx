@@ -55,7 +55,7 @@ export default function KakaoChat() {
       <Head>
         <script
           type="text/javascript"
-          src={process.env.NEXT_PUBLIC_KAKAO_SDK}
+          src="https://developers.kakao.com/sdk/js/kakao.js"
         ></script>
       </Head>
 
