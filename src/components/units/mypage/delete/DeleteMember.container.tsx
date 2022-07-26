@@ -43,7 +43,7 @@ export default function DeleteMember() {
         mutation: LOG_OUT,
 
         context: {
-          uri: "https://wawoong.shop/graphql",
+          uri: process.env.NEXT_PUBLIC_BACKEND_URL,
           // headers: {
           //   Authorization: `Bearer ${accessToken}`,
           // },

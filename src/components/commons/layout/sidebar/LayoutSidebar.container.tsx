@@ -61,12 +61,23 @@ export default function LayoutSidebar() {
     try {
       await client.mutate({
         mutation: LOG_OUT,
+
         context: {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+          uri: process.env.NEXT_PUBLIC_BACKEND_URL,
+          // headers: {
+          //   Authorization: `Bearer ${accessToken}`,
+          // },
+          credentials: "include",
         },
       });
+      // await client.mutate({
+      //   mutation: LOG_OUT,
+      //   context: {
+      //     headers: {
+      //       Authorization: `Bearer ${accessToken}`,
+      //     },
+      //   },
+      // });
       localStorage.clear();
       sessionStorage.clear();
       setAccessToken("");
