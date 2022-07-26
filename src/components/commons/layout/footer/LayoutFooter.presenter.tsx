@@ -1,4 +1,4 @@
-import TopButton from "../../buttons/topbutton";
+// import TopButton from "../../buttons/topbutton";
 import * as S from "./LayoutFooter.styles";
 import Link from "next/link";
 // import KakaoChat from "../../../units/mypage/chat";
@@ -8,7 +8,7 @@ export default function LayoutFooterUI() {
     <S.Container>
       <S.Wrapper>
         {/* <KakaoChat /> */}
-        <TopButton />
+        {/* <TopButton /> */}
         <S.MenuInfoWrapper>
           <S.MenuWrapper>
             <Link href={"/customer/agreement/service"}>

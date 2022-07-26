@@ -20,7 +20,7 @@ const KaKaoChat = styled.div`
 
   @media ${breakPoints.mobile} {
     right: 2.5em;
-    bottom: 0;
+    bottom: 0em;
   }
 `;
 

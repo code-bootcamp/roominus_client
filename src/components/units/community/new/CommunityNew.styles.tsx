@@ -129,7 +129,7 @@ export const ContentsInfoBox = styled.div`
   margin-bottom: 2em;
   display: flex;
   flex-direction: column;
-  /* background-color: pink; */
+  /* background-color: #f99aaa; */
 `;
 
 export const WebEditor = styled.div`
