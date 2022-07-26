@@ -58,8 +58,7 @@ export default function ApolloSetting(props: any) {
           },
         });
         const user = resultuserInfo.data?.fetchSocialUserLoggedIn;
-        console.log(newAccessToken);
-        console.log(user);
+
         setUserInfo(user);
       });
     } else if (localStorage.getItem("#NL")) {
@@ -74,8 +73,7 @@ export default function ApolloSetting(props: any) {
           },
         });
         const user = resultuserInfo.data?.fetchUserLoggedIn;
-        console.log(newAccessToken);
-        console.log(user);
+
         setUserInfo(user);
       });
     }
