@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { breakPoints } from "../../../commons/styles/media";
 
@@ -9,6 +9,7 @@ import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
 import LayoutBanner from "./banner/LayoutBanner";
 import LayoutSideBar from "./sidebar/LayoutSidebar.container";
 import LayoutSidebarAdmin from "./sidebarAdmin/LayoutSidebar.container";
+import LayoutBottomNavigation from "./bottomNavigation";
 
 const HIDDEN_HEADER = ["/"];
 const HIDDEN_BANNER = ["/", "/home/", "/cafe/"];
@@ -51,6 +52,7 @@ interface ILayoutProps {
 }
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
+  const [windowSize, setWindowSize] = useState(false);
 
   const isHiddenTopHeader = HIDDEN_TOP_HEADER.includes(router.asPath);
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
@@ -60,17 +62,54 @@ export default function Layout(props: ILayoutProps) {
 
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
 
+  const handleResize = () => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    } else {
+      setWindowSize(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowSize]);
+
   return (
-    <Wrapper>
-      {!isHiddenTopHeader && <LayoutTopHeader />}
-      {!isHiddenHeader && <LayoutHeader />}
-      {!isHiddenBanner && <LayoutBanner />}
-      <div style={{ display: "flex" }}>
-        {isVISBLESIDEBAR && <LayoutSideBar />}
-        {isVISBLEADMINSIDEBAR && <LayoutSidebarAdmin />}
-        <Body>{props.children}</Body>
-      </div>
-      {!isHiddenFooter && <LayoutFooter />}
-    </Wrapper>
+    <>
+      {!windowSize && (
+        <Wrapper>
+          {!isHiddenTopHeader && <LayoutTopHeader />}
+          {!isHiddenHeader && <LayoutHeader />}
+          {!isHiddenBanner && <LayoutBanner />}
+          <div style={{ display: "flex" }}>
+            {isVISBLESIDEBAR && <LayoutSideBar />}
+            {isVISBLEADMINSIDEBAR && <LayoutSidebarAdmin />}
+            <Body>{props.children}</Body>
+          </div>
+          {!isHiddenFooter && <LayoutFooter />}
+        </Wrapper>
+      )}
+
+      {windowSize && (
+        <Wrapper>
+          {!isHiddenTopHeader && <LayoutTopHeader />}
+          {!isHiddenHeader && <LayoutHeader />}
+          {!isHiddenBanner && <LayoutBanner />}
+          <div style={{ display: "flex" }}>
+            {isVISBLESIDEBAR && <LayoutSideBar />}
+            {isVISBLEADMINSIDEBAR && <LayoutSidebarAdmin />}
+            <Body>{props.children}</Body>
+          </div>
+          {!isHiddenFooter && <LayoutFooter />}
+          <LayoutBottomNavigation />
+        </Wrapper>
+      )}
+    </>
   );
 }
