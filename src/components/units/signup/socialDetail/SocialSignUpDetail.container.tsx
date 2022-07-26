@@ -64,7 +64,7 @@ export default function SocialSignUpDetail() {
       timer = setInterval(() => {
         counts = counts - 1;
         setCount(counts);
-        console.log(counts);
+
         if (counts <= 0) {
           clearInterval(timer);
           setCount(60);
@@ -140,7 +140,7 @@ export default function SocialSignUpDetail() {
             tokenInput,
           },
         });
-        console.log(result.data.checkinputToken);
+
         Swal.fire({
           title: "인증완료",
           icon: "success",
@@ -177,9 +177,7 @@ export default function SocialSignUpDetail() {
           },
         });
         Swal.fire({
-          title: `${result.data.createSocialUser.id}
-          ${result.data.createSocialUser.email}
-          ${result.data.createSocialUser.phone}`,
+          title: `회원가입을 축하합니다`,
           icon: "success",
           confirmButtonText: "확인",
           confirmButtonColor: "#4a00e0e7",

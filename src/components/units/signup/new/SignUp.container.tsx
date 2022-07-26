@@ -26,7 +26,6 @@ export default function SignUp() {
     });
   };
   const onClickTotalCheck = () => {
-    console.log("clicked");
     totalCheckRef.current.click();
   };
   const onChangeBothCheckbox = () => {

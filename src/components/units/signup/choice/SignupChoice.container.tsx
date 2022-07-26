@@ -31,8 +31,6 @@ export default function SignupChoice() {
         // ...
         setGoogleInfo(user);
         router.push(`/signup/socialDetail`);
-
-        console.log(user);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -55,7 +53,6 @@ export default function SignupChoice() {
             property_keys: ["kakao_account.email", "kakao_account.gender"],
           },
           success: function (response: any) {
-            console.log(response);
             setKakaoInfo(response.kakao_account);
             router.push(`/signup/socialDetail`);
           },
