@@ -181,3 +181,14 @@ export const Logo = styled.img`
     width: 7em;
   }
 `;
+
+export const ChatBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  @media ${breakPoints.mobile} {
+    justify-content: center;
+    gap: 2em;
+  }
+`;

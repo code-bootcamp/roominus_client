@@ -49,7 +49,7 @@ const Wrapper = styled.main`
 const Body = styled.div`
   width: 100%;
   height: 70%;
-  padding: 0em 0.5em;
+  padding: 0em 0.5em 3em 0.5em;
 `;
 
 interface ILayoutProps {

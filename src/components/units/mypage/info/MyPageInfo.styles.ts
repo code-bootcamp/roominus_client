@@ -8,6 +8,8 @@ export const Container = styled.main`
   align-items: center;
 
   width: 100%;
+  height: 100%;
+
   padding: 2em 2em 2em 2em;
 
   @media ${breakPoints.mobile} {
@@ -17,12 +19,12 @@ export const Container = styled.main`
 
 export const Wrapper = styled.div`
   width: 100%;
+  height: 100%;
 `;
 
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 20em;
 `;
 
 export const ThemeBoxs = styled.div`
@@ -114,7 +116,7 @@ export const addButton = styled.button`
 `;
 
 export const Label = styled.label`
-  font-size: 1.2em;
+  font-size: 1.3em;
 `;
 
 export const Contents = styled.span`
@@ -124,7 +126,7 @@ export const Contents = styled.span`
 `;
 export const TableTop = styled.div`
   border-bottom: 2px solid #b6a2ea;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 export const TableBottom = styled.div`
@@ -208,5 +210,6 @@ export const RowBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 2em;
+  height: 100%;
+  margin-top: 5em;
 `;

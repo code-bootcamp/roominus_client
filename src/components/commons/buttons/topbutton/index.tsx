@@ -31,10 +31,11 @@ const TopBtnBox = styled.div`
     bottom: 0;
   }
   @media ${breakPoints.mobile} {
-    right: 0em;
+    right: 0;
     bottom: 2em;
-    width: 2em;
-    height: 2em;
+
+    width: 3rem;
+    height: 3rem;
   }
 `;
 

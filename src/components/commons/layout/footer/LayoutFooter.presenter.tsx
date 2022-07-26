@@ -1,14 +1,20 @@
-// import TopButton from "../../buttons/topbutton";
+import TopButton from "../../buttons/topbutton";
 import * as S from "./LayoutFooter.styles";
 import Link from "next/link";
-// import KakaoChat from "../../../units/mypage/chat";
+import { useRouter } from "next/router";
+import KakaoChat from "../../../units/mypage/chat";
+
+const HIDDEN_BUTTON = ["/community/"];
 
 export default function LayoutFooterUI() {
+  const router = useRouter();
+
+  const isHiddenButton = HIDDEN_BUTTON.includes(router.asPath);
+
   return (
     <S.Container>
       <S.Wrapper>
-        {/* <KakaoChat /> */}
-        {/* <TopButton /> */}
+        {!isHiddenButton && <TopButton />}
         <S.MenuInfoWrapper>
           <S.MenuWrapper>
             <Link href={"/customer/agreement/service"}>
@@ -51,6 +57,9 @@ export default function LayoutFooterUI() {
                 담당자: 룸인어스 개발팀 <br></br>전자 우편 주소 :
                 dev.team05.roominus@gmail.com
               </S.Info>
+              <S.ChatBox>
+                <KakaoChat />
+              </S.ChatBox>
 
               <S.InfoGithub>
                 <Link href="https://github.com/code-bootcamp/f7b3_team05_client">
