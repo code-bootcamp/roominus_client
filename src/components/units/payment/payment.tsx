@@ -116,7 +116,7 @@ export default function Payment(props: IPaymentProps) {
         {/* <!-- iamport.payment.js --> */}
         <script
           type="text/javascript"
-          src={process.env.NEXT_PUBLIC_IAMPORT_URL}
+          src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
         ></script>
       </Head>
 

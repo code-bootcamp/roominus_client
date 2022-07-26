@@ -32,7 +32,7 @@ initializeApp(firebaseConfig);
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const script = document.createElement("script"); // <script></script>
-    script.src = process.env.NEXT_PUBLIC_KAKAO_SDK;
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
     document.head.appendChild(script);
 
     script.onload = () => {

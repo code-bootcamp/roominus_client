@@ -103,7 +103,7 @@ export default function ApolloSetting(props: any) {
   });
 
   const uploadLink = createUploadLink({
-    uri: process.env.NEXT_PUBLIC_BACKEND_URL,
+    uri: "https://wawoong.shop/graphql",
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
