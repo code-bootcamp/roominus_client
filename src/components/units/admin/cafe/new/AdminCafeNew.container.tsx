@@ -34,15 +34,15 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
   const upload = (file: any) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append(
-      "upload_preset",
-      process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
-    );
+    formData.append("upload_preset", "tyx7y8ot");
 
-    const result = fetch(process.env.NEXT_PUBLIC_CLOUDINARY_URL, {
-      method: "POST",
-      body: formData,
-    }).then((response) => {
+    const result = fetch(
+      "https://api.cloudinary.com/v1_1/dop5piuwp/image/upload",
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).then((response) => {
       return response.json();
     });
     return result;

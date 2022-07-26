@@ -49,7 +49,7 @@ export default function Payment(props: IPaymentProps) {
 
   const requestPay = () => {
     const IMP = window.IMP; // window는 생략 가능
-    IMP.init(process.env.NEXT_PUBLIC_IMP_API_KEY);
+    IMP.init("imp44516396");
 
     IMP.request_pay(
       {
