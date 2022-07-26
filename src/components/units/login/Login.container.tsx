@@ -24,8 +24,6 @@ import {
 import Swal from "sweetalert2";
 import { IDataProps } from "./Login.types";
 
-const googleProvider = new GoogleAuthProvider();
-const auth = getAuth();
 const schema = yup.object({
   email: yup
     .string()
@@ -45,11 +43,13 @@ const schema = yup.object({
 declare const window: typeof globalThis & {
   Kakao: any;
 };
-export default function LoginPage() {
+export default function Login() {
   const { register, handleSubmit, setValue, formState, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+  const googleProvider = new GoogleAuthProvider();
+  const auth = getAuth();
   const router = useRouter();
   const client = useApolloClient();
   const [logingql] = useMutation(LOGIN);
