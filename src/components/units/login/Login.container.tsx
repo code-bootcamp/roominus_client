@@ -23,7 +23,8 @@ import {
 } from "../../../commons/store";
 import Swal from "sweetalert2";
 import { IDataProps } from "./Login.types";
-
+const googleProvider = new GoogleAuthProvider();
+const auth = getAuth();
 const schema = yup.object({
   email: yup
     .string()
@@ -48,8 +49,7 @@ export default function Login() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
-  const googleProvider = new GoogleAuthProvider();
-  const auth = getAuth();
+
   const router = useRouter();
   const client = useApolloClient();
   const [logingql] = useMutation(LOGIN);
