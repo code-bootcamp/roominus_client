@@ -24,7 +24,7 @@ export default function LayoutSidebar() {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
-  console.log(userInfo);
+
   // useEffect(() => {
   //   if (localStorage.getItem("#SL")) {
   //     Auth.toPromise().then(async (newAccessToken) => {
