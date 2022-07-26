@@ -76,10 +76,8 @@ export const MenuItem = styled.li`
   font-size: 1.5em;
   font-weight: ${(props: IIsActiveProps) => (props.isActive ? "600" : "500")};
   cursor: ${(props: IIsActiveProps) => (props.isActive ? "none" : "pointer")};
-  color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#26282c")};
 
-  /* color: ${(props: IIsActiveProps) =>
-    props.isActive ? "#BF9EEB" : "#0000"};
+  color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#0000")};
 
   --b: 0.1em;
   --c: #dab3f8;
@@ -97,7 +95,7 @@ export const MenuItem = styled.li`
   :hover {
     ${(props: IIsActiveProps) => (props.isActive ? "none" : "--_p: 100%;")};
     ${(props: IIsActiveProps) => (props.isActive ? "none" : "--_s: 0.3s;")};
-  } */
+  }
 `;
 
 export const Contents = styled.span`
