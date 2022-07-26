@@ -53,7 +53,7 @@ export default function RenderCells(props: IRenderCellsProps) {
                   {" "}
                   {formattedDate}
                 </S.NotValidSpan>
-                <S.ThemeImgae
+                <S.ThemeImage
                   id={Id}
                   src={ImgUrl}
                   onClick={props.onClickDetail}
@@ -64,7 +64,7 @@ export default function RenderCells(props: IRenderCellsProps) {
                 <S.ValidSpan style={{ display: "none" }}>
                   {formattedDate}
                 </S.ValidSpan>
-                <S.ThemeImgae
+                <S.ThemeImage
                   id={Id}
                   src={ImgUrl}
                   onClick={props.onClickDetail}

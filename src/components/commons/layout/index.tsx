@@ -16,7 +16,12 @@ const HIDDEN_BANNER = ["/", "/home/", "/cafe/"];
 const HIDDEN_TOP_HEADER = ["/"];
 const HIDDEN_FOOTER = ["/"];
 
-const Wrapper = styled.section`
+const MainWrapper = styled.main`
+  max-width: 1200px;
+  margin: auto;
+`;
+
+const Wrapper = styled.main`
   width: 100%;
   height: 100%;
 
@@ -81,7 +86,7 @@ export default function Layout(props: ILayoutProps) {
   }, [windowSize]);
 
   return (
-    <>
+    <MainWrapper>
       {!windowSize && (
         <Wrapper>
           {!isHiddenTopHeader && <LayoutTopHeader />}
@@ -110,6 +115,6 @@ export default function Layout(props: ILayoutProps) {
           <LayoutBottomNavigation />
         </Wrapper>
       )}
-    </>
+    </MainWrapper>
   );
 }

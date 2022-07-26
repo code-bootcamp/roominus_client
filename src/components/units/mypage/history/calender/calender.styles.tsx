@@ -164,8 +164,9 @@ export const NotValidSpan = styled.span`
   }
 `;
 
-export const ThemeImgae = styled.img`
+export const ThemeImage = styled.img`
   width: 100%;
+  height: 100%;
 
   :hover {
     cursor: pointer;

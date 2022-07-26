@@ -43,7 +43,6 @@ export const LogoWrapper = styled.div`
 export const Logo = styled.img`
   cursor: pointer;
   width: 13em;
-  /* height: 2.5em; */
   @media ${breakPoints.tablet} {
     height: 3em;
     position: relative;
@@ -74,13 +73,12 @@ export const MenuWrapper = styled.ul`
 
 export const MenuItem = styled.li`
   font-size: 1.5em;
-  font-weight: ${(props: IIsActiveProps) => (props.isActive ? "600" : "500")};
+  font-weight: 500;
   cursor: ${(props: IIsActiveProps) => (props.isActive ? "none" : "pointer")};
-
   color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#0000")};
 
   --b: 0.1em;
-  --c: #dab3f8;
+  --c: #bf9eeb;
 
   padding-block: var(--b);
   background: linear-gradient(var(--c) 50%, #26282c 0) 0%
@@ -98,15 +96,6 @@ export const MenuItem = styled.li`
   }
 `;
 
-export const Contents = styled.span`
-  :hover {
-    cursor: pointer;
-  }
-
-  margin-left: 0.6em;
-`;
-
-export const Toggle = styled.div``;
 export const Hamburger = styled.div`
   display: none;
 

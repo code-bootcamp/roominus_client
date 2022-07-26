@@ -20,17 +20,18 @@ export default function LayoutSideBarUI(props: ISideBarUIProps) {
             {props.userInfo?.name ? (
               <>
                 <S.UserData onClick={props.onClickMyPage}>
-                  {props.userInfo?.name}님
+                  <span>{props.userInfo?.name}</span>
                 </S.UserData>
               </>
             ) : (
               <>
                 <S.UserData onClick={props.onClickMyPage}>
-                  {props.userInfo?.email.split("@")[0]}
+                  <span>{props.userInfo?.email.split("@")[0]}</span>
                 </S.UserData>
               </>
             )}
           </S.UserNameBox>
+          <p>회원님</p>
           <p>안녕하세요!</p>
           <p>
             적립금 <S.UserPoint>{props.userInfo?.point}</S.UserPoint>원

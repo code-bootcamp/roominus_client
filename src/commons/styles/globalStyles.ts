@@ -12,10 +12,10 @@ export const globalStyles = css`
   }
 
   body {
-    margin: auto;
+    /* margin: auto;
     max-width: 1200px;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; */
     font-family: "Noto Sans KR", sans-serif;
     overflow-x: hidden; // 가로 스크롤 제거
 
