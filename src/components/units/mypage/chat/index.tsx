@@ -25,6 +25,8 @@ export default function KakaoChat() {
         container: "#kakao-talk-channel-add-button",
         channelPublicId: "_tDNRxj",
         size: "large",
+        // size: "small",
+
         supportMultipleDensities: true,
       });
 
@@ -32,9 +34,8 @@ export default function KakaoChat() {
         container: "#kakao-talk-channel-chat-button",
         channelPublicId: "_tDNRxj",
         title: "question",
-        size: "large",
+        size: "small",
         color: "mono",
-        // color: "yellow",
         shape: "pc",
         supportMultipleDensities: true,
       });

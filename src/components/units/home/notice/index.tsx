@@ -20,9 +20,7 @@ const Container = styled.ul`
 
 const Content = styled.li`
   height: 30px;
-  /* height: 1.88em; */
   padding: 10px 0px 60px 0px;
-  /* padding: 0.63em 0em 3.75em 0em; */
   line-height: 30px;
   line-height: 1.88em;
 `;
@@ -35,13 +33,31 @@ const NoticeBox = styled.div`
   display: flex;
   gap: 10em;
 
+  & span {
+    font-size: 1.1em;
+  }
+
+  @media ${breakPoints.tablet} {
+    gap: 3em;
+  }
+
   @media ${breakPoints.mobile} {
-    gap: 1em;
+    gap: 1.5em;
   }
 `;
 
-const Title = styled.span`
-  width: 60%;
+const Title = styled.div`
+  width: 55%;
+  font-size: 1.1em;
+  font-weight: 500;
+
+  @media ${breakPoints.tablet} {
+    width: 60%;
+  }
+
+  @media ${breakPoints.mobile} {
+    padding-left: 1.5em;
+  }
 `;
 
 export default function Notice() {
@@ -52,32 +68,32 @@ export default function Notice() {
     {
       no: 1,
       header: "[안내]",
-      title: "7월 신용카드 무이자 할부 안내",
-      date: "2022-07-01",
+      title: "8월 신용카드 무이자 할부 안내",
+      date: "2022-07-30",
     },
     {
       no: 2,
       header: "[점검]",
-      title: "7/20 시스템 점검 안내",
-      date: "2022-07-13",
+      title: "8월 3일 시스템 점검 안내",
+      date: "2022-08-01",
     },
     {
       no: 3,
       header: "[안내]",
-      title: "7월 정기 휴무 안내",
-      date: "2022-07-19",
+      title: "8월 휴무 안내",
+      date: "2022-08-02",
     },
     {
       no: 4,
       header: "[수정]",
       title: "개인정보 처리방침, 청소년 보호정책 개정안 공지",
-      date: "2022-07-22",
+      date: "2022-08-03",
     },
     {
       no: 5,
       header: "[안내]",
-      title: "roominus 제휴 문의 안내",
-      date: "2022-07-24",
+      title: "roominus 신규 제휴 문의 안내",
+      date: "2022-08-04",
     },
   ];
 

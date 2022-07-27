@@ -52,7 +52,7 @@ export const MenuWrapper = styled.ul`
 export const Menu = styled.li`
   margin-right: 20px;
   border-right: 1px solid black;
-  padding-right: 15px;
+  padding-right: 16px;
   cursor: pointer;
 
   &:last-of-type {
