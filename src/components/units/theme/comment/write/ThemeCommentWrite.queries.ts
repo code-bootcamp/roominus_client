@@ -45,9 +45,25 @@ export const FETCH_THEME_REVIEWS = gql`
       content
       createdAt
       star
-      # user {
-      #   name
-      # }
+      user {
+        id
+      }
+    }
+  }
+`;
+
+export const FETCH_RESERVATIONS_USER = gql`
+  query fetchReservationsUser($page: Float) {
+    fetchReservationsUser(page: $page) {
+      id
+      reservation_date
+      theme_menu {
+        reservation_time
+        theme {
+          id
+          title
+        }
+      }
     }
   }
 `;

@@ -56,7 +56,7 @@ export const ThemeImg = styled.img`
 export const ThemeRightBox = styled.div`
   position: relative;
   width: 100%;
-  max-width: 650px;
+  max-width: 800px;
   max-height: 560px;
   padding: 5px 40px;
   float: right;
@@ -94,6 +94,16 @@ export const GenreTag = styled.div`
 `;
 
 export const ThemeTitle = styled.h2`
+  svg text {
+    position: absolute;
+    top: 50%;
+    font-family: "Staatliches", cursive;
+    font-size: 6em;
+    stroke: #f1c164;
+    stroke-width: 3px;
+    stroke-dasharray: 326px;
+    animation: stroke 3s linear;
+  }
   color: #26282c;
   font-size: 2.5em;
   font-family: "GowunDodum-Regular";
