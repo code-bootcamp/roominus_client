@@ -19,6 +19,18 @@ export const FETCH_THEMES = gql`
   }
 `;
 
+export const FETCH_THEMES_ALL = gql`
+  query fetchThemesAll {
+    fetchThemesAll {
+      id
+      title
+      rank
+      like
+      mainImg
+    }
+  }
+`;
+
 export const FETCH_GENRES = gql`
   query fetchGenres {
     fetchGenres {
