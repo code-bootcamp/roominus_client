@@ -5,17 +5,18 @@ export const Container = styled.main`
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  min-height: 50em;
   padding: 2em 2em 2em 2em;
 `;
-export const Title = styled.h1`
-  margin-bottom: 2em;
-`;
+
+export const Title = styled.h1``;
 
 export const Form = styled.form`
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: auto;
 `;
 export const Error = styled.div`
@@ -52,6 +53,7 @@ export const PasswordInputBox = styled.div`
   flex-direction: row;
   align-items: center;
   position: relative;
+  width: 100%;
 `;
 export const PasswordInput = styled.input`
   width: 100%;
@@ -108,5 +110,6 @@ export const PasswordVerificationInput = styled.input`
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1.5em;
+  gap: 2em;
+  padding-top: 10em;
 `;
