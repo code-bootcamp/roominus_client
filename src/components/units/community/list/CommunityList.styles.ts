@@ -33,12 +33,11 @@ export const TitleBox = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    margin-top: 1em;
     width: 75%;
 
     & h1 {
       font-weight: 700;
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
   }
 `;
@@ -102,7 +101,6 @@ export const ItemBackground = styled.li`
   align-items: center;
   :hover {
     transform: scale(1.02);
-    /* cursor: pointer; */
   }
   transition: all 250ms ease-in-out;
 

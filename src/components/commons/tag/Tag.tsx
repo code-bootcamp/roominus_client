@@ -7,24 +7,19 @@ export default function Tag(props: any) {
       `#${e.target.value}`
     );
     if (e.key === "Enter") {
-      console.log(props.tagList);
       //처음에 입력한 값
       if (props.tagList === undefined) {
-        console.log(props.tagList);
         props.setTagList([hashedtag]);
         props.setTagItem("");
       } else {
         //추가로 입력한 값
-        console.log(hashedtag);
         props.setTagList((prev: any) => [...prev, hashedtag]);
-        // addList.filter((tagList: any) => tagList !== e.target.value);
         props.setTagItem("");
       }
     }
   };
 
   const deleteTagItem = (e: any) => {
-    console.log(e);
     const deleteTagItem = e.target.parentElement.firstChild.innerHTML;
     const filteredTagList = props.tagList.filter(
       (tagItem: any) => tagItem !== deleteTagItem
@@ -38,9 +33,7 @@ export default function Tag(props: any) {
 
   return (
     <TagBox>
-      {/* 등록시 map */}
       {props.tagList?.map((tagItem: any, index: number) => {
-        // const hashedtag = tagItem.replace(tagItem, `#${tagItem}`);
         return (
           <TagItem key={index}>
             <Text>{tagItem}</Text>
@@ -64,7 +57,6 @@ export default function Tag(props: any) {
 
 const TagBox = styled.div`
   width: 100%;
-  /* height: 100%; */
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -72,13 +64,6 @@ const TagBox = styled.div`
   border: 1px solid #a3a8b7;
   box-shadow: 0px 4px rgba(217, 214, 224, 0.25);
   margin-bottom: 1em;
-
-  /* padding: 0 10px; */
-  /* background-color: pink; */
-
-  /* &:focus-within {
-    border-color: tomato;
-  } */
 `;
 
 const TagItem = styled.div`
@@ -89,7 +74,6 @@ const TagItem = styled.div`
   padding: 0.4em 0.8em;
   background-color: #d9d6e0;
   border-radius: 5px;
-  /* color: white; */
   font-size: 13px;
 `;
 
@@ -110,13 +94,9 @@ const Button = styled.button`
 `;
 
 const TagInput = styled.input`
-  /* display: inline-flex; */
   width: 12em;
   height: 3em;
   margin-left: 0.4em;
-  /* background-color: red; */
-  /* background: transparent; */
   border: none;
   outline: none;
-  /* cursor: text; */
 `;

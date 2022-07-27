@@ -3,7 +3,7 @@ import * as S from "./CommunityList.styles";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { ICommunityListProps, IFetchBoardsProps } from "./CommunityList.types";
 import Paginations02 from "../../../commons/pagination02/Paginations.container";
-import AssignmentIndOutlinedIcon from "@mui/icons-material/AssignmentIndOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import TopButton from "../../../commons/buttons/topbutton/community";
 import { useEffect, useState } from "react";
 export default function CommunityListUI(props: ICommunityListProps) {
@@ -32,7 +32,8 @@ export default function CommunityListUI(props: ICommunityListProps) {
   return (
     <S.Wrapper>
       <S.TitleBox>
-        <AssignmentIndOutlinedIcon fontSize="large" />
+        {!windowSize && <ChatOutlinedIcon fontSize="large" />}
+        {windowSize && <ChatOutlinedIcon />}
         <h1>전체글보기</h1>
       </S.TitleBox>
 

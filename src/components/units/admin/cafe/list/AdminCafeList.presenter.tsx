@@ -1,6 +1,5 @@
 import WebSmallPurpleButton from "../../../../commons/buttons/buttonDesktop/WebSmallPurpleButton";
 import ListCards from "../../../cafe/list/card/ListCards";
-// import ListCards from "../../../cafe/list/card/ListCards";
 import * as S from "./AdminCafeList.styles";
 import { IAdminCafeListUIProps, IFetchCafesProps } from "./AdminCafeList.types";
 import InfiniteScroll from "react-infinite-scroller";

@@ -12,7 +12,7 @@ const ButtonBox = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    bottom: 0.3em;
+    bottom: 3em;
     transform: translate(-20%, -20%);
     border: none;
     color: #ffffff;
