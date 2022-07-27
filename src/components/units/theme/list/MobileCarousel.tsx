@@ -9,15 +9,12 @@ const Wrapper = styled.div`
 
 const MySlider = styled(Slider)`
   width: 100%;
+  overflow-x: hidden;
 `;
 
 const Theme = styled.img`
   padding: 10px;
-  width: 200px;
-  height: 320px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  height: 300px;
 `;
 
 export default function MobileCarousel(props: ICarouselProps) {
@@ -35,7 +32,6 @@ export default function MobileCarousel(props: ICarouselProps) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 2,
         },
       },
       {

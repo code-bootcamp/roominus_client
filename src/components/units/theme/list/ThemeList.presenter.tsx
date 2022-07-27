@@ -32,7 +32,7 @@ export default function ThemeListUI(props: IThemeListProps) {
     .sort((a: IFetchThemes, b: IFetchThemes) => {
       return b.like - a.like;
     })
-    .slice(0, 4);
+    .slice(0, 8);
 
   return (
     <S.Wrapper>
