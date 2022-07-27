@@ -12,6 +12,7 @@ import { IFetchThemeMenus } from "./reservation.types";
 import { useRecoilState } from "recoil";
 import { userInfoState, userPickThemeState } from "../../../commons/store";
 import _ from "lodash";
+import { getToday, getMyTime } from "../../commons/getDate";
 
 export default function Reservation() {
   // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
@@ -23,7 +24,9 @@ export default function Reservation() {
   const [cafeId, setCafeId] = useState("");
   const [reservationDate, setReservationDate] = useState("");
   const [time, setTime] = useState("");
-  const [selectTime, setSelectTime] = useState([]);
+  const [resultTime, setResultTime] = useState([]);
+  const [selectTime, setSelectTime] = useState("");
+
   const [peopleNumber, setPeopleNumber] = useState(0);
   const [usePoint, setUsePoint] = useState(userInfo.point);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -42,7 +45,7 @@ export default function Reservation() {
     },
   });
 
-  // 이미 예약이 된 리스트의 타임 분리
+  // 선택한 매장, 날짜로 -> 이미 예약이 된 리스트의 타임을 분리
   const soldOut = reservations?.fetchReservations?.map(
     (el: { theme_menu: { reservation_time: any } }) =>
       el.theme_menu.reservation_time
@@ -54,12 +57,13 @@ export default function Reservation() {
   };
 
   // 전체 리스트 || 테마 상세에서 theme 선택 후 얻은 themeId 로 예약 리스트를 부른다
+  // 바꾸는 경우가 생길때를 대비해서 다른 요소들을 모두 비우게 만들어준다
   const onChangeTheme = (event: ChangeEvent<HTMLInputElement>) => {
     setThemeId(event.target.value);
     setPickTheme("");
     setPeopleNumber(0);
     setReservationDate("");
-    setTime("");
+    setSelectTime("");
     setCafeId("");
   };
 
@@ -74,7 +78,7 @@ export default function Reservation() {
     setReservationDate(selectDate);
   };
 
-  // 현재 테마 메뉴 리스트에 있는 모든 타임을 부르고, 중복된 시간을 제외한 타임테이블만 보여준다
+  // 현재 테마 메뉴 리스트에 있는 모든 타임을 부르고, 중복된 시간을 제외한 유일한 타임테이블만 보여준다
   const timeResult = data?.fetchThemeMenus.map(
     (el: IFetchThemeMenus) => el.reservation_time
   );
@@ -89,6 +93,34 @@ export default function Reservation() {
   const ableTime = timeTable.filter((el) => {
     return !soldOut?.includes(el);
   });
+
+  // 오늘 시간이 지난 예약건은 보여주지 않는다 !
+  useEffect(() => {
+    const todayTime = getMyTime(new Date());
+    const resultTime = [];
+
+    if (getToday(new Date()) === reservationDate) {
+      const TodayHour = Number(todayTime.split(":")[0]);
+      const TodayMinute = Number(todayTime.split(":")[1]);
+
+      for (let i = 0; i < timeTable.length; i++) {
+        const ReservationHour = Number(ableTime[i].split(":")[0]);
+        const ReservationMinute = Number(ableTime[i].split(":")[1]);
+
+        if (TodayHour < ReservationHour) {
+          resultTime.push(timeTable[i]);
+        } else if (
+          TodayHour === ReservationHour &&
+          TodayMinute <= ReservationMinute
+        ) {
+          resultTime.push(timeTable[i]);
+        }
+      }
+    }
+
+    setResultTime(resultTime);
+    console.log(resultTime);
+  }, [reservationDate]);
 
   // 시간 선택
   const onChangeTime = (event: ChangeEvent<HTMLInputElement>) => {
@@ -123,7 +155,7 @@ export default function Reservation() {
   // 포인트하고 최종 결제 금액 천천히 바뀌게
   const getDebounce = _.debounce((data) => {
     setUsePoint(Number(data));
-  }, 400);
+  }, 500);
 
   // 포인트
   const onChangePoint = (event: ChangeEvent<HTMLInputElement>) => {
@@ -148,6 +180,11 @@ export default function Reservation() {
   // 취소하기 시, 리코일에 저장된(상세에서 저장한) theme id와 예약 페이지에서 누른 state 비우기
   const onClickReset = () => {
     setThemeId("");
+    setCafeId("");
+    setReservationDate("");
+    setPeopleNumber(0);
+    setUsePoint(userInfo.point);
+    setTime("");
     setPickTheme("");
   };
 
@@ -165,7 +202,7 @@ export default function Reservation() {
       // inputValue={inputValue}
       dateFormatter={dateFormatter}
       // 시간변경
-      ableTime={ableTime}
+      resultTime={resultTime}
       time={time}
       onChangeTime={onChangeTime}
       selectTime={selectTime}
@@ -188,11 +225,6 @@ export default function Reservation() {
       onClickReset={onClickReset}
       // 예약에 사용할 props
       ThemeMenuId={ThemeMenuId}
-      // cafeId={cafeId}
-      // reservationDate={reservationDate}
-      // memo={data?.memo}
-      // peopleNumber={peopleNumber}
-      // usePoint={usePoint}
       // 동의 약관
       onChangeChecked={onChangeChecked}
       checked={checked}

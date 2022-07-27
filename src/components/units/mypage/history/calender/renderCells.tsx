@@ -43,7 +43,6 @@ export default function RenderCells(props: IRenderCellsProps) {
         const ImgUrl = result[0].theme_menu.theme.mainImg;
         formattedDate = format(day, "d");
         const Id = result[0].id;
-        console.log(Id);
 
         days.push(
           <S.Column key={day}>

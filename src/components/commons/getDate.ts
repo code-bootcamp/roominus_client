@@ -15,11 +15,20 @@ export const getToday = (value: string | number | Date) => {
   return `${yyyy}-${mm}-${dd}`;
 };
 
-export const getTime = (value: string | number | Date) => {
+export const getMyTime = (value: string | number | Date) => {
   const date = new Date(value);
-  const hh = date.getHours();
-  return `${hh}시`;
+
+  const hh = String(date.getHours()).padStart(2, "0");
+  const mM = String(date.getMinutes()).padStart(2, "0");
+
+  return `${hh}:${mM}`;
 };
+
+// export const getTime = (value: string | number | Date) => {
+//   const date = new Date(value);
+//   const hh = date.getHours();
+//   return `${hh}시`;
+// };
 
 export const getDateTime = (value: string | number | Date) => {
   const today = new Date();
@@ -102,16 +111,4 @@ export const timeForToday = (value: string | number | Date) => {
   if (betweenTime < 60) {
     return `${betweenTime}분전`;
   }
-
-  const betweenTimeHour = Math.floor(betweenTime / 60);
-  if (betweenTimeHour < 24) {
-    return `${betweenTimeHour}시간전`;
-  }
-
-  const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
-  if (betweenTimeDay < 365) {
-    return `${betweenTimeDay}일전`;
-  }
-
-  return `${Math.floor(betweenTimeDay / 365)}년전`;
 };

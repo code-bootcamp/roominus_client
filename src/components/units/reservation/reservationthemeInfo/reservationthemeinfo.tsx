@@ -38,8 +38,19 @@ export default function ReservationThemeInfo(
           </S.ThemeCafe>
         </S.ThemeTitleBox>
 
-        <h2>{props.data?.fetchThemeMenus[0]?.theme?.intro_title}</h2>
-        <h3>{props.data?.fetchThemeMenus[0]?.theme?.intro_content}</h3>
+        <div>
+          <h2>{props.data?.fetchThemeMenus[0]?.theme?.intro_title}</h2>
+          <h3>{props.data?.fetchThemeMenus[0]?.theme?.intro_content}</h3>
+        </div>
+
+        <S.RateBox>
+          <h4>난이도 :</h4>
+          <S.Star
+            style={{ color: "purple" }}
+            disabled
+            defaultValue={props.data?.fetchThemeMenus[0]?.theme?.rank}
+          />
+        </S.RateBox>
 
         <S.LimitBox>
           <S.ContentBox>
@@ -62,25 +73,17 @@ export default function ReservationThemeInfo(
         </S.LimitBox>
 
         <S.TimeBoxes>
-          <h3> 운영시간 | </h3>
+          <h3> 운영시간</h3>
           <S.Box>
             {props.timeTable.map(
               (el: boolean | ReactChild | ReactFragment | ReactPortal) => (
                 <S.TimeBox key={uuidv4()}>
-                  <h3>{el}</h3>
+                  <h2>{el}</h2>
                 </S.TimeBox>
               )
             )}
           </S.Box>
         </S.TimeBoxes>
-        <S.RateBox>
-          <span>난이도 :</span>
-          <S.Star
-            style={{ color: "purple" }}
-            disabled
-            defaultValue={props.data?.fetchThemeMenus[0]?.theme?.rank}
-          />
-        </S.RateBox>
       </S.InfoBox>
     </S.ImageInfoBox>
   );

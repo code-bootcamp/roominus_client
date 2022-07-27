@@ -86,8 +86,8 @@ export const Days = styled.div`
   align-items: center;
   font-size: 1.5em;
   font-weight: 600;
-  border-top: 2px solid purple;
-  border-bottom: 2px solid purple;
+  border-top: 2px solid #b6a2ea;
+  border-bottom: 2px solid #b6a2ea;
 `;
 
 export const Column = styled.div`
@@ -117,6 +117,7 @@ export const Valid = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 
   @media ${breakPoints.tablet} {
     height: 100%;
@@ -133,6 +134,7 @@ export const NotValid = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 
   @media ${breakPoints.tablet} {
     height: 100%;
