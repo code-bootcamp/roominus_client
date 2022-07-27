@@ -7,12 +7,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
-import {
-  LOGIN,
-  FETCH_USER_LOGGEDIN,
-  SOCIAL_LOGIN,
-  FETCH_SOCIAL_USER_LOGGED_IN,
-} from "./Login.query";
+import { LOGIN, FETCH_USER_LOGGEDIN, SOCIAL_LOGIN } from "./Login.query";
 import { useMutation, useApolloClient } from "@apollo/client";
 import { useRecoilState } from "recoil";
 import {
@@ -74,7 +69,9 @@ export default function Login() {
           password: data.password,
         },
       });
-      localStorage.setItem("#NL", "NL");
+      sessionStorage.setItem("#NL", "NL");
+      sessionStorage.setItem("#LL", "LL");
+      localStorage.setItem("#LL", "LL");
       const Token = result.data?.Login;
 
       const resultUserInfo = await client.query({
@@ -133,7 +130,9 @@ export default function Login() {
         // The signed-in user info.
         const user = result.user;
         // ...
-        localStorage.setItem("#SL", "SL");
+        sessionStorage.setItem("#SL", "SL");
+        sessionStorage.setItem("#LL", "LL");
+        localStorage.setItem("#LL", "LL");
         socialLogingql({
           variables: {
             email: user.email,
@@ -143,7 +142,7 @@ export default function Login() {
             setAccessToken(result.data.SocialLogin);
             client
               .query({
-                query: FETCH_SOCIAL_USER_LOGGED_IN,
+                query: FETCH_USER_LOGGEDIN,
                 context: {
                   headers: {
                     Authorization: `Bearer ${result.data.SocialLogin}`,
@@ -152,7 +151,7 @@ export default function Login() {
                 },
               })
               .then((result) => {
-                setUserInfo(result.data.fetchSocialUserLoggedIn);
+                setUserInfo(result.data.fetchUserLoggedIn);
                 Swal.fire({
                   title: "반갑습니다",
                   icon: "success",
@@ -202,7 +201,9 @@ export default function Login() {
           success: function (response: {
             kakao_account: { email: any; has_email: any };
           }) {
-            localStorage.setItem("#SL", "SL");
+            sessionStorage.setItem("#SL", "SL");
+            sessionStorage.setItem("#LL", "LL");
+            localStorage.setItem("#LL", "LL");
             socialLogingql({
               variables: {
                 email: response.kakao_account.email,
@@ -212,7 +213,7 @@ export default function Login() {
                 setAccessToken(result.data.SocialLogin);
                 client
                   .query({
-                    query: FETCH_SOCIAL_USER_LOGGED_IN,
+                    query: FETCH_USER_LOGGEDIN,
                     context: {
                       headers: {
                         Authorization: `Bearer ${result.data.SocialLogin}`,
@@ -221,7 +222,7 @@ export default function Login() {
                     },
                   })
                   .then((result) => {
-                    setUserInfo(result.data.fetchSocialUserLoggedIn);
+                    setUserInfo(result.data.fetchUserLoggedIn);
                     Swal.fire({
                       title: "반갑습니다",
                       icon: "success",

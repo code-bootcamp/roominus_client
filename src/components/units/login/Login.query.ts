@@ -21,12 +21,3 @@ export const SOCIAL_LOGIN = gql`
     SocialLogin(email: $email)
   }
 `;
-export const FETCH_SOCIAL_USER_LOGGED_IN = gql`
-  query fetchSocialUserLoggedIn {
-    fetchSocialUserLoggedIn {
-      id
-      email
-      phone
-    }
-  }
-`;

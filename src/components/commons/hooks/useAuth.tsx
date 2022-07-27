@@ -18,45 +18,36 @@ const FETCH_USER_LOGGEDIN = gql`
     }
   }
 `;
-const FETCH_SOCIAL_USER_LOGGED_IN = gql`
-  query fetchSocialUserLoggedIn {
-    fetchSocialUserLoggedIn {
-      id
-      email
-      phone
-    }
-  }
-`;
+
 export default function useAuth() {
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
   const router = useRouter();
   const [accessToken] = useRecoilState(accessTokenState);
+
   const client = useApolloClient();
   useEffect(() => {
-    if (!accessToken) {
-      Auth.toPromise().then((newAccessToken) => {
-        if (!newAccessToken) {
-          Swal.fire({
-            title: "로그인을 먼저 해주세요.",
-            icon: "warning",
-            showConfirmButton: false,
-            timer: 1000,
-          });
-          router.push("/login");
-        }
-        client
-          .query({
-            query: FETCH_USER_LOGGEDIN,
-            context: {
-              headers: {
-                Authorization: `Bearer ${newAccessToken}`,
-              },
-            },
-          })
-          .catch(() => {
+    if (!sessionStorage.getItem("#LL")) {
+      Swal.fire({
+        title: "로그인을 먼저 해주세요.",
+        icon: "warning",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+      router.push("/login");
+      if (!accessToken) {
+        Auth.toPromise().then((newAccessToken) => {
+          if (!newAccessToken) {
+            Swal.fire({
+              title: "로그인을 먼저 해주세요.",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 1000,
+            });
+            router.push("/login");
+          } else if (newAccessToken) {
             client
               .query({
-                query: FETCH_SOCIAL_USER_LOGGED_IN,
+                query: FETCH_USER_LOGGEDIN,
                 context: {
                   headers: {
                     Authorization: `Bearer ${newAccessToken}`,
@@ -72,8 +63,9 @@ export default function useAuth() {
                 });
                 router.push("/login");
               });
-          });
-      });
+          }
+        });
+      }
     }
   }, []);
 }

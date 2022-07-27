@@ -69,15 +69,16 @@ const styles = {
 export default function LayoutHeaderUI(props: IHeaderUIProps) {
   const [openMypageOp, setOpenMypageOp] = useState(false);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+
   const onClickOpenMypageOp = () => {
     setOpenMypageOp(true);
   };
   const onClickCloseMypageOp = () => {
     setOpenMypageOp(false);
   };
-  // const showSettings = (event) => {
-  //   event.preventDefault();
-  // };
+  const showSettings = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <>
