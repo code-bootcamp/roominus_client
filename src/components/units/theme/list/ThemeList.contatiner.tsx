@@ -3,7 +3,11 @@ import { useRouter } from "next/router";
 import { useState, MouseEvent } from "react";
 import Swal from "sweetalert2";
 import ThemeUI from "./ThemeList.presenter";
-import { FETCH_GENRES, FETCH_THEMES } from "./ThemeList.queries";
+import {
+  FETCH_GENRES,
+  FETCH_THEMES,
+  FETCH_THEMES_ALL,
+} from "./ThemeList.queries";
 import { IFetchThemes } from "./ThemeList.types";
 
 export default function ThemeList() {
@@ -17,11 +21,7 @@ export default function ThemeList() {
     },
   });
 
-  const { data: hotThemes } = useQuery(FETCH_THEMES, {
-    variables: {
-      page: 2,
-    },
-  });
+  const { data: themesAll } = useQuery(FETCH_THEMES_ALL);
 
   const { data: fetchGenres } = useQuery(FETCH_GENRES);
 
@@ -86,7 +86,7 @@ export default function ThemeList() {
     <ThemeUI
       data={data}
       more={more}
-      hotThemes={hotThemes}
+      themesAll={themesAll}
       myIndex={myIndex}
       fetchGenres={fetchGenres}
       selectAll={selectAll}

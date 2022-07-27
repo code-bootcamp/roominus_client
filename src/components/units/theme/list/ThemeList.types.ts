@@ -11,12 +11,13 @@ export interface IFetchThemes {
   clearTime: string;
   agelimit?: number;
   peoplelimit: number;
+  like: number;
 }
 
 export interface IThemeListProps {
   data?: any;
   more: boolean;
-  hotThemes?: any;
+  themesAll?: any;
   fetchGenres?: any;
   isToggled?: boolean;
   myIndex: Array<boolean>;

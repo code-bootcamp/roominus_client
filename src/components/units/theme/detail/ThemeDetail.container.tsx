@@ -10,10 +10,10 @@ import _ from "lodash";
 
 export default function ThemeDetail() {
   const [userInfo] = useRecoilState(userInfoState);
-  const [pickTheme, setPickTheme] = useRecoilState(userPickThemeState);
+  const [, setPickTheme] = useRecoilState(userPickThemeState);
 
   const router = useRouter();
-  const { data } = useQuery(FETCH_THEME, {
+  const { data, refetch } = useQuery(FETCH_THEME, {
     variables: {
       themeId: router.query.id,
     },
@@ -26,6 +26,7 @@ export default function ThemeDetail() {
     const result = await createLikeTheme({
       variables: { themeId: router.query.id },
     });
+    refetch();
     setLove(result.data?.createLikeTheme);
   }, 500);
 
@@ -35,7 +36,6 @@ export default function ThemeDetail() {
 
   const onClickReservation = () => {
     setPickTheme(data.fetchTheme.id);
-    console.log(pickTheme);
     router.push("/reservation");
   };
 

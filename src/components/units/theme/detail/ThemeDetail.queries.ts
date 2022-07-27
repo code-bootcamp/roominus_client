@@ -19,6 +19,10 @@ export const FETCH_THEME = gql`
       likeUsers {
         userId
       }
+      cafe {
+        name
+        address
+      }
     }
   }
 `;

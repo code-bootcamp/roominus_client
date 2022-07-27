@@ -27,6 +27,13 @@ export default function ThemeListUI(props: IThemeListProps) {
     };
   }, [windowSize]);
 
+  const hotThemes = props.themesAll?.fetchThemesAll
+    .slice()
+    .sort((a: IFetchThemes, b: IFetchThemes) => {
+      return b.like - a.like;
+    })
+    .slice(0, 4);
+
   return (
     <S.Wrapper>
       {windowSize && (
@@ -35,14 +42,14 @@ export default function ThemeListUI(props: IThemeListProps) {
             <S.MobileGenre>신규 테마</S.MobileGenre>
             <MobileCarousel
               onClickTheme={props.onClickTheme}
-              data={props.data}
+              data={props.data?.fetchThemes}
             />
           </S.MobileList>
           <S.MobileList>
             <S.MobileGenre>인기 테마</S.MobileGenre>
             <MobileCarousel
               onClickTheme={props.onClickTheme}
-              data={props.hotThemes}
+              data={hotThemes}
             />
           </S.MobileList>
         </div>

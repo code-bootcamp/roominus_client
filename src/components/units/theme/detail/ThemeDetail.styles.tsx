@@ -70,6 +70,7 @@ export const ThemeRightBox = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* max-height: fit-content; */
+    padding: 5px;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -94,33 +95,39 @@ export const GenreTag = styled.div`
 `;
 
 export const ThemeTitle = styled.h2`
-  svg text {
-    position: absolute;
-    top: 50%;
-    font-family: "Staatliches", cursive;
-    font-size: 6em;
-    stroke: #f1c164;
-    stroke-width: 3px;
-    stroke-dasharray: 326px;
-    animation: stroke 3s linear;
-  }
+  display: flex;
+  align-items: center;
   color: #26282c;
-  font-size: 2.5em;
+  font-size: 3em;
   font-family: "GowunDodum-Regular";
 
   @media ${breakPoints.tablet} {
-    font-size: 1.5em;
+    font-size: 2.3em;
   }
   @media ${breakPoints.mobile} {
-    font-size: 1.3em;
+    font-size: 2em;
     width: auto;
+  }
+`;
+
+export const CafeTitle = styled.div`
+  color: #a3a8b7;
+  font-size: 0.6em;
+`;
+
+export const Like = styled.div`
+  position: absolute;
+  right: 7.5%;
+  top: 7%;
+  @media ${breakPoints.mobile} {
+    right: 9%;
   }
 `;
 
 export const ThemeSubTitle = styled.h3`
   font-style: oblique;
   padding: px 0px;
-  font-size: 1.5em;
+  font-size: 1.4em;
 `;
 
 export const ThemeContents = styled.h5`
@@ -172,6 +179,11 @@ export const ThemeRank = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 2px;
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
 `;
 
 export const LimitBox = styled.div`

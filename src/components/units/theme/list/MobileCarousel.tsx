@@ -51,7 +51,7 @@ export default function MobileCarousel(props: ICarouselProps) {
   return (
     <Wrapper>
       <MySlider {...settings}>
-        {props.data?.fetchThemes.map((el: IFetchThemes, i: number) => (
+        {props.data?.map((el: IFetchThemes, i: number) => (
           <Theme
             key={uuidv4()}
             src={el.mainImg}
