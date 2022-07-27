@@ -147,7 +147,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                 <MenuItem value={""} disabled>
                   시간을 선택해주세요
                 </MenuItem>
-                {props?.ableTime?.map((el: any) => (
+                {props?.resultTime?.map((el: any) => (
                   <MenuItem key={uuidv4()} value={el}>
                     {el}
                   </MenuItem>
@@ -181,41 +181,46 @@ export default function ReservationUI(props: IReservationUIProps) {
               </TextField>
             )}
 
-            {!!props?.data?.fetchThemeMenus.length && props?.selectTime && (
-              <div>
-                {" "}
-                <TextField
-                  id="filled-point"
-                  label="적립금을 입력해주세요"
-                  type="number"
-                  fullWidth
-                  onChange={props.onChangePoint}
-                  style={{ paddingBottom: "0.2em" }}
-                  variant="outlined"
-                  defaultValue={props.max}
-                  onWheel={(e) => (e.target as HTMLInputElement).blur()}
-                />
-                <S.Point>
-                  현재 적립금 <span>{props.max}원</span> 사용 가능합니다.
-                </S.Point>
-              </div>
-            )}
+            {!!props?.data?.fetchThemeMenus.length &&
+              props?.reservationDate &&
+              props?.selectTime && (
+                <div>
+                  {" "}
+                  <TextField
+                    id="filled-point"
+                    label="적립금을 입력해주세요"
+                    type="number"
+                    fullWidth
+                    onChange={props.onChangePoint}
+                    style={{ paddingBottom: "0.2em" }}
+                    variant="outlined"
+                    defaultValue={props.max}
+                    onWheel={(e) => (e.target as HTMLInputElement).blur()}
+                    value={props?.usePoint ? props?.usePoint : ""}
+                  />
+                  <S.Point>
+                    현재 적립금 <span>{props.max}원</span> 사용 가능합니다.
+                  </S.Point>
+                </div>
+              )}
           </S.GridBox>
 
-          {!!props?.data?.fetchThemeMenus.length && props?.selectTime && (
-            <TextField
-              id="filled-memo"
-              label="메모"
-              type="text"
-              fullWidth
-              multiline
-              maxRows={2}
-              variant="outlined"
-              onChange={props.onChangeMemo}
-              style={{ paddingBottom: "1.3em" }}
-              helperText="예약자와 방문자가 다를 경우 방문자의 정보를 작성해주세요."
-            />
-          )}
+          {!!props?.data?.fetchThemeMenus.length &&
+            props?.reservationDate &&
+            props?.selectTime && (
+              <TextField
+                id="filled-memo"
+                label="메모"
+                type="text"
+                fullWidth
+                multiline
+                maxRows={2}
+                variant="outlined"
+                onChange={props.onChangeMemo}
+                style={{ paddingBottom: "1.3em" }}
+                helperText="예약자와 방문자가 다를 경우 방문자의 정보를 작성해주세요."
+              />
+            )}
 
           {!!props?.data?.fetchThemeMenus.length && props.totalPrice && (
             <S.FooterBox>

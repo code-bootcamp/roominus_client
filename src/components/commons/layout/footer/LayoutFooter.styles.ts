@@ -51,30 +51,26 @@ export const MenuWrapper = styled.ul`
 
 export const Menu = styled.li`
   margin-right: 20px;
-  border-right: 1px solid black;
   padding-right: 16px;
   cursor: pointer;
-
-  &:last-of-type {
-    border: none;
-  }
 
   font-weight: 600;
   font-size: 1.3em;
 
   @media ${breakPoints.tablet} {
     margin-right: 1em;
-    border: none;
   }
 
   @media ${breakPoints.mobile} {
     text-align: center;
     text-align: center;
     font-size: 0.8em;
+    border-right: 1px solid black;
 
     &:last-of-type {
       padding: 0;
       margin: 0;
+      border: none;
     }
   }
 `;
