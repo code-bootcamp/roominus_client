@@ -54,6 +54,7 @@ export default function MyPhoneEditUI(props: IMyPhoneEditUIProps) {
                       onChange={(e) => {
                         props.setValue("phoneNumber", e.target.value);
                         props.trigger("phoneNumber");
+                        props.setPhone(e.target.value);
                       }}
                     />
                   </S.PhoneBox>
@@ -70,7 +71,13 @@ export default function MyPhoneEditUI(props: IMyPhoneEditUIProps) {
                   <S.VerificationNoBox>
                     <S.VerificationNoInput
                       type="text"
-                      placeholder="인증번호를 입력하세요."
+                      name="phoneToken"
+                      placeholder="인증번호를 입력해주세요."
+                      onChange={(e) => {
+                        props.setValue("phoneToken", e.target.value);
+                        props.trigger("phoneToken");
+                        props.setTokenInput(e.target.value);
+                      }}
                     />
                     <S.TimeOut ref={props.timeRef}>{props.showCount}</S.TimeOut>
                   </S.VerificationNoBox>
