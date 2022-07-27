@@ -168,9 +168,9 @@ export default function Login() {
                 })
               );
           })
-          .catch((error) =>
+          .catch(() =>
             Swal.fire({
-              title: error,
+              title: "회원가입을 먼저 해주세요!",
               icon: "error",
               showConfirmButton: false,
               timer: 1000,
@@ -239,9 +239,9 @@ export default function Login() {
                     })
                   );
               })
-              .catch((error) =>
+              .catch(() =>
                 Swal.fire({
-                  title: error,
+                  title: "회원가입을 먼저 해주세요!",
                   icon: "error",
                   showConfirmButton: false,
                   timer: 1000,

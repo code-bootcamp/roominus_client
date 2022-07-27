@@ -27,6 +27,7 @@ export default function PWeditUI(props: IPWeditUIProps) {
                 onChange={(e) => {
                   props.setValue("password", e.target.value);
                   props.setPassword(e.target.value);
+                  props.trigger("password");
                 }}
                 name="password"
                 ref={props.passwordInputRef}
@@ -85,7 +86,10 @@ export default function PWeditUI(props: IPWeditUIProps) {
             </S.TitleBox>
             <S.PasswordVerificationInputBox>
               <S.PasswordVerificationInput
-                onChange={(e) => props.setValue("password2", e.target.value)}
+                onChange={(e) => {
+                  props.setValue("password2", e.target.value);
+                  props.trigger("password2");
+                }}
                 name="password2"
                 ref={props.password2InputRef}
                 type="password"
