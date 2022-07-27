@@ -15,6 +15,7 @@ const HIDDEN_HEADER = ["/"];
 const HIDDEN_BANNER = ["/", "/home/", "/cafe/"];
 const HIDDEN_TOP_HEADER = ["/"];
 const HIDDEN_FOOTER = ["/"];
+const HIDDEN_MOBILE_NAVBAR = ["/"];
 
 const MainWrapper = styled.main`
   max-width: 1200px;
@@ -49,7 +50,7 @@ const Wrapper = styled.main`
 const Body = styled.div`
   width: 100%;
   height: 70%;
-  padding: 0em 0.5em 3em 0.5em;
+  padding: 0em 0.5em;
 `;
 
 interface ILayoutProps {
@@ -62,6 +63,8 @@ export default function Layout(props: ILayoutProps) {
   const isHiddenTopHeader = HIDDEN_TOP_HEADER.includes(router.asPath);
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
+  const isHiddenNavBar = HIDDEN_MOBILE_NAVBAR.includes(router.asPath);
+
   const isVISBLESIDEBAR = router.asPath.includes("/mypage");
   const isVISBLEADMINSIDEBAR = router.asPath.includes("/admin");
 
@@ -112,7 +115,7 @@ export default function Layout(props: ILayoutProps) {
             <Body>{props.children}</Body>
           </div>
           {!isHiddenFooter && <LayoutFooter />}
-          <LayoutBottomNavigation />
+          {!isHiddenNavBar && <LayoutBottomNavigation />}
         </Wrapper>
       )}
     </MainWrapper>
