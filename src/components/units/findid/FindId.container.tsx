@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import FindIdUI from "./FindId.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FETCH_USER, FETCH_SOCIAL_USER } from "./FindId.query";
+import { FETCH_USER } from "./FindId.query";
 import { useApolloClient } from "@apollo/client";
 import Swal from "sweetalert2";
 
@@ -59,31 +59,14 @@ export default function FindId() {
           confirmButtonColor: "#4a00e0e7",
         });
       })
-      .catch(async () => {
-        await client
-          .query({
-            query: FETCH_SOCIAL_USER,
-            variables: {
-              phone: data.phoneNumber,
-            },
-          })
-          .then((result) => {
-            Swal.fire({
-              title: `가입하신 아이디는 ${result.data.fetchSocialUser.email}입니다`,
-              icon: "success",
-              confirmButtonText: "확인",
-              confirmButtonColor: "#4a00e0e7",
-            });
-          })
-          .catch(() => {
-            Swal.fire({
-              title: "조회하신 번호로 가입된 정보가 없습니다.",
-              width: 700,
-              icon: "error",
-              confirmButtonText: "확인",
-              confirmButtonColor: "#4a00e0e7",
-            });
-          });
+      .catch(() => {
+        Swal.fire({
+          title: "조회하신 번호로 가입된 정보가 없습니다.",
+          width: 700,
+          icon: "error",
+          confirmButtonText: "확인",
+          confirmButtonColor: "#4a00e0e7",
+        });
       });
   };
 

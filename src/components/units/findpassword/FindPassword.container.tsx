@@ -36,7 +36,6 @@ export default function FindPassword(props: IFindPasswordProps) {
     email: any;
     phoneNumber: any;
   }) => {
-    console.log(data);
     try {
       const result = await client.query({
         query: FETCH_FIND_PASSWORD,
