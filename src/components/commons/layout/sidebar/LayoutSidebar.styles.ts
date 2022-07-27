@@ -48,7 +48,7 @@ export const UserNameBox = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 3em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 
   width: 8em;
   height: 8em;
@@ -82,10 +82,6 @@ export const UserPoint = styled.span`
   color: #bf9eeb;
   font-weight: 600;
   font-size: 1.3em;
-`;
-export const line = styled.div`
-  border: 1px solid #bf9eeb;
-  width: 70%;
 `;
 
 export const MenuBoxs = styled.div`

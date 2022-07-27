@@ -10,7 +10,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.ThemeBoxs>
+        <S.ThemeBoxes>
           <Link href={"/mypage/mypick"}>
             <S.ThemeBox>
               <S.ThemeTitle>테마 찜</S.ThemeTitle>{" "}
@@ -36,7 +36,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.ThemeIcon src="/img/mypage/board.webp" />
             </S.ThemeBox>
           </Link>
-        </S.ThemeBoxs>
+        </S.ThemeBoxes>
 
         <S.RowBox>
           <S.InfoBox>
@@ -87,29 +87,32 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                 </Link>
               </S.addButton>
             </S.InfoTitleBox>
-
-            <S.TableTop />
-            <S.TitleRow>
-              <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
-              <S.ColumnHeaderBasic>결제번호</S.ColumnHeaderBasic>
-              <S.ColumnHeaderBasic>결제 가격</S.ColumnHeaderBasic>
-              <S.ColumnHeaderBasic>사용</S.ColumnHeaderBasic>
-              <S.ColumnHeaderBasic>적립예정</S.ColumnHeaderBasic>
-            </S.TitleRow>
-            {props?.payments?.fetchPayments
-              .slice(0, 3)
-              .map((el: IFetchPayments, index: number) => (
-                <S.Row key={el.id}>
-                  <S.ColumnNumber>{index + 1}</S.ColumnNumber>
-                  <S.ColumnBasic>
-                    {el.imp_uid.split("_")[1].slice(0, 5)}
-                  </S.ColumnBasic>
-                  <S.ColumnBasic>{el.price}</S.ColumnBasic>
-                  <S.ColumnBasic>{el.usepoint}원</S.ColumnBasic>
-                  <S.ColumnBasic>{Math.ceil(el.price * 0.03)}원</S.ColumnBasic>
-                </S.Row>
-              ))}
-            <S.TableBottom />
+            <S.TableWrapper>
+              <S.TableTop />
+              <S.TitleRow>
+                <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
+                <S.ColumnHeaderBasic>결제번호</S.ColumnHeaderBasic>
+                <S.ColumnHeaderBasic>결제 가격</S.ColumnHeaderBasic>
+                <S.ColumnHeaderBasic>사용</S.ColumnHeaderBasic>
+                <S.ColumnHeaderBasic>적립예정</S.ColumnHeaderBasic>
+              </S.TitleRow>
+              {props?.payments?.fetchPayments
+                .slice(0, 3)
+                .map((el: IFetchPayments, index: number) => (
+                  <S.Row key={el.id}>
+                    <S.ColumnNumber>{index + 1}</S.ColumnNumber>
+                    <S.ColumnBasic>
+                      {el.imp_uid.split("_")[1].slice(0, 5)}
+                    </S.ColumnBasic>
+                    <S.ColumnBasic>{el.price}</S.ColumnBasic>
+                    <S.ColumnBasic>{el.usepoint}원</S.ColumnBasic>
+                    <S.ColumnBasic>
+                      {Math.ceil(el.price * 0.03)}원
+                    </S.ColumnBasic>
+                  </S.Row>
+                ))}
+              <S.TableBottom />
+            </S.TableWrapper>
           </S.InfoBox>
         </S.RowBox>
       </S.Wrapper>

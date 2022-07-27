@@ -24,7 +24,6 @@ const Printer = styled(PrinterOutlined)`
   padding-top: 0.4em;
   margin-right: 0.2em;
   background-color: pink;
-  color: white;
   border: 1px solid pink;
   border-radius: 50%;
   width: 1.8em;

@@ -4,7 +4,7 @@ export default function SuccessNotice() {
   return (
     <S.NotionArea>
       <S.NoticeTitle> NOTICE </S.NoticeTitle>
-      <S.NoticeBoxs>
+      <S.NoticeBoxes>
         <S.NoticeBox>
           <>
             <S.NoticeImg src="/img/reservation/notice01.webp" />
@@ -65,7 +65,7 @@ export default function SuccessNotice() {
             </S.NoticeDescription>
           </S.Notice>
         </S.NoticeBox>
-      </S.NoticeBoxs>
+      </S.NoticeBoxes>
     </S.NotionArea>
   );
 }
