@@ -96,6 +96,8 @@ export default function Reservation() {
 
   // 오늘 시간이 지난 예약건은 보여주지 않는다 !
   useEffect(() => {
+    console.log(reservationDate);
+
     const todayTime = getMyTime(new Date());
     const resultTime = [];
 
@@ -116,10 +118,11 @@ export default function Reservation() {
           resultTime.push(timeTable[i]);
         }
       }
-    }
 
-    setResultTime(resultTime);
-    console.log(resultTime);
+      setResultTime(resultTime);
+    } else {
+      setResultTime(ableTime);
+    }
   }, [reservationDate]);
 
   // 시간 선택

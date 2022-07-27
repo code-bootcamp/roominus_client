@@ -44,10 +44,10 @@ const Box = styled.div`
   }
 
   & img {
-    width: 200%;
+    width: 100%;
     height: calc(100% - 10vh);
     object-fit: cover;
-    transition: 0.5s;
+    transition: 0.8s;
 
     :hover {
       width: 100%;

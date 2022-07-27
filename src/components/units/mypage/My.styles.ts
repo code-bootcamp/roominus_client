@@ -65,6 +65,7 @@ export const Row = styled.li`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 1.1em;
 
   &:last-of-type {
     border: none;
