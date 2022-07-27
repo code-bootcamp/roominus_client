@@ -54,7 +54,7 @@ export const SearchBox = styled.div`
 `;
 
 export const SearchDetailBox = styled.div`
-  width: 100%; //70vw
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,7 +69,7 @@ export const SearchDetailBox = styled.div`
 `;
 
 export const DetailBox = styled.div`
-  width: 40%; //50vw
+  width: 40%;
   height: 45px;
   display: flex;
   flex-direction: row;
@@ -271,7 +271,6 @@ export const TitleBox = styled.div`
   width: 100%;
   height: 4em;
   margin: 1em 0em;
-  /* background-color: orange; */
 
   & h1 {
     font-weight: 700;

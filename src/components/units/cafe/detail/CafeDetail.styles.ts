@@ -146,6 +146,7 @@ export const LocationDetail = styled.p`
   color: #a3a8b7;
 
   @media ${breakPoints.mobile} {
+    font-size: 1.1em;
     margin: 0em 0em 0.5em 0em;
   }
 `;
@@ -165,9 +166,11 @@ export const ThemeList = styled.div`
   grid-gap: 2.5em;
 
   @media ${breakPoints.mobile} {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0em;
   }
 `;
 

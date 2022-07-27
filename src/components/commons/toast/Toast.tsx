@@ -11,15 +11,13 @@ export default function ToastEditor(props: {
   onChangeContent: (editorType: EditorType) => void;
   editorRef: LegacyRef<Editor>;
 }) {
-  console.log(props.defaultValue);
   return (
     <Editor
       onChange={props.onChangeContent}
       initialValue={props.defaultValue}
       previewStyle="vertical"
       height="550px"
-      // initialEditType="wysiwyg"
-      initialEditType="markdown"
+      initialEditType="markdown" // or wysiwyg
       useCommandShortcut={true}
       ref={props.editorRef}
       plugins={[colorSyntax]}

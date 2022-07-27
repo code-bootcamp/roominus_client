@@ -9,20 +9,16 @@ export function MyDropzone(props: {
     const file = acceptedFiles[0];
 
     if (file) {
-      const fileReader = new FileReader(); //파일에 관련된 기능들이 있는 것(FileReader)
+      const fileReader = new FileReader();
       fileReader.readAsDataURL(file); //파일을 읽어서 바로 url로 바꿔주는 기능(readAsDataURL)
       fileReader.onload = (data) => {
-        //파일이 다 로드가 되면 data가 들어옴
         if (typeof data.target?.result === "string") {
-          //타입지정때문에 써주는 것
-          console.log(data.target?.result); //어떤식으로 data가 들어오는지 확인
-          props.setImageUrl(data.target?.result); //최종적으로 미리보기 imgUrl state에 담기
+          props.setImageUrl(data.target?.result);
         }
       };
     }
 
     upload(file).then((result) => props.setFileUrl(result.url));
-    console.log(acceptedFiles);
   }, []);
 
   const upload = (file: string | Blob) => {

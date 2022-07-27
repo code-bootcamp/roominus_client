@@ -3,7 +3,6 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 100%;
-  /* background-color: gray; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,14 +12,10 @@ export const Wrapper = styled.section`
   width: 90%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   padding: 0em 0em 2em 0em;
-  /* background-color: red; */
 `;
 
 export const Title = styled.h1`
-  /* font-size: 2em; */
-  /* align-self: center; */
   margin-bottom: 0px;
   height: 100px;
   font-size: 25px;
@@ -32,12 +27,10 @@ export const Title = styled.h1`
 
 export const HalfBox = styled.div`
   width: 100%;
-  /* height: 25em; */
   margin-bottom: 2em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: green; */
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -53,7 +46,6 @@ export const Picture = styled.img`
   height: 25em;
   margin-right: 2em;
   border-radius: 10px;
-  /* background-color: #c2c2c2; */
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -63,11 +55,9 @@ export const Picture = styled.img`
 
 export const HalfRightBox = styled.div`
   width: 100%;
-  /* height: 25em; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background-color: yellow; */
 
   @media ${breakPoints.mobile} {
     margin-top: 2em;
@@ -76,10 +66,6 @@ export const HalfRightBox = styled.div`
 
 export const InfoBox = styled.div`
   width: 100%;
-
-  /* height: 6em; */
-  /* margin-bottom: 2em; */
-  /* background-color: pink; */
 `;
 
 export const InfoTitle = styled.h3``;
@@ -90,9 +76,7 @@ export const Error = styled.div`
   color: red;
 `;
 
-export const DropZoneInfoBox = styled.div`
-  /* height: 100%; */
-`;
+export const DropZoneInfoBox = styled.div``;
 
 export const DropBox = styled.div`
   width: 100%;
@@ -125,11 +109,9 @@ export const InfoInput = styled.input`
 
 export const ContentsInfoBox = styled.div`
   width: 100%;
-  /* height: 100%; */
   margin-bottom: 2em;
   display: flex;
   flex-direction: column;
-  /* background-color: #f99aaa; */
 `;
 
 export const WebEditor = styled.div`
@@ -149,7 +131,6 @@ export const ButtonBox = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 2em;
-  /* background-color: orange; */
 `;
 
 export const Button = styled.button`

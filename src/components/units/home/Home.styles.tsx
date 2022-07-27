@@ -79,11 +79,6 @@ export const StoreImgboxes = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2em;
 
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between; */
-  /* background-color: lightcoral; */
-
   @media ${breakPoints.tablet} {
     width: 100%;
     display: grid;
@@ -91,9 +86,10 @@ export const StoreImgboxes = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 90%;
-    display: grid;
-    grid-template-columns: 1fr;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 

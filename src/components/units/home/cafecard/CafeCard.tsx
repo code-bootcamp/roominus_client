@@ -1,11 +1,7 @@
-// import {
-//   EditOutlined,
-//   EllipsisOutlined,
-//   SettingOutlined,
-// } from "@ant-design/icons";
 import { Card } from "antd";
 import React from "react";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 const { Meta } = Card;
 
@@ -15,37 +11,55 @@ const Wrapper = styled.div`
   }
   transition: all 250ms ease-in-out;
   border: 1px solid #c2c2c2;
+
+  @media ${breakPoints.mobile} {
+    width: 19.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const LocationBox = styled.div`
-  width: 4.7em;
-  height: 2.5em;
+  width: 5.5em;
+  height: 3.5em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 0.3em;
-  /* align-items: center; */
   position: absolute;
   z-index: 1;
-  top: 1.5em;
+  top: 2.4em;
   left: -1px;
-  background-color: #8b54c1;
-  /* background-color: #26282c; */
+  background-color: #4a00e0;
 `;
 
-const Location = styled.h4`
-  padding-top: 0.4em;
-  height: 2.5em;
+const Location = styled.h3`
+  font-size: 1.3em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   color: white;
 `;
 
 const LocationIcon = styled.img`
-  width: 1.1em;
-  height: 1em;
+  width: 1.3em;
+  height: 1.4em;
   display: flex;
   flex-direction: column;
   align-self: center;
-  /* background-color: pink; */
+`;
+
+const Info = styled.div`
+  height: 3.5em;
+  font-size: 1.2em;
+
+  .ant-card-meta-title {
+    font-weight: 500;
+    font-size: 1.1em;
+  }
 `;
 
 const CafeCard = (props: {
@@ -67,25 +81,17 @@ const CafeCard = (props: {
         <img
           alt="example"
           src={props.el?.mainImg}
-          style={{ height: 250, cursor: "pointer" }}
+          style={{ height: 240, cursor: "pointer" }}
         />
       }
-      // 관리자 권한일 때 사용하기
-      // actions={[
-      //   <SettingOutlined key="setting" />,
-      //   <EditOutlined key="edit" />,
-      //   <EllipsisOutlined key="ellipsis" />,
-      // ]}
     >
       <LocationBox>
         <LocationIcon src="/img/cafe/locationIcon.webp" />
         <Location>{props.el?.address}</Location>
       </LocationBox>
-      <Meta
-        // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title={props.el?.name}
-        description={props.el?.phone}
-      />
+      <Info>
+        <Meta title={props.el?.name} description={props.el?.phone} />
+      </Info>
     </Card>
   </Wrapper>
 );
