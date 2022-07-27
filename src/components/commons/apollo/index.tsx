@@ -28,17 +28,6 @@ const FETCH_USER_LOGGEDIN = gql`
     }
   }
 `;
-const FETCH_SOCIAL_USER_LOGGED_IN = gql`
-  query fetchSocialUserLoggedIn {
-    fetchSocialUserLoggedIn {
-      id
-      email
-      phone
-      name
-      point
-    }
-  }
-`;
 
 export default function ApolloSetting(props: any) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
@@ -46,22 +35,7 @@ export default function ApolloSetting(props: any) {
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
 
   useEffect(() => {
-    if (localStorage.getItem("#SL")) {
-      Auth.toPromise().then(async (newAccessToken) => {
-        setAccessToken(newAccessToken);
-        const resultuserInfo = await client.query({
-          query: FETCH_SOCIAL_USER_LOGGED_IN,
-          context: {
-            headers: {
-              Authorization: `Bearer ${newAccessToken}`,
-            },
-          },
-        });
-        const user = resultuserInfo.data?.fetchSocialUserLoggedIn;
-
-        setUserInfo(user);
-      });
-    } else if (localStorage.getItem("#NL")) {
+    if (sessionStorage.getItem("#LL")) {
       Auth.toPromise().then(async (newAccessToken) => {
         setAccessToken(newAccessToken);
         const resultuserInfo = await client.query({

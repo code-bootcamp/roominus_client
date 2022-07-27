@@ -4,11 +4,7 @@ import { useEffect, useState, MouseEvent } from "react";
 import LayoutSideBarUI from "./LayoutSidebar.presenter";
 import Swal from "sweetalert2";
 
-import {
-  LOG_OUT,
-  FETCH_SOCIAL_USER_LOGGED_IN,
-  FETCH_USER_LOGGEDIN,
-} from "./LayoutSidebar.query";
+import { LOG_OUT, FETCH_USER_LOGGEDIN } from "./LayoutSidebar.query";
 import { useApolloClient } from "@apollo/client";
 import {
   accessTokenState,
@@ -26,7 +22,7 @@ export default function LayoutSidebar() {
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
 
   // useEffect(() => {
-  //   if (localStorage.getItem("#SL")) {
+  //   if (sessionStorage.getItem("#SL")) {
   //     Auth.toPromise().then(async (newAccessToken) => {
   //       setAccessToken(newAccessToken);
   //       const resultuserInfo = await client.query({
@@ -40,7 +36,7 @@ export default function LayoutSidebar() {
   //       const user = resultuserInfo.data?.fetchUserLoggedIn;
   //       setUserInfo(user);
   //     });
-  //   } else if (localStorage.getItem("#NL")) {
+  //   } else if (sessionStorage.getItem("#NL")) {
   //     Auth.toPromise().then(async (newAccessToken) => {
   //       setAccessToken(newAccessToken);
   //       const resultuserInfo = await client.query({

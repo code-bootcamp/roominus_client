@@ -15,13 +15,6 @@ const FETCH_USER_LOGGEDIN = gql`
     }
   }
 `;
-const FETCH_SOCIAL_USER_LOGGED_IN = gql`
-  query fetchSocialUserLoggedIn {
-    fetchSocialUserLoggedIn {
-      isserviceprovider
-    }
-  }
-`;
 
 export default function useAdminAuth() {
   const client = useApolloClient();
@@ -43,31 +36,7 @@ export default function useAdminAuth() {
             router.push("/login");
           }, 500);
         } else if (newAccessToken) {
-          if (localStorage.getItem("#SL")) {
-            await client
-              .query({
-                query: FETCH_SOCIAL_USER_LOGGED_IN,
-                context: {
-                  headers: {
-                    Authorization: `Bearer ${newAccessToken}`,
-                  },
-                },
-              })
-              .then((result) => {
-                if (
-                  result.data.fetchSocialUserLoggedIn.isserviceprovider ===
-                  false
-                ) {
-                  Swal.fire({
-                    title: "관리자 페이지 입니다.",
-                    icon: "warning",
-                    showConfirmButton: false,
-                    timer: 1000,
-                  });
-                  router.push("/");
-                }
-              });
-          } else if (localStorage.getItem("#NL")) {
+          if (sessionStorage.getItem("#LL")) {
             await client
               .query({
                 query: FETCH_USER_LOGGEDIN,

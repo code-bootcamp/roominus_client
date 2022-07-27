@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 export default function useLogged() {
   const router = useRouter();
   useEffect(() => {
-    if (localStorage.getItem("#NL") || localStorage.getItem("#SL")) {
+    if (sessionStorage.getItem("#NL") || sessionStorage.getItem("#SL")) {
       Swal.fire({
         title: "로그인 하셨네요!",
         icon: "warning",

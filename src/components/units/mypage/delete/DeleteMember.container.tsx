@@ -51,6 +51,7 @@ export default function DeleteMember() {
         },
       });
       localStorage.clear();
+      sessionStorage.clear();
       setAccessToken("");
       setUserInfo({
         id: "",
