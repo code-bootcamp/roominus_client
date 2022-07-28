@@ -4,18 +4,21 @@ import { useRouter } from "next/router";
 import { breakPoints } from "../../../../commons/styles/media";
 import { FETCH_BOARDS } from "../../community/list/CommunityList.queries";
 import { uuidv4 } from "@firebase/util";
-import { IFetchBoards } from "../Home.type";
 const Container = styled.div`
   width: 100%;
   display: flex;
   box-sizing: border-box;
   height: 45vh;
-  gap: 1em;
+  gap: 0.5em;
+
+  @media ${breakPoints.mobile} {
+    height: 30vh;
+  }
 `;
 
 const Box = styled.div`
   overflow: hidden;
-  transition: 0.5s;
+  transition: 1s;
   flex: 1;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   line-height: 0;
@@ -48,7 +51,7 @@ const Box = styled.div`
     width: 100%;
     height: calc(100% - 10vh);
     object-fit: cover;
-    transition: 1s;
+    transition: 1.8s;
 
     :hover {
       width: 100%;
