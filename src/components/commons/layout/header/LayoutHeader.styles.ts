@@ -74,7 +74,7 @@ export const MenuWrapper = styled.ul`
 export const MenuItem = styled.li`
   font-size: 1.5em;
   font-weight: 500;
-  cursor: ${(props: IIsActiveProps) => (props.isActive ? "none" : "pointer")};
+  cursor: pointer;
   color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#0000")};
 
   --b: 0.1em;
