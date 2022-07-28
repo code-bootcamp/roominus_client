@@ -55,9 +55,7 @@ export default function ChangingPassword() {
         backdrop: false,
       });
       router.push("/login");
-    } catch (error) {
-      // console.log(error.message);
-    }
+    } catch (error) {}
   };
 
   const onClickShowPassword = () => {

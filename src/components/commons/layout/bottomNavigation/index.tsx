@@ -31,14 +31,18 @@ export default function LayoutBottomNavigation() {
       onChange={handleChange}
     >
       <Link href="/cafe">
-        <BottomNavigationAction
-          value="매장"
-          icon={<StorefrontOutlinedIcon />}
-        />
+        <a>
+          <BottomNavigationAction
+            value="매장"
+            icon={<StorefrontOutlinedIcon />}
+          />
+        </a>
       </Link>
 
       <Link href={"/theme"}>
-        <BottomNavigationAction value="테마" icon={<FavoriteIcon />} />
+        <a>
+          <BottomNavigationAction value="테마" icon={<FavoriteIcon />} />
+        </a>
       </Link>
 
       <Link href={"/reservation"}>
@@ -49,14 +53,21 @@ export default function LayoutBottomNavigation() {
       </Link>
 
       <Link href={"/community"}>
-        <BottomNavigationAction value="커뮤니티" icon={<ChatOutlinedIcon />} />
+        <a>
+          <BottomNavigationAction
+            value="커뮤니티"
+            icon={<ChatOutlinedIcon />}
+          />
+        </a>
       </Link>
 
       <Link href="/mypage">
-        <BottomNavigationAction
-          value="마이페이지"
-          icon={<PermIdentityOutlinedIcon />}
-        />
+        <a>
+          <BottomNavigationAction
+            value="마이페이지"
+            icon={<PermIdentityOutlinedIcon />}
+          />
+        </a>
       </Link>
     </BottomNavigation>
   );

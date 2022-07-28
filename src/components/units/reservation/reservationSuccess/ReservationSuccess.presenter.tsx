@@ -15,7 +15,9 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
       <S.TitleBox>
         <h1>{props.data?.fetchReservation.status}</h1>
         <Link href="/mypage/history/calendar">
-          <S.Calendar fontSize="large" />
+          <a>
+            <S.Calendar fontSize="large" />
+          </a>
         </Link>
       </S.TitleBox>
 
@@ -86,7 +88,9 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
           />
         )}
         <Link href={"/mypage"}>
-          <WebPurpleButton type="button" title="목록으로" />
+          <a>
+            <WebPurpleButton type="button" title="목록으로" />
+          </a>
         </Link>
       </S.ButtonWrapper>
     </S.Container>

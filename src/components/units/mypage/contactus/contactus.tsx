@@ -33,18 +33,16 @@ export default function ContactUs() {
             timer: 1500,
             backdrop: false,
           });
-          // console.log(result);
           router.push("/home");
         },
         (error) => {
           Swal.fire({
-            title: "이메일 전송에 실패하였습니다.",
+            title: (error as Error).message,
             icon: "error",
             showConfirmButton: false,
             timer: 1500,
             backdrop: false,
           });
-          console.log(error.text);
         }
       );
   };
@@ -84,7 +82,9 @@ export default function ContactUs() {
 
         <S.ButtonBox>
           <Link href="/home">
-            <WebBlackButton type="button" title="돌아가기"></WebBlackButton>
+            <a>
+              <WebBlackButton type="button" title="돌아가기"></WebBlackButton>
+            </a>
           </Link>
           <WebPurpleButton
             title="제출하기"

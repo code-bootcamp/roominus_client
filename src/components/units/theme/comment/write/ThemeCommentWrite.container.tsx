@@ -94,9 +94,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       resetField("star");
       resetField("rank");
       resetField("content");
-    } catch (error) {
-      console.log((error as Error).message);
-    }
+    } catch (error) {}
   };
 
   const onClickUpdate = async (data: IWriteCommentData) => {

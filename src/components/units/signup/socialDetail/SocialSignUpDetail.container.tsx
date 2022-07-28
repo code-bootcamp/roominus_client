@@ -154,9 +154,7 @@ export default function SocialSignUpDetail() {
         });
         setStart(3);
         setTokenavail(true);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     } else if (smsToken !== tokenInput) {
       Swal.fire({
         title: "토큰이 올바르지 않습니다.",

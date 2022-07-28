@@ -168,7 +168,6 @@ export default function SignUpDetail() {
             tokenInput,
           },
         });
-        console.log(result.data.checkinputToken);
         Swal.fire({
           title: "인증완료",
           icon: "success",
@@ -178,9 +177,7 @@ export default function SignUpDetail() {
         });
         setStart(3);
         setTokenavail(true);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     } else if (smsToken !== tokenInput) {
       Swal.fire({
         title: "토큰이 올바르지 않습니다.",

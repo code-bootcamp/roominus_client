@@ -114,7 +114,6 @@ export default function ReservationSuccess() {
     onClickOpenCancelModal();
   }
 
-  console.log(router.query.id);
   return (
     <>
       <PrintBox>
