@@ -82,7 +82,7 @@ export default function Reservation() {
   const timeResult = data?.fetchThemeMenus.map(
     (el: IFetchThemeMenus) => el.reservation_time
   );
-  const set = new Set(timeResult);
+  const set: Set<string> = new Set(timeResult);
   const timeTable = [...set];
 
   // const ableTime = timeTable?.filter((el) => {
