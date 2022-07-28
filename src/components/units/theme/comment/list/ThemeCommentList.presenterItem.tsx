@@ -52,6 +52,7 @@ export default function ThemeCommentListUIItem(
       });
     } catch (error) {
       Swal.fire({
+        icon: "error",
         text: (error as Error).message,
       });
     }
@@ -63,12 +64,17 @@ export default function ThemeCommentListUIItem(
       title: "정말 삭제하시겠습니까?",
       showCancelButton: true,
       confirmButtonText: "네",
-      cancelButtonText: "아니요",
+      cancelButtonText: "생각 좀 해보고요",
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDelete();
-        Swal.fire("삭제되었습니다!", "당신의 댓글은 삭제되었다.");
+
+        Swal.fire({
+          icon: "success",
+          title: "삭제되었습니다!",
+          text: "당신의 댓글은 삭제되었다.",
+        });
       }
     });
   };

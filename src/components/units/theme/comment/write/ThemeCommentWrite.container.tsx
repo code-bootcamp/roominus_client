@@ -48,15 +48,24 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
 
   const onClickSubmit = async (data: IWriteCommentData) => {
     if (!data.star) {
-      Swal.fire("만족도를 선택해주세요!");
+      Swal.fire({
+        icon: "warning",
+        title: "만족도를 선택해주세요!",
+      });
       return;
     }
     if (!data.content) {
-      Swal.fire("내용을 입력해주세요!");
+      Swal.fire({
+        icon: "warning",
+        title: "내용을 입력해주세요!",
+      });
       return;
     }
     if (!data.rank) {
-      Swal.fire("난이도는 어땠는지 선택해주세요!");
+      Swal.fire({
+        icon: "warning",
+        title: "난이도는 어땠는지 선택해주세요!",
+      });
       return;
     }
 
