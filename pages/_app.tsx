@@ -52,10 +52,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="og:description"
           content="세상의 모든 방탈출 카페로 IN하다. 우리들의 방탈출 공간 room:in us에서 새로운 세상으로 입장하세요."
         ></meta>
-        {/* <meta
+        <meta
           property="og:image"
-          content="안녕하세요, 방탈출 통합 플랫폼 룸인어스입니다."
-        ></meta> */}
+          content="https://res.cloudinary.com/dop5piuwp/image/upload/v1658995604/public/layout/new_logo_y9nz8m.png"
+        ></meta>
       </Head>
       <RecoilRoot>
         <ApolloSetting>
