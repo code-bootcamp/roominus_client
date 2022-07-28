@@ -17,7 +17,8 @@ export const Container = styled.main`
 export const SearchWrapper = styled.section`
   width: 100vw;
   height: 14.38em;
-  background: url("/img/layout/banner.webp") center/cover;
+  background: url("https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/layout/banner_lfnk3f.webp")
+    center/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;

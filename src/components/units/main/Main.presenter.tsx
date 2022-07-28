@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as S from "./Main.styles";
 import Typewriter from "typewriter-effect";
+import OpenDoor from "./Door";
 
 export default function MainUI() {
   const router = useRouter();
@@ -26,7 +27,10 @@ export default function MainUI() {
       <S.MyParallax pages={3}>
         <S.Layer1 speed={1}>
           <S.RuminousTitle>
-            <S.TitleLogo src="/img/main/roominus.png" />
+            <S.TitleLogo
+              src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/main/roominus_e2fdo8.png"
+              onClick={onClickDoor}
+            />
           </S.RuminousTitle>
 
           <S.ScrollDownBox>
@@ -36,8 +40,7 @@ export default function MainUI() {
           <S.PressEnter>Skip : Enter</S.PressEnter>
         </S.Layer1>
         <S.Layer2 offset={1} speed={0.3} factor={0.5}>
-          <S.Lune src="/img/main/lune.png" />
-          {/* <S.FlashText>Room in us</S.FlashText> */}
+          <S.Lune src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/main/lune_iuvd8i.png" />
 
           <S.Neon>
             상상이 현실이 되는{" "}
@@ -61,7 +64,6 @@ export default function MainUI() {
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
             style={{ display: "block", width: "50%", marginLeft: "55%" }}
           />
-          {/* <S.Image src="/img/main/ink.png" /> */}
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
@@ -76,24 +78,6 @@ export default function MainUI() {
           }}
           factor={0.5}
         >
-          <S.DoorWrapper>
-            <S.RuminousTitle>
-              {/* <Typewriter
-                options={{
-                  strings: ["방탈출 통합 예약 서비스"],
-                  autoStart: true,
-                  loop: true,
-                }}
-              /> */}
-            </S.RuminousTitle>
-
-            <S.DoorBox onClick={onClickDoor}>
-              <S.Door></S.Door>
-            </S.DoorBox>
-          </S.DoorWrapper>
-          <S.NeonWrapper>
-            <S.NeonBottom>들어가기</S.NeonBottom>
-          </S.NeonWrapper>
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
@@ -109,6 +93,12 @@ export default function MainUI() {
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
             style={{ display: "block", width: "30%", marginRight: "55%" }}
           />
+          <S.DoorWrapper>
+            <OpenDoor onClickDoor={onClickDoor} />
+            {/* <S.DoorBox onClick={onClickDoor}>
+              <S.Door></S.Door>
+            </S.DoorBox> */}
+          </S.DoorWrapper>
         </ParallaxLayer>
       </S.MyParallax>
     </S.Container>

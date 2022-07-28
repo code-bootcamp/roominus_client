@@ -8,7 +8,8 @@ const BannerImage = styled.div`
   height: 14.38em;
   position: relative;
   left: calc(-50vw + 50%);
-  background: url("/img/layout/banner.webp") center/cover;
+  background: url("https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/layout/banner_lfnk3f.webp")
+    center/cover;
   display: flex;
   flex-direction: row;
   justify-content: center;
