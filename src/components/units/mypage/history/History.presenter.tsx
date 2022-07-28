@@ -32,10 +32,10 @@ export default function HistoryUI(props: IHistoryUIProps) {
         </S.TitleRow>
         {props.data?.fetchReservationsUser.map((el: IData, index: number) => (
           <S.Row key={index}>
-            <S.ColumnNumber id={el.id} onClick={props.onClickReservationDetail}>
-              {el.id.split("-")[0].slice(-5)}
-            </S.ColumnNumber>
-            <S.ColumnTitle>{el.theme_menu.theme.title}</S.ColumnTitle>
+            <S.ColumnNumber>{el.id.split("-")[0].slice(-5)}</S.ColumnNumber>
+            <S.ColumnTitle id={el.id} onClick={props.onClickReservationDetail}>
+              {el.theme_menu.theme.title}
+            </S.ColumnTitle>
             <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
             <S.ColumnBasic>{el.theme_menu?.reservation_time}</S.ColumnBasic>
             <S.ColumnBasic>{el.status}</S.ColumnBasic>

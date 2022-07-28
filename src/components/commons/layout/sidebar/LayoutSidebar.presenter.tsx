@@ -36,7 +36,6 @@ export default function LayoutSideBarUI(props: ISideBarUIProps) {
           <p>
             적립금 <S.UserPoint>{props.userInfo?.point}</S.UserPoint>원
           </p>
-          <S.line></S.line>
         </S.HeaderBox>
         <S.MenuBoxs>
           {NAVIGATION_MENUS.map((el) => (

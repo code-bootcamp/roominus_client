@@ -27,7 +27,7 @@ export const InfoBox = styled.div`
   flex-direction: column;
 `;
 
-export const ThemeBoxs = styled.div`
+export const ThemeBoxes = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -98,7 +98,9 @@ export const InfoTitleBox = styled.div`
   justify-content: space-between;
 `;
 
-export const TableWrapper = styled.div``;
+export const TableWrapper = styled.div`
+  min-height: 20em;
+`;
 
 export const addButton = styled.button`
   border: none;
@@ -211,5 +213,5 @@ export const RowBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  margin-top: 5em;
+  margin-top: 3em;
 `;
