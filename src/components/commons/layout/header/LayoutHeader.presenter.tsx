@@ -76,9 +76,6 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
   const onClickCloseMypageOp = () => {
     setOpenMypageOp(false);
   };
-  const showSettings = (event) => {
-    event.preventDefault();
-  };
 
   return (
     <>

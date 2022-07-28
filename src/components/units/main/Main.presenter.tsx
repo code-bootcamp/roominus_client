@@ -95,9 +95,6 @@ export default function MainUI() {
           />
           <S.DoorWrapper>
             <OpenDoor onClickDoor={onClickDoor} />
-            {/* <S.DoorBox onClick={onClickDoor}>
-              <S.Door></S.Door>
-            </S.DoorBox> */}
           </S.DoorWrapper>
         </ParallaxLayer>
       </S.MyParallax>

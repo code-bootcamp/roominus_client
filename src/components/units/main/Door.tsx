@@ -1,5 +1,5 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 const DoorWrapper = styled.div`
   /* background: url("https://res.cloudinary.com/tihos/image/upload/v1587424333/codepen/multi-colored-concrete-wall-3697356.jpg");
@@ -9,66 +9,21 @@ const DoorWrapper = styled.div`
   height: 100vh; */
 `;
 
-const SlidingDoors = styled.div`
-  /* width: 30vw;
-  height: 70hv; */
-  width: 100vw;
-  height: 100vh;
-
-  position: absolute;
-  /* bottom: -3px; */
-  /* left: 50%; */
-  /* margin-left: -15vw; */
-
-  overflow: hidden;
-  background: url("https://res.cloudinary.com/tihos/image/upload/q_auto/v1587425872/codepen/adventure-alps-background-beautiful-547114.jpg");
-  background-size: cover;
-  background-position: -200px 0;
-  -moz-box-shadow: inset 0 0 10px #000000;
-  -webkit-box-shadow: inset 0 0 10px #000000;
-  box-shadow: inset 0 0 10px #000000;
-
-  :before,
-  :after {
-    content: "";
-    width: 50%;
-    height: 100vh;
-    left: 0;
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    -webkit-transition: 2000ms;
-    border: 3px solid rgba(0, 0, 0, 0.5);
-  }
-
-  :before {
-    background: url("/img/main/brick-left.jpg");
-    background-size: cover;
-  }
-
-  :after {
-    background: url("/img/main/brick-right.jpg");
-    background-size: cover;
-
-    background-position: -15vw 0;
-  }
-
-  :hover:before {
-    left: -15vw;
-  }
-
-  :hover:after {
-    left: 15vw;
-  }
-`;
-
 export const DoorBox = styled.div`
   opacity: 100%;
   width: 30vw;
   height: 80vh;
-
   text-align: center;
   position: relative;
+
+  @media ${breakPoints.tablet} {
+    width: 40vw;
+    height: 60vh;
+  }
+  @media ${breakPoints.mobile} {
+    width: 50vw;
+    height: 50vh;
+  }
 `;
 
 export const Door = styled.div`
@@ -109,15 +64,17 @@ export const Door = styled.div`
   }
 
   :before {
-    /* background: url("/img/main/back1.jpeg") center/cover; */
-    background-color: black;
+    border: #26282c;
+    background-color: #26282c;
     background-size: cover;
+    opacity: 95%;
   }
 
   :after {
-    /* background: url("/img/main/back1.jpeg") center/cover; */
-    background-color: black;
+    border: #26282c;
+    background-color: #26282c;
     background-size: cover;
+    opacity: 95%;
 
     background-position: -15vw 0;
   }
@@ -151,6 +108,10 @@ export const Neon = styled.div`
       text-shadow: 0 0 0.5vw #fffbcb, 0 0 1.5vw #fffbcb, 0 0 5vw #fffbcb,
         0 0 5vw #fffbcb, 0 0 0.2vw #fffbcb;
     }
+  }
+
+  @media ${breakPoints.mobile} {
+    font-size: 5vw;
   }
 `;
 
