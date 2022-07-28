@@ -76,6 +76,7 @@ export default function Reservation() {
   const onChangeDate = (date: string) => {
     const selectDate = dayjs(date).format("YYYY-MM-DD");
     setReservationDate(selectDate);
+    console.log(reservationDate);
   };
 
   // 현재 테마 메뉴 리스트에 있는 모든 타임을 부르고, 중복된 시간을 제외한 유일한 타임테이블만 보여준다

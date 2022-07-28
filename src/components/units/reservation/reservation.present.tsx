@@ -1,9 +1,6 @@
 import * as S from "./reservation.styles";
 import { TextField, MenuItem } from "@material-ui/core";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from "@material-ui/pickers";
+
 import MomentUtils from "@date-io/moment";
 import WebBlackButton from "../../commons/buttons/buttonDesktop/WebBlackButton";
 import { v4 as uuidv4 } from "uuid";
@@ -14,10 +11,15 @@ import { IReservationUIProps } from "./reservation.types";
 import Link from "next/link";
 import ReservationThemeInfo from "./reservationthemeInfo/reservationthemeinfo";
 import NoReservation from "./Noreservation";
+import { useRef } from "react";
+import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export default function ReservationUI(props: IReservationUIProps) {
   const date = new Date();
   const MaxDate = date.setMonth(date.getMonth() + 3);
+  const nodeRef = useRef(null);
 
   if (props.max < props.usePoint || props.usePoint < 0) {
     Swal.fire({
@@ -66,7 +68,8 @@ export default function ReservationUI(props: IReservationUIProps) {
             label="테마 선택"
             id="filled-theme"
             onChange={props.onChangeTheme}
-            value={props.themeId ? props.themeId : ""}
+            // value={props.themeId ? props.themeId : "" || ""}
+            value={props.themeId || ""}
             helperText="예약이 가능한 테마만 예약 과정이 진행됩니다."
             style={{ paddingBottom: "1.3em" }}
           >
@@ -89,7 +92,8 @@ export default function ReservationUI(props: IReservationUIProps) {
               variant="outlined"
               id="filled-cafe"
               onChange={props.onChangeCafe}
-              value={props?.cafeId ? props?.cafeId : ""}
+              // value={props?.cafeId ? props?.cafeId : "" || ""}
+              value={props?.cafeId || ""}
               helperText="예약이 가능한 매장만 선택이 가능합니다."
               style={{ paddingBottom: "1.3em" }}
             >
@@ -106,28 +110,31 @@ export default function ReservationUI(props: IReservationUIProps) {
             {!!props?.data?.fetchThemeMenus.length && props?.cafeId && (
               <>
                 <MuiPickersUtilsProvider utils={MomentUtils}>
-                  <KeyboardDatePicker
-                    fullWidth
-                    required
-                    inputVariant="outlined"
-                    margin="none"
-                    autoOk={true}
-                    disablePast={true}
-                    id="filled-date"
-                    placeholder="방문일을 선택해주세요"
-                    showTodayButton={true}
-                    value={props?.reservationDate ? props?.reservationDate : ""}
-                    format="YYYY-MM-DD"
-                    mask={"____-__-__"}
-                    maxDate={MaxDate}
-                    onChange={props.onChangeDate}
-                    rifmFormatter={props.dateFormatter}
-                    KeyboardButtonProps={{
-                      "aria-label": "change date",
-                    }}
-                    helperText="방문하실 날짜를 선택해주세요."
-                    style={{ paddingBottom: "1.3em" }}
-                  />
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker
+                      label="방문일을 선택해주세요"
+                      format="YYYY-MM-DD"
+                      maxDate={MaxDate}
+                      fullWidth
+                      // required
+                      inputVariant="outlined"
+                      margin="none"
+                      autoOk={true}
+                      disablePast={true}
+                      showTodayButton={true}
+                      value={
+                        props?.reservationDate ? props?.reservationDate : ""
+                      }
+                      onChange={props.onChangeDate}
+                      style={{ paddingBottom: "1.3em" }}
+                      helperText="방문하실 날짜를 선택해주세요."
+
+                      // rifmformatter={props.dateFormatter}
+                      // keyboardbuttonprops={{
+                      //   "aria-label": "change date",
+                      // }}
+                    />
+                  </LocalizationProvider>
                 </MuiPickersUtilsProvider>
               </>
             )}
@@ -138,6 +145,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                 required
                 select
                 value={props?.time ? props?.time : ""}
+                // defaultValue=""
                 label="방문 시간 선택"
                 id="filled-time"
                 variant="outlined"
@@ -167,7 +175,8 @@ export default function ReservationUI(props: IReservationUIProps) {
                 id="filled-headCount"
                 variant="outlined"
                 onChange={props.onChangeHeadCount}
-                value={props?.peopleNumber ? props?.peopleNumber : ""}
+                // value={props?.peopleNumber ? props?.peopleNumber : "" || ""}
+                value={props?.peopleNumber || ""}
                 helperText="방문하시는 인원을 선택해주세요."
                 style={{ paddingBottom: "1.3em" }}
               >
@@ -195,9 +204,10 @@ export default function ReservationUI(props: IReservationUIProps) {
                     onChange={props.onChangePoint}
                     style={{ paddingBottom: "0.2em" }}
                     variant="outlined"
-                    defaultValue={props.max}
                     onWheel={(e) => (e.target as HTMLInputElement).blur()}
-                    value={props?.usePoint ? props?.usePoint : ""}
+                    // value={props?.usePoint ? props?.usePoint : "" || ""}
+                    defaultValue={props.max}
+                    value={props?.usePoint || ""}
                   />
                   <S.Point>
                     현재 적립금 <span>{props.max}원</span> 사용 가능합니다.
@@ -217,6 +227,8 @@ export default function ReservationUI(props: IReservationUIProps) {
                 multiline
                 maxRows={2}
                 variant="outlined"
+                value={props?.memo || ""}
+                // value={props?.memo ? props?.memo : "" || ""}
                 onChange={props.onChangeMemo}
                 style={{ paddingBottom: "1.3em" }}
                 helperText="예약자와 방문자가 다를 경우 방문자의 정보를 작성해주세요."

@@ -125,6 +125,8 @@ export const RuminousTitleUs = styled(RuminousTitle)`
 `;
 
 export const TitleLogo = styled.img`
+  cursor: pointer;
+
   @media ${breakPoints.mobile} {
     width: 60%;
   }
@@ -143,10 +145,11 @@ export const ScrollDownBox = styled.div`
   flex-direction: column;
   /* justify-content: flex-end; */
   align-items: center;
+  font-size: 1.2em;
 `;
 export const ScrollDownLine = styled.div`
   height: 4em;
-  border-left: 1px solid white;
+  border-left: 2px solid white;
 `;
 export const ScrollDown = styled.div`
   color: white;
@@ -160,6 +163,7 @@ export const PressEnter = styled.div`
   position: absolute;
   right: 1%;
   bottom: 0;
+  font-size: 1.5em;
 `;
 
 export const Word = styled.h1`
@@ -194,7 +198,7 @@ export const Neon = styled(Typing)`
   top: 60%;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 0.3em;
   font-family: "GowunBatang-Regular";
   max-width: 767;
   font-size: 7vw;

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import * as S from "./Main.styles";
 import Typewriter from "typewriter-effect";
 import OpenDoor from "./Door";
+import Link from "next/link";
 
 export default function MainUI() {
   const router = useRouter();
