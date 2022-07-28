@@ -1,7 +1,8 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
-import AdminCafeListUI from "./AdminCafeDetail.presenter";
+import AdminCafeDetailUI from "./AdminCafeDetail.presenter";
+
 import { DELETE_CAFE, FETCH_CAFE } from "./AdminCafeDetail.query";
 
 export default function AdminCafeDetail() {
@@ -62,7 +63,7 @@ export default function AdminCafeDetail() {
   };
 
   return (
-    <AdminCafeListUI
+    <AdminCafeDetailUI
       onClickList={onClickList}
       onClickEdit={onClickEdit}
       onClickDelete={onClickDelete}

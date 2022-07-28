@@ -56,13 +56,13 @@ export default function SignupChoice() {
             setKakaoInfo(response.kakao_account);
             router.push(`/signup/socialDetail`);
           },
-          fail: function (error: any) {
-            console.log(error);
+          fail: function (error: Error) {
+            alert(error.message);
           },
         });
       },
-      fail: function (error: any) {
-        console.log(error);
+      fail: function (error: Error) {
+        alert(error.message);
       },
     });
   };

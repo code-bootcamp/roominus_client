@@ -19,5 +19,6 @@ module.exports = {
     "react/prop-types": "off",
     "spaced-comment": "off",
     "no-new": 0,
+    "no-unused-vars": "off",
   },
 };

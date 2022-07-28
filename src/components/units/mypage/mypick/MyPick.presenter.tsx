@@ -78,7 +78,9 @@ export default function MyPickUI(props: IMyPickUIProps) {
       </S.PaginationsWrapper>
       <S.ButtonBox>
         <Link href={"/mypage"}>
-          <WebBlackButton type="button" title="목록으로" />
+          <a>
+            <WebBlackButton type="button" title="목록으로" />
+          </a>
         </Link>
       </S.ButtonBox>
     </S.Container>

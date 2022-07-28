@@ -4,7 +4,6 @@ import * as S from "../../theme/list/ThemeList.styles";
 export default function ThemeCardComponent(props: any) {
   const router = useRouter();
   const onClickTheme = (el: { id: string }) => () => {
-    console.log(el);
     router.push(`/theme/${el.id}`);
   };
 

@@ -268,7 +268,9 @@ export default function ReservationUI(props: IReservationUIProps) {
                 props?.peopleNumber && (
                   <S.ButtonBox>
                     <Link href="/home">
-                      <WebBlackButton type="button" title="돌아가기" />
+                      <a>
+                        <WebBlackButton type="button" title="돌아가기" />
+                      </a>
                     </Link>
 
                     <Payment
