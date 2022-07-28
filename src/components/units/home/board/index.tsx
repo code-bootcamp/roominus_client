@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { breakPoints } from "../../../../commons/styles/media";
 import { FETCH_BOARDS } from "../../community/list/CommunityList.queries";
 import { uuidv4 } from "@firebase/util";
+import { IFetchBoards } from "../Home.type";
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -47,7 +48,7 @@ const Box = styled.div`
     width: 100%;
     height: calc(100% - 10vh);
     object-fit: cover;
-    transition: 0.8s;
+    transition: 1s;
 
     :hover {
       width: 100%;
@@ -64,9 +65,16 @@ export default function BestBoard() {
     router.push(`/community/${event?.currentTarget.id}`);
   };
 
+  const hotBoards = data.fetchBoards
+    .slice()
+    .sort((a: IFetchBoards, b: IFetchBoards) => {
+      return b.like - a.like;
+    })
+    .slice(0, 4);
+
   return (
     <Container>
-      {data?.fetchBoards
+      {hotBoards
         .slice(-4)
         .map((el: { id: string; mainImg: string; title: string }) => (
           <Box key={uuidv4()} id={el.id} onClick={onClickBoard}>

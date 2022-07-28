@@ -17,3 +17,7 @@ export interface IHomeUIProps {
   onClickCloseQuestion2: () => void;
   onClickCloseQuestion3: () => void;
 }
+
+export interface IFetchBoards {
+  like: number;
+}
