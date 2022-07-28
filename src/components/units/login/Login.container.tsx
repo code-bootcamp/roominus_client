@@ -104,7 +104,6 @@ export default function Login() {
         timer: 1000,
         backdrop: false,
       });
-      console.log(error);
     }
   };
   const onClickMoveToSignUp = () => {
@@ -258,13 +257,13 @@ export default function Login() {
 
             router.push("/home");
           },
-          fail: function (error: any) {
-            console.log(error);
+          fail: function (error: Error) {
+            alert((error as Error).message);
           },
         });
       },
-      fail: function (error: any) {
-        console.log(error);
+      fail: function (error: Error) {
+        alert((error as Error).message);
       },
     });
   };

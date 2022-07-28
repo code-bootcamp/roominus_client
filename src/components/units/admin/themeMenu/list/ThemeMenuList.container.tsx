@@ -9,7 +9,6 @@ export default function ThemeMenuList() {
       themeId: router.query.id,
     },
   });
-  console.log(data);
   return (
     <>
       {data?.fetchThemeMenus.map((el: { id: any }) => (

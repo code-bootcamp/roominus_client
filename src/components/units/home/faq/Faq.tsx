@@ -4,9 +4,7 @@ import React from "react";
 const { Panel } = Collapse;
 
 const FAQ = () => {
-  const onChange = (key: string | string[]) => {
-    console.log(key);
-  };
+  const onChange = (key: string | string[]) => {};
 
   return (
     <Collapse

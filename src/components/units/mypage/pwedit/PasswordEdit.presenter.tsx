@@ -127,7 +127,9 @@ export default function PWeditUI(props: IPWeditUIProps) {
         </S.PasswordVerificationBoxes>
         <S.ButtonBox>
           <Link href={"/mypage/phoneedit"}>
-            <WebBlackButton type="button" title="뒤로가기" />
+            <a>
+              <WebBlackButton type="button" title="뒤로가기" />
+            </a>
           </Link>
           <WebPurpleButton type="submit" title="수정하기" />
         </S.ButtonBox>

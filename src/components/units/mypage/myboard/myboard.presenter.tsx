@@ -46,7 +46,9 @@ export default function MyBoardUI(props: IMyBoardUIProps) {
       </S.PaginationsWrapper>
       <S.ButtonBox>
         <Link href={"/mypage"}>
-          <WebBlackButton type="button" title="돌아가기" />
+          <a>
+            <WebBlackButton type="button" title="돌아가기" />
+          </a>
         </Link>
       </S.ButtonBox>
     </S.Container>

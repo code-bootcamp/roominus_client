@@ -25,7 +25,6 @@ export default function AdminReservationNew() {
           },
         },
       });
-      console.log(result.data?.createThemeMenu);
     } catch (error) {
       alert((error as Error).message);
     }

@@ -14,7 +14,6 @@ export default function ThemeDetail() {
     },
   });
   const themeId = router.query.id;
-  console.log(data);
 
   const onClickList = () => {
     router.push("/admin/theme/list");
