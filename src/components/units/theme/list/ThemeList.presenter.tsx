@@ -96,7 +96,7 @@ export default function ThemeListUI(props: IThemeListProps) {
                       </S.Rank>
                       <S.GenreTag>#{el?.genre.name}</S.GenreTag>
                     </S.Theme>
-                    <S.ThemeBack src="/img/theme/card-back.png">
+                    <S.ThemeBack src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/theme/card-back_ef6jjd.png">
                       <S.ThemeTitle>{el.title}</S.ThemeTitle>
                       <S.ThemeInfo>
                         이용인원 ~ {el.peoplelimit}명

@@ -66,7 +66,7 @@ export default function LayoutFooterUI() {
                   <S.Github />
                 </Link>
                 <Link href="/home">
-                  <S.Logo src="/img/layout/graylogo.webp" />
+                  <S.Logo src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/layout/graylogo_armmru.webp" />
                 </Link>
                 <Link href="https://github.com/code-bootcamp/f7b3_team05_server">
                   <S.Github />

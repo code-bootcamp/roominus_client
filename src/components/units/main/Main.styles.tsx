@@ -8,7 +8,8 @@ export const Container = styled.main`
   position: relative;
 
   left: calc(-50vw + 50%);
-  background: url("/img/main/back1.jpeg") center/cover;
+  background: url("https://res.cloudinary.com/dop5piuwp/image/upload/v1658990940/public/main/back1_wxc37r.jpg")
+    center/cover;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -26,15 +27,6 @@ export const Page2 = styled.section`
   left: calc(-50vw + 50%);
   height: 500px;
   /* background-color: black; */
-`;
-
-export const Carousel = styled.div`
-  width: 100vw;
-  height: 50em;
-  background-image: url("/img/main/mainImage.png");
-  background-size: cover;
-  /* position: relative;
-  left: calc(-50vw + 50%); */
 `;
 
 export const Image = styled.div`
