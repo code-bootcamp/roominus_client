@@ -44,12 +44,14 @@ export default function CommunityDetail() {
       confirmButtonText: "네",
       cancelButtonText: "아니요",
       reverseButtons: true,
+      backdrop: false,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDeleteModal();
         Swal.fire({
           icon: "success",
           title: "삭제되었습니다!",
+          backdrop: false,
         });
       }
     });
@@ -65,6 +67,7 @@ export default function CommunityDetail() {
       Swal.fire({
         icon: "error",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
   };

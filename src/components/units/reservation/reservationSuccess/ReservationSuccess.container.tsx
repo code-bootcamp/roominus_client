@@ -87,7 +87,7 @@ export default function ReservationSuccess() {
       confirmButtonText: "네",
       cancelButtonText: "아니요",
       reverseButtons: true,
-      // backdrop: false,
+      backdrop: false,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickRefund();

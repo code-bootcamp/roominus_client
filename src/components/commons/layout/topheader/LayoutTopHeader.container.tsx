@@ -40,6 +40,7 @@ export default function LayoutTopHeader() {
         icon: "success",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       router.push("/home");
     } catch (error) {
@@ -48,6 +49,7 @@ export default function LayoutTopHeader() {
         icon: "error",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };

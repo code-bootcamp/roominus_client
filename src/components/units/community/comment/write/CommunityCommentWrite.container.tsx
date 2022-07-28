@@ -54,11 +54,13 @@ export default function CommunityCommentWrite(
         title: "댓글 등록이 완료되었습니다!",
         timer: 1300,
         showConfirmButton: false,
+        backdrop: false,
       });
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
   };
@@ -78,11 +80,13 @@ export default function CommunityCommentWrite(
         title: "댓글 수정이 완료되었습니다!",
         timer: 1300,
         showConfirmButton: false,
+        backdrop: false,
       });
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
     props.setIsEdit(false);

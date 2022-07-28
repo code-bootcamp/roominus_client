@@ -69,6 +69,7 @@ export default function MyPhoneEdit() {
             icon: "warning",
             showConfirmButton: false,
             timer: 1000,
+            backdrop: false,
           });
         }
         ShowCounts(counts);
@@ -78,6 +79,7 @@ export default function MyPhoneEdit() {
       Swal.fire({
         title: "인증 완료",
         icon: "success",
+        backdrop: false,
         showConfirmButton: false,
         timer: 1000,
       });
@@ -105,6 +107,7 @@ export default function MyPhoneEdit() {
         icon: "success",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       setStart(2);
     } catch (error) {
@@ -113,6 +116,7 @@ export default function MyPhoneEdit() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };
@@ -148,6 +152,7 @@ export default function MyPhoneEdit() {
           icon: "success",
           showConfirmButton: false,
           timer: 1000,
+          backdrop: false,
         });
         setStart(3);
         setTokenavail(true);
@@ -160,6 +165,7 @@ export default function MyPhoneEdit() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };
@@ -191,6 +197,7 @@ export default function MyPhoneEdit() {
             icon: "success",
             showConfirmButton: false,
             timer: 1000,
+            backdrop: false,
           });
           router.push("/mypage");
         } else if (sessionStorage.getItem("#SL")) {
@@ -207,6 +214,7 @@ export default function MyPhoneEdit() {
             icon: "success",
             showConfirmButton: false,
             timer: 1000,
+            backdrop: false,
           });
           router.push("/mypage");
         }
@@ -219,6 +227,7 @@ export default function MyPhoneEdit() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };

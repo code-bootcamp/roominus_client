@@ -21,38 +21,6 @@ export default function LayoutSidebar() {
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
 
-  // useEffect(() => {
-  //   if (sessionStorage.getItem("#SL")) {
-  //     Auth.toPromise().then(async (newAccessToken) => {
-  //       setAccessToken(newAccessToken);
-  //       const resultuserInfo = await client.query({
-  //         query: FETCH_SOCIAL_USER_LOGGED_IN,
-  //         context: {
-  //           headers: {
-  //             Authorization: `Bearer ${newAccessToken}`,
-  //           },
-  //         },
-  //       });
-  //       const user = resultuserInfo.data?.fetchUserLoggedIn;
-  //       setUserInfo(user);
-  //     });
-  //   } else if (sessionStorage.getItem("#NL")) {
-  //     Auth.toPromise().then(async (newAccessToken) => {
-  //       setAccessToken(newAccessToken);
-  //       const resultuserInfo = await client.query({
-  //         query: FETCH_USER_LOGGEDIN,
-  //         context: {
-  //           headers: {
-  //             Authorization: `Bearer ${newAccessToken}`,
-  //           },
-  //         },
-  //       });
-  //       const user = resultuserInfo.data?.fetchUserLoggedIn;
-  //       setUserInfo(user);
-  //     });
-  //   }
-  // }, []);
-
   const onClickLogout = async () => {
     try {
       await client.mutate({
@@ -60,20 +28,10 @@ export default function LayoutSidebar() {
 
         context: {
           uri: "https://wawoong.shop/graphql",
-          // headers: {
-          //   Authorization: `Bearer ${accessToken}`,
-          // },
           credentials: "include",
         },
       });
-      // await client.mutate({
-      //   mutation: LOG_OUT,
-      //   context: {
-      //     headers: {
-      //       Authorization: `Bearer ${accessToken}`,
-      //     },
-      //   },
-      // });
+
       localStorage.clear();
       sessionStorage.clear();
       setAccessToken("");
@@ -89,6 +47,7 @@ export default function LayoutSidebar() {
         icon: "success",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       router.push("/home");
     } catch (error) {
@@ -97,6 +56,7 @@ export default function LayoutSidebar() {
         icon: "error",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };
