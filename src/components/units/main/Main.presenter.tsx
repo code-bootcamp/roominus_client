@@ -78,15 +78,6 @@ export default function MainUI() {
           }}
           factor={0.5}
         >
-          <S.DoorWrapper>
-            <OpenDoor onClickDoor={onClickDoor} />
-            {/* <S.DoorBox onClick={onClickDoor}>
-              <S.Door></S.Door>
-            </S.DoorBox> */}
-          </S.DoorWrapper>
-          {/* <S.NeonWrapper>
-            <S.NeonBottom>들어가기</S.NeonBottom>
-          </S.NeonWrapper> */}
           <img
             alt="cloud"
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
@@ -102,6 +93,12 @@ export default function MainUI() {
             src="https://freepngimg.com/thumb/cloud/7-cloud-png-image.png"
             style={{ display: "block", width: "30%", marginRight: "55%" }}
           />
+          <S.DoorWrapper>
+            <OpenDoor onClickDoor={onClickDoor} />
+            {/* <S.DoorBox onClick={onClickDoor}>
+              <S.Door></S.Door>
+            </S.DoorBox> */}
+          </S.DoorWrapper>
         </ParallaxLayer>
       </S.MyParallax>
     </S.Container>

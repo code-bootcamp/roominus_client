@@ -270,9 +270,14 @@ export const Lune = styled.img`
 `;
 
 export const DoorWrapper = styled.div`
-  display: flex;
+  /* display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: end; */
+  position: absolute;
+  bottom: -90%;
+  right: 36%;
+  /* align-items: center; */
 `;
 
 export const DoorBox = styled.div`
