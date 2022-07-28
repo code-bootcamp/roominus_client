@@ -22,6 +22,7 @@ export interface ICommentAnswerWriteUIProps {
     content: string;
   };
   isAnswer: any;
+  onClickAnswerCancel: () => void;
 }
 
 export interface ICommentAnswerWriteProps {

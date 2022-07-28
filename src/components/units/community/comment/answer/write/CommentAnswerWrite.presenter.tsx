@@ -38,6 +38,13 @@ export default function CommentAnswerWriteUI(
                   onClick={props.onClickCancel}
                 />
               )}
+              {props.isAnswer && (
+                <WebSmallBlackButton
+                  title="취소하기"
+                  type="button"
+                  onClick={props.onClickAnswerCancel}
+                />
+              )}
             </S.ReCommentWriteBox>
           </S.ListInfoBox>
         </S.ReCommentListBox>

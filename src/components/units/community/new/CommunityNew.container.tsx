@@ -50,7 +50,6 @@ export default function CommunityNew(props: ICommunityNewProps) {
   };
 
   const onClickSubmit = async (data: IDataProps) => {
-    console.log(data);
     try {
       if (!fileUrl) {
         Swal.fire({
@@ -59,7 +58,6 @@ export default function CommunityNew(props: ICommunityNewProps) {
           backdrop: false,
         });
       } else if (fileUrl) {
-        console.log(tagList);
         const result = await createBoard({
           variables: {
             createBoardInput: {
@@ -70,10 +68,11 @@ export default function CommunityNew(props: ICommunityNewProps) {
             },
           },
         });
-        console.log(result);
         Swal.fire({
           icon: "success",
           title: "등록이 완료되었습니다!",
+          timer: 1300,
+          showConfirmButton: false,
           backdrop: false,
         });
         router.push(`/community/${result.data?.createBoard.id}`);
@@ -88,8 +87,6 @@ export default function CommunityNew(props: ICommunityNewProps) {
   };
 
   const onClickEdit = async (data: IEditDataProps) => {
-    console.log(props.editData);
-
     const updateBoardInput: IUpdateBoardInput = {};
     if (data.title) updateBoardInput.title = data.title;
     if (data.content) updateBoardInput.content = data.content;
@@ -103,10 +100,11 @@ export default function CommunityNew(props: ICommunityNewProps) {
           updateBoardInput,
         },
       });
-      console.log(result);
       Swal.fire({
         icon: "success",
         title: "수정이 완료되었습니다!",
+        timer: 1300,
+        showConfirmButton: false,
         backdrop: false,
       });
       router.push(`/community/${result.data?.updateBoard.id}`);

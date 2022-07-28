@@ -93,6 +93,10 @@ export default function CommentAnswerWrite(props: ICommentAnswerWriteProps) {
     props.setIsAnswerEdit(false);
   };
 
+  const onClickAnswerCancel = () => {
+    props.setIsAnswer(false);
+  };
+
   return (
     <CommentAnswerWriteUI
       userInfo={userInfo}
@@ -104,6 +108,7 @@ export default function CommentAnswerWrite(props: ICommentAnswerWriteProps) {
       isAnswerEdit={props.isAnswerEdit}
       answerData={props.answerData}
       isAnswer={props.isAnswer}
+      onClickAnswerCancel={onClickAnswerCancel}
     />
   );
 }
