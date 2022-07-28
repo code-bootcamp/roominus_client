@@ -65,7 +65,7 @@ export default function BestBoard() {
     router.push(`/community/${event?.currentTarget.id}`);
   };
 
-  const hotBoards = data.fetchBoards
+  const hotBoards = data?.fetchBoards
     .slice()
     .sort((a: IFetchBoards, b: IFetchBoards) => {
       return b.like - a.like;
