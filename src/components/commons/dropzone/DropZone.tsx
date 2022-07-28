@@ -46,7 +46,7 @@ export function MyDropzone(props: {
       {isDragActive ? (
         <h4>여기에 놓아주세요</h4>
       ) : (
-        <img src="/img/community/download.webp" />
+        <img src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/download_t2bofg.webp" />
       )}
     </div>
   );

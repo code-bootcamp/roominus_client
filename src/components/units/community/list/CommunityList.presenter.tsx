@@ -48,7 +48,7 @@ export default function CommunityListUI(props: ICommunityListProps) {
                 src={
                   new RegExp(error, "i").test(el.mainImg)
                     ? el.mainImg
-                    : "/img/community/noImage.png"
+                    : "https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/noImage_ofbjxy.png"
                 }
               />
               <S.InfoBox>
