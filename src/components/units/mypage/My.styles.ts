@@ -7,7 +7,7 @@ export const Container = styled.main`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  min-height: 60em;
+  min-height: 70em;
   padding: 2em 2em 2em 2em;
 
   @media ${breakPoints.mobile} {
@@ -19,7 +19,6 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 50em;
 `;
 
 export const CountBox = styled.div`

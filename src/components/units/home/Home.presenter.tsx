@@ -41,8 +41,8 @@ export default function HomeUI(props: IHomeUIProps) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 5000, //슬라이드가 지나가는 초
-    autoplaySpeed: 2000, //한페이지에서 멈추는 초
+    speed: 8000, //슬라이드가 지나가는 초
+    autoplaySpeed: 5000, //한페이지에서 멈추는 초
     pauseOnHover: true,
     cssEase: "linear",
     // className: "center",
