@@ -3,6 +3,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   width: 100%;
+  min-height: 50em;
   padding: 2em 2em 2em 2em;
 `;
 

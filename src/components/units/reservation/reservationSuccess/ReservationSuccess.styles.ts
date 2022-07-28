@@ -27,11 +27,11 @@ export const TitleBox = styled.div`
 
 export const Calendar = styled(CalendarMonthOutlinedIcon)`
   :hover {
-    transform: scale(1.1);
     cursor: pointer;
     color: #4a00e0e7;
   }
-  transition: all 300ms ease-in-out;
+  color: black;
+  margin-left: 0.1em;
 `;
 
 export const Wrapper = styled.section`

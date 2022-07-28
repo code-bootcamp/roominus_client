@@ -133,7 +133,7 @@ export const Tags = styled.div`
   font-size: 0.8em;
 `;
 
-export const BoardContents = styled.p`
+export const BoardContents = styled.div`
   margin-top: 2em;
   margin-bottom: 4em;
   font-size: 1.2em;
