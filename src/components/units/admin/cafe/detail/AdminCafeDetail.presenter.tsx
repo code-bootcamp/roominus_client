@@ -3,7 +3,7 @@ import WebSmallPurpleButton from "../../../../commons/buttons/buttonDesktop/WebS
 import * as S from "./AdminCafeDetail.styles";
 import { IAdminCafeListUIProps } from "./AdminCafeDetail.types";
 
-export default function AdminCafeListUI(props: IAdminCafeListUIProps) {
+export default function AdminCafeDetailUI(props: IAdminCafeListUIProps) {
   return (
     <S.Wrapper>
       <S.Title>매장 상세페이지(관리자)</S.Title>
