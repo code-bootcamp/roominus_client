@@ -53,7 +53,6 @@ export default function ThemeCommentListUIItem(
     } catch (error) {
       Swal.fire({
         text: (error as Error).message,
-        backdrop: false,
       });
     }
   };
