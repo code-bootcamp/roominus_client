@@ -31,6 +31,7 @@ export default function useAdminAuth() {
             icon: "warning",
             showConfirmButton: false,
             timer: 1000,
+            backdrop: false,
           });
           setTimeout(() => {
             router.push("/login");
@@ -53,6 +54,7 @@ export default function useAdminAuth() {
                     icon: "warning",
                     showConfirmButton: false,
                     timer: 1000,
+                    backdrop: false,
                   });
                   router.push("/");
                 }

@@ -32,6 +32,7 @@ export default function useAuth() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       router.push("/login");
       if (!accessToken) {
@@ -42,6 +43,7 @@ export default function useAuth() {
               icon: "warning",
               showConfirmButton: false,
               timer: 1000,
+              backdrop: false,
             });
             router.push("/login");
           } else if (newAccessToken) {
@@ -60,6 +62,7 @@ export default function useAuth() {
                   icon: "warning",
                   showConfirmButton: false,
                   timer: 1000,
+                  backdrop: false,
                 });
                 router.push("/login");
               });

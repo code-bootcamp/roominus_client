@@ -54,6 +54,7 @@ export default function FindPassword(props: IFindPasswordProps) {
         icon: "error",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
+        backdrop: false,
       });
     }
   };

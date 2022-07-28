@@ -52,6 +52,7 @@ export default function ChangingPassword() {
         icon: "success",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
+        backdrop: false,
       });
       router.push("/login");
     } catch (error) {
