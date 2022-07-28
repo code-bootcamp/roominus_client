@@ -7,8 +7,8 @@ import {
   startOfWeek,
 } from "date-fns";
 import { getToday } from "../../../../commons/getDate";
-
 import * as S from "./calender.styles";
+import { v4 as uuidv4 } from "uuid";
 
 interface IRenderCellsProps {
   onClickDetail: any;
@@ -45,7 +45,7 @@ export default function RenderCells(props: IRenderCellsProps) {
         const Id = result[0].id;
 
         days.push(
-          <S.Column key={day}>
+          <S.Column key={uuidv4()}>
             {format(props.currentMonth, "M") !== format(day, "M") ? (
               <S.NotValid>
                 <S.NotValidSpan style={{ display: "none" }}>
@@ -75,7 +75,7 @@ export default function RenderCells(props: IRenderCellsProps) {
       } else {
         formattedDate = format(day, "d");
         days.push(
-          <S.Column key={day}>
+          <S.Column key={uuidv4()}>
             {format(props.currentMonth, "M") !== format(day, "M") ? (
               <S.NotValid>
                 <S.NotValidSpan> {formattedDate}</S.NotValidSpan>
@@ -93,7 +93,7 @@ export default function RenderCells(props: IRenderCellsProps) {
 
       day = addDays(day, 1);
     }
-    rows.push(<S.Row key={day}>{days}</S.Row>);
+    rows.push(<S.Row key={uuidv4()}>{days}</S.Row>);
     days = [];
   }
 
