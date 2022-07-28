@@ -117,19 +117,34 @@ export default function HomeUI(props: IHomeUIProps) {
         <S.Title>이벤트</S.Title>
         <S.StyledSlider {...settings}>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/img/home/alarm1.webp" alt="alarm1" />
+            <S.AlarmImgs
+              src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/home/alarm1_rtnjwj.webp"
+              alt="alarm1"
+            />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/img/home/alarm2.webp" alt="alarm2" />
+            <S.AlarmImgs
+              src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/home/alarm2_isxkc4.webp"
+              alt="alarm2"
+            />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/img/home/alarm3.webp" alt="alarm3" />
+            <S.AlarmImgs
+              src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/home/alarm3_o9qibl.webp"
+              alt="alarm3"
+            />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/img/home/alarm4.webp" alt="alarm4" />
+            <S.AlarmImgs
+              src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/home/alarm4_imqf9r.webp"
+              alt="alarm4"
+            />
           </S.AlarmCarouselBox>
           <S.AlarmCarouselBox>
-            <S.AlarmImgs src="/img/home/alarm5.webp" alt="alarm5" />
+            <S.AlarmImgs
+              src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/home/alarm5_wpun7o.webp"
+              alt="alarm5"
+            />
           </S.AlarmCarouselBox>
         </S.StyledSlider>
       </S.AlarmCarouselBoxes>

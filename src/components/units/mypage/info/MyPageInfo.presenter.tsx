@@ -17,7 +17,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.ThemeSubTitle>
                 하고 싶은 테마들을 미리 담아두고 싶다면?
               </S.ThemeSubTitle>
-              <S.ThemeIcon src="/img/mypage/heart.webp" />
+              <S.ThemeIcon src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/mypage/heart_emzc4g.webp" />
             </S.ThemeBox>
           </Link>
           <Link href={"/mypage/myreview"}>
@@ -26,14 +26,14 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.ThemeSubTitle>
                 내 테마 리뷰만 모아 보고 싶다면?
               </S.ThemeSubTitle>
-              <S.ThemeIcon src="/img/mypage/escape.webp" />
+              <S.ThemeIcon src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/mypage/escape_tc5iid.webp" />
             </S.ThemeBox>
           </Link>
           <Link href={"/mypage/myboard"}>
             <S.ThemeBox>
               <S.ThemeTitle>내 보드</S.ThemeTitle>
               <S.ThemeSubTitle>내 보드만 모아 추억하고 싶다면?</S.ThemeSubTitle>
-              <S.ThemeIcon src="/img/mypage/board.webp" />
+              <S.ThemeIcon src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/mypage/board_akmskg.webp" />
             </S.ThemeBox>
           </Link>
         </S.ThemeBoxes>
