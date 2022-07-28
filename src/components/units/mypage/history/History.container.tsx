@@ -18,6 +18,7 @@ export default function History() {
   const onClickReservationDetail = (event: { currentTarget: { id: any } }) => {
     router.push(`/reservation/${event.currentTarget.id}`);
   };
+
   return (
     <HistoryUI
       data={data}
