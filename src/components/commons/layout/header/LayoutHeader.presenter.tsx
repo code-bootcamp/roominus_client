@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import * as S from "./LayoutHeader.styles";
 import { slide as Menu } from "react-burger-menu";
 import { IHeaderUIProps } from "../Layout.types";
+import { accessTokenState } from "../../../../commons/store";
+import { useRecoilState } from "recoil";
 
 const NAVIGATION_MENUS = [
   { name: "매장", page: "/cafe" },
@@ -65,6 +68,7 @@ const styles = {
 
 export default function LayoutHeaderUI(props: IHeaderUIProps) {
   const [openMypageOp, setOpenMypageOp] = useState(false);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
 
   const onClickOpenMypageOp = () => {
     setOpenMypageOp(true);
@@ -72,9 +76,6 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
   const onClickCloseMypageOp = () => {
     setOpenMypageOp(false);
   };
-  // const showSettings = (event) => {
-  //   event.preventDefault();
-  // };
 
   return (
     <>
@@ -82,7 +83,7 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
         <S.Wrapper>
           <S.LogoWrapper>
             <Link href={"/home"}>
-              <S.Logo src="/img/layout/logo.webp" />
+              <S.Logo src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658995604/public/layout/new_logo_y9nz8m.png" />
             </Link>
           </S.LogoWrapper>
 
@@ -102,31 +103,6 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
         </S.Wrapper>
         <S.Hamburger>
           <Menu width={"70%"} right styles={styles} disableOverlayClick>
-            {/* <Link href="/home">메인</Link>
-            <Link href="/cafe">매장</Link>
-            <Link href="/theme">테마</Link>
-            <Link href="/reservation">예약</Link>
-            <Link href="/community">커뮤니티</Link>
-            {!openMypageOp && (
-              <span onClick={onClickOpenMypageOp}> 마이페이지 {">"}</span>
-            )}
-            {openMypageOp && (
-              <span onClick={onClickCloseMypageOp}>마이페이지</span>
-            )}
-
-            {openMypageOp && (
-              <S.MyMenubox>
-                <Link href="/mypage">내 정보</Link>
-                <Link href="/mypage/mypick"> 테마 찜목록</Link>
-                <Link href="/mypage/history"> 최근 예약내역</Link>
-                <Link href="/mypage/phoneedit"> 회원정보 수정</Link>
-                <Link href="/mypage/phoneedit"> 회원정보 수정</Link>
-              </S.MyMenubox>
-            )}
-            <a id="contact" className="menu-item" href="/mypage">
-              로그아웃
-            </a> */}
-
             <S.MenuMainItem id="home" className="menu-item" href="/home">
               메인
             </S.MenuMainItem>
@@ -211,9 +187,22 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
                 </S.MyMenues>
               </S.MyMenubox>
             )}
-            <a id="contact" className="menu-item" href="/mypage">
-              로그아웃
-            </a>
+
+            {!accessToken && (
+              <a id="contact" className="menu-item" href="/login">
+                로그인
+              </a>
+            )}
+            {accessToken && (
+              <a
+                id="contact"
+                className="menu-item"
+                href="/home"
+                onClick={props.onClickLogout}
+              >
+                로그아웃
+              </a>
+            )}
           </Menu>
         </S.Hamburger>
       </S.Container>

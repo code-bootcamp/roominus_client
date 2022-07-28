@@ -21,12 +21,12 @@ export default function SignUp() {
     Swal.fire({
       title: "필수 이용약관은 필수!",
       icon: "warning",
-      confirmButtonText: "확인",
-      confirmButtonColor: "#4a00e0e7",
+      showConfirmButton: false,
+      timer: 1000,
+      backdrop: false,
     });
   };
   const onClickTotalCheck = () => {
-    console.log("clicked");
     totalCheckRef.current.click();
   };
   const onChangeBothCheckbox = () => {

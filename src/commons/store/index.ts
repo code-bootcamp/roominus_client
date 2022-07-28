@@ -5,6 +5,7 @@ export const accessTokenState = atom({
   key: "accessTokenState",
   default: "",
 });
+
 export const userInfoState = atom({
   key: "userInfoState",
   default: {
@@ -14,6 +15,11 @@ export const userInfoState = atom({
     phone: "",
     point: 0,
   },
+});
+
+export const userPickThemeState = atom({
+  key: "userPickThemeState",
+  default: "",
 });
 
 export const restoreAccessTokenLoadable = selector({

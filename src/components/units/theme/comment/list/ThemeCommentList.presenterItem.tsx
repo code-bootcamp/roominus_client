@@ -13,10 +13,13 @@ import {
 } from "./ThemeCommentList.queries";
 import { useRouter } from "next/router";
 import { IThemeCommentListUIItemProps } from "./ThemeCommentList.types";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 
 export default function ThemeCommentListUIItem(
   props: IThemeCommentListUIItemProps
 ) {
+  const [userInfo] = useRecoilState(userInfoState);
   const router = useRouter();
   const [deleteThemeReview] = useMutation(DELETE_THEME_REVIEW);
 
@@ -49,23 +52,32 @@ export default function ThemeCommentListUIItem(
       });
     } catch (error) {
       Swal.fire({
+        icon: "error",
         text: (error as Error).message,
+        backdrop: "false",
       });
     }
   };
 
   const onClickOpenDeleteModal = () => {
     Swal.fire({
-      title: "삭제하시겠습니까?",
+      icon: "question",
+      title: "정말 삭제하시겠습니까?",
       showCancelButton: true,
-      confirmButtonColor: "#843dca",
-      cancelButtonColor: "#ff6262",
-      confirmButtonText: "네!",
-      cancelButtonText: "고민 좀 하고요.",
+      confirmButtonText: "네",
+      cancelButtonText: "생각 좀 해보고요",
+      reverseButtons: true,
+      backdrop: "false",
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDelete();
-        Swal.fire("삭제되었습니다!", "당신의 댓글은 삭제되었다.");
+
+        Swal.fire({
+          icon: "success",
+          title: "삭제되었습니다!",
+          text: "당신의 댓글은 삭제되었다.",
+          backdrop: "false",
+        });
       }
     });
   };
@@ -82,43 +94,33 @@ export default function ThemeCommentListUIItem(
       <S.CommentRightBox>
         <S.NameToolBox>
           <S.WriterName>{props.el?.user.name}</S.WriterName>
-          <S.ToolBox>
-            <FontAwesomeIcon
-              icon={faPen}
-              onClick={onClickUpdate}
-              style={{
-                fontSize: "1.1em",
-                margin: "4px",
-                cursor: "pointer",
-              }}
-            />
-            <FontAwesomeIcon
-              icon={faXmark}
-              onClick={onClickOpenDeleteModal}
-              style={{ fontSize: "1.5em", margin: "4px", cursor: "pointer" }}
-            />
-          </S.ToolBox>
+          {userInfo.id === props.el?.user.id && (
+            <S.ToolBox>
+              <FontAwesomeIcon
+                icon={faPen}
+                onClick={onClickUpdate}
+                style={{
+                  fontSize: "1.1em",
+                  margin: "4px",
+                  cursor: "pointer",
+                }}
+              />
+              <FontAwesomeIcon
+                icon={faXmark}
+                onClick={onClickOpenDeleteModal}
+                style={{ fontSize: "1.5em", margin: "4px", cursor: "pointer" }}
+              />
+            </S.ToolBox>
+          )}
         </S.NameToolBox>
 
         <S.CreatedAt>{getDateBefore(props.el?.createdAt)}</S.CreatedAt>
         <S.EscapeRankBox>
           <S.EscapeButton>{props.el?.clear ? "탈출" : "미탈출"}</S.EscapeButton>
           <S.RankButton>난이도 : {props.el?.rank}</S.RankButton>
-          <S.Star>
-            {/* <Rate
-            style={{ fontSize: "35px", color: "#7457E8" }}
-            defaultValue={props.el?.star}
-            character={({ index }: { index: number }) => customIcons[index + 1]}
-          /> */}
-          </S.Star>
+          <S.Star></S.Star>
         </S.EscapeRankBox>
-        <S.Contents>
-          {props.el?.content}
-          {/* 머무 재밌멌머묘. 다믐메 또 몰게묘! 다른 테마들도 궁금해묘! 후속작
-          내주세묘! 머무 재밌멌머묘. 다믐메 또 몰게묘! 다른 테마들도 궁금해묘!
-          후속작 내주세묘! 머무 재밌멌머묘. 다믐메 또 몰게묘! 다른 테마들도
-          궁금해묘! 후속작 내주세묘! */}
-        </S.Contents>
+        <S.Contents>{props.el?.content}</S.Contents>
       </S.CommentRightBox>
     </S.Comment>
   );

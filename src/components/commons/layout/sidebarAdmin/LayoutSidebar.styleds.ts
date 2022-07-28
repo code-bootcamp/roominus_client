@@ -9,7 +9,7 @@ export const Container = styled.main`
   align-items: center;
 
   width: 10%;
-  border-right: 1px solid darkgray;
+  border-right: 1px solid #a3a8b7;
 
   @media ${breakPoints.tablet} {
     display: none;

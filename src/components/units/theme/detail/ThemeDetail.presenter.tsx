@@ -1,7 +1,6 @@
 import * as S from "./ThemeDetail.styles";
 import { IThemeDetailProps } from "./ThemeDetail.types";
 import { Rate } from "antd";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,7 +12,11 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
           <S.ThemeImg src={props.data?.fetchTheme?.mainImg} />
         </S.ThemeLeftBox>
         <S.ThemeRightBox>
-          <S.ThemeTitle>{props.data?.fetchTheme.title}</S.ThemeTitle>
+          <S.ThemeTitle>
+            {props.data?.fetchTheme.title}
+            <S.CafeTitle>| {props.data?.fetchTheme.cafe.name}</S.CafeTitle>
+          </S.ThemeTitle>
+
           {props.love ? (
             <FontAwesomeIcon
               icon={faHeart}
@@ -22,7 +25,7 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
                 color: "#E53935",
                 position: "absolute",
                 right: "5%",
-                top: "0%",
+                top: "1%",
                 cursor: "pointer",
               }}
               onClick={props.onClickLove}
@@ -35,13 +38,13 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
                 color: "#DAD6E1",
                 position: "absolute",
                 right: "5%",
-                top: "0%",
+                top: "1%",
                 cursor: "pointer",
               }}
               onClick={props.onClickLove}
             />
           )}
-
+          <S.Like>{props.data?.fetchTheme.like}</S.Like>
           <S.ThemeSubTitle>
             {props.data?.fetchTheme.intro_title}
           </S.ThemeSubTitle>
@@ -52,8 +55,8 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
             <S.RankTimeBox>
               장르 : {props.data?.fetchTheme.genre?.name}
               <S.ThemeRank>
-                난이도 :{/* <img src="/img/theme/rankstar.webp" /> */}
-                <Rate disabled defaultValue={props.data?.fetchTheme.rank} />
+                난이도 :
+                <Rate disabled value={props.data?.fetchTheme.rank} />
               </S.ThemeRank>
             </S.RankTimeBox>
             <S.LimitBox>
@@ -71,9 +74,12 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
             </S.LimitBox>
           </S.ThemeInfo>
           <S.ButtonWrapper>
-            <Link href={"/reservation"}>
-              <S.ReservationButton>예약하기</S.ReservationButton>
-            </Link>
+            <S.MoveToListButton onClick={props.onClickMoveToList}>
+              목록으로
+            </S.MoveToListButton>
+            <S.ReservationButton onClick={props.onClickReservation}>
+              예약하기
+            </S.ReservationButton>
           </S.ButtonWrapper>
         </S.ThemeRightBox>
       </S.ThemeInfoWrapper>

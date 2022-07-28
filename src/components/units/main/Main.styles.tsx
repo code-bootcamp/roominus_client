@@ -8,7 +8,8 @@ export const Container = styled.main`
   position: relative;
 
   left: calc(-50vw + 50%);
-  background: url("/img/main/back1.jpeg") center/cover;
+  background: url("https://res.cloudinary.com/dop5piuwp/image/upload/v1658990940/public/main/back1_wxc37r.jpg")
+    center/cover;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -26,15 +27,6 @@ export const Page2 = styled.section`
   left: calc(-50vw + 50%);
   height: 500px;
   /* background-color: black; */
-`;
-
-export const Carousel = styled.div`
-  width: 100vw;
-  height: 50em;
-  background-image: url("/img/main/mainImage.png");
-  background-size: cover;
-  /* position: relative;
-  left: calc(-50vw + 50%); */
 `;
 
 export const Image = styled.div`
@@ -70,9 +62,9 @@ export const Title = styled.div`
   font-family: "StMarie";
   font-size: 3em;
   @media ${breakPoints.mobile} {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
   }
 `;
 
@@ -101,15 +93,16 @@ export const RuminousTitle = styled.div`
     }
   }
   @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
 export const RuminousTitleUs = styled(RuminousTitle)`
   text-shadow: 0 0 10px #fffbcb, 0 0 20px #fffbcb, 0 0 30px #fffbcb;
+
   @media ${breakPoints.mobile} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   @keyframes animation {
     0% {
@@ -133,7 +126,7 @@ export const RuminousTitleUs = styled(RuminousTitle)`
 
 export const TitleLogo = styled.img`
   @media ${breakPoints.mobile} {
-    width: 50%;
+    width: 60%;
   }
 `;
 
@@ -277,15 +270,25 @@ export const Lune = styled.img`
 `;
 
 export const DoorWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  bottom: -90%;
+  right: 36%;
+
+  :hover {
+    cursor: pointer;
+  }
+  @media ${breakPoints.tablet} {
+    right: 30%;
+  }
+  @media ${breakPoints.mobile} {
+    right: 25%;
+  }
 `;
 
 export const DoorBox = styled.div`
   opacity: 80%;
-  width: 30vw;
-  height: 40vw;
+  width: 40vw;
+  height: 60vw;
 
   text-align: center;
   position: relative;
@@ -299,7 +302,6 @@ export const Door = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: black;
   animation: neon2 2s ease-out alternate infinite forwards;
   @keyframes neon2 {
     0%,
@@ -318,8 +320,9 @@ export const NeonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 `;
 
 export const NeonBottom = styled(Neon)`
-  text-align: right;
+  justify-content: center;
 `;

@@ -36,7 +36,6 @@ export default function FindPassword(props: IFindPasswordProps) {
     email: any;
     phoneNumber: any;
   }) => {
-    console.log(data);
     try {
       const result = await client.query({
         query: FETCH_FIND_PASSWORD,
@@ -55,6 +54,7 @@ export default function FindPassword(props: IFindPasswordProps) {
         icon: "error",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
+        backdrop: false,
       });
     }
   };

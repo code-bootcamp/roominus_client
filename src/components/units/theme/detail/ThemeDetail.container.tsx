@@ -4,15 +4,16 @@ import { CREATE_LIKE_THEME, FETCH_THEME } from "./ThemeDetail.queries";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../../commons/store";
+import { userInfoState, userPickThemeState } from "../../../../commons/store";
 import { IFetchThemeData } from "./ThemeDetail.types";
 import _ from "lodash";
 
 export default function ThemeDetail() {
   const [userInfo] = useRecoilState(userInfoState);
+  const [, setPickTheme] = useRecoilState(userPickThemeState);
 
   const router = useRouter();
-  const { data } = useQuery(FETCH_THEME, {
+  const { data, refetch } = useQuery(FETCH_THEME, {
     variables: {
       themeId: router.query.id,
     },
@@ -25,10 +26,21 @@ export default function ThemeDetail() {
     const result = await createLikeTheme({
       variables: { themeId: router.query.id },
     });
+    refetch();
     setLove(result.data?.createLikeTheme);
   }, 500);
+
   const onClickLove = async () => {
     getDebounce();
+  };
+
+  const onClickReservation = () => {
+    setPickTheme(data.fetchTheme.id);
+    router.push("/reservation");
+  };
+
+  const onClickMoveToList = () => {
+    router.push("/theme");
   };
 
   useEffect(() => {
@@ -39,5 +51,13 @@ export default function ThemeDetail() {
       : setLove(false);
   }, [data?.fetchTheme.likeUsers]);
 
-  return <ThemeDetailUI love={love} data={data} onClickLove={onClickLove} />;
+  return (
+    <ThemeDetailUI
+      love={love}
+      data={data}
+      onClickLove={onClickLove}
+      onClickReservation={onClickReservation}
+      onClickMoveToList={onClickMoveToList}
+    />
+  );
 }

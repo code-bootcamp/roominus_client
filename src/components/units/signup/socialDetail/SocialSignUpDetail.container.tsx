@@ -64,7 +64,7 @@ export default function SocialSignUpDetail() {
       timer = setInterval(() => {
         counts = counts - 1;
         setCount(counts);
-        console.log(counts);
+
         if (counts <= 0) {
           clearInterval(timer);
           setCount(60);
@@ -73,8 +73,9 @@ export default function SocialSignUpDetail() {
           Swal.fire({
             title: "시간 초과",
             icon: "warning",
-            confirmButtonText: "확인",
-            confirmButtonColor: "#4a00e0e7",
+            showConfirmButton: false,
+            timer: 1000,
+            backdrop: false,
           });
         }
         ShowCounts(counts);
@@ -84,8 +85,9 @@ export default function SocialSignUpDetail() {
       Swal.fire({
         title: "인증 완료",
         icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
       });
       setCount(60);
       setStart(1);
@@ -109,16 +111,18 @@ export default function SocialSignUpDetail() {
       Swal.fire({
         title: "인증번호 전송 완료",
         icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
       });
       setStart(2);
     } catch (error) {
       Swal.fire({
         title: (error as Error).message,
         icon: "warning",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
       });
     }
   };
@@ -140,12 +144,13 @@ export default function SocialSignUpDetail() {
             tokenInput,
           },
         });
-        console.log(result.data.checkinputToken);
+
         Swal.fire({
           title: "인증완료",
           icon: "success",
-          confirmButtonText: "확인",
-          confirmButtonColor: "#4a00e0e7",
+          showConfirmButton: false,
+          timer: 1000,
+          backdrop: false,
         });
         setStart(3);
         setTokenavail(true);
@@ -156,8 +161,9 @@ export default function SocialSignUpDetail() {
       Swal.fire({
         title: "토큰이 올바르지 않습니다.",
         icon: "warning",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
       });
     }
   };
@@ -177,12 +183,11 @@ export default function SocialSignUpDetail() {
           },
         });
         Swal.fire({
-          title: `${result.data.createSocialUser.id}
-          ${result.data.createSocialUser.email}
-          ${result.data.createSocialUser.phone}`,
+          title: `회원가입을 축하합니다`,
           icon: "success",
           confirmButtonText: "확인",
           confirmButtonColor: "#4a00e0e7",
+          backdrop: false,
         });
 
         router.push("/login");
@@ -193,8 +198,9 @@ export default function SocialSignUpDetail() {
       Swal.fire({
         title: "모바일 인증은 필수입니다.",
         icon: "warning",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
       });
     }
   };

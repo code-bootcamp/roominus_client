@@ -56,7 +56,7 @@ export const ThemeImg = styled.img`
 export const ThemeRightBox = styled.div`
   position: relative;
   width: 100%;
-  max-width: 650px;
+  max-width: 800px;
   max-height: 560px;
   padding: 5px 40px;
   float: right;
@@ -70,6 +70,7 @@ export const ThemeRightBox = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* max-height: fit-content; */
+    padding: 5px;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -94,23 +95,39 @@ export const GenreTag = styled.div`
 `;
 
 export const ThemeTitle = styled.h2`
+  display: flex;
+  align-items: center;
   color: #26282c;
-  font-size: 2.5em;
+  font-size: 3em;
   font-family: "GowunDodum-Regular";
 
   @media ${breakPoints.tablet} {
-    font-size: 1.5em;
+    font-size: 2.3em;
   }
   @media ${breakPoints.mobile} {
-    font-size: 1.3em;
+    font-size: 2em;
     width: auto;
+  }
+`;
+
+export const CafeTitle = styled.div`
+  color: #a3a8b7;
+  font-size: 0.6em;
+`;
+
+export const Like = styled.div`
+  position: absolute;
+  right: 7.5%;
+  top: 7%;
+  @media ${breakPoints.mobile} {
+    right: 9%;
   }
 `;
 
 export const ThemeSubTitle = styled.h3`
   font-style: oblique;
   padding: px 0px;
-  font-size: 1.5em;
+  font-size: 1.4em;
 `;
 
 export const ThemeContents = styled.h5`
@@ -120,7 +137,7 @@ export const ThemeContents = styled.h5`
   border-top: 1px solid #c8c8c8;
   border-bottom: 1px solid #c8c8c8;
   font-size: 1.3em;
-  min-height: 200px;
+  min-height: 260px;
 
   @media ${breakPoints.tablet} {
     letter-spacing: 0.6px;
@@ -162,6 +179,11 @@ export const ThemeRank = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 2px;
+  @media ${breakPoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
 `;
 
 export const LimitBox = styled.div`
@@ -190,15 +212,15 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 5px;
   @media ${breakPoints.tablet} {
     justify-content: left;
   }
 `;
 
 export const ReservationButton = styled.button`
-  width: 45vw;
-  min-width: 20em;
-  height: 56px;
+  width: 100%;
+  height: 50px;
   border-radius: 8px;
   font-weight: 700;
   border: transparent;
@@ -210,7 +232,18 @@ export const ReservationButton = styled.button`
     background: linear-gradient(90deg, #7c21e1 0%, #4a00e0 100%);
   }
   @media ${breakPoints.mobile} {
-    min-width: none;
-    width: 100px;
+  }
+`;
+
+export const MoveToListButton = styled.button`
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: transparent;
+  background-color: #26282c;
+  color: white;
+  :hover {
+    cursor: pointer;
   }
 `;

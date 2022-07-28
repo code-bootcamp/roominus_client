@@ -18,7 +18,6 @@ export interface ICommunityCommentWriteUIProps {
     name: string;
   };
   defaultValue: any;
-  onClickCancel: () => void;
 }
 
 export interface ICommunityCommentWriteProps {

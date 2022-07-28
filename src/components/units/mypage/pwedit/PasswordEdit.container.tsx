@@ -32,12 +32,23 @@ export default function PWedit() {
   const [openEye1, setOpenEye1] = useState(false);
   const [openEye2, setOpenEye2] = useState(false);
   const [password, setPassword] = useState("");
-  const { register, handleSubmit, setValue, formState } = useForm({
+  const { register, handleSubmit, setValue, formState, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
   const [accessToken] = useRecoilState(accessTokenState);
   useEffect(() => {
+    if (sessionStorage.getItem("#SL")) {
+      Swal.fire({
+        title: "소셜로그인 유저는 비밀번호가 없습니다.",
+        icon: "error",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
+      });
+      router.push("/mypage/phoneedit");
+    }
+
     register("password", { required: true });
     register("password2", { required: true });
   }, []);
@@ -60,33 +71,45 @@ export default function PWedit() {
   };
 
   const onSubmitChangePassword = async (data: { password: any }) => {
-    try {
-      const result = await client.query({
-        query: FETCH_USER_LOGGEDIN,
-        context: {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
+    if (sessionStorage.getItem("#NL")) {
+      try {
+        const result = await client.query({
+          query: FETCH_USER_LOGGEDIN,
+          context: {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+            credentials: "include",
           },
-          credentials: "include",
-        },
-      });
-      const userId = result.data.fetchUserLoggedIn.id;
-      await updateusergql({
-        variables: {
-          userId,
-          updateUserInput: {
-            password: data.password,
+        });
+        const userId = result.data.fetchUserLoggedIn.id;
+        await updateusergql({
+          variables: {
+            userId,
+            updateUserInput: {
+              password: data.password,
+            },
           },
-        },
-      });
+        });
+        Swal.fire({
+          title: "비밀번호가 변경되었습니다.",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1000,
+          backdrop: false,
+        });
+        router.push("/mypage");
+      } catch (error) {}
+    } else if (sessionStorage.getItem("#SL")) {
       Swal.fire({
-        title: "비밀번호가 변경되었습니다.",
-        icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        title: "소셜로그인 유저는 비밀번호가 없습니다.",
+        icon: "error",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
       });
-      router.push("/mypage");
-    } catch (error) {}
+      router.push("/mypage/phoneedit");
+    }
   };
 
   return (
@@ -103,6 +126,7 @@ export default function PWedit() {
       onSubmitChangePassword={onSubmitChangePassword}
       password={password}
       setPassword={setPassword}
+      trigger={trigger}
     />
   );
 }

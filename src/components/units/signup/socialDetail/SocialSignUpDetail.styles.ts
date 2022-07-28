@@ -66,7 +66,6 @@ export const EmailInput = styled.input`
   height: 2.5em;
   border-radius: 10px;
   border: 1px solid #c9c9c9;
-  margin-right: 1em;
   outline: none;
   font-size: 1.3em;
   padding: 0em 0.8em 0em 0.8em;

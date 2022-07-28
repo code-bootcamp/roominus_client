@@ -15,13 +15,6 @@ const FETCH_USER_LOGGEDIN = gql`
     }
   }
 `;
-const FETCH_SOCIAL_USER_LOGGED_IN = gql`
-  query fetchSocialUserLoggedIn {
-    fetchSocialUserLoggedIn {
-      isserviceprovider
-    }
-  }
-`;
 
 export default function useAdminAuth() {
   const client = useApolloClient();
@@ -36,38 +29,15 @@ export default function useAdminAuth() {
           Swal.fire({
             title: "로그인을 먼저 해주세요.",
             icon: "warning",
-            confirmButtonText: "확인",
-            confirmButtonColor: "#4a00e0e7",
+            showConfirmButton: false,
+            timer: 1000,
+            backdrop: false,
           });
           setTimeout(() => {
             router.push("/login");
           }, 500);
         } else if (newAccessToken) {
-          if (localStorage.getItem("#SL")) {
-            await client
-              .query({
-                query: FETCH_SOCIAL_USER_LOGGED_IN,
-                context: {
-                  headers: {
-                    Authorization: `Bearer ${newAccessToken}`,
-                  },
-                },
-              })
-              .then((result) => {
-                if (
-                  result.data.fetchSocialUserLoggedIn.isserviceprovider ===
-                  false
-                ) {
-                  Swal.fire({
-                    title: "관리자 페이지 입니다.",
-                    icon: "warning",
-                    confirmButtonText: "확인",
-                    confirmButtonColor: "#4a00e0e7",
-                  });
-                  router.push("/");
-                }
-              });
-          } else if (localStorage.getItem("#NL")) {
+          if (sessionStorage.getItem("#LL")) {
             await client
               .query({
                 query: FETCH_USER_LOGGEDIN,
@@ -82,8 +52,9 @@ export default function useAdminAuth() {
                   Swal.fire({
                     title: "관리자 페이지 입니다.",
                     icon: "warning",
-                    confirmButtonText: "확인",
-                    confirmButtonColor: "#4a00e0e7",
+                    showConfirmButton: false,
+                    timer: 1000,
+                    backdrop: false,
                   });
                   router.push("/");
                 }

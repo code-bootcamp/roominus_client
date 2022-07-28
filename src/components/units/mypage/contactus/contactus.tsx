@@ -7,10 +7,12 @@ import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../../commons/store";
 import Swal from "sweetalert2";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function ContactUs() {
   const [userInfo] = useRecoilState(userInfoState);
   const form = useRef<HTMLFormElement>(null);
+  const router = useRouter();
 
   const sendEmail = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -29,9 +31,10 @@ export default function ContactUs() {
             icon: "success",
             showConfirmButton: false,
             timer: 1500,
+            backdrop: false,
           });
-          console.log(result);
-          // router.push("/home");
+          // console.log(result);
+          router.push("/home");
         },
         (error) => {
           Swal.fire({
@@ -39,6 +42,7 @@ export default function ContactUs() {
             icon: "error",
             showConfirmButton: false,
             timer: 1500,
+            backdrop: false,
           });
           console.log(error.text);
         }

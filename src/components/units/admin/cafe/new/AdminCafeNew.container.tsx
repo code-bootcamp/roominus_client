@@ -64,15 +64,24 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
             address: data.address,
             address_detail: data.address_detail,
             mainImg: imgurl,
-            users: userInfo.id,
+            users: userInfo.name,
+            coordinate: 2,
           },
         },
+      });
+      Swal.fire({
+        icon: "success",
+        title: "등록이 완료되었습니다!",
+        timer: 1300,
+        showConfirmButton: false,
+        backdrop: false,
       });
       router.push(`/admin/cafe/${result.data?.createCafe.id}`);
     } catch (error) {
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: false,
       });
     }
   };
@@ -86,6 +95,7 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
     if (data.address_detail)
       updateCafeInput.address_detail = data.address_detail;
     if (imgurl) updateCafeInput.mainImg = imgurl;
+    // if (userInfo.name) updateCafeInput.users = userInfo.name;
 
     try {
       const result = await updateCafe({
@@ -97,12 +107,16 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
       Swal.fire({
         icon: "success",
         title: "수정이 완료되었습니다!",
+        timer: 1300,
+        showConfirmButton: false,
+        backdrop: false,
       });
       router.push(`/admin/cafe/${result.data?.updateCafe.id}`);
     } catch (error) {
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: false,
       });
     }
   };

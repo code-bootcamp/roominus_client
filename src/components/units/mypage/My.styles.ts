@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../commons/styles/media";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 
 export const Container = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  min-height: 60em;
+  min-height: 70em;
   padding: 2em 2em 2em 2em;
 
   @media ${breakPoints.mobile} {
@@ -18,7 +19,6 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 50em;
 `;
 
 export const CountBox = styled.div`
@@ -59,11 +59,12 @@ export const Row = styled.li`
   flex-direction: row;
   height: 52px;
   line-height: 52px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #a3a8b7;
 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 1.1em;
 
   &:last-of-type {
     border: none;
@@ -123,4 +124,19 @@ export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 2em;
+`;
+
+// history
+
+export const TitleBox = styled.div`
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+`;
+
+export const Calendar = styled(CalendarMonthOutlinedIcon)`
+  :hover {
+    cursor: pointer;
+    color: #b6a2ea;
+  }
 `;

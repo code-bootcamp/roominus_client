@@ -46,18 +46,20 @@ export const InfoBox = styled.div`
   padding: 0.5em;
   width: 100%;
   height: 35em;
-  gap: 1em;
+  gap: 1.5em;
 
   & h2 {
     font-style: oblique;
-
-    @media ${breakPoints.mobile} {
-      font-size: 0.9em;
-    }
+    font-size: 1.5em;
+    margin: 0;
   }
 
   @media ${breakPoints.mobile} {
     height: 100%;
+  }
+
+  & h3 {
+    margin: 0;
   }
 `;
 
@@ -77,34 +79,75 @@ export const ThemeTitleBox = styled.div`
     font-family: "GowunDodum-Regular";
     margin: 0;
     cursor: pointer;
+    position: relative;
+    animation: h1 1s;
+    -webkit-box-reflect: below -45px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+
+    @keyframes h1 {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
 
     @media ${breakPoints.tablet} {
-      font-size: 1.5em;
+      font-size: 2em;
     }
     @media ${breakPoints.mobile} {
-      font-size: 1.3em;
+      font-size: 1.5em;
       width: auto;
+      -webkit-box-reflect: below -25px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  & span {
+    font-size: 1.3em;
+    @media ${breakPoints.mobile} {
+      font-size: 1em;
     }
   }
 `;
 
 export const ThemeCafe = styled.span`
-  color: darkgray;
+  color: #a3a8b7;
   cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  transition: color 400ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
 
-  @media ${breakPoints.mobile} {
-    font-size: 0.8em;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 20;
+    width: auto;
+    height: 0.1em;
+    background-color: #dab3f8;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 400ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
   }
 `;
 
 export const LimitBox = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 1em;
 `;
 
 export const ContentBox = styled.div`
-  border: 1px solid gray;
+  border: 1px solid #a3a8b7;
   width: 10em;
   height: 7em;
 
@@ -127,6 +170,10 @@ export const ContentBox = styled.div`
     width: 6em;
     height: 7em;
   }
+
+  & h4 {
+    margin: 0;
+  }
 `;
 
 export const RunIcon = styled(RunCircleOutlinedIcon)``;
@@ -135,54 +182,50 @@ export const PeopleIcon = styled(PeopleAltOutlinedIcon)``;
 
 export const TimeBoxes = styled.div`
   display: flex;
-  padding-top: 0.6em;
+  flex-direction: column;
   width: 100%;
 
   & h3 {
     font-size: 1.5em;
-  }
 
-  @media ${breakPoints.mobile} {
-    & h3 {
-      font-size: 1.1em;
+    @media ${breakPoints.mobile} {
+      font-size: 1.3em;
     }
-    display: flex;
-    flex-direction: column;
   }
 `;
 
 export const Box = styled.div`
-  display: flex;
-  width: 87%;
-
-  @media ${breakPoints.tablet} {
-    width: 70%;
-  }
+  width: 100%;
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
+
 export const TimeBox = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 6em;
+  width: 100%;
+
+  & h2 {
+    font-size: 1.3em;
+
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 70%,
+      #b6a2ea 30%
+    );
+  }
 `;
 
 export const RateBox = styled.div`
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  text-align: center;
+  font-size: 1.1em;
 
-  & span {
-    font-size: 1.3em;
-    margin-right: 0.2em;
-  }
-
-  @media ${breakPoints.mobile} {
-    & span {
-      font-size: 1em;
-      margin-right: 0.2em;
-    }
+  & h4 {
+    margin-top: 0.3em;
+    margin-right: 0.5em;
   }
 `;
 

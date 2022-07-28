@@ -9,7 +9,6 @@ export const Comment = styled.section`
   background-color: white;
   display: flex;
   flex-direction: row;
-  /* height: 250px; */
   border-bottom: 1px solid #a3a8b7;
 `;
 

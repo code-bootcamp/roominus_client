@@ -4,9 +4,9 @@ import { Fragment } from "react";
 import { ISideBarUIProps } from "../Layout.types";
 
 const NAVIGATION_MENUS = [
-  { name: "내 찜 목록", page: "/mypage/mypick" },
-  { name: "내 게시물 목록", page: "/mypage/myboard" },
-  { name: "내 테마 리뷰 목록", page: "/mypage/myreview" },
+  { name: "내가 찜한 테마", page: "/mypage/mypick" },
+  { name: "내가 쓴 게시물", page: "/mypage/myboard" },
+  { name: "내가 쓴 리뷰글", page: "/mypage/myreview" },
   { name: "최근 예약 내역", page: "/mypage/history" },
   { name: "최근 결제 내역", page: "/mypage/reward" },
 ];
@@ -20,22 +20,22 @@ export default function LayoutSideBarUI(props: ISideBarUIProps) {
             {props.userInfo?.name ? (
               <>
                 <S.UserData onClick={props.onClickMyPage}>
-                  {props.userInfo?.name}님
+                  <span>{props.userInfo?.name}</span>
                 </S.UserData>
               </>
             ) : (
               <>
                 <S.UserData onClick={props.onClickMyPage}>
-                  {props.userInfo?.email.split("@")[0]}
+                  <span>{props.userInfo?.email.split("@")[0]}</span>
                 </S.UserData>
               </>
             )}
           </S.UserNameBox>
+          <p>회원님</p>
           <p>안녕하세요!</p>
           <p>
             적립금 <S.UserPoint>{props.userInfo?.point}</S.UserPoint>원
           </p>
-          <S.line></S.line>
         </S.HeaderBox>
         <S.MenuBoxs>
           {NAVIGATION_MENUS.map((el) => (

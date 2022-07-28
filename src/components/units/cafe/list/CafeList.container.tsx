@@ -14,35 +14,79 @@ export default function CafeListPage() {
   const [hongdae, setHongdae] = useState(false);
   const [kondae, setKondae] = useState(false);
 
-  const { data, fetchMore } = useQuery(FETCH_CAFES);
+  const { data, refetch, fetchMore } = useQuery(FETCH_CAFES);
   const { data: count } = useQuery(FETCH_CAFES_COUNT);
 
   const onClickTotal = () => {
+    refetch({
+      address: "",
+      page: 1,
+    });
+
     setTotal(true);
     setGangnam(false);
     setHongdae(false);
     setKondae(false);
   };
 
-  const onClickGangnam = () => {
+  const onClickGangnam = (event: MouseEvent<HTMLButtonElement>) => {
+    if (event.target instanceof Element)
+      refetch({
+        address: event.target.id,
+      });
+
     setTotal(false);
     setGangnam(true);
     setHongdae(false);
     setKondae(false);
   };
 
-  const onClickHongdae = () => {
+  const onClickHongdae = (event: MouseEvent<HTMLButtonElement>) => {
+    if (event.target instanceof Element)
+      refetch({
+        address: event.target.id,
+      });
+
     setTotal(false);
     setGangnam(false);
     setHongdae(true);
     setKondae(false);
   };
 
-  const onClickKondae = () => {
+  const onClickKondae = (event: MouseEvent<HTMLButtonElement>) => {
+    if (event.target instanceof Element)
+      refetch({
+        address: event.target.id,
+      });
+
     setTotal(false);
     setGangnam(false);
     setHongdae(false);
     setKondae(true);
+  };
+
+  const onChangeLocation = (event: any) => {
+    if (event.target.value === "전체") {
+      refetch({
+        address: "",
+        page: 1,
+      });
+    }
+    if (event.target.value === "강남") {
+      refetch({
+        address: event.target.value,
+      });
+    }
+    if (event.target.value === "홍대") {
+      refetch({
+        address: event.target.value,
+      });
+    }
+    if (event.target.value === "건대") {
+      refetch({
+        address: event.target.value,
+      });
+    }
   };
 
   const onClickCard =
@@ -71,6 +115,7 @@ export default function CafeListPage() {
       Swal.fire({
         icon: "warning",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
   };
@@ -89,6 +134,7 @@ export default function CafeListPage() {
       onClickKondae={onClickKondae}
       loadFunc={loadFunc}
       count={count}
+      onChangeLocation={onChangeLocation}
     />
   );
 }

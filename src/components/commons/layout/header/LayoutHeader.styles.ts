@@ -43,7 +43,6 @@ export const LogoWrapper = styled.div`
 export const Logo = styled.img`
   cursor: pointer;
   width: 13em;
-  /* height: 2.5em; */
   @media ${breakPoints.tablet} {
     height: 3em;
     position: relative;
@@ -73,22 +72,30 @@ export const MenuWrapper = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  font-weight: ${(props: IIsActiveProps) =>
-    props.isActive ? "500" : "normal"};
-  cursor: ${(props: IIsActiveProps) => (props.isActive ? "none" : "pointer")};
-  color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#26282C")};
   font-size: 1.5em;
-`;
+  font-weight: 500;
+  cursor: pointer;
+  color: ${(props: IIsActiveProps) => (props.isActive ? "#BF9EEB" : "#0000")};
 
-export const Contents = styled.span`
+  --b: 0.1em;
+  --c: #bf9eeb;
+
+  padding-block: var(--b);
+  background: linear-gradient(var(--c) 50%, #26282c 0) 0%
+      calc(100% - var(--_p, 0%)) / 100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%) var(--b)
+      no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.3s var(--_s, 0s) linear,
+    background-size 0.3s calc(0.3s - var(--_s, 0s));
+
   :hover {
-    cursor: pointer;
+    ${(props: IIsActiveProps) => (props.isActive ? "none" : "--_p: 100%;")};
+    ${(props: IIsActiveProps) => (props.isActive ? "none" : "--_s: 0.3s;")};
   }
-
-  margin-left: 0.6em;
 `;
 
-export const Toggle = styled.div``;
 export const Hamburger = styled.div`
   display: none;
 
@@ -123,4 +130,10 @@ export const MyMenues = styled.a`
   :hover {
     color: #d1d1d1;
   }
+`;
+export const LogInandOutBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 `;

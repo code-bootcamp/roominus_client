@@ -15,8 +15,8 @@ const Wrapper2 = styled.div`
   display: none;
 
   @media ${breakPoints.mobile} {
-    width: 87%;
-    display: block;
+    width: 18em;
+    display: flex;
   }
 `;
 
@@ -27,7 +27,7 @@ const TitleBox = styled.div`
   align-items: center;
 
   .ant-card-meta-title {
-    width: 10em;
+    width: 13em;
     font-weight: 500;
     font-size: 1.2em;
     word-break: break-all;
@@ -76,7 +76,7 @@ const ListTheme = (props: IListThemeProps) => (
           <img
             alt="example"
             src={props.el.mainImg}
-            style={{ height: 180, cursor: "pointer" }}
+            style={{ height: 300, cursor: "pointer" }}
           />
         }
       >

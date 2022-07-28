@@ -21,7 +21,8 @@ export const BackWrapper = styled.div`
 export const BackGroundImg = styled.div`
   width: 100vw;
   height: 40em;
-  background: url("/img/home/main.webp") center/cover;
+  background: url("https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/home/main_f0vr0m.webp")
+    center/cover;
   /* background-size: 100% 100%; */
   margin-bottom: 2em;
   position: relative;
@@ -79,11 +80,6 @@ export const StoreImgboxes = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2em;
 
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between; */
-  /* background-color: lightcoral; */
-
   @media ${breakPoints.tablet} {
     width: 100%;
     display: grid;
@@ -91,9 +87,10 @@ export const StoreImgboxes = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 90%;
-    display: grid;
-    grid-template-columns: 1fr;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -376,4 +373,11 @@ export const NoticeBoxes = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+`;
+
+export const BoardBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
 `;

@@ -70,7 +70,7 @@ export default function GradientCover(props: {
             }}
           />
           <CardContent sx={{ justifyContent: "flex-end" }}>
-            <Typography level="h2" fontSize="small" textColor="#fff" mb={1}>
+            <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
               {props.el?.theme.title}
             </Typography>
             <Typography

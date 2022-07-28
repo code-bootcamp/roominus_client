@@ -21,20 +21,26 @@ export default function CommunityCommentEditUI(
                 </S.InfoTitle>
                 <S.InfoTitle>
                   <S.Comment
-                    src="/img/community/comment/recomment.webp"
+                    src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990935/public/community/comment/recomment_ohb13o.webp"
                     onClick={props.onClickReComment}
                     id={props.el.id}
                   />
-                  <S.Edit
-                    src="/img/community/comment/commentedit.webp"
-                    onClick={props.onClickEdit}
-                    id={props.el.id}
-                  />
-                  <S.Delete
-                    src="/img/community/comment/commentdelete.webp"
-                    onClick={props.onClickDelete}
-                    id={props.el.id}
-                  />
+                  {props.el.user?.name !== props.userInfo?.name ? (
+                    ""
+                  ) : (
+                    <div>
+                      <S.Edit
+                        src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990935/public/community/comment/commentedit_iaravb.webp"
+                        onClick={props.onClickEdit}
+                        id={props.el.id}
+                      />
+                      <S.Delete
+                        src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990935/public/community/comment/commentdelete_bjl3eo.webp"
+                        onClick={props.onClickDelete}
+                        id={props.el.id}
+                      />
+                    </div>
+                  )}
                 </S.InfoTitle>
               </S.InfoTitleBox>
               <S.Contents>{props.el.content}</S.Contents>

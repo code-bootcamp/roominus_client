@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
 // import Head from "next/head";
 import ApolloSetting from "../src/components/commons/apollo";
+import Head from "next/head";
 
 declare const window: typeof globalThis & {
   Kakao: any;
@@ -41,25 +42,21 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      {/* <Head>
-        <title>Roominus</title>
+      <Head>
+        <title>room:in us</title>
         <meta
-          property="og:Roominus"
-          content="안녕하세요, 방탈출 예약 플랫폼 룸인어스입니다."
+          property="og:roominus"
+          content="방탈출 통합 예약 플랫폼 룸인어스"
         ></meta>
         <meta
           property="og:description"
-          content="안녕하세요, 방탈출 예약 플랫폼 룸인어스입니다."
+          content="세상의 모든 방탈출 카페로 IN하다. 우리들의 방탈출 공간 room:in us에서 새로운 세상으로 입장하세요."
         ></meta>
-        <script
-          type="text/javascript"
-          src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="http://code.jquery.com/jquery-1.11.3.min.js"
-        ></script>
-      </Head> */}
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dop5piuwp/image/upload/v1658995604/public/layout/new_logo_y9nz8m.png"
+        ></meta>
+      </Head>
       <RecoilRoot>
         <ApolloSetting>
           <Global styles={globalStyles} />

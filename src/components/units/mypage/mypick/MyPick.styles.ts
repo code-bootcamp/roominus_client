@@ -7,6 +7,7 @@ export const Container = styled.main`
 
   width: 100%;
   padding: 2em 2em 2em 2em;
+  min-height: 70em;
 
   @media ${breakPoints.mobile} {
     padding: 1em 0.1em 1em 0.1em;
@@ -16,7 +17,6 @@ export const Container = styled.main`
 export const Wrapper = styled.div`
   width: 100%;
   padding-top: 1em;
-  min-height: 50em;
 
   @media ${breakPoints.tablet} {
     display: flex;
@@ -62,11 +62,13 @@ export const Etc = styled.ul`
 export const PaginationsWrapper = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: 4em;
 `;
+
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 2em;
+  padding-top: 4em;
 `;
 
 export const MobileList = styled.div`

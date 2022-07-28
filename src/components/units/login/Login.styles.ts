@@ -30,12 +30,16 @@ export const Form = styled.form`
   align-items: center;
   margin-bottom: 4em;
   gap: 1em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 2em;
+  }
 `;
 export const Input = styled.input`
   width: 100%;
   height: 2em;
   border: none;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #a3a8b7;
   outline: none;
   font-size: 1.3em;
 `;
@@ -101,6 +105,10 @@ export const SignUpBox = styled.div`
   align-items: center;
   margin-bottom: 2em;
   gap: 1em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 2em;
+  }
 `;
 export const SignUpdetailBox = styled.div`
   width: 100%;
@@ -134,7 +142,7 @@ export const FindIdPasswordBtn = styled.button`
 export const Divider = styled.div`
   width: 40%;
   height: 1px;
-  background-color: lightgray;
+  background-color: #a3a8b7;
   margin-bottom: 2em;
 `;
 
@@ -144,8 +152,10 @@ export const SocialLoginBtns = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 2em;
+
   @media ${breakPoints.mobile} {
-    width: 40%;
+    width: 100%;
+    font-size: 2em;
   }
 `;
 

@@ -45,16 +45,21 @@ export const Wrapper = styled.section`
 
 export const BackBox = styled.div`
   width: 100%;
-  font-size: 1.3em;
-  font-weight: 700;
+  font-size: 1.5em;
+  padding-top: 1em;
+  font-weight: 600;
+
+  :hover {
+    color: #a3a8b7;
+  }
 
   @media ${breakPoints.mobile} {
     font-size: 1.1em;
   }
 
   & span {
-    margin-left: 0.5em;
     cursor: pointer;
+    margin: 0;
   }
 `;
 
@@ -66,6 +71,17 @@ export const Form = styled.form`
   width: 100%;
 `;
 
+export const GridBox = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+
+  @media ${breakPoints.mobile} {
+    display: inline;
+  }
+`;
+
 export const FooterBox = styled.div`
   padding-top: 1em;
   display: flex;
@@ -75,15 +91,15 @@ export const FooterBox = styled.div`
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 3em;
-  gap: 1em;
+  margin: 3em 0em 3em 0em;
+  gap: 2em;
 `;
 
 export const Total = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  border-top: 1px solid darkgray;
+  border-top: 1px solid #a3a8b7;
   padding-top: 1em;
   padding-bottom: 1em;
   font-weight: 700;
@@ -111,7 +127,7 @@ export const InformationUse = styled.div`
   padding-top: 1em;
   width: 100%;
 
-  border: 1px solid darkgray;
+  border: 1px solid #a3a8b7;
   padding-left: 1em;
 `;
 
@@ -127,7 +143,7 @@ export const Point = styled.div`
   padding-left: 1.2em;
   font-size: 0.85em;
   padding-bottom: 0.9em;
-  color: gray;
+  color: #a3a8b7;
 
   & span {
     font-size: 1em;

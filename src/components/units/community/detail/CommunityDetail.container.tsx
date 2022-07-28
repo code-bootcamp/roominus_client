@@ -41,12 +41,19 @@ export default function CommunityDetail() {
       icon: "question",
       title: "정말 삭제하시겠습니까?",
       showCancelButton: true,
+      confirmButtonText: "네",
+      cancelButtonText: "아니요",
+      reverseButtons: true,
+      backdrop: false,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDeleteModal();
         Swal.fire({
           icon: "success",
           title: "삭제되었습니다!",
+          timer: 1300,
+          showConfirmButton: false,
+          backdrop: false,
         });
       }
     });
@@ -62,6 +69,7 @@ export default function CommunityDetail() {
       Swal.fire({
         icon: "error",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
   };
@@ -92,6 +100,7 @@ export default function CommunityDetail() {
       data={data}
       onClickLike={onClickLike}
       like={like}
+      userInfo={userInfo}
     />
   );
 }

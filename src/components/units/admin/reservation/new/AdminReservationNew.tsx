@@ -1,12 +1,16 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { IData } from "./AdminReservation.types";
-import { CREATE_RESERVATION_THEME_MENU } from "./AdminReservationNewQuery";
+import {
+  CREATE_RESERVATION_THEME_MENU,
+  FETCH_THEMES_ALL,
+} from "./AdminReservationNewQuery";
 import AdminReservationNewUI from "./AdminReservationNewUI";
 export default function AdminReservationNew() {
   const [createThemeMenu] = useMutation(CREATE_RESERVATION_THEME_MENU);
 
   const { register, handleSubmit } = useForm();
+  const { data: themesList } = useQuery(FETCH_THEMES_ALL);
 
   const onClickSubmit = async (data: IData) => {
     try {
@@ -32,6 +36,7 @@ export default function AdminReservationNew() {
       onClickSubmit={onClickSubmit}
       register={register}
       handleSubmit={handleSubmit}
+      themesList={themesList}
     />
   );
 }

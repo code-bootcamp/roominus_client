@@ -62,13 +62,13 @@ export const ReCommentWriteBox = styled.div`
 `;
 
 export const ReCommentInput = styled.input`
-  width: 68%;
+  width: 69%;
   height: 2.5em;
   border: none;
   border-radius: 8px;
   padding-left: 1em;
 
   @media ${breakPoints.mobile} {
-    width: 75%;
+    width: 69%;
   }
 `;

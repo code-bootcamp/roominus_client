@@ -15,11 +15,20 @@ export const getToday = (value: string | number | Date) => {
   return `${yyyy}-${mm}-${dd}`;
 };
 
-export const getTime = (value: string | number | Date) => {
+export const getMyTime = (value: string | number | Date) => {
   const date = new Date(value);
-  const hh = date.getHours();
-  return `${hh}시`;
+
+  const hh = String(date.getHours()).padStart(2, "0");
+  const mM = String(date.getMinutes()).padStart(2, "0");
+
+  return `${hh}:${mM}`;
 };
+
+// export const getTime = (value: string | number | Date) => {
+//   const date = new Date(value);
+//   const hh = date.getHours();
+//   return `${hh}시`;
+// };
 
 export const getDateTime = (value: string | number | Date) => {
   const today = new Date();
@@ -89,4 +98,17 @@ export const getDateBefore = (value: string | number | Date) => {
   }
 
   return `${Math.floor(betweenTimeDay / 365)}년전`;
+};
+
+export const timeForToday = (value: string | number | Date) => {
+  const today = new Date();
+  const timeValue = new Date(value);
+
+  const betweenTime = Math.floor(
+    (today.getTime() - timeValue.getTime()) / 1000 / 60
+  );
+  if (betweenTime < 1) return "방금전";
+  if (betweenTime < 60) {
+    return `${betweenTime}분전`;
+  }
 };

@@ -36,11 +36,13 @@ export default function CommunityCommentList() {
         title: "댓글이 삭제되었습니다!",
         timer: 1300,
         showConfirmButton: false,
+        backdrop: false,
       });
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
   };

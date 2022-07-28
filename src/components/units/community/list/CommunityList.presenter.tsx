@@ -3,14 +3,37 @@ import * as S from "./CommunityList.styles";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { ICommunityListProps, IFetchBoardsProps } from "./CommunityList.types";
 import Paginations02 from "../../../commons/pagination02/Paginations.container";
-import AssignmentIndOutlinedIcon from "@mui/icons-material/AssignmentIndOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
+import TopButton from "../../../commons/buttons/topbutton/community";
+import { useEffect, useState } from "react";
 export default function CommunityListUI(props: ICommunityListProps) {
   const error = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
+
+  const [windowSize, setWindowSize] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    } else {
+      setWindowSize(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowSize]);
 
   return (
     <S.Wrapper>
       <S.TitleBox>
-        <AssignmentIndOutlinedIcon fontSize="large" />
+        {!windowSize && <ChatOutlinedIcon fontSize="large" />}
+        {windowSize && <ChatOutlinedIcon />}
         <h1>전체글보기</h1>
       </S.TitleBox>
 
@@ -25,7 +48,7 @@ export default function CommunityListUI(props: ICommunityListProps) {
                 src={
                   new RegExp(error, "i").test(el.mainImg)
                     ? el.mainImg
-                    : "/img/community/noImage.png"
+                    : "https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/noImage_ofbjxy.png"
                 }
               />
               <S.InfoBox>
@@ -45,9 +68,14 @@ export default function CommunityListUI(props: ICommunityListProps) {
         ))}
       </S.Etc>
 
-      <S.ButtonBox>
-        <WebPurpleButton title="작성하기" onClick={props.onClickWrite} />
-      </S.ButtonBox>
+      {!windowSize && (
+        <S.ButtonBox>
+          <WebPurpleButton title="작성하기" onClick={props.onClickWrite} />
+        </S.ButtonBox>
+      )}
+
+      {windowSize && <TopButton />}
+
       <S.PaginationsWrapper>
         <Paginations02
           count={props.count?.fetchBoardsCount}

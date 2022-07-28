@@ -11,23 +11,24 @@ import {
   DELETE_RESERVATION,
   FETCH_RESERVATION,
 } from "./ReservationSuccess.query";
+import ShareButton from "../../../commons/buttons/sharebutton";
 import { getToday } from "../../../commons/getDate";
 
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-`;
-
 const PrintBox = styled.div`
-  width: 99%;
   display: flex;
   justify-content: flex-end;
 `;
 
 const Printer = styled(PrinterOutlined)`
-  font-size: 1.8em;
-  padding-top: 0.5em;
-  color: #4a00e0e7;
+  margin-top: 0.5em;
+  padding-top: 0.4em;
+  margin-right: 0.2em;
+  background-color: pink;
+  border: 1px solid pink;
+  border-radius: 50%;
+  width: 1.8em;
+  height: 1.8em;
+  font-size: 1.3em;
 
   :hover {
     transform: scale(1.1);
@@ -37,25 +38,31 @@ const Printer = styled(PrinterOutlined)`
 
 export default function ReservationSuccess() {
   const router = useRouter();
-
   const { data } = useQuery(FETCH_RESERVATION, {
     variables: { reservationId: router.query.id },
   });
-
   const [deleteReservation] = useMutation(DELETE_RESERVATION);
-  const [cancellable, setCancellable] = useState(true);
 
   const componentRef = useRef(null);
-  const link = `roominus.site/${router.asPath}`;
+  const link = `roominus.site${router.asPath}`;
+
+  // 방문일 (당일)부터 취소하기 버튼이 안보이게
+  const [cancellable, setCancellable] = useState(true);
+
+  const today = String(new Date());
+  const timeValue = data?.fetchReservation?.reservation_date;
+  const now = getToday(new Date());
+  const betweenTime = Math.floor(
+    (Date.parse(today) - Date.parse(timeValue)) / 1000 / 60
+  );
 
   useEffect(() => {
-    const now = getToday(new Date());
-
-    if (data?.fetchReservation.reservation_date === now) {
+    if (data?.fetchReservation.reservation_date === now || betweenTime > 0) {
       setCancellable(false);
     }
-  }, []);
+  });
 
+  // 취소하기
   const onClickRefund = async () => {
     try {
       await deleteReservation({
@@ -75,12 +82,12 @@ export default function ReservationSuccess() {
   const onClickOpenRefundModal = () => {
     Swal.fire({
       title: "예약을 취소하시겠습니까?",
-      icon: "warning",
+      icon: "question",
       showCancelButton: true,
-      confirmButtonColor: "#843dca",
-      cancelButtonColor: "#ff6262",
       confirmButtonText: "네",
       cancelButtonText: "아니요",
+      reverseButtons: true,
+      backdrop: false,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickRefund();
@@ -102,17 +109,20 @@ export default function ReservationSuccess() {
     });
   };
 
+  // 환불 완료일 경우 페이지 접속 불가
   if (data?.fetchReservation.status === "환불완료") {
     onClickOpenCancelModal();
   }
 
+  console.log(router.query.id);
   return (
-    <Container>
+    <>
       <PrintBox>
         <ReactToPrint
           trigger={() => <Printer />}
           content={() => componentRef.current}
         />
+        <ShareButton />
       </PrintBox>
       <ReservationSuccessUI
         data={data}
@@ -121,7 +131,6 @@ export default function ReservationSuccess() {
         onClickOpenRefundModal={onClickOpenRefundModal}
         cancellable={cancellable}
       />
-      ;
-    </Container>
+    </>
   );
 }

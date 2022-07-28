@@ -7,12 +7,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useRef, useState } from "react";
-import {
-  LOGIN,
-  FETCH_USER_LOGGEDIN,
-  SOCIAL_LOGIN,
-  FETCH_SOCIAL_USER_LOGGED_IN,
-} from "./Login.query";
+import { LOGIN, FETCH_USER_LOGGEDIN, SOCIAL_LOGIN } from "./Login.query";
 import { useMutation, useApolloClient } from "@apollo/client";
 import { useRecoilState } from "recoil";
 import {
@@ -23,7 +18,6 @@ import {
 } from "../../../commons/store";
 import Swal from "sweetalert2";
 import { IDataProps } from "./Login.types";
-
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 const schema = yup.object({
@@ -45,11 +39,12 @@ const schema = yup.object({
 declare const window: typeof globalThis & {
   Kakao: any;
 };
-export default function LoginPage() {
+export default function Login() {
   const { register, handleSubmit, setValue, formState, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+
   const router = useRouter();
   const client = useApolloClient();
   const [logingql] = useMutation(LOGIN);
@@ -74,7 +69,9 @@ export default function LoginPage() {
           password: data.password,
         },
       });
-      localStorage.setItem("#NL", "NL");
+      sessionStorage.setItem("#NL", "NL");
+      sessionStorage.setItem("#LL", "LL");
+      localStorage.setItem("#LL", "LL");
       const Token = result.data?.Login;
 
       const resultUserInfo = await client.query({
@@ -92,18 +89,20 @@ export default function LoginPage() {
       setUserInfo(user);
 
       Swal.fire({
-        title: "성공",
+        title: "반갑습니다",
         icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
       });
       router.push("/home");
     } catch (error) {
       Swal.fire({
         title: "로그인에 실패하였습니다",
         icon: "error",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
+        backdrop: false,
       });
       console.log(error);
     }
@@ -133,7 +132,9 @@ export default function LoginPage() {
         // The signed-in user info.
         const user = result.user;
         // ...
-        localStorage.setItem("#SL", "SL");
+        sessionStorage.setItem("#SL", "SL");
+        sessionStorage.setItem("#LL", "LL");
+        localStorage.setItem("#LL", "LL");
         socialLogingql({
           variables: {
             email: user.email,
@@ -143,7 +144,7 @@ export default function LoginPage() {
             setAccessToken(result.data.SocialLogin);
             client
               .query({
-                query: FETCH_SOCIAL_USER_LOGGED_IN,
+                query: FETCH_USER_LOGGEDIN,
                 context: {
                   headers: {
                     Authorization: `Bearer ${result.data.SocialLogin}`,
@@ -151,24 +152,33 @@ export default function LoginPage() {
                   credentials: "include",
                 },
               })
-              .then((result) =>
-                setUserInfo(result.data.fetchSocialUserLoggedIn)
-              )
+              .then((result) => {
+                setUserInfo(result.data.fetchUserLoggedIn);
+                Swal.fire({
+                  title: "반갑습니다",
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 1000,
+                  backdrop: false,
+                });
+              })
               .catch((error) =>
                 Swal.fire({
                   title: error,
                   icon: "error",
-                  confirmButtonText: "확인",
-                  confirmButtonColor: "#4a00e0e7",
+                  showConfirmButton: false,
+                  timer: 1000,
+                  backdrop: false,
                 })
               );
           })
-          .catch((error) =>
+          .catch(() =>
             Swal.fire({
-              title: error,
+              title: "회원가입을 먼저 해주세요!",
               icon: "error",
-              confirmButtonText: "확인",
-              confirmButtonColor: "#4a00e0e7",
+              showConfirmButton: false,
+              timer: 1000,
+              backdrop: false,
             })
           );
         router.push(`/home`);
@@ -196,7 +206,9 @@ export default function LoginPage() {
           success: function (response: {
             kakao_account: { email: any; has_email: any };
           }) {
-            localStorage.setItem("#SL", "SL");
+            sessionStorage.setItem("#SL", "SL");
+            sessionStorage.setItem("#LL", "LL");
+            localStorage.setItem("#LL", "LL");
             socialLogingql({
               variables: {
                 email: response.kakao_account.email,
@@ -206,7 +218,7 @@ export default function LoginPage() {
                 setAccessToken(result.data.SocialLogin);
                 client
                   .query({
-                    query: FETCH_SOCIAL_USER_LOGGED_IN,
+                    query: FETCH_USER_LOGGEDIN,
                     context: {
                       headers: {
                         Authorization: `Bearer ${result.data.SocialLogin}`,
@@ -214,24 +226,33 @@ export default function LoginPage() {
                       credentials: "include",
                     },
                   })
-                  .then((result) =>
-                    setUserInfo(result.data.fetchSocialUserLoggedIn)
-                  )
+                  .then((result) => {
+                    setUserInfo(result.data.fetchUserLoggedIn);
+                    Swal.fire({
+                      title: "반갑습니다",
+                      icon: "success",
+                      showConfirmButton: false,
+                      timer: 1000,
+                      backdrop: false,
+                    });
+                  })
                   .catch((error) =>
                     Swal.fire({
                       title: error,
                       icon: "error",
-                      confirmButtonText: "확인",
-                      confirmButtonColor: "#4a00e0e7",
+                      showConfirmButton: false,
+                      timer: 1000,
+                      backdrop: false,
                     })
                   );
               })
-              .catch((error) =>
+              .catch(() =>
                 Swal.fire({
-                  title: error,
+                  title: "회원가입을 먼저 해주세요!",
                   icon: "error",
-                  confirmButtonText: "확인",
-                  confirmButtonColor: "#4a00e0e7",
+                  showConfirmButton: false,
+                  timer: 1000,
+                  backdrop: false,
                 })
               );
 

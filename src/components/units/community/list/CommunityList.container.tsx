@@ -19,6 +19,7 @@ export default function CommunityList() {
   const onClickWrite = () => {
     router.push("/community/new");
   };
+
   return (
     <CommunityListUI
       onClickCard={onClickCard}

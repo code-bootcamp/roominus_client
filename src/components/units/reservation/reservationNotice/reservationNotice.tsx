@@ -31,7 +31,7 @@ export default function ReservationNotice(props: IReservationNotice) {
               <h6>step1</h6>
               <h4>테마 선택</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.webp" />
+            <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/arrow_cluppj.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
@@ -40,7 +40,7 @@ export default function ReservationNotice(props: IReservationNotice) {
 
               <h4>매장 선택</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.webp" />
+            <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/arrow_cluppj.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
@@ -51,7 +51,7 @@ export default function ReservationNotice(props: IReservationNotice) {
 
               <h4>날짜 선택</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.webp" />
+            <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/arrow_cluppj.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
@@ -71,7 +71,7 @@ export default function ReservationNotice(props: IReservationNotice) {
               <h6>step5</h6>
               <h4>인원 선택</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.webp" />
+            <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/arrow_cluppj.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
@@ -81,7 +81,7 @@ export default function ReservationNotice(props: IReservationNotice) {
               <h6>step6</h6>
               <h4>적립금 사용</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.webp" />
+            <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/arrow_cluppj.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>
@@ -91,7 +91,7 @@ export default function ReservationNotice(props: IReservationNotice) {
               <h6>step7</h6>
               <h4>카드 결제</h4>
             </S.Step>
-            <S.Arrow src="/img/reservation/arrow.webp" />
+            <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/arrow_cluppj.webp" />
           </S.StepBox>
           <S.StepBox>
             <S.Step>

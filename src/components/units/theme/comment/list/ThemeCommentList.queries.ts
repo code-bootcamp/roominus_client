@@ -10,6 +10,7 @@ export const FETCH_THEME_REVIEWS = gql`
       createdAt
       star
       user {
+        id
         name
         isserviceprovider
       }

@@ -3,10 +3,15 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   // generateBuildId: () => "roominus",
-  // exportPathMap: () => ({
-  //   "/": { page: "/" },
-  //   "/404": { page: "/404" },
-  // }),
+  exportPathMap: () => ({
+    "/": { page: "/" },
+    "/cafe": { page: "/cafe" },
+    "/reservation": { page: "/reservation" },
+    "/theme": { page: "/theme" },
+    "/community": { page: "/community" },
+    "/mypage": { page: "/mypage" },
+    "/404": { page: "/404" },
+  }),
 
   experimental: {
     esmExternals: false,

@@ -60,7 +60,6 @@ export const NameDateBox = styled.div`
   margin-bottom: 1em;
   display: flex;
   flex-direction: row;
-  /* background-color: #ff1b1b; */
 `;
 
 export const WriterName = styled.h1`
@@ -70,7 +69,6 @@ export const WriterName = styled.h1`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: yellow; */
 
   @media ${breakPoints.mobile} {
     font-size: 1.4em;
@@ -81,7 +79,6 @@ export const Date = styled.span`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* background-color: green; */
   color: #a3a8b7;
 `;
 
@@ -94,7 +91,6 @@ export const PickBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* background-color: yellow; */
   font-size: 20px;
 `;
 
@@ -122,7 +118,6 @@ export const Tag = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* background-color: greenyellow; */
 `;
 
 export const Tags = styled.div`
@@ -140,16 +135,12 @@ export const Tags = styled.div`
 
 export const BoardContents = styled.p`
   margin-top: 2em;
-  margin-bottom: 0px;
+  margin-bottom: 4em;
   font-size: 1.2em;
 `;
 
 export const Comment = styled.div`
   width: 80%;
-  /* width: 80%;
-  height: 5em;
-  margin: auto;
-  background-color: pink; */
 
   @media ${breakPoints.tablet} {
     width: 90%;
@@ -161,20 +152,16 @@ export const Comment = styled.div`
 `;
 
 export const ButtonBox = styled.div`
-  padding: 4em 0em 0em 0em;
   gap: 2em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    gap: 0.7em;
+  }
 `;
-
-// export const Comment = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
-
-//--------------------0711 hani
 
 export const RedHeart = styled(FontAwesomeIcon)`
   padding: 2px;
@@ -197,7 +184,6 @@ export const CommentTitleBox = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 1em;
-  /* background-color: pink; */
 
   @media ${breakPoints.tablet} {
     margin-top: 2em;
@@ -211,7 +197,6 @@ export const CommentTitleBox = styled.div`
 export const CommentIcon = styled.img`
   width: 1.5em;
   margin-right: 0.5em;
-  /* background-color: green; */
 `;
 
 export const CommentTitle = styled.h1`
@@ -220,5 +205,4 @@ export const CommentTitle = styled.h1`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: yellow; */
 `;

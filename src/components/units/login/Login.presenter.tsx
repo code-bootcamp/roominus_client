@@ -79,12 +79,15 @@ export default function LoginUI(props: ILoginUIProps) {
       <S.Divider></S.Divider>
       <S.SocialLoginBtns>
         <S.KakaoBtn onClick={props.onClickLoginKakao}>
-          <S.KakaoSymbol src="/img/login/kakaoSymbol.webp" alt="kakaoSymbol" />
+          <S.KakaoSymbol
+            src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/login/kakaoSymbol_pcjtce.webp"
+            alt="kakaoSymbol"
+          />
           <S.KakaoLabel>카카오 로그인</S.KakaoLabel>
         </S.KakaoBtn>
         <S.GoogleBtn onClick={props.onClickGoogleLogin}>
           <S.GoogleSymbol
-            src="/img/login/googleSymbol.webp"
+            src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/login/googleSymbol_jzgulr.webp"
             alt="googleSymbol"
           />
           <S.GoogleLabel>구글 로그인</S.GoogleLabel>

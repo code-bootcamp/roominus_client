@@ -8,6 +8,8 @@ export const Container = styled.main`
   align-items: center;
 
   width: 100%;
+  height: 100%;
+
   padding: 2em 2em 2em 2em;
 
   @media ${breakPoints.mobile} {
@@ -17,15 +19,15 @@ export const Container = styled.main`
 
 export const Wrapper = styled.div`
   width: 100%;
+  min-height: 50em;
 `;
 
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 20em;
 `;
 
-export const ThemeBoxs = styled.div`
+export const ThemeBoxes = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -96,7 +98,9 @@ export const InfoTitleBox = styled.div`
   justify-content: space-between;
 `;
 
-export const TableWrapper = styled.div``;
+export const TableWrapper = styled.div`
+  min-height: 20em;
+`;
 
 export const addButton = styled.button`
   border: none;
@@ -114,7 +118,7 @@ export const addButton = styled.button`
 `;
 
 export const Label = styled.label`
-  font-size: 1.2em;
+  font-size: 1.3em;
 `;
 
 export const Contents = styled.span`
@@ -124,7 +128,7 @@ export const Contents = styled.span`
 `;
 export const TableTop = styled.div`
   border-bottom: 2px solid #b6a2ea;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 export const TableBottom = styled.div`
@@ -149,7 +153,7 @@ export const Row = styled.li`
   flex-direction: row;
   height: 52px;
   line-height: 52px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #a3a8b7;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -208,5 +212,6 @@ export const RowBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 2em;
+  height: 100%;
+  margin-top: 3em;
 `;

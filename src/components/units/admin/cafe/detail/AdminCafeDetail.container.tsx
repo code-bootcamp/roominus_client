@@ -27,13 +27,20 @@ export default function AdminCafeDetail() {
     Swal.fire({
       icon: "question",
       title: "정말 삭제하시겠습니까?",
+      backdrop: false,
       showCancelButton: true,
+      confirmButtonText: "네",
+      cancelButtonText: "아니요",
+      reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDeleteModal();
         Swal.fire({
           icon: "success",
           title: "삭제되었습니다!",
+          timer: 1300,
+          showConfirmButton: false,
+          backdrop: false,
         });
       }
     });
@@ -49,6 +56,7 @@ export default function AdminCafeDetail() {
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: false,
       });
     }
   };

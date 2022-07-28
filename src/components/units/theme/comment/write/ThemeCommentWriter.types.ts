@@ -26,6 +26,20 @@ export interface IWriteCommentData {
   clear: boolean;
 }
 
+export interface IFetchReservationData {
+  theme_menu: {
+    theme: {
+      id: string;
+    };
+  };
+}
+
+export interface IFetchThemeReviewsData {
+  id: string;
+  user: {
+    id: string;
+  };
+}
 export interface IThemeCommentWriteUIProps {
   el: any;
   isEdit: Boolean;

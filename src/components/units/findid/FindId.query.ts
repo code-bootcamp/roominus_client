@@ -7,10 +7,3 @@ export const FETCH_USER = gql`
     }
   }
 `;
-export const FETCH_SOCIAL_USER = gql`
-  query fetchSocialUser($phone: String!) {
-    fetchSocialUser(phone: $phone) {
-      email
-    }
-  }
-`;

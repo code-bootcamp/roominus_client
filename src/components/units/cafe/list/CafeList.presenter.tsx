@@ -12,38 +12,37 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             <S.DetailBox>
               <S.DetailTitle>장소</S.DetailTitle>
               <S.LocationButtonTotal
-                id="total"
                 onClick={props.onClickTotal}
                 total={props.total}
               >
                 전체
               </S.LocationButtonTotal>
               <S.LocationButtonGangnam
-                id="gangnam"
+                id="강남"
                 onClick={props.onClickGangnam}
                 gangnam={props.gangnam}
               >
                 강남
               </S.LocationButtonGangnam>
               <S.LocationButtonHongdae
-                id="hongdae"
+                id="홍대"
                 onClick={props.onClickHongdae}
                 hongdae={props.hongdae}
               >
                 홍대
               </S.LocationButtonHongdae>
               <S.LocationButtonKondae
-                id="kondae"
+                id="건대"
                 onClick={props.onClickKondae}
                 kondae={props.kondae}
               >
                 건대
               </S.LocationButtonKondae>
-              <S.LocationSelect>
-                <S.LocationOption>전체</S.LocationOption>
-                <S.LocationOption>강남</S.LocationOption>
-                <S.LocationOption>홍대</S.LocationOption>
-                <S.LocationOption>건대</S.LocationOption>
+              <S.LocationSelect onChange={props.onChangeLocation}>
+                <S.LocationOption value="전체">전체</S.LocationOption>
+                <S.LocationOption value="강남">강남</S.LocationOption>
+                <S.LocationOption value="홍대">홍대</S.LocationOption>
+                <S.LocationOption value="건대">건대</S.LocationOption>
               </S.LocationSelect>
             </S.DetailBox>
             <S.DetailBox>
@@ -59,10 +58,6 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             <StoreIcon fontSize="large" />
             <h1>전체 매장</h1>
           </S.TitleBox>
-          <S.CountBox>
-            <span>총 {props.count?.fetchCafesCount}개</span>
-          </S.CountBox>
-
           <S.Etc>
             {props.data?.fetchCafes.map((el: IFetchCafesProps) => (
               <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>

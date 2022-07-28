@@ -22,6 +22,9 @@ export interface ICommunityDetailProps {
   };
   onClickLike: () => void;
   like: boolean;
+  userInfo: {
+    name: string;
+  };
 }
 
 export interface IFetchBoardEl {

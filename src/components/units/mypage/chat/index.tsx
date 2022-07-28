@@ -1,29 +1,13 @@
 import styled from "@emotion/styled";
 import Head from "next/head";
 import { useEffect } from "react";
-import { breakPoints } from "../../../../commons/styles/media";
 
 declare const window: typeof globalThis & {
   Kakao: any;
 };
 
-const KaKaoChat = styled.div`
-  position: fixed;
-  right: 4.5em;
-  bottom: 1em;
-  transform: translate(-20%, -20%);
-
-  @media ${breakPoints.tablet} {
-    right: 2.5em;
-    bottom: 0;
-  }
-
-  @media ${breakPoints.mobile} {
-    bottom: 40px;
-    /* left: -100px; */
-    right: -5px;
-  }
-`;
+const KaKaoChat = styled.div``;
+const KaKaoChannel = styled.div``;
 
 export default function KakaoChat() {
   useEffect(() => {
@@ -37,12 +21,21 @@ export default function KakaoChat() {
         }
       }
 
+      window.Kakao.Channel.createAddChannelButton({
+        container: "#kakao-talk-channel-add-button",
+        channelPublicId: "_tDNRxj",
+        size: "large",
+        // size: "small",
+
+        supportMultipleDensities: true,
+      });
+
       window.Kakao.Channel.createChatButton({
         container: "#kakao-talk-channel-chat-button",
         channelPublicId: "_tDNRxj",
-        title: "consult",
+        title: "question",
         size: "small",
-        color: "yellow",
+        color: "mono",
         shape: "pc",
         supportMultipleDensities: true,
       });
@@ -52,15 +45,15 @@ export default function KakaoChat() {
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <script
           type="text/javascript"
           src="https://developers.kakao.com/sdk/js/kakao.js"
         ></script>
       </Head>
-
+      <KaKaoChannel id="kakao-talk-channel-add-button"></KaKaoChannel>
       <KaKaoChat id="kakao-talk-channel-chat-button"></KaKaoChat>
-    </div>
+    </>
   );
 }

@@ -27,16 +27,46 @@ const URLShareButton = styled.button`
   margin-top: 0.1em;
   cursor: pointer;
   background: linear-gradient(90deg, #7c21e1 0%, #4a00e0 100%);
+  :hover {
+    transform: scale(1.1);
+  }
+  transition: all 300ms ease-in-out;
 `;
 
 const KakaoShareButton = styled.a`
   cursor: pointer;
+  :hover {
+    transform: scale(1.1);
+  }
+  transition: all 300ms ease-in-out;
 `;
 
 const KakaoIcon = styled.img`
   width: 2.4em;
   height: 2.5em;
   border-radius: 50%;
+`;
+
+const Twitter = styled(TwitterIcon)`
+  width: 2.4em;
+  height: 2.5em;
+  margin-top: 0.6em;
+
+  :hover {
+    transform: scale(1.1);
+  }
+  transition: all 300ms ease-in-out;
+`;
+
+const Facebook = styled(FacebookIcon)`
+  width: 2.4em;
+  height: 2.5em;
+  margin-top: 0.6em;
+
+  :hover {
+    transform: scale(1.1);
+  }
+  transition: all 300ms ease-in-out;
 `;
 
 declare const window: typeof globalThis & {
@@ -78,32 +108,23 @@ export default function ShareButton() {
       title: "링크가 복사되었습니다!",
       timer: 1300,
       showConfirmButton: false,
+      backdrop: false,
     });
   };
 
   return (
     <Container>
       <FacebookShareButton url={currentUrl}>
-        <FacebookIcon
-          size={35}
-          round={true}
-          borderRadius={24}
-          style={{ marginTop: "0.6em" }}
-        ></FacebookIcon>
+        <Facebook round={true} />
       </FacebookShareButton>
       <TwitterShareButton url={currentUrl}>
-        <TwitterIcon
-          size={35}
-          round={true}
-          borderRadius={24}
-          style={{ marginTop: "0.6em" }}
-        ></TwitterIcon>
+        <Twitter round={true} />
       </TwitterShareButton>
       <CopyToClipboard text={currentUrl}>
         <URLShareButton onClick={onClickURL}>URL</URLShareButton>
       </CopyToClipboard>
       <KakaoShareButton onClick={handleKakaoButton}>
-        <KakaoIcon src="/img/login/kakaoLogo.png" />
+        <KakaoIcon src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/login/kakaoLogo_jqcndb.png" />
       </KakaoShareButton>
     </Container>
   );

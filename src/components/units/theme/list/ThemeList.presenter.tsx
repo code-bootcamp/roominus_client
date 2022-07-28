@@ -27,6 +27,13 @@ export default function ThemeListUI(props: IThemeListProps) {
     };
   }, [windowSize]);
 
+  const hotThemes = props.themesAll?.fetchThemesAll
+    .slice()
+    .sort((a: IFetchThemes, b: IFetchThemes) => {
+      return b.like - a.like;
+    })
+    .slice(0, 8);
+
   return (
     <S.Wrapper>
       {windowSize && (
@@ -35,14 +42,14 @@ export default function ThemeListUI(props: IThemeListProps) {
             <S.MobileGenre>신규 테마</S.MobileGenre>
             <MobileCarousel
               onClickTheme={props.onClickTheme}
-              data={props.data}
+              data={props.data?.fetchThemes}
             />
           </S.MobileList>
           <S.MobileList>
             <S.MobileGenre>인기 테마</S.MobileGenre>
             <MobileCarousel
               onClickTheme={props.onClickTheme}
-              data={props.hotThemes}
+              data={hotThemes}
             />
           </S.MobileList>
         </div>
@@ -84,12 +91,12 @@ export default function ThemeListUI(props: IThemeListProps) {
                   <S.Card>
                     <S.Theme src={el.mainImg}>
                       <S.Rank>
-                        난이도
+                        <S.Ranktext>난이도</S.Ranktext>
                         <S.Star disabled defaultValue={el.rank} />
                       </S.Rank>
                       <S.GenreTag>#{el?.genre.name}</S.GenreTag>
                     </S.Theme>
-                    <S.ThemeBack src="/img/theme/card-back.png">
+                    <S.ThemeBack src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/theme/card-back_ef6jjd.png">
                       <S.ThemeTitle>{el.title}</S.ThemeTitle>
                       <S.ThemeInfo>
                         이용인원 ~ {el.peoplelimit}명

@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
-    font-size: 0.7em;
+    font-size: 0.9em;
   }
 `;
 

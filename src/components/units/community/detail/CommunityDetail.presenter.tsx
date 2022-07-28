@@ -59,23 +59,30 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
             type={"button"}
             value={undefined}
           ></WebBlackButton>
-          <WebPurpleButton
-            title="수정하기"
-            onClick={props.onClickEdit}
-            type={undefined}
-            value={""}
-          ></WebPurpleButton>
-          <WebPurpleButton
-            onClick={props.onClickDelete}
-            title="삭제하기"
-            type={undefined}
-            value={""}
-          ></WebPurpleButton>
+
+          {props.data?.fetchBoard.user?.name !== props.userInfo?.name ? (
+            ""
+          ) : (
+            <S.ButtonBox>
+              <WebPurpleButton
+                title="수정하기"
+                onClick={props.onClickEdit}
+                type={undefined}
+                value={""}
+              ></WebPurpleButton>
+              <WebPurpleButton
+                onClick={props.onClickDelete}
+                title="삭제하기"
+                type={undefined}
+                value={""}
+              ></WebPurpleButton>
+            </S.ButtonBox>
+          )}
         </S.ButtonBox>
       </S.Wrapper>
       <S.Comment>
         <S.CommentTitleBox>
-          <S.CommentIcon src="/img/community/comment/commentIcon.webp" />
+          <S.CommentIcon src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990935/public/community/comment/commentIcon_nvspt4.webp" />
           <S.CommentTitle>댓글</S.CommentTitle>
         </S.CommentTitleBox>
         <CommunityCommentWrite

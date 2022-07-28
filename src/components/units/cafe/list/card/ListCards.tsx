@@ -34,7 +34,7 @@ const Location = styled.h3`
 
 const LocationIcon = styled.img`
   width: 1.3em;
-  height: 1.3em;
+  height: 1.4em;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -42,11 +42,11 @@ const LocationIcon = styled.img`
 
 const Info = styled.div`
   height: 3.5em;
-  font-size: 1.3em;
+  font-size: 1.2em;
 
   .ant-card-meta-title {
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 `;
 

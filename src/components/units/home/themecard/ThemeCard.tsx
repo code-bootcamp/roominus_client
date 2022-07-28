@@ -14,12 +14,12 @@ export default function ThemeCardComponent(props: any) {
         <S.Card>
           <S.Theme src={props.el?.mainImg}>
             <S.Rank>
-              난이도
+              <S.Ranktext>난이도</S.Ranktext>
               <S.Star disabled defaultValue={props.el?.rank} />
             </S.Rank>
             <S.GenreTag>#{props.el?.genre.name}</S.GenreTag>
           </S.Theme>
-          <S.ThemeBack src="/img/theme/card-back.png">
+          <S.ThemeBack src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/theme/card-back_ef6jjd.png">
             <S.ThemeTitle>{props.el?.title}</S.ThemeTitle>
             <S.ThemeInfo>
               정원 1~2인

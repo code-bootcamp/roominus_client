@@ -1,8 +1,4 @@
-import {
-  FieldValues,
-  UseFormHandleSubmit,
-  UseFormRegister,
-} from "react-hook-form";
+import { FieldValues, UseFormHandleSubmit } from "react-hook-form";
 
 export interface IData {
   people: string;
@@ -14,9 +10,9 @@ export interface IData {
 }
 
 export interface IAdminReservationNewUIProps {
+  themesList: any;
   onClickSubmit: any;
-  // onClickSubmit: (data: IData) => Promise<void>;
 
   handleSubmit: UseFormHandleSubmit<FieldValues>;
-  register: UseFormRegister<FieldValues>;
+  register: any;
 }

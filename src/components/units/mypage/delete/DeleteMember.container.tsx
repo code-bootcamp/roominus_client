@@ -38,6 +38,7 @@ export default function DeleteMember() {
         icon: "success",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
+        backdrop: false,
       });
       await client.mutate({
         mutation: LOG_OUT,
@@ -51,6 +52,7 @@ export default function DeleteMember() {
         },
       });
       localStorage.clear();
+      sessionStorage.clear();
       setAccessToken("");
       setUserInfo({
         id: "",
@@ -66,6 +68,7 @@ export default function DeleteMember() {
         icon: "error",
         confirmButtonText: "확인",
         confirmButtonColor: "#4a00e0e7",
+        backdrop: false,
       });
     }
   };

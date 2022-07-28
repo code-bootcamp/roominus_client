@@ -16,7 +16,7 @@ export default function CommentAnswerWriteUI(
         }
       >
         <S.ReCommentListBox>
-          <S.Arrow src="/img/community/arrow.webp" />
+          <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/arrow_hmzlvo.webp" />
           <S.ListInfoBox>
             <S.InfoTitleBox>
               <S.InfoName>{props.userInfo?.name}</S.InfoName>
@@ -36,6 +36,13 @@ export default function CommentAnswerWriteUI(
                   title="취소하기"
                   type="button"
                   onClick={props.onClickCancel}
+                />
+              )}
+              {props.isAnswer && (
+                <WebSmallBlackButton
+                  title="취소하기"
+                  type="button"
+                  onClick={props.onClickAnswerCancel}
                 />
               )}
             </S.ReCommentWriteBox>
