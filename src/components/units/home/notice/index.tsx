@@ -98,10 +98,11 @@ export default function Notice() {
   ];
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       idxRef.current = (idxRef.current + 1) % notice.length;
       setIdx(idxRef.current);
     }, 4000);
+    return () => clearInterval(intervalId);
   }, [notice.length]);
 
   return (

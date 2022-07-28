@@ -86,7 +86,7 @@ const CafeCard = (props: {
       }
     >
       <LocationBox>
-        <LocationIcon src="/img/cafe/locationIcon.webp" />
+        <LocationIcon src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990934/public/cafe/locationIcon_gaxbsy.webp" />
         <Location>{props.el?.address}</Location>
       </LocationBox>
       <Info>

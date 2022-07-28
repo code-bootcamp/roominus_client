@@ -141,7 +141,7 @@ export const InfoGithub = styled.div`
   flex-direction: row;
   align-items: flex-end;
   gap: 1em;
-  height: 8em;
+  height: 5em;
   color: #a3a8b7;
 
   @media ${breakPoints.tablet} {
@@ -161,7 +161,7 @@ export const Github = styled(GithubOutlined)`
     color: #a08bf3;
   }
 
-  font-size: 2em;
+  font-size: 1.6em;
   transition: all 300ms ease-in-out;
 
   @media ${breakPoints.mobile} {
@@ -170,7 +170,8 @@ export const Github = styled(GithubOutlined)`
 `;
 
 export const Logo = styled.img`
-  width: 6em;
+  width: 8em;
+  height: 1.5em;
   cursor: pointer;
 
   @media ${breakPoints.mobile} {

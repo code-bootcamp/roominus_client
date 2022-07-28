@@ -12,16 +12,16 @@ const Button = styled.button`
 `;
 
 interface IProps {
-  // onClick: MouseEventHandler<HTMLButtonElement>;
   onClick?: any;
   type?: "button" | "submit" | "reset";
   title?: string;
   value?: any;
+  ref?: any;
 }
 
 export default function WebBlackButton(props: IProps) {
   return (
-    <Button type={props?.type} onClick={props?.onClick}>
+    <Button type={props?.type} onClick={props?.onClick} ref={props.ref}>
       {props.title ? props.title : "버튼에 이름이 없네요^^"}
     </Button>
   );

@@ -13,9 +13,11 @@ export default function HistoryUI(props: IHistoryUIProps) {
         <S.TitleBox>
           <S.Title>나의 예약내역</S.Title>
           <Link href={"/mypage/history/calendar"}>
-            <Tooltip title="Photo Calendar">
-              <S.Calendar />
-            </Tooltip>
+            <a>
+              <Tooltip title="Photo Calendar">
+                <S.Calendar />
+              </Tooltip>
+            </a>
           </Link>
         </S.TitleBox>
 
@@ -52,7 +54,9 @@ export default function HistoryUI(props: IHistoryUIProps) {
 
       <S.ButtonBox>
         <Link href={"/mypage"}>
-          <WebBlackButton type="button" title="돌아가기" />
+          <a>
+            <WebBlackButton type="button" title="돌아가기" />
+          </a>
         </Link>
       </S.ButtonBox>
     </S.Container>

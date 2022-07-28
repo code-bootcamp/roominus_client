@@ -34,7 +34,7 @@ export default function KakaoMap(props: IKakaoMapProps) {
     useEffect(() => {
       const script = document.createElement("script");
       script.src =
-        "//dapi.kakao.com/v2/maps/sdk.js?appkey=105d9e45b37b65e70dd1d31a18e23d78&autoload=false&libraries=services";
+        "//dapi.kakao.com/v2/maps/sdk.js?appkey=1988a9a8f46853586b98dd3981a6b87e&autoload=false&libraries=services";
       document.head.appendChild(script);
 
       script.onload = () => {

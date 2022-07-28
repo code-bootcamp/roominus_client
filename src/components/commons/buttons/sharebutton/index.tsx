@@ -124,7 +124,7 @@ export default function ShareButton() {
         <URLShareButton onClick={onClickURL}>URL</URLShareButton>
       </CopyToClipboard>
       <KakaoShareButton onClick={handleKakaoButton}>
-        <KakaoIcon src="/img/login/kakaoLogo.png" />
+        <KakaoIcon src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/login/kakaoLogo_jqcndb.png" />
       </KakaoShareButton>
     </Container>
   );
