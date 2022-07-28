@@ -27,7 +27,7 @@ export default function CommunityNewUI(props: ICommunityNewUIProps) {
               src={
                 props?.imageUrl
                   ? props?.imageUrl
-                  : "/img/community/preview.webp"
+                  : "https://res.cloudinary.com/dop5piuwp/image/upload/v1658992364/public/community/preview_oflemg.png"
               }
             />
             <S.HalfRightBox>

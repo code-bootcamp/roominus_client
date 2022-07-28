@@ -25,7 +25,7 @@ const SorryTitle = styled.div`
 export default function NoTheme() {
   return (
     <SorryBox>
-      <Sorry src="/img/reservation/sorry.webp" />
+      <Sorry src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/reservation/sorry_rlxzuu.webp" />
       <SorryTitle>앗! 현재 운영 중인 테마가 없습니다.</SorryTitle>
     </SorryBox>
   );

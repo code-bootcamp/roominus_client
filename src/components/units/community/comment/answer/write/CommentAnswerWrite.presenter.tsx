@@ -16,7 +16,7 @@ export default function CommentAnswerWriteUI(
         }
       >
         <S.ReCommentListBox>
-          <S.Arrow src="/img/community/arrow.webp" />
+          <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/arrow_hmzlvo.webp" />
           <S.ListInfoBox>
             <S.InfoTitleBox>
               <S.InfoName>{props.userInfo?.name}</S.InfoName>

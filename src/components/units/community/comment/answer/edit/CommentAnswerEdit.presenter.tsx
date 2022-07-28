@@ -8,7 +8,7 @@ export default function CommentAnswerEditUI(props: ICommentAnswerEditUIProps) {
     <S.Wrapper>
       {props.isAnswerEdit === false && (
         <S.CommentListBox>
-          <S.Arrow src="/img/community/arrow.webp" />
+          <S.Arrow src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/arrow_hmzlvo.webp" />
           <S.ListInfoBox>
             <S.InfoTitleBox>
               <S.InfoTitle>
@@ -21,12 +21,12 @@ export default function CommentAnswerEditUI(props: ICommentAnswerEditUIProps) {
                 ) : (
                   <div>
                     <S.Edit
-                      src="/img/community/comment/commentedit.webp"
+                      src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990935/public/community/comment/commentedit_iaravb.webp"
                       onClick={props.onClickEdit}
                       id={props.el.id}
                     />
                     <S.Delete
-                      src="/img/community/comment/commentdelete.webp"
+                      src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990935/public/community/comment/commentdelete_bjl3eo.webp"
                       onClick={props.onClickDelete}
                       id={props.el.id}
                     />

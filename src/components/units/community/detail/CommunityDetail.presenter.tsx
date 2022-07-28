@@ -82,7 +82,7 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
       </S.Wrapper>
       <S.Comment>
         <S.CommentTitleBox>
-          <S.CommentIcon src="/img/community/comment/commentIcon.webp" />
+          <S.CommentIcon src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990935/public/community/comment/commentIcon_nvspt4.webp" />
           <S.CommentTitle>댓글</S.CommentTitle>
         </S.CommentTitleBox>
         <CommunityCommentWrite
