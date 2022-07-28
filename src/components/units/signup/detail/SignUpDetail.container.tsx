@@ -96,6 +96,7 @@ export default function SignUpDetail() {
             icon: "warning",
             showConfirmButton: false,
             timer: 1000,
+            backdrop: false,
           });
         }
         ShowCounts(counts);
@@ -107,6 +108,7 @@ export default function SignUpDetail() {
         icon: "success",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       setCount(60);
       setStart(1);
@@ -135,6 +137,7 @@ export default function SignUpDetail() {
         icon: "success",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       setStart(2);
     } catch (error) {
@@ -143,6 +146,7 @@ export default function SignUpDetail() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };
@@ -170,6 +174,7 @@ export default function SignUpDetail() {
           icon: "success",
           showConfirmButton: false,
           timer: 1000,
+          backdrop: false,
         });
         setStart(3);
         setTokenavail(true);
@@ -182,6 +187,7 @@ export default function SignUpDetail() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };
@@ -214,6 +220,7 @@ export default function SignUpDetail() {
           icon: "success",
           showConfirmButton: false,
           timer: 1000,
+          backdrop: false,
         });
 
         router.push("/login");
@@ -226,6 +233,7 @@ export default function SignUpDetail() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };

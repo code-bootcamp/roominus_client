@@ -75,6 +75,7 @@ export default function SocialSignUpDetail() {
             icon: "warning",
             showConfirmButton: false,
             timer: 1000,
+            backdrop: false,
           });
         }
         ShowCounts(counts);
@@ -86,6 +87,7 @@ export default function SocialSignUpDetail() {
         icon: "success",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       setCount(60);
       setStart(1);
@@ -111,6 +113,7 @@ export default function SocialSignUpDetail() {
         icon: "success",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       setStart(2);
     } catch (error) {
@@ -119,6 +122,7 @@ export default function SocialSignUpDetail() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };
@@ -146,6 +150,7 @@ export default function SocialSignUpDetail() {
           icon: "success",
           showConfirmButton: false,
           timer: 1000,
+          backdrop: false,
         });
         setStart(3);
         setTokenavail(true);
@@ -158,6 +163,7 @@ export default function SocialSignUpDetail() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };
@@ -181,6 +187,7 @@ export default function SocialSignUpDetail() {
           icon: "success",
           confirmButtonText: "확인",
           confirmButtonColor: "#4a00e0e7",
+          backdrop: false,
         });
 
         router.push("/login");
@@ -193,6 +200,7 @@ export default function SocialSignUpDetail() {
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
     }
   };

@@ -23,6 +23,7 @@ export default function SignUp() {
       icon: "warning",
       showConfirmButton: false,
       timer: 1000,
+      backdrop: false,
     });
   };
   const onClickTotalCheck = () => {

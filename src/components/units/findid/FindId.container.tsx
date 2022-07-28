@@ -57,6 +57,7 @@ export default function FindId() {
           icon: "success",
           confirmButtonText: "확인",
           confirmButtonColor: "#4a00e0e7",
+          backdrop: false,
         });
       })
       .catch(() => {
@@ -66,6 +67,7 @@ export default function FindId() {
           icon: "error",
           confirmButtonText: "확인",
           confirmButtonColor: "#4a00e0e7",
+          backdrop: false,
         });
       });
   };

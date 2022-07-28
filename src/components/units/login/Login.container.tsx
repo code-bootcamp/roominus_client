@@ -93,6 +93,7 @@ export default function Login() {
         icon: "success",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       router.push("/home");
     } catch (error) {
@@ -101,6 +102,7 @@ export default function Login() {
         icon: "error",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       console.log(error);
     }
@@ -157,6 +159,7 @@ export default function Login() {
                   icon: "success",
                   showConfirmButton: false,
                   timer: 1000,
+                  backdrop: false,
                 });
               })
               .catch((error) =>
@@ -165,6 +168,7 @@ export default function Login() {
                   icon: "error",
                   showConfirmButton: false,
                   timer: 1000,
+                  backdrop: false,
                 })
               );
           })
@@ -174,6 +178,7 @@ export default function Login() {
               icon: "error",
               showConfirmButton: false,
               timer: 1000,
+              backdrop: false,
             })
           );
         router.push(`/home`);
@@ -228,6 +233,7 @@ export default function Login() {
                       icon: "success",
                       showConfirmButton: false,
                       timer: 1000,
+                      backdrop: false,
                     });
                   })
                   .catch((error) =>
@@ -236,6 +242,7 @@ export default function Login() {
                       icon: "error",
                       showConfirmButton: false,
                       timer: 1000,
+                      backdrop: false,
                     })
                   );
               })
@@ -245,6 +252,7 @@ export default function Login() {
                   icon: "error",
                   showConfirmButton: false,
                   timer: 1000,
+                  backdrop: false,
                 })
               );
 
