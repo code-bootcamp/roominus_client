@@ -51,6 +51,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       Swal.fire({
         icon: "warning",
         title: "만족도를 선택해주세요!",
+        backdrop: "false",
       });
       return;
     }
@@ -58,6 +59,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       Swal.fire({
         icon: "warning",
         title: "내용을 입력해주세요!",
+        backdrop: "false",
       });
       return;
     }
@@ -65,6 +67,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       Swal.fire({
         icon: "warning",
         title: "난이도는 어땠는지 선택해주세요!",
+        backdrop: "false",
       });
       return;
     }

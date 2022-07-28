@@ -47,6 +47,7 @@ export default function ThemeCreate(props: IThemeCreateProps) {
       Swal.fire({
         icon: "success",
         title: "테마 등록 성공🥹",
+        backdrop: "false",
       });
       router.push(`/admin/theme/${result.data.createTheme.id}`);
     } catch (error) {
@@ -54,6 +55,7 @@ export default function ThemeCreate(props: IThemeCreateProps) {
         icon: "error",
         title: "error",
         text: (error as Error).message,
+        backdrop: "false",
       });
     }
   };
@@ -86,6 +88,7 @@ export default function ThemeCreate(props: IThemeCreateProps) {
       Swal.fire({
         icon: "success",
         title: "수정 성공🥹",
+        backdrop: "false",
       });
       router.push(`/admin/theme/${router.query.id}`);
     } catch (error: any) {
@@ -93,6 +96,7 @@ export default function ThemeCreate(props: IThemeCreateProps) {
         icon: "error",
         title: "error",
         text: error.message,
+        backdrop: "false",
       });
     }
   };

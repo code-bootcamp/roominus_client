@@ -54,6 +54,7 @@ export default function ThemeCommentListUIItem(
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: "false",
       });
     }
   };
@@ -66,6 +67,7 @@ export default function ThemeCommentListUIItem(
       confirmButtonText: "네",
       cancelButtonText: "생각 좀 해보고요",
       reverseButtons: true,
+      backdrop: "false",
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDelete();
@@ -74,6 +76,7 @@ export default function ThemeCommentListUIItem(
           icon: "success",
           title: "삭제되었습니다!",
           text: "당신의 댓글은 삭제되었다.",
+          backdrop: "false",
         });
       }
     });
