@@ -7,7 +7,7 @@ export default function SuccessNotice() {
       <S.NoticeBoxes>
         <S.NoticeBox>
           <>
-            <S.NoticeImg src="/img/reservation/notice01.webp" />
+            <S.NoticeImg src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/notice01_ehla0g.webp" />
           </>
           <S.Notice>
             <S.NoticeSubject>10분전 도착</S.NoticeSubject>
@@ -22,7 +22,7 @@ export default function SuccessNotice() {
         </S.NoticeBox>
         <S.NoticeBox>
           <>
-            <S.NoticeImg src="/img/reservation/notice02.webp" />
+            <S.NoticeImg src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/notice02_bshcwk.webp" />
           </>
           <S.Notice>
             <S.NoticeSubject>누설금지</S.NoticeSubject>
@@ -37,7 +37,7 @@ export default function SuccessNotice() {
         </S.NoticeBox>
         <S.NoticeBox>
           <>
-            <S.NoticeImg src="/img/reservation/notice03.webp" />
+            <S.NoticeImg src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/notice03_krjy2b.webp" />
           </>
           <S.Notice>
             <S.NoticeSubject>사진 촬영 금지</S.NoticeSubject>
@@ -52,7 +52,7 @@ export default function SuccessNotice() {
         </S.NoticeBox>
         <S.NoticeBox>
           <>
-            <S.NoticeImg src="/img/reservation/notice04.webp" />
+            <S.NoticeImg src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/reservation/notice04_wh0jzu.webp" />
           </>
           <S.Notice>
             <S.NoticeSubject>위험물품 반입금지</S.NoticeSubject>

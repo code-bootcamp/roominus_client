@@ -21,7 +21,8 @@ export const BackWrapper = styled.div`
 export const BackGroundImg = styled.div`
   width: 100vw;
   height: 40em;
-  background: url("/img/home/main.webp") center/cover;
+  background: url("https://res.cloudinary.com/dop5piuwp/image/upload/v1658990938/public/home/main_f0vr0m.webp")
+    center/cover;
   /* background-size: 100% 100%; */
   margin-bottom: 2em;
   position: relative;

@@ -30,7 +30,7 @@ export default function NoReservation() {
       paddingTop={10}
     >
       <NoBox>
-        <Sorry src="/img/reservation/sorry.webp" />
+        <Sorry src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990937/public/reservation/sorry_rlxzuu.webp" />
 
         <Notice>
           앗! <br></br>현재 이 테마는 예약이 불가능합니다! <br></br>다른 테마를

@@ -43,15 +43,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>roominus</title>
+        <title>room:in us</title>
         <meta
           property="og:roominus"
-          content="방탈출 통합 플랫폼 룸인어스"
+          content="방탈출 통합 예약 플랫폼 룸인어스"
         ></meta>
         <meta
           property="og:description"
-          content="안녕하세요, 방탈출 통합 플랫폼 룸인어스입니다."
+          content="세상의 모든 방탈출 카페로 IN하다. 우리들의 방탈출 공간 room:in us에서 새로운 세상으로 입장하세요."
         ></meta>
+        {/* <meta
+          property="og:image"
+          content="안녕하세요, 방탈출 통합 플랫폼 룸인어스입니다."
+        ></meta> */}
       </Head>
       <RecoilRoot>
         <ApolloSetting>
