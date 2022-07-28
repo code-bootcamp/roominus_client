@@ -87,6 +87,7 @@ export default function Payment(props: IPaymentProps) {
               title: "예약 완료",
               showConfirmButton: false,
               timer: 1500,
+              backdrop: false,
             });
             router.push(`/reservation/${result.data?.createReservation.id}`);
           } catch (error) {
@@ -95,6 +96,7 @@ export default function Payment(props: IPaymentProps) {
               title: "예약실패",
               text: (error as Error).message,
               timer: 1500,
+              backdrop: false,
             });
             router.push("/theme");
           }

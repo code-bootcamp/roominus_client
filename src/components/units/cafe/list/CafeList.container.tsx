@@ -115,6 +115,7 @@ export default function CafeListPage() {
       Swal.fire({
         icon: "warning",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
   };

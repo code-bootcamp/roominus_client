@@ -74,6 +74,7 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: false,
       });
     }
   };
@@ -100,12 +101,14 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
       Swal.fire({
         icon: "success",
         title: "수정이 완료되었습니다!",
+        backdrop: false,
       });
       router.push(`/admin/cafe/${result.data?.updateCafe.id}`);
     } catch (error) {
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: false,
       });
     }
   };

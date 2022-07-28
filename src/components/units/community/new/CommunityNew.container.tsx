@@ -56,6 +56,7 @@ export default function CommunityNew(props: ICommunityNewProps) {
         Swal.fire({
           icon: "warning",
           title: "이미지를 등록해주세요!",
+          backdrop: false,
         });
       } else if (fileUrl) {
         console.log(tagList);
@@ -73,6 +74,7 @@ export default function CommunityNew(props: ICommunityNewProps) {
         Swal.fire({
           icon: "success",
           title: "등록이 완료되었습니다!",
+          backdrop: false,
         });
         router.push(`/community/${result.data?.createBoard.id}`);
       }
@@ -80,6 +82,7 @@ export default function CommunityNew(props: ICommunityNewProps) {
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: false,
       });
     }
   };
@@ -104,12 +107,14 @@ export default function CommunityNew(props: ICommunityNewProps) {
       Swal.fire({
         icon: "success",
         title: "수정이 완료되었습니다!",
+        backdrop: false,
       });
       router.push(`/community/${result.data?.updateBoard.id}`);
     } catch (error) {
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: false,
       });
     }
   };

@@ -27,6 +27,7 @@ export default function AdminCafeDetail() {
     Swal.fire({
       icon: "question",
       title: "정말 삭제하시겠습니까?",
+      backdrop: false,
       showCancelButton: true,
     }).then((result) => {
       if (result.isConfirmed) {
@@ -34,6 +35,7 @@ export default function AdminCafeDetail() {
         Swal.fire({
           icon: "success",
           title: "삭제되었습니다!",
+          backdrop: false,
         });
       }
     });
@@ -49,6 +51,7 @@ export default function AdminCafeDetail() {
       Swal.fire({
         icon: "error",
         text: (error as Error).message,
+        backdrop: false,
       });
     }
   };

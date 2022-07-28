@@ -49,11 +49,13 @@ export default function CommentAnswerWrite(props: ICommentAnswerWriteProps) {
         title: "답글이 등록되었습니다!",
         timer: 1300,
         showConfirmButton: false,
+        backdrop: false,
       });
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
     props.setIsAnswer((prev: any) => !prev);
@@ -76,10 +78,12 @@ export default function CommentAnswerWrite(props: ICommentAnswerWriteProps) {
         title: "답글 수정이 완료되었습니다!",
         timer: 1300,
         showConfirmButton: false,
+        backdrop: false,
       });
     } catch (error) {
       Swal.fire({
         icon: "error",
+        backdrop: false,
         title: (error as Error).message,
       });
     }

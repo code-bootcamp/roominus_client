@@ -108,6 +108,7 @@ export default function ShareButton() {
       title: "링크가 복사되었습니다!",
       timer: 1300,
       showConfirmButton: false,
+      backdrop: false,
     });
   };
 

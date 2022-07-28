@@ -23,6 +23,7 @@ export default function ReservationUI(props: IReservationUIProps) {
     Swal.fire({
       icon: "error",
       title: "적립금 오류",
+      backdrop: false,
     });
   }
 

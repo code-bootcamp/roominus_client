@@ -44,6 +44,7 @@ export default function PWedit() {
         icon: "error",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       router.push("/mypage/phoneedit");
     }
@@ -95,6 +96,7 @@ export default function PWedit() {
           icon: "success",
           showConfirmButton: false,
           timer: 1000,
+          backdrop: false,
         });
         router.push("/mypage");
       } catch (error) {}
@@ -104,6 +106,7 @@ export default function PWedit() {
         icon: "error",
         showConfirmButton: false,
         timer: 1000,
+        backdrop: false,
       });
       router.push("/mypage/phoneedit");
     }

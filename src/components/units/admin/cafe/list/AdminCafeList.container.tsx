@@ -41,6 +41,7 @@ export default function AdminCafeList() {
       Swal.fire({
         icon: "warning",
         title: (error as Error).message,
+        backdrop: false,
       });
     }
   };
