@@ -133,6 +133,7 @@ export const LocationButtonTotal = styled.button`
   border: none;
   background-color: #a3a8b7;
   color: white;
+  font-size: 1.1em;
   font-weight: 500;
   border-radius: 5px;
   cursor: pointer;
@@ -153,6 +154,7 @@ export const LocationButtonGangnam = styled.button`
   border: none;
   background-color: #a3a8b7;
   color: white;
+  font-size: 1.1em;
   font-weight: 500;
   border-radius: 5px;
   cursor: pointer;
@@ -173,6 +175,7 @@ export const LocationButtonHongdae = styled.button`
   border: none;
   background-color: #a3a8b7;
   color: white;
+  font-size: 1.1em;
   font-weight: 500;
   border-radius: 5px;
   cursor: pointer;
@@ -193,6 +196,7 @@ export const LocationButtonKondae = styled.button`
   border: none;
   background-color: #a3a8b7;
   color: white;
+  font-size: 1.1em;
   font-weight: 500;
   border-radius: 5px;
   cursor: pointer;

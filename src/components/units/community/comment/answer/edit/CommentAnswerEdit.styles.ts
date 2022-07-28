@@ -54,10 +54,12 @@ export const Date = styled.div``;
 export const Edit = styled.img`
   width: 1.5em;
   margin-right: 0.5em;
+  cursor: pointer;
 `;
 
 export const Delete = styled.img`
   width: 1.5em;
+  cursor: pointer;
 `;
 
 export const Contents = styled.p`

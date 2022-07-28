@@ -54,15 +54,18 @@ export const Date = styled.p`
 export const Comment = styled.img`
   width: 1.5em;
   margin-right: 0.5em;
+  cursor: pointer;
 `;
 
 export const Edit = styled.img`
   width: 1.5em;
   margin-right: 0.5em;
+  cursor: pointer;
 `;
 
 export const Delete = styled.img`
   width: 1.5em;
+  cursor: pointer;
 `;
 
 export const Contents = styled.p`
