@@ -65,16 +65,16 @@ export default function BestBoard() {
     router.push(`/community/${event?.currentTarget.id}`);
   };
 
-  const hotBoards = data?.fetchBoards
-    .slice()
-    .sort((a: IFetchBoards, b: IFetchBoards) => {
-      return b.like - a.like;
-    })
-    .slice(0, 4);
+  // const hotBoards = data?.fetchBoards
+  //   .slice()
+  //   .sort((a: IFetchBoards, b: IFetchBoards) => {
+  //     return b.like - a.like;
+  //   })
+  //   .slice(0, 4);
 
   return (
     <Container>
-      {hotBoards
+      {data?.fetchBoards
         .slice(-4)
         .map((el: { id: string; mainImg: string; title: string }) => (
           <Box key={uuidv4()} id={el.id} onClick={onClickBoard}>
