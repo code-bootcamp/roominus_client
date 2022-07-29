@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState, MouseEvent } from "react";
+import { useState, MouseEvent, useRef } from "react";
 import Swal from "sweetalert2";
 import ThemeUI from "./ThemeList.presenter";
 import {
@@ -11,6 +11,8 @@ import {
 import { IFetchThemes } from "./ThemeList.types";
 
 export default function ThemeList() {
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
   const [genre, setGenre] = useState("");
   const [selectAll, setSelectAll] = useState(true);
   const [more, setMore] = useState(true);
@@ -83,10 +85,12 @@ export default function ThemeList() {
     setMyIndex(temp);
     setSelectAll(true);
   };
+
   return (
     <ThemeUI
       data={data}
       more={more}
+      searchInputRef={searchInputRef}
       themesAll={themesAll}
       myIndex={myIndex}
       fetchGenres={fetchGenres}

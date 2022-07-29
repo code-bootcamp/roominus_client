@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  // generateBuildId: () => "roominus",
+  generateBuildId: () => "roominus",
   exportPathMap: () => ({
     "/": { page: "/" },
     "/cafe": { page: "/cafe" },
@@ -10,12 +10,10 @@ const nextConfig = {
     "/theme": { page: "/theme" },
     "/community": { page: "/community" },
     "/mypage": { page: "/mypage" },
+    "/customer": { page: "/customer" },
+    "/home": { page: "/home" },
     "/404": { page: "/404" },
   }),
-
-  experimental: {
-    esmExternals: false,
-  },
 };
 
 module.exports = nextConfig;

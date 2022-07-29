@@ -5,6 +5,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 import { FETCH_BOARDS } from "../../community/list/CommunityList.queries";
 import { uuidv4 } from "@firebase/util";
 import { IFetchBoards } from "../Home.type";
+import { useEffect, useState } from "react";
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -25,7 +26,7 @@ const Box = styled.div`
   line-height: 0;
 
   :hover {
-    flex: 1 1 50%;
+    flex: 1 1 20%;
     cursor: pointer;
   }
 
@@ -57,6 +58,7 @@ const Box = styled.div`
     :hover {
       width: 100%;
       height: 100%;
+      object-fit: contain;
     }
   }
 `;
@@ -64,6 +66,26 @@ const Box = styled.div`
 export default function BestBoard() {
   const { data } = useQuery(FETCH_BOARDS);
   const router = useRouter();
+
+  const [windowSize, setWindowSize] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    } else {
+      setWindowSize(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowSize]);
 
   const onClickBoard = (event: { currentTarget: { id: any } }) => {
     router.push(`/community/${event?.currentTarget.id}`);
@@ -76,14 +98,39 @@ export default function BestBoard() {
     })
     .slice(0, 4);
 
+  const mobileHotBoards = data?.fetchBoards
+    .slice()
+    .sort((a: IFetchBoards, b: IFetchBoards) => {
+      return b.like - a.like;
+    })
+    .slice(0, 2);
+
   return (
-    <Container>
-      {hotBoards?.map((el: { id: string; mainImg: string; title: string }) => (
-        <Box key={uuidv4()} id={el.id} onClick={onClickBoard}>
-          <img src={el.mainImg} />
-          <span>{el.title}</span>
-        </Box>
-      ))}
-    </Container>
+    <div>
+      {!windowSize && (
+        <Container>
+          {hotBoards?.map(
+            (el: { id: string; mainImg: string; title: string }) => (
+              <Box key={uuidv4()} id={el.id} onClick={onClickBoard}>
+                <img src={el.mainImg} />
+                <span>{el.title}</span>
+              </Box>
+            )
+          )}
+        </Container>
+      )}
+      {windowSize && (
+        <Container>
+          {mobileHotBoards?.map(
+            (el: { id: string; mainImg: string; title: string }) => (
+              <Box key={uuidv4()} id={el.id} onClick={onClickBoard}>
+                <img src={el.mainImg} />
+                <span>{el.title}</span>
+              </Box>
+            )
+          )}
+        </Container>
+      )}
+    </div>
   );
 }

@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import * as S from "./ThemeList.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { IFetchGenres, IFetchThemes, IThemeListProps } from "./ThemeList.types";
 import MobileCarousel from "./MobileCarousel";
 import { v4 as uuidv4 } from "uuid";
+import _ from "lodash";
 
 export default function ThemeListUI(props: IThemeListProps) {
   const [windowSize, setWindowSize] = useState(false);
+  const [searchedData, setSearchedData] = useState(props.data?.fetchThemes);
 
   const handleResize = () => {
     if (window.innerWidth <= 767) {
@@ -33,6 +35,26 @@ export default function ThemeListUI(props: IThemeListProps) {
       return b.like - a.like;
     })
     .slice(0, 8);
+
+  const getDebounce = _.debounce((data) => {
+    const filtered = props.data?.fetchThemes.filter(
+      (themeList: IFetchThemes) => {
+        return themeList.title.includes(data);
+      }
+    );
+
+    setSearchedData(filtered);
+  }, 200);
+
+  const onChangeSearchInput = (event: ChangeEvent) => {
+    getDebounce((event.target as HTMLInputElement).value);
+  };
+
+  useEffect(() => {
+    setSearchedData(props.data?.fetchThemes);
+
+    props.searchInputRef.current.value = "";
+  }, [props.data?.fetchThemes]);
 
   return (
     <S.Wrapper>
@@ -62,7 +84,11 @@ export default function ThemeListUI(props: IThemeListProps) {
               icon={faMagnifyingGlass}
               style={{ fontSize: "30px", color: "#DAD6E1" }}
             />
-            <S.SearchInput placeholder="테마명을 입력하세요." />
+            <S.SearchInput
+              placeholder="테마명을 입력하세요."
+              onChange={onChangeSearchInput}
+              ref={props.searchInputRef}
+            />
           </S.SearchBox>
           <S.GenreList>
             <S.Genre onClick={props.onClickAllGenre} isPicked={props.selectAll}>
@@ -81,35 +107,37 @@ export default function ThemeListUI(props: IThemeListProps) {
             )}
           </S.GenreList>
           <S.ThemeList>
-            {props.data?.fetchThemes.map((el: IFetchThemes) => (
-              <div
-                key={uuidv4()}
-                onClick={props.onClickTheme(el)}
-                style={{ cursor: "pointer" }}
-              >
-                <S.Flip>
-                  <S.Card>
-                    <S.Theme src={el.mainImg}>
-                      <S.Rank>
-                        <S.Ranktext>난이도</S.Ranktext>
-                        <S.Star disabled defaultValue={el.rank} />
-                      </S.Rank>
-                      <S.GenreTag>#{el?.genre.name}</S.GenreTag>
-                    </S.Theme>
-                    <S.ThemeBack src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/theme/card-back_ef6jjd.png">
-                      <S.ThemeTitle>{el.title}</S.ThemeTitle>
-                      <S.ThemeInfo>
-                        이용인원 ~ {el.peoplelimit}명
-                        <br />
-                        나이제한 {el.agelimit}세
-                        <br />
-                        {el.intro_title}
-                      </S.ThemeInfo>
-                    </S.ThemeBack>
-                  </S.Card>
-                </S.Flip>
-              </div>
-            ))}
+            {(searchedData || props.data?.fetchThemes)?.map(
+              (el: IFetchThemes) => (
+                <div
+                  key={uuidv4()}
+                  onClick={props.onClickTheme(el)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <S.Flip>
+                    <S.Card>
+                      <S.Theme src={el.mainImg}>
+                        <S.Rank>
+                          <S.Ranktext>난이도</S.Ranktext>
+                          <S.Star disabled defaultValue={el.rank} />
+                        </S.Rank>
+                        <S.GenreTag>#{el?.genre.name}</S.GenreTag>
+                      </S.Theme>
+                      <S.ThemeBack src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/theme/card-back_ef6jjd.png">
+                        <S.ThemeTitle>{el.title}</S.ThemeTitle>
+                        <S.ThemeInfo>
+                          이용인원 ~ {el.peoplelimit}명
+                          <br />
+                          나이제한 {el.agelimit}세
+                          <br />
+                          {el.intro_title}
+                        </S.ThemeInfo>
+                      </S.ThemeBack>
+                    </S.Card>
+                  </S.Flip>
+                </div>
+              )
+            )}
           </S.ThemeList>
           {props.more ? (
             <S.ButtonBox>
