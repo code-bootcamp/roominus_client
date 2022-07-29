@@ -2,8 +2,35 @@ import * as S from "./CafeList.styles";
 import { ICafeListUIProps, IFetchCafesProps } from "./CafeList.types";
 import ListCards from "./card/ListCards";
 import StoreIcon from "@mui/icons-material/Store";
+import _ from "lodash";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 export default function CafeListUIPage(props: ICafeListUIProps) {
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const [searchedData, setSearchedData] = useState(props.data?.fetchThemes);
+
+  const getDebounce = _.debounce((data) => {
+    const filtered = props.data?.fetchCafes.filter(
+      (cafeList: IFetchCafesProps) => {
+        return cafeList.name.toUpperCase().includes(data);
+      }
+    );
+
+    setSearchedData(filtered);
+  }, 200);
+
+  const onChangeSearchInput = (event: ChangeEvent) => {
+    getDebounce((event.target as HTMLInputElement).value.toUpperCase());
+  };
+
+  useEffect(() => {
+    setSearchedData(props.data?.fetchCafes);
+
+    searchInputRef.current.value = "";
+  }, [props.data?.fetchCafes]);
+
+  console.log(props.data);
   return (
     <S.Container>
       <S.SearchWrapper>
@@ -47,7 +74,11 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             </S.DetailBox>
             <S.DetailBox>
               <S.DetailTitle>매장명</S.DetailTitle>
-              <S.DetailContents placeholder="매장을 입력해주세요." />
+              <S.DetailContents
+                placeholder="매장을 입력해주세요."
+                onChange={onChangeSearchInput}
+                ref={searchInputRef}
+              />
             </S.DetailBox>
           </S.SearchDetailBox>
         </S.SearchBox>
@@ -59,11 +90,13 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
             <h1>전체 매장</h1>
           </S.TitleBox>
           <S.Etc>
-            {props.data?.fetchCafes.map((el: IFetchCafesProps) => (
-              <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
-                <ListCards el={el} />
-              </span>
-            ))}
+            {(searchedData || props.data?.fetchCafes)?.map(
+              (el: IFetchCafesProps) => (
+                <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
+                  <ListCards el={el} />
+                </span>
+              )
+            )}
           </S.Etc>
         </S.Flex>
         <S.MoreButtonBox>
