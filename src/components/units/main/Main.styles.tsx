@@ -155,6 +155,10 @@ export const ScrollDown = styled.div`
   color: white;
   font-family: serif;
   font-size: 3em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
 
 export const PressEnter = styled.div`
@@ -165,6 +169,10 @@ export const PressEnter = styled.div`
   right: 1%;
   bottom: 0;
   font-size: 3em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
 
 export const Word = styled.h1`

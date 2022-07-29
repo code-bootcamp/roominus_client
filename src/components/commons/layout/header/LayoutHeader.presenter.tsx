@@ -146,42 +146,42 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
                 <S.MyMenues
                   id="mypick"
                   className="menu-item"
-                  href="/mypage/mypick"
+                  href="/mypage/mypick/"
                 >
                   테마 찜목록
                 </S.MyMenues>
                 <S.MyMenues
                   id="history"
                   className="menu-item"
-                  href="/mypage/myreview"
+                  href="/mypage/myreview/"
                 >
                   내가 쓴 리뷰
                 </S.MyMenues>
                 <S.MyMenues
                   id="history"
                   className="menu-item"
-                  href="/mypage/myboard"
+                  href="/mypage/myboard/"
                 >
                   내가 쓴 게시물
                 </S.MyMenues>
                 <S.MyMenues
                   id="history"
                   className="menu-item"
-                  href="/mypage/history"
+                  href="/mypage/history/"
                 >
                   최근 예약내역
                 </S.MyMenues>
                 <S.MyMenues
                   id="reward"
                   className="menu-item"
-                  href="/mypage/reward"
+                  href="/mypage/reward/"
                 >
                   최근 적립내역
                 </S.MyMenues>
                 <S.MyMenues
                   id="myinfoedit"
                   className="menu-item"
-                  href="/mypage/phoneedit"
+                  href="/mypage/phoneedit/"
                 >
                   회원정보 수정
                 </S.MyMenues>
@@ -189,7 +189,7 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
             )}
 
             {!accessToken && (
-              <a id="contact" className="menu-item" href="/login">
+              <a id="contact" className="menu-item" href="/login/">
                 로그인
               </a>
             )}
@@ -197,7 +197,7 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
               <a
                 id="contact"
                 className="menu-item"
-                href="/home"
+                href="/home/"
                 onClick={props.onClickLogout}
               >
                 로그아웃
