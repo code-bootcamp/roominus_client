@@ -154,6 +154,7 @@ export const ScrollDownLine = styled.div`
 export const ScrollDown = styled.div`
   color: white;
   font-family: serif;
+  font-size: 3em;
 `;
 
 export const PressEnter = styled.div`
@@ -163,7 +164,7 @@ export const PressEnter = styled.div`
   position: absolute;
   right: 1%;
   bottom: 0;
-  font-size: 1.5em;
+  font-size: 3em;
 `;
 
 export const Word = styled.h1`
