@@ -1,4 +1,4 @@
-import { Dispatch, MouseEvent, SetStateAction } from "react";
+import { Dispatch, MouseEvent, RefObject, SetStateAction } from "react";
 
 export interface IFetchThemes {
   id: string;
@@ -23,6 +23,7 @@ export interface IThemeListProps {
   myIndex: Array<boolean>;
   selectAll: boolean;
   setSelectAll: Dispatch<SetStateAction<boolean>>;
+  searchInputRef: RefObject<HTMLInputElement>;
   onClickMoreButton: () => void;
   onClickToggled?: () => void;
   onClickTheme: (el: IFetchThemes) => () => void;
