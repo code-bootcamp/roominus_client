@@ -26,6 +26,9 @@ export default function LayoutBottomNavigation() {
         "& .MuiBottomNavigationAction-root, .Mui-selected, svg": {
           color: "#7457E8",
         },
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
       }}
       value={value}
       onChange={handleChange}

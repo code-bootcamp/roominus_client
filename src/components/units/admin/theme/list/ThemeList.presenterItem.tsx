@@ -11,7 +11,9 @@ export default function ThemeListUIItem(props: IThemeListUIItemProps) {
         {props.ThemeData.mainImg && (
           <S.PreviewImg src={props.ThemeData.mainImg} alt="preview" />
         )}
-        {!props.ThemeData.mainImg && <S.DefaultImg src="/img/home/home.png" />}
+        {!props.ThemeData.mainImg && (
+          <S.DefaultImg src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/noImage_ofbjxy.png" />
+        )}
 
         <S.TitleBox>
           <S.MainTitle>{props.ThemeData.title}</S.MainTitle>
