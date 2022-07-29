@@ -25,8 +25,15 @@ export const FETCH_THEMES_ALL = gql`
       id
       title
       rank
+      intro_title
+      intro_content
+      agelimit
+      peoplelimit
       like
       mainImg
+      genre {
+        name
+      }
     }
   }
 `;
