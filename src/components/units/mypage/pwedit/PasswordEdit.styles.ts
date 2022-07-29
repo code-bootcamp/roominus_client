@@ -18,6 +18,7 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   margin: auto;
+  padding-top: 3em;
 `;
 export const Error = styled.div`
   color: red;

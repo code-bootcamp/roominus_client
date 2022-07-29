@@ -5,10 +5,8 @@ import { ICommunityListProps, IFetchBoardsProps } from "./CommunityList.types";
 import Paginations02 from "../../../commons/pagination02/Paginations.container";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import TopButton from "../../../commons/buttons/topbutton/community";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 export default function CommunityListUI(props: ICommunityListProps) {
-  const error = /^.*[.(jpg | svg | png | jpeg | gif )]$/g;
-
   const [windowSize, setWindowSize] = useState(false);
 
   const handleResize = () => {
@@ -29,6 +27,11 @@ export default function CommunityListUI(props: ICommunityListProps) {
     };
   }, [windowSize]);
 
+  const handleImgError = (event: React.MouseEvent<HTMLImageElement>) => {
+    event.currentTarget.src =
+      "https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/noImage_ofbjxy.png";
+  };
+
   return (
     <S.Wrapper>
       <S.TitleBox>
@@ -44,13 +47,7 @@ export default function CommunityListUI(props: ICommunityListProps) {
         {props.data?.fetchBoards.map((el: IFetchBoardsProps) => (
           <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
             <S.ItemBackground>
-              <S.Picture
-                src={
-                  new RegExp(error, "i").test(el.mainImg)
-                    ? el.mainImg
-                    : "https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/noImage_ofbjxy.png"
-                }
-              />
+              <S.Picture src={el.mainImg} onError={handleImgError} />
               <S.InfoBox>
                 <S.NameDateBox>
                   <S.BoardName>{el.title}</S.BoardName>
