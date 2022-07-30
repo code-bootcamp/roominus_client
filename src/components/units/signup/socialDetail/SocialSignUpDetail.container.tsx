@@ -157,7 +157,7 @@ export default function SocialSignUpDetail() {
       } catch (error) {}
     } else if (smsToken !== tokenInput) {
       Swal.fire({
-        title: "토큰이 올바르지 않습니다.",
+        title: "인증번호가 올바르지 않습니다.",
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
