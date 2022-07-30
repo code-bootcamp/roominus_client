@@ -118,7 +118,7 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
                       로그인
                     </S.LogInandSignBtn>
                   </Link>
-                  <Link href={"/signup"}>
+                  <Link href={"/signup/chocie"}>
                     <S.LogInandSignBtn id="signup" className="menu-item">
                       회원가입
                     </S.LogInandSignBtn>
