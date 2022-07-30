@@ -15,11 +15,15 @@ const FAQ = () => {
       <Panel
         header="룸인어스란?"
         key="1"
-        style={{ fontWeight: 500, backgroundColor: "#F2EBF5" }}
+        style={{
+          fontWeight: 500,
+          backgroundColor: "#F2EBF5",
+          fontSize: "1.2em",
+        }}
       >
         <p
           style={{
-            fontSize: "1em",
+            fontSize: "1.1em",
             padding: "0.7em 1.5em",
             fontWeight: 400,
             marginBottom: "0em",
@@ -33,11 +37,15 @@ const FAQ = () => {
       <Panel
         header="서울 매장만 볼 수 있나요?"
         key="2"
-        style={{ fontWeight: 500, backgroundColor: "#F2EBF5" }}
+        style={{
+          fontWeight: 500,
+          backgroundColor: "#F2EBF5",
+          fontSize: "1.2em",
+        }}
       >
         <p
           style={{
-            fontSize: "1em",
+            fontSize: "1.1em",
             padding: "0.7em 1.5em",
             fontWeight: 400,
             marginBottom: "0em",
@@ -50,11 +58,15 @@ const FAQ = () => {
       <Panel
         header="환불은 어떻게 하나요?"
         key="3"
-        style={{ fontWeight: 500, backgroundColor: "#F2EBF5" }}
+        style={{
+          fontWeight: 500,
+          backgroundColor: "#F2EBF5",
+          fontSize: "1.2em",
+        }}
       >
         <p
           style={{
-            fontSize: "1em",
+            fontSize: "1.1em",
             padding: "0.7em 1.5em",
             fontWeight: 400,
             marginBottom: "0em",

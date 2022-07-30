@@ -247,6 +247,10 @@ export const QRcodeBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.5em;
+
+  @media ${breakPoints.mobile} {
+    gap: 0;
+  }
 `;
 
 export const QRcode = styled.div`
@@ -311,8 +315,7 @@ export const NoticeImg = styled.img`
   }
 
   @media ${breakPoints.mobile} {
-    width: 5.5em;
-    height: 5.5em;
+    height: 5em;
   }
 `;
 

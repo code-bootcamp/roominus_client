@@ -108,6 +108,37 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
                 메인
               </S.MenuMainItem>
             </Link>
+
+            <S.LoginBox>
+              {!accessToken && (
+                <S.LandSBox>
+                  {" "}
+                  <Link href={"/login"}>
+                    <S.LogInandSignBtn id="login" className="menu-item">
+                      로그인
+                    </S.LogInandSignBtn>
+                  </Link>
+                  <Link href={"/signup"}>
+                    <S.LogInandSignBtn id="signup" className="menu-item">
+                      회원가입
+                    </S.LogInandSignBtn>
+                  </Link>
+                </S.LandSBox>
+              )}
+
+              {accessToken && (
+                <Link href={"/home"}>
+                  <S.LogOutBtn
+                    id="logout"
+                    className="menu-item"
+                    onClick={props.onClickLogout}
+                  >
+                    로그아웃
+                  </S.LogOutBtn>
+                </Link>
+              )}
+            </S.LoginBox>
+
             <S.MenuBox>
               <Link href={"/cafe"}>
                 <S.MyMenues id="home" className="menu-item">
@@ -187,32 +218,6 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
                 </S.MyMenubox>
               )}
             </S.MenuBox>
-
-            <S.FooterBox>
-              {!accessToken && (
-                <>
-                  {" "}
-                  <Link href={"/login"}>
-                    <S.MyMenues id="login" className="menu-item">
-                      로그인
-                    </S.MyMenues>
-                  </Link>
-                  <Link href={"/signup"}>
-                    <S.MyMenues id="signup" className="menu-item">
-                      회원가입
-                    </S.MyMenues>
-                  </Link>
-                </>
-              )}
-
-              {accessToken && (
-                <Link href={"/home"}>
-                  <S.MyMenues id="logout" className="menu-item">
-                    로그아웃
-                  </S.MyMenues>
-                </Link>
-              )}
-            </S.FooterBox>
           </Menu>
         </S.Hamburger>
       </S.Container>

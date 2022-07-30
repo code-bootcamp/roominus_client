@@ -139,4 +139,6 @@ export const Calendar = styled(CalendarMonthOutlinedIcon)`
     cursor: pointer;
     color: #b6a2ea;
   }
+
+  color: black;
 `;

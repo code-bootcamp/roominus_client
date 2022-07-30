@@ -2,9 +2,6 @@ import { MouseEventHandler } from "react";
 
 export interface IHeaderUIProps {
   activedMenu: string;
-  isToggled: boolean;
-  // onClickMenu: MouseEventHandler<HTMLLIElement>;
-  onClickToggled: () => void;
   onClickMenu: any;
 
   onClickLogout: () => Promise<void>;

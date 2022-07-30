@@ -13,7 +13,7 @@ import { accessTokenState, userInfoState } from "../../../../commons/store";
 import { useRecoilState } from "recoil";
 
 const schema = yup.object({
-  email: yup.string().required("필수 입력 사항입니다."),
+  email: yup.string().required("이메일은 필수 입력 사항입니다."),
 });
 
 export default function DeleteMember() {
