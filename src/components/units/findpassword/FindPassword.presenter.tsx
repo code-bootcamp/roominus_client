@@ -34,8 +34,8 @@ export default function FindPasswordUI(props: IFindPasswordUIProps) {
               ref={props.PasswordFindinputRef}
               onChange={(e) => props.setValue("email", e.target.value)}
             />
+            <S.Error>{props.formState.errors.email?.message}</S.Error>
           </S.NameBox>
-          <S.Error>{props.formState.errors.name?.message}</S.Error>
           <S.PhoneNoBox>
             <S.TitleBox>
               <S.PhoneNo>핸드폰 번호</S.PhoneNo>
@@ -47,9 +47,11 @@ export default function FindPasswordUI(props: IFindPasswordUIProps) {
               name="phoneNumber"
               onChange={(e) => props.setValue("phoneNumber", e.target.value)}
             />
+            <S.Error>{props.formState.errors.phoneNumber?.message}</S.Error>
           </S.PhoneNoBox>
-          <S.Error>{props.formState.errors.phoneNumber?.message}</S.Error>
-          <WebPurpleLoginButton type="submit" title="확인" />
+
+          <S.IDcheckBtn>확인</S.IDcheckBtn>
+          {/* <WebPurpleLoginButton type="submit" title="확인" /> */}
         </S.Form>
       </S.Wrapper>
     </>
