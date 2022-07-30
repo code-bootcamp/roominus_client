@@ -154,7 +154,7 @@ export const ScrollDownLine = styled.div`
 export const ScrollDown = styled.div`
   color: white;
   font-family: serif;
-  font-size: 3em;
+  font-size: 2.5em;
 
   @media ${breakPoints.mobile} {
     font-size: 1.5em;

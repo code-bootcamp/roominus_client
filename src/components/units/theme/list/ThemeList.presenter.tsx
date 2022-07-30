@@ -48,14 +48,11 @@ export default function ThemeListUI(props: IThemeListProps) {
 
   const onChangeSearchInput = (event: ChangeEvent) => {
     getDebounce((event.target as HTMLInputElement).value);
-    // setTimeout(() => {
-    //   props.searchInputRef.current.value = "";
-    // }, 5000);
   };
 
   useEffect(() => {
-    setSearchedData(props.data?.fetchThemes);
-    //   props.searchInputRef.current.value = "";
+    !windowSize && setSearchedData(props.data?.fetchThemes);
+    if (!windowSize) props.searchInputRef.current.value = "";
   }, [props.data?.fetchThemes]);
 
   return (
