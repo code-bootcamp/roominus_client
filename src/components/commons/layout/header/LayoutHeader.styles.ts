@@ -117,11 +117,22 @@ export const Hamburger = styled.div`
 
 export const MenuMainItem = styled.a`
   font-size: 2em;
+  color: white;
+
+  :hover {
+    color: white;
+  }
 `;
 export const MyMenubox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  padding-left: 1em;
+`;
+
+export const MenuBox = styled.div`
+  display: flex;
+  padding-top: 2em;
+  min-height: 40em;
 `;
 export const MyMenues = styled.a`
   color: #d1d1d1;
@@ -131,6 +142,9 @@ export const MyMenues = styled.a`
     color: #d1d1d1;
   }
 `;
+
+export const FooterBox = styled.div``;
+
 export const LogInandOutBtn = styled.button`
   background-color: transparent;
   border: none;
