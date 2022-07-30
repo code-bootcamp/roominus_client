@@ -18,7 +18,7 @@ export const Title = styled.h1`
   font-size: 2.5em;
   margin-top: 2em;
   @media ${breakPoints.mobile} {
-    font-size: 3em;
+    font-size: 4em;
   }
 `;
 
@@ -26,7 +26,7 @@ export const Error = styled.div`
   color: red;
   font-size: 1em;
   @media ${breakPoints.mobile} {
-    font-size: 1.3em;
+    width: 140%;
   }
 `;
 export const TabBtns = styled.div`
@@ -37,7 +37,7 @@ export const TabBtns = styled.div`
   margin-top: 3em;
   margin-bottom: 3em;
   @media ${breakPoints.mobile} {
-    font-size: 1.6em;
+    font-size: 2.3em;
   }
 `;
 
@@ -78,6 +78,10 @@ export const Form = styled.form`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    width: 60%;
+    height: 38em;
+  }
 `;
 export const NameBox = styled.div`
   width: 100%;
@@ -85,12 +89,13 @@ export const NameBox = styled.div`
   flex-direction: column;
   margin-top: 2em;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+    margin-top: 0em;
+  }
 `;
 export const Name = styled.div`
   font-size: 1.2em;
-  @media ${breakPoints.mobile} {
-    font-size: 1.8em;
-  }
 `;
 export const NameInput = styled.input`
   width: 100%;
@@ -99,9 +104,6 @@ export const NameInput = styled.input`
   border-bottom: 1px solid #a3a8b7;
   outline: none;
   font-size: 1.3em;
-  @media ${breakPoints.mobile} {
-    font-size: 1.5em;
-  }
 `;
 
 export const PhoneNoBox = styled.div`
@@ -109,12 +111,13 @@ export const PhoneNoBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+    margin: auto;
+  }
 `;
 export const PhoneNo = styled.div`
   font-size: 1.2em;
-  @media ${breakPoints.mobile} {
-    font-size: 1.8em;
-  }
 `;
 export const PhoneNoInput = styled.input`
   width: 100%;
@@ -123,9 +126,6 @@ export const PhoneNoInput = styled.input`
   border-bottom: 1px solid #a3a8b7;
   outline: none;
   font-size: 1.3em;
-  @media ${breakPoints.mobile} {
-    font-size: 1.5em;
-  }
 `;
 
 export const TitleBox = styled.div`
@@ -137,7 +137,26 @@ export const ImportantInfos = styled.span`
   margin-left: 0.3em;
   font-size: 1.4em;
   color: red;
+`;
+export const IDcheckBtn = styled.button`
+  width: 140%;
+  height: 3.5em;
+  border-radius: 15px;
+  border: none;
+  background-color: #4a00e0e7;
+  color: #ffffff;
+  cursor: pointer;
+  :hover {
+    background: linear-gradient(
+      90deg,
+      rgba(142, 45, 226, 1) 30%,
+      rgba(74, 0, 224, 1) 100%
+    );
+  }
+  font-weight: 500;
   @media ${breakPoints.mobile} {
+    width: 140%;
+    height: 3.5em;
     font-size: 2em;
   }
 `;

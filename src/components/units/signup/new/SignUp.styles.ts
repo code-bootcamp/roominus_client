@@ -78,14 +78,16 @@ export const CheckBox = styled.div`
       rgba(74, 0, 224, 1) 100%
     );
   }
+  @media ${breakPoints.mobile} {
+    font-size: 1.4em;
+  }
 `;
 export const Check = styled.input`
   margin-right: 0.5em;
   width: 1em;
   height: 1em;
   @media ${breakPoints.mobile} {
-    width: 1.4em;
-    height: 1.4em;
+    font-size: 1.4em;
   }
 `;
 export const CheckLabel = styled.span`
@@ -105,8 +107,8 @@ export const NecessityInfoBox = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
-    font-size: 1em;
-    padding: 2em 2em 2em 2em;
+    font-size: 1.4em;
+    padding: 1em 1em 1em 1em;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -162,16 +164,12 @@ export const OptionalInfoBox = styled.div`
   border: 1px dotted #a3a8b7;
   border-radius: 10px;
   margin-bottom: 1em;
-  @media ${breakPoints.mobile} {
-    width: 90%;
-    font-size: 0.5em;
-    padding: 4em 4em 4em 4em;
-  }
+
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
-    font-size: 1em;
-    padding: 2em 2em 2em 2em;
+    font-size: 1.4em;
+    padding: 1em 1em 1em 1em;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -226,8 +224,8 @@ export const ButtonBox = styled.div`
   align-items: center;
   margin-bottom: 2em;
   @media ${breakPoints.mobile} {
-    width: 70%;
-    font-size: 1.4em;
+    width: 90%;
+    font-size: 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

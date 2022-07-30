@@ -35,6 +35,7 @@ export default function useAuth() {
         backdrop: false,
       });
       router.push("/login");
+    } else if (sessionStorage.getItem("#LL")) {
       if (!accessToken) {
         Auth.toPromise().then((newAccessToken) => {
           if (!newAccessToken) {

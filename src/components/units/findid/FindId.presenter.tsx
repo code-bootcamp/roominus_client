@@ -38,8 +38,8 @@ export default function FindIdUI(props: IFindIdUIProps) {
               />
               <S.Error>{props.formState.errors.phoneNumber?.message}</S.Error>
             </S.PhoneBox>
-
-            <WebPurpleLoginButton type="submit" title="확인" />
+            <S.IDcheckBtn>확인</S.IDcheckBtn>
+            {/* <WebPurpleLoginButton type="submit" title="확인" /> */}
           </S.Form>
         </S.Wrapper>
       )}
