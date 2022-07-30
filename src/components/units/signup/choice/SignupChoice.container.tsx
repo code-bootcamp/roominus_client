@@ -68,7 +68,7 @@ export default function SignupChoice() {
   };
 
   const onClickMoveToOwner = () => {
-    Swal.fire("서비스 준비중입니다!");
+    Swal.fire({ title: "서비스 준비중입니다!", backdrop: false });
   };
 
   return (

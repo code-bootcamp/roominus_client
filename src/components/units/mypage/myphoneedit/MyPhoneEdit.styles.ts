@@ -5,6 +5,10 @@ export const Container = styled.main`
   width: 100%;
   min-height: 50em;
   padding: 2em 2em 2em 2em;
+
+  @media ${breakPoints.mobile} {
+    padding: 0.5em;
+  }
 `;
 
 export const TitleBox = styled.div`
@@ -131,10 +135,6 @@ export const VerificationNoBox = styled.div`
   align-items: center;
   text-align: center;
   position: relative;
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.8em;
-  }
 `;
 export const VerificationNoInput = styled.input`
   width: 100%;

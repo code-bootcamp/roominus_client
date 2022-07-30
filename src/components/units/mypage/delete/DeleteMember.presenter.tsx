@@ -9,7 +9,7 @@ export default function DeleteMemberUI(props: IDeleteMemberUIProps) {
       <S.Form onSubmit={props.handleSubmit(props.onSubmitDeleteMember)}>
         <S.ReasonBox>
           <div>
-            <h2>탈퇴 사유를 체크해주세요</h2>
+            <h2>탈퇴 사유를 체크해주세요 (선택)</h2>
           </div>
           <S.InputBox>
             <span>서비스 탈퇴 후 재가입을 위해서</span>
@@ -41,8 +41,10 @@ export default function DeleteMemberUI(props: IDeleteMemberUIProps) {
             }}
           />
           <S.Error>{props.formState.errors.email?.message}</S.Error>
-          <WebPurpleButton type="submit" title="탈퇴" />
         </S.EmailInputBox>
+        <S.ButtonBox>
+          <WebPurpleButton type="submit" title="탈퇴" />
+        </S.ButtonBox>
       </S.Form>
     </S.Container>
   );

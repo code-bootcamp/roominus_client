@@ -19,8 +19,8 @@ export default function PWeditUI(props: IPWeditUIProps) {
         <S.PasswordBoxes>
           <S.PasswordBox>
             <S.TitleBox>
-              <S.PasswordTitle>새 비밀번호</S.PasswordTitle>
-              <S.ImportantInfos>*</S.ImportantInfos>
+              <h2>새 비밀번호</h2>
+              <p>*</p>
             </S.TitleBox>
             <S.PasswordInputBox>
               <S.PasswordInput
@@ -62,30 +62,29 @@ export default function PWeditUI(props: IPWeditUIProps) {
               )}
             </S.PasswordInputBox>
             <S.Error>{props.formState.errors.password?.message}</S.Error>
-            <PasswordChecklist
-              rules={["minLength", "lowercase", "number"]}
-              minLength={8}
-              maxLength={14}
-              value={props.password}
-              iconSize={10}
-              messages={{
-                minLength: "최소 8자리 이상 입력해야 합니다.",
-                lowercase: "영문(소문자)을 포함해야 합니다.",
-                number: "숫자를 포함해야 합니다.",
-              }}
-            />
+            <S.CheckBox>
+              <PasswordChecklist
+                rules={["minLength", "lowercase", "number"]}
+                minLength={8}
+                maxLength={14}
+                value={props.password}
+                iconSize={10}
+                messages={{
+                  minLength: "최소 8자리 이상 입력해야 합니다.",
+                  lowercase: "영문(소문자)을 포함해야 합니다.",
+                  number: "숫자를 포함해야 합니다.",
+                }}
+              />
+            </S.CheckBox>
           </S.PasswordBox>
-        </S.PasswordBoxes>
-        <S.PasswordVerificationBoxes>
-          <S.PasswordVerificationBox>
+
+          <S.PasswordBox>
             <S.TitleBox>
-              <S.PasswordVerificationTitle>
-                비밀번호 확인
-              </S.PasswordVerificationTitle>
-              <S.ImportantInfos>*</S.ImportantInfos>
+              <h2>비밀번호 확인</h2>
+              <p>*</p>
             </S.TitleBox>
-            <S.PasswordVerificationInputBox>
-              <S.PasswordVerificationInput
+            <S.PasswordInputBox>
+              <S.PasswordInput
                 onChange={(e) => {
                   props.setValue("password2", e.target.value);
                   props.trigger("password2");
@@ -121,10 +120,10 @@ export default function PWeditUI(props: IPWeditUIProps) {
                   }}
                 />
               )}
-            </S.PasswordVerificationInputBox>
+            </S.PasswordInputBox>
             <S.Error>{props.formState.errors.password2?.message}</S.Error>
-          </S.PasswordVerificationBox>
-        </S.PasswordVerificationBoxes>
+          </S.PasswordBox>
+        </S.PasswordBoxes>
         <S.ButtonBox>
           <Link href={"/mypage/phoneedit"}>
             <a>

@@ -61,8 +61,12 @@ export const TitleBox = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-weight: 600;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
 
 export const StoreListButton = styled.span`

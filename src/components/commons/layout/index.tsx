@@ -12,7 +12,7 @@ import LayoutSidebarAdmin from "./sidebarAdmin/LayoutSidebar.container";
 import LayoutBottomNavigation from "./bottomNavigation";
 
 const HIDDEN_HEADER = ["/"];
-const HIDDEN_BANNER = ["/", "/home/", "/cafe/"];
+const HIDDEN_BANNER = ["/", "/home", "/cafe"];
 const HIDDEN_TOP_HEADER = ["/"];
 const HIDDEN_FOOTER = ["/"];
 const HIDDEN_MOBILE_NAVBAR = ["/"];
