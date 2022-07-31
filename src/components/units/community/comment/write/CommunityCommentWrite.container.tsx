@@ -59,9 +59,12 @@ export default function CommunityCommentWrite(
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: (error as Error).message,
+        title: "로그인을 해주세요!",
+        timer: 1300,
+        showConfirmButton: false,
         backdrop: false,
       });
+      router.push("/login");
     }
   };
 

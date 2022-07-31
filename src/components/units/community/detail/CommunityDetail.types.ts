@@ -1,3 +1,5 @@
+import React, { SyntheticEvent } from "react";
+
 export interface IBoardTagsProps {
   id: string;
   title: string;
@@ -25,6 +27,7 @@ export interface ICommunityDetailProps {
   userInfo: {
     name: string;
   };
+  handleImgError: (event: SyntheticEvent<HTMLImageElement, Event>) => void;
 }
 
 export interface IFetchBoardEl {

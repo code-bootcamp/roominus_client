@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React, { SyntheticEvent, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import Swal from "sweetalert2";
 import { userInfoState } from "../../../../commons/store";
@@ -27,6 +27,11 @@ export default function CommunityDetail() {
       id: router.query.id,
     },
   });
+
+  const handleImgError = (event: SyntheticEvent<HTMLImageElement, Event>) => {
+    event.currentTarget.src =
+      "https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/noImage_ofbjxy.png";
+  };
 
   const onClickList = () => {
     router.push("/community");
@@ -101,6 +106,7 @@ export default function CommunityDetail() {
       onClickLike={onClickLike}
       like={like}
       userInfo={userInfo}
+      handleImgError={handleImgError}
     />
   );
 }
