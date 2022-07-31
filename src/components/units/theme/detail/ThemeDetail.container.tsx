@@ -7,6 +7,7 @@ import { useRecoilState } from "recoil";
 import { userInfoState, userPickThemeState } from "../../../../commons/store";
 import { IFetchThemeData } from "./ThemeDetail.types";
 import _ from "lodash";
+import Swal from "sweetalert2";
 
 export default function ThemeDetail() {
   const [userInfo] = useRecoilState(userInfoState);
@@ -23,11 +24,18 @@ export default function ThemeDetail() {
   const [love, setLove] = useState(false);
 
   const getDebounce = _.debounce(async () => {
-    const result = await createLikeTheme({
-      variables: { themeId: router.query.id },
-    });
-    refetch();
-    setLove(result.data?.createLikeTheme);
+    try {
+      const result = await createLikeTheme({
+        variables: { themeId: router.query.id },
+      });
+      refetch();
+      setLove(result.data?.createLikeTheme);
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "로그인 후 이용해주세요!",
+      });
+    }
   }, 500);
 
   const onClickLove = async () => {

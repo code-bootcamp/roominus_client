@@ -93,6 +93,11 @@ export const GenreTag = styled.div`
   align-items: center;
   color: white;
 `;
+export const TitleLikeBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
 export const ThemeTitle = styled.h2`
   display: flex;
@@ -115,14 +120,14 @@ export const CafeTitle = styled.div`
   font-size: 0.6em;
 `;
 
-export const Like = styled.div`
-  position: absolute;
-  right: 7.5%;
-  top: 7%;
-  @media ${breakPoints.mobile} {
-    right: 9%;
-  }
+export const LikeBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-self: right;
+  align-items: center;
 `;
+
+export const Like = styled.div``;
 
 export const ThemeSubTitle = styled.h3`
   font-style: oblique;
