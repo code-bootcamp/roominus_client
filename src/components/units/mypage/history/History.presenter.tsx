@@ -26,7 +26,7 @@ export default function HistoryUI(props: IHistoryUIProps) {
         </S.CountBox>
         <S.TableTop />
         <S.TitleRow>
-          <S.ColumnHeaderNumber>예약 번호</S.ColumnHeaderNumber>
+          <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
           <S.ColumnHeaderTitle>테마</S.ColumnHeaderTitle>
           <S.ColumnHeaderBasic>방문일</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>시간</S.ColumnHeaderBasic>
@@ -34,7 +34,7 @@ export default function HistoryUI(props: IHistoryUIProps) {
         </S.TitleRow>
         {props.data?.fetchReservationsUser.map((el: IData, index: number) => (
           <S.Row key={index}>
-            <S.ColumnNumber>{el.id.split("-")[0].slice(-5)}</S.ColumnNumber>
+            <S.ColumnNumber>{el.id.split("-")[0].slice(-4)}</S.ColumnNumber>
             <S.ColumnTitle id={el.id} onClick={props.onClickReservationDetail}>
               {el.theme_menu.theme.title}
             </S.ColumnTitle>
