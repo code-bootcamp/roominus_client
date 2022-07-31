@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { MouseEvent } from "react";
+import React, { MouseEvent } from "react";
 import CommunityListUI from "./CommunityList.presenter";
 import { FETCH_BOARDS, FETCH_BOARDS_COUNT } from "./CommunityList.queries";
 import { IFetchBoardsProps } from "./CommunityList.types";
@@ -20,6 +20,11 @@ export default function CommunityList() {
     router.push("/community/new");
   };
 
+  const handleImgError = (event: React.MouseEvent<HTMLImageElement>) => {
+    event.currentTarget.src =
+      "https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/noImage_ofbjxy.png";
+  };
+
   return (
     <CommunityListUI
       onClickCard={onClickCard}
@@ -27,6 +32,7 @@ export default function CommunityList() {
       data={data}
       refetch={refetch}
       count={count}
+      handleImgError={handleImgError}
     />
   );
 }

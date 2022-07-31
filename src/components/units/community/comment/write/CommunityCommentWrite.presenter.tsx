@@ -15,7 +15,9 @@ export default function CommunityCommentWriteUI(
         }
       >
         <S.CommentWriteBox>
-          <S.Name>{props.userInfo?.name}</S.Name>
+          <S.Name>
+            {props.userInfo?.name ? props.userInfo?.name : "비회원"}
+          </S.Name>
           <S.CommentInput
             placeholder="댓글을 입력하세요"
             {...props.register("content")}

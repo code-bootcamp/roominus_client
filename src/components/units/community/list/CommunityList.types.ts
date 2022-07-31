@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import React, { MouseEvent } from "react";
 
 export interface IFetchBoardsProps {
   id: string;
@@ -18,4 +18,5 @@ export interface ICommunityListProps {
   ) => (event: MouseEvent<HTMLDivElement>) => void;
   onClickWrite: () => void;
   data: any;
+  handleImgError: (event: React.MouseEvent<HTMLImageElement>) => void;
 }

@@ -1,6 +1,5 @@
 import CommunityDetail from "../../../src/components/units/community/detail/CommunityDetail.container";
 import styled from "@emotion/styled";
-import useAuth from "../../../src/components/commons/hooks/useAuth";
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,7 +7,6 @@ const Wrapper = styled.div`
 `;
 
 export default function CommunityDetailPage() {
-  useAuth();
   return (
     <Wrapper>
       <CommunityDetail />

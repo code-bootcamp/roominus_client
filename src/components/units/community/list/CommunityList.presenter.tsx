@@ -27,11 +27,6 @@ export default function CommunityListUI(props: ICommunityListProps) {
     };
   }, [windowSize]);
 
-  const handleImgError = (event: React.MouseEvent<HTMLImageElement>) => {
-    event.currentTarget.src =
-      "https://res.cloudinary.com/dop5piuwp/image/upload/v1658990936/public/community/noImage_ofbjxy.png";
-  };
-
   return (
     <S.Wrapper>
       <S.TitleBox>
@@ -47,7 +42,7 @@ export default function CommunityListUI(props: ICommunityListProps) {
         {props.data?.fetchBoards.map((el: IFetchBoardsProps) => (
           <span key={el.id} id={el.id} onClick={props.onClickCard(el)}>
             <S.ItemBackground>
-              <S.Picture src={el.mainImg} onError={handleImgError} />
+              <S.Picture src={el.mainImg} onError={props.handleImgError} />
               <S.InfoBox>
                 <S.NameDateBox>
                   <S.BoardName>{el.title}</S.BoardName>
