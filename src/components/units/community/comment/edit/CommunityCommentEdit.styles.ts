@@ -17,13 +17,12 @@ export const CommentListBox = styled.div`
   padding: 1em;
   background-color: #ffffff;
   border-bottom: 1px solid #bdbdbd;
+  display: flex;
+  flex-direction: column-reverse;
 `;
 
 export const ListInfoBox = styled.div`
-  width: 100%;
   padding: 0em 0em 0em 1em;
-  display: flex;
-  flex-direction: column;
 `;
 
 export const InfoTitleBox = styled.div`

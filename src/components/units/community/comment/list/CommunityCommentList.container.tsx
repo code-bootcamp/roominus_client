@@ -47,34 +47,5 @@ export default function CommunityCommentList() {
     }
   };
 
-  // const loadFunc = () => {
-  //   if (!data) return;
-
-  //   fetchMore({
-  //     variables: {
-  //       page: Math.ceil(data.fetchBoardComments.boardreview.length / 10) + 1,
-  //     },
-  //     updateQuery: (prev, { fetchMoreResult }) => {
-  //       if (!fetchMoreResult.fetchBoardComments.boardreview)
-  //         return {
-  //           fetchBoardComments: [...prev.fetchBoardComments.boardreview],
-  //         };
-
-  //       return {
-  //         fetchBoardComments: [
-  //           ...prev.fetchBoardComments.boardreview,
-  //           ...fetchMoreResult.fetchBoardComments.boardreview,
-  //         ],
-  //       };
-  //     },
-  //   });
-  // };
-
-  return (
-    <CommunityCommentListUI
-      data={data}
-      onClickDelete={onClickDelete}
-      // loadFunc={loadFunc}
-    />
-  );
+  return <CommunityCommentListUI data={data} onClickDelete={onClickDelete} />;
 }
