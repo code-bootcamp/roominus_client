@@ -19,6 +19,8 @@ export interface IFetchReservationUser {
 }
 
 export interface IFetchPayments {
+  user: any;
+  reservation: any;
   imp_uid: string;
   usepoint: number;
   price: number;

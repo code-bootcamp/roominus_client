@@ -8,31 +8,35 @@ export const CalenderWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  min-height: 60em;
+  min-height: 50em;
   padding: 2em 2em 2em 2em;
 
   @media ${breakPoints.mobile} {
-    padding: 0.1em;
+    padding: 1em;
   }
-`;
-
-export const ButtonBox = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 2em;
 `;
 
 export const CalenderHeader = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1.5em;
+  padding-bottom: 0.5em;
 `;
 
+export const TitleBox = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+`;
+export const Title = styled.h1`
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
+`;
 export const StartMonth = styled.div`
   & span {
     margin-right: 5px;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: 600;
   }
 
@@ -80,11 +84,11 @@ export const Col = styled.div`
 
 export const Days = styled.div`
   width: 100%;
-  height: 2.5em;
+  height: 1.8em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 600;
   border-top: 2px solid #b6a2ea;
   border-bottom: 2px solid #b6a2ea;
@@ -99,6 +103,7 @@ export const Column = styled.div`
   align-items: center;
   border-bottom: 1px solid #a3a8b7;
   border-right: 1px solid #a3a8b7;
+  height: 8em;
 
   &:last-of-type {
     border-right: none;
@@ -197,7 +202,13 @@ export const Row = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 1.3em;
+  font-size: 1.2em;
 `;
 
 export const CalendarBody = styled.div``;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 3em;
+`;

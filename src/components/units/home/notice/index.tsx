@@ -7,7 +7,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  gap: 20em;
+  justify-content: space-between;
   border-top: 1.5px solid #4a00e0e7;
   border-bottom: 1.5px solid #4a00e0e7;
   text-align: center;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   font-size: 1.3em;
 
   @media ${breakPoints.tablet} {
-    gap: 8em;
+    gap: 6em;
   }
 
   @media ${breakPoints.mobile} {
@@ -36,6 +36,7 @@ const Flip = styled.div`
     padding-bottom: 1em;
     padding-top: 0.5em;
     padding-left: 1em;
+    padding-right: 1em;
     margin-bottom: 50px;
     display: inline-block;
     color: #26282c;
@@ -54,9 +55,11 @@ const Flip = styled.div`
   }
 
   div:first-child div {
+    padding-top: 10px;
   }
 
   div:last-child div {
+    padding-top: 2em;
   }
 
   @keyframes show {
@@ -87,7 +90,24 @@ const Flip = styled.div`
   }
 `;
 
-export default function Test03() {
+const ContentBox = styled.div`
+  width: 30em;
+
+  @media ${breakPoints.tablet} {
+    width: 15em;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 12em;
+  }
+`;
+const Contents = styled.div`
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
+`;
+
+export default function Notice() {
   return (
     <Container>
       <Wrapper>
@@ -96,32 +116,32 @@ export default function Test03() {
             <div>[안내]</div>
           </div>
           <div>
-            <div>[수정]</div>
+            <div>[안내]</div>
           </div>
           <div>
-            <div>[점검]</div>
-          </div>
-        </Flip>
-        <Flip>
-          <div>
-            <div>8월 신용카드 무이자 할부 안내</div>
-          </div>
-          <div>
-            <div>8월 3일 시스템 점검 안내</div>
-          </div>
-          <div>
-            <div>8월 휴무 안내</div>
+            <div>[공지]</div>
           </div>
         </Flip>
         <Flip>
+          <ContentBox>
+            <Contents>신용카드 무이자 할부 안내</Contents>
+          </ContentBox>
+          <ContentBox>
+            <Contents>8월 3일 시스템 점검 안내</Contents>
+          </ContentBox>
+          <ContentBox>
+            <Contents>8월 정기 휴무 안내</Contents>
+          </ContentBox>
+        </Flip>
+        <Flip>
           <div>
-            <div>2022-07-30</div>
+            <div>2022-08-03</div>
           </div>
           <div>
             <div>2022-08-01</div>
           </div>
           <div>
-            <div>2022-08-03</div>
+            <div>2022-07-30</div>
           </div>
         </Flip>
       </Wrapper>

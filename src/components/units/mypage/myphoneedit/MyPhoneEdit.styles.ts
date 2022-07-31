@@ -20,6 +20,10 @@ export const TitleBox = styled.div`
 export const Title = styled.h1`
   margin: 0;
   width: 100%;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
 
 export const DeleteBox = styled.div`

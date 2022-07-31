@@ -14,9 +14,9 @@ export const Notice = styled.p`
 export const Container = styled.main`
   width: 100%;
 
-  @media ${breakPoints.mobile} {
+  /* @media ${breakPoints.mobile} {
     padding: 0.5em;
-  }
+  } */
 `;
 
 export const Wrapper = styled.section`
@@ -34,13 +34,13 @@ export const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
   }
-
+  /* 
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-  }
+  } */
 `;
 
 export const BackBox = styled.div`
@@ -53,9 +53,9 @@ export const BackBox = styled.div`
     color: #a3a8b7;
   }
 
-  @media ${breakPoints.mobile} {
+  /* @media ${breakPoints.mobile} {
     font-size: 1.1em;
-  }
+  } */
 
   & span {
     cursor: pointer;
@@ -77,9 +77,9 @@ export const GridBox = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2em;
 
-  @media ${breakPoints.mobile} {
+  /* @media ${breakPoints.mobile} {
     display: inline;
-  }
+  } */
 `;
 
 export const FooterBox = styled.div`
@@ -114,10 +114,10 @@ export const Total = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 1.5em;
   }
-
+  /* 
   @media ${breakPoints.mobile} {
     font-size: 1.5em;
-  }
+  } */
 `;
 
 export const InformationUse = styled.div`
@@ -133,10 +133,17 @@ export const InformationUse = styled.div`
 
 export const CheckBox = styled.div`
   display: flex;
-  font-size: 1.3em;
   font-weight: 700;
   padding-bottom: 0.5em;
   gap: 0.5em;
+
+  & input[type="checkbox"] {
+    zoom: 1.3;
+    accent-color: #4a00e0e7;
+  }
+  & span {
+    font-size: 1.3em;
+  }
 `;
 
 export const Point = styled.div`

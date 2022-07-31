@@ -145,9 +145,12 @@ export const MyMenues = styled.a`
   margin-bottom: 0.8em;
   margin-left: 1em;
   font-size: 1.3em;
+
   :hover {
     color: #d1d1d1;
   }
+
+  color: white;
 `;
 
 export const LoginBox = styled.div`
@@ -156,22 +159,33 @@ export const LoginBox = styled.div`
 
 export const LandSBox = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 1.5em;
   width: 100%;
 `;
 
 export const LogInandSignBtn = styled.button`
   background-color: transparent;
-  border: 1px solid gray;
-  width: 6em;
 
+  border: 1px solid white;
+
+  width: 50%;
+  height: 3em;
   cursor: pointer;
+
+  a {
+    :hover {
+      color: white;
+    }
+    color: white;
+  }
 `;
 
 export const LogOutBtn = styled.button`
   background-color: transparent;
-  border: 1px solid gray;
+  border: 1px solid white;
   width: 100%;
+  height: 3em;
+  color: white;
 
   cursor: pointer;
 `;
