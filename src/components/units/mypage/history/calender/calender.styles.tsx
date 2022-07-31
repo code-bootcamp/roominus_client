@@ -12,7 +12,7 @@ export const CalenderWrapper = styled.div`
   padding: 2em 2em 2em 2em;
 
   @media ${breakPoints.mobile} {
-    padding: 1em;
+    padding: 0.5em;
   }
 `;
 

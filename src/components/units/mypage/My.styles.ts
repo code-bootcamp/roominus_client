@@ -98,7 +98,6 @@ export const ColumnNumber = styled.div`
 export const ColumnBasic = styled.div`
   width: 30%;
   text-align: center;
-  border-left: 0.5px solid #a3a8b7;
 `;
 
 export const ColumnTitle = styled.div`
@@ -107,13 +106,11 @@ export const ColumnTitle = styled.div`
   cursor: pointer;
   font-weight: 700;
   padding-left: 10px;
-  border-left: 0.5px solid #a3a8b7;
 `;
 
 export const ColumnPoint = styled.div`
   width: 30%;
   text-align: end;
-  border-left: 0.5px solid #a3a8b7;
   padding-right: 10px;
 `;
 

@@ -207,24 +207,20 @@ export const ColumnTitle = styled.div`
     font-weight: 700;
   }
   font-size: 1.2em;
-  border-left: 1px solid #a3a8b7;
 `;
 
 export const ColumnName = styled.div`
   width: 25%;
-  border-left: 1px solid #a3a8b7;
   padding-left: 10px;
 `;
 export const ColumnBasic = styled.div`
   width: 20%;
   text-align: center;
-  border-left: 1px solid #a3a8b7;
 `;
 
 export const ColumnPoint = styled.div`
   width: 20%;
   text-align: end;
-  border-left: 1px solid #a3a8b7;
   padding-right: 10px;
 `;
 
