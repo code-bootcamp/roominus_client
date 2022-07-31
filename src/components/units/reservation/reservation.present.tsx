@@ -231,7 +231,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                 // value={props?.memo ? props?.memo : "" || ""}
                 onChange={props.onChangeMemo}
                 style={{ paddingBottom: "1.3em" }}
-                helperText="예약자와 방문자가 다를 경우 방문자의 정보를 작성해주세요."
+                helperText="예약자와 방문자가 다를 경우 방문자 정보를 작성해주세요."
               />
             )}
 

@@ -49,7 +49,7 @@ export default function Calendar() {
       />
 
       <S.ButtonBox>
-        <Link href={"/mypage"}>
+        <Link href={"/mypage/history"}>
           <a>
             <WebBlackButton type="button" title="돌아가기" />
           </a>

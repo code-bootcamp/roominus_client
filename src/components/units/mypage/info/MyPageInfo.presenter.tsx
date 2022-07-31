@@ -97,7 +97,7 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                 <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
                 <S.ColumnHeaderTitle>결제 테마</S.ColumnHeaderTitle>
                 <S.ColumnHeaderPoint>결제 가격</S.ColumnHeaderPoint>
-                <S.ColumnHeaderPoint>사용 포인트</S.ColumnHeaderPoint>
+                <S.ColumnHeaderPoint>사용</S.ColumnHeaderPoint>
                 <S.ColumnHeaderPoint>적립 예정</S.ColumnHeaderPoint>
                 <S.ColumnHeaderBasic>주문자</S.ColumnHeaderBasic>
               </S.TitleRow>
