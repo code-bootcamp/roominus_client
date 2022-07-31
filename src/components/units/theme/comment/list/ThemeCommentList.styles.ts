@@ -15,7 +15,7 @@ export const Comment = styled.section`
 export const CommentLeftBox = styled.div`
   padding: 10px;
   @media ${breakPoints.mobile} {
-    display: none;
+    font-size: 0.8em;
   }
 `;
 export const WriterImage = styled.div`

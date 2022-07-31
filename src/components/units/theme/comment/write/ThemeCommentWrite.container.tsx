@@ -139,6 +139,9 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       : setIsReviewer(true);
 
     // 댓글 작성한 적이 있으면 댓글 다는 권한 false로 변경
+
+    if (!userInfo.id) setIsReviewer(false);
+    // 비로그인 회원이면 권한 false로 변경
   }, [fetchThemeReviews?.fetchThemeReviews]);
 
   return (
