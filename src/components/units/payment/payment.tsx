@@ -60,7 +60,7 @@ export default function Payment(props: IPaymentProps) {
         buyer_email: data?.fetchUserLoggedIn.email,
         buyer_name: data?.fetchUserLoggedIn.name,
         buyer_tel: data?.fetchUserLoggedIn.phone,
-        m_redirect_url: "http://localhost:3000/mypage",
+        m_redirect_url: "https://roominus.site/theme",
       },
       async function (rsp: IRsp) {
         // callback

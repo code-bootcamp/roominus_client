@@ -31,9 +31,15 @@ export const FETCH_PAYMENTS = gql`
       usepoint
       reservation {
         reservation_date
+        theme_menu {
+          theme {
+            title
+          }
+        }
       }
       user {
         point
+        name
       }
     }
   }

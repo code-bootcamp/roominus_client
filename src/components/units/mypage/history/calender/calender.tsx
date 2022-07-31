@@ -32,6 +32,10 @@ export default function Calendar() {
 
   return (
     <S.CalenderWrapper>
+      <S.TitleBox>
+        <S.Title>나의 포토캘린더</S.Title>
+      </S.TitleBox>
+
       <RenderHeader
         currentMonth={currentMonth}
         prevMonth={prevMonth}

@@ -41,7 +41,7 @@ export const CountBox = styled.div`
 
 export const Title = styled.h1`
   @media ${breakPoints.mobile} {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 `;
 
