@@ -91,7 +91,15 @@ export default function ReservationSuccess() {
     }).then((result) => {
       if (result.isConfirmed) {
         onClickRefund();
-        Swal.fire("예약 취소", "예약 취소되었습니다.");
+        Swal.fire({
+          title: "취소되었습니다",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1000,
+          backdrop: false,
+        });
+
+        router.push("/mypage");
       }
     });
   };
@@ -102,6 +110,7 @@ export default function ReservationSuccess() {
       icon: "error",
       confirmButtonColor: "#843dca",
       confirmButtonText: "돌아가기",
+      backdrop: false,
     }).then((result) => {
       if (result.isConfirmed) {
         router.push("/home");
