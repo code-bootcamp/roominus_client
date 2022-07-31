@@ -14,8 +14,8 @@ const TopBtnBox = styled.div`
   right: 0.1em;
   bottom: 0.1em;
   transform: translate(-20%, -20%);
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: linear-gradient(90deg, #7c21e1 0%, #4a00e0 100%);
   border-radius: 50%;
   border: none;
