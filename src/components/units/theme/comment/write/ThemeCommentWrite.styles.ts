@@ -151,7 +151,7 @@ export const CommentBox = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-export const CommentWriter = styled.h3`
+export const CommentWriter = styled.div`
   font-size: 1em;
   margin-right: 5px;
 `;

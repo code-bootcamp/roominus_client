@@ -50,6 +50,7 @@ export const SearchBox = styled.div`
 `;
 
 export const SearchInput = styled.input`
+  width: 100%;
   background: transparent;
   border: transparent;
   padding: 10px 15px;
