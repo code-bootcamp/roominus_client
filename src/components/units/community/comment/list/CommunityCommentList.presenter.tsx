@@ -1,21 +1,20 @@
 import CommunityCommentEdit from "../edit/CommunityCommentEdit.container";
-// import InfiniteScroll from "react-infinite-scroller";
 import {
   IBoardreviewEl,
   ICommunityCommentListUIProps,
 } from "./CommunityCommentList.types";
+import styled from "@emotion/styled";
+
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column-reverse;
+`;
 
 export default function CommunityCommentListUI(
   props: ICommunityCommentListUIProps
 ) {
   return (
-    <div>
-      {/* <InfiniteScroll
-        pageStart={0}
-        loadMore={props.loadFunc}
-        hasMore={true}
-        useWindow={true}
-      > */}
+    <Wrapper>
       {props.data?.fetchBoardComments.boardreview?.map((el: IBoardreviewEl) => (
         <div key={el.id}>
           <CommunityCommentEdit
@@ -25,7 +24,6 @@ export default function CommunityCommentListUI(
           />
         </div>
       ))}
-      {/* </InfiniteScroll> */}
-    </div>
+    </Wrapper>
   );
 }
