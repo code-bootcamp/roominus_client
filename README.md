@@ -1,5 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&height=200&text=room:in us&animation=fadeIn&fontSize=100&fontAlign=50&fontAlignY=40&color=gradient)
-<div align=center>
+![header](https://capsule-render.vercel.app/api?type=waving&color=#7C21E1&height=200&section=header&text=roominus&fontSize=90&animation=fadeIn)
 
 
 
