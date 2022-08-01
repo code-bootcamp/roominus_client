@@ -81,8 +81,8 @@ export default function TopButton() {
       top: 0,
       behavior: "smooth",
     });
-    setScrollY(0); // ScrollY 의 값을 초기화
-    setBtnStatus(false); // BtnStatus의 값을 false로 바꿈 => 버튼 숨김
+    // setScrollY(0); // ScrollY 의 값을 초기화
+    // setBtnStatus(false); // BtnStatus의 값을 false로 바꿈 => 버튼 숨김
   };
 
   useEffect(() => {
