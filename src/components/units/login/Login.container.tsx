@@ -95,7 +95,8 @@ export default function Login() {
         timer: 1000,
         backdrop: false,
       });
-      router.push("/home");
+      // router.push("/home");
+      router.back();
     } catch (error) {
       Swal.fire({
         title: "로그인에 실패하였습니다",
