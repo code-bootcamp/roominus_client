@@ -30,7 +30,6 @@ export default function CafeListUIPage(props: ICafeListUIProps) {
     searchInputRef.current.value = "";
   }, [props.data?.fetchCafes]);
 
-  console.log(props.data);
   return (
     <S.Container>
       <S.SearchWrapper>
