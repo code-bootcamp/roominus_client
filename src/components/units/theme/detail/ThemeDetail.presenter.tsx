@@ -53,7 +53,11 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
               장르 : {props.data?.fetchTheme.genre?.name}
               <S.ThemeRank>
                 난이도 :
-                <Rate disabled value={props.data?.fetchTheme.rank} />
+                <Rate
+                  disabled
+                  value={props.data?.fetchTheme.rank}
+                  style={{ color: "#7556ee" }}
+                />
               </S.ThemeRank>
             </S.RankTimeBox>
             <S.LimitBox>

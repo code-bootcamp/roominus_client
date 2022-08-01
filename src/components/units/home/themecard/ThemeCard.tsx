@@ -14,18 +14,22 @@ export default function ThemeCardComponent(props: any) {
           <S.Theme src={props.el?.mainImg}>
             <S.Rank>
               <S.Ranktext>난이도</S.Ranktext>
-              <S.Star disabled defaultValue={props.el?.rank} />
+              <S.Star
+                disabled
+                value={props.el?.rank}
+                style={{ color: "#7556ee" }}
+              />
             </S.Rank>
             <S.GenreTag>#{props.el?.genre.name}</S.GenreTag>
           </S.Theme>
           <S.ThemeBack src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/theme/card-back_ef6jjd.png">
             <S.ThemeTitle>{props.el?.title}</S.ThemeTitle>
             <S.ThemeInfo>
-              정원 1~2인
+              이용인원 ~ {props.el?.peoplelimit}명
               <br />
-              나이제한 {props.el?.agelimit}
+              나이제한 {props.el?.agelimit}세
               <br />
-              요금 20,000원
+              <S.ThemeIntroTitle>`{props.el?.intro_title}`</S.ThemeIntroTitle>
             </S.ThemeInfo>
           </S.ThemeBack>
         </S.Card>
