@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         ></meta>
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dop5piuwp/image/upload/v1658995604/public/layout/new_logo_y9nz8m.png"
+          content="https://res.cloudinary.com/dop5piuwp/image/upload/v1659332034/public/layout/ogLogo_on7nht.jpg"
         ></meta>
       </Head>
       <RecoilRoot>

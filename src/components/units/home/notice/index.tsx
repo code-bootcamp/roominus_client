@@ -7,19 +7,17 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  font-size: 1.3em;
+  justify-content: space-around;
   border-top: 1.5px solid #4a00e0e7;
   border-bottom: 1.5px solid #4a00e0e7;
   text-align: center;
-  color: #999;
-  font-size: 1.3em;
 
   @media ${breakPoints.tablet} {
-    gap: 6em;
+    font-size: 1.1em;
   }
 
   @media ${breakPoints.mobile} {
-    gap: 1em;
     font-size: 1em;
   }
 `;
@@ -28,22 +26,27 @@ const Flip = styled.div`
   height: 50px;
   overflow: hidden;
 
+  @media ${breakPoints.tablet} {
+    height: 45px;
+  }
+
   @media ${breakPoints.mobile} {
-    height: 40px;
+    height: 45px;
   }
 
   > div > div {
-    padding-bottom: 1em;
-    padding-top: 0.5em;
+    padding-bottom: 0.7em;
     padding-left: 1em;
-    padding-right: 1em;
-    margin-bottom: 50px;
+    margin-bottom: 3em;
     display: inline-block;
     color: #26282c;
+
+    @media ${breakPoints.tablet} {
+      padding-bottom: 1.7em;
+    }
+
     @media ${breakPoints.mobile} {
-      padding-top: 0.2em;
-      padding-bottom: 1.8em;
-      margin-bottom: 40x;
+      padding-bottom: 2.5em;
     }
   }
 
@@ -93,19 +96,16 @@ const Flip = styled.div`
 const ContentBox = styled.div`
   width: 30em;
 
-  @media ${breakPoints.tablet} {
-    width: 15em;
-  }
-
   @media ${breakPoints.mobile} {
-    width: 12em;
+    width: 13em;
   }
 `;
 const Contents = styled.div`
   text-align: left;
-  white-space: nowrap;
   width: 100%;
 `;
+
+const Date = styled.div``;
 
 export default function Notice() {
   return (
