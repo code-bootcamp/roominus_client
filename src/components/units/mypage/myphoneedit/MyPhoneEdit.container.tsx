@@ -181,11 +181,14 @@ export default function MyPhoneEdit() {
           },
         });
         const userId = result.data.fetchUserLoggedIn.id;
+        const password = result.data.fetchUserLoggedIn.password;
+
         if (sessionStorage.getItem("#NL")) {
           await updateNormalUsergql({
             variables: {
               userId,
               updateUserInput: {
+                password,
                 phone: data.phoneNumber,
               },
             },

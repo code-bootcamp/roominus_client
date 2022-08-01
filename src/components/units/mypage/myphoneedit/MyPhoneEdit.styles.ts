@@ -180,6 +180,10 @@ export const TimeOut = styled.span`
 export const Error = styled.span`
   color: red;
   font-size: 1em;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 export const ButtonWrapper = styled.div`
