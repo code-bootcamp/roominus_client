@@ -15,9 +15,9 @@
 
 |   이름    |   버전  |
 | :-------- | :------ |
-| `NestJS`  | 8.0     |
-| `MySQL`   | 2.3.3   |
-| `GraphQL` | 10.0.13 |
-| `Redis`   | 3.1.1   |
-| `TypeORM` | 0.2.45  |
-| `GCP`     |         |
+| `React`   | 17.0.2  |
+| `Node`    | 16.15   |
+| `TypeScript`|       |
+| `AWS`     |         |
+| `eslint`  |         |
+| `prettier`|         |
