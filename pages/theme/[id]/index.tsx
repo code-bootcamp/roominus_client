@@ -72,6 +72,7 @@ export default function ThemeDetailPage() {
       themeId: router.query.id,
     },
   });
+  console.log("0", isReviewer);
 
   useEffect(() => {
     fetchThemeReviews?.fetchThemeReviews.filter(
@@ -80,6 +81,7 @@ export default function ThemeDetailPage() {
       ? setIsReviewer(false)
       : setIsReviewer(true);
 
+    console.log("1", isReviewer);
     // 댓글 작성한 적이 있으면 댓글 다는 권한 false로 변경
 
     if (
@@ -90,13 +92,17 @@ export default function ThemeDetailPage() {
     ) {
       setIsReviewer(false);
     }
+    console.log("2", isReviewer);
 
     // 예약한 내역이 없으면 댓글 다는 권한 false로 변경
 
     if (!userInfo.id) setIsReviewer(false);
+    console.log("3", isReviewer);
+
     // 비로그인 회원이면 권한 false로 변경
   }, [fetchThemeReviews?.fetchThemeReviews]);
 
+  console.log("최종", isReviewer);
   return (
     <>
       <ThemeDetail />

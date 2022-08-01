@@ -48,8 +48,8 @@ export const Door = styled.div`
   }
   overflow: hidden;
   /* background-color: #fffbcb; */
-  background: url("https://res.cloudinary.com/dop5piuwp/image/upload/v1658992045/public/main/doorback_hsnc16.jpg")
-    center/cover;
+  /* background: url("https://res.cloudinary.com/dop5piuwp/image/upload/v1658992045/public/main/doorback_hsnc16.jpg")
+    center/cover; */
   :before,
   :after {
     content: "";
@@ -65,14 +65,14 @@ export const Door = styled.div`
 
   :before {
     border: #26282c;
-    background-color: #26282c;
+    background-color: white;
     background-size: cover;
     opacity: 95%;
   }
 
   :after {
     border: #26282c;
-    background-color: #26282c;
+    background-color: white;
     background-size: cover;
     opacity: 95%;
 
@@ -96,17 +96,17 @@ export const Neon = styled.div`
   font-family: "GowunBatang-Regular";
   max-width: 767;
   font-size: 3vw;
-  color: #fffbcb;
+  color: #c8bc35;
   animation: neon 2s ease-out alternate infinite forwards;
   @keyframes neon {
     0%,
     100% {
-      text-shadow: 0 0 0.1vw #fffbcb, 0 0 3vw #fffbcb, 0 0 10vw #fffbcb,
+      text-shadow: 0 0 0.1vw #fff36b 0 0 3vw #fff36b, 0 0 10vw #fff36b,
         0 0 0.4vw #fed128;
     }
     50% {
-      text-shadow: 0 0 0.5vw #fffbcb, 0 0 1.5vw #fffbcb, 0 0 5vw #fffbcb,
-        0 0 5vw #fffbcb, 0 0 0.2vw #fffbcb;
+      text-shadow: 0 0 0.5vw #fff36b, 0 0 1.5vw #fff36b, 0 0 5vw #fff36b,
+        0 0 5vw #fff36b, 0 0 0.2vw #fff36b;
     }
   }
 
@@ -132,7 +132,6 @@ interface IOpenDoorProps {
 export default function OpenDoor(props: IOpenDoorProps) {
   return (
     <DoorWrapper onClick={props.onClickDoor}>
-      {/* <SlidingDoors></SlidingDoors> */}
       <DoorBox>
         <Door></Door>
       </DoorBox>
