@@ -98,6 +98,17 @@ export default function Payment(props: IPaymentProps) {
               timer: 1500,
               backdrop: false,
             });
+            console.log(error);
+            console.log(
+              props.ThemeMenuId,
+              props.cafeId,
+              props.reservationDate,
+              props.memo,
+              props.peopleNumber,
+              rsp.imp_uid,
+              props.totalPrice,
+              Number(props.usePoint)
+            );
             router.push("/theme");
           }
         } else {

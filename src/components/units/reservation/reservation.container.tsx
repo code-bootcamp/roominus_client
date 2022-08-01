@@ -25,7 +25,7 @@ export default function Reservation() {
   const [selectTime, setSelectTime] = useState("");
 
   const [peopleNumber, setPeopleNumber] = useState(0);
-  const [usePoint, setUsePoint] = useState(userInfo.point);
+  const [usePoint, setUsePoint] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [memo, setMemo] = useState("");
   const [checked, setChecked] = useState(false);
@@ -153,7 +153,7 @@ export default function Reservation() {
   // 포인트하고 최종 결제 금액 천천히 바뀌게
   const getDebounce = _.debounce((data) => {
     setUsePoint(Number(data));
-  }, 500);
+  }, 800);
 
   // 포인트
   const onChangePoint = (event: ChangeEvent<HTMLInputElement>) => {
@@ -181,7 +181,7 @@ export default function Reservation() {
     setCafeId("");
     setReservationDate("");
     setPeopleNumber(0);
-    setUsePoint(userInfo.point);
+    setUsePoint(0);
     setTime("");
     setPickTheme("");
   };
