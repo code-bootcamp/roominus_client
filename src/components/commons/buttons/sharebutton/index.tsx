@@ -78,7 +78,6 @@ export default function ShareButton() {
   // window 객체에서 현재 url 가져오기
   useEffect(() => {
     const currentUrl = window.location.href;
-    console.log(currentUrl);
     setCurrentUrl(currentUrl);
   }, []);
 
