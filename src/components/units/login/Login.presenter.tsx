@@ -6,7 +6,13 @@ import { ILoginUIProps } from "./Login.types";
 export default function LoginUI(props: ILoginUIProps) {
   return (
     <S.Wrapper>
-      <S.Title>로그인</S.Title>
+      <S.Title>
+        방탈출 통합 예약 서비스
+        <img
+          src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/signup/textlogo_ge1no7.png"
+          style={{ width: "10em" }}
+        />
+      </S.Title>
       <S.Form onSubmit={props.handleSubmit(props.onSubmitLogin)}>
         <S.IDBoxes>
           <S.IDdBox>

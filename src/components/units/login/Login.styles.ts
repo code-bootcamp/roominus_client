@@ -22,6 +22,10 @@ export const Title = styled.h1`
   font-size: 2.8em;
   margin-bottom: 1.5em;
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ba9fe6;
 `;
 export const Form = styled.form`
   width: 40%;
