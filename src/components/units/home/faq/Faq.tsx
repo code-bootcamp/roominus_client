@@ -7,24 +7,20 @@ const FAQ = () => {
   const onChange = (key: string | string[]) => {};
 
   return (
-    <Collapse
-      defaultActiveKey={["1"]}
-      onChange={onChange}
-      style={{ fontSize: "1.2em" }}
-    >
+    <Collapse defaultActiveKey={["1"]} onChange={onChange}>
       <Panel
         header="룸인어스란?"
         key="1"
         style={{
           fontWeight: 500,
           backgroundColor: "#F2EBF5",
-          fontSize: "1.2em",
+          fontSize: "1.1em",
         }}
       >
         <p
           style={{
             fontSize: "1.1em",
-            padding: "0.7em 1.5em",
+            padding: "0.5em",
             fontWeight: 400,
             marginBottom: "0em",
           }}
@@ -40,13 +36,13 @@ const FAQ = () => {
         style={{
           fontWeight: 500,
           backgroundColor: "#F2EBF5",
-          fontSize: "1.2em",
+          fontSize: "1.1em",
         }}
       >
         <p
           style={{
             fontSize: "1.1em",
-            padding: "0.7em 1.5em",
+            padding: "0.5em",
             fontWeight: 400,
             marginBottom: "0em",
           }}
@@ -61,13 +57,13 @@ const FAQ = () => {
         style={{
           fontWeight: 500,
           backgroundColor: "#F2EBF5",
-          fontSize: "1.2em",
+          fontSize: "1.1em",
         }}
       >
         <p
           style={{
             fontSize: "1.1em",
-            padding: "0.7em 1.5em",
+            padding: "0.5em",
             fontWeight: 400,
             marginBottom: "0em",
           }}

@@ -48,31 +48,24 @@ export const MenuInfoWrapper = styled.div`
 export const MenuWrapper = styled.ul`
   display: flex;
   justify-content: center;
+  gap: 3em;
+
+  @media ${breakPoints.mobile} {
+    gap: 1em;
+  }
 `;
 
 export const Menu = styled.li`
-  margin-right: 20px;
-  padding-right: 16px;
   cursor: pointer;
-
+  margin: 0;
+  padding: 0;
   font-weight: 600;
   font-size: 1.3em;
-
-  @media ${breakPoints.tablet} {
-    margin-right: 1em;
-  }
 
   @media ${breakPoints.mobile} {
     text-align: center;
     text-align: center;
-    font-size: 0.8em;
-    border-right: 1px solid black;
-
-    &:last-of-type {
-      padding: 0;
-      margin: 0;
-      border: none;
-    }
+    font-size: 1em;
   }
 `;
 
@@ -175,7 +168,7 @@ export const Logo = styled.img`
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
-    width: 7em;
+    width: 8em;
   }
 `;
 
