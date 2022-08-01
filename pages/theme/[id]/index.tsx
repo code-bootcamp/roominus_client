@@ -81,28 +81,25 @@ export default function ThemeDetailPage() {
       ? setIsReviewer(false)
       : setIsReviewer(true);
 
-    console.log("1", isReviewer);
     // 댓글 작성한 적이 있으면 댓글 다는 권한 false로 변경
 
     if (
       data?.fetchReservationsUser.filter(
         (ele: IFetchReservationData) =>
           ele.theme_menu.theme?.id === router.query.id
-      ).length === (0 || undefined)
+      ).length === 0
     ) {
       setIsReviewer(false);
     }
-    console.log("2", isReviewer);
 
     // 예약한 내역이 없으면 댓글 다는 권한 false로 변경
 
     if (!userInfo.id) setIsReviewer(false);
-    console.log("3", isReviewer);
 
     // 비로그인 회원이면 권한 false로 변경
   }, [fetchThemeReviews?.fetchThemeReviews]);
 
-  console.log("최종", isReviewer);
+  console.log("최종1", isReviewer);
   return (
     <>
       <ThemeDetail />
