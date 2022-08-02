@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 80%;
@@ -7,23 +8,43 @@ export const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   margin: auto;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+    font-size: 0.5em;
+  }
 `;
 export const Title = styled.h1`
-  margin-top: 1em;
   font-size: 2.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    font-size: 4em;
+  }
 `;
 export const Form = styled.form`
   width: 60%;
+  height: 28em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    width: 60%;
+    height: 38em;
+  }
 `;
 export const NameBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 2em;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+    margin-top: 0em;
+  }
 `;
 export const Name = styled.div`
   font-size: 1.2em;
@@ -42,6 +63,10 @@ export const PhoneNoBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+    margin: auto;
+  }
 `;
 export const PhoneNo = styled.div`
   font-size: 1.2em;
@@ -60,6 +85,10 @@ export const PasswordVerificationBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+    width: 140%;
+  }
 `;
 export const PasswordVerification = styled.div`
   font-size: 1.2em;
@@ -76,7 +105,13 @@ export const PassWordBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 2em;
   margin-bottom: 2em;
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+    margin-top: 0em;
+    width: 140%;
+  }
 `;
 export const PassWord = styled.div`
   font-size: 1.2em;
@@ -108,4 +143,30 @@ export const ImportantInfos = styled.span`
 export const Error = styled.div`
   color: red;
   font-size: 1em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 0.7em;
+  }
+`;
+export const IDcheckBtn = styled.button`
+  width: 140%;
+  height: 3.5em;
+  border-radius: 15px;
+  border: none;
+  background-color: #4a00e0e7;
+  color: #ffffff;
+  cursor: pointer;
+  :hover {
+    background: linear-gradient(
+      90deg,
+      rgba(142, 45, 226, 1) 30%,
+      rgba(74, 0, 224, 1) 100%
+    );
+  }
+  font-weight: 500;
+  @media ${breakPoints.mobile} {
+    width: 140%;
+    height: 3.5em;
+    font-size: 2em;
+  }
 `;

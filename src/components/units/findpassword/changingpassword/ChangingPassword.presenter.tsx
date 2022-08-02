@@ -1,7 +1,6 @@
 import * as S from "./ChangingPassword.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import WebPurpleLoginButton from "../../../commons/buttons/buttonDesktop/WebPurpleLoginButton";
 import { IChangingPasswordUIProps } from "./ChangingPassword.types";
 export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
   return (
@@ -98,7 +97,7 @@ export default function ChangingPasswordUI(props: IChangingPasswordUIProps) {
           </S.InputBoxes>
           <S.Error>{props.formState.errors.password2?.message}</S.Error>
         </S.PasswordVerificationBox>
-        <WebPurpleLoginButton type="submit" title="비밀번호 변경" />
+        <S.IDcheckBtn>비밀번호 변경</S.IDcheckBtn>
       </S.Form>
     </S.Wrapper>
   );
