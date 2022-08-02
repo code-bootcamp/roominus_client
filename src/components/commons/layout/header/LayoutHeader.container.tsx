@@ -11,7 +11,6 @@ import Swal from "sweetalert2";
 export default function LayoutHeader() {
   const router = useRouter();
   const [activedMenu, setActivedMenu] = useState("");
-  const [isToggled, setIsToggled] = useState(false);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
   const client = useApolloClient();
@@ -56,13 +55,7 @@ export default function LayoutHeader() {
 
       const activedMenu = event.target.id;
       setActivedMenu(activedMenu);
-
-      setIsToggled(!isToggled);
     }
-  };
-
-  const onClickToggled = () => {
-    setIsToggled(!isToggled);
   };
 
   useEffect(() => {
@@ -75,8 +68,6 @@ export default function LayoutHeader() {
     <LayoutHeaderUI
       onClickMenu={onClickMenu}
       activedMenu={activedMenu}
-      isToggled={isToggled}
-      onClickToggled={onClickToggled}
       onClickLogout={onClickLogout}
     />
   );

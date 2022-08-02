@@ -30,8 +30,9 @@ interface IKakaoMapProps {
 
 export default function KakaoMap(props: IKakaoMapProps) {
   //지도
-  if (props.data?.fetchCafe?.address_detail) {
-    useEffect(() => {
+
+  useEffect(() => {
+    if (props.data?.fetchCafe?.address_detail) {
       const script = document.createElement("script");
       script.src =
         "//dapi.kakao.com/v2/maps/sdk.js?appkey=1988a9a8f46853586b98dd3981a6b87e&autoload=false&libraries=services";
@@ -80,8 +81,8 @@ export default function KakaoMap(props: IKakaoMapProps) {
           );
         });
       };
-    }, [props.data?.fetchCafe?.address_detail]);
-  }
+    }
+  }, [props.data?.fetchCafe?.address_detail]);
 
   return <Map id="map"></Map>;
 }

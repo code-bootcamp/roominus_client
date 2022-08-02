@@ -1,4 +1,3 @@
-// import moment from "moment";
 import { useQuery } from "@apollo/client";
 import { ChangeEvent, useEffect, useState } from "react";
 import ReservationUI from "./reservation.present";
@@ -15,8 +14,6 @@ import _ from "lodash";
 import { getToday, getMyTime } from "../../commons/getDate";
 
 export default function Reservation() {
-  // const [inputValue, setInputValue] = useState(moment().format("YYYY-MM-DD"));
-
   const [userInfo] = useRecoilState(userInfoState);
   const [pickTheme, setPickTheme] = useRecoilState(userPickThemeState);
 
@@ -28,7 +25,7 @@ export default function Reservation() {
   const [selectTime, setSelectTime] = useState("");
 
   const [peopleNumber, setPeopleNumber] = useState(0);
-  const [usePoint, setUsePoint] = useState(userInfo.point);
+  const [usePoint, setUsePoint] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [memo, setMemo] = useState("");
   const [checked, setChecked] = useState(false);
@@ -76,7 +73,6 @@ export default function Reservation() {
   const onChangeDate = (date: string) => {
     const selectDate = dayjs(date).format("YYYY-MM-DD");
     setReservationDate(selectDate);
-    console.log(reservationDate);
   };
 
   // 현재 테마 메뉴 리스트에 있는 모든 타임을 부르고, 중복된 시간을 제외한 유일한 타임테이블만 보여준다
@@ -157,7 +153,7 @@ export default function Reservation() {
   // 포인트하고 최종 결제 금액 천천히 바뀌게
   const getDebounce = _.debounce((data) => {
     setUsePoint(Number(data));
-  }, 500);
+  }, 800);
 
   // 포인트
   const onChangePoint = (event: ChangeEvent<HTMLInputElement>) => {
@@ -185,7 +181,7 @@ export default function Reservation() {
     setCafeId("");
     setReservationDate("");
     setPeopleNumber(0);
-    setUsePoint(userInfo.point);
+    setUsePoint(0);
     setTime("");
     setPickTheme("");
   };

@@ -1,21 +1,14 @@
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-
 import { useForm } from "react-hook-form";
-import { useRecoilState } from "recoil";
 import Swal from "sweetalert2";
-import { userInfoState } from "../../../../../commons/store";
 import ThemeCommentWriteUI from "./ThemeCommentWrite.presenter";
 import {
   CREATE_THEME_REVIEW,
-  FETCH_RESERVATIONS_USER,
   FETCH_THEME_REVIEWS,
   UPDATE_THEME_REVIEW,
 } from "./ThemeCommentWrite.queries";
 import {
-  IFetchReservationData,
-  IFetchThemeReviewsData,
   IThemeCommentWriteProps,
   IUpdateThemeReviewInput,
   IWriteCommentData,
@@ -23,23 +16,9 @@ import {
 
 export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
   const router = useRouter();
-  const [isReviewer, setIsReviewer] = useState(true);
-  const [userInfo] = useRecoilState(userInfoState);
 
   const [createThemeReview] = useMutation(CREATE_THEME_REVIEW);
   const [updateThemeReview] = useMutation(UPDATE_THEME_REVIEW);
-
-  const { data } = useQuery(FETCH_RESERVATIONS_USER, {
-    variables: {
-      page: 1,
-    },
-  });
-
-  const { data: fetchThemeReviews } = useQuery(FETCH_THEME_REVIEWS, {
-    variables: {
-      themeId: router.query.id,
-    },
-  });
 
   const { register, handleSubmit, formState, setValue, trigger, resetField } =
     useForm({
@@ -51,7 +30,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       Swal.fire({
         icon: "warning",
         title: "만족도를 선택해주세요!",
-        backdrop: "false",
+        backdrop: false,
       });
       return;
     }
@@ -59,7 +38,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       Swal.fire({
         icon: "warning",
         title: "내용을 입력해주세요!",
-        backdrop: "false",
+        backdrop: false,
       });
       return;
     }
@@ -67,7 +46,7 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
       Swal.fire({
         icon: "warning",
         title: "난이도는 어땠는지 선택해주세요!",
-        backdrop: "false",
+        backdrop: false,
       });
       return;
     }
@@ -122,39 +101,18 @@ export default function ThemeCommentWrite(props: IThemeCommentWriteProps) {
     }
   };
 
-  useEffect(() => {
-    if (
-      data?.fetchReservationsUser.filter(
-        (ele: IFetchReservationData) =>
-          ele.theme_menu.theme?.id === router.query.id
-      ).length === 0
-    )
-      setIsReviewer(false);
-    // 예약한 내역이 없으면 댓글 다는 권한 false로 변경
-
-    fetchThemeReviews?.fetchThemeReviews.filter(
-      (el: IFetchThemeReviewsData) => el.user.id === userInfo.id
-    ).length >= 1
-      ? setIsReviewer(false)
-      : setIsReviewer(true);
-
-    // 댓글 작성한 적이 있으면 댓글 다는 권한 false로 변경
-  }, [fetchThemeReviews?.fetchThemeReviews]);
-
   return (
-    isReviewer && (
-      <ThemeCommentWriteUI
-        register={register}
-        handleSubmit={handleSubmit}
-        formState={formState}
-        setValue={setValue}
-        trigger={trigger}
-        onClickSubmit={onClickSubmit}
-        onClickUpdate={onClickUpdate}
-        isEdit={props.isEdit}
-        setIsEdit={props.setIsEdit}
-        el={props.el}
-      />
-    )
+    <ThemeCommentWriteUI
+      register={register}
+      handleSubmit={handleSubmit}
+      formState={formState}
+      setValue={setValue}
+      trigger={trigger}
+      onClickSubmit={onClickSubmit}
+      onClickUpdate={onClickUpdate}
+      isEdit={props.isEdit}
+      setIsEdit={props.setIsEdit}
+      el={props.el}
+    />
   );
 }

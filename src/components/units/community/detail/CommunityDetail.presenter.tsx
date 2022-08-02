@@ -17,10 +17,23 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
     <S.Container>
       <S.Wrapper>
         <S.NameDateBox>
-          <S.WriterName>{props.data?.fetchBoard.user?.name}</S.WriterName>
-          <S.Date>{getDateBefore(props.data?.fetchBoard.createdAt)}</S.Date>
+          <div>
+            <S.WriterName>{props.data?.fetchBoard.user?.name}</S.WriterName>
+            <S.Date>{getDateBefore(props.data?.fetchBoard.createdAt)}</S.Date>
+          </div>
+          {props.data?.fetchBoard.user?.name !== props.userInfo?.name ? (
+            ""
+          ) : (
+            <S.EditDeleteBox>
+              <div onClick={props.onClickEdit}>수정</div>
+              <div onClick={props.onClickDelete}>삭제</div>
+            </S.EditDeleteBox>
+          )}
         </S.NameDateBox>
-        <S.ImageBox src={props.data?.fetchBoard.mainImg} />
+        <S.ImageBox
+          src={props.data?.fetchBoard.mainImg}
+          onError={props.handleImgError}
+        />
         <S.PickAndShareBox>
           <S.PickBox>
             {props.like ? (
@@ -40,7 +53,6 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
           ))}
         </S.Tag>
         <S.BoardContents>
-          {/* {props.data?.fetchBoard.content} */}
           {typeof window !== "undefined" ? (
             <div
               style={{}}
@@ -63,7 +75,7 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
           {props.data?.fetchBoard.user?.name !== props.userInfo?.name ? (
             ""
           ) : (
-            <S.ButtonBox>
+            <S.UserButtonBox>
               <WebPurpleButton
                 title="수정하기"
                 onClick={props.onClickEdit}
@@ -76,7 +88,7 @@ export default function CommunityDetailUI(props: ICommunityDetailProps) {
                 type={undefined}
                 value={""}
               ></WebPurpleButton>
-            </S.ButtonBox>
+            </S.UserButtonBox>
           )}
         </S.ButtonBox>
       </S.Wrapper>

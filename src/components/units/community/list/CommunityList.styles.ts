@@ -154,6 +154,7 @@ export const BoardName = styled.h3`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  letter-spacing: -1px;
 `;
 
 export const PickBox = styled.div`

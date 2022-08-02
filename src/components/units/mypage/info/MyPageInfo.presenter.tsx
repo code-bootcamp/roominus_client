@@ -54,8 +54,9 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.TitleRow>
                 <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
                 <S.ColumnHeaderTitle>예약 테마</S.ColumnHeaderTitle>
-                <S.ColumnHeaderBasic>매장</S.ColumnHeaderBasic>
+                <S.ColumnHeaderName>매장</S.ColumnHeaderName>
                 <S.ColumnHeaderBasic>방문일</S.ColumnHeaderBasic>
+                <S.ColumnHeaderBasic>방문시간</S.ColumnHeaderBasic>
                 <S.ColumnHeaderBasic>예약 상태</S.ColumnHeaderBasic>
               </S.TitleRow>
               {props?.reservation?.fetchReservationsUser
@@ -69,8 +70,11 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                     >
                       {el.theme_menu.theme.title}
                     </S.ColumnTitle>
-                    <S.ColumnBasic>{el.cafe.name}</S.ColumnBasic>
+                    <S.ColumnName>{el.cafe.name}</S.ColumnName>
                     <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
+                    <S.ColumnBasic>
+                      {el.theme_menu.reservation_time}
+                    </S.ColumnBasic>
                     <S.ColumnBasic>{el.status}</S.ColumnBasic>
                   </S.Row>
                 ))}
@@ -91,24 +95,28 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.TableTop />
               <S.TitleRow>
                 <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
-                <S.ColumnHeaderBasic>결제번호</S.ColumnHeaderBasic>
-                <S.ColumnHeaderBasic>결제 가격</S.ColumnHeaderBasic>
-                <S.ColumnHeaderBasic>사용</S.ColumnHeaderBasic>
-                <S.ColumnHeaderBasic>적립예정</S.ColumnHeaderBasic>
+                <S.ColumnHeaderTitle>결제 테마</S.ColumnHeaderTitle>
+                <S.ColumnHeaderPoint>결제 가격</S.ColumnHeaderPoint>
+                <S.ColumnHeaderPoint>사용</S.ColumnHeaderPoint>
+                <S.ColumnHeaderPoint>적립 예정</S.ColumnHeaderPoint>
+                <S.ColumnHeaderBasic>주문자</S.ColumnHeaderBasic>
               </S.TitleRow>
               {props?.payments?.fetchPayments
                 .slice(0, 3)
                 .map((el: IFetchPayments, index: number) => (
                   <S.Row key={el.id}>
                     <S.ColumnNumber>{index + 1}</S.ColumnNumber>
-                    <S.ColumnBasic>
-                      {el.imp_uid.split("_")[1].slice(0, 5)}
-                    </S.ColumnBasic>
-                    <S.ColumnBasic>{el.price}</S.ColumnBasic>
-                    <S.ColumnBasic>{el.usepoint}원</S.ColumnBasic>
-                    <S.ColumnBasic>
-                      {Math.ceil(el.price * 0.03)}원
-                    </S.ColumnBasic>
+                    <S.ColumnTitle>
+                      {el.reservation.theme_menu.theme.title}
+                    </S.ColumnTitle>
+                    <S.ColumnPoint>{el.price.toLocaleString()}원</S.ColumnPoint>
+                    <S.ColumnPoint>
+                      {el.usepoint.toLocaleString()}원
+                    </S.ColumnPoint>
+                    <S.ColumnPoint>
+                      {Math.ceil(el.price * 0.03).toLocaleString()}원
+                    </S.ColumnPoint>
+                    <S.ColumnBasic>{el.user.name}</S.ColumnBasic>
                   </S.Row>
                 ))}
               <S.TableBottom />

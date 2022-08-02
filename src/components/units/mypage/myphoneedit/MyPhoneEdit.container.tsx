@@ -159,7 +159,7 @@ export default function MyPhoneEdit() {
       } catch (error) {}
     } else if (smsToken !== tokenInput) {
       Swal.fire({
-        title: "토큰이 올바르지 않습니다.",
+        title: "인증번호가 올바르지 않습니다.",
         icon: "warning",
         showConfirmButton: false,
         timer: 1000,
@@ -181,11 +181,14 @@ export default function MyPhoneEdit() {
           },
         });
         const userId = result.data.fetchUserLoggedIn.id;
+        const password = result.data.fetchUserLoggedIn.password;
+
         if (sessionStorage.getItem("#NL")) {
           await updateNormalUsergql({
             variables: {
               userId,
               updateUserInput: {
+                password,
                 phone: data.phoneNumber,
               },
             },

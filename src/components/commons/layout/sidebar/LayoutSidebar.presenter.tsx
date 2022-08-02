@@ -34,7 +34,9 @@ export default function LayoutSideBarUI(props: ISideBarUIProps) {
           <p>회원님</p>
           <p>안녕하세요!</p>
           <p>
-            적립금 <S.UserPoint>{props.userInfo?.point}</S.UserPoint>원
+            적립금{" "}
+            <S.UserPoint>{props.userInfo?.point.toLocaleString()}</S.UserPoint>
+            원
           </p>
         </S.HeaderBox>
         <S.MenuBoxs>

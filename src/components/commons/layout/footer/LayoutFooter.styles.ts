@@ -4,7 +4,8 @@ import { GithubOutlined } from "@ant-design/icons";
 
 export const Container = styled.div`
   width: 100%;
-  height: 22em;
+  height: 25em;
+  margin-top: 3em;
 
   display: flex;
   justify-content: center;
@@ -17,14 +18,15 @@ export const Container = styled.div`
   @media ${breakPoints.mobile} {
     display: flex;
     justify-content: center;
-    height: 36em;
+    height: 40em;
+    border-top: 0.5px solid #a3a8b7;
   }
 `;
 
 export const Wrapper = styled.div`
   width: 100%;
   max-width: 1200px;
-  padding-top: 2em;
+  padding-top: 1.5em;
   display: flex;
   text-align: left;
   justify-content: center;
@@ -46,32 +48,24 @@ export const MenuInfoWrapper = styled.div`
 export const MenuWrapper = styled.ul`
   display: flex;
   justify-content: center;
-  height: 5em;
+  gap: 3em;
+
+  @media ${breakPoints.mobile} {
+    gap: 1em;
+  }
 `;
 
 export const Menu = styled.li`
-  margin-right: 20px;
-  padding-right: 16px;
   cursor: pointer;
-
+  margin: 0;
+  padding: 0;
   font-weight: 600;
   font-size: 1.3em;
-
-  @media ${breakPoints.tablet} {
-    margin-right: 1em;
-  }
 
   @media ${breakPoints.mobile} {
     text-align: center;
     text-align: center;
-    font-size: 0.8em;
-    border-right: 1px solid black;
-
-    &:last-of-type {
-      padding: 0;
-      margin: 0;
-      border: none;
-    }
+    font-size: 1em;
   }
 `;
 
@@ -128,10 +122,9 @@ export const DividedLine = styled.div`
 `;
 
 export const InfoRightBox = styled.div`
-  padding: 10px;
+  padding: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   width: 100%;
   float: right;
 `;
@@ -175,7 +168,7 @@ export const Logo = styled.img`
   cursor: pointer;
 
   @media ${breakPoints.mobile} {
-    width: 7em;
+    width: 8em;
   }
 `;
 

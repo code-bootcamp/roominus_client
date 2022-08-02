@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-import { CaretUpOutlined } from "@ant-design/icons";
+import { ArrowUpOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/media";
+import { useRouter } from "next/router";
 
 const TopBtnBox = styled.div`
   z-index: 999;
@@ -13,8 +14,8 @@ const TopBtnBox = styled.div`
   right: 0.1em;
   bottom: 0.1em;
   transform: translate(-20%, -20%);
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: linear-gradient(90deg, #7c21e1 0%, #4a00e0 100%);
   border-radius: 50%;
   border: none;
@@ -27,27 +28,41 @@ const TopBtnBox = styled.div`
   @media ${breakPoints.tablet} {
     width: 2em;
     height: 2em;
-    right: 0;
-    bottom: 0;
+    right: 0.2em;
+    bottom: 3em;
   }
   @media ${breakPoints.mobile} {
-    right: 0;
-    bottom: 2em;
-
-    width: 3rem;
-    height: 3rem;
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 3em;
+    transform: translate(-20%, -20%);
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    right: 0.2em;
   }
 `;
 
-const TopBtn = styled(CaretUpOutlined)``;
+const TopBtn = styled(ArrowUpOutlined)``;
 
 const TopBtnActive = styled.button`
   display: none;
 `;
 
+const HIDDEN_TOP_BUTTON = ["/community"];
+
 export default function TopButton() {
+  const router = useRouter();
+  const [windowSize, setWindowSize] = useState(false);
   const [ScrollY, setScrollY] = useState(0);
   const [btnStatus, setBtnStatus] = useState(false); // 버튼 상태
+
+  const isHiddenTopButton = HIDDEN_TOP_BUTTON.includes(router.asPath);
 
   const handleFollow = () => {
     setScrollY(window.pageYOffset);
@@ -66,8 +81,8 @@ export default function TopButton() {
       top: 0,
       behavior: "smooth",
     });
-    setScrollY(0); // ScrollY 의 값을 초기화
-    setBtnStatus(false); // BtnStatus의 값을 false로 바꿈 => 버튼 숨김
+    // setScrollY(0); // ScrollY 의 값을 초기화
+    // setBtnStatus(false); // BtnStatus의 값을 false로 바꿈 => 버튼 숨김
   };
 
   useEffect(() => {
@@ -80,17 +95,54 @@ export default function TopButton() {
     };
   });
 
+  const handleResize = () => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    } else {
+      setWindowSize(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 767) {
+      setWindowSize(true);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowSize]);
+
   return (
     <>
-      {btnStatus ? (
+      {windowSize ? (
         <>
-          <TopBtnBox onClick={handleTop}>
-            <TopBtn />
-          </TopBtnBox>
+          {" "}
+          {!isHiddenTopButton && btnStatus ? (
+            <>
+              <TopBtnBox onClick={handleTop}>
+                <TopBtn />
+              </TopBtnBox>
+            </>
+          ) : (
+            <>
+              <TopBtnActive></TopBtnActive>
+            </>
+          )}
         </>
       ) : (
         <>
-          <TopBtnActive></TopBtnActive>
+          {btnStatus ? (
+            <>
+              <TopBtnBox onClick={handleTop}>
+                <TopBtn />
+              </TopBtnBox>
+            </>
+          ) : (
+            <>
+              <TopBtnActive></TopBtnActive>
+            </>
+          )}
         </>
       )}
     </>

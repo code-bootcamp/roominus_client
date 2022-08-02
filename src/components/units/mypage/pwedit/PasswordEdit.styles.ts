@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.main`
   display: flex;
@@ -13,48 +14,63 @@ export const Title = styled.h1``;
 
 export const Form = styled.form`
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 3em;
+`;
+
+export const PasswordBoxes = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  padding-top: 3em;
+
+  gap: 5em;
 `;
-export const Error = styled.div`
-  color: red;
-  font-size: 1em;
-`;
-export const TitleBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  line-height: 1em;
-`;
-export const ImportantInfos = styled.span`
-  margin-left: 0.3em;
-  font-size: 1.4em;
-  color: red;
-`;
-export const PasswordBoxes = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.6em;
-`;
+
 export const PasswordBox = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 5em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 `;
 
-export const PasswordTitle = styled.span`
-  font-size: 1.3em;
-  margin-bottom: 1em;
+export const Error = styled.div`
+  color: red;
+  width: 40%;
+  font-size: 1em;
+  text-align: start;
 `;
+export const TitleBox = styled.div`
+  width: 40%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & p {
+    color: red;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
+
 export const PasswordInputBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   position: relative;
-  width: 100%;
+  width: 40%;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 export const PasswordInput = styled.input`
   width: 100%;
@@ -67,11 +83,15 @@ export const PasswordInput = styled.input`
   padding: 0em 0.8em 0em 0.8em;
 `;
 
-export const WarningBox = styled.div`
+export const CheckBox = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #a3a8b71f;
-  padding: 0.5em 0.5em 0.5em 0.5em;
+  justify-content: center;
+  width: 40%;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 export const WarningMessage = styled.div`
   font-size: 0.8em;
@@ -113,4 +133,5 @@ export const ButtonBox = styled.div`
   justify-content: center;
   gap: 2em;
   padding-top: 10em;
+  width: 100%;
 `;

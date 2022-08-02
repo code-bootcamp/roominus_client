@@ -103,32 +103,75 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
         </S.Wrapper>
         <S.Hamburger>
           <Menu width={"70%"} right styles={styles} disableOverlayClick>
-            <Link href={"/home"}>
-              <S.MenuMainItem id="home" className="menu-item">
-                메인
-              </S.MenuMainItem>
-            </Link>
+            {/* <Link href={"/home"}> */}
+            <S.MenuMainItem id="home" className="menu-item" href="/home">
+              메인
+            </S.MenuMainItem>
+            {/* </Link> */}
+
+            <S.LoginBox>
+              {!accessToken && (
+                <S.LandSBox>
+                  {" "}
+                  {/* <Link href={"/login"}> */}
+                  <S.LogInandSignBtn>
+                    <a id="login" className="menu-item" href="/login">
+                      로그인
+                    </a>
+                  </S.LogInandSignBtn>
+                  {/* </Link> */}
+                  {/* <Link href={"/signup/choice"}> */}
+                  <S.LogInandSignBtn>
+                    <a id="signup" className="menu-item" href="/signup/choice">
+                      회원가입
+                    </a>
+                  </S.LogInandSignBtn>
+                  {/* </Link> */}
+                </S.LandSBox>
+              )}
+
+              {accessToken && (
+                // <Link href={"/home"}>
+                <S.LogOutBtn
+                  id="logout"
+                  className="menu-item"
+                  onClick={props.onClickLogout}
+                >
+                  로그아웃
+                </S.LogOutBtn>
+                // </Link>
+              )}
+            </S.LoginBox>
+
             <S.MenuBox>
-              <Link href={"/cafe"}>
-                <S.MyMenues id="home" className="menu-item">
-                  매장
-                </S.MyMenues>
-              </Link>
-              <Link href={"/theme"}>
-                <S.MyMenues id="home" className="menu-item">
-                  테마
-                </S.MyMenues>
-              </Link>
-              <Link href={"/reservation"}>
-                <S.MyMenues id="reservation" className="menu-item">
-                  예약
-                </S.MyMenues>
-              </Link>
-              <Link href={"/community"}>
-                <S.MyMenues id="community" className="menu-item">
-                  커뮤니티
-                </S.MyMenues>
-              </Link>
+              {/* <Link href={"/cafe"}> */}
+              <S.MyMenues id="home" className="menu-item" href="/cafe">
+                매장
+              </S.MyMenues>
+              {/* </Link> */}
+              {/* <Link href={"/theme"}> */}
+              <S.MyMenues id="home" className="menu-item" href="/theme">
+                테마
+              </S.MyMenues>
+              {/* </Link> */}
+              {/* <Link href={"/reservation"}> */}
+              <S.MyMenues
+                id="reservation"
+                className="menu-item"
+                href="/reservation"
+              >
+                예약
+              </S.MyMenues>
+              {/* </Link> */}
+              {/* <Link href={"/community"}> */}
+              <S.MyMenues
+                id="community"
+                className="menu-item"
+                href="/community"
+              >
+                커뮤니티
+              </S.MyMenues>
+              {/* </Link> */}
               {!openMypageOp && (
                 <S.MyMenues
                   id="mypage"
@@ -149,70 +192,68 @@ export default function LayoutHeaderUI(props: IHeaderUIProps) {
               )}{" "}
               {openMypageOp && (
                 <S.MyMenubox>
-                  <Link href={"/mypage"}>
-                    <S.MyMenues id="mypage" className="menu-item">
-                      내 정보
-                    </S.MyMenues>
-                  </Link>
-                  <Link href={"/mypage/mypick"}>
-                    <S.MyMenues id="mypick" className="menu-item">
-                      테마 찜목록
-                    </S.MyMenues>
-                  </Link>
-                  <Link href={"/mypage/myreview"}>
-                    <S.MyMenues id="myreview" className="menu-item">
-                      내가 쓴 리뷰
-                    </S.MyMenues>
-                  </Link>
-                  <Link href={"/mypage/myboard"}>
-                    <S.MyMenues id="myboard" className="menu-item">
-                      내가 쓴 게시물
-                    </S.MyMenues>
-                  </Link>
-                  <Link href={"/mypage/history"}>
-                    <S.MyMenues id="history" className="menu-item">
-                      최근 예약 내역
-                    </S.MyMenues>
-                  </Link>
-                  <Link href={"/mypage/reward"}>
-                    <S.MyMenues id="reward" className="menu-item">
-                      최근 예약 내역
-                    </S.MyMenues>
-                  </Link>
-                  <Link href={"/mypage/phoneedit"}>
-                    <S.MyMenues id="myinfoedit" className="menu-item">
-                      회원정보 수정
-                    </S.MyMenues>
-                  </Link>
+                  {/* <Link href={"/mypage"}> */}
+                  <S.MyMenues id="mypage" className="menu-item" href="/mypage">
+                    내 정보
+                  </S.MyMenues>
+                  {/* </Link> */}
+                  {/* <Link href={"/mypage/mypick"}> */}
+                  <S.MyMenues
+                    id="mypick"
+                    className="menu-item"
+                    href="/mypage/mypick"
+                  >
+                    테마 찜목록
+                  </S.MyMenues>
+                  {/* </Link> */}
+                  {/* <Link href={"/mypage/myreview"}> */}
+                  <S.MyMenues
+                    id="myreview"
+                    className="menu-item"
+                    href="/mypage/myreview"
+                  >
+                    내가 쓴 리뷰
+                  </S.MyMenues>
+                  {/* </Link> */}
+                  {/* <Link href={"/mypage/myboard"}> */}
+                  <S.MyMenues
+                    id="myboard"
+                    className="menu-item"
+                    href="/mypage/myboard"
+                  >
+                    내가 쓴 게시물
+                  </S.MyMenues>
+                  {/* </Link> */}
+                  {/* <Link href={"/mypage/history"}> */}
+                  <S.MyMenues
+                    id="history"
+                    className="menu-item"
+                    href="/mypage/history"
+                  >
+                    최근 예약 내역
+                  </S.MyMenues>
+                  {/* </Link> */}
+                  {/* <Link href={"/mypage/reward"}> */}
+                  <S.MyMenues
+                    id="reward"
+                    className="menu-item"
+                    href="/mypage/reward"
+                  >
+                    최근 결제 내역
+                  </S.MyMenues>
+                  {/* </Link> */}
+                  {/* <Link href={"/mypage/phoneedit"}> */}
+                  <S.MyMenues
+                    id="myinfoedit"
+                    className="menu-item"
+                    href="/mypage/phoneedit"
+                  >
+                    회원정보 수정
+                  </S.MyMenues>
+                  {/* </Link> */}
                 </S.MyMenubox>
               )}
             </S.MenuBox>
-
-            <S.FooterBox>
-              {!accessToken && (
-                <>
-                  {" "}
-                  <Link href={"/login"}>
-                    <S.MyMenues id="login" className="menu-item">
-                      로그인
-                    </S.MyMenues>
-                  </Link>
-                  <Link href={"/signup"}>
-                    <S.MyMenues id="signup" className="menu-item">
-                      회원가입
-                    </S.MyMenues>
-                  </Link>
-                </>
-              )}
-
-              {accessToken && (
-                <Link href={"/home"}>
-                  <S.MyMenues id="logout" className="menu-item">
-                    로그아웃
-                  </S.MyMenues>
-                </Link>
-              )}
-            </S.FooterBox>
           </Menu>
         </S.Hamburger>
       </S.Container>

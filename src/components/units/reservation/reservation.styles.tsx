@@ -34,13 +34,6 @@ export const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
   }
-
-  @media ${breakPoints.mobile} {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 export const BackBox = styled.div`
@@ -54,7 +47,7 @@ export const BackBox = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 
   & span {
@@ -114,10 +107,6 @@ export const Total = styled.div`
   @media ${breakPoints.tablet} {
     font-size: 1.5em;
   }
-
-  @media ${breakPoints.mobile} {
-    font-size: 1.5em;
-  }
 `;
 
 export const InformationUse = styled.div`
@@ -129,14 +118,27 @@ export const InformationUse = styled.div`
 
   border: 1px solid #a3a8b7;
   padding-left: 1em;
+
+  @media ${breakPoints.mobile} {
+    & p {
+      margin: 0.3em;
+    }
+  }
 `;
 
 export const CheckBox = styled.div`
   display: flex;
-  font-size: 1.3em;
   font-weight: 700;
   padding-bottom: 0.5em;
   gap: 0.5em;
+
+  & input[type="checkbox"] {
+    zoom: 1.3;
+    accent-color: #4a00e0e7;
+  }
+  & span {
+    font-size: 1.3em;
+  }
 `;
 
 export const Point = styled.div`

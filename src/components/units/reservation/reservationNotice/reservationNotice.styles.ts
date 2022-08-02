@@ -16,16 +16,20 @@ export const TitleBox = styled.div`
   gap: 0.5em;
   width: 100%;
   height: 4em;
-  margin-top: 1em;
-
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
+  margin: 1em 0em;
 
   & h1 {
     font-weight: 700;
     font-size: 1.5em;
     margin: 0;
+  }
+
+  @media ${breakPoints.mobile} {
+    margin: 0;
+
+    & h1 {
+      font-size: 1.3em;
+    }
   }
 `;
 

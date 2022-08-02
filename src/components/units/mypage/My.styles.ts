@@ -28,7 +28,7 @@ export const CountBox = styled.div`
 `;
 export const Title = styled.h1`
   @media ${breakPoints.mobile} {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 `;
 
@@ -76,17 +76,13 @@ export const Row = styled.li`
 `;
 
 export const ColumnHeaderNumber = styled.div`
-  width: 10%;
+  width: 15%;
   text-align: center;
 `;
 
 export const ColumnHeaderBasic = styled.div`
   width: 30%;
   text-align: center;
-
-  @media ${breakPoints.mobile} {
-    width: 20%;
-  }
 `;
 
 export const ColumnHeaderTitle = styled.div`
@@ -95,24 +91,33 @@ export const ColumnHeaderTitle = styled.div`
 `;
 
 export const ColumnNumber = styled.div`
-  width: 10%;
+  width: 15%;
   text-align: center;
 `;
 
 export const ColumnBasic = styled.div`
   width: 30%;
   text-align: center;
-
-  @media ${breakPoints.mobile} {
-    width: 20%;
-  }
 `;
 
 export const ColumnTitle = styled.div`
   width: 40%;
-  text-align: center;
+  /* text-align: center; */
   cursor: pointer;
   font-weight: 700;
+  padding-left: 10px;
+`;
+
+export const ColumnPoint = styled.div`
+  width: 30%;
+  text-align: end;
+  padding-right: 10px;
+`;
+
+export const FooterBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
 `;
 
 export const PaginationsWrapper = styled.div`
@@ -123,7 +128,6 @@ export const PaginationsWrapper = styled.div`
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 2em;
 `;
 
 // history
@@ -139,4 +143,6 @@ export const Calendar = styled(CalendarMonthOutlinedIcon)`
     cursor: pointer;
     color: #b6a2ea;
   }
+
+  color: black;
 `;

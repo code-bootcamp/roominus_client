@@ -90,11 +90,12 @@ export default function MyPhoneEditUI(props: IMyPhoneEditUIProps) {
                     확인
                   </S.ConfirmBtn>
                 </S.VerificationInputBox>
+                <S.Error>{props.formState.errors.phoneNumber?.message}</S.Error>
               </>
               <S.ButtonWrapper>
                 <WebBlackButton title="취소하기" type="reset"></WebBlackButton>
                 <WebPurpleButton
-                  onClick={props.onClickPhonNumberEdit}
+                  // onClick={props.onClickPhonNumberEdit}
                   title="변경하기"
                   type="submit"
                 ></WebPurpleButton>

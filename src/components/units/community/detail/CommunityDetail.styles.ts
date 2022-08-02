@@ -60,6 +60,12 @@ export const NameDateBox = styled.div`
   margin-bottom: 1em;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 export const WriterName = styled.h1`
@@ -82,10 +88,27 @@ export const Date = styled.span`
   color: #a3a8b7;
 `;
 
+export const EditDeleteBox = styled.div`
+  > div {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    gap: 1em;
+
+    > div {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+`;
+
 export const PickAndShareBox = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 export const PickBox = styled.div`
   height: 3em;
   display: flex;
@@ -156,10 +179,20 @@ export const ButtonBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 
   @media ${breakPoints.mobile} {
     gap: 0.7em;
+  }
+`;
+
+export const UserButtonBox = styled.div`
+  gap: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media ${breakPoints.mobile} {
+    display: none;
   }
 `;
 

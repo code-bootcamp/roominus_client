@@ -38,8 +38,8 @@ export default function CommunityNewUI(props: ICommunityNewUIProps) {
                   </S.InfoTitle>
                   <S.Error>{props.formState.errors.title?.message}</S.Error>
                   <S.InfoInput
-                    maxLength={10}
-                    placeholder="제목을 입력해주세요(10자 이내)"
+                    maxLength={15}
+                    placeholder="제목을 입력해주세요(15자 이내)"
                     {...props.register("title")}
                     defaultValue={props.editData?.fetchBoard.title}
                   />

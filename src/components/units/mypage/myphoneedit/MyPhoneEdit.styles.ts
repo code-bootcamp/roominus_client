@@ -5,6 +5,10 @@ export const Container = styled.main`
   width: 100%;
   min-height: 50em;
   padding: 2em 2em 2em 2em;
+
+  @media ${breakPoints.mobile} {
+    padding: 0.5em;
+  }
 `;
 
 export const TitleBox = styled.div`
@@ -16,6 +20,10 @@ export const TitleBox = styled.div`
 export const Title = styled.h1`
   margin: 0;
   width: 100%;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
 `;
 
 export const DeleteBox = styled.div`
@@ -131,10 +139,6 @@ export const VerificationNoBox = styled.div`
   align-items: center;
   text-align: center;
   position: relative;
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.8em;
-  }
 `;
 export const VerificationNoInput = styled.input`
   width: 100%;
@@ -176,6 +180,10 @@ export const TimeOut = styled.span`
 export const Error = styled.span`
   color: red;
   font-size: 1em;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 export const ButtonWrapper = styled.div`

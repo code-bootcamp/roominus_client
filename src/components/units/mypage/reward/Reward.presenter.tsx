@@ -17,37 +17,41 @@ export default function RewardUI(props: IRewardUIProps) {
         <S.TableTop />
         <S.TitleRow>
           <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
-          <S.ColumnHeaderBasic>결제번호</S.ColumnHeaderBasic>
+          <S.ColumnHeaderTitle>결제 테마</S.ColumnHeaderTitle>
           <S.ColumnHeaderBasic>결제 가격</S.ColumnHeaderBasic>
-          <S.ColumnHeaderBasic>사용</S.ColumnHeaderBasic>
-          <S.ColumnHeaderBasic>적립예정</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>사용 포인트</S.ColumnHeaderBasic>
+          <S.ColumnHeaderBasic>적립 예정</S.ColumnHeaderBasic>
         </S.TitleRow>
         {props.data?.fetchPayments.map((el: IFetchPayments, index: number) => (
           <S.Row key={el.id}>
             <S.ColumnNumber>{index + 1}</S.ColumnNumber>
-            <S.ColumnBasic>
-              {el.imp_uid.split("_")[1].slice(0, 5)}
-            </S.ColumnBasic>
-            <S.ColumnBasic>{el.price}</S.ColumnBasic>
-            <S.ColumnBasic>{el.usepoint}원</S.ColumnBasic>
-            <S.ColumnBasic>{Math.ceil(el.price * 0.03)}원</S.ColumnBasic>
+            <S.ColumnTitle onClick={props.onClickReservationDetail}>
+              {el.reservation.theme_menu.theme.title}
+            </S.ColumnTitle>
+            <S.ColumnPoint>{el.price.toLocaleString()}원</S.ColumnPoint>
+            <S.ColumnPoint>{el.usepoint.toLocaleString()}원</S.ColumnPoint>
+            <S.ColumnPoint>
+              {Math.ceil(el.price * 0.03).toLocaleString()}원
+            </S.ColumnPoint>
           </S.Row>
         ))}
         <S.TableBottom />
       </S.Wrapper>{" "}
-      <S.PaginationsWrapper>
-        <Paginations01
-          count={props.count?.fetchPaymentsCount}
-          refetch={props.refetch}
-        />
-      </S.PaginationsWrapper>
-      <S.ButtonBox>
-        <Link href={"/mypage"}>
-          <a>
-            <WebBlackButton type="button" title="돌아가기" />
-          </a>
-        </Link>
-      </S.ButtonBox>
+      <S.FooterBox>
+        <S.PaginationsWrapper>
+          <Paginations01
+            count={props.count?.fetchPaymentsCount}
+            refetch={props.refetch}
+          />
+        </S.PaginationsWrapper>
+        <S.ButtonBox>
+          <Link href={"/mypage"}>
+            <a>
+              <WebBlackButton type="button" title="돌아가기" />
+            </a>
+          </Link>
+        </S.ButtonBox>
+      </S.FooterBox>
     </S.Container>
   );
 }

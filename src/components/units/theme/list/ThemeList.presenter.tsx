@@ -118,7 +118,11 @@ export default function ThemeListUI(props: IThemeListProps) {
                       <S.Theme src={el.mainImg}>
                         <S.Rank>
                           <S.Ranktext>난이도</S.Ranktext>
-                          <S.Star disabled defaultValue={el.rank} />
+                          <S.Star
+                            disabled
+                            value={el.rank}
+                            style={{ color: "#7556ee" }}
+                          />
                         </S.Rank>
                         <S.GenreTag>#{el?.genre.name}</S.GenreTag>
                       </S.Theme>
@@ -129,7 +133,9 @@ export default function ThemeListUI(props: IThemeListProps) {
                           <br />
                           나이제한 {el.agelimit}세
                           <br />
-                          {el.intro_title}
+                          <S.ThemeIntroTitle>
+                            `{el.intro_title}`
+                          </S.ThemeIntroTitle>
                         </S.ThemeInfo>
                       </S.ThemeBack>
                     </S.Card>

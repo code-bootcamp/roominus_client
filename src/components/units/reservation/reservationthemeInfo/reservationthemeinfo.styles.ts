@@ -8,7 +8,7 @@ import RunCircleOutlinedIcon from "@mui/icons-material/RunCircleOutlined";
 export const ImageInfoBox = styled.main`
   width: 100%;
   display: flex;
-  gap: 1em;
+  gap: 3em;
 
   @media ${breakPoints.mobile} {
     display: flex;
@@ -28,7 +28,7 @@ export const Image = styled.img`
   width: 27em;
   height: 35em;
   border-radius: 15px;
-  box-shadow: 10px 10px 39px rgba(183, 96, 202, 0.25);
+  box-shadow: 10px 10px 30px rgba(183, 96, 202, 0.25);
 
   @media ${breakPoints.tablet} {
     width: 18em;
@@ -46,12 +46,16 @@ export const InfoBox = styled.div`
   padding: 0.5em;
   width: 100%;
   height: 35em;
-  gap: 1.5em;
+  gap: 1em;
 
   & h2 {
     font-style: oblique;
     font-size: 1.5em;
     margin: 0;
+
+    @media ${breakPoints.mobile} {
+      font-size: 1.3em;
+    }
   }
 
   @media ${breakPoints.mobile} {
@@ -144,12 +148,16 @@ export const ThemeCafe = styled.span`
 export const LimitBox = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media ${breakPoints.mobile} {
+    gap: 1em;
+  }
 `;
 
 export const ContentBox = styled.div`
   border: 1px solid #a3a8b7;
   width: 10em;
-  height: 7em;
+  height: 6em;
 
   display: flex;
   flex-direction: column;
@@ -184,7 +192,7 @@ export const TimeBoxes = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  gap: 1em;
   & h3 {
     font-size: 1.5em;
 
@@ -197,7 +205,7 @@ export const TimeBoxes = styled.div`
 export const Box = styled.div`
   width: 100%;
   display: grid;
-  gap: 0.5em;
+  gap: 1em;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
 

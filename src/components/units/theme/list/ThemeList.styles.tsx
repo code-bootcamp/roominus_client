@@ -50,6 +50,7 @@ export const SearchBox = styled.div`
 `;
 
 export const SearchInput = styled.input`
+  width: 100%;
   background: transparent;
   border: transparent;
   padding: 10px 15px;
@@ -195,9 +196,13 @@ export const ThemeInfo = styled.div`
   font-size: 1.3em;
   color: white;
   text-align: left;
-  font-weight: 700;
+  font-weight: 500;
+  font-family: "GowunDodum-Regular", serif;
 `;
 
+export const ThemeIntroTitle = styled.div`
+  font-style: italic;
+`;
 export const GenreTag = styled.div`
   width: 5em;
   height: 30px;
@@ -213,7 +218,6 @@ export const GenreTag = styled.div`
 `;
 
 export const Star = styled(Rate)`
-  color: #7556ee;
   font-size: 15px;
   padding: 0px;
 `;

@@ -143,7 +143,7 @@ export const RankButton = styled.input`
 
 export const CommentBox = styled.div`
   padding: 1em;
-  gap: 0.9em;
+  gap: 1em;
   max-width: 860px;
   width: 100%;
   display: flex;
@@ -151,9 +151,10 @@ export const CommentBox = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-export const CommentWriter = styled.h3`
+export const CommentWriter = styled.div`
+  min-width: 50px;
+  text-align: center;
   font-size: 1em;
-  margin-right: 5px;
 `;
 export const CommentInput = styled.input`
   max-width: 630px;
@@ -172,4 +173,5 @@ export const SubmitButton = styled.button`
   background-color: #4a00e0;
   color: white;
   margin-left: 5px;
+  cursor: pointer;
 `;

@@ -116,7 +116,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                       format="YYYY-MM-DD"
                       maxDate={MaxDate}
                       fullWidth
-                      // required
+                      required
                       inputVariant="outlined"
                       margin="none"
                       autoOk={true}
@@ -128,7 +128,6 @@ export default function ReservationUI(props: IReservationUIProps) {
                       onChange={props.onChangeDate}
                       style={{ paddingBottom: "1.3em" }}
                       helperText="방문하실 날짜를 선택해주세요."
-
                       // rifmformatter={props.dateFormatter}
                       // keyboardbuttonprops={{
                       //   "aria-label": "change date",
@@ -205,12 +204,10 @@ export default function ReservationUI(props: IReservationUIProps) {
                     style={{ paddingBottom: "0.2em" }}
                     variant="outlined"
                     onWheel={(e) => (e.target as HTMLInputElement).blur()}
-                    // value={props?.usePoint ? props?.usePoint : "" || ""}
-                    defaultValue={props.max}
-                    value={props?.usePoint || ""}
                   />
                   <S.Point>
-                    현재 적립금 <span>{props.max}원</span> 사용 가능합니다.
+                    현재 적립금 <span>{props.max.toLocaleString()}원</span> 사용
+                    가능합니다.
                   </S.Point>
                 </div>
               )}
@@ -231,7 +228,7 @@ export default function ReservationUI(props: IReservationUIProps) {
                 // value={props?.memo ? props?.memo : "" || ""}
                 onChange={props.onChangeMemo}
                 style={{ paddingBottom: "1.3em" }}
-                helperText="예약자와 방문자가 다를 경우 방문자의 정보를 작성해주세요."
+                helperText="예약자와 방문자가 다를 경우 방문자 정보를 작성해주세요."
               />
             )}
 

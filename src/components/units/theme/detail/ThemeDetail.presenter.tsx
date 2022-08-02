@@ -12,39 +12,36 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
           <S.ThemeImg src={props.data?.fetchTheme?.mainImg} />
         </S.ThemeLeftBox>
         <S.ThemeRightBox>
-          <S.ThemeTitle>
-            {props.data?.fetchTheme.title}
-            <S.CafeTitle>| {props.data?.fetchTheme.cafe.name}</S.CafeTitle>
-          </S.ThemeTitle>
-
-          {props.love ? (
-            <FontAwesomeIcon
-              icon={faHeart}
-              style={{
-                fontSize: "2.5em",
-                color: "#E53935",
-                position: "absolute",
-                right: "5%",
-                top: "1%",
-                cursor: "pointer",
-              }}
-              onClick={props.onClickLove}
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={faHeart}
-              style={{
-                fontSize: "2.5em",
-                color: "#DAD6E1",
-                position: "absolute",
-                right: "5%",
-                top: "1%",
-                cursor: "pointer",
-              }}
-              onClick={props.onClickLove}
-            />
-          )}
-          <S.Like>{props.data?.fetchTheme.like}</S.Like>
+          <S.TitleLikeBox>
+            <S.ThemeTitle>
+              {props.data?.fetchTheme.title}
+              <S.CafeTitle>| {props.data?.fetchTheme.cafe.name}</S.CafeTitle>
+            </S.ThemeTitle>
+            <S.LikeBox>
+              {props.love ? (
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  style={{
+                    fontSize: "2.5em",
+                    color: "#E53935",
+                    cursor: "pointer",
+                  }}
+                  onClick={props.onClickLove}
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  style={{
+                    fontSize: "2.5em",
+                    color: "#DAD6E1",
+                    cursor: "pointer",
+                  }}
+                  onClick={props.onClickLove}
+                />
+              )}
+              <S.Like>{props.data?.fetchTheme.like}</S.Like>
+            </S.LikeBox>
+          </S.TitleLikeBox>
           <S.ThemeSubTitle>
             {props.data?.fetchTheme.intro_title}
           </S.ThemeSubTitle>
@@ -56,7 +53,11 @@ export default function ThemeDetailUI(props: IThemeDetailProps) {
               장르 : {props.data?.fetchTheme.genre?.name}
               <S.ThemeRank>
                 난이도 :
-                <Rate disabled value={props.data?.fetchTheme.rank} />
+                <Rate
+                  disabled
+                  value={props.data?.fetchTheme.rank}
+                  style={{ color: "#7556ee" }}
+                />
               </S.ThemeRank>
             </S.RankTimeBox>
             <S.LimitBox>

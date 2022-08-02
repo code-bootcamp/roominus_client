@@ -86,8 +86,10 @@ export const Check = styled.input`
   margin-right: 0.5em;
   width: 1em;
   height: 1em;
+  zoom: 1.3;
+  accent-color: #4a00e0e7;
   @media ${breakPoints.mobile} {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 `;
 export const CheckLabel = styled.span`
@@ -143,9 +145,11 @@ export const NecessityCheckBox = styled.input`
   margin-right: 0.5em;
   width: 1em;
   height: 1em;
+  zoom: 1.3;
+  accent-color: #4a00e0e7;
   @media ${breakPoints.mobile} {
-    width: 1.3em;
-    height: 1.3em;
+    width: 1em;
+    height: 1em;
   }
 `;
 export const NecessityCheckBoxTitle = styled.span`
@@ -204,9 +208,11 @@ export const OptionalCheckBox = styled.input`
   margin-right: 0.5em;
   width: 1em;
   height: 1em;
+  zoom: 1.3;
+  accent-color: #4a00e0e7;
   @media ${breakPoints.mobile} {
-    width: 1.3em;
-    height: 1.3em;
+    width: 1em;
+    height: 1em;
   }
 `;
 export const OptionalCheckBoxTitle = styled.span`

@@ -105,7 +105,8 @@ export const TableWrapper = styled.div`
 export const addButton = styled.button`
   border: none;
   background-color: white;
-  width: 4em;
+  width: 10em;
+  text-align: end;
 
   :hover {
     transform: translatex(0.3em);
@@ -113,7 +114,7 @@ export const addButton = styled.button`
   transition: all 250ms ease-in-out;
 
   @media ${breakPoints.mobile} {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 `;
 
@@ -169,43 +170,58 @@ export const Row = styled.li`
 `;
 
 export const ColumnHeaderNumber = styled.div`
-  width: 10%;
+  width: 13%;
   text-align: center;
 `;
 
 export const ColumnHeaderBasic = styled.div`
-  width: 30%;
+  width: 20%;
   text-align: center;
-
-  @media ${breakPoints.mobile} {
-    width: 20%;
-  }
 `;
 
 export const ColumnHeaderTitle = styled.div`
-  width: 40%;
+  width: 35%;
   text-align: center;
 `;
 
+export const ColumnHeaderName = styled.div`
+  width: 25%;
+  text-align: center;
+`;
+
+export const ColumnHeaderPoint = styled.div`
+  width: 20%;
+  text-align: center;
+`;
 export const ColumnNumber = styled.div`
-  width: 10%;
+  width: 13%;
   text-align: center;
-`;
-
-export const ColumnBasic = styled.div`
-  width: 30%;
-  text-align: center;
-
-  @media ${breakPoints.mobile} {
-    width: 20%;
-  }
 `;
 
 export const ColumnTitle = styled.div`
-  width: 40%;
+  width: 35%;
+  padding-left: 10px;
+
+  :hover {
+    cursor: pointer;
+    font-weight: 700;
+  }
+  font-size: 1.2em;
+`;
+
+export const ColumnName = styled.div`
+  width: 25%;
+  padding-left: 10px;
+`;
+export const ColumnBasic = styled.div`
+  width: 20%;
   text-align: center;
-  cursor: pointer;
-  font-weight: 700;
+`;
+
+export const ColumnPoint = styled.div`
+  width: 20%;
+  text-align: end;
+  padding-right: 10px;
 `;
 
 export const RowBox = styled.div`

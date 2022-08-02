@@ -44,10 +44,15 @@ export const Logo = styled.img`
   cursor: pointer;
   width: 13em;
   @media ${breakPoints.tablet} {
+    width: 20em;
     height: 3em;
     position: relative;
     top: 0.8em;
     left: 0em;
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 20em;
   }
 
   @media ${breakPoints.mobile} {
@@ -116,7 +121,8 @@ export const Hamburger = styled.div`
 `;
 
 export const MenuMainItem = styled.a`
-  font-size: 2em;
+  font-size: 1.8em;
+
   color: white;
 
   :hover {
@@ -137,17 +143,49 @@ export const MenuBox = styled.div`
 export const MyMenues = styled.a`
   color: #d1d1d1;
   margin-bottom: 0.8em;
-  margin-left: 1.5em;
+  margin-left: 1em;
+  font-size: 1.3em;
+
   :hover {
     color: #d1d1d1;
   }
+
+  color: white;
 `;
 
-export const FooterBox = styled.div``;
+export const LoginBox = styled.div`
+  margin-top: 1em;
+`;
 
-export const LogInandOutBtn = styled.button`
+export const LandSBox = styled.div`
+  display: flex;
+  gap: 1.5em;
+  width: 100%;
+`;
+
+export const LogInandSignBtn = styled.button`
   background-color: transparent;
-  border: none;
-  outline: none;
+
+  border: 1px solid white;
+
+  width: 50%;
+  height: 3em;
+  cursor: pointer;
+
+  a {
+    :hover {
+      color: white;
+    }
+    color: white;
+  }
+`;
+
+export const LogOutBtn = styled.button`
+  background-color: transparent;
+  border: 1px solid white;
+  width: 100%;
+  height: 3em;
+  color: white;
+
   cursor: pointer;
 `;

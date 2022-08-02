@@ -68,7 +68,7 @@ export default function ReservationThemeInfo(
           <S.ContentBox>
             <S.PeopleIcon fontSize="large" />
             <h4>수용인원</h4>
-            <h3>1 ~ {props.data?.fetchThemeMenus[0]?.theme?.peoplelimit}명</h3>
+            <h3>2 ~ {props.data?.fetchThemeMenus[0]?.theme?.peoplelimit}명</h3>
           </S.ContentBox>
         </S.LimitBox>
 

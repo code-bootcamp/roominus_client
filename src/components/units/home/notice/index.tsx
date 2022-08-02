@@ -1,124 +1,149 @@
 import styled from "@emotion/styled";
-import { useEffect, useRef, useState } from "react";
 import { breakPoints } from "../../../../commons/styles/media";
 
-const Container = styled.ul`
-  padding: 0px 30px;
-  /* padding: 0 3em; */
-  height: 50px;
-  height: 3.13em;
-  overflow: hidden;
-  border-top: 1px solid #4a00e0e7;
-  border-bottom: 1px solid #4a00e0e7;
-  font-size: 1.1em;
-
-  @media ${breakPoints.mobile} {
-    font-size: 0.9em;
-    padding: 0px 0.2em;
-  }
-`;
-
-const Content = styled.li`
-  height: 30px;
-  padding: 10px 0px 60px 0px;
-  line-height: 30px;
-  line-height: 1.88em;
+const Container = styled.div`
+  width: 100%;
 `;
 
 const Wrapper = styled.div`
-  transition: transform 2s;
-`;
-
-const NoticeBox = styled.div`
   display: flex;
-  gap: 10em;
+  font-size: 1.3em;
+  justify-content: space-around;
+  border-top: 1.5px solid #4a00e0e7;
+  border-bottom: 1.5px solid #4a00e0e7;
+  text-align: center;
 
-  & span {
+  @media ${breakPoints.tablet} {
     font-size: 1.1em;
   }
 
-  @media ${breakPoints.tablet} {
-    gap: 3em;
-  }
-
   @media ${breakPoints.mobile} {
-    gap: 1.5em;
+    font-size: 1em;
   }
 `;
 
-const Title = styled.div`
-  width: 55%;
-  font-size: 1.1em;
-  font-weight: 500;
+const Flip = styled.div`
+  height: 50px;
+  overflow: hidden;
 
   @media ${breakPoints.tablet} {
-    width: 60%;
+    height: 45px;
   }
 
   @media ${breakPoints.mobile} {
-    padding-left: 1.5em;
+    height: 45px;
+  }
+
+  > div > div {
+    padding-bottom: 0.7em;
+    padding-left: 1em;
+    margin-bottom: 3em;
+    display: inline-block;
+    color: #26282c;
+
+    @media ${breakPoints.tablet} {
+      padding-bottom: 1.7em;
+    }
+
+    @media ${breakPoints.mobile} {
+      padding-bottom: 2.5em;
+    }
+  }
+
+  div:first-child {
+    animation: show 13s linear infinite;
+  }
+
+  div div {
+  }
+
+  div:first-child div {
+    padding-top: 10px;
+  }
+
+  div:last-child div {
+    padding-top: 2em;
+  }
+
+  @keyframes show {
+    0% {
+      margin-top: -250px;
+    }
+    5% {
+      margin-top: -180px;
+    }
+    33% {
+      margin-top: -180px;
+    }
+    38% {
+      margin-top: -90px;
+    }
+    66% {
+      margin-top: -90px;
+    }
+    71% {
+      margin-top: 0px;
+    }
+    99.99% {
+      margin-top: 0px;
+    }
+    100% {
+      margin-top: -270px;
+    }
   }
 `;
+
+const ContentBox = styled.div`
+  width: 30em;
+
+  @media ${breakPoints.mobile} {
+    width: 13em;
+  }
+`;
+const Contents = styled.div`
+  text-align: left;
+  width: 100%;
+`;
+
+const Date = styled.div``;
 
 export default function Notice() {
-  const [idx, setIdx] = useState(0);
-  const idxRef = useRef(0);
-
-  const notice = [
-    {
-      no: 1,
-      header: "[안내]",
-      title: "8월 신용카드 무이자 할부 안내",
-      date: "2022-07-30",
-    },
-    {
-      no: 2,
-      header: "[점검]",
-      title: "8월 3일 시스템 점검 안내",
-      date: "2022-08-01",
-    },
-    {
-      no: 3,
-      header: "[안내]",
-      title: "8월 휴무 안내",
-      date: "2022-08-02",
-    },
-    {
-      no: 4,
-      header: "[수정]",
-      title: "개인정보 처리방침, 청소년 보호정책 개정안 공지",
-      date: "2022-08-03",
-    },
-    {
-      no: 5,
-      header: "[안내]",
-      title: "roominus 신규 제휴 문의 안내",
-      date: "2022-08-04",
-    },
-  ];
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      idxRef.current = (idxRef.current + 1) % notice.length;
-      setIdx(idxRef.current);
-    }, 4000);
-    return () => clearInterval(intervalId);
-  }, [notice.length]);
-
   return (
     <Container>
-      <Wrapper style={{ transform: `translateY(-${70 * idx}px)` }}>
-        {notice.map((el, idx) => {
-          return (
-            <Content key={idx}>
-              <NoticeBox>
-                <span>{el.header}</span>
-                <Title>{el.title}</Title>
-                <span>{el.date}</span>
-              </NoticeBox>
-            </Content>
-          );
-        })}
+      <Wrapper>
+        <Flip>
+          <div>
+            <div>[안내]</div>
+          </div>
+          <div>
+            <div>[안내]</div>
+          </div>
+          <div>
+            <div>[공지]</div>
+          </div>
+        </Flip>
+        <Flip>
+          <ContentBox>
+            <Contents>신용카드 무이자 할부 안내</Contents>
+          </ContentBox>
+          <ContentBox>
+            <Contents>8월 3일 시스템 점검 안내</Contents>
+          </ContentBox>
+          <ContentBox>
+            <Contents>8월 정기 휴무 안내</Contents>
+          </ContentBox>
+        </Flip>
+        <Flip>
+          <div>
+            <div>2022-08-03</div>
+          </div>
+          <div>
+            <div>2022-08-01</div>
+          </div>
+          <div>
+            <div>2022-07-30</div>
+          </div>
+        </Flip>
       </Wrapper>
     </Container>
   );

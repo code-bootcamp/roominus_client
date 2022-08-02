@@ -48,7 +48,7 @@ export default function Payment(props: IPaymentProps) {
   const router = useRouter();
 
   const requestPay = () => {
-    const IMP = window.IMP; // window는 생략 가능
+    const IMP = window.IMP;
     IMP.init("imp44516396");
 
     IMP.request_pay(
@@ -60,7 +60,7 @@ export default function Payment(props: IPaymentProps) {
         buyer_email: data?.fetchUserLoggedIn.email,
         buyer_name: data?.fetchUserLoggedIn.name,
         buyer_tel: data?.fetchUserLoggedIn.phone,
-        m_redirect_url: "http://localhost:3000/mypage",
+        m_redirect_url: "https://roominus.site/reservation",
       },
       async function (rsp: IRsp) {
         // callback
@@ -98,7 +98,7 @@ export default function Payment(props: IPaymentProps) {
               timer: 1500,
               backdrop: false,
             });
-            router.push("/theme");
+            router.push("/reservation");
           }
         } else {
           alert("다시 결제해주세요");
@@ -126,7 +126,6 @@ export default function Payment(props: IPaymentProps) {
         title={props.title}
         onClick={requestPay}
         type={props.type}
-        value={""}
       />
     </div>
   );
