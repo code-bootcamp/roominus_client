@@ -33,7 +33,7 @@ export default function Calendar() {
   return (
     <S.CalenderWrapper>
       <S.TitleBox>
-        <S.Title>나의 포토캘린더</S.Title>
+        <S.Title>나의 예약 캘린더</S.Title>
       </S.TitleBox>
 
       <RenderHeader

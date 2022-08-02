@@ -114,6 +114,12 @@ export const ColumnPoint = styled.div`
   padding-right: 10px;
 `;
 
+export const FooterBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+`;
+
 export const PaginationsWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -122,7 +128,6 @@ export const PaginationsWrapper = styled.div`
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 2em;
 `;
 
 // history

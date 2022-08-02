@@ -132,7 +132,7 @@ export const TicketBox = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 24em;
-    height: 34em;
+    height: 37em;
 
     &:before,
     &:after {
@@ -180,8 +180,8 @@ export const Text = styled.span`
 
   @media ${breakPoints.mobile} {
     width: 10em;
-    font-size: 2.3em;
-    transform: translate(10px, 70px) rotate(-40deg);
+    font-size: 2em;
+    transform: translate(30px, 70px) rotate(-40deg);
   }
 `;
 
@@ -189,25 +189,20 @@ export const ThemeTitleBox = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1em;
   padding-left: 1.8em;
-
-  & span {
-    color: #a3a8b7;
-    font-size: 1.3em;
-    font-weight: 700;
-
-    @media ${breakPoints.tablet} {
-      font-size: 0.9em;
-    }
-  }
 
   & h2 {
     font-size: 1.8em;
     font-weight: 700;
+    margin-top: 1em;
 
     @media ${breakPoints.tablet} {
       font-size: 1.5em;
+    }
+
+    @media ${breakPoints.mobile} {
+      font-size: 1.5em;
+      margin-top: 0em;
     }
   }
 `;
@@ -224,7 +219,11 @@ export const ThemeInfoBox = styled.div`
   font-size: 1.2em;
 
   @media ${breakPoints.tablet} {
-    gap: 0em;
+    gap: 0.1em;
+  }
+
+  @media ${breakPoints.mobile} {
+    gap: 0.5em;
   }
 `;
 
@@ -246,7 +245,6 @@ export const QRcodeBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5em;
 
   @media ${breakPoints.mobile} {
     gap: 0;

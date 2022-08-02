@@ -42,22 +42,24 @@ export default function MyReviewUI(props: IMyReviewUIProps) {
                 })}
               </S.ColumnBasic>
               <S.ColumnBasic>{el.star}</S.ColumnBasic>
-              <S.ColumnBasic>{getToday(el.createdAt)}</S.ColumnBasic>
+              <S.ColumnBasic>{el.createdAt.split("T")[0]}</S.ColumnBasic>
             </S.Row>
           )
         )}
         <S.TableBottom />
       </S.Wrapper>
-      <S.PaginationsWrapper>
-        <Paginations01 count={props.count} refetch={props.refetch} />
-      </S.PaginationsWrapper>
-      <S.ButtonBox>
-        <Link href={"/mypage"}>
-          <a>
-            <WebBlackButton type="button" title="돌아가기" />
-          </a>
-        </Link>
-      </S.ButtonBox>
+      <S.FooterBox>
+        <S.PaginationsWrapper>
+          <Paginations01 count={props.count} refetch={props.refetch} />
+        </S.PaginationsWrapper>
+        <S.ButtonBox>
+          <Link href={"/mypage"}>
+            <a>
+              <WebBlackButton type="button" title="돌아가기" />
+            </a>
+          </Link>
+        </S.ButtonBox>
+      </S.FooterBox>
     </S.Container>
   );
 }

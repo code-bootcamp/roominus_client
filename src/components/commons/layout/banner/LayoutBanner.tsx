@@ -67,6 +67,11 @@ export default function LayoutBanner() {
     { kor: "고객지원", eng: "Customer", page: "/customer" },
     { kor: "로그인", eng: "Login", page: "/login" },
     { kor: "회원가입", eng: "SignUp", page: "/signup" },
+    {
+      kor: "계정 정보 찾기",
+      eng: "Find Id & Password",
+      page: "/findidpassword",
+    },
     { kor: "관리자", eng: "Admin", page: "/admin" },
   ];
 

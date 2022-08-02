@@ -8,7 +8,7 @@ export default function FindIdUI(props: IFindIdUIProps) {
     <>
       {!props.isClickedsecond && (
         <S.Wrapper>
-          <S.Title>아이디 찾기 및 비밀번호 재설정</S.Title>
+          <S.Title>아이디 찾기</S.Title>
           <S.TabBtns>
             <S.TabFirst
               onClick={props.onClickShowContentsFirst}
