@@ -32,13 +32,12 @@ export default function ReservationSuccessUI(props: IReservationSuccessUI) {
             <S.DataBox>
               <S.ThemeTitleBox>
                 <h2>{props.data?.fetchReservation.theme_menu.theme.title}</h2>
-                <span>|</span>
-                <span>{props.data?.fetchReservation.cafe.name}</span>
               </S.ThemeTitleBox>
 
               <S.Text>room : in us</S.Text>
 
               <S.ThemeInfoBox>
+                <span>매장 | {props.data?.fetchReservation.cafe.name}</span>
                 <span>
                   참가 인원 |{" "}
                   {props.data?.fetchReservation.theme_menu.people_number}명

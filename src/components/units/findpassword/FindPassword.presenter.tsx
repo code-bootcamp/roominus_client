@@ -6,7 +6,7 @@ export default function FindPasswordUI(props: IFindPasswordUIProps) {
   return (
     <>
       <S.Wrapper>
-        <S.Title>아이디 찾기 및 비밀번호 재설정</S.Title>
+        <S.Title>비밀번호 재설정</S.Title>
         <S.TabBtns>
           <S.TabFirst
             onClick={props.onClickShowContentsFirst}

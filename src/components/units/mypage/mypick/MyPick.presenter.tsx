@@ -70,19 +70,21 @@ export default function MyPickUI(props: IMyPickUIProps) {
           </>
         )}
       </S.Wrapper>
-      <S.PaginationsWrapper>
-        <Paginations02
-          count={props.count?.fetchUserLikeThemesCount}
-          refetch={props.refetch}
-        />
-      </S.PaginationsWrapper>
-      <S.ButtonBox>
-        <Link href={"/mypage"}>
-          <a>
-            <WebBlackButton type="button" title="목록으로" />
-          </a>
-        </Link>
-      </S.ButtonBox>
+      <S.FooterBox>
+        <S.PaginationsWrapper>
+          <Paginations02
+            count={props.count?.fetchUserLikeThemesCount}
+            refetch={props.refetch}
+          />
+        </S.PaginationsWrapper>
+        <S.ButtonBox>
+          <Link href={"/mypage"}>
+            <a>
+              <WebBlackButton type="button" title="목록으로" />
+            </a>
+          </Link>
+        </S.ButtonBox>
+      </S.FooterBox>
     </S.Container>
   );
 }

@@ -55,7 +55,6 @@ export const InfoBox = styled.div`
 
     @media ${breakPoints.mobile} {
       font-size: 1.3em;
-      text-align: center;
     }
   }
 
@@ -193,7 +192,7 @@ export const TimeBoxes = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  gap: 1em;
   & h3 {
     font-size: 1.5em;
 
@@ -206,7 +205,7 @@ export const TimeBoxes = styled.div`
 export const Box = styled.div`
   width: 100%;
   display: grid;
-  gap: 0.5em;
+  gap: 1em;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
 
