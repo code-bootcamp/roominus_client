@@ -1,14 +1,6 @@
 
 # 🌙 room:in us
 
-
-
-<div align="center">
-![로고](https://user-images.githubusercontent.com/104378330/182285673-8c51ac23-b74a-45db-a8c1-7074b93f4406.jpeg)
-
-</div>
-
-
 #### 1. 서비스 소개
 
 > 
@@ -22,7 +14,46 @@
 > ⛄️ 방탈출 카페 운영자들에겐 좀 더 확실한 예약 서비스를 제공합니다.
 
 #### 2. 팀원 소개
+___
+![fronted](https://user-images.githubusercontent.com/104378330/182298195-37e90f9d-bd2c-4de0-a2c5-09bbf6d13644.png)
+![backed](https://user-images.githubusercontent.com/104378330/182298394-de643761-2ff3-4d69-9682-e8fa1628400d.png)
 
+
+##### Frontend 손은채
+
+- Works : `**PM**` `**Git**` `**ReservationPage**` `**MyPage**` `**MainPage`  `Layout`** `**TouchUp on CustomerCentric** **Functions**`
+- Contact :
+    - Email: dev.eunchae@gmail.com
+    - Github: [https://github.com/dev-eun-chae](https://github.com/dev-eun-chae)
+    - LinkedIn: [https://www.linkedin.com/in/deveunchae/](https://www.linkedin.com/in/deveunchae/)
+    - Blog: [https://velog.io/@dev_eunchae](https://velog.io/@dev_eunchae)
+    
+##### Frontend 김지수
+
+- Works : `**Notion**` `**Login/Logout Page**` `**SignUpPage**` `**FindId&PassWordPage**` `**MyPage**` `**MainPage**`
+- Contact :
+    - Email: cw3598rt@gmail.com
+    - Github: [https://github.com/cw3598rt](https://github.com/cw3598rt)
+    - LinkedIn: [https://www.linkedin.com/in/jisoo-k-b68127123/](https://www.linkedin.com/in/jisoo-k-b68127123/)
+    - Blog(TIL): [https://cw3598rt.notion.site/463896b9b88542e8a9cc9ff4a9d60c8f](https://www.notion.so/463896b9b88542e8a9cc9ff4a9d60c8f)
+    - Blog(Project): [https://cw3598rt.notion.site/066d4be9901c4b86ad8c0b66f07edda7](https://www.notion.so/066d4be9901c4b86ad8c0b66f07edda7)
+
+##### Frontend 신하니
+
+- Works : `**Presentation(Speech)**` `**ThemePage**` `**LandingPage**` `**DesignTouchup**` `**MainPage**`
+- Contact :
+    - Email: hanieatingcarrot@gmail.com
+    - Github: [https://github.com/haneebunny](https://github.com/haneebunny)
+    - LinkedIn: [https://www.linkedin.com/in/하니-신-91aa92246/](https://www.linkedin.com/in/%ED%95%98%EB%8B%88-%EC%8B%A0-91aa92246/)
+    - Blog: [https://hani-honey.tistory.com/](https://hani-honey.tistory.com/)
+
+##### Frontend 이영주
+- Works : `**Presentation(Prep Document)` `CafePage` `CommunityPage` `MainPage` `ResponsiveCssTouchUp`**
+- Contact :
+    - Email: hmds1606@gmail.com
+    - Github: [https://github.com/hmds1606](https://github.com/hmds1606)
+    - LinkedIn: [https://www.linkedin.com/in/영주-이-a1b848246/](https://www.linkedin.com/in/%EC%98%81%EC%A3%BC-%EC%9D%B4-a1b848246/)
+    - Blog: [https://velog.io/@hmds1606](https://velog.io/@hmds1606)
 
 
 #### 3. 스택 소개
