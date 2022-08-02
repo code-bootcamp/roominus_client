@@ -21,7 +21,7 @@ ___
 
 ##### Frontend 손은채
 
-- Works : `**PM**` `**Git**` `**ReservationPage**` `**MyPage**` `**MainPage`  `Layout`** `**TouchUp on CustomerCentric** **Functions**`
+- Works : `PM` `Git` `ReservationPage` `MyPage` `MainPage`  `Layout` `TouchUp on CustomerCentric Functions`
 - Contact :
     - Email: dev.eunchae@gmail.com
     - Github: [https://github.com/dev-eun-chae](https://github.com/dev-eun-chae)
@@ -30,7 +30,7 @@ ___
     
 ##### Frontend 김지수
 
-- Works : `**Notion**` `**Login/Logout Page**` `**SignUpPage**` `**FindId&PassWordPage**` `**MyPage**` `**MainPage**`
+- Works : `Notion` `Login/Logout Page` `SignUpPage` `FindId&PassWordPage` `MyPage` `MainPage`
 - Contact :
     - Email: cw3598rt@gmail.com
     - Github: [https://github.com/cw3598rt](https://github.com/cw3598rt)
@@ -40,7 +40,7 @@ ___
 
 ##### Frontend 신하니
 
-- Works : `**Presentation(Speech)**` `**ThemePage**` `**LandingPage**` `**DesignTouchup**` `**MainPage**`
+- Works : `Presentation(Speech)` `ThemePage` `LandingPage` `DesignTouchup` `MainPage`
 - Contact :
     - Email: hanieatingcarrot@gmail.com
     - Github: [https://github.com/haneebunny](https://github.com/haneebunny)
@@ -48,7 +48,7 @@ ___
     - Blog: [https://hani-honey.tistory.com/](https://hani-honey.tistory.com/)
 
 ##### Frontend 이영주
-- Works : `**Presentation(Prep Document)` `CafePage` `CommunityPage` `MainPage` `ResponsiveCssTouchUp`**
+- Works : `Presentation(Prep Document)` `CafePage` `CommunityPage` `MainPage` `ResponsiveCssTouchUp`
 - Contact :
     - Email: hmds1606@gmail.com
     - Github: [https://github.com/hmds1606](https://github.com/hmds1606)
