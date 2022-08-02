@@ -72,7 +72,6 @@ export default function ThemeDetailPage() {
       themeId: router.query.id,
     },
   });
-  console.log("0", isReviewer);
 
   useEffect(() => {
     fetchThemeReviews?.fetchThemeReviews.filter(
@@ -99,7 +98,6 @@ export default function ThemeDetailPage() {
     // 비로그인 회원이면 권한 false로 변경
   }, [fetchThemeReviews?.fetchThemeReviews]);
 
-  console.log("최종1", isReviewer);
   return (
     <>
       <ThemeDetail />
