@@ -25,8 +25,7 @@ export default function ThemeCardComponent(props: any) {
           <S.ThemeBack src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/theme/card-back_ef6jjd.png">
             <S.ThemeTitle>{props.el?.title}</S.ThemeTitle>
             <S.ThemeInfo>
-              이용인원 2명 ~ {props.el?.peoplelimit}명
-              <br />
+              이용인원 2 ~ {props.el?.peoplelimit}명 <br />
               나이제한 {props.el?.agelimit}세
               <br />
               <S.ThemeIntroTitle>`{props.el?.intro_title}`</S.ThemeIntroTitle>
