@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import {
   accessTokenState,
   restoreAccessTokenLoadable,
+  visitedPageState,
 } from "../../../commons/store";
 const FETCH_USER_LOGGEDIN = gql`
   query fetchUserLoggedIn {
@@ -23,7 +24,7 @@ export default function useAuth() {
   const Auth = useRecoilValueLoadable(restoreAccessTokenLoadable);
   const router = useRouter();
   const [accessToken] = useRecoilState(accessTokenState);
-
+  const [visitedPage, setVisitedPage] = useRecoilState(visitedPageState);
   const client = useApolloClient();
   useEffect(() => {
     if (!sessionStorage.getItem("#LL")) {
@@ -34,6 +35,7 @@ export default function useAuth() {
         timer: 1000,
         backdrop: false,
       });
+      setVisitedPage(router.asPath);
       router.push("/login");
     } else if (sessionStorage.getItem("#LL")) {
       if (!accessToken) {
@@ -46,6 +48,7 @@ export default function useAuth() {
               timer: 1000,
               backdrop: false,
             });
+            setVisitedPage(router.asPath);
             router.push("/login");
           } else if (newAccessToken) {
             client
@@ -65,6 +68,7 @@ export default function useAuth() {
                   timer: 1000,
                   backdrop: false,
                 });
+                setVisitedPage(router.asPath);
                 router.push("/login");
               });
           }

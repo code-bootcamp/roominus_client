@@ -41,3 +41,7 @@ export const KakaoInfoState = atom({
     email: "",
   },
 });
+export const visitedPageState = atom({
+  key: "visitedPageState",
+  default: "",
+});
