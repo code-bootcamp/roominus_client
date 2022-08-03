@@ -103,8 +103,6 @@ export default function Login() {
       } else if (!visitedPage) {
         router.push(`/home`);
       }
-
-      // router.back();
     } catch (error) {
       Swal.fire({
         title: "로그인에 실패하였습니다",
@@ -189,7 +187,11 @@ export default function Login() {
               backdrop: false,
             })
           );
-        router.push(`/home`);
+        if (visitedPage) {
+          router.push(visitedPage);
+        } else if (!visitedPage) {
+          router.push(`/home`);
+        }
       })
       .catch((error) => {
         // Handle Errors here.
@@ -264,7 +266,11 @@ export default function Login() {
                 })
               );
 
-            router.push("/home");
+            if (visitedPage) {
+              router.push(visitedPage);
+            } else if (!visitedPage) {
+              router.push(`/home`);
+            }
           },
           fail: function (error: Error) {
             alert((error as Error).message);
