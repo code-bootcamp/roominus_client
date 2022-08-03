@@ -101,7 +101,13 @@ export default function Payment(props: IPaymentProps) {
             router.push("/reservation");
           }
         } else {
-          alert("다시 결제해주세요");
+          Swal.fire({
+            icon: "error",
+            title: "예약실패",
+            timer: 1500,
+            backdrop: false,
+          });
+          router.push("/reservation");
         }
       }
     );
