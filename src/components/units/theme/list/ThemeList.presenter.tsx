@@ -129,7 +129,7 @@ export default function ThemeListUI(props: IThemeListProps) {
                       <S.ThemeBack src="https://res.cloudinary.com/dop5piuwp/image/upload/v1658990939/public/theme/card-back_ef6jjd.png">
                         <S.ThemeTitle>{el.title}</S.ThemeTitle>
                         <S.ThemeInfo>
-                          이용인원 ~ {el.peoplelimit}명
+                          이용인원 2 ~ {el.peoplelimit}명
                           <br />
                           나이제한 {el.agelimit}세
                           <br />
