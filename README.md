@@ -32,7 +32,7 @@ ___
 
 - Works : `Notion` `Login/Logout Page` `SignUpPage` `FindId&PassWordPage` `MyPage` `MainPage`
 - Contact :
-    - Email: cw3598rt@gmail.com
+    - Email: cw3598rt@naver.com
     - Github: [https://github.com/cw3598rt](https://github.com/cw3598rt)
     - LinkedIn: [https://www.linkedin.com/in/jisoo-k-b68127123/](https://www.linkedin.com/in/jisoo-k-b68127123/)
     - Blog(TIL): [https://cw3598rt.notion.site/463896b9b88542e8a9cc9ff4a9d60c8f](https://www.notion.so/463896b9b88542e8a9cc9ff4a9d60c8f)
