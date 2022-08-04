@@ -50,7 +50,7 @@ ___
 ##### Frontend 이영주
 - Works : `Presentation(Prep Document)` `CafePage` `CommunityPage` `MainPage` `ResponsiveCssTouchUp`
 - Contact :
-    - Email: hmds1606@gmail.
+    - Email: hmds1606@gmail.com
     - Github: [https://github.com/hmds1606](https://github.com/hmds1606)
     - LinkedIn: [https://www.linkedin.com/in/영주-이-a1b848246/](https://www.linkedin.com/in/%EC%98%81%EC%A3%BC-%EC%9D%B4-a1b848246/)
     - Blog: [https://velog.io/@hmds1606](https://velog.io/@hmds1606)
