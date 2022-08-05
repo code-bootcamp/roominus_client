@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 
 import { breakPoints } from "../../../../commons/styles/media";
 import { IIsActiveProps } from "../Layout.types";
@@ -188,4 +189,16 @@ export const LogOutBtn = styled.button`
   color: white;
 
   cursor: pointer;
+`;
+
+export const Mypage = styled(PermIdentityOutlinedIcon)`
+  display: none;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: inline;
+    color: #7457e8;
+  }
 `;

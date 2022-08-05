@@ -6,6 +6,7 @@ import BookOnlineOutlinedIcon from "@mui/icons-material/BookOnlineOutlined";
 import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Link from "next/link";
 
 export default function LayoutBottomNavigation() {
@@ -47,7 +48,11 @@ export default function LayoutBottomNavigation() {
           <BottomNavigationAction value="테마" icon={<FavoriteIcon />} />
         </a>
       </Link>
-
+      <Link href="/main">
+        <a>
+          <BottomNavigationAction value="홈" icon={<HomeOutlinedIcon />} />
+        </a>
+      </Link>
       <Link href={"/reservation"}>
         <BottomNavigationAction
           value="예약"
@@ -64,14 +69,14 @@ export default function LayoutBottomNavigation() {
         </a>
       </Link>
 
-      <Link href="/mypage">
+      {/* <Link href="/mypage">
         <a>
           <BottomNavigationAction
             value="마이페이지"
             icon={<PermIdentityOutlinedIcon />}
           />
         </a>
-      </Link>
+      </Link> */}
     </BottomNavigation>
   );
 }

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Router, useRouter } from "next/router";
 import { breakPoints } from "../../../../commons/styles/media";
 
 const Container = styled.div`
@@ -108,6 +109,11 @@ const Contents = styled.div`
 const Date = styled.div``;
 
 export default function Notice() {
+  const router = useRouter();
+
+  const onClickMoveToNotice02 = () => {
+    router.push("/customer/notice/02");
+  };
   return (
     <Container>
       <Wrapper>
@@ -130,7 +136,7 @@ export default function Notice() {
             <Contents>8월 3일 시스템 점검 안내</Contents>
           </ContentBox>
           <ContentBox>
-            <Contents>8월 정기 휴무 안내</Contents>
+            <Contents onClick={onClickMoveToNotice02}>8월 휴무 안내</Contents>
           </ContentBox>
         </Flip>
         <Flip>
