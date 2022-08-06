@@ -13,7 +13,7 @@ export const Container = styled.main`
   padding: 2em 2em 2em 2em;
 
   @media ${breakPoints.mobile} {
-    padding: 2em 0em 2em 0em;
+    padding: 2em 0em 0em 0em;
   }
 `;
 
@@ -230,4 +230,30 @@ export const RowBox = styled.div`
   justify-content: space-between;
   height: 100%;
   margin-top: 3em;
+`;
+
+export const MobileInfoBox = styled.div`
+  display: none;
+
+  @media ${breakPoints.tablet} {
+    display: contents;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: contents;
+  }
+`;
+
+export const LogoutBox = styled.div`
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+`;
+
+export const LogoutButton = styled.span`
+  color: gray;
+
+  :hover {
+    cursor: pointer;
+  }
 `;

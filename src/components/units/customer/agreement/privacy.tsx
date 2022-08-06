@@ -1,3 +1,5 @@
+import Link from "next/link";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "../agreement/styles";
 
 export default function Privacy() {
@@ -125,6 +127,13 @@ export default function Privacy() {
             07월 21일 – 개인정보처리방침
           </p>
         </S.ContentsBox>
+        <S.ButtonBox>
+          <Link href={"/home"}>
+            <a>
+              <WebBlackButton type="button" title="돌아가기" />
+            </a>
+          </Link>
+        </S.ButtonBox>
       </S.Container>
     </>
   );

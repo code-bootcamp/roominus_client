@@ -32,17 +32,19 @@ export const Title = styled.h1`
 
 export const HighLighting = styled.div`
   opacity: 0.35;
-  width: 13.7em;
   height: 1em;
   margin-left: 0.1em;
   margin-top: -2.5em;
   margin-bottom: 2em;
   background-color: purple;
-
-  @media ${breakPoints.mobile} {
-    width: 10em;
-  }
 `;
 export const ContentsBox = styled.div`
   font-size: 1.1em;
+  text-align: center;
+`;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 5em;
 `;

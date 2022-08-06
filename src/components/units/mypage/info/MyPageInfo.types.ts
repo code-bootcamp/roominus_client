@@ -1,6 +1,7 @@
 import { MouseEventHandler } from "react";
 
 export interface IMyPageInfoUIProps {
+  onClickLogout: MouseEventHandler<HTMLSpanElement>;
   onClickReservationDetail: MouseEventHandler<HTMLDivElement>;
   reservation: {
     fetchReservationsUser: any;

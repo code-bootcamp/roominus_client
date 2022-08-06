@@ -12,14 +12,13 @@ export const Container = styled.nav`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 1em 1em 1em 1em;
   }
 
   @media ${breakPoints.mobile} {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 1em 1em 1em 1em;
+    padding: 1em;
   }
 `;
 
@@ -68,10 +67,6 @@ export const MenuWrapper = styled.ul`
   justify-content: space-between;
   gap: 2em;
 
-  @media ${breakPoints.tablet} {
-    display: none;
-  }
-
   @media ${breakPoints.mobile} {
     display: none;
   }
@@ -99,6 +94,10 @@ export const MenuItem = styled.li`
   :hover {
     ${(props: IIsActiveProps) => (props.isActive ? "none" : "--_p: 100%;")};
     ${(props: IIsActiveProps) => (props.isActive ? "none" : "--_s: 0.3s;")};
+  }
+
+  @media ${breakPoints.tablet} {
+    font-size: 2em;
   }
 `;
 
@@ -189,16 +188,4 @@ export const LogOutBtn = styled.button`
   color: white;
 
   cursor: pointer;
-`;
-
-export const Mypage = styled(PermIdentityOutlinedIcon)`
-  display: none;
-  @media ${breakPoints.tablet} {
-    display: none;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: inline;
-    color: #7457e8;
-  }
 `;

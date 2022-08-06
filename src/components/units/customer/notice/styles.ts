@@ -14,7 +14,8 @@ export const Container = styled.div`
     margin: 0;
 
     @media ${breakPoints.mobile} {
-      font-size: 0.8em;
+      font-size: 0.9em;
+      margin: 0;
     }
   }
 `;
@@ -32,22 +33,26 @@ export const Title = styled.h1`
 
 export const HighLighting = styled.div`
   opacity: 0.35;
-  width: 13.7em;
   height: 1em;
   margin-left: 0.1em;
   margin-top: -2.5em;
   margin-bottom: 2em;
   background-color: purple;
-
-  @media ${breakPoints.mobile} {
-    width: 10em;
-  }
 `;
 export const ContentsBox = styled.div`
   font-size: 1.1em;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
 `;
 
 export const NoticeImage = styled.img`
   width: 100%;
-  height: 100%;
+`;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 5em;
 `;

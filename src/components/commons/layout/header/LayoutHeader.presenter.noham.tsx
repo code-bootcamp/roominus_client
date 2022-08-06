@@ -41,9 +41,6 @@ export default function LayoutHeaderNohamUI(props: IHeaderUIProps) {
               </Fragment>
             ))}
           </S.MenuWrapper>
-          <Link href={"/mypage"}>
-            <S.Mypage fontSize="large" />
-          </Link>
         </S.Wrapper>
       </S.Container>
     </>

@@ -48,11 +48,11 @@ export default function LayoutBottomNavigation() {
           <BottomNavigationAction value="테마" icon={<FavoriteIcon />} />
         </a>
       </Link>
-      <Link href="/main">
+      {/* <Link href="/home">
         <a>
           <BottomNavigationAction value="홈" icon={<HomeOutlinedIcon />} />
         </a>
-      </Link>
+      </Link> */}
       <Link href={"/reservation"}>
         <BottomNavigationAction
           value="예약"
@@ -69,14 +69,14 @@ export default function LayoutBottomNavigation() {
         </a>
       </Link>
 
-      {/* <Link href="/mypage">
+      <Link href="/mypage">
         <a>
           <BottomNavigationAction
             value="마이페이지"
             icon={<PermIdentityOutlinedIcon />}
           />
         </a>
-      </Link> */}
+      </Link>
     </BottomNavigation>
   );
 }
