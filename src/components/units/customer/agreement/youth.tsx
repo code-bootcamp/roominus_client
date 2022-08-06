@@ -1,3 +1,5 @@
+import Link from "next/link";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "../agreement/styles";
 
 export default function Youth() {
@@ -38,6 +40,13 @@ export default function Youth() {
             청소년 보호 책임자 E-mail:dev.team05.roominus@gmail.com
           </p>
         </S.ContentsBox>
+        <S.ButtonBox>
+          <Link href={"/home"}>
+            <a>
+              <WebBlackButton type="button" title="돌아가기" />
+            </a>
+          </Link>
+        </S.ButtonBox>
       </S.Container>
     </>
   );

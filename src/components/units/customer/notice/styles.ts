@@ -14,7 +14,8 @@ export const Container = styled.div`
     margin: 0;
 
     @media ${breakPoints.mobile} {
-      font-size: 0.8em;
+      font-size: 0.9em;
+      margin: 0;
     }
   }
 `;
@@ -40,7 +41,14 @@ export const HighLighting = styled.div`
 `;
 export const ContentsBox = styled.div`
   font-size: 1.1em;
-  text-align: center;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
+`;
+
+export const NoticeImage = styled.img`
+  width: 100%;
 `;
 
 export const ButtonBox = styled.div`

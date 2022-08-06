@@ -7,7 +7,8 @@ export const Container = styled.nav`
   padding: 0.3em 0.5em 0em 0em;
 
   @media ${breakPoints.tablet} {
-    display: none;
+    padding: 0;
+    height: 1.5%;
   }
 
   @media ${breakPoints.mobile} {
@@ -26,13 +27,6 @@ export const LoginJoinWrapper = styled.div`
   justify-content: flex-end;
   gap: 0.5em;
   margin-bottom: 0.3em;
-  @media ${breakPoints.tablet} {
-    display: none;
-  }
-
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
 `;
 
 export const Contents = styled.span`
