@@ -104,6 +104,9 @@ const ContentBox = styled.div`
 const Contents = styled.div`
   text-align: left;
   width: 100%;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Date = styled.div``;
@@ -111,8 +114,16 @@ const Date = styled.div``;
 export default function Notice() {
   const router = useRouter();
 
+  const onClickMoveToNotice01 = () => {
+    router.push("/customer/notice/01");
+  };
+
   const onClickMoveToNotice02 = () => {
     router.push("/customer/notice/02");
+  };
+
+  const onClickMoveToNotice03 = () => {
+    router.push("/customer/notice/03");
   };
   return (
     <Container>
@@ -130,10 +141,14 @@ export default function Notice() {
         </Flip>
         <Flip>
           <ContentBox>
-            <Contents>신용카드 무이자 할부 안내</Contents>
+            <Contents onClick={onClickMoveToNotice01}>
+              신용카드 무이자 할부 안내
+            </Contents>
           </ContentBox>
           <ContentBox>
-            <Contents>8월 3일 시스템 점검 안내</Contents>
+            <Contents onClick={onClickMoveToNotice03}>
+              8월 3일 시스템 점검 안내
+            </Contents>
           </ContentBox>
           <ContentBox>
             <Contents onClick={onClickMoveToNotice02}>8월 휴무 안내</Contents>

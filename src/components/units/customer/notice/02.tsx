@@ -1,3 +1,5 @@
+import Link from "next/link";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "../notice/styles";
 
 export default function Notice02() {
@@ -16,6 +18,13 @@ export default function Notice02() {
             }
           />
         </S.ContentsBox>
+        <S.ButtonBox>
+          <Link href={"/home"}>
+            <a>
+              <WebBlackButton type="button" title="돌아가기" />
+            </a>
+          </Link>
+        </S.ButtonBox>
       </S.Container>
     </>
   );

@@ -56,8 +56,8 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
                 <S.ColumnHeaderTitle>예약 테마</S.ColumnHeaderTitle>
                 <S.ColumnHeaderName>매장</S.ColumnHeaderName>
                 <S.ColumnHeaderBasic>방문일</S.ColumnHeaderBasic>
-                <S.ColumnHeaderBasic>방문시간</S.ColumnHeaderBasic>
-                <S.ColumnHeaderBasic>예약 상태</S.ColumnHeaderBasic>
+                <S.ColumnHeaderBasic>시간</S.ColumnHeaderBasic>
+                <S.ColumnHeaderBasic>상태</S.ColumnHeaderBasic>
               </S.TitleRow>
               {props?.reservation?.fetchReservationsUser
                 .slice(0, 3)
@@ -96,9 +96,9 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
               <S.TitleRow>
                 <S.ColumnHeaderNumber>번호</S.ColumnHeaderNumber>
                 <S.ColumnHeaderTitle>결제 테마</S.ColumnHeaderTitle>
-                <S.ColumnHeaderPoint>결제 가격</S.ColumnHeaderPoint>
+                <S.ColumnHeaderPoint>가격</S.ColumnHeaderPoint>
                 <S.ColumnHeaderPoint>사용</S.ColumnHeaderPoint>
-                <S.ColumnHeaderPoint>적립 예정</S.ColumnHeaderPoint>
+                <S.ColumnHeaderPoint>적립</S.ColumnHeaderPoint>
                 <S.ColumnHeaderBasic>주문자</S.ColumnHeaderBasic>
               </S.TitleRow>
               {props?.payments?.fetchPayments
@@ -123,6 +123,23 @@ export default function MyPageInfoUI(props: IMyPageInfoUIProps) {
             </S.TableWrapper>
           </S.InfoBox>
         </S.RowBox>
+
+        <S.MobileInfoBox>
+          <S.InfoTitleBox>
+            <S.Label>회원 정보 수정</S.Label>
+            <S.addButton>
+              <Link href={"/mypage/phoneedit"}>
+                <S.Contents>바로가기{" >"}</S.Contents>
+              </Link>
+            </S.addButton>
+          </S.InfoTitleBox>
+          <S.TableTop />
+          <S.LogoutBox>
+            <S.LogoutButton onClick={props.onClickLogout}>
+              로그아웃
+            </S.LogoutButton>
+          </S.LogoutBox>
+        </S.MobileInfoBox>
       </S.Wrapper>
     </S.Container>
   );

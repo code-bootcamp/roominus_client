@@ -41,20 +41,10 @@ export default function HomeUI(props: IHomeUIProps) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 8000, //슬라이드가 지나가는 초
-    autoplaySpeed: 5000, //한페이지에서 멈추는 초
+    speed: 6000, //슬라이드가 지나가는 초
+    autoplaySpeed: 4000, //한페이지에서 멈추는 초
     pauseOnHover: true,
     cssEase: "linear",
-    // className: "center",
-    // centerMode: false,
-    // infinite: true,
-    // centerPadding: "60px",
-    // speed: 500,
-    // autoplaySpeed: 3000,
-    // dots: true,
-    // autoplay: true,
-    // infinite: true,
-    // slidesToShow: 1,
   };
   return (
     <S.Wrapper>

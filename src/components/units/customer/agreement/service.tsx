@@ -1,3 +1,5 @@
+import Link from "next/link";
+import WebBlackButton from "../../../commons/buttons/buttonDesktop/WebBlackButton";
 import * as S from "../agreement/styles";
 
 export default function Service() {
@@ -316,6 +318,13 @@ export default function Service() {
             이용자 간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
           </p>
         </S.ContentsBox>
+        <S.ButtonBox>
+          <Link href={"/home"}>
+            <a>
+              <WebBlackButton type="button" title="돌아가기" />
+            </a>
+          </Link>
+        </S.ButtonBox>
       </S.Container>
     </>
   );
