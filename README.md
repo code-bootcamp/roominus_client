@@ -92,24 +92,31 @@ ___
 
 
 ##### 소셜로그인, 회원가입
-![소셜 로그인](https://user-images.githubusercontent.com/104378330/183347602-30fe191a-bcd0-47e4-85f8-6b70ad8c0a7d.gif)
-![소셜 회원가입](https://user-images.githubusercontent.com/104378330/183347611-ca205f73-7b24-4d3e-bc77-188bdd5bdb8c.gif)
+![소셜 회원가입](https://user-images.githubusercontent.com/104378330/183362875-7b145d12-67e0-49d1-8a8c-6206810d8a89.gif)
+![소셜 로그인](https://user-images.githubusercontent.com/104378330/183362865-a34a0ec3-1eee-4e6c-a05c-3be49d5be0b4.gif)
+
 
 ##### 계정정보찾기
-![계정 정보 찾기](https://user-images.githubusercontent.com/104378330/183349971-4b9943ca-ae55-4477-9c3b-df9e8fb380a8.gif)
+![계정 정보 찾기](https://user-images.githubusercontent.com/104378330/183362891-bfccf8bc-bad5-4438-bafe-edac0f7f6dc5.gif)
+
 
 ##### 메인
 ![메인](https://user-images.githubusercontent.com/104378330/183350372-aa73c4e2-bbd8-4382-b95b-a57537adc893.gif)
 
 ##### 매장
 ![매장](https://user-images.githubusercontent.com/104378330/183352310-d4649280-e34d-4cad-bc8d-950f2dc1430d.gif)
+![매장 상세](https://user-images.githubusercontent.com/104378330/183364393-c0368a0d-ce7b-441e-8895-17a5a73f453f.gif)
 
 ##### 테마
+![테마](https://user-images.githubusercontent.com/104378330/183365711-a26063bc-0a42-4d07-9cf9-ceb50392b3d8.gif)
+![테마 상세](https://user-images.githubusercontent.com/104378330/183364921-a03da26b-398a-4c9e-a2a1-503f3e3b6cad.gif)
 
 ##### 예약
-![예약 - 고화질](https://user-images.githubusercontent.com/104378330/183350065-56d86301-980a-4e60-9b06-c9d10f5a6338.gif)
+![예약 ](https://user-images.githubusercontent.com/104378330/183363999-10e94a50-f929-4eff-979e-3d7b9561bbb7.gif)
+![예약완료](https://user-images.githubusercontent.com/104378330/183368685-46b81ba3-e437-4c88-9c19-96e3225c705d.gif)
 
 ##### 커뮤니티
+![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183363904-9080df0e-b553-4456-9b39-da2f6c1996bd.gif)
 ![커뮤니티 상세](https://user-images.githubusercontent.com/104378330/183350618-a90013be-d600-4938-b59c-c00b76dc5864.gif)
 
 
