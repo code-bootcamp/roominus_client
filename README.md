@@ -103,21 +103,20 @@ ___
 
 ##### 매장
 ![매장](https://user-images.githubusercontent.com/104378330/183352310-d4649280-e34d-4cad-bc8d-950f2dc1430d.gif)
-![매장 상세](https://user-images.githubusercontent.com/104378330/183346771-04e7b0e4-b0f0-4a59-b85f-ee9fc738f9e3.gif)
+![매장 상세](https://user-images.githubusercontent.com/104378330/183358077-662529d5-b9eb-43f5-9622-99bf10bb3be4.gif)
 
 ##### 테마
 ![테마](https://user-images.githubusercontent.com/104378330/183348013-6b5ddb6e-2c36-4f61-80a9-65aa5a42e3bc.gif)
-![테마 상세](https://user-images.githubusercontent.com/104378330/183347259-b523d866-1839-4587-94a3-267ac7a374c0.gif)
+![테마 상세](https://user-images.githubusercontent.com/104378330/183358119-2814c0c7-96e9-4bf2-b6c7-6401c4fa70eb.gif)
 
 ##### 예약
 ![예약 - 고화질](https://user-images.githubusercontent.com/104378330/183350065-56d86301-980a-4e60-9b06-c9d10f5a6338.gif)
 
 ##### 커뮤니티
-![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183350543-66f292c9-5b97-428d-bf2b-f4caf4440e0f.gif)
+![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183358085-e02fa22b-5812-4385-b233-6f985590a781.gif)
 ![커뮤니티 상세](https://user-images.githubusercontent.com/104378330/183350618-a90013be-d600-4938-b59c-c00b76dc5864.gif)
 
 
 ##### 마이페이지
 ![마이페이지](https://user-images.githubusercontent.com/104378330/183349988-e42d4730-b5bb-4ecb-8ad4-fcab711b2713.gif)
-![마이페이지2](https://user-images.githubusercontent.com/104378330/183347175-47b23435-8153-479a-a0dd-5b95e4a04a96.gif)
 ![고객지원](https://user-images.githubusercontent.com/104378330/183349951-dded36d8-811d-4f6b-9f13-ff775a704bc6.gif)
