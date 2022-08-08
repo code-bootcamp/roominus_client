@@ -1,11 +1,11 @@
 
 # 🌙 room:in us
 
-#### 1. 서비스 소개
+### 1. 서비스 소개
 
 > 
-> ### [roominus 바로가기](https://roominus.site/)
-> ### [roominus 팀 노션](https://www.notion.so/dingco/5-09de646b20204534b0012b0838aaabf7)
+> ## [roominus 바로가기](https://roominus.site/)
+> ## [roominus 팀 노션](https://www.notion.so/dingco/5-09de646b20204534b0012b0838aaabf7)
 >
 >💡 방탈출 카페를 영화처럼 쉽게 예약하고 즐길 순 없을까? 예약의 과정을 최대한 간소화하고 방탈출 카페를 즐기는 것에 집중할 수 있도록 만들기 위해서 room:in us가 탄생했습니다.
 >
@@ -16,20 +16,20 @@
 > ⛄️ 방탈출 카페 운영자들에겐 좀 더 확실한 예약 서비스를 제공합니다.
 
 ___
-##### 실행 방법
+#### 실행 방법
 
 1. yarn install
 2. yarn dev
 3. localhost:3000
 ___
 
-#### 2. 팀원 소개
+### 2. 팀원 소개
 ___
 ![fronted](https://user-images.githubusercontent.com/104378330/182298195-37e90f9d-bd2c-4de0-a2c5-09bbf6d13644.png)
 ![backed](https://user-images.githubusercontent.com/104378330/182298394-de643761-2ff3-4d69-9682-e8fa1628400d.png)
 
 
-##### Frontend 손은채
+#### Frontend 손은채
 
 - Works : `PM` `Git` `ReservationPage` `MyPage` `MainPage`  `Layout` `TouchUp on CustomerCentric Functions`
 - Contact :
@@ -38,7 +38,7 @@ ___
     - LinkedIn: [https://www.linkedin.com/in/deveunchae/](https://www.linkedin.com/in/deveunchae/)
     - Blog: [https://velog.io/@dev_eunchae](https://velog.io/@dev_eunchae)
     
-##### Frontend 김지수
+#### Frontend 김지수
 
 - Works : `Notion` `Login/Logout Page` `SignUpPage` `FindId&PassWordPage` `MyPage` `MainPage`
 - Contact :
@@ -48,7 +48,7 @@ ___
     - Blog(TIL): [https://cw3598rt.notion.site/463896b9b88542e8a9cc9ff4a9d60c8f](https://www.notion.so/463896b9b88542e8a9cc9ff4a9d60c8f)
     - Blog(Project): [https://cw3598rt.notion.site/066d4be9901c4b86ad8c0b66f07edda7](https://www.notion.so/066d4be9901c4b86ad8c0b66f07edda7)
 
-##### Frontend 신하니
+#### Frontend 신하니
 
 - Works : `Presentation(Speech)` `ThemePage` `LandingPage` `DesignTouchup` `MainPage`
 - Contact :
@@ -57,7 +57,7 @@ ___
     - LinkedIn: [https://www.linkedin.com/in/하니-신-91aa92246/](https://www.linkedin.com/in/%ED%95%98%EB%8B%88-%EC%8B%A0-91aa92246/)
     - Blog: [https://hani-honey.tistory.com/](https://hani-honey.tistory.com/)
 
-##### Frontend 이영주
+#### Frontend 이영주
 - Works : `Presentation(Prep Document)` `CafePage` `CommunityPage` `MainPage` `ResponsiveCssTouchUp`
 - Contact :
     - Email: hmds1606@gmail.com
@@ -66,7 +66,7 @@ ___
     - Blog: [https://velog.io/@hmds1606](https://velog.io/@hmds1606)
 
 
-#### 3. 스택 소개
+### 3. 스택 소개
 
 
 |   이름    |   버전  |
@@ -79,50 +79,50 @@ ___
 | `AWS`     |         |
 
 
-#### 4. 데이터 플로우
+### 4. 데이터 플로우
 
 ![Flowchart](https://user-images.githubusercontent.com/104378330/182285973-4ae1ffe4-3dfd-4d77-9212-37f18c8d2c3f.jpeg)
 
 
-#### 5. 서비스 시연
+### 5. 서비스 시연
 
-##### 랜딩페이지
-![랜딩](https://user-images.githubusercontent.com/104378330/183382536-d10087de-d766-4785-99f6-f2f55a3c7107.gif)
+#### 🗝 랜딩페이지
+![랜딩](https://user-images.githubusercontent.com/104378330/183395832-f20d7e05-020f-4a84-98b7-5138bef592d3.gif)
 
-##### 일반 로그인, 회원가입
+#### 🗝 일반 로그인, 회원가입
 ![일반 로그인 회원가입 ](https://user-images.githubusercontent.com/104378330/183382679-03804d4b-9a47-46a6-9a08-c0b6bf1b97ab.gif)
 
 
-##### 소셜로그인, 회원가입
+#### 🗝 소셜로그인, 회원가입
 ![소셜 회원가입](https://user-images.githubusercontent.com/104378330/183362875-7b145d12-67e0-49d1-8a8c-6206810d8a89.gif)
 ![소셜 로그인](https://user-images.githubusercontent.com/104378330/183362865-a34a0ec3-1eee-4e6c-a05c-3be49d5be0b4.gif)
 
 
-##### 계정정보찾기
+#### 🗝 계정정보찾기
 ![계정 정보 찾기](https://user-images.githubusercontent.com/104378330/183362891-bfccf8bc-bad5-4438-bafe-edac0f7f6dc5.gif)
 
 
-##### 메인
+#### 🗝 메인
 ![메인](https://user-images.githubusercontent.com/104378330/183350372-aa73c4e2-bbd8-4382-b95b-a57537adc893.gif)
 
-##### 매장
+#### 🗝 매장
 ![매장](https://user-images.githubusercontent.com/104378330/183352310-d4649280-e34d-4cad-bc8d-950f2dc1430d.gif)
 ![매장 상세](https://user-images.githubusercontent.com/104378330/183364393-c0368a0d-ce7b-441e-8895-17a5a73f453f.gif)
 
-##### 테마
+#### 🗝 테마
 ![테마](https://user-images.githubusercontent.com/104378330/183365711-a26063bc-0a42-4d07-9cf9-ceb50392b3d8.gif)
 ![테마 상세](https://user-images.githubusercontent.com/104378330/183364921-a03da26b-398a-4c9e-a2a1-503f3e3b6cad.gif)
 
-##### 예약
+#### 🗝 예약
 ![예약 ](https://user-images.githubusercontent.com/104378330/183363999-10e94a50-f929-4eff-979e-3d7b9561bbb7.gif)
 ![예약 완료 페이지 ](https://user-images.githubusercontent.com/104378330/183381663-add84c68-cc17-4a1d-a6db-39913b8d7aa2.gif)
 
-##### 커뮤니티
+#### 🗝 커뮤니티
 ![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183363904-9080df0e-b553-4456-9b39-da2f6c1996bd.gif)
 ![커뮤니티 상세](https://user-images.githubusercontent.com/104378330/183350618-a90013be-d600-4938-b59c-c00b76dc5864.gif)
 
 
-##### 마이페이지
+#### 🗝 마이페이지
 ![마이페이지](https://user-images.githubusercontent.com/104378330/183349988-e42d4730-b5bb-4ecb-8ad4-fcab711b2713.gif)
 ![마이페이지](https://user-images.githubusercontent.com/104378330/183381623-bb5f44da-66d6-4c59-a75a-f9711a3620ca.gif)
 ![고객지원](https://user-images.githubusercontent.com/104378330/183349951-dded36d8-811d-4f6b-9f13-ff775a704bc6.gif)
