@@ -103,17 +103,13 @@ ___
 
 ##### 매장
 ![매장](https://user-images.githubusercontent.com/104378330/183352310-d4649280-e34d-4cad-bc8d-950f2dc1430d.gif)
-![매장 상세](https://user-images.githubusercontent.com/104378330/183358077-662529d5-b9eb-43f5-9622-99bf10bb3be4.gif)
 
 ##### 테마
-![테마](https://user-images.githubusercontent.com/104378330/183348013-6b5ddb6e-2c36-4f61-80a9-65aa5a42e3bc.gif)
-![테마 상세](https://user-images.githubusercontent.com/104378330/183358119-2814c0c7-96e9-4bf2-b6c7-6401c4fa70eb.gif)
 
 ##### 예약
 ![예약 - 고화질](https://user-images.githubusercontent.com/104378330/183350065-56d86301-980a-4e60-9b06-c9d10f5a6338.gif)
 
 ##### 커뮤니티
-![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183358085-e02fa22b-5812-4385-b233-6f985590a781.gif)
 ![커뮤니티 상세](https://user-images.githubusercontent.com/104378330/183350618-a90013be-d600-4938-b59c-c00b76dc5864.gif)
 
 
