@@ -102,7 +102,7 @@ ___
 ![메인](https://user-images.githubusercontent.com/104378330/183350372-aa73c4e2-bbd8-4382-b95b-a57537adc893.gif)
 
 ##### 매장
-![매장](https://user-images.githubusercontent.com/104378330/183346700-7d8aad4a-6532-41b7-b232-1dc6b86cb55b.gif)
+![매장](https://user-images.githubusercontent.com/104378330/183352310-d4649280-e34d-4cad-bc8d-950f2dc1430d.gif)
 ![매장 상세](https://user-images.githubusercontent.com/104378330/183346771-04e7b0e4-b0f0-4a59-b85f-ee9fc738f9e3.gif)
 
 ##### 테마
