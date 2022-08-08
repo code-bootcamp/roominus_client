@@ -9,6 +9,8 @@ import { FETCH_FIND_PASSWORD } from "./FindPassword.query";
 import { useApolloClient } from "@apollo/client";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
+import { useRecoilState } from "recoil";
+import { updateUserNameState } from "../../../commons/store";
 
 const schema = yup.object({
   email: yup
@@ -27,6 +29,8 @@ export default function FindPassword(props: IFindPasswordProps) {
     mode: "onChange",
   });
   const client = useApolloClient();
+  const [updateUsername, setUpdateUsername] =
+    useRecoilState(updateUserNameState);
   const router = useRouter();
   useEffect(() => {
     register("email", { required: true });
@@ -44,6 +48,7 @@ export default function FindPassword(props: IFindPasswordProps) {
           phone: data.phoneNumber,
         },
       });
+      setUpdateUsername(result.data.fetchFindPassword.name);
       router.push(
         `/findidpassword/findpassword/${result.data.fetchFindPassword.id}`
       );

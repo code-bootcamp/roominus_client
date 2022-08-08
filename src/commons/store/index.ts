@@ -45,3 +45,7 @@ export const visitedPageState = atom({
   key: "visitedPageState",
   default: "",
 });
+export const updateUserNameState = atom({
+  key: "updateUserNameState",
+  default: "",
+});
