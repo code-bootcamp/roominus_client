@@ -85,9 +85,38 @@ ___
 #### 5. 서비스 시연
 
 ##### 랜딩페이지
-![랜딩페이지](https://user-images.githubusercontent.com/104378330/183329472-4ac63112-0884-49e5-ba69-4d3d5c048df9.gif)
+![랜딩페이지](https://user-images.githubusercontent.com/104378330/183347733-14e348d5-704b-48ed-86d2-00437f66b727.gif)
 
 ##### 일반 로그인, 회원가입
-![일반 로그인, 회원가입](https://user-images.githubusercontent.com/104378330/183329567-e27cbfef-2c64-463b-97f6-fbcfc0d49d69.gif)
+![일반 로그인 회원가입](https://user-images.githubusercontent.com/104378330/183346945-03e66cf3-82b6-4d82-9d8a-0e94370f25ab.gif)
 
+##### 소셜로그인, 회원가입
+![소셜 로그인](https://user-images.githubusercontent.com/104378330/183347602-30fe191a-bcd0-47e4-85f8-6b70ad8c0a7d.gif)
+![소셜 회원가입](https://user-images.githubusercontent.com/104378330/183347611-ca205f73-7b24-4d3e-bc77-188bdd5bdb8c.gif)
 
+##### 계정정보찾기
+![계정 정보 찾기](https://user-images.githubusercontent.com/104378330/183348093-dd9a62e6-1f66-44ed-83ef-f3b58cf37c20.gif)
+
+##### 메인
+![메인](https://user-images.githubusercontent.com/104378330/183347877-7cc63ccd-40e9-43cc-86cb-04ac32319bff.gif)
+
+##### 매장
+![매장](https://user-images.githubusercontent.com/104378330/183346700-7d8aad4a-6532-41b7-b232-1dc6b86cb55b.gif)
+![매장 상세](https://user-images.githubusercontent.com/104378330/183346771-04e7b0e4-b0f0-4a59-b85f-ee9fc738f9e3.gif)
+
+##### 테마
+![테마](https://user-images.githubusercontent.com/104378330/183348013-6b5ddb6e-2c36-4f61-80a9-65aa5a42e3bc.gif)
+![테마 상세](https://user-images.githubusercontent.com/104378330/183347259-b523d866-1839-4587-94a3-267ac7a374c0.gif)
+
+##### 예약
+![예약](https://user-images.githubusercontent.com/104378330/183346887-1969a0ff-b342-45dc-9ed5-15a6f2b88afe.gif)
+![예약 완료](https://user-images.githubusercontent.com/104378330/183347986-92fe25cb-cc0d-4976-9f93-35b610bf7042.gif)
+
+##### 커뮤니티
+![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183347010-deb82119-9119-4fc6-9748-ede699d96043.gif)
+![커뮤니티 상세](https://user-images.githubusercontent.com/104378330/183347025-fdb3da2f-a961-4633-9f03-097c1f8fe1c5.gif)
+
+##### 마이페이지
+![마이페이지](https://user-images.githubusercontent.com/104378330/183346837-add80619-fb35-4870-95a9-dda049b0d132.gif)
+![마이페이지2](https://user-images.githubusercontent.com/104378330/183347175-47b23435-8153-479a-a0dd-5b95e4a04a96.gif)
+![고객지원](https://user-images.githubusercontent.com/104378330/183347314-39ebca4a-19e5-4dfd-982a-de255c006c92.gif)
