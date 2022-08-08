@@ -110,7 +110,7 @@ ___
 ![매장 상세](https://user-images.githubusercontent.com/104378330/183364393-c0368a0d-ce7b-441e-8895-17a5a73f453f.gif)
 
 #### 🗝 테마
-![테마](https://user-images.githubusercontent.com/104378330/183365711-a26063bc-0a42-4d07-9cf9-ceb50392b3d8.gif)
+![테마](https://user-images.githubusercontent.com/104378330/183396394-28e25405-6782-43a8-8d48-fcf885cde380.gif)
 ![테마 상세](https://user-images.githubusercontent.com/104378330/183364921-a03da26b-398a-4c9e-a2a1-503f3e3b6cad.gif)
 
 #### 🗝 예약
