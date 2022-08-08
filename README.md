@@ -110,7 +110,6 @@ ___
 
 ##### 예약
 ![예약](https://user-images.githubusercontent.com/104378330/183346887-1969a0ff-b342-45dc-9ed5-15a6f2b88afe.gif)
-![예약 완료](https://user-images.githubusercontent.com/104378330/183347986-92fe25cb-cc0d-4976-9f93-35b610bf7042.gif)
 
 ##### 커뮤니티
 ![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183347010-deb82119-9119-4fc6-9748-ede699d96043.gif)
