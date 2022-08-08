@@ -17,8 +17,10 @@
 
 ___
 ##### 실행 방법
-yarn install
-yarn dev
+
+1. yarn install
+2. yarn dev
+3. localhost:3000
 ___
 
 #### 2. 팀원 소개
@@ -85,10 +87,10 @@ ___
 #### 5. 서비스 시연
 
 ##### 랜딩페이지
-![랜딩페이지](https://user-images.githubusercontent.com/104378330/183347733-14e348d5-704b-48ed-86d2-00437f66b727.gif)
+![랜딩](https://user-images.githubusercontent.com/104378330/183382536-d10087de-d766-4785-99f6-f2f55a3c7107.gif)
 
 ##### 일반 로그인, 회원가입
-![일반 로그인 회원가입 - 고화질](https://user-images.githubusercontent.com/104378330/183350179-062f420a-4fbc-4335-9ceb-90fa71b2ec8b.gif)
+![일반 로그인 회원가입 ](https://user-images.githubusercontent.com/104378330/183382679-03804d4b-9a47-46a6-9a08-c0b6bf1b97ab.gif)
 
 
 ##### 소셜로그인, 회원가입
@@ -113,7 +115,7 @@ ___
 
 ##### 예약
 ![예약 ](https://user-images.githubusercontent.com/104378330/183363999-10e94a50-f929-4eff-979e-3d7b9561bbb7.gif)
-![예약완료](https://user-images.githubusercontent.com/104378330/183368685-46b81ba3-e437-4c88-9c19-96e3225c705d.gif)
+![예약 완료 페이지 ](https://user-images.githubusercontent.com/104378330/183381663-add84c68-cc17-4a1d-a6db-39913b8d7aa2.gif)
 
 ##### 커뮤니티
 ![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183363904-9080df0e-b553-4456-9b39-da2f6c1996bd.gif)
@@ -122,4 +124,5 @@ ___
 
 ##### 마이페이지
 ![마이페이지](https://user-images.githubusercontent.com/104378330/183349988-e42d4730-b5bb-4ecb-8ad4-fcab711b2713.gif)
+![마이페이지](https://user-images.githubusercontent.com/104378330/183381623-bb5f44da-66d6-4c59-a75a-f9711a3620ca.gif)
 ![고객지원](https://user-images.githubusercontent.com/104378330/183349951-dded36d8-811d-4f6b-9f13-ff775a704bc6.gif)
