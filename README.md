@@ -1,11 +1,11 @@
 
 # 🌙 room:in us
 
-### 1. 서비스 소개
+## 1. 서비스 소개
 
 > 
-> ## [roominus 바로가기](https://roominus.site/)
-> ## [roominus 팀 노션](https://www.notion.so/dingco/5-09de646b20204534b0012b0838aaabf7)
+> ## [💻 roominus 바로가기](https://roominus.site/)
+> ## 팀 노션 <a  href="https://www.notion.so/dingco/5-09de646b20204534b0012b0838aaabf7"> ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)</a>
 >
 >💡 방탈출 카페를 영화처럼 쉽게 예약하고 즐길 순 없을까? 예약의 과정을 최대한 간소화하고 방탈출 카페를 즐기는 것에 집중할 수 있도록 만들기 위해서 room:in us가 탄생했습니다.
 >
@@ -14,20 +14,18 @@
 > 🌟 이용자들에겐 매장과 테마별로 쉽게 정보를 파악할 수 있고, 그 정보를 바탕으로 쉽게 예약할 수 있는 통합 예약 페이지를 제공합니다.
 >
 > ⛄️ 방탈출 카페 운영자들에겐 좀 더 확실한 예약 서비스를 제공합니다.
+> ### 실행 방법
+>
+> 1. yarn install
+> 2. yarn dev
+> 3. localhost:3000
+>
 
-___
-#### 실행 방법
 
-1. yarn install
-2. yarn dev
-3. localhost:3000
-___
+## 2. 팀원 소개
 
-### 2. 팀원 소개
-___
 ![fronted](https://user-images.githubusercontent.com/104378330/182298195-37e90f9d-bd2c-4de0-a2c5-09bbf6d13644.png)
 ![backed](https://user-images.githubusercontent.com/104378330/182298394-de643761-2ff3-4d69-9682-e8fa1628400d.png)
-
 
 #### Frontend 손은채
 
@@ -66,25 +64,31 @@ ___
     - Blog: [https://velog.io/@hmds1606](https://velog.io/@hmds1606)
 
 
-### 3. 스택 소개
+## 3. 스택 소개
 
+![기술스택](https://user-images.githubusercontent.com/104378330/183593093-c625dd42-a26a-43e8-b61c-6402d748dc26.png)
+
+### 프론트 주요 스택
 
 |   이름    |   버전  |
 | :-------- | :------ |
+| `TypeScript`| 4.7.4  |
 | `React`   | 17.0.2  |
+| `Next.js`    | 12.2.0  |
+| `emotion`  |  11.9.3 |
+| `apolloclient`|  3.6.9 |
+| `recoii`|  0.7.4    |
+| `graphql`| 16.5.0   |
 | `Node`    | 16.15   |
-| `TypeScript`|       |
-| `eslint`  |         |
-| `prettier`|         |
-| `AWS`     |         |
+| `AWS`     | 배포     |
 
 
-### 4. 데이터 플로우
+## 4. 데이터 플로우
 
 ![Flowchart](https://user-images.githubusercontent.com/104378330/182285973-4ae1ffe4-3dfd-4d77-9212-37f18c8d2c3f.jpeg)
 
 
-### 5. 서비스 시연
+## 5. 서비스 시연
 
 #### 🗝 랜딩페이지
 ![랜딩](https://user-images.githubusercontent.com/104378330/183395832-f20d7e05-020f-4a84-98b7-5138bef592d3.gif)
