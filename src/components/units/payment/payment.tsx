@@ -86,7 +86,7 @@ export default function Payment(props: IPaymentProps) {
               icon: "success",
               title: "예약 완료",
               showConfirmButton: false,
-              timer: 1500,
+              timer: 1000,
               backdrop: false,
             });
             router.push(`/reservation/${result.data?.createReservation.id}`);
@@ -95,7 +95,7 @@ export default function Payment(props: IPaymentProps) {
               icon: "error",
               title: "예약실패",
               text: (error as Error).message,
-              timer: 1500,
+              timer: 1000,
               backdrop: false,
             });
             router.push("/reservation");
@@ -104,7 +104,7 @@ export default function Payment(props: IPaymentProps) {
           Swal.fire({
             icon: "error",
             title: "예약실패",
-            timer: 1500,
+            timer: 1000,
             backdrop: false,
           });
           router.push("/reservation");

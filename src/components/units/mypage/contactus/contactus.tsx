@@ -27,10 +27,10 @@ export default function ContactUs() {
       .then(
         (result) => {
           Swal.fire({
-            title: "이메일 전송이 완료되었습니다.",
+            title: "이메일 전송 완료",
             icon: "success",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 1000,
             backdrop: false,
           });
           router.push("/home");

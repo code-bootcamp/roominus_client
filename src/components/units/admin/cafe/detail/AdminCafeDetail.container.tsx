@@ -36,13 +36,6 @@ export default function AdminCafeDetail() {
     }).then((result) => {
       if (result.isConfirmed) {
         onClickDeleteModal();
-        Swal.fire({
-          icon: "success",
-          title: "삭제되었습니다!",
-          timer: 1300,
-          showConfirmButton: false,
-          backdrop: false,
-        });
       }
     });
   };

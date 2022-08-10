@@ -34,7 +34,7 @@ export default function CommunityCommentList() {
       Swal.fire({
         icon: "success",
         title: "댓글이 삭제되었습니다!",
-        timer: 1300,
+        timer: 500,
         showConfirmButton: false,
         backdrop: false,
       });

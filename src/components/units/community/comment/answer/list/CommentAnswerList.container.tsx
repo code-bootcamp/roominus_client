@@ -25,7 +25,7 @@ export default function CommentAnswerList(props: ICommentAnswerListProps) {
       Swal.fire({
         icon: "success",
         title: "답글이 삭제되었습니다!",
-        timer: 1300,
+        timer: 500,
         showConfirmButton: false,
         backdrop: false,
       });
