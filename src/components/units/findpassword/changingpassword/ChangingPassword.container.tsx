@@ -54,8 +54,8 @@ export default function ChangingPassword() {
       Swal.fire({
         title: `${updateUsername}님 비밀번호가 수정되었습니다.`,
         icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
         backdrop: false,
       });
       router.push("/login");

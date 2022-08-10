@@ -91,13 +91,6 @@ export default function Login() {
       setAccessToken(Token);
       setUserInfo(user);
 
-      Swal.fire({
-        title: "반갑습니다",
-        icon: "success",
-        showConfirmButton: false,
-        timer: 1000,
-        backdrop: false,
-      });
       if (visitedPage) {
         router.push(visitedPage);
       } else if (!visitedPage) {
@@ -160,13 +153,6 @@ export default function Login() {
               })
               .then((result) => {
                 setUserInfo(result.data.fetchUserLoggedIn);
-                Swal.fire({
-                  title: "반갑습니다",
-                  icon: "success",
-                  showConfirmButton: false,
-                  timer: 1000,
-                  backdrop: false,
-                });
               })
               .catch((error) =>
                 Swal.fire({
@@ -238,13 +224,6 @@ export default function Login() {
                   })
                   .then((result) => {
                     setUserInfo(result.data.fetchUserLoggedIn);
-                    Swal.fire({
-                      title: "반갑습니다",
-                      icon: "success",
-                      showConfirmButton: false,
-                      timer: 1000,
-                      backdrop: false,
-                    });
                   })
                   .catch((error) =>
                     Swal.fire({
