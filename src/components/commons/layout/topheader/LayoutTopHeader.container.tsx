@@ -35,7 +35,6 @@ export default function LayoutTopHeader() {
         phone: "",
         point: 0,
       });
-
       router.push("/home");
     } catch (error) {
       Swal.fire({

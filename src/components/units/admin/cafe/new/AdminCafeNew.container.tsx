@@ -69,13 +69,6 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
           },
         },
       });
-      Swal.fire({
-        icon: "success",
-        title: "등록이 완료되었습니다!",
-        timer: 1300,
-        showConfirmButton: false,
-        backdrop: false,
-      });
       router.push(`/admin/cafe/${result.data?.createCafe.id}`);
     } catch (error) {
       Swal.fire({
@@ -103,13 +96,6 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
           cafeId: router.query.id,
           updateCafeInput,
         },
-      });
-      Swal.fire({
-        icon: "success",
-        title: "수정이 완료되었습니다!",
-        timer: 1300,
-        showConfirmButton: false,
-        backdrop: false,
       });
       router.push(`/admin/cafe/${result.data?.updateCafe.id}`);
     } catch (error) {
