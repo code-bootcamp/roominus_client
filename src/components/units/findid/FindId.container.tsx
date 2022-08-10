@@ -55,8 +55,8 @@ export default function FindId() {
         Swal.fire({
           title: `가입하신 아이디는 ${result.data.fetchUser.email}입니다`,
           icon: "success",
-          confirmButtonText: "확인",
-          confirmButtonColor: "#4a00e0e7",
+          showConfirmButton: false,
+          timer: 2000,
           backdrop: false,
         });
       })
@@ -65,8 +65,8 @@ export default function FindId() {
           title: "조회하신 번호로 가입된 정보가 없습니다.",
           width: 700,
           icon: "error",
-          confirmButtonText: "확인",
-          confirmButtonColor: "#4a00e0e7",
+          showConfirmButton: false,
+          timer: 1000,
           backdrop: false,
         });
       });
