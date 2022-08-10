@@ -44,13 +44,6 @@ export default function CommentAnswerWrite(props: ICommentAnswerWriteProps) {
           },
         ],
       });
-      Swal.fire({
-        icon: "success",
-        title: "답글이 등록되었습니다!",
-        timer: 1300,
-        showConfirmButton: false,
-        backdrop: false,
-      });
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -73,13 +66,6 @@ export default function CommentAnswerWrite(props: ICommentAnswerWriteProps) {
       });
       props.refetch();
       props.setIsAnswerEdit((prev: any) => !prev);
-      Swal.fire({
-        icon: "success",
-        title: "답글 수정이 완료되었습니다!",
-        timer: 1300,
-        showConfirmButton: false,
-        backdrop: false,
-      });
     } catch (error) {
       Swal.fire({
         icon: "error",

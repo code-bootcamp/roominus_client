@@ -13,7 +13,7 @@ export default function CommentAnswerEditUI(props: ICommentAnswerEditUIProps) {
             <S.InfoTitleBox>
               <S.InfoTitle>
                 <S.InfoName>{props.el.user?.name}</S.InfoName>
-                <S.Date>{getDate(props.el.createdAt)}</S.Date>
+                <S.Date>{props.el.createdAt.split("T")[0]}</S.Date>
               </S.InfoTitle>
               <S.InfoTitle>
                 {props.el.user?.name !== props.userInfo.name ? (
