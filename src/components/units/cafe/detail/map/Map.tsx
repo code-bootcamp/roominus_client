@@ -34,8 +34,7 @@ export default function KakaoMap(props: IKakaoMapProps) {
   useEffect(() => {
     if (props.data?.fetchCafe?.address_detail) {
       const script = document.createElement("script");
-      script.src =
-        "//dapi.kakao.com/v2/maps/sdk.js?appkey=1988a9a8f46853586b98dd3981a6b87e&autoload=false&libraries=services";
+      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false&libraries=services`;
       document.head.appendChild(script);
 
       script.onload = () => {

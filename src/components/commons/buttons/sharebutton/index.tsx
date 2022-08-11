@@ -91,7 +91,7 @@ export default function ShareButton() {
       // 중복 initialization 방지
       if (!window.Kakao.isInitialized()) {
         // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
-        window.Kakao.init("1988a9a8f46853586b98dd3981a6b87e");
+        window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
       }
     }
   }, [status]);
