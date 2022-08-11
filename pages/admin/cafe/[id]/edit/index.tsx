@@ -21,9 +21,9 @@ export default function AdminCafeEditPage() {
   useAdminAuth();
   const router = useRouter();
 
-  const { data } = useQuery(FETCH_CAFE, {
+  const { data: cafeData } = useQuery(FETCH_CAFE, {
     variables: { cafeId: router.query.id },
   });
 
-  return <AdminCafeNew isEdit={true} editData={data} />;
+  return <AdminCafeNew isEdit={true} editData={cafeData} />;
 }

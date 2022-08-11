@@ -22,9 +22,9 @@ export default function CommunityEditPage() {
 
   const router = useRouter();
 
-  const { data, loading } = useQuery(FETCH_BOARD, {
+  const { data: editDate, loading } = useQuery(FETCH_BOARD, {
     variables: { id: router.query.id },
   });
 
-  return loading ? <></> : <CommunityNew isEdit={true} editData={data} />;
+  return loading ? <></> : <CommunityNew isEdit={true} editData={editDate} />;
 }
