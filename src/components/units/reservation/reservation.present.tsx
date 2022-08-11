@@ -19,7 +19,6 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 export default function ReservationUI(props: IReservationUIProps) {
   const date = new Date();
   const MaxDate = date.setMonth(date.getMonth() + 3);
-  const nodeRef = useRef(null);
 
   if (props.max < props.usePoint || props.usePoint < 0) {
     Swal.fire({
@@ -34,14 +33,14 @@ export default function ReservationUI(props: IReservationUIProps) {
       <S.Wrapper>
         {props.themeId ? (
           <>
-            {props?.data?.fetchThemeMenus?.length ? (
+            {props?.themeMenus?.fetchThemeMenus?.length ? (
               <>
                 <S.BackBox>
                   <S.Left onClick={props.onClickReset} />
                   <span onClick={props.onClickReset}>처음으로 </span>
                 </S.BackBox>
                 <ReservationThemeInfo
-                  data={props.data}
+                  data={props.themeMenus}
                   timeTable={props.timeTable}
                 />
               </>
@@ -68,7 +67,6 @@ export default function ReservationUI(props: IReservationUIProps) {
             label="테마 선택"
             id="filled-theme"
             onChange={props.onChangeTheme}
-            // value={props.themeId ? props.themeId : "" || ""}
             value={props.themeId || ""}
             helperText="예약이 가능한 테마만 예약 과정이 진행됩니다."
             style={{ paddingBottom: "1.3em" }}
@@ -83,7 +81,7 @@ export default function ReservationUI(props: IReservationUIProps) {
             ))}
           </TextField>
 
-          {!!props?.data?.fetchThemeMenus.length && props?.themeId && (
+          {!!props?.themeMenus?.fetchThemeMenus.length && props?.themeId && (
             <TextField
               fullWidth
               required
@@ -92,7 +90,6 @@ export default function ReservationUI(props: IReservationUIProps) {
               variant="outlined"
               id="filled-cafe"
               onChange={props.onChangeCafe}
-              // value={props?.cafeId ? props?.cafeId : "" || ""}
               value={props?.cafeId || ""}
               helperText="예약이 가능한 매장만 선택이 가능합니다."
               style={{ paddingBottom: "1.3em" }}
@@ -100,14 +97,14 @@ export default function ReservationUI(props: IReservationUIProps) {
               <MenuItem value={""} disabled>
                 매장을 선택해주세요
               </MenuItem>
-              <MenuItem value={props?.data?.fetchThemeMenus[0]?.cafe?.id}>
-                {props?.data?.fetchThemeMenus[0]?.cafe?.name}
+              <MenuItem value={props?.themeMenus?.fetchThemeMenus[0]?.cafe?.id}>
+                {props?.themeMenus?.fetchThemeMenus[0]?.cafe?.name}
               </MenuItem>
             </TextField>
           )}
 
           <S.GridBox>
-            {!!props?.data?.fetchThemeMenus.length && props?.cafeId && (
+            {!!props?.themeMenus?.fetchThemeMenus.length && props?.cafeId && (
               <>
                 <MuiPickersUtilsProvider utils={MomentUtils}>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -128,44 +125,40 @@ export default function ReservationUI(props: IReservationUIProps) {
                       onChange={props.onChangeDate}
                       style={{ paddingBottom: "1.3em" }}
                       helperText="방문하실 날짜를 선택해주세요."
-                      // rifmformatter={props.dateFormatter}
-                      // keyboardbuttonprops={{
-                      //   "aria-label": "change date",
-                      // }}
                     />
                   </LocalizationProvider>
                 </MuiPickersUtilsProvider>
               </>
             )}
 
-            {!!props?.data?.fetchThemeMenus.length && props?.reservationDate && (
-              <TextField
-                fullWidth
-                required
-                select
-                value={props?.time ? props?.time : ""}
-                // defaultValue=""
-                label="방문 시간 선택"
-                id="filled-time"
-                variant="outlined"
-                onChange={props.onChangeTime}
-                helperText="방문하실 시간을 선택해주세요."
-                style={{ paddingBottom: "1.3em" }}
-              >
-                <MenuItem value={""} disabled>
-                  시간을 선택해주세요
-                </MenuItem>
-                {props?.resultTime?.map((el: any) => (
-                  <MenuItem key={uuidv4()} value={el}>
-                    {el}
+            {!!props?.themeMenus?.fetchThemeMenus.length &&
+              props?.reservationDate && (
+                <TextField
+                  fullWidth
+                  required
+                  select
+                  value={props?.time ? props?.time : ""}
+                  label="방문 시간 선택"
+                  id="filled-time"
+                  variant="outlined"
+                  onChange={props.onChangeTime}
+                  helperText="방문하실 시간을 선택해주세요."
+                  style={{ paddingBottom: "1.3em" }}
+                >
+                  <MenuItem value={""} disabled>
+                    시간을 선택해주세요
                   </MenuItem>
-                ))}
-              </TextField>
-            )}
+                  {props?.resultTime?.map((el: any) => (
+                    <MenuItem key={uuidv4()} value={el}>
+                      {el}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              )}
           </S.GridBox>
 
           <S.GridBox>
-            {!!props?.data?.fetchThemeMenus.length && props?.selectTime && (
+            {!!props?.themeMenus?.fetchThemeMenus.length && props?.selectTime && (
               <TextField
                 fullWidth
                 required
@@ -174,7 +167,6 @@ export default function ReservationUI(props: IReservationUIProps) {
                 id="filled-headCount"
                 variant="outlined"
                 onChange={props.onChangeHeadCount}
-                // value={props?.peopleNumber ? props?.peopleNumber : "" || ""}
                 value={props?.peopleNumber || ""}
                 helperText="방문하시는 인원을 선택해주세요."
                 style={{ paddingBottom: "1.3em" }}
@@ -190,7 +182,7 @@ export default function ReservationUI(props: IReservationUIProps) {
               </TextField>
             )}
 
-            {!!props?.data?.fetchThemeMenus.length &&
+            {!!props?.themeMenus?.fetchThemeMenus.length &&
               props?.reservationDate &&
               props?.selectTime && (
                 <div>
@@ -213,7 +205,7 @@ export default function ReservationUI(props: IReservationUIProps) {
               )}
           </S.GridBox>
 
-          {!!props?.data?.fetchThemeMenus.length &&
+          {!!props?.themeMenus?.fetchThemeMenus.length &&
             props?.reservationDate &&
             props?.selectTime && (
               <TextField
@@ -225,14 +217,13 @@ export default function ReservationUI(props: IReservationUIProps) {
                 maxRows={2}
                 variant="outlined"
                 value={props?.memo || ""}
-                // value={props?.memo ? props?.memo : "" || ""}
                 onChange={props.onChangeMemo}
                 style={{ paddingBottom: "1.3em" }}
                 helperText="예약자와 방문자가 다를 경우 방문자 정보를 작성해주세요."
               />
             )}
 
-          {!!props?.data?.fetchThemeMenus.length && props.totalPrice && (
+          {!!props?.themeMenus?.fetchThemeMenus.length && props.totalPrice && (
             <S.FooterBox>
               <S.Total>
                 <span>최종 결제 금액</span>

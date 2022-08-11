@@ -32,7 +32,7 @@ export default function Reservation() {
 
   // 전체 테마리스트, 메뉴 예약 리스트, 예약된 리스트 불러오기
   const { data: themesList } = useQuery(FETCH_THEMES_ALL);
-  const { data } = useQuery(FETCH_THEME_MENUS, {
+  const { data: themeMenus } = useQuery(FETCH_THEME_MENUS, {
     variables: { themeId },
   });
   const { data: reservations } = useQuery(FETCH_RESERVATIONS, {
@@ -76,7 +76,7 @@ export default function Reservation() {
   };
 
   // 현재 테마 메뉴 리스트에 있는 모든 타임을 부르고, 중복된 시간을 제외한 유일한 타임테이블만 보여준다
-  const timeResult = data?.fetchThemeMenus.map(
+  const timeResult = themeMenus?.fetchThemeMenus.map(
     (el: IFetchThemeMenus) => el.reservation_time
   );
   const set: Set<string> = new Set(timeResult);
@@ -127,7 +127,7 @@ export default function Reservation() {
 
   // 선택한 타임에 맞게 인원 리스트를 업데이트 해야 함
   useEffect(() => {
-    const peopleResult = data?.fetchThemeMenus
+    const peopleResult = themeMenus?.fetchThemeMenus
       .filter((el: IFetchThemeMenus) => el.reservation_time === time)
       .map((el: IFetchThemeMenus) => el.people_number);
 
@@ -141,7 +141,7 @@ export default function Reservation() {
 
   // 선택한 인원에 따라 가격달라지게
   useEffect(() => {
-    const priceResult = data?.fetchThemeMenus
+    const priceResult = themeMenus?.fetchThemeMenus
       .filter((el: IFetchThemeMenus) => el.reservation_time === time)
       .filter(
         (el: IFetchThemeMenus) => el.people_number === peopleNumber
@@ -161,7 +161,7 @@ export default function Reservation() {
   };
 
   // 예약에 사용할 themeMenuId 추출
-  const ThemeMenuId = data?.fetchThemeMenus
+  const ThemeMenuId = themeMenus?.fetchThemeMenus
     .filter((el: IFetchThemeMenus) => el.reservation_time === time)
     .filter((el: IFetchThemeMenus) => el.people_number === peopleNumber)[0]?.id;
 
@@ -197,7 +197,6 @@ export default function Reservation() {
       // 날짜변경
       reservationDate={reservationDate}
       onChangeDate={onChangeDate}
-      // inputValue={inputValue}
       dateFormatter={dateFormatter}
       // 시간변경
       resultTime={resultTime}
@@ -218,7 +217,7 @@ export default function Reservation() {
       // 전체 테마 목록 데이터
       themesList={themesList}
       // 선택한 테마의 데이터
-      data={data}
+      themeMenus={themeMenus}
       // 목록으로 돌아가기
       onClickReset={onClickReset}
       // 예약에 사용할 props

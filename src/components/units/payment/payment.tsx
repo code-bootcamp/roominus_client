@@ -7,7 +7,7 @@ import { IPaymentProps, IRsp } from "./payment.types";
 
 declare const window: typeof globalThis & {
   IMP: any;
-}; // 윈도우와 IMP 타입 지정
+};
 
 const CREATE_RESERVATION = gql`
   mutation createReservation(
@@ -49,7 +49,7 @@ export default function Payment(props: IPaymentProps) {
 
   const requestPay = () => {
     const IMP = window.IMP;
-    IMP.init("imp44516396");
+    IMP.init(process.env.NEXT_PUBLIC_IMP_KEY);
 
     IMP.request_pay(
       {
