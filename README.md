@@ -126,7 +126,7 @@
 ![예약 완료 페이지 ](https://user-images.githubusercontent.com/104378330/183381663-add84c68-cc17-4a1d-a6db-39913b8d7aa2.gif)
 
 #### 🗝 커뮤니티
-![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/183363904-9080df0e-b553-4456-9b39-da2f6c1996bd.gif)
+![커뮤니티 등록](https://user-images.githubusercontent.com/104378330/184063114-cd71694e-3f33-464f-b834-6b8225fdd6fc.gif)
 ![커뮤니티 상세](https://user-images.githubusercontent.com/104378330/183350618-a90013be-d600-4938-b59c-c00b76dc5864.gif)
 
 
