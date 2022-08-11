@@ -10,7 +10,7 @@ export default function AdminCafeDetail() {
 
   const [deleteCafe] = useMutation(DELETE_CAFE);
 
-  const { data } = useQuery(FETCH_CAFE, {
+  const { data: cafeData } = useQuery(FETCH_CAFE, {
     variables: {
       cafeId: router.query.id,
     },
@@ -60,7 +60,7 @@ export default function AdminCafeDetail() {
       onClickList={onClickList}
       onClickEdit={onClickEdit}
       onClickDelete={onClickDelete}
-      data={data}
+      data={cafeData}
     />
   );
 }

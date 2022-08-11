@@ -7,10 +7,10 @@ import useAdminAuth from "../../../../../src/components/commons/hooks/useAdminAu
 export default function ThemeMenuCreatePage() {
   useAdminAuth();
   const router = useRouter();
-  const { data: infodata } = useQuery(FETCH_THEME, {
+  const { data: themeInfodata } = useQuery(FETCH_THEME, {
     variables: {
       themeId: router.query.id,
     },
   });
-  return <ThemeMenuCreate infodata={infodata} />;
+  return <ThemeMenuCreate infodata={themeInfodata} />;
 }

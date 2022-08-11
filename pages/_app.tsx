@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>room:in us</title>
         <meta
           property="og:roominus"
-          content="방탈출 통합 예약 플랫폼 룸인어스"
+          content="방탈출 까페 통합 예약 플랫폼 룸인어스"
         ></meta>
         <meta
           property="og:description"
