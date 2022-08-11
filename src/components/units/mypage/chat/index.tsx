@@ -17,7 +17,7 @@ export default function KakaoChat() {
       if (window.Kakao) {
         const kakao = window.Kakao;
         if (!kakao.isInitialized()) {
-          kakao.init("1988a9a8f46853586b98dd3981a6b87e");
+          kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
         }
       }
 

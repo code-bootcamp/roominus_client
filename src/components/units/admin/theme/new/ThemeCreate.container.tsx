@@ -94,7 +94,10 @@ export default function ThemeCreate(props: IThemeCreateProps) {
   const upload = (file: any) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "tyx7y8ot");
+    formData.append(
+      "upload_preset",
+      process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
+    );
 
     const result = fetch(
       "https://api.cloudinary.com/v1_1/dop5piuwp/image/upload",
