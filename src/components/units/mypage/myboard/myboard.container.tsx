@@ -5,7 +5,7 @@ import MyBoardUI from "./myboard.presenter";
 import { FETCH_BOARDS_USER, FETCH_BOARDS_USER_COUNT } from "./myboard.query";
 
 export default function MyBoard() {
-  const { data, refetch } = useQuery(FETCH_BOARDS_USER);
+  const { data: boards, refetch } = useQuery(FETCH_BOARDS_USER);
   const { data: count } = useQuery(FETCH_BOARDS_USER_COUNT);
   const router = useRouter();
 
@@ -15,7 +15,7 @@ export default function MyBoard() {
 
   return (
     <MyBoardUI
-      data={data}
+      boards={boards}
       refetch={refetch}
       count={count}
       onClickBoard={onClickBoard}

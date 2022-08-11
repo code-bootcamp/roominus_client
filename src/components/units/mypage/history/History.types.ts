@@ -13,5 +13,5 @@ export interface IHistoryUIProps {
   onClickReservationDetail: MouseEventHandler<HTMLDivElement>;
   refetch: any;
   count: any;
-  data: any;
+  reservation: any;
 }

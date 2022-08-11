@@ -34,7 +34,10 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
   const upload = (file: any) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "tyx7y8ot");
+    formData.append(
+      "upload_preset",
+      process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
+    );
 
     const result = fetch(
       "https://api.cloudinary.com/v1_1/dop5piuwp/image/upload",
@@ -69,13 +72,6 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
           },
         },
       });
-      Swal.fire({
-        icon: "success",
-        title: "등록이 완료되었습니다!",
-        timer: 1300,
-        showConfirmButton: false,
-        backdrop: false,
-      });
       router.push(`/admin/cafe/${result.data?.createCafe.id}`);
     } catch (error) {
       Swal.fire({
@@ -103,13 +99,6 @@ export default function AdminCafeNew(props: IAdminCafeNewProps) {
           cafeId: router.query.id,
           updateCafeInput,
         },
-      });
-      Swal.fire({
-        icon: "success",
-        title: "수정이 완료되었습니다!",
-        timer: 1300,
-        showConfirmButton: false,
-        backdrop: false,
       });
       router.push(`/admin/cafe/${result.data?.updateCafe.id}`);
     } catch (error) {

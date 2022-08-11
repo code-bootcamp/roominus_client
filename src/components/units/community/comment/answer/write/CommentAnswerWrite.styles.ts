@@ -5,11 +5,6 @@ export const Wrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  @media ${breakPoints.tablet} {
-    margin-top: 2em;
-    width: 90%;
-  }
 `;
 
 export const ReCommentListBox = styled.div`

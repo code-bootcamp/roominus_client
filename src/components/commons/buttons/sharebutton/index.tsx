@@ -23,7 +23,6 @@ const URLShareButton = styled.button`
   color: white;
   border-radius: 24px;
   border: none;
-  /* font-size: 0.8em; */
   margin-top: 0.1em;
   cursor: pointer;
   background: linear-gradient(90deg, #7c21e1 0%, #4a00e0 100%);
@@ -91,7 +90,7 @@ export default function ShareButton() {
       // 중복 initialization 방지
       if (!window.Kakao.isInitialized()) {
         // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
-        window.Kakao.init("1988a9a8f46853586b98dd3981a6b87e");
+        window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
       }
     }
   }, [status]);
@@ -106,7 +105,7 @@ export default function ShareButton() {
     Swal.fire({
       icon: "success",
       title: "링크가 복사되었습니다!",
-      timer: 1300,
+      timer: 800,
       showConfirmButton: false,
       backdrop: false,
     });

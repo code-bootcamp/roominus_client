@@ -22,19 +22,21 @@ export default function RewardUI(props: IRewardUIProps) {
           <S.ColumnHeaderBasic>사용 포인트</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>적립 예정</S.ColumnHeaderBasic>
         </S.TitleRow>
-        {props.data?.fetchPayments.map((el: IFetchPayments, index: number) => (
-          <S.Row key={el.id}>
-            <S.ColumnNumber>{index + 1}</S.ColumnNumber>
-            <S.ColumnTitle onClick={props.onClickReservationDetail}>
-              {el.reservation.theme_menu.theme.title}
-            </S.ColumnTitle>
-            <S.ColumnPoint>{el.price.toLocaleString()}원</S.ColumnPoint>
-            <S.ColumnPoint>{el.usepoint.toLocaleString()}원</S.ColumnPoint>
-            <S.ColumnPoint>
-              {Math.ceil(el.price * 0.03).toLocaleString()}원
-            </S.ColumnPoint>
-          </S.Row>
-        ))}
+        {props.payments?.fetchPayments.map(
+          (el: IFetchPayments, index: number) => (
+            <S.Row key={el.id}>
+              <S.ColumnNumber>{index + 1}</S.ColumnNumber>
+              <S.ColumnTitle onClick={props.onClickReservationDetail}>
+                {el.reservation.theme_menu.theme.title}
+              </S.ColumnTitle>
+              <S.ColumnPoint>{el.price.toLocaleString()}원</S.ColumnPoint>
+              <S.ColumnPoint>{el.usepoint.toLocaleString()}원</S.ColumnPoint>
+              <S.ColumnPoint>
+                {Math.ceil(el.price * 0.03).toLocaleString()}원
+              </S.ColumnPoint>
+            </S.Row>
+          )
+        )}
         <S.TableBottom />
       </S.Wrapper>{" "}
       <S.FooterBox>

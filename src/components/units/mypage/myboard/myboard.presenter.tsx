@@ -22,7 +22,7 @@ export default function MyBoardUI(props: IMyBoardUIProps) {
           <S.ColumnHeaderBasic>조회수</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>작성일</S.ColumnHeaderBasic>
         </S.TitleRow>
-        {props.data?.fetchBoardsUser.map(
+        {props.boards?.fetchBoardsUser.map(
           (el: IFetchBoardsUserProps, index: number) => (
             <S.Row key={index}>
               <S.ColumnNumber>{index + 1}</S.ColumnNumber>

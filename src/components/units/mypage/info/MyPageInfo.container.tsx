@@ -28,9 +28,6 @@ export default function MyPageInfo() {
 
         context: {
           uri: "https://wawoong.shop/graphql",
-          // headers: {
-          //   Authorization: `Bearer ${accessToken}`,
-          // },
           credentials: "include",
         },
       });
@@ -44,13 +41,7 @@ export default function MyPageInfo() {
         phone: "",
         point: 0,
       });
-      Swal.fire({
-        title: "로그아웃 되었습니다",
-        icon: "success",
-        showConfirmButton: false,
-        timer: 1000,
-        backdrop: false,
-      });
+
       router.push("/home");
     } catch (error) {
       Swal.fire({

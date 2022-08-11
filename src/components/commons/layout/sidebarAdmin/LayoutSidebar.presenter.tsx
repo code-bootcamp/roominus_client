@@ -6,7 +6,6 @@ import * as S from "./LayoutSidebar.styleds";
 const NAVIGATION_MENUS = [
   { name: "매장", page: "/admin/cafe" },
   { name: "테마", page: "/admin/theme/list" },
-  { name: "예약", page: "/admin/reservation/list" },
 ];
 
 export default function LayoutSideBarAdminUI(props: ISideBarAdminUIProps) {

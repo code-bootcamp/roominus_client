@@ -68,13 +68,6 @@ export default function CommunityNew(props: ICommunityNewProps) {
             },
           },
         });
-        Swal.fire({
-          icon: "success",
-          title: "등록이 완료되었습니다!",
-          timer: 1300,
-          showConfirmButton: false,
-          backdrop: false,
-        });
         router.push(`/community/${result.data?.createBoard.id}`);
       }
     } catch (error) {
@@ -99,13 +92,6 @@ export default function CommunityNew(props: ICommunityNewProps) {
           boardId: router.query.id,
           updateBoardInput,
         },
-      });
-      Swal.fire({
-        icon: "success",
-        title: "수정이 완료되었습니다!",
-        timer: 1300,
-        showConfirmButton: false,
-        backdrop: false,
       });
       router.push(`/community/${result.data?.updateBoard.id}`);
     } catch (error) {

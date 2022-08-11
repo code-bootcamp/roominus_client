@@ -7,7 +7,7 @@ import { IPaymentProps, IRsp } from "./payment.types";
 
 declare const window: typeof globalThis & {
   IMP: any;
-}; // 윈도우와 IMP 타입 지정
+};
 
 const CREATE_RESERVATION = gql`
   mutation createReservation(
@@ -49,7 +49,7 @@ export default function Payment(props: IPaymentProps) {
 
   const requestPay = () => {
     const IMP = window.IMP;
-    IMP.init("imp44516396");
+    IMP.init(process.env.NEXT_PUBLIC_IMP_KEY);
 
     IMP.request_pay(
       {
@@ -86,7 +86,7 @@ export default function Payment(props: IPaymentProps) {
               icon: "success",
               title: "예약 완료",
               showConfirmButton: false,
-              timer: 1500,
+              timer: 1000,
               backdrop: false,
             });
             router.push(`/reservation/${result.data?.createReservation.id}`);
@@ -95,7 +95,7 @@ export default function Payment(props: IPaymentProps) {
               icon: "error",
               title: "예약실패",
               text: (error as Error).message,
-              timer: 1500,
+              timer: 1000,
               backdrop: false,
             });
             router.push("/reservation");
@@ -104,7 +104,7 @@ export default function Payment(props: IPaymentProps) {
           Swal.fire({
             icon: "error",
             title: "예약실패",
-            timer: 1500,
+            timer: 1000,
             backdrop: false,
           });
           router.push("/reservation");

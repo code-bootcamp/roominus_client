@@ -49,7 +49,6 @@ export default function RenderCells(props: IRenderCellsProps) {
             {format(props.currentMonth, "M") !== format(day, "M") ? (
               <S.NotValid>
                 <S.NotValidSpan style={{ display: "none" }}>
-                  {" "}
                   {formattedDate}
                 </S.NotValidSpan>
                 <S.ThemeImage

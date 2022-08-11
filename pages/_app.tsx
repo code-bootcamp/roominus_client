@@ -19,12 +19,12 @@ declare const window: typeof globalThis & {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCKl9WkEzuKhSQmKO2QmRzSiZHpUk4qbls",
-  authDomain: "roominus-85954.firebaseapp.com",
-  projectId: "roominus-85954",
-  storageBucket: "roominus-85954.appspot.com",
-  messagingSenderId: "182361182904",
-  appId: "1:182361182904:web:9ab057d21eaee39e359a4d",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     document.head.appendChild(script);
 
     script.onload = () => {
-      window.Kakao.init("1988a9a8f46853586b98dd3981a6b87e");
+      window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
       window.Kakao.isInitialized();
     };
   }, []);
@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>room:in us</title>
         <meta
           property="og:roominus"
-          content="방탈출 통합 예약 플랫폼 룸인어스"
+          content="방탈출 까페 통합 예약 플랫폼 룸인어스"
         ></meta>
         <meta
           property="og:description"

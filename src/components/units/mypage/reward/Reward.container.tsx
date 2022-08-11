@@ -5,7 +5,7 @@ import { FETCH_PAYMENTS, FETCH_PAYMENTS_COUNT } from "./Reward.query";
 
 export default function Reward() {
   const router = useRouter();
-  const { data, refetch } = useQuery(FETCH_PAYMENTS, {
+  const { data: payments, refetch } = useQuery(FETCH_PAYMENTS, {
     variables: {
       page: 1,
     },
@@ -18,7 +18,7 @@ export default function Reward() {
 
   return (
     <RewardUI
-      data={data}
+      payments={payments}
       count={count}
       refetch={refetch}
       onClickReservationDetail={onClickReservationDetail}

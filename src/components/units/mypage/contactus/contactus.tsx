@@ -22,15 +22,15 @@ export default function ContactUs() {
         "roominus_dev",
         "template_gisqmpi",
         form.current,
-        "KcSmYCkrod3LluoNy"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
           Swal.fire({
-            title: "이메일 전송이 완료되었습니다.",
+            title: "이메일 전송 완료",
             icon: "success",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 800,
             backdrop: false,
           });
           router.push("/home");
@@ -40,7 +40,7 @@ export default function ContactUs() {
             title: (error as Error).message,
             icon: "error",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 800,
             backdrop: false,
           });
         }

@@ -9,6 +9,8 @@ import { UPDATE_USER } from "./ChangingPassword.query";
 import { useMutation } from "@apollo/client";
 
 import Swal from "sweetalert2";
+import { updateUserNameState } from "../../../../commons/store";
+import { useRecoilState } from "recoil";
 const schema = yup.object({
   password: yup
     .string()
@@ -31,7 +33,8 @@ export default function ChangingPassword() {
   const [openEye2, setOpenEye2] = useState(false);
 
   const [updateUsergql] = useMutation(UPDATE_USER);
-
+  const [updateUsername, setUpdateUsername] =
+    useRecoilState(updateUserNameState);
   const { register, handleSubmit, setValue, formState, trigger } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
@@ -39,7 +42,7 @@ export default function ChangingPassword() {
 
   const onSubmitChangingPassword = async (data: any) => {
     try {
-      const result = await updateUsergql({
+      await updateUsergql({
         variables: {
           userId: router.query.id,
           updateUserInput: {
@@ -47,11 +50,12 @@ export default function ChangingPassword() {
           },
         },
       });
+
       Swal.fire({
-        title: `${result.data.updateUser.name}님 비밀번호가 수정되었습니다.`,
+        title: `${updateUsername}님 비밀번호가 수정되었습니다.`,
         icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 1000,
         backdrop: false,
       });
       router.push("/login");

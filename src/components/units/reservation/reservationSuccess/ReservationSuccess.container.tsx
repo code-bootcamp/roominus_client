@@ -95,27 +95,24 @@ export default function ReservationSuccess() {
           title: "취소되었습니다",
           icon: "success",
           showConfirmButton: false,
-          timer: 1000,
+          timer: 800,
           backdrop: false,
         });
 
-        router.push("/mypage");
+        router.push("/mypage/history");
       }
     });
   };
 
   const onClickOpenCancelModal = () => {
     Swal.fire({
-      title: "취소 된 예약건입니다.",
+      title: "취소된 예약입니다",
       icon: "error",
-      confirmButtonColor: "#843dca",
-      confirmButtonText: "돌아가기",
+      showConfirmButton: false,
+      timer: 500,
       backdrop: false,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        router.push("/home");
-      }
     });
+    router.push("/mypage/history");
   };
 
   // 환불 완료일 경우 페이지 접속 불가

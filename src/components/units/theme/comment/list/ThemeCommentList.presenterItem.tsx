@@ -74,8 +74,9 @@ export default function ThemeCommentListUIItem(
 
         Swal.fire({
           icon: "success",
-          title: "삭제되었습니다!",
-          text: "당신의 댓글은 삭제되었다.",
+          title: "리뷰가 삭제되었습니다!",
+          timer: 500,
+          showConfirmButton: false,
           backdrop: false,
         });
       }
