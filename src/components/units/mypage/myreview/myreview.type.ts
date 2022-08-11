@@ -6,7 +6,7 @@ export interface IMyReviewUIProps {
     fetchThemeReviewsUserCount: number;
   };
 
-  data: any;
+  reviews: any;
 }
 
 export interface IFetchThemesUser {

@@ -8,7 +8,7 @@ import {
 
 export default function History() {
   const router = useRouter();
-  const { data, refetch } = useQuery(FETCH_RESERVATIONS_USER, {
+  const { data: reservation, refetch } = useQuery(FETCH_RESERVATIONS_USER, {
     variables: {
       page: 1,
     },
@@ -21,7 +21,7 @@ export default function History() {
 
   return (
     <HistoryUI
-      data={data}
+      reservation={reservation}
       count={count}
       refetch={refetch}
       onClickReservationDetail={onClickReservationDetail}

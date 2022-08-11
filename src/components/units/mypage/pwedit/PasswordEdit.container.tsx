@@ -43,7 +43,7 @@ export default function PWedit() {
         title: "소셜로그인 유저는 비밀번호가 없습니다.",
         icon: "error",
         showConfirmButton: false,
-        timer: 1000,
+        timer: 800,
         backdrop: false,
       });
       router.push("/mypage/phoneedit");
@@ -95,7 +95,7 @@ export default function PWedit() {
           title: "비밀번호가 변경되었습니다.",
           icon: "success",
           showConfirmButton: false,
-          timer: 1000,
+          timer: 800,
           backdrop: false,
         });
         router.push("/mypage");
@@ -105,7 +105,7 @@ export default function PWedit() {
         title: "소셜로그인 유저는 비밀번호가 없습니다.",
         icon: "error",
         showConfirmButton: false,
-        timer: 1000,
+        timer: 800,
         backdrop: false,
       });
       router.push("/mypage/phoneedit");

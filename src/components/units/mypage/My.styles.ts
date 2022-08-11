@@ -102,7 +102,6 @@ export const ColumnBasic = styled.div`
 
 export const ColumnTitle = styled.div`
   width: 40%;
-  /* text-align: center; */
   cursor: pointer;
   font-weight: 700;
   padding-left: 10px;

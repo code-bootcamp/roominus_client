@@ -8,7 +8,7 @@ import {
 } from "./myreview.query";
 
 export default function MyReview() {
-  const { data, refetch } = useQuery(FETCH_THEMES_REVIEWS_USER);
+  const { data: reviews, refetch } = useQuery(FETCH_THEMES_REVIEWS_USER);
   const { data: count } = useQuery(FETCH_THEMES_REVIEWS_USER_COUNT);
   const router = useRouter();
 
@@ -17,7 +17,7 @@ export default function MyReview() {
   };
   return (
     <MyReviewUI
-      data={data}
+      reviews={reviews}
       count={count?.fetchThemeReviewsUserCount}
       refetch={refetch}
       onClickReview={onClickReview}

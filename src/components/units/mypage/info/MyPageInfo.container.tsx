@@ -28,9 +28,6 @@ export default function MyPageInfo() {
 
         context: {
           uri: "https://wawoong.shop/graphql",
-          // headers: {
-          //   Authorization: `Bearer ${accessToken}`,
-          // },
           credentials: "include",
         },
       });

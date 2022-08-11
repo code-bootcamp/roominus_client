@@ -24,7 +24,7 @@ export default function MyReviewUI(props: IMyReviewUIProps) {
           <S.ColumnHeaderBasic>별점</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>작성일</S.ColumnHeaderBasic>
         </S.TitleRow>
-        {props.data?.fetchThemeReviewsUser.map(
+        {props.reviews?.fetchThemeReviewsUser.map(
           (el: IFetchThemesUser, index: number) => (
             <S.Row key={index}>
               <S.ColumnNumber>{index + 1}</S.ColumnNumber>

@@ -8,7 +8,7 @@ import {
 
 export default function MyPick() {
   const router = useRouter();
-  const { data, refetch } = useQuery(FETCH_USER_LIKE_THEMES);
+  const { data: pickTheme, refetch } = useQuery(FETCH_USER_LIKE_THEMES);
   const { data: count } = useQuery(FETCH_USER_LIKE_THEMES_COUNT);
 
   const onClickMoveToThemeDetail = (event: { currentTarget: { id: any } }) => {
@@ -17,7 +17,7 @@ export default function MyPick() {
 
   return (
     <MyPickUI
-      data={data}
+      pickTheme={pickTheme}
       onClickMoveToThemeDetail={onClickMoveToThemeDetail}
       id={""}
       refetch={refetch}

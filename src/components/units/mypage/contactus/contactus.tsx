@@ -30,7 +30,7 @@ export default function ContactUs() {
             title: "이메일 전송 완료",
             icon: "success",
             showConfirmButton: false,
-            timer: 1000,
+            timer: 800,
             backdrop: false,
           });
           router.push("/home");
@@ -40,7 +40,7 @@ export default function ContactUs() {
             title: (error as Error).message,
             icon: "error",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 800,
             backdrop: false,
           });
         }

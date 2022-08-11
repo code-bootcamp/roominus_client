@@ -36,7 +36,7 @@ export default function MyPickUI(props: IMyPickUIProps) {
       <S.Wrapper>
         {windowSize && (
           <S.Etc>
-            {props.data?.fetchUserLikeThemes?.map(
+            {props.pickTheme?.fetchUserLikeThemes?.map(
               (el: IfetchUserLikeThemesProps) => (
                 <div
                   style={{ cursor: "pointer" }}
@@ -54,7 +54,7 @@ export default function MyPickUI(props: IMyPickUIProps) {
         {!windowSize && (
           <>
             <S.Etc>
-              {props.data?.fetchUserLikeThemes?.map(
+              {props.pickTheme?.fetchUserLikeThemes?.map(
                 (el: IfetchUserLikeThemesProps) => (
                   <div
                     style={{ cursor: "pointer" }}
