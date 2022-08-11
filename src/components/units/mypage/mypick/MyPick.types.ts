@@ -13,5 +13,5 @@ export interface IMyPickUIProps {
   count: any;
   onClickMoveToThemeDetail: MouseEventHandler<HTMLSpanElement>;
   id: string;
-  data: any;
+  pickTheme: any;
 }

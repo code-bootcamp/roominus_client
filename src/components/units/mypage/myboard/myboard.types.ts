@@ -2,9 +2,8 @@
 
 export interface IMyBoardUIProps {
   refetch: any;
-  // onClickBoard: MouseEventHandler<HTMLLIElement> | undefined;
   onClickBoard: any;
-  data: any;
+  boards: any;
   count: {
     fetchBoardsUserCount: number;
   };

@@ -36,8 +36,8 @@ export default function DeleteMember() {
       Swal.fire({
         title: "회원 탈퇴 완료",
         icon: "success",
-        confirmButtonText: "확인",
-        confirmButtonColor: "#4a00e0e7",
+        showConfirmButton: false,
+        timer: 800,
         backdrop: false,
       });
       await client.mutate({
@@ -45,9 +45,6 @@ export default function DeleteMember() {
 
         context: {
           uri: "https://wawoong.shop/graphql",
-          // headers: {
-          //   Authorization: `Bearer ${accessToken}`,
-          // },
           credentials: "include",
         },
       });

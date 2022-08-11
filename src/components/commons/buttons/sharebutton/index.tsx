@@ -23,7 +23,6 @@ const URLShareButton = styled.button`
   color: white;
   border-radius: 24px;
   border: none;
-  /* font-size: 0.8em; */
   margin-top: 0.1em;
   cursor: pointer;
   background: linear-gradient(90deg, #7c21e1 0%, #4a00e0 100%);
@@ -106,7 +105,7 @@ export default function ShareButton() {
     Swal.fire({
       icon: "success",
       title: "링크가 복사되었습니다!",
-      timer: 1300,
+      timer: 800,
       showConfirmButton: false,
       backdrop: false,
     });

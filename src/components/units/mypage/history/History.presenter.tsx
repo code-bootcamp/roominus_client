@@ -32,17 +32,22 @@ export default function HistoryUI(props: IHistoryUIProps) {
           <S.ColumnHeaderBasic>시간</S.ColumnHeaderBasic>
           <S.ColumnHeaderBasic>예약 상태</S.ColumnHeaderBasic>
         </S.TitleRow>
-        {props.data?.fetchReservationsUser.map((el: IData, index: number) => (
-          <S.Row key={index}>
-            <S.ColumnNumber>{el.id.split("-")[0].slice(-4)}</S.ColumnNumber>
-            <S.ColumnTitle id={el.id} onClick={props.onClickReservationDetail}>
-              {el.theme_menu.theme.title}
-            </S.ColumnTitle>
-            <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
-            <S.ColumnBasic>{el.theme_menu?.reservation_time}</S.ColumnBasic>
-            <S.ColumnBasic>{el.status}</S.ColumnBasic>
-          </S.Row>
-        ))}
+        {props.reservation?.fetchReservationsUser.map(
+          (el: IData, index: number) => (
+            <S.Row key={index}>
+              <S.ColumnNumber>{el.id.split("-")[0].slice(-4)}</S.ColumnNumber>
+              <S.ColumnTitle
+                id={el.id}
+                onClick={props.onClickReservationDetail}
+              >
+                {el.theme_menu.theme.title}
+              </S.ColumnTitle>
+              <S.ColumnBasic>{el.reservation_date}</S.ColumnBasic>
+              <S.ColumnBasic>{el.theme_menu?.reservation_time}</S.ColumnBasic>
+              <S.ColumnBasic>{el.status}</S.ColumnBasic>
+            </S.Row>
+          )
+        )}
         <S.TableBottom />
       </S.Wrapper>
       <S.FooterBox>

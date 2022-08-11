@@ -4,7 +4,7 @@ export interface IRewardUIProps {
   onClickReservationDetail: MouseEventHandler<HTMLDivElement>;
   refetch: any;
   count: any;
-  data: any;
+  payments: any;
 }
 
 export interface IFetchPayments {
