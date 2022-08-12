@@ -8,7 +8,6 @@ import LayoutFooter from "./footer/LayoutFooter.container";
 import LayoutTopHeader from "./topheader/LayoutTopHeader.container";
 import LayoutBanner from "./banner/LayoutBanner";
 import LayoutSideBar from "./sidebar/LayoutSidebar.container";
-import LayoutSidebarAdmin from "./sidebarAdmin/LayoutSidebar.container";
 import LayoutBottomNavigation from "./bottomNavigation";
 
 const HIDDEN_HEADER = ["/"];
@@ -97,7 +96,6 @@ export default function Layout(props: ILayoutProps) {
           {!isHiddenBanner && <LayoutBanner />}
           <div style={{ display: "flex" }}>
             {isVISBLESIDEBAR && <LayoutSideBar />}
-            {isVISBLEADMINSIDEBAR && <LayoutSidebarAdmin />}
             <Body>{props.children}</Body>
           </div>
           {!isHiddenFooter && <LayoutFooter />}
@@ -111,7 +109,6 @@ export default function Layout(props: ILayoutProps) {
           {!isHiddenBanner && <LayoutBanner />}
           <div style={{ display: "flex" }}>
             {isVISBLESIDEBAR && <LayoutSideBar />}
-            {isVISBLEADMINSIDEBAR && <LayoutSidebarAdmin />}
             <Body>{props.children}</Body>
           </div>
           {!isHiddenFooter && <LayoutFooter />}
