@@ -4,7 +4,7 @@
 ## 1. 서비스 소개
 
 > 
-> ### [💻 roominus 바로가기](https://roominus.site/)
+> ### [🚪 room:in us 홈페이지](https://roominus.site/)
 > ### <a  href="https://www.notion.so/dingco/5-09de646b20204534b0012b0838aaabf7"> ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)</a>
 >
 >💡 방탈출 카페를 영화처럼 쉽게 예약하고 즐길 순 없을까? 예약의 과정을 최대한 간소화하고 방탈출 카페를 즐기는 것에 집중할 수 있도록 만들기 위해서 room:in us가 탄생했습니다.
