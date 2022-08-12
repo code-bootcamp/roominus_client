@@ -129,3 +129,22 @@
 ![마이페이지](https://user-images.githubusercontent.com/104378330/183349988-e42d4730-b5bb-4ecb-8ad4-fcab711b2713.gif)
 ![마이페이지](https://user-images.githubusercontent.com/104378330/183381623-bb5f44da-66d6-4c59-a75a-f9711a3620ca.gif)
 ![고객지원](https://user-images.githubusercontent.com/104378330/183349951-dded36d8-811d-4f6b-9f13-ff775a704bc6.gif)
+
+##  6. .env
+
+```
+FIREBASE_API_KEY
+FIREBASE_AUTH_DOMAIN
+FIREBASE_PROJECT_ID
+FIREBASE_STORAGE_BUCKET
+FIREBASE_MESSAGING_SENDER_ID
+FIREBASE_APP_ID
+
+KAKAO_API_KEY
+
+CLOUDINARY_UPLOAD_PRESET
+
+EMAILJS_PUBLIC_KEY
+
+IMP_KEY
+```
